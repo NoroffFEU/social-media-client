@@ -13,8 +13,6 @@ export const postHeader = (post) => {
     clone.querySelector('span').remove()
   }
 
-  console.log('post', post);
-
   const commentsBadge = commentsBadgeTemplate(post.comments)
   const tagsBadges = postTags(post)
   const children = [commentsBadge, tagsBadges];

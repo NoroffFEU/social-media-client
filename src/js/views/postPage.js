@@ -1,5 +1,15 @@
 import { getPost, isLoggedIn, profile } from "../api/index.js"
-import { postFormTemplate, postPageTemplate } from "../templates/index.js";
+import { postFormTemplate, postPageTemplate, postThumbnailTemplate } from "../templates/index.js";
+import { postCommentsTemplate } from "../templates/post/comments.js";
+
+export const publicPostPage = async (post) => {
+  const element = document.createElement("div");
+  element.classList.add("post", "page", "mb-3");
+  const thumbnail = postThumbnailTemplate(post, true)
+  const comments = postCommentsTemplate(post)
+  element.append(thumbnail, comments)
+  return element
+}
 
 export const postPage = async (postId) => {
   if (!isLoggedIn()) {
@@ -18,8 +28,7 @@ export const postPage = async (postId) => {
         return page
       }
 
-      return "Public Post Page"
-
+      return publicPostPage(post)
     }
 
     return postFormTemplate()

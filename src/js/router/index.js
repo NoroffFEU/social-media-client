@@ -1,18 +1,20 @@
+import { getPosts } from "../api/index.js"
 import { renderView } from "../ui/renderView.js"
 import * as views from "../views/index.js"
 import { searchParams } from "./searchParams.js"
 
-function route() {
-  const { view, postId, profileId } = searchParams()
+async function route() {
+  const { view, postId, name } = searchParams()
   switch (view) {
     case "post":
       return views.postPage(postId)
 
     case "profile":
-      return views.profilePage(profileId)
+      return views.profilePage(name)
 
     default:
-      return views.postList()
+      const posts = await getPosts()
+      return views.postList(posts)
   }
 }
 

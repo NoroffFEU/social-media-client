@@ -264,7 +264,7 @@
           class="profile d-flex align-items-center me-2 text-decoration-none"
         >
           <img
-            src="https://i.pravatar.cc/300"
+            src=""
             style="
               width: 2.5rem;
               border-radius: 50%;
@@ -280,7 +280,6 @@
 
       <template id="reactionButton">
         <button class="btn btn-sm btn-outline-success" data-reaction>
-          <span class="symbol"></span>
           <span
             class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
           ></span>
@@ -386,8 +385,8 @@
 
       <template id="postHeader">
         <div class="card-header">
-            <b class="m-0"></b>
-            <span class="mb-0 d-inline"></span>
+          <b class="m-0"></b>
+          <span class="mb-0 d-inline"></span>
         </div>
       </template>
 
@@ -413,14 +412,29 @@
             <span class="text-muted time-ago">31 minutes ago</span>
           </div>
           <div class="comment-body">
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as opposed to using 'Content here, content
+            here', making it look like readable English. Many desktop publishing
+            packages and web page editors now use Lorem Ipsum as their default
+            model text, and a search for 'lorem ipsum' will uncover many web
+            sites still in their infancy. Various versions have evolved over the
+            years, sometimes by accident, sometimes on purpose (injected humour
+            and the like).
           </div>
         </div>
       </template>
-      
+
       <template id="commentForm">
         <form class="comment-form">
-          <textarea class="form-control" name="body" id="commentBody" cols="30" rows="10"></textarea>
+          <textarea
+            class="form-control"
+            name="body"
+            id="commentBody"
+            cols="30"
+            rows="10"
+          ></textarea>
           <button class="btn btn-success w-100">Comment</button>
         </form>
       </template>
@@ -428,21 +442,72 @@
       <template id="postPage">
         <nav>
           <div class="nav nav-tabs" role="tablist">
-            <button class="nav-link active" id="nav-tab-default" data-bs-toggle="tab" data-bs-target="#nav-default" type="button" role="tab" aria-controls="nav-default" aria-selected="true">View</button>
-            <button class="nav-link" id="nav-tab-edit" data-bs-toggle="tab" data-bs-target="#nav-edit" type="button" role="tab" aria-controls="nav-edit" aria-selected="false">Edit</button>
+            <button
+              class="nav-link active"
+              id="nav-tab-default"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-default"
+              type="button"
+              role="tab"
+              aria-controls="nav-default"
+              aria-selected="true"
+            >
+              View
+            </button>
+            <button
+              class="nav-link"
+              id="nav-tab-edit"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-edit"
+              type="button"
+              role="tab"
+              aria-controls="nav-edit"
+              aria-selected="false"
+            >
+              Edit
+            </button>
           </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active border-start border-end border-bottom p-3" id="nav-default" role="tabpanel" aria-labelledby="nav-tab-default" tabindex="0">
-            <div class="card mb-3 page post">
+          <div
+            class="tab-pane fade show active border-start border-end border-bottom p-3"
+            id="nav-default"
+            role="tabpanel"
+            aria-labelledby="nav-tab-default"
+            tabindex="0"
+          >
+            <div class="card mb-3 page post"></div>
+          </div>
+          <div
+            class="tab-pane fade border-start border-end border-bottom p-3"
+            id="nav-edit"
+            role="tabpanel"
+            aria-labelledby="nav-tab-edit"
+            tabindex="0"
+          ></div>
+        </div>
+      </template>
 
+      <template id="profilePagePrivate">
+        <div class="card profile page private mb-3">
+          <div class="upper border-bottom"></div>
+
+          <div class="user text-center">
+            <div class="profile">
+              <img
+                src=""
+                class="rounded-circle avatar border"
+                width="80"
+              />
             </div>
-
-            
           </div>
-          <div class="tab-pane fade border-start border-end border-bottom p-3" id="nav-edit" role="tabpanel" aria-labelledby="nav-tab-edit" tabindex="0">
 
+          <div class="text-center profile-actions">
+            <h4 class="mb-0 profile-name"></h4>
+            <span class="text-muted d-block profile-email"></span>
           </div>
+
+          <div class="profile-posts px-3"></div>
         </div>
       </template>
     </div>

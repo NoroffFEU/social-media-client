@@ -8,12 +8,12 @@ export const postReactionMenu = (post) => {
   if (post.reactions && post.reactions.length) {
     const sortedReactions = post.reactions.sort((a, b) => {
       return b.count - a.count;
-    }).map(reactionTemplate);
+    }).map(reaction => reactionTemplate(reaction));
     clone.querySelector('.reactions').prepend(...sortedReactions)
   }
 
   const emojis = emojiSubset(post.reactions)
-  clone.querySelector('.dropdown-menu').append(...emojis.map(reactionOptionTemplate))
+  clone.querySelector('.dropdown-menu').append(...emojis.map(emoji => reactionOptionTemplate(emoji, post.id)))
 
   const reactions = clone.querySelectorAll("[data-reaction]")
   reactions.forEach(reaction => {
@@ -23,15 +23,19 @@ export const postReactionMenu = (post) => {
   return clone;
 }
 
-export const reactionTemplate = ({ symbol, count }) => {
+export const reactionTemplate = ({ symbol, count, postId }) => {
   const clone = templateInstance('reactionButton');
-  clone.querySelector(".symbol").innerText = `${symbol}`;
+  clone.querySelector(".btn").dataset.symbol = symbol;
+  clone.querySelector(".btn").prepend(`${symbol}`);
   clone.querySelector(".badge").innerText = count;
+  clone.querySelector(".btn").dataset.postId = postId;
   return clone;
 }
 
-export const reactionOptionTemplate = (symbol) => {
+export const reactionOptionTemplate = (symbol, postId) => {
   const clone = templateInstance('reactionOption');
+  clone.querySelector(".dropdown-item").dataset.symbol = symbol;
+  clone.querySelector('.dropdown-item').dataset.postId = postId
   clone.querySelector('.dropdown-item').innerText = symbol
   return clone;
 }

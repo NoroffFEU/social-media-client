@@ -2,9 +2,8 @@ import { react } from "../api/index.js";
 
 export async function reactionListener(event) {
   const button = event.srcElement;
-  const symbol = button.innerText;
-  const url = new URL(window.location);
-  const postId = url.searchParams.get("postId");
+  const symbol = button.dataset.symbol;
+  const postId = button.dataset.postId;
 
   if (postId && symbol) {
     await react(postId, symbol);

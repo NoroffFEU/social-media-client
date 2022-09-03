@@ -112,3 +112,25 @@ body {
     }
   }
 }
+
+.profile {
+  &.page {
+    .upper {
+      min-height: 8rem;
+      background: linear-gradient(
+        85deg,
+        rgba(131, 58, 180, 0.5) 0%,
+        rgba(253, 29, 29, 0.5) 50%,
+        rgba(252, 176, 69, 0.5) 100%
+      );
+    }
+    .user {
+      transform: translateY(-2.5rem);
+      filter: drop-shadow(0px 5px 6px rgba(0, 0, 0, 0.5));
+    }
+  }
+
+  &-actions {
+    transform: translateY(-1.5rem);
+  }
+}
