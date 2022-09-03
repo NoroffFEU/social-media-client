@@ -1,0 +1,20 @@
+{
+  "name": "css-frameworks-ca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass src/scss:dist/css",
+    "start": "sass --watch src/scss:dist/css & live-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.54.8"
+  },
+  "dependencies": {
+    "bootstrap-dark-5": "^1.1.3"
+  }
+}
