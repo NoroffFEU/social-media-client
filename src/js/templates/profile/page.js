@@ -1,16 +1,36 @@
+import { profile } from "../../api/index.js";
+import { followListener, unfollowListener } from "../../listeners/index.js";
 import { postList } from "../../views/postList.js";
 import { templateInstance } from "../instance.js"
+import { profileFollows } from "./follows.js";
 
-export const profilePageTemplate = async (profile) => {
+export const profilePageTemplate = async (data) => {
   const clone = templateInstance("profilePagePrivate")
-  clone.querySelector("img.avatar").src = profile.avatar;
-  clone.querySelector(".profile-name").innerText = profile.name
-  clone.querySelector(".profile-email").innerText = profile.email
+  const { name } = profile()
+  clone.querySelector("img.avatar").src = data.avatar;
+  clone.querySelector(".profile-name").innerText = data.name
+  clone.querySelector(".profile-email").innerText = data.email
+  clone.querySelector(".upper").prepend(profileFollows(data))
 
-  if (profile.posts && profile.posts.length) {
-    const posts = await postList(profile.posts);
+  if (data.posts && data.posts.length) {
+    const posts = await postList(data.posts);
     clone.querySelector(".profile-posts").append(posts)
   }
 
+  if (data.name !== name) {
+    if (data.followers.find(follower => follower.name === name)) {
+      clone.querySelector("[data-action=follow]").remove()
+      clone.querySelector("[data-action=unfollow]").dataset.name = data.name;
+      clone.querySelector("[data-action=unfollow]").addEventListener("click", unfollowListener)
+    } else {
+      clone.querySelector("[data-action=unfollow]").remove()
+      clone.querySelector("[data-action=follow]").dataset.name = data.name;
+      clone.querySelector("[data-action=follow]").addEventListener("click", followListener)
+    }
+  } else {
+    clone.querySelector("[data-action=follow]").remove()
+    clone.querySelector("[data-action=unfollow]").remove()
+  }
+  
   return clone
 }

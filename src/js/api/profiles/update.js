@@ -8,7 +8,7 @@ export async function updateProfileImage(avatar) {
   const response = await fetch(`${apiPath}/social/profiles/${id}`, {
     method: "put",
     body: JSON.stringify({ ...me, avatar }),
-    headers: headers()
+    headers: headers("application/json")
   })
 
   if (response.ok) {

@@ -1,5 +1,6 @@
 import { commentsBadgeTemplate } from "../comment/badge.js";
 import { templateInstance } from "../instance.js";
+import { profileThumbnail } from "../profile/thumbnail.js";
 import { postTags } from "./tags.js";
 
 export const postHeader = (post) => {
@@ -15,7 +16,8 @@ export const postHeader = (post) => {
 
   const commentsBadge = commentsBadgeTemplate(post.comments)
   const tagsBadges = postTags(post)
-  const children = [commentsBadge, tagsBadges];
+  const author = profileThumbnail(post.author)
+  const children = [commentsBadge, tagsBadges, author];
 
   clone.querySelector('.card-header').append(...children)
 

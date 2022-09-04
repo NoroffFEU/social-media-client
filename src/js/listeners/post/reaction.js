@@ -1,4 +1,4 @@
-import { react } from "../api/index.js";
+import { react } from "../../api/posts/index.js";
 
 export async function reactionListener(event) {
   const button = event.srcElement;

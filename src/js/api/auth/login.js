@@ -6,7 +6,7 @@ export async function login(email, password) {
   const response = await fetch(`${apiPath}/social/auth/login`, {
     method: "post",
     body: JSON.stringify({ email, password }),
-    headers: headers()
+    headers: headers("application/json")
   })
 
   if (response.ok) {

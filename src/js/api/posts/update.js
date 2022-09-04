@@ -7,7 +7,7 @@ export async function updatePost(id, title, body, media, tags) {
   const response = await fetch(`${apiPath}/social/posts/${id}`, {
     method: "put",
     body: JSON.stringify({ title, body, media, tags, owner }),
-    headers: headers()
+    headers: headers("application/json")
   })
 
   if (response.ok) {

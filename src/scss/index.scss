@@ -134,3 +134,30 @@ body {
     transform: translateY(-1.5rem);
   }
 }
+
+.followers {
+  display: grid;
+  grid-template-columns: repeat(10, 1rem);
+
+  & > .thumbnail {
+    img {
+      width: 3rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      z-index: 11;
+    }
+  }
+}
+
+.profile {
+  &.thumbnail {
+    width: 2rem;
+    display: inline-block;
+
+    & .avatar {
+      width: 100%;
+    }
+  }
+}

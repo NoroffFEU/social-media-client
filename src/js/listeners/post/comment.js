@@ -1,5 +1,5 @@
-import { comment } from "../api/index.js";
-import { searchParams } from "../router/searchParams.js";
+import { comment } from "../../api/index.js";
+import { searchParams } from "../../router/searchParams.js";
 
 export async function commentListener(event) {
   event.preventDefault();
