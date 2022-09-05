@@ -1,11 +1,11 @@
-import { templateInstance } from "../instance.js";
+import { profileThumbnail } from "./thumbnail.js";
 
 export const profileFollowing = (profile) => {
   if (profile.following && profile.following.length) {
-    const clone = templateInstance('profileFollowing');
-    clone.querySelector(".name").innerText = profile.name;
-    clone.querySelector(".number").innerText = profile.following.length;
-    return clone
+    const element = document.createElement('div');
+    element.classList.add('following');
+    element.append("Following", ...profile.following.map(profileThumbnail))
+    return element
   }
 
   return "\r\n"

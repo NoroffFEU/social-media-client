@@ -1,6 +1,8 @@
 @import "../../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css";
 
 body {
+  font-family: 'Montserrat', sans-serif;
+
   [data-visible=loggedIn] {
     display: none;
   }
@@ -135,11 +137,19 @@ body {
   }
 }
 
+.following,
 .followers {
   display: grid;
-  grid-template-columns: repeat(10, 1rem);
+  grid-template-columns: auto repeat(10, 1rem);
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
 
   & > .thumbnail {
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
     img {
       width: 3rem;
     }
@@ -147,6 +157,7 @@ body {
     &:hover {
       cursor: pointer;
       z-index: 11;
+      transform: scale(1.1);
     }
   }
 }
@@ -160,4 +171,9 @@ body {
       width: 100%;
     }
   }
+}
+
+.profile.list {
+  display: flex;
+  flex-wrap: wrap;
 }

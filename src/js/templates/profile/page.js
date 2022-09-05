@@ -15,6 +15,11 @@ export const profilePageTemplate = async (data) => {
   if (data.posts && data.posts.length) {
     const posts = await postList(data.posts);
     clone.querySelector(".profile-posts").append(posts)
+  } else {
+    const alert = document.createElement("div");
+    alert.classList.add("alert", "alert-info");
+    alert.innerText = "There are no posts yet...";
+    clone.querySelector(".profile-posts").append(alert)
   }
 
   if (data.name !== name) {
