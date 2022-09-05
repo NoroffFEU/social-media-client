@@ -11,7 +11,7 @@ export async function getProfiles() {
 }
 
 export async function getProfile(name) {
-  const response = await fetch(`${apiPath}/social/profiles/${name}?&_followers=true&posts=true`, { headers: headers() });
+  const response = await fetch(`${apiPath}/social/profiles/${name}?&_followers=true&_posts=true&_following=true`, { headers: headers() });
   if (response.ok) {
     return await response.json()
   }
