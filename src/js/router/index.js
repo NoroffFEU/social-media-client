@@ -2,10 +2,10 @@ import { getPosts } from "../api/index.js"
 import { getProfiles } from "../api/profiles/read.js"
 import { renderView } from "../ui/renderView.js"
 import * as views from "../views/index.js"
-import { searchParams } from "./searchParams.js"
+import { getSearchParams } from "./searchParams.js"
 
 async function route() {
-  const { view, postId, name } = searchParams()
+  const { view, postId, name } = getSearchParams()
   switch (view) {
     case "post":
       return views.postPage(postId)

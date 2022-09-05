@@ -1,5 +1,5 @@
 import { deletePost } from "../../api/index.js";
-import { searchParams } from "../../router/searchParams.js";
+import { getSearchParams } from "../../router/searchParams.js";
 import { load } from "../../storage/load.js";
 import { templateInstance } from "../instance.js";
 
@@ -7,7 +7,7 @@ export const postActions = (post) => {
   const profile = load("profile");
   const clone = templateInstance('postActions');
   const owned = post.author && profile.name === post.author.name;
-  const { postId } = searchParams();
+  const { postId } = getSearchParams();
   const viewing = postId == post.id;
 
   const viewButton = clone.querySelector('a[data-action=view]');
