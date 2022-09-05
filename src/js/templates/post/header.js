@@ -16,9 +16,11 @@ export const postHeader = (post) => {
 
   const commentsBadge = commentsBadgeTemplate(post.comments)
   const tagsBadges = postTags(post)
-  const author = profileThumbnail(post.author)
-  const children = [commentsBadge, tagsBadges, author];
+  const children = [commentsBadge, tagsBadges];
 
+  if (post.author) {
+    children.push(profileThumbnail(post.author))
+  }
   clone.querySelector('.card-header').append(...children)
 
   return clone
