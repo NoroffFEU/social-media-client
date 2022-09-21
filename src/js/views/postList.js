@@ -1,7 +1,7 @@
 import { isLoggedIn } from "../api/index.js"
 import { postThumbnailTemplate } from "../templates/index.js";
 
-export const postList = async (posts, preview = false) => {
+export const postList = (posts, preview = false) => {
   if (isLoggedIn()) {
     const element = document.createElement("div");
     element.classList.add("post", "list")

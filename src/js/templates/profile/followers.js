@@ -1,7 +1,6 @@
 import { profileThumbnail } from "./thumbnail.js";
 
 export const profileFollowers = (profile) => {
-  console.log('profile', profile);
   if (profile && profile.followers && profile.followers.length) {
     const element = document.createElement('div');
     element.classList.add('followers');

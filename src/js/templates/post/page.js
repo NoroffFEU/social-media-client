@@ -14,10 +14,9 @@ export const postPageTemplate = (post) => {
   const header = postHeader(post);
   const media = postMedia(post, 'div')
   const footer = postFooter(postActions(post), postReactionMenu(post))
-  const children = [header, media, footer];
+  const comments = postCommentsTemplate(post)
+  const children = [header, media, footer, comments];
   clone.querySelector(".page").append(...children)
-
-  clone.querySelector("#nav-default").append(postCommentsTemplate(post))
 
   return clone;
 }

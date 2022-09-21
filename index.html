@@ -12,7 +12,7 @@
     <script src="/src/js/index.js" defer type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
+    <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
@@ -20,18 +20,7 @@
     <title>Test Client</title>
   </head>
   <body class="min-vh-100 d-flex flex-column">
-    <header
-      class="py-3 sticky-top shadow"
-      style="
-        backdrop-filter: blur(0.5rem);
-        background: linear-gradient(
-          85deg,
-          rgba(131, 58, 180, 0.5) 0%,
-          rgba(253, 29, 29, 0.5) 50%,
-          rgba(252, 176, 69, 0.5) 100%
-        );
-      "
-    >
+    <header class="py-3 sticky-top shadow">
       <div class="container-fluid">
         <div
           class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start"
@@ -90,18 +79,7 @@
       </div>
     </header>
     <main class="flex-grow-1 container-fluid mt-3"></main>
-    <footer
-      class="shadow position-sticky bottom-0 py-3"
-      style="
-        backdrop-filter: blur(0.5rem);
-        background: linear-gradient(
-          -85deg,
-          rgba(131, 58, 180, 0.5) 0%,
-          rgba(253, 29, 29, 0.5) 50%,
-          rgba(252, 176, 69, 0.5) 100%
-        );
-      "
-    >
+    <footer class="shadow position-sticky bottom-0 py-3">
       <div class="container-fluid">
         <div class="row align-items-center">
           <div class="col">© 2022 Noroff FEU</div>
@@ -408,7 +386,7 @@
       </template>
 
       <template id="postThumbnail">
-        <div class="card mb-3 thumbnail post"></div>
+        <div class="card mb-3 thumbnail post fade-in"></div>
       </template>
 
       <template id="comment">
@@ -445,7 +423,7 @@
         </form>
       </template>
 
-      <template id="postPage">
+      <template id="postTabs">
         <nav>
           <div class="nav nav-tabs" role="tablist">
             <button
@@ -481,9 +459,7 @@
             role="tabpanel"
             aria-labelledby="nav-tab-default"
             tabindex="0"
-          >
-            <div class="card mb-3 page post"></div>
-          </div>
+          ></div>
           <div
             class="tab-pane fade border-start border-end border-bottom p-3"
             id="nav-edit"
@@ -492,6 +468,10 @@
             tabindex="0"
           ></div>
         </div>
+      </template>
+
+      <template id="postPage">
+        <div class="card mb-3 page post"></div>
       </template>
 
       <template id="profilePagePrivate">
