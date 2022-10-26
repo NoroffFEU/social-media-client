@@ -1,1 +1,1 @@
-https://github.com/johannranudd/social-media-client-jr/blob/readme/bundler/.github/workflows/static.yml
+https://github.com/johannranudd/social-media-client-jr/actions/workflows/static.yml/badge.svg
