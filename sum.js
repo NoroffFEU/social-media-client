@@ -3,4 +3,4 @@
 //   return result;
 // }
 
-// module.expoorts = sum;
+// module.exports = sum;
