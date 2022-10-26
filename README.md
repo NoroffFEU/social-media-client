@@ -1,4 +1,1 @@
-https://github.com/johannranudd/social-media-client-jr/actions/workflows/static.yml/badge.svg
-
-
-test 1
+[![Deploy static content to Pages](https://github.com/johannranudd/social-media-client-jr/actions/workflows/static.yml/badge.svg)](https://github.com/johannranudd/social-media-client-jr/actions/workflows/static.yml)
