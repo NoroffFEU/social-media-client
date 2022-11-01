@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./dist/css/index.css" />
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script
+      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
     <script src="./src/js/index.js" defer type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -84,7 +87,10 @@
           <div class="col">© 2022 Noroff FEU</div>
           <div class="col-auto" data-visible="loggedIn">
             <div class="d-flex align-items-center" id="footerActions">
-              <a href="/?view=post" data-visible="loggedIn" class="btn btn-outline-success"
+              <a
+                href="/?view=post"
+                data-visible="loggedIn"
+                class="btn btn-outline-success"
                 >New Post</a
               >
             </div>
@@ -102,7 +108,9 @@
       aria-labelledby="loginModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div
+        class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
         <form class="modal-content" id="loginForm">
           <div class="modal-header">
             <h5 class="modal-title" id="loginModalLabel">Login</h5>
@@ -123,7 +131,7 @@
                 name="email"
                 placeholder="name@example.com"
               />
-              <label for="loginEmail">Email</label>
+              <label for="loginEmail">Email Address</label>
             </div>
             <div class="form-floating mb-3">
               <input
@@ -138,7 +146,13 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button
+              type="reset"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
             <button
               type="button"
               class="btn btn-outline-success"
@@ -149,7 +163,9 @@
             >
               Register
             </button>
-            <button class="btn btn-success" data-bs-dismiss="modal">Login</button>
+            <button class="btn btn-success" data-bs-dismiss="modal">
+              Login
+            </button>
           </div>
         </form>
       </div>
@@ -164,7 +180,9 @@
       aria-labelledby="registerModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div
+        class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
         <form class="modal-content" id="registerForm">
           <div class="modal-header">
             <h5 class="modal-title" id="registerModalLabel">Create Profile</h5>
@@ -222,7 +240,13 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button
+              type="reset"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
             <button
               type="button"
               class="btn btn-outline-success"
@@ -241,10 +265,18 @@
 
     <div class="d-none templates">
       <template id="profileButton">
-        <a href="" class="profile d-flex align-items-center me-2 text-decoration-none">
+        <a
+          href=""
+          class="profile d-flex align-items-center me-2 text-decoration-none"
+        >
           <img
             src=""
-            style="width: 2.5rem; border-radius: 50%; z-index: 2; transform: translateX(1.5rem)"
+            style="
+              width: 2.5rem;
+              border-radius: 50%;
+              z-index: 2;
+              transform: translateX(1.5rem);
+            "
             class="img-fluid me-2"
             alt=""
           />
@@ -301,7 +333,9 @@
 
       <template id="postForm">
         <form class="row mt-3" id="postForm">
-          <div class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3">
+          <div
+            class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3"
+          >
             <h1>Post</h1>
             <button class="btn btn-success" data-action="submit">
               <span data-action="publish">Publish</span
@@ -341,7 +375,12 @@
               <label for="postMedia">Post Media</label>
             </div>
             <div class="form-floating mb-3">
-              <textarea class="form-control" name="body" id="postBody" rows="50"></textarea>
+              <textarea
+                class="form-control"
+                name="body"
+                id="postBody"
+                rows="50"
+              ></textarea>
               <label for="postMedia">Post Body</label>
             </div>
           </div>
@@ -379,14 +418,16 @@
             <span class="text-muted time-ago">31 minutes ago</span>
           </div>
           <div class="comment-body">
-            It is a long established fact that a reader will be distracted by the readable content
-            of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-            more-or-less normal distribution of letters, as opposed to using 'Content here, content
-            here', making it look like readable English. Many desktop publishing packages and web
-            page editors now use Lorem Ipsum as their default model text, and a search for 'lorem
-            ipsum' will uncover many web sites still in their infancy. Various versions have evolved
-            over the years, sometimes by accident, sometimes on purpose (injected humour and the
-            like).
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as opposed to using 'Content here, content
+            here', making it look like readable English. Many desktop publishing
+            packages and web page editors now use Lorem Ipsum as their default
+            model text, and a search for 'lorem ipsum' will uncover many web
+            sites still in their infancy. Various versions have evolved over the
+            years, sometimes by accident, sometimes on purpose (injected humour
+            and the like).
           </div>
         </div>
       </template>
@@ -457,12 +498,22 @@
 
       <template id="profilePagePrivate">
         <div class="card profile page private mb-3">
-          <div class="upper border-bottom d-flex justify-content-between align-items-start p-3">
+          <div
+            class="upper border-bottom d-flex justify-content-between align-items-start p-3"
+          >
             <div class="btn-group btn-group-sm">
-              <button class="btn btn-sm btn-success" data-action="follow" data-name="">
+              <button
+                class="btn btn-sm btn-success"
+                data-action="follow"
+                data-name=""
+              >
                 Follow
               </button>
-              <button class="btn btn-sm btn-danger" data-action="unfollow" data-name="">
+              <button
+                class="btn btn-sm btn-danger"
+                data-action="unfollow"
+                data-name=""
+              >
                 Unfollow
               </button>
             </div>
