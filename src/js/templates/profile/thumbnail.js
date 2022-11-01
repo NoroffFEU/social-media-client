@@ -1,5 +1,3 @@
-import { imageTemplate } from "../image/index.js";
-
 export const profileThumbnail = (profile) => {
   const element = document.createElement("a");
   element.classList.add("profile", "thumbnail");
