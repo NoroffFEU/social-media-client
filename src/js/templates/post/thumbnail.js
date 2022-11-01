@@ -5,7 +5,7 @@ import { postFooter } from "./footer.js";
 import { postReactionMenu } from "./reactions.js"
 import { postActions } from "./actions.js";
 
-export const postThumbnailTemplate = (post, preview = false, comments = false) => {
+export const postThumbnailTemplate = (post, preview = false) => {
   const clone = templateInstance('postThumbnail')
 
   clone.querySelector('.post').id = post.id;
