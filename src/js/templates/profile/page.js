@@ -4,7 +4,7 @@ import { postList } from "../../views/postList.js";
 import { templateInstance } from "../instance.js"
 import { profileFollows } from "./follows.js";
 
-export const profilePageTemplate = async (data) => {
+export const profilePageTemplate = (data) => {
   const clone = templateInstance("profilePagePrivate")
   const { name } = profile()
   clone.querySelector("img.avatar").src = data.avatar;
@@ -13,7 +13,7 @@ export const profilePageTemplate = async (data) => {
   clone.querySelector(".upper").prepend(profileFollows(data))
 
   if (data.posts && data.posts.length) {
-    const posts = await postList(data.posts);
+    const posts = postList(data.posts);
     clone.querySelector(".profile-posts").append(posts)
   } else {
     const alert = document.createElement("div");
