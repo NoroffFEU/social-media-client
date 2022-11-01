@@ -7,6 +7,7 @@ export async function loginListener(event) {
   const data = new FormData(form)
   const email = data.get("email")
   const password = data.get("password")
-  await auth.login(email, password)
+  const { name } = await auth.login(email, password)
   updateLoginVisibility()
+  location.href = `/?view=profile&name=${name}`
 }
