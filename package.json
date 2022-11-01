@@ -1,6 +1,6 @@
 {
   "name": "workflow-ca",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Social Media Application",
   "main": "index.js",
   "scripts": {
@@ -27,8 +27,6 @@
   "lint-staged": {
     "src/**/*.{js,scss}": "prettier --write",
     "src/**/*.js,": "eslint --cache --fix",
-    "index.html": "prettier --write" 
+    "index.html": "prettier --write"
   }
-
- 
 }
