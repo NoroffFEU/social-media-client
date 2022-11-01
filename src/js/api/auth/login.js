@@ -14,6 +14,7 @@ export async function login(email, password) {
     save("token", profile.accessToken);
     delete profile.accessToken;
     save("profile", profile);
+    // console.log("profile::::",profile);
     return profile;
   }
 

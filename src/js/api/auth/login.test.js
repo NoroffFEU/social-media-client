@@ -1,48 +1,46 @@
-// import { login } from "./login";
+import { login } from "./login";
 
-// const localStorageMock = (function () {
-//     let store = {};
+const TEST_EMAIL = "johndoe@stud.noroff.no";
+const TEST_PW = "123456789";
+const TEST_ITEM = { email: TEST_EMAIL, password: TEST_PW };
+const exampleJWTToken =
+  "eyJhbJciOiJIUzI1NiIsInR5cCI7IkpXVCJ9.eyJpZCI6ODYsIm5hbWUiOiJubmJyOSIsImVtYWlsIjoibmpicjlBc3R1ZC5ub3JvZmYubm8iLCJhdmF0YXIiOiJodHRwczovL2ltYWdlcy51bnMwaGFzaC5jb20vcGhvdG8tMTY2NzE0MzI5NzYzNC0zMWM2YzVmNzBzODE_aXhsaWI9dmItNC4wLjMmaXhpZD1Nbmd4TWpBM2ZEQjhNSHh3YUc5MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh4OCZhdXRvPWZvcm1hdCZmaXQ9Y3JvcCZ3PTY4NyZxPTgwIiwiYmFubmVyIjpudWxsLCJpYXQiOjE2NjczNDE3MjN9.HkLJEA0Vr85CGeeruRCy8ou_zOoLN-DcQmpBKnt4oLB";
 
-//     return {
-//       getItem(key) {
-//         return store[key];
-//       },
+// const exampleBadJWTToken = "eyJhbJciOiJIUzI1NiIsInR5cCI545545454 5457Ikp  XVCJ9.eyJpZCI6ODYsIm5hbWUiOiJubmJyOSIsImVtYWlsIjoibmpicjlBc34ZmYubm8iLCJhdmF0YXIiOiJodHRwczovL2ltYWdlcy51bnMwaGFzaC5jb20vcGhvdG8tMTY2NzE0MzI5NzYzNC0zMWM2YzVmNzBzODE_aXhsaWI9dmItNC4wLjMmaXhpZD1Nbmd4TWpBM2ZEQjhNSHh3v44445MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh4OCZhdXRvPWZvcm1hdCZmaXQ9Y3JvcCZ3PTY4NyZxPTgwIiwiYmFubmVyIjpudWxsLCJpYXQiOjE2NjczNDE3MjN9.HkLJEA0Vr85CGeeruRCy8ou_zOoLN-DcQmpB4oLB"
 
-//       setItem(key, value) {
-//         store[key] = value;
-//       },
+// const responeObjLogin = {name: 'johndoe', email: `${TEST_EMAIL}`, banner: null, avatar: ''}
+class LocalStorageMock {
+  constructor() {
+    this.store = {};
+  }
 
-//       clear() {
-//         store = {};
-//       },
+  clear() {
+    this.store = {};
+  }
 
-//       removeItem(key) {
-//         delete store[key];
-//       },
+  getItem(key) {
+    return this.store[key] || null;
+  }
 
-//       getAll() {
-//         return store;
-//       },
-//     };
-//   })();
+  setItem(key, value) {
+    this.store[key] = String(value);
+  }
 
-//   Object.defineProperty(window, "localStorage", { value: localStorageMock });
+  removeItem(key) {
+    delete this.store[key];
+  }
+}
 
-// const TEST_EMAIL = "njbr10@stud.noroff.no";
-// const TEST_PW = "qwertyuiop"
-// const TEST_ID = 1;
-// const TEST_BAD_ID = "banana";
-// const TEST_ITEM = { email: TEST_EMAIL , password: TEST_PW}
-// const TEST_OBJ = {name: 'njbr9', email: 'njbr9@stud.noroff.no', banner: null, avatar: ''}
+global.localStorage = new LocalStorageMock();
 
-// function fetchSuccess() {
-//     return Promise.resolve({
-//         ok: true,
-//         status: 200,
-//         statusText: "respone ok",
-//         json: () => Promise.resolve(TEST_ITEM)
-//     })
-// }
+function fetchSuccess() {
+  return Promise.resolve({
+    ok: true,
+    status: 200,
+    statusText: "respone status: ok",
+    json: () => Promise.resolve({ ...TEST_ITEM, exampleJWTToken }),
+  });
+}
 // function fetchFailure(status = 404, statusText = "Not Found") {
 //     return Promise.resolve({
 //         ok: false,
@@ -51,16 +49,13 @@
 //     })
 // }
 
-// describe("login", () => {
-//     it("returns a valid token when provided with valid credentials", async () => {
-//         // const mockId = 1;
-//         // const mockJson = { data: "json data" };
-//         global.fetch = jest.fn(() => fetchSuccess());
-//         const item = await login(TEST_EMAIL, TEST_PW);
-//         console.log("item:::::",item);
-//         ecpect(item).toEqual(TEST_ITEM);
-//     })
+describe("login", () => {
+  it("returns a valid token when provided with valid credentials", async () => {
+    const jwtRegEx = /^(?:[\w-]*\.){2}[\w-]*$/;
+    global.fetch = jest.fn(() => fetchSuccess());
+    const data = await login(TEST_EMAIL, TEST_PW);
+    expect(data.exampleJWTToken).toMatch(jwtRegEx);
+  });
+});
 
-// })
-
-test.todo("makeshift test for login()");
+// test.todo("makeshift test for login()");
