@@ -12,5 +12,8 @@
 - Installed `prettier` to `devDependencies`, using command: `npm i prettier@2.7.1 -D`
 - `Commit` changes
 - [Pre-Commit Hook, Option 1: lint-staged](https://prettier.io/docs/en/precommit.html)
-- ^ Added configuration to `package.json`, using command: `npx mrm@2 lint-staged`
+- ^ Installed `husky` and `lint-staged`, using command: `npx mrm@2 lint-staged`
 - `Commit` changes
+- ^ Added configuration to `package.json` under `lint-staged`
+- `Commit` changes
+-
