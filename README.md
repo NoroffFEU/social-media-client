@@ -10,4 +10,6 @@ This repository is for the Workflow CA.
 
 - Installed and configured babel. Updated to version 1.1.4
 
+- Deleting jets and babel test files Updated to version 1.1.5
+
 
