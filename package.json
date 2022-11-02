@@ -24,9 +24,18 @@
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
   },
+
   "lint-staged": {
-    "src/**/*.{js,scss}": "prettier --write",
-    "src/**/*.js,": "eslint --cache --fix",
-    "index.html": "prettier --write"
+  "*.js": [
+    "prettier --write",
+    "eslint --fix"
+   
+  ],
+  "*.html": [
+    "prettier --write"
+  ],
+  "*.scss": [
+    "prettier --write"
+  ]
   }
 }
