@@ -4,4 +4,6 @@
 # npm
 node_modules/
 
-/dist
+dist
+
+.eslintcache

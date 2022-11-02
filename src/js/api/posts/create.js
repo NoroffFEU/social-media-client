@@ -1,11 +1,11 @@
-import { apiPath } from "../constants.js";
-import { headers } from "../headers.js";
+import { apiPath } from '../constants.js';
+import { headers } from '../headers.js';
 
 export async function createPost(title, body, media, tags) {
   const response = await fetch(`${apiPath}/social/posts/`, {
-    method: "post",
+    method: 'post',
     body: JSON.stringify({ title, body, media, tags }),
-    headers: headers("application/json"),
+    headers: headers('application/json'),
   });
 
   if (response.ok) {
