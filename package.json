@@ -7,7 +7,8 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "format": "prettier -w es-testing/test.js"
+    "format": "prettier -w es-testing/test.js",
+    "lint": "eslint es-testing/test.js"
   },
   "keywords": [],
   "author": "",
