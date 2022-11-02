@@ -1,0 +1,1 @@
+[![CI](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/static.yml/badge.svg)](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/static.yml)
