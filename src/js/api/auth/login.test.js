@@ -54,6 +54,8 @@ describe("login", () => {
     const jwtRegEx = /^(?:[\w-]*\.){2}[\w-]*$/;
     global.fetch = jest.fn(() => fetchSuccess());
     const data = await login(TEST_EMAIL, TEST_PW);
+    expect(TEST_EMAIL).toMatch("@stud.noroff.no");
+    expect(TEST_PW.length).toBeGreaterThanOrEqual(6);
     expect(data.exampleJWTToken).toMatch(jwtRegEx);
   });
 });
