@@ -1,6 +1,6 @@
 The following workflows/hooks are required:
 
-Project is configured to run Prettier on commit
+Project is configured to run Prettier on commit: Done
 
 Project is configured to run ESLint on commit
 
