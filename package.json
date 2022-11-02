@@ -8,10 +8,12 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/js/",
     "lint": "eslint src/js/",
-    "lint-fix": "eslint src/js --cache --fix",
+    "lint-fix": "eslint src/js/ --cache --fix",
     "prepare": "husky install",
-    "test": "npm run test-unit",
-    "test-unit": "jest"
+    "test": "npm run test-unit && npm run test-e2e-cli",
+    "test-unit": "jest",
+    "test-e2e": "cypress open",
+    "test-e2e-cli": "cypress run"
   },
   "keywords": [],
   "author": "",
@@ -30,13 +32,9 @@
     "prettier": "^2.7.1",
     "sass": "^1.54.8"
   },
-  "dependencies": {
-    "bootstrap-dark-5": "^1.1.3"
-  },
   "lint-staged": {
-    "*.src/js/": "prettier --write",
     "*.js": [
-      "eslint --cache --fix",
+      "eslint --fix",
       "prettier --write"
     ],
     "*.html": [
