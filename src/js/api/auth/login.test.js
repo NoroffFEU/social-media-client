@@ -65,10 +65,4 @@ describe("login", () => {
     expect(data.exampleJWTToken).toMatch(jwtRegEx3);
     expect(data.exampleJWTToken).toMatch(jwtRegEx4);
   });
-
-  // it("returns an error when failing to fetch", async () => {
-  //   global.fetch = jest.fn(() => fetchFailure());
-  //   const data = await login(1, []);
-  //   expect(response.statusText).toEqual(undefined);
-  // })
 });
