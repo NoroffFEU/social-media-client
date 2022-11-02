@@ -1,14 +1,4 @@
 import { login } from "./login";
-
-const TEST_EMAIL = "johndoe@stud.noroff.no";
-const TEST_PW = "123456789";
-const TEST_ITEM = { email: TEST_EMAIL, password: TEST_PW };
-const exampleJWTToken =
-  "eyJhbJciOiJIUzI1NiIsInR5cCI7IkpXVCJ9.eyJpZCI6ODYsIm5hbWUiOiJubmJyOSIsImVtYWlsIjoibmpicjlBc3R1ZC5ub3JvZmYubm8iLCJhdmF0YXIiOiJodHRwczovL2ltYWdlcy51bnMwaGFzaC5jb20vcGhvdG8tMTY2NzE0MzI5NzYzNC0zMWM2YzVmNzBzODE_aXhsaWI9dmItNC4wLjMmaXhpZD1Nbmd4TWpBM2ZEQjhNSHh3YUc5MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh4OCZhdXRvPWZvcm1hdCZmaXQ9Y3JvcCZ3PTY4NyZxPTgwIiwiYmFubmVyIjpudWxsLCJpYXQiOjE2NjczNDE3MjN9.HkLJEA0Vr85CGeeruRCy8ou_zOoLN-DcQmpBKnt4oLB";
-
-// const exampleBadJWTToken = "eyJhbJciOiJ57IkpXVCJ9.eyJpJ85B4oLB"
-
-// const responeObjLogin = {name: 'johndoe', email: `${TEST_EMAIL}`, banner: null, avatar: ''}
 class LocalStorageMock {
   constructor() {
     this.store = {};
@@ -33,6 +23,16 @@ class LocalStorageMock {
 
 global.localStorage = new LocalStorageMock();
 
+const TEST_EMAIL = "johndoe@stud.noroff.no";
+const TEST_PW = "123456789";
+const TEST_ITEM = {
+  name: "johndoe",
+  email: `${TEST_EMAIL}`,
+  avatar: "",
+};
+const exampleJWTToken =
+  "eyJhbJciOiJIUzI1NiIsInR5cCI7IkpXVCJ9.eyJpZCI6ODYsIm5hbWUiOiJubmJyOSIsImVtYWlsIjoibmpicjlBc3R1ZC5ub3JvZmYubm8iLCJhdmF0YXIiOiJodHRwczovL2ltYWdlcy51bnMwaGFzaC5jb20vcGhvdG8tMTY2NzE0MzI5NzYzNC0zMWM2YzVmNzBzODE_aXhsaWI9dmItNC4wLjMmaXhpZD1Nbmd4TWpBM2ZEQjhNSHh3YUc5MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh4OCZhdXRvPWZvcm1hdCZmaXQ9Y3JvcCZ3PTY4NyZxPTgwIiwiYmFubmVyIjpudWxsLCJpYXQiOjE2NjczNDE3MjN9.HkLJEA0Vr85CGeeruRCy8ou_zOoLN-DcQmpBKnt4oLB";
+
 function fetchSuccess() {
   return Promise.resolve({
     ok: true,
@@ -49,16 +49,26 @@ function fetchSuccess() {
 //     })
 // }
 
+const jwtRegEx = /^(?:[\w-]*\.){2}[\w-]*$/;
+const jwtRegEx2 = /(^[A-Za-z0-9-_]*\.[A-Za-z0-9-_]*\.[A-Za-z0-9-_]*$)/;
+const jwtRegEx3 = /(^[\w-]*\.[\w-]*\.[\w-]*$)/;
+const jwtRegEx4 = /^(?:[\w-]*\.){2}[\w-]*$/;
+
 describe("login", () => {
   it("returns a valid token when provided with valid credentials", async () => {
-    const jwtRegEx = /^(?:[\w-]*\.){2}[\w-]*$/;
     global.fetch = jest.fn(() => fetchSuccess());
     const data = await login(TEST_EMAIL, TEST_PW);
     expect(TEST_EMAIL).toMatch("@stud.noroff.no");
     expect(TEST_PW.length).toBeGreaterThanOrEqual(6);
     expect(data.exampleJWTToken).toMatch(jwtRegEx);
-    // expect(exampleBadJWTToken).toMatch(jwtRegEx);
+    expect(data.exampleJWTToken).toMatch(jwtRegEx2);
+    expect(data.exampleJWTToken).toMatch(jwtRegEx3);
+    expect(data.exampleJWTToken).toMatch(jwtRegEx4);
   });
-});
 
-// test.todo("makeshift test for login()");
+  // it("returns an error when failing to fetch", async () => {
+  //   global.fetch = jest.fn(() => fetchFailure());
+  //   const data = await login(1, []);
+  //   expect(response.statusText).toEqual(undefined);
+  // })
+});
