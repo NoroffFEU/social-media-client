@@ -1,17 +1,16 @@
 {
-  "name": "css-frameworks-ca",
+  "name": "social-media-client",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server --port=8080"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.2",
     "sass": "^1.54.8"
   },
   "dependencies": {
