@@ -1,9 +1,6 @@
-// import { save } from '../../storage';
 import { logout } from "./logout";
 import { save } from "../../storage/save";
 import { load } from "../../storage/load";
-// import { remove } from "../../storage/remove"
-// import storage from "../../storage/index"
 
 class LocalStorageMock {
   constructor() {
@@ -36,10 +33,10 @@ describe("logout", () => {
   it("clears the token from browser storage", () => {
     const key = "token";
     save(key, exampleJWTToken);
-    const currentLocalStorageToken = load(key);
-    expect(currentLocalStorageToken).toEqual(exampleJWTToken);
+    expect(load(key)).toEqual(exampleJWTToken);
+    expect(localStorage.getItem(key)).toEqual(JSON.stringify(exampleJWTToken));
     logout();
-    const TokenAfterLogout = load(key);
-    expect(TokenAfterLogout).toEqual(null);
+    expect(load(key)).toEqual(null);
+    expect(localStorage.getItem(key)).toEqual(null);
   });
 });
