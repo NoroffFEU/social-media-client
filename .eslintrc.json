@@ -7,7 +7,7 @@
     "overrides": [
       {
         "files": ["**/*.test.js"],
-        "env": { "jest": false },
+        "env": { "jest": true },
         "plugins": ["jest"],
         "extends": ["plugin:jest/recommended"],
         "rules": { "jest/prefer-expect-assertions": "off" }
@@ -15,7 +15,7 @@
 
       {
         "files": ["**/*.cy.js"],
-        "env": { "cypress/globals": false },
+        "env": { "cypress/globals": true },
         "plugins": ["cypress"],
         "extends": ["plugin:cypress/recommended"],
         "rules": {
