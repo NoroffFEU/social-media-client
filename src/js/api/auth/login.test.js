@@ -6,7 +6,7 @@ const TEST_ITEM = { email: TEST_EMAIL, password: TEST_PW };
 const exampleJWTToken =
   "eyJhbJciOiJIUzI1NiIsInR5cCI7IkpXVCJ9.eyJpZCI6ODYsIm5hbWUiOiJubmJyOSIsImVtYWlsIjoibmpicjlBc3R1ZC5ub3JvZmYubm8iLCJhdmF0YXIiOiJodHRwczovL2ltYWdlcy51bnMwaGFzaC5jb20vcGhvdG8tMTY2NzE0MzI5NzYzNC0zMWM2YzVmNzBzODE_aXhsaWI9dmItNC4wLjMmaXhpZD1Nbmd4TWpBM2ZEQjhNSHh3YUc5MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh4OCZhdXRvPWZvcm1hdCZmaXQ9Y3JvcCZ3PTY4NyZxPTgwIiwiYmFubmVyIjpudWxsLCJpYXQiOjE2NjczNDE3MjN9.HkLJEA0Vr85CGeeruRCy8ou_zOoLN-DcQmpBKnt4oLB";
 
-// const exampleBadJWTToken = "eyJhbJciOiJIUzI1NiIsInR5cCI545545454 5457Ikp  XVCJ9.eyJpZCI6ODYsIm5hbWUiOiJubmJyOSIsImVtYWlsIjoibmpicjlBc34ZmYubm8iLCJhdmF0YXIiOiJodHRwczovL2ltYWdlcy51bnMwaGFzaC5jb20vcGhvdG8tMTY2NzE0MzI5NzYzNC0zMWM2YzVmNzBzODE_aXhsaWI9dmItNC4wLjMmaXhpZD1Nbmd4TWpBM2ZEQjhNSHh3v44445MGJ5MXdZV2RsZkh4OGZHVnVmREI4Zkh4OCZhdXRvPWZvcm1hdCZmaXQ9Y3JvcCZ3PTY4NyZxPTgwIiwiYmFubmVyIjpudWxsLCJpYXQiOjE2NjczNDE3MjN9.HkLJEA0Vr85CGeeruRCy8ou_zOoLN-DcQmpB4oLB"
+// const exampleBadJWTToken = "eyJhbJciOiJ57IkpXVCJ9.eyJpJ85B4oLB"
 
 // const responeObjLogin = {name: 'johndoe', email: `${TEST_EMAIL}`, banner: null, avatar: ''}
 class LocalStorageMock {
@@ -57,6 +57,7 @@ describe("login", () => {
     expect(TEST_EMAIL).toMatch("@stud.noroff.no");
     expect(TEST_PW.length).toBeGreaterThanOrEqual(6);
     expect(data.exampleJWTToken).toMatch(jwtRegEx);
+    // expect(exampleBadJWTToken).toMatch(jwtRegEx);
   });
 });
 
