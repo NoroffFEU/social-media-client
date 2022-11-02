@@ -10,4 +10,5 @@
 ** Getting the same return `npm WARN deprecated` + `2 **high** severity vulnerabilities`
 * Using command: `npm audit fix --force`, returns ok with 0 vulnerabilities
 * `Commit` all changes
+* Installed `prettier` to `devDependencies`, using command: `npm i prettier@2.7.1 -D`
 * 
