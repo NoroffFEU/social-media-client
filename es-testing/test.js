@@ -1,3 +1,3 @@
 console.log('hi');
 
-console.log(id);
+console.log();
