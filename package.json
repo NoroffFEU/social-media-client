@@ -8,8 +8,8 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w es-testing/test.js",
-    "lint": "eslint es-testing/test.js",
-    "lint-fix": "eslint es-testing/test.js --cache --fix",
+    "lint": "eslint **/*.js",
+    "lint-fix": "eslint **/*.js --cache --fix",
     "prepare": "husky install"
   },
   "keywords": [],
