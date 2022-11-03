@@ -4,9 +4,10 @@
   "description": "Social Media Application",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test-unit && npm run test-e2e",
+    "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
     "test-e2e": "cypress open",
+    "test-e2e-cli": "cypress run",  
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
     "build": "sass src/scss:dist/css",
