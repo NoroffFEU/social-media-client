@@ -10,6 +10,12 @@ This repository is for the Workflow CA.
 
 - Installed and configured babel. Updated to version 1.1.4
 
-- Deleting jets and babel test files Updated to version 1.1.5
+- Deleting jets and babel test files. Updated to version 1.1.5
+
+- Installed and configured Cypress for testing. Updated to version 1.1.6
+
+- Configure automated-testing. Updated to version 1.1.7
+
+- Creating the test workflows for automated-testing. Updated to version 1.1.8
 
 
