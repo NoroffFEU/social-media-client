@@ -18,4 +18,6 @@ This repository is for the Workflow CA.
 
 - Creating the test workflows for automated-testing. Updated to version 1.1.8
 
+- Updated package.json. Updated to version 1.1.9.
+
 
