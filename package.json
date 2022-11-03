@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "sass src/scss:dist/css",
+    "build": "sass src/scss",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/js/",
     "lint": "eslint src/js/",
@@ -30,7 +30,8 @@
     "lint-staged": "^13.0.3",
     "live-server": "^1.2.2",
     "prettier": "^2.7.1",
-    "sass": "^1.55.0"
+    "sass": "^1.54.8",
+    "bootstrap": "^5.2.2"
   },
   "lint-staged": {
     "*.js": [
@@ -43,8 +44,5 @@
     "*.scss": [
       "prettier --write"
     ]
-  },
-  "dependencies": {
-    "bootstrap": "^5.2.2"
   }
 }
