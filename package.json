@@ -1,6 +1,6 @@
 {
   "name": "workflow-ca",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Social Media Application",
   "main": "index.js",
   "scripts": {
