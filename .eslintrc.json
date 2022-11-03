@@ -6,8 +6,8 @@
   "extends": "eslint:recommended",
   "overrides": [
     {
-      "files": ["**/*.cy.js"],
-      "env": { "cypress/globals": true },
+      "files": ["**/*.cy.js", "cypress.config.js"],
+      "env": { "cypress/globals": true, "node": true },
       "plugins": ["cypress"],
       "extends": ["plugin:cypress/recommended"],
       "rules": {
