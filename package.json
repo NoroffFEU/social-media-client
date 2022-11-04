@@ -1,7 +1,8 @@
 {
-  "name": "css-frameworks-ca",
-  "version": "1.0.0",
-  "description": "",
+  "name": "workflow-ca",
+  "version": "0.1.0",
+  "description": "example",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
@@ -11,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.26.0",
     "live-server": "^1.2.2",
     "sass": "^1.54.8"
   },
