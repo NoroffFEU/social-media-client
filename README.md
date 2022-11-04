@@ -1,10 +1,10 @@
 # Workflow CA
 
-## Test Status Badges
+## **Test Status Badges**
 
-## Project Setup
+## **Project Setup**
 
-### Code Formatters
+### **Code Formatters**
 
 This guide is done using VSC, you will need the `Prettier - Code formatter` and `ESLint` extensions installed to vsc for on save actions to work.
 
@@ -81,7 +81,7 @@ Add workspace settings for VSC, `.vscode/settings.json` (may differ for other co
 }
 ```
 
-### Unit Testing
+### **Unit Testing Packages**
 
 Install Jest
 
@@ -141,4 +141,17 @@ Create `babel.config.json` and add
 {
   "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
 }
+```
+
+### **End To End Test Packages**
+
+## **Unit Testing**
+
+Add the following test files;
+-login.test.js
+
+To run these tests use;
+
+```
+npm run test-unit
 ```
