@@ -1,6 +1,6 @@
 name: Run Prettier, ESLint and Jest on commit
 on:
-  commit:
+  push:
     branches: ['main']
 
   workflow_dispatch:
