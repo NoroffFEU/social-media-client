@@ -1,6 +1,6 @@
 {
   "name": "Social Media app Noroff",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A social media app from Noroff",
   "main": "index.js",
   "type": "module",
@@ -14,7 +14,6 @@
     "test-unit": "jest",
     "test-cypress": "npm run test-e2e",
     "test-e2e": "cypress open"
-    
   },
   "keywords": [],
   "author": "",
