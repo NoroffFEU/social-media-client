@@ -95,3 +95,36 @@ Add Jest scripts to package.json
     "test": "npm run test-unit",
     "test-unit": "jest"
 ```
+
+Install eslint plugin for Jest.
+
+```
+npm i -D eslint-plugin-jest
+```
+
+Update .eslintrc.json settings
+
+```
+{
+  "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [
+      {
+        "files": ["**/*.test.js"],
+        "env": { "jest": true },
+        "plugins": ["jest"],
+        "extends": ["plugin:jest/recommended"],
+        "rules": { "jest/prefer-expect-assertions": "off" }
+      }
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "rules": {
+    }
+}
+```
