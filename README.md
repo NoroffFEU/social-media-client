@@ -28,3 +28,34 @@ npx eslint --init
 ✔ Where does your code run? · browser
 ✔ What format do you want your config file to be in? · JSON
 ```
+
+Install Mrm, to manage pre-commit hooks.
+
+```
+npx mrm@2 lint-staged
+```
+
+Add scripts to package.json
+
+```
+scripts{
+    "format": "prettier -w src/**/*.js",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix"
+}
+```
+
+```
+"lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
+  }
+```
