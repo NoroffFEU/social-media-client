@@ -23,9 +23,11 @@
     "bootstrap-dark-5": "^1.1.3"
   },
   "lint-staged": {
-    "*.js": [
+    "**/*.js": [
       "eslint --fix",
       "prettier --write"
-    ]
+    ],
+    "**/*.html": "prettier --write",
+    "**/*.scss": "prettier --write"
   }
 }
