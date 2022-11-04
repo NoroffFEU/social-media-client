@@ -10,8 +10,9 @@
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/js/ --cache --fix",
     "prepare": "husky install",
-    "test": "npm run test-unit",
-    "test-unit": "jest"
+    "test": "npm run test-unit && npm run test-e2e-cli",
+    "test-unit": "jest",
+    "test-e2e": "cypress open"
   },
   "keywords": [],
   "author": "",
