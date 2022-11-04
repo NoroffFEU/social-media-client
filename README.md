@@ -8,14 +8,18 @@ The following workflows/hooks are required
 
 3.Project is configured to run Jest on commit: Done
 
-4.Project is configured to deploy to pages on merge to default: something is wrong A. https://noroff-content.gitlab.io/feu/workflow/intro-to-actions.html
+4.Project is configured to deploy to pages on merge to default: Done
 
 <!--  -->
 
 The following file changes are required
 
-1.Project readme file is updated to include new configuration information and status badges: grab the link you get from action
-https://noroff-content.gitlab.io/feu/workflow/intro-to-actions.html MUST FIX !!
+1.Project readme file is updated to include new configuration information and status badges:
+https://gonlonge.github.io/workflow-ca-social-media/
+
+[![Deploy static content to Pages](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/static.yml/badge.svg)](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/static.yml)
+
+[![Deploy static content to Pages](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/static.yml/badge.svg?branch=master)](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/static.yml)
 
 2.Project is configured for hosting (e.g. CDN links or a Bundler): Done
 
