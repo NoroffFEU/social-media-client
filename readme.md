@@ -1,3 +1,5 @@
+# Social media app CA
+
 ## The following workflows/hooks are required:
 
 - [ ] Project is configured to run Prettier on commit
