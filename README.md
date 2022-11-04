@@ -117,7 +117,7 @@ Update `.eslintrc.json` settings
         "env": { "jest": true },
         "plugins": ["jest"],
         "extends": ["plugin:jest/recommended"],
-        "rules": { "jest/prefer-expect-assertions": "off" }
+        "rules": { "jest/prefer-expect-assertions": "off", "no-undef": "off"  }
       }
     ],
     "parserOptions": {
