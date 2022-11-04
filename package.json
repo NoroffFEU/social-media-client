@@ -27,7 +27,8 @@
   "lint-staged": {
     "**/*.js": [
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "jest --bail"
     ],
     "**/*.html": "prettier --write",
     "**/*.scss": "prettier --write"
