@@ -3,7 +3,7 @@ describe("social media app: authenticated user", () => {
     cy.visit("https://example.cypress.io");
   });
 
-  // it("CAN validate user inputs correctly based on API restrictions", () => {
-
-  // })
+  it("CAN validate user inputs correctly based on API restrictions", () => {
+    // cy.visit("https://example.cypress.io");
+  });
 });

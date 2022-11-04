@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test-unit",
-    "test-unit": "jest",
+    "test-unit": "jest --coverage",
     "test-e2e": "cypress open",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
@@ -37,7 +37,8 @@
   "lint-staged": {
     "*.js": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --fix",
+      "jest"
     ],
     "*.html": [
       "prettier --write"
