@@ -1,0 +1,25 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "overrides": [
+    {
+      "files": ["**/*.cy.js","**/*.test.js"],
+      "env": { "cypress/globals": true,"jest": true },
+      "plugins": ["cypress","jest"],
+      "extends": ["plugin:cypress/recommended","plugin:jest/recommended"],
+      "rules": {
+        "cypress/no-unnecessary-waiting": "off",
+        "no-unused-vars": "off",
+        "jest/prefer-expect-assertions": "off"
+      }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  }
+}
