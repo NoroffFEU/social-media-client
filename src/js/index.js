@@ -4,4 +4,4 @@ import ui from './ui/index.js';
 ui();
 router();
 
-console.log('sj');
+console.log('errorr');
