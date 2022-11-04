@@ -1,5 +1,5 @@
-import { apiPath } from "../constants.js";
-import { headers } from "../headers.js";
+import { apiPath } from '../constants.js';
+import { headers } from '../headers.js';
 
 export async function getPosts(limit = 20, offset = 0) {
   const response = await fetch(
