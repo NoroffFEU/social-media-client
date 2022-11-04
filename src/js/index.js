@@ -4,4 +4,4 @@ import ui from './ui/index.js';
 ui();
 router();
 
-console.log('hello');
+console.log("hello")
