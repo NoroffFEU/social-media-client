@@ -1,10 +1,11 @@
-const jestConfig = {
-  verbose: true,
-  testURL: "http://localhost/",
-  transform: {
-    "^.+\\.jsx?$": "babel-jest",
-  },
-  testMatch: ["**/__tests__/*.js?(x)"],
-};
+// const jestConfig = {
+//   verbose: true,
+//   transform: {
+//     "^.+\\.js?$": "babel-jest",
+//   },
+//   testMatch: [
+//     '/__tests__/*.test.js',
+// ],
+// };
 
-module.exports = jestConfig;
+// module.exports = jestConfig;
