@@ -28,7 +28,7 @@
     "**/*.js": [
       "eslint --fix",
       "prettier --write",
-      "test"
+      "npm run test"
     ],
     "**/*.html": "prettier --write",
     "**/*.scss": "prettier --write"
