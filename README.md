@@ -39,7 +39,7 @@ Install Mrm, to manage pre-commit hooks.
 npx mrm@2 lint-staged
 ```
 
-Add scripts to package.json
+Add scripts to `package.json`
 
 ```
 scripts{
@@ -66,7 +66,7 @@ Replace default lint-staged scripts this.
   }
 ```
 
-Add workspace settings for VSC, may differ for other code editors.
+Add workspace settings for VSC, `.vscode/settings.json` (may differ for other code editors).
 
 ```
 {
@@ -89,7 +89,7 @@ Install Jest
 npm i -D jest@29.2.0
 ```
 
-Add Jest scripts to package.json
+Add Jest scripts to `package.json`
 
 ```
     "test": "npm run test-unit",
@@ -102,7 +102,7 @@ Install eslint plugin for Jest.
 npm i -D eslint-plugin-jest
 ```
 
-Update .eslintrc.json settings
+Update `.eslintrc.json` settings
 
 ```
 {
@@ -126,5 +126,19 @@ Update .eslintrc.json settings
     },
     "rules": {
     }
+}
+```
+
+Install Babel
+
+```
+npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4
+```
+
+Create `babel.config.json` and add
+
+```
+{
+  "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
 }
 ```
