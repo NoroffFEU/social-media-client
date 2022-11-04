@@ -150,6 +150,7 @@ Create `babel.config.json` and add
 Add the following test files;
 -login.test.js
 -logout.test.js
+-create.test.js
 
 To run these tests use;
 
