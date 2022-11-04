@@ -4,6 +4,10 @@
 
 ## Project Setup
 
+### Code Formatters
+
+This guide is done using VSC, you will need the `Prettier - Code formatter` and `ESLint` extensions installed to vsc for on save actions to work.
+
 Install Prettier.
 
 ```
@@ -58,4 +62,19 @@ scripts{
       "prettier --write"
     ]
   }
+```
+
+Add workspace settings for VSC, may differ for other code editors.
+
+```
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": [
+    "javascript"
+  ]
+}
 ```
