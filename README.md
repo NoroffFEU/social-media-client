@@ -11,7 +11,7 @@ This guide is done using VSC, you will need the `Prettier - Code formatter` and 
 Install Prettier.
 
 ```
-npm install --save-dev prettier
+npm install -D prettier
 ```
 
 Install eslint
@@ -49,6 +49,8 @@ scripts{
 }
 ```
 
+Replace default lint-staged scripts this.
+
 ```
 "lint-staged": {
     "*.js": [
@@ -77,4 +79,19 @@ Add workspace settings for VSC, may differ for other code editors.
     "javascript"
   ]
 }
+```
+
+### Unit Testing
+
+Install Jest
+
+```
+npm i -D jest@29.2.0
+```
+
+Add Jest scripts to package.json
+
+```
+    "test": "npm run test-unit",
+    "test-unit": "jest"
 ```
