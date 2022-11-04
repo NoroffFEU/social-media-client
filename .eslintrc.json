@@ -13,6 +13,8 @@
       "extends": ["plugin:cypress/recommended"],
       "rules": {
         "cypress/no-unnecessary-waiting": "off",
+        "jest/prefer-expect-assertions": "off",
+        "no-undef": "off",
         "no-unused-vars": "off"
       }
     }
