@@ -28,7 +28,7 @@ class LocalStorageMock {
 global.localStorage = new LocalStorageMock();
 
 const TEST_EMAIL = "MelZor72659@stud.noroff.no";
-const TEST_PASSWORD = "supersafepassword";
+const TEST_PASSWORD = "password";
 const TEST_USER = {
   name: "melisa_zorraindo",
   email: "MelZor72659@stud.noroff.no",
@@ -49,8 +49,8 @@ describe("login", () => {
     global.fetch = jest.fn(() => fetchSuccess());
     const user = await login(TEST_EMAIL, TEST_PASSWORD);
     const profile = JSON.stringify(user);
-    expect(TEST_EMAIL).toMatch("MelZor72659@stud.noroff.no");
-    expect(TEST_PASSWORD).toHaveLength(17);
+    expect(TEST_EMAIL).toMatch(/^[\w\-.]+@(stud.)?noroff.no$/);
+    expect(TEST_PASSWORD).toHaveLength(8);
     expect(profile).toMatch(TEST_PROFILE);
   });
 });
