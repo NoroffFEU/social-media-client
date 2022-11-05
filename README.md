@@ -1,7 +1,9 @@
 # Workflow CA
 
 ## **Test Status Badges**
+
 [![Automated Unit Testing](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml)
+
 ## **Project Setup**
 
 ### **Code Formatters**
@@ -144,15 +146,56 @@ Create `babel.config.json` and add
 ```
 
 To add pre-commit hook for Jest, `.husky/pre-commit` add to file.;
+
 ```
 npm run test-unit
 ```
 
 ### **End To End Test Packages**
 
-## **Unit Testing**
+Install Cypress and its eslint plugin;
+
+```
+npm i -D cypress@10.7.0 eslint-plugin-cypress@2.12.1
+```
+
+Update eslint settings in `.eslintrc.json`, adding this to the overrides array;
+
+```
+    {
+      "files": ["**/*.cy.js", "cypress.config.js"],
+      "env": { "cypress/globals": true },
+      "plugins": ["cypress"],
+      "extends": ["plugin:cypress/recommended"],
+      "rules": {
+        "cypress/no-unnecessary-waiting": "off",
+        "no-unused-vars": "off",
+        "no-undef": "off"
+      }
+    },
+```
+
+Add Cypress scripts to `package.json` and update "test" script to run Jest and Cypress.
+
+```
+    "test": "npm run test-unit && npm run test-e2e-cli",
+    "test-unit": "jest",
+    "test-e2e": "cypress open",
+    "test-e2e-report": "cypress run --reporter mochawesome",
+```
+
+#### \*\*Replaced Live server with Vite
+
+Due to dependency high severity vulnerabilities with live-sever we replaced it with vite
+
+```
+
+## **Tests**
+
+### **Unit Testing**
 
 Add the following test files;
+
 - login.test.js
 - logout.test.js
 - create.test.js
@@ -160,5 +203,9 @@ Add the following test files;
 To run these tests use;
 
 ```
+
 npm run test-unit
+
+```
+
 ```
