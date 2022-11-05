@@ -1,7 +1,7 @@
 # Workflow CA
 
 ## **Test Status Badges**
-
+[![Automated Unit Testing](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml)
 ## **Project Setup**
 
 ### **Code Formatters**
