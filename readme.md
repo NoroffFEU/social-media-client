@@ -10,7 +10,7 @@
 ## The following file changes are required:
 
 - [ ] Project readme file is updated to include new configuration information and status badges
-- [ ] Project is configured for hosting (e.g. CDN links or a Bundler)
+- [x] Project is configured for hosting (e.g. CDN links or a Bundler)
 
 ## The following features must be automatically tested with unit tests:
 
