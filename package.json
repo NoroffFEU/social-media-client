@@ -3,10 +3,11 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "format": "prettier -w src/js/index.js"
+    "format": "prettier -w src/js/**/*.js"
   },
   "keywords": [],
   "author": "",
