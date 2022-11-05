@@ -179,15 +179,39 @@ Add Cypress scripts to `package.json` and update "test" script to run Jest and C
 
 ```
     "test": "npm run test-unit && npm run test-e2e-cli",
-    "test-unit": "jest",
     "test-e2e": "cypress open",
     "test-e2e-report": "cypress run --reporter mochawesome",
+    "test-e2e-cli": "cypress run"
 ```
+
+The `cypress.config.js` should be present in this repo, but if setting up a new repo, you will need to run `npm run test-e2e` select "E2E Testing", accept the configuration, then select Electron to get to the Cypress testing dashboard.
 
 #### \*\*Replaced Live server with Vite
 
 Due to dependency high severity vulnerabilities with live-sever we replaced it with vite
 
+```
+npm install -D vite
+```
+
+Add scripts to `package.json`, to run the development version in a live server you use `npm run dev`, if you configure your project for use with the vite bundler you can use vite build then vite preview to view the compiled version.
+
+```
+    "dev": "vite",
+    "vite-build": "vite build",
+    "vite-preview": "vite preview"
+```
+
+If you wish to configure the port and host address you can create `vite.config.js` in your root and add this. It can be useful to specify as typically it defaults to "http://localhost:portnumber" when testing locally, where as when testing on github action it will typically use "http://127.0.0.1:portnumber", setting it up this way means your Cypress URL won't require changing.
+
+```
+export default {
+  server: {
+    port: 8080,
+    hot: true,
+    host: "127.0.0.1",
+  },
+};
 ```
 
 ## **Tests**
@@ -203,8 +227,8 @@ Add the following test files;
 To run these tests use;
 
 ```
-
 npm run test-unit
+```
 
 ```
 
