@@ -4,9 +4,11 @@
   "description": "",
   "type": "module",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
+    "format": "prettier -w src/js/**/*.js"
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix"
   },
@@ -16,6 +18,7 @@
   "devDependencies": {
     "eslint": "^8.26.0",
     "live-server": "^1.2.2",
+    "prettier": "^2.7.1",
     "sass": "^1.54.8"
   },
   "dependencies": {
