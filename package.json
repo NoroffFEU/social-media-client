@@ -6,8 +6,11 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "test": "npm run test-unit",
+    "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
+    "test-e2e": "cypress open",
+    "test-e2e-report": "cypress run --reporter mochawesome",
+    "test-e2e-cli": "cypress run",
     "format": "prettier -w src/js/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
@@ -19,7 +22,9 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
+    "cypress": "^10.7.0",
     "eslint": "^8.26.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-jest": "^27.1.4",
     "husky": "^8.0.1",
     "jest": "^29.2.0",
