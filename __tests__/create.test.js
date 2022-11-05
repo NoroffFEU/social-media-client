@@ -1,4 +1,4 @@
-import { createPost } from "../create";
+import { createPost } from "../src/js/api/posts/create";
 
 const requestObject = {
   title: "string", // Required
