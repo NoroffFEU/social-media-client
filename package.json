@@ -1,6 +1,6 @@
 {
   "name": "workflow-ca",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "To improve the quality of an existing environment by establishing useful workflows that make the development process more efficient.",
   "main": "index.js",
   "scripts": {
@@ -9,14 +9,20 @@
     "prepare": "husky install",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix"
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "test": "npm run test-unit",
+    "test-unit": "jest"
   },
   "keywords": [],
   "author": "Alexander Barrett",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
     "eslint": "^8.26.0",
+    "eslint-plugin-jest": "^27.1.4",
     "husky": "^8.0.1",
+    "jest": "^29.2.0",
     "lint-staged": "^13.0.3",
     "live-server": "^1.2.2",
     "prettier": "^2.7.1",
