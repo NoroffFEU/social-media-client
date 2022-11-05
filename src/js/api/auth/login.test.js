@@ -1,4 +1,4 @@
-import { login } from "../src/js/api/auth/login";
+import { login } from "./login";
 
 class LocalStorageMock {
   constructor() {

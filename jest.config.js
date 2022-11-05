@@ -1,13 +1,12 @@
-const jestConfig = {
-  verbose: true,
-  transform: {
-    "^.+\\.js?$": "babel-jest",
-  },
+// const jestConfig = {
+//   verbose: true,
+//   transform: {
+//     "^.+\\.js?$": "babel-jest",
+//   },
+//   testMatch: ["**/__tests__/**/*test.js"],
+// };
 
-  testMatch: ["<rootDir>/**/*test.js"],
-};
-
-module.exports = jestConfig;
+// module.exports = jestConfig;
 
 // testMatch: [
 //     '/src/js/**/*test.js',
