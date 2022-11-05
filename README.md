@@ -16,6 +16,11 @@ Fork: https://github.com/NoroffFEU/social-media-client :heavy_check_mark:
 - Project is configured to run Jest on commit
 - Project is configured to deploy to pages on merge to default
 
+###### version history:
+- v0.1.1 prettier installed & merged to workflowbranch
+- v0.1.2 eslint installed & merged to workflowbranch
+
+
 #### The following file changes are required:
 
 - Project readme file is updated to include new configuration information and status badges
