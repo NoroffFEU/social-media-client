@@ -8,12 +8,16 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "npm run test-unit",
+    "test-unit": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
     "eslint": "^8.26.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
