@@ -3,22 +3,23 @@
 
 #### Select an existing JavaScript project that has:
 
-- API calls to CRUD an item
-- API call to authenticate a user 
-- Does not belong to you
+- API calls to CRUD an item :heavy_check_mark:
+- API call to authenticate a user :heavy_check_mark:
+- Does not belong to you  :heavy_check_mark:
 
 Fork: https://github.com/NoroffFEU/social-media-client :heavy_check_mark:
 
 #### The following workflows/hooks are required:
 
-- Project is configured to run Prettier on commit
-- Project is configured to run ESLint on commit
+- Project is configured to run Prettier on commit  :heavy_check_mark:
+- Project is configured to run ESLint on commit  :heavy_check_mark:
 - Project is configured to run Jest on commit
 - Project is configured to deploy to pages on merge to default
 
 ###### version history:
 - v0.1.1 prettier installed & merged to workflowbranch
 - v0.1.2 eslint installed & merged to workflowbranch
+- v0.1.3 on-commit hooks addded
 
 
 #### The following file changes are required:
