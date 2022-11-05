@@ -75,11 +75,11 @@ npm i -D jest@29.2.0
 
 Update `package.json`: 
 
-```
-{
-  "scripts": {
+```json
+"scripts": {
     "test": "npm run test-unit",
     "test-unit": "jest"
+}
 ```
 
 To use pre-commit hook for jest, open `.husky/pre-commit` and add: 
@@ -96,7 +96,7 @@ npm i -D eslint-plugin-jest
 
 Update `.eslintrc.json`:
 
-```
+```json
 {
   "env": {
         "browser": true,
@@ -129,7 +129,8 @@ npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4
 
 Create `babel.config.json` and add: 
 
-```
+```json
 {
   "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
+}
 ```
