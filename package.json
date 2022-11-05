@@ -22,7 +22,8 @@
     "eslint": "^8.26.0",
     "live-server": "^1.2.2",
     "prettier": "^2.7.1",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "vite": "^3.2.2"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
