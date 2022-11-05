@@ -41,8 +41,8 @@ npx mrm@2 lint-staged
 
 Add scripts to the `package.json` file:
 
-```
-scripts{
+```json
+"scripts": {
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix"
@@ -51,7 +51,7 @@ scripts{
 
 Update `lint-staged` in `package.json`:
 
-```
+```json
 "lint-staged": {
   "*.js": [
     "eslint --fix",
