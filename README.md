@@ -143,6 +143,11 @@ Create `babel.config.json` and add
 }
 ```
 
+To add pre-commit hook for Jest, `.husky/pre-commit` add to file.;
+```
+npm run test-unit
+```
+
 ### **End To End Test Packages**
 
 ## **Unit Testing**
