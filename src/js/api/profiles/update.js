@@ -17,4 +17,3 @@ export async function updateProfileImage(avatar) {
 
   throw new Error(response.statusText);
 }
-
