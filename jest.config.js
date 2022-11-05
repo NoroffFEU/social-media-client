@@ -1,13 +1,13 @@
-// const jestConfig = {
-//   verbose: true,
-//   transform: {
-//     "^.+\\.js?$": "babel-jest",
-//   },
-//   testMatch: ["**/__tests__/**/*test.js"],
-// };
+const jestConfig = {
+  //   verbose: true,
+  pageLoadTimeout: 10000,
+  //   transform: {
+  //     "^.+\\.js?$": "babel-jest",
+  //   },
+  //   testMatch: ["**/__tests__/**/*test.js"],
+};
 
+// Cypress.config('pageLoadTimeout', 100000)
 // module.exports = jestConfig;
-
-// testMatch: [
-//     '/src/js/**/*test.js',
+// '/src/js/**/*test.js',
 // ],

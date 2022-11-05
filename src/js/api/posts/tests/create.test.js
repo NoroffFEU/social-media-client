@@ -1,4 +1,4 @@
-import { createPost } from "./create";
+import { createPost } from "../create";
 
 const requestObject = {
   title: "string", // Required

@@ -38,7 +38,7 @@
     "*.js": [
       "prettier --write",
       "eslint --fix",
-      "jest --coverage"
+      "jest --findRelatedTests --coverage"
     ],
     "*.html": [
       "prettier --write"

@@ -61,28 +61,26 @@ describe("Social media app: Login functionality with VALID information", () => {
   //   expect(localStorage.getItem("token")).to.not.be.null;
   // });
 
-  it("CREATE post form validates user inputs correctly based on API restrictions", () => {
-    cy.get(".btn-outline-success")
-      .should("be.visible")
-      .contains("New Post")
-      .click({ force: true });
-    cy.wait(600);
-    const milisecond = Date.now();
-    cy.get("#postTitle").should("be.visible").type(`cypress${milisecond}`);
-    cy.get("#postTags").should("be.visible").type(`cypress${milisecond}`);
-    cy.get("#postMedia")
-      .should("be.visible")
-      .type(
-        "https://conteudo.imguol.com.br/c/noticias/ef/2019/11/08/andras-arato-ficou-conhecido-como-hide-pain-harold-por-causa-de-seu-sorriso-nervoso-1573231062755_v2_900x506.jpg"
-      );
-    cy.wait(2000);
-    cy.get("#postBody").should("be.visible").type(`cypress${milisecond}`);
-    cy.get("#postForm [data-action='submit']").should("be.visible").click();
-    // cy.wait()
-    // cy.get("#postForm [data-action='submit']").should("not.be.visible")
-    cy.url().should("not.include", "/?view=post");
-    cy.get(`.post .m-0`);
-  });
+  // it("CREATE post form validates user inputs correctly based on API restrictions", () => {
+  //   cy.get(".btn-outline-success")
+  //     .should("be.visible")
+  //     .contains("New Post")
+  //     .click({ force: true });
+  //   cy.wait(600);
+  //   const milisecond = Date.now();
+  //   cy.get("#postTitle").should("be.visible").type(`cypress${milisecond}`);
+  //   cy.get("#postTags").should("be.visible").type(`cypress${milisecond}`);
+  //   cy.get("#postMedia")
+  //     .should("be.visible")
+  //     .type(
+  //       "https://conteudo.imguol.com.br/c/noticias/ef/2019/11/08/andras-arato-ficou-conhecido-como-hide-pain-harold-por-causa-de-seu-sorriso-nervoso-1573231062755_v2_900x506.jpg"
+  //     );
+  //   cy.wait(2000);
+  //   cy.get("#postBody").should("be.visible").type(`cypress${milisecond}`);
+  //   cy.get("#postForm [data-action='submit']").should("be.visible").click();
+  //   cy.wait(10000)
+  //   cy.get(`.btn-danger`).should("be.visible").contains("Delete");
+  // });
 });
 
 // !!INVALID INFORMATION

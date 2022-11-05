@@ -1,6 +1,6 @@
-import { logout } from "./logout";
-import { save } from "../../storage/save";
-import { load } from "../../storage/load";
+import { logout } from "../logout";
+import { save } from "../../../storage/save";
+import { load } from "../../../storage/load";
 
 class LocalStorageMock {
   constructor() {
