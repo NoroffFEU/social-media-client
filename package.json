@@ -10,7 +10,10 @@
     "format": "prettier -w src/js/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev": "vite",
+    "vite-build": "vite build",
+    "vite-preview": "vite preview"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +22,8 @@
     "eslint": "^8.26.0",
     "live-server": "^1.2.2",
     "prettier": "^2.7.1",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "vite": "^3.2.2"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
