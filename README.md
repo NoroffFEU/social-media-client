@@ -1,4 +1,4 @@
-# Workflow CA 
+# Workflow Course Assignment 
 
 ## Info 
 Course assignment at Noroff. The purpose of this assignment is to improve an existing working environment, with useful workflows to speed up the development process. 
@@ -65,5 +65,71 @@ Update `lint-staged` in `package.json`:
   ]
 }
 ```
+## Unit testing 
 
+Install Jest: 
 
+```
+npm i -D jest@29.2.0
+```
+
+Update `package.json`: 
+
+```
+{
+  "scripts": {
+    "test": "npm run test-unit",
+    "test-unit": "jest"
+```
+
+To use pre-commit hook for jest, open `.husky/pre-commit` and add: 
+
+```
+npm run test-unit
+```
+
+Install ESLint plugin:
+
+```
+npm i -D eslint-plugin-jest
+```
+
+Update `.eslintrc.json`:
+
+```
+{
+  "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [
+      {
+        "files": ["**/*.test.js"],
+        "env": { "jest": true },
+        "plugins": ["jest"],
+        "extends": ["plugin:jest/recommended"],
+        "rules": { "jest/prefer-expect-assertions": "off" }
+      }
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "rules": {
+    }
+}
+```
+
+Install Babel: 
+
+```
+npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4
+```
+
+Create `babel.config.json` and add: 
+
+```
+{
+  "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
+```
