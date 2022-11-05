@@ -9,7 +9,7 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/js/**/*.js",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "lint-fix": "eslint src/**/*.js --fix",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -26,8 +26,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "eslint --fix"
     ],
     "*.html": [
       "prettier --write"
