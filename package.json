@@ -1,10 +1,9 @@
 {
   "name": "workflow-ca",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "",
   "type": "module",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
