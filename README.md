@@ -5,8 +5,13 @@ Course assignment at Noroff. The purpose of this assignment is to improve an exi
 
 ## Project setup 
 
-Install Prettier: 
-`npm install -D prettier`
+Install Prettier:
+```
+npm install; -D prettier
+```
 
 Install ESLint:
-`npm install eslint --save-dev`
+
+```
+npm install eslint --save-dev
+```
