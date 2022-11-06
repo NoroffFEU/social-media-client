@@ -40,7 +40,7 @@
       "no-undef": "off"
     }
 }
-
+````
 ## cypress.config.js
 
 /* global _:readonly */
@@ -55,5 +55,4 @@ module.exports = defineConfig({
     },
   },
 });
-
-## test
+````
