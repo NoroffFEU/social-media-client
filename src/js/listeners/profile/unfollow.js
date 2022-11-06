@@ -1,4 +1,4 @@
-import { unfollowProfile } from "../../api/profiles/index.js";
+import { unfollowProfile } from '../../api/profiles/index.js';
 
 export async function unfollowListener(event) {
   const button = event.srcElement;
@@ -6,6 +6,6 @@ export async function unfollowListener(event) {
 
   if (name) {
     await unfollowProfile(name);
-    location.reload()
+    location.reload();
   }
 }
