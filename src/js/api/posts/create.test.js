@@ -29,6 +29,16 @@ function fetchSuccess() {
   });
 }
 
+function fetchFailure(status = 404, statusText = " ") {
+  return Promise.resolve({
+    ok: false,
+    status,
+    statusText,
+  });
+}
+
+const TEST_MEDIA_FAIL = 15;
+
 //source: https://stackoverflow.com/questions/62564800/how-to-assert-data-type-with-jest
 describe("createPost", () => {
   it("Returns a new post data", async () => {
@@ -40,5 +50,25 @@ describe("createPost", () => {
     expect(typeof TEST_MEDIA).toBe("string");
     expect(Array.isArray(TEST_TAGS)).toBe(true);
     expect(post).toMatch(MOCK_POST);
+  });
+
+  it("Returns an HTTP 400 error when provided with an invalid type of media", async () => {
+    global.fetch = jest.fn(() => fetchFailure());
+    const data = await createPost(
+      TEST_TITLE,
+      TEST_BODY,
+      TEST_MEDIA_FAIL,
+      TEST_TAGS
+    );
+    const response = JSON.stringify(data);
+    expect(typeof TEST_MEDIA_FAIL).not.toBe("string");
+    expect(response).toEqual(undefined);
+  });
+
+  it("Returns an HTTP 404 error when api url is wrong", async () => {
+    global.fetch = jest.fn(() => fetchFailure());
+    const data = await createPost(TEST_TITLE, TEST_BODY, TEST_MEDIA, TEST_TAGS);
+    const response = JSON.stringify(data);
+    expect(response).toEqual(undefined);
   });
 });
