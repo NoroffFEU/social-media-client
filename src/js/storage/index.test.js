@@ -1,5 +1,4 @@
 import { login } from '../api/auth/login.js';
-import { createPost } from '../api/posts/create.js';
 import { save, load, remove } from '../storage/index.js';
 
 class LocalStorageMock {
@@ -31,13 +30,6 @@ const validLoginCredentials = {
   password: '1234512345',
 };
 
-const postItem = {
-  title: 'Title',
-  body: 'Body text',
-  media: 'https://picsum.photos/id/237/200/300',
-  tags: ['example-tag'],
-};
-
 function fetchSuccess(status = 200) {
   return Promise.resolve({
     ok: true,
@@ -46,24 +38,16 @@ function fetchSuccess(status = 200) {
   });
 }
 
-function createPostSuccess(status = 201) {
-  return Promise.resolve({
-    ok: true,
-    status,
-    json: () => Promise.resolve(postItem),
-  });
-}
-
-describe('login', () => {
-  it('Successful login', async () => {
+describe('Login', () => {
+  it('logs user in with valid credentials', async () => {
     global.fetch = jest.fn(() => fetchSuccess());
     const item = await login();
     expect(item).toEqual(validLoginCredentials);
   });
 });
 
-describe('Token in localstorage', () => {
-  it('Save array to localStorage', () => {
+describe('Data in localStorage', () => {
+  it('saves array to localStorage', () => {
     const key = 'token';
     const value = ['email', 'password'];
     const serializedValue = JSON.stringify(value);
@@ -71,38 +55,21 @@ describe('Token in localstorage', () => {
     expect(localStorage.getItem(key)).toEqual(serializedValue);
   });
 
-  it('Loads array from local storage', () => {
+  it('loads array from localStorage', () => {
     const key = 'token';
     const value = ['email', 'password'];
     save(key, value);
     expect(load(key)).toEqual(value);
   });
-
-  //   it('Removes array from storage', () => {
-  //     const key = 'token';
-  //     const value = ['email', 'password'];
-  //     save(key, value);
-  //     expect(load(key)).toEqual(value);
-  //     remove(key);
-  //     expect(load(key)).toEqual(null);
-  //   });
 });
 
-describe('Log out user by removing token', () => {
-  it('Removes array from storage', () => {
+describe('Logs out user by removing data from localStorage', () => {
+  it('removes array from storage', () => {
     const key = 'token';
     const value = ['email', 'password'];
     save(key, value);
     expect(load(key)).toEqual(value);
     remove(key);
     expect(load(key)).toEqual(null);
-  });
-});
-
-describe('Create post', () => {
-  it('creates successfull post', async () => {
-    global.fetch = jest.fn(() => createPostSuccess());
-    const item = await createPost();
-    expect(item).toEqual(postItem);
   });
 });
