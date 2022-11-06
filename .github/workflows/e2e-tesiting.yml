@@ -11,7 +11,7 @@ jobs:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@main
 
-      - name: run cypress tests with electron
+      - name: run cypress tests with firefox
         uses: cypress-io/github-action@v4
         with:
           browser: firefox
