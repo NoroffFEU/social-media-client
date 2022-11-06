@@ -193,9 +193,16 @@ Add Cypress scripts to `package.json` and update "test" script to run Jest and C
 
 The `cypress.config.js` should be present in this repo, but if setting up a new repo, you will need to run `npm run test-e2e` select "E2E Testing", accept the configuration, then select Electron to get to the Cypress testing dashboard.
 
+Add to `.gitignore` to avoid uploads of videos and screenshots from cypress;
+
+```
+/cypress/screenshots
+/cypress/videos
+```
+
 #### **Replaced Live server with Vite**
 
-Due to dependency high severity vulnerabilities with live-sever we replaced it with vite
+Due to 3 dependencies with high severity vulnerabilities I replaced live-sever with vite
 
 ```
 npm install -D vite
@@ -248,7 +255,7 @@ module.exports = defineConfig({
 });
 ```
 
-Create `.env` file in root and add, filling iy with your own details for Cypress testing
+Create `.env` file in root and add, filling it with your own details for Cypress testing
 
 ```
 PASSWORD=PASSWORD
@@ -260,6 +267,8 @@ Add `.env` to `.gitignore` file, should now be;
 ```
 /node_modules
 /dist
+/cypress/screenshots
+/cypress/videos
 .env
 ```
 
@@ -281,6 +290,20 @@ npm run test-unit
 
 ### **End To End Testing, Cypress**
 
+Added the following end to end test files for Cypress
+-login.cy.js
+-logout.cy.js
+-createPost.cy.js
+Before running Cypress tests ensure you are running your local server with vite using `npm run dev`.
+
+These can be run through the Cypress interface using
+
+```
+npm run test-e2e
 ```
 
+Alternatively they can be run in the command line using
+
+```
+npm run test-e2e-cli
 ```
