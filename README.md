@@ -1,4 +1,8 @@
-[![CI](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/static.yml/badge.svg)](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/static.yml)
+[![Automated Unit Testing](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/unit-testing.yml/badge.svg)](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/unit-testing.yml)
+
+[![Automated end-to-end Testing](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/e2e-tesiting.yml/badge.svg)](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/e2e-tesiting.yml)
+
+[![Deploy static content to Pages](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/builddeploy.yml/badge.svg)](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/builddeploy.yml)
 
 ## .eslintrc.json config1
 ````
