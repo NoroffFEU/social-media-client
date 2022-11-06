@@ -1,4 +1,4 @@
-name: Automated End-to-end Testing
+name: Automated end-to-end Testing
 on: 
   - pull_request
   - workflow_dispatch
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@main
 
-      - name: run cypress tests with firefox
+      - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
         with:
-          browser: firefox
+          browser: electron
