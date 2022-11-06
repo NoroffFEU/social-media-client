@@ -8,10 +8,10 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/**/*.js",
-    "test": "npm run test-unit",
-    "test-unit": "jest",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
+    "test": "npm run test-unit",
+    "test-unit": "jest",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -33,7 +33,13 @@
   "lint-staged": {
     "*.js": [
       "prettier --write",
-      "eslint --cache --fix"
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
     ]
   }
 }
