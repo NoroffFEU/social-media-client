@@ -2,8 +2,10 @@ import { logout } from "./logout";
 
 const TEST_TOKEN = "access";
 const TEST_USER = {
-  name: "Shaindal",
+  avatar: "https://picsum.photos/id/718/2274/1440",
+  banner: null,
   email: "TestGuy56@noroff.no",
+  name: "Shaindal",
 };
 
 /**
@@ -37,10 +39,8 @@ global.localStorage = new LocalStorageMock();
 
 describe("logout", () => {
   it("Removes all stored data in localStorage when logout is clicked", () => {
-    localStorage.setItem("profile", JSON.stringify(TEST_USER));
-    localStorage.setItem("token", JSON.stringify(TEST_TOKEN));
     logout();
-    expect(localStorage.getItem("profile")).toEqual(null);
     expect(localStorage.getItem("token")).toEqual(null);
+    expect(localStorage.getItem("profile")).toEqual(null);
   });
 });
