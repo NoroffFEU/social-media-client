@@ -59,4 +59,13 @@ describe("social media app", () => {
       .should("be.visible")
       .click();
   });
+
+  it("The logout button logs the user out when clicked", () => {
+    cy.get(
+      "header > div.container-fluid > div.d-flex > div.text-end > :nth-child(1)"
+    )
+      .should("have.class", "btn-outline-warning")
+      .should("be.visible")
+      .click();
+  });
 });
