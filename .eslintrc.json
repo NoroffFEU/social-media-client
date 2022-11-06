@@ -20,5 +20,10 @@
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
+  },
+  "rules": {
+    "jest/prefer-expect-assertions": "off",
+    "no-undef": "off",
+    "no-unused-vars": "off"
   }
 }
