@@ -4,7 +4,91 @@
 
 [![Automated Unit Testing](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml)
 
-## **Project Setup**
+## **Repo Install**
+
+Download the repo and setup in your chosen destination, open project file in your code editor.
+
+Initialise git in the project folder to avoid errors related to husky setup.
+
+```
+git init
+```
+
+Install dependencies
+
+```
+npm i
+```
+
+Build CSS files from SASS
+
+```
+npm run build
+```
+
+To view the site using vite live server
+
+```
+npm run dev
+```
+
+Then proceed to `http://127.0.0.1:8080/` in your browser.
+
+## **Tests**
+
+### **Unit Testing, Jest**
+
+Added the following test files;
+
+- login.test.js
+  - Tests successful login
+  - Tests unsuccessful login
+- logout.test.js
+  - Test logout function.
+- create.test.js
+  - Tests successful post creation
+  - Tests bad request unsuccessful post creation
+  - Tests Unauthorized unsuccessful post creation
+
+To run these tests use;
+
+```
+npm run test-unit
+```
+
+### **End To End Testing, Cypress**
+
+Added the following end to end test files for Cypress
+
+- login.cy.js
+  1. Tests login with valid credentials
+  2. Tests login error handling with invalid email
+  3. Tests login error handling with invalid password length
+  4. Tests login error handling with invalid password
+- logout.cy.js
+  1. Tests logout
+- createPost.cy.js
+  1. Tests user can create a post
+  2. Tests form validates URL input on attempted submission
+  3. Tests an empty form can't be submitted
+  4. Tests a title is required
+  5. Tests the handling for thrown errors
+
+Before running Cypress tests ensure you are running your local server with vite using `npm run dev`.
+
+These can be run through the Cypress interface using
+
+```
+npm run test-e2e
+```
+
+Alternatively they can be run in the command line using
+
+```
+npm run test-e2e-cli
+```
+
+## **Complete Project Setup and Configuration**
 
 Create `.gitignore` and add, to ensure your not uploading large node_modules to your github repo.
 
@@ -216,7 +300,7 @@ Add scripts to `package.json`, to run the development version in a live server y
     "vite-preview": "vite preview"
 ```
 
-If you wish to configure the port and host address you can create `vite.config.js` in your root and add this. It can be useful to specify as typically it defaults to "http://localhost:portnumber" when testing locally, where as when testing on github action it will typically use "http://127.0.0.1:portnumber", setting it up this way means your Cypress URL won't require changing, unless you test against a hosted version.
+If you wish to configure the port and host address you can create `vite.config.js` in your root and add this. It can be useful to specify as typically it defaults to `http://localhost:portnumber` when testing locally, where as when testing on github action it will typically use `http://127.0.0.1:portnumber`, setting it up this way means your Cypress URL won't require changing, unless you test against a hosted version. Your url will be ``http://127.0.0.1:8080`.
 
 ```
 export default {
@@ -270,40 +354,4 @@ Add `.env` to `.gitignore` file, should now be;
 /cypress/screenshots
 /cypress/videos
 .env
-```
-
-## **Tests**
-
-### **Unit Testing, Jest**
-
-Add the following test files;
-
-- login.test.js
-- logout.test.js
-- create.test.js
-
-To run these tests use;
-
-```
-npm run test-unit
-```
-
-### **End To End Testing, Cypress**
-
-Added the following end to end test files for Cypress
--login.cy.js
--logout.cy.js
--createPost.cy.js
-Before running Cypress tests ensure you are running your local server with vite using `npm run dev`.
-
-These can be run through the Cypress interface using
-
-```
-npm run test-e2e
-```
-
-Alternatively they can be run in the command line using
-
-```
-npm run test-e2e-cli
 ```
