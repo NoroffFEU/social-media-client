@@ -1,6 +1,6 @@
 {
   "name": "workflow-ca",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "To improve the quality of an existing environment by establishing useful workflows that make the development process more efficient.",
   "main": "index.js",
   "scripts": {
