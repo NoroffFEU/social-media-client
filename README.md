@@ -1,8 +1,8 @@
 [![CI](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/static.yml/badge.svg)](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/static.yml)
 
-## .eslintrc.json config
-
-{g
+## .eslintrc.json config1
+````
+{
     "env": {
         "browser": true,
         "es2021": true
@@ -37,8 +37,11 @@
     }
 }
 
-## cypress.config.js config
+## cypress.config.js config`
+
 /* global _:readonly */
+
+````
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
