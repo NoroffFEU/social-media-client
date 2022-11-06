@@ -6,6 +6,13 @@
 
 ## **Project Setup**
 
+Create `.gitignore` and add, to ensure your not uploading large node_modules to your github repo.
+
+```
+/node_modules
+/dist
+```
+
 ### **Code Formatters**
 
 This guide is done using VSC, you will need the `Prettier - Code formatter` and `ESLint` extensions installed to vsc for on save actions to work.
@@ -186,7 +193,7 @@ Add Cypress scripts to `package.json` and update "test" script to run Jest and C
 
 The `cypress.config.js` should be present in this repo, but if setting up a new repo, you will need to run `npm run test-e2e` select "E2E Testing", accept the configuration, then select Electron to get to the Cypress testing dashboard.
 
-#### \*\*Replaced Live server with Vite
+#### **Replaced Live server with Vite**
 
 Due to dependency high severity vulnerabilities with live-sever we replaced it with vite
 
@@ -202,7 +209,7 @@ Add scripts to `package.json`, to run the development version in a live server y
     "vite-preview": "vite preview"
 ```
 
-If you wish to configure the port and host address you can create `vite.config.js` in your root and add this. It can be useful to specify as typically it defaults to "http://localhost:portnumber" when testing locally, where as when testing on github action it will typically use "http://127.0.0.1:portnumber", setting it up this way means your Cypress URL won't require changing.
+If you wish to configure the port and host address you can create `vite.config.js` in your root and add this. It can be useful to specify as typically it defaults to "http://localhost:portnumber" when testing locally, where as when testing on github action it will typically use "http://127.0.0.1:portnumber", setting it up this way means your Cypress URL won't require changing, unless you test against a hosted version.
 
 ```
 export default {
@@ -214,9 +221,51 @@ export default {
 };
 ```
 
+#### **Add dotenv for use in cypress**
+
+Install dotenv
+
+```
+npm install -D dotenv
+```
+
+Modify the `cypress.config.js` to match this setup to import .env variables which can be called in tests using Cypress.env("key").
+
+```
+require("dotenv").config();
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {
+      config.env = {
+        ...process.env,
+        ...config.env,
+      };
+      return config;
+    },
+  },
+});
+```
+
+Create `.env` file in root and add, filling iy with your own details for Cypress testing
+
+```
+PASSWORD=PASSWORD
+EMAIL=EXAMPLE@NOROFF.NO
+```
+
+Add `.env` to `.gitignore` file, should now be;
+
+```
+/node_modules
+/dist
+.env
+```
+
 ## **Tests**
 
-### **Unit Testing**
+### **Unit Testing, Jest**
 
 Add the following test files;
 
@@ -229,6 +278,8 @@ To run these tests use;
 ```
 npm run test-unit
 ```
+
+### **End To End Testing, Cypress**
 
 ```
 
