@@ -7,6 +7,6 @@ export async function reactionListener(event) {
 
   if (postId && symbol) {
     await react(postId, symbol);
-    location.reload()
+    location.reload();
   }
 }
