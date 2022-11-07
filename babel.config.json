@@ -1,0 +1,4 @@
+//from module 3
+{
+    "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
+  }
