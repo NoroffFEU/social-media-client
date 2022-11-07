@@ -26,6 +26,6 @@ This repository is for the Workflow CA.
 
 - Updated to version 1.1.11
 
-- Unit-testing successful. Updated to version 1.1.12
+- Unit-testing done successfully. Updated to version 1.1.12
 
 
