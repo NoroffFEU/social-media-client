@@ -20,7 +20,9 @@ CA workflow
 
 - Lager ny dev-dependency med (npm install --save-dev jest)
 
-- La til ""amd": true" i .eslintrc.jason for å få bruke defined og require
+- La til " "amd": true, "jest": true, "node": true " i .eslintrc.jason fordi det kom error om at disse ikke var defined. Google sa dette kunne løses slik. 
+
+
 
 
 
