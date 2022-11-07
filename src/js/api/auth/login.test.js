@@ -52,7 +52,7 @@ function loginSuccessful() {
 }
 
 /**
- * Unsuccessful mock login
+ *  Unsuccessful mock login
  */
 
 function loginUnsuccessful() {
