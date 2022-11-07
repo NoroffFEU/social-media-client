@@ -140,7 +140,7 @@ npx mrm@2 lint-staged
 
 Add scripts to `package.json`
 
-```json
+```
 scripts{
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
@@ -307,7 +307,7 @@ Add scripts to `package.json`, to run the development version in a live server y
 
 If you wish to configure the port and host address you can create `vite.config.js` in your root and add this. It can be useful to specify as typically it defaults to `http://localhost:portnumber` when testing locally, where as when testing on github action it will typically use `http://127.0.0.1:portnumber`, setting it up this way means your Cypress URL won't require changing, unless you test against a hosted version. Your url will be ``http://127.0.0.1:8080`.
 
-```json
+```
 export default {
   server: {
     port: 8080,
