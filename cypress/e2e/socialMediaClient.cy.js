@@ -30,7 +30,7 @@ describe("social media app", () => {
   });
 
   it("the create item form validates user inputs correctly based on API restrictions", () => {
-    cy.wait(1500);
+    cy.wait(3000);
     cy.get(
       "footer > div.container-fluid > div.row > :nth-child(2) > div#footerActions > :nth-child(2)"
     )
@@ -58,6 +58,16 @@ describe("social media app", () => {
     cy.get("form#postForm > :nth-child(1) > button")
       .should("be.visible")
       .click();
+
+    cy.wait(15000);
+    cy.url().should("include", "view=post&postId=");
+
+    cy.get(
+      "main > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(3) > :nth-child(1) > button.btn-danger"
+    )
+      .should("be.visible")
+      .click();
+    cy.wait(10000);
   });
 
   it("The logout button logs the user out when clicked", () => {
