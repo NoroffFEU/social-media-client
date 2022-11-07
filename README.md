@@ -34,3 +34,13 @@ by removing ${id} and adding ${me.name}/media instead, then
 the commit worked fine.
 ----
 
+
+-Install Jest as a dev-Dependency with (npm install --save-dev jest)
+
+-Added "amd": true , "jest": true,
+    "node": true to .eslintrc.json file to use defined and require.
+Also added :   "files": [
+                "jest.test.js",
+                "./src/js/jest.js"
+            ] 
+in overides in same file. I came to this solution by googling every error
