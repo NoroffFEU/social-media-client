@@ -17,6 +17,7 @@ CA workflow
 - sjekker prettier med npx prettier -c src
 - kjører prettier med npx prettier -w src
 - npx mrm@2 lint-staged (setter opp pre-commit hooks) (funker ikke. får mld at den ikke klarer å installer husky)
+- 
 
 
 
