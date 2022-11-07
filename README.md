@@ -36,6 +36,8 @@ npm run dev
 
 Then proceed to `http://127.0.0.1:8080/` in your browser.
 
+If you wish to run Cypress tests create a .env file and match the .env.example file layout filling in your own user details
+
 ## **Tests**
 
 ### **Unit Testing, Jest**
