@@ -4,6 +4,7 @@ describe("Create Post", () => {
     cy.visit("/");
     cy.wait(500);
     cy.get(".btn-close:visible").click();
+    cy.wait(500);
     cy.get("button[data-auth='login']:visible").click();
     cy.wait(500);
     cy.get("input[type='email']:visible")
