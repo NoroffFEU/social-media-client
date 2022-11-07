@@ -7,7 +7,7 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "format": "prettier -w src/js/**/*.js",
+    "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
     "test": "npm run test-unit",
@@ -34,9 +34,9 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --cache --fix",
       "prettier --write",
-      "jest --findRelatedTests"
+      "eslint --cache --fix",
+      "jest --passWithNoTests"
     ],
     "*.html": [
       "prettier --write"
