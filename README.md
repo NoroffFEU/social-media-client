@@ -24,4 +24,6 @@ This repository is for the Workflow CA.
 
 - [![Deploy static content to Pages](https://github.com/RobertDacian/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/RobertDacian/social-media-client/actions/workflows/pages.yml)
 
+- Updated to version 1.1.11
+
 
