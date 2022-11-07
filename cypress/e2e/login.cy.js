@@ -9,6 +9,7 @@ describe("Authentication", () => {
     cy.wait(500);
     // gets the currently showing close button
     cy.get(".btn-close:visible").click();
+    cy.wait(500);
     cy.get("button[data-auth='login']:visible").click();
     cy.wait(500);
     cy.get("input[type='email']:visible")
@@ -31,6 +32,7 @@ describe("Authentication", () => {
     cy.wait(500);
     // gets the currently showing close button
     cy.get(".btn-close:visible").click();
+    cy.wait(500);
     cy.get("button[data-auth='login']:visible").click();
     cy.wait(500);
     cy.get("input[type='email']:visible")
@@ -49,6 +51,7 @@ describe("Authentication", () => {
     cy.wait(500);
     // gets the currently showing close button
     cy.get(".btn-close:visible").click();
+    cy.wait(500);
     cy.get("button[data-auth='login']:visible").click();
     cy.wait(500);
     cy.get("input[type='email']:visible")
@@ -67,6 +70,7 @@ describe("Authentication", () => {
     cy.wait(500);
     // gets the currently showing close button
     cy.get(".btn-close:visible").click();
+    cy.wait(500);
     cy.get("button[data-auth='login']:visible").click();
     cy.wait(500);
     cy.get("input[type='email']:visible")
