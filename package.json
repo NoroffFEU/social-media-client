@@ -37,8 +37,8 @@
   "homepage": "https://github.com/marthebull/workflow-CA-07-11-2022#readme",
   "lint-staged": {
     "*.js": [
-      "eslint --cache --fix",
-      "prettier --write"
+      "prettier --write",
+      "eslint --cache --fix"
     ],
     "*.html": [
       "prettier --write"
@@ -47,16 +47,5 @@
       "prettier --write"
     ],
     "*.src": "prettier --write"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.js": [
-      "eslint", 
-      "prettier --write"
-    ]
   }
 }
