@@ -6,6 +6,6 @@ export async function unfollowListener(event) {
 
   if (name) {
     await unfollowProfile(name);
-    location.reload()
+    location.reload();
   }
 }
