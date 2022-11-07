@@ -41,3 +41,50 @@ Add Jest scripts to package.json:
     "test-unit": "jest",
   }
 ```
+
+Installing Mrm to manage pre-commit hooks:
+
+```
+npx mrm@2 lint-staged
+```
+
+Add scripts to package.json
+
+```
+"scripts": {
+    "format": "prettier -w src/js/",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+}
+```
+
+```
+"lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write",
+      "jest --findRelatedTests"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ],
+    "*.src/js/": "prettier --write"
+  }
+```
+
+Install Babel
+
+```
+npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4
+```
+
+Create `babel.config.json` file and add the following:
+
+```
+{
+  "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
+}
+```
