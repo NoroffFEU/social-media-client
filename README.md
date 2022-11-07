@@ -11,12 +11,13 @@ CA workflow
 (Har 3 high severity vaulnerabilities nå, hatt siden start)
 
 - npm install --save-dev prettier (installere prettier som dev-dependency)
--npm install eslint --save-dev (installerer eslint som dev-dependency)
+- npm install eslint --save-dev (installerer eslint som dev-dependency)
 - initialize eslint with npx eslint --init
 
 - sjekker prettier med npx prettier -c src
 - kjører prettier med npx prettier -w src
-- npx mrm@2 lint-staged (setter opp pre-commit hooks)
+- npx mrm@2 lint-staged (setter opp pre-commit hooks) (funker ikke. får mld at den ikke klarer å installer husky)
+
 
 
 
