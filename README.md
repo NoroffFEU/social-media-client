@@ -31,10 +31,10 @@ Elements to install:
 - [Babel](#babel)
 - [Cypress](#cypress)
 - [mrm](#mrm)
-- [vite](#vite)
+- [Vite](#vite)
 
 
-#### Prettier
+### Prettier
 
 Install
 ```md
@@ -46,7 +46,7 @@ Update package.json scripts
   "format": "prettier -w src/js/**/*.js",
 ```
 
-#### Eslint
+### Eslint
 
 Install
 ```md
@@ -60,7 +60,7 @@ npx eslint --init
 
 Recommended answers:
 ```md
-	✔ How would you like to use ESLint? · problems
+  ✔ How would you like to use ESLint? · problems
   ✔ What type of modules does your project use? · esm
   ✔ Which framework does your project use? · none
   ✔ Does your project use TypeScript? · No
@@ -74,7 +74,7 @@ Update package.json scripts:
 "lint-fix": "eslint src/**/*.js --cache --fix",
 ```
 
-#### Jest
+### Jest
 
 Install
 ```md
@@ -118,7 +118,7 @@ Update .eslintrc.json
   }
 ```
 
-#### Babel
+### Babel
 
 Install
 ```md
@@ -132,7 +132,7 @@ Create babel.config.json and add
 }
 ```
 
-#### Cypress
+### Cypress
 
 Install
 ```md
@@ -189,7 +189,7 @@ Update package.json scripts
 "test-e2e-cli": "cypress run",
 ```
 
-#### mrm
+### mrm
 This configuration creates pre-commit hooks for 
 - prettier
 - eslint
@@ -217,7 +217,7 @@ Update package.json
 }
 ```
 
-#### Vite
+### Vite
 
 Install
 ```md
