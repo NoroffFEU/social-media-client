@@ -26,9 +26,9 @@ class LocalStorageMock {
   }
 }
 
-global.localStorage = new LocalStorageMock();
-
 let global;
+
+global.localStorage = new LocalStorageMock();
 
 const testEmail = "Robert@noroff.no";
 const testPass = "robert123";
