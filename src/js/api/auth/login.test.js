@@ -1,5 +1,5 @@
-import { login } from '../api/auth/login.js';
-import { save, load, remove } from '../storage/index.js';
+import { login } from './login.js';
+import { save, load } from '../../storage/index.js';
 
 class LocalStorageMock {
   constructor() {
@@ -44,9 +44,7 @@ describe('Login', () => {
     const item = await login();
     expect(item).toEqual(validLoginCredentials);
   });
-});
 
-describe('Data in localStorage', () => {
   it('saves array to localStorage', () => {
     const key = 'token';
     const value = ['email', 'password'];
@@ -60,16 +58,5 @@ describe('Data in localStorage', () => {
     const value = ['email', 'password'];
     save(key, value);
     expect(load(key)).toEqual(value);
-  });
-});
-
-describe('Logs out user by removing data from localStorage', () => {
-  it('removes array from storage', () => {
-    const key = 'token';
-    const value = ['email', 'password'];
-    save(key, value);
-    expect(load(key)).toEqual(value);
-    remove(key);
-    expect(load(key)).toEqual(null);
   });
 });
