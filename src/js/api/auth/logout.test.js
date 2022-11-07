@@ -26,7 +26,7 @@ class LocalStorageMock {
   }
 }
 
-window.localStorage = new LocalStorageMock();
+global.localStorage = new LocalStorageMock();
 
 const testToken = "accessToken";
 const testProfile = {

@@ -37,7 +37,7 @@ function posteUnsuccessful(
 
 describe("create post", () => {
   it("Creates a new post", async () => {
-    window.fetch = jest.fn(() => postSuccessful());
+    global.fetch = jest.fn(() => postSuccessful());
     const data = await createPost(
       postTitleTest,
       postBodyTest,
@@ -54,7 +54,7 @@ describe("create post", () => {
   });
 
   it("Show's error if post can't be created", async () => {
-    window.fetch = jest.fn(() => posteUnsuccessful());
+    global.fetch = jest.fn(() => posteUnsuccessful());
     await expect(
       createPost(postTitleTest, postBodyTest, postMediaTest, postTagTest)
     ).rejects.toThrow("Post created unsuccessfully");
