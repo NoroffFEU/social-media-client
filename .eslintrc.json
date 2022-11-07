@@ -17,7 +17,7 @@
     },
     {
       "files": ["**/*.test.js"],
-      "env": { "jest": true },
+      "env": { "jest": true, "node": true },
       "plugins": ["jest"],
       "extends": ["plugin:jest/recommended"],
       "rules": { "jest/prefer-expect-assertions": "off" }

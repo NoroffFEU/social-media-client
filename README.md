@@ -26,4 +26,8 @@ This repository is for the Workflow CA.
 
 - Updated to version 1.1.11
 
+- Unit-testing done successfully. Updated to version 1.1.12
+
+- Updated jets "env". Update to version 1.1.13
+
 
