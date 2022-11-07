@@ -4,6 +4,8 @@
 
 [![Automated Unit Testing](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml)
 
+[![Automated E2E Testing](https://github.com/Anclagen/workflow-ca/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/e2e-test.yml)
+
 ## **Repo Install**
 
 Download the repo and setup in your chosen destination, open project file in your code editor.
