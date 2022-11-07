@@ -37,8 +37,8 @@
   "homepage": "https://github.com/AnnaHelene01/ca-workflow-2#readme",
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "eslint --cache --fix"
     ],
     "*.html": [
       "prettier --write"
