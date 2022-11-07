@@ -1,6 +1,6 @@
 describe('Authenticate user on Social Media App', () => {
   beforeEach(() => {
-    cy.visit('http://127.0.0.1:5500/');
+    cy.visit('/');
     cy.clearLocalStorage();
     cy.wait(2000);
     cy.get("#registerForm .modal-header button[type='button']")
@@ -32,7 +32,7 @@ describe('Authenticate user on Social Media App', () => {
   });
 
   it('can make a new post', () => {
-    cy.visit('http://127.0.0.1:5500/?view=post');
+    cy.visit('/?view=post');
     cy.get('#postForm')
       .should('exist')
       .within(() => {
@@ -62,5 +62,22 @@ describe('Authenticate user on Social Media App', () => {
       .should(() => {
         expect(localStorage.getItem('token')).to.be.null;
       });
+  });
+});
+
+describe('Unauthenticated user on Social Media App', () => {
+  beforeEach(() => {
+    cy.visit('/');
+    cy.clearLocalStorage();
+  });
+  it('can not visit the posts page', () => {
+    cy.visit('/?view=posts');
+    cy.wait(2000);
+    cy.url().should('not.include', 'post');
+  });
+  it('can not visit the profile page', () => {
+    cy.visit('/?view=profile');
+    cy.wait(2000);
+    cy.url().should('not.include', 'profile');
   });
 });

@@ -1,4 +1,4 @@
-import { createPost } from '../posts/create.js';
+import { createPost } from './create.js';
 
 const postItem = {
   title: 'Title',
