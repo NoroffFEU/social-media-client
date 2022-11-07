@@ -28,4 +28,9 @@ C:\Users\Sindr\workflow-ca\social-media-client\src\js\api\profiles\update.js
   8:62  error  'id' is not defined  no-undef
 
 ✖ 1 problem (1 error, 0 warnings)
------
+
+I chose to fix the error by  changing the url in update.js 
+by removing ${id} and adding ${me.name}/media instead, then
+the commit worked fine.
+----
+
