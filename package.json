@@ -1,11 +1,11 @@
 {
   "name": "workflow-ca",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "To improve the quality of an existing environment by establishing useful workflows that make the development process more efficient.",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css",
+    "start": "sass --watch src/scss:dist/css & vite",
     "prepare": "husky install",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",

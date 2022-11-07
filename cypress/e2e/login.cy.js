@@ -1,12 +1,11 @@
-const baseURL = "http://127.0.0.1:8080/";
 describe("Authentication", () => {
   beforeEach(() => {
-    cy.visit(baseURL);
+    cy.visit("/");
     cy.clearLocalStorage();
   });
 
   it("Can login", () => {
-    cy.visit(baseURL);
+    cy.visit("/");
     cy.wait(500);
     // gets the currently showing close button
     cy.get(".btn-close:visible").click();
@@ -28,7 +27,7 @@ describe("Authentication", () => {
   });
 
   it("Validates user email input based on API restrictions", () => {
-    cy.visit(baseURL);
+    cy.visit("/");
     cy.wait(500);
     // gets the currently showing close button
     cy.get(".btn-close:visible").click();
@@ -46,7 +45,7 @@ describe("Authentication", () => {
   });
 
   it("Validates user password input based on API restrictions", () => {
-    cy.visit(baseURL);
+    cy.visit("/");
     cy.wait(500);
     // gets the currently showing close button
     cy.get(".btn-close:visible").click();
@@ -64,7 +63,7 @@ describe("Authentication", () => {
   });
 
   it("Return invalid password/email message for wrong password", () => {
-    cy.visit(baseURL);
+    cy.visit("/");
     cy.wait(500);
     // gets the currently showing close button
     cy.get(".btn-close:visible").click();

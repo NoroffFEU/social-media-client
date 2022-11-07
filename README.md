@@ -36,7 +36,11 @@ npm run dev
 
 Then proceed to `http://127.0.0.1:8080/` in your browser.
 
-If you wish to run Cypress tests create a .env file and match the .env.example file layout filling in your own user details
+If you wish to run Cypress tests create a `.env` file and match the `.env.example` file layout filling in your own user details
+
+## **About**
+
+This project is part of the Workflow course assignment from Noroff. With aims to improve the quality of an existing environment by establishing useful workflows that make the development process more efficient. The test code is forked from a Noroff example of social media platform using Noroff's API. I have created Jest and Cypress tests for the required test cases. The repo environment has been configured to have pre-commit checks using Prettier, ESLint and Jest, to ensure code quality is maintained. I have also established branch protections on the main branch. With GitHub action workflows to automatically deploy the main branch to GitHub Pages on merge, and checks that my unit and end to end tests are passing before being allowed to merge into the main branch.
 
 ## **Tests**
 
@@ -73,10 +77,8 @@ Added the following end to end test files for Cypress
   1. Tests logout
 - createPost.cy.js
   1. Tests user can create a post
-  2. Tests form validates URL input on attempted submission
-  3. Tests an empty form can't be submitted
-  4. Tests a title is required
-  5. Tests the handling for thrown errors
+  2. Tests form validates inputs on attempted submissions
+  3. Tests the handling for thrown errors
 
 Before running Cypress tests ensure you are running your local server with vite using `npm run dev`.
 
@@ -138,7 +140,7 @@ npx mrm@2 lint-staged
 
 Add scripts to `package.json`
 
-```
+```json
 scripts{
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
@@ -148,7 +150,7 @@ scripts{
 
 Replace default lint-staged scripts this.
 
-```
+```json
 "lint-staged": {
     "*.js": [
       "prettier --write",
@@ -188,7 +190,7 @@ npm i -D jest@29.2.0
 
 Add Jest scripts to `package.json`
 
-```
+```json
     "test": "npm run test-unit",
     "test-unit": "jest"
 ```
@@ -201,28 +203,27 @@ npm i -D eslint-plugin-jest
 
 Update `.eslintrc.json` settings
 
-```
+```json
 {
   "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": "eslint:recommended",
-    "overrides": [
-      {
-        "files": ["**/*.test.js"],
-        "env": { "jest": true },
-        "plugins": ["jest"],
-        "extends": ["plugin:jest/recommended"],
-        "rules": { "jest/prefer-expect-assertions": "off", "no-undef": "off"  }
-      }
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "rules": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "overrides": [
+    {
+      "files": ["**/*.test.js"],
+      "env": { "jest": true },
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": { "jest/prefer-expect-assertions": "off", "no-undef": "off" }
     }
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {}
 }
 ```
 
@@ -234,7 +235,7 @@ npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4
 
 Create `babel.config.json` and add
 
-```
+```json
 {
   "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
 }
@@ -256,7 +257,7 @@ npm i -D cypress@10.7.0 eslint-plugin-cypress@2.12.1
 
 Update eslint settings in `.eslintrc.json`, adding this to the overrides array;
 
-```
+```json
     {
       "files": ["**/*.cy.js", "cypress.config.js"],
       "env": { "cypress/globals": true },
@@ -272,7 +273,7 @@ Update eslint settings in `.eslintrc.json`, adding this to the overrides array;
 
 Add Cypress scripts to `package.json` and update "test" script to run Jest and Cypress.
 
-```
+```json
     "test": "npm run test-unit && npm run test-e2e-cli",
     "test-e2e": "cypress open",
     "test-e2e-report": "cypress run --reporter mochawesome",
@@ -298,7 +299,7 @@ npm install -D vite
 
 Add scripts to `package.json`, to run the development version in a live server you use `npm run dev`, if you configure your project for use with the vite bundler you can use vite build then vite preview to view the compiled version.
 
-```
+```json
     "dev": "vite",
     "vite-build": "vite build",
     "vite-preview": "vite preview"
@@ -306,7 +307,7 @@ Add scripts to `package.json`, to run the development version in a live server y
 
 If you wish to configure the port and host address you can create `vite.config.js` in your root and add this. It can be useful to specify as typically it defaults to `http://localhost:portnumber` when testing locally, where as when testing on github action it will typically use `http://127.0.0.1:portnumber`, setting it up this way means your Cypress URL won't require changing, unless you test against a hosted version. Your url will be ``http://127.0.0.1:8080`.
 
-```
+```json
 export default {
   server: {
     port: 8080,
@@ -324,16 +325,15 @@ Install dotenv
 npm install -D dotenv
 ```
 
-Modify the `cypress.config.js` to match this setup to import .env variables which can be called in tests using Cypress.env("key").
+Modify the `cypress.config.js` to match this setup to import .env variables which can be called in tests using Cypress.env("key"). If you wish to record your tests you can remove `video: false`.
 
-```
-require("dotenv").config();
-const { defineConfig } = require("cypress");
-
+```js
 module.exports = defineConfig({
+  video: false,
   e2e: {
     setupNodeEvents(on, config) {
       config.env = {
+        baseUrl: "http://127.0.0.1:8080",
         ...process.env,
         ...config.env,
       };
