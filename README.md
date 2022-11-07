@@ -20,7 +20,7 @@ Fork: https://github.com/NoroffFEU/social-media-client :heavy_check_mark:
 - v0.1.1 prettier installed & merged to workflow branch
 - v0.1.2 eslint installed & merged to workflow branch
 - v0.1.3 on-commit hooks addded & merged to workflow branch
-
+- v0.1.5 Jest installed & merged to workflow branch
 
 #### The following file changes are required:
 
