@@ -1,18 +1,18 @@
 Workflow CA
 
-<!-- Installing Prettier -->
+Installing Prettier:
 
 ```
 npm install --save-dev prettier
 ```
 
-<!-- Installing Eslint  -->
+Installing Eslint:
 
 ```
 npm install eslint --save-dev
 ```
 
-<!-- Setting up eslint with preferred settings -->
+Setting up eslint with preferred settings:
 
 ```
 npx eslint --init
@@ -27,13 +27,13 @@ npx eslint --init
 ✔ What format do you want your config file to be in? · JSON
 ```
 
-<!-- Installing Jest  -->
+Installing Jest:
 
 ```
 npm i -D jest@29.2.0
 ```
 
-<!-- Add Jest scripts to package.json  -->
+Add Jest scripts to package.json:
 
 ```
 "scripts": {
