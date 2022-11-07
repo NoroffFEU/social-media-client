@@ -26,8 +26,6 @@ class LocalStorageMock {
   }
 }
 
-let global;
-
 global.localStorage = new LocalStorageMock();
 
 const testEmail = "Robert@noroff.no";
@@ -54,7 +52,7 @@ function loginSuccessful() {
 }
 
 /**
- * Unsuccessful mock login
+ *  Unsuccessful mock login
  */
 
 function loginUnsuccessful() {

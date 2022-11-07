@@ -1,7 +1,5 @@
 import { createPost } from "./create.js";
 
-let global;
-
 const postTitleTest = "title";
 const postBodyTest = "body";
 const postMediaTest = "https://picsum.photos.jpg";
