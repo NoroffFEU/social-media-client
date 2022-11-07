@@ -1,9 +1,8 @@
-const baseURL = "http://127.0.0.1:8080/";
 describe("Create Post", () => {
   beforeEach(() => {
     cy.clearLocalStorage();
-    cy.visit(baseURL);
-    cy.wait(1000);
+    cy.visit("/");
+    cy.wait(500);
     cy.get(".btn-close:visible").click();
     cy.get("button[data-auth='login']:visible").click();
     cy.wait(500);
@@ -15,7 +14,7 @@ describe("Create Post", () => {
       .type(Cypress.env("PASSWORD"));
     cy.get(".btn-success:visible").click();
     cy.wait(3000);
-    cy.visit(baseURL);
+    cy.visit("/");
   });
 
   it("Can create a post", () => {
@@ -42,44 +41,32 @@ describe("Create Post", () => {
     cy.wait(500);
     cy.get('button[data-action="delete"]:visible').click();
     cy.wait(1000);
-    cy.url().should("include", "http://127.0.0.1:8080");
+    cy.url().should("include", "/");
   });
 
-  it("Can validate URL input, and return validation message", () => {
-    cy.wait(500);
-    cy.get('a[href="/?view=post"]').click();
-    cy.wait(1000);
-    cy.url().should("include", "post");
-    cy.get("#postTitle").should("exist").type("Cypress Testing Posts");
-    cy.get("#postTags").should("exist").type("Cypress, Testing, End To End");
-    cy.get("#postMedia").should("exist").type("Not a URL");
-    cy.get("#postBody")
-      .should("exist")
-      .type(
-        "This post has been generated using Cypress, automate your user testing today!"
-      );
-    cy.get('button[data-action="submit"]').click();
-    cy.get("#postMedia:invalid")
-      .invoke("prop", "validationMessage")
-      .should("include", "Please enter a URL");
-  });
-
-  it("Doesn't submit empty for and returns validation message", () => {
+  it("Can validate inputs, require inputs and return validation messages", () => {
+    // used should exist for popup invalid messages as the messages can vary.
     cy.wait(500);
     cy.get('a[href="/?view=post"]').click();
     cy.wait(2000);
     cy.url().should("include", "post");
+    // empty form
     cy.get('button[data-action="submit"]').click();
     cy.get("#postTitle:invalid")
       .invoke("prop", "validationMessage")
-      .should("include", "Please fill in this field");
-  });
-
-  it("Requires a post title", () => {
-    cy.wait(500);
-    cy.get('a[href="/?view=post"]').click();
-    cy.wait(2000);
-    cy.url().should("include", "post");
+      .should("exist");
+    cy.wait(200);
+    // not a url
+    cy.get("#postTitle").should("exist").type("Cypress Testing Posts");
+    cy.get("#postMedia").should("exist").type("Not a URL");
+    cy.get('button[data-action="submit"]').click();
+    cy.get("#postMedia:invalid")
+      .invoke("prop", "validationMessage")
+      .should("exist");
+    cy.wait(200);
+    // post needs a title
+    cy.get("#postTitle").should("exist").clear();
+    cy.get("#postMedia").should("exist").clear();
     cy.get("#postTags").should("exist").type("Cypress, Testing, End To End");
     cy.get("#postMedia")
       .should("exist")
@@ -94,7 +81,7 @@ describe("Create Post", () => {
     cy.get('button[data-action="submit"]').click();
     cy.get("#postTitle:invalid")
       .invoke("prop", "validationMessage")
-      .should("include", "Please fill in this field");
+      .should("exist");
   });
 
   it("Handles thrown errors", () => {
@@ -103,11 +90,11 @@ describe("Create Post", () => {
     cy.wait(2000);
     cy.url().should("include", "post");
     cy.get("#postTitle").should("exist").type("Cypress Testing Posts");
-    //generate unathorized error
+    //generate unauthorized error
     cy.clearLocalStorage();
     cy.get('button[data-action="submit"]').click();
     cy.wait(2000);
     //If unathorized should redirect to homepage for login? or display login form
-    cy.url().should("include", "http://127.0.0.1:8080");
+    cy.url().should("include", "/");
   });
 });

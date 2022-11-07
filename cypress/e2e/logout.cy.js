@@ -1,12 +1,12 @@
 const baseURL = "http://127.0.0.1:8080/";
 describe("Logout", () => {
   beforeEach(() => {
-    cy.visit(baseURL);
+    cy.visit("/");
     cy.clearLocalStorage();
   });
 
   it("Can log out", () => {
-    cy.visit(baseURL);
+    cy.visit("/");
     cy.wait(500);
     // gets the currently showing close button
     cy.get(".btn-close:visible").click();
