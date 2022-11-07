@@ -77,10 +77,8 @@ Added the following end to end test files for Cypress
   1. Tests logout
 - createPost.cy.js
   1. Tests user can create a post
-  2. Tests form validates URL input on attempted submission
-  3. Tests an empty form can't be submitted
-  4. Tests a title is required
-  5. Tests the handling for thrown errors
+  2. Tests form validates inputs on attempted submissions
+  3. Tests the handling for thrown errors
 
 Before running Cypress tests ensure you are running your local server with vite using `npm run dev`.
 
