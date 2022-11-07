@@ -32,4 +32,7 @@ This repository is for the Workflow CA.
 
 - Unit testing completed successfully. Update to version 1.1.14
 
+- [![Automated Unit Testing](https://github.com/RobertDacian/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/RobertDacian/social-media-client/actions/workflows/unit-test.yml)
+
+
 
