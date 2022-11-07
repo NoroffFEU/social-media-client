@@ -4,5 +4,6 @@
 
 ## To use this project
 - clone the repository
-- run `npm install` to install package dependencies
+- do `npm run install` to install package dependencies
+- do `npm run build` to create dist folder
 - run `npm run start` to preview the site live
