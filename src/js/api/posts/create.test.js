@@ -53,22 +53,14 @@ describe("createPost", () => {
   });
 
   it("Returns an HTTP 400 error when provided with an invalid type of media", async () => {
-    global.fetch = jest.fn(() => fetchFailure());
-    const data = await createPost(
-      TEST_TITLE,
-      TEST_BODY,
-      TEST_MEDIA_FAIL,
-      TEST_TAGS
-    );
-    const response = JSON.stringify(data);
-    expect(typeof TEST_MEDIA_FAIL).not.toBe("string");
-    expect(response).toEqual(undefined);
+    global.fetch = jest.fn(() => fetchFailure(401, ""));
+    await expect(
+      createPost(TEST_TITLE, TEST_BODY, TEST_MEDIA_FAIL, TEST_TAGS)
+    ).rejects.toThrow(new Error());
   });
 
-  it("Returns an HTTP 404 error when api url is wrong", async () => {
-    global.fetch = jest.fn(() => fetchFailure());
-    const data = await createPost(TEST_TITLE, TEST_BODY, TEST_MEDIA, TEST_TAGS);
-    const response = JSON.stringify(data);
-    expect(response).toEqual(undefined);
+  it("Returns an HTTP 400 error when no data is provided", async () => {
+    global.fetch = jest.fn(() => fetchFailure(401, ""));
+    await expect(createPost()).rejects.toThrow(new Error());
   });
 });

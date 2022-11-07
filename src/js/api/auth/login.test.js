@@ -43,10 +43,13 @@ describe("login", () => {
 
   it("Returns an HTTP 401 error when provided with invalid credentials", async () => {
     global.fetch = jest.fn(() => fetchFailure(401, "Unauthorized"));
-    const data = await login(TEST_EMAIL_FAIL, TEST_PASSWORD_FAIL);
-    const response = JSON.stringify(data);
-    expect(TEST_EMAIL_FAIL).not.toMatch(/^[\w\-.]+@(stud.)?noroff.no$/);
-    expect(TEST_PASSWORD_FAIL).not.toHaveLength(8);
-    expect(response).toEqual(undefined);
+    await expect(login(TEST_EMAIL_FAIL, TEST_PASSWORD_FAIL)).rejects.toThrow(
+      new Error()
+    );
+  });
+
+  it("Returns an HTTP 400 error when no data is provided", async () => {
+    global.fetch = jest.fn(() => fetchFailure(401, ""));
+    await expect(login()).rejects.toThrow(new Error());
   });
 });
