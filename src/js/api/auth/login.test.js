@@ -26,9 +26,7 @@ class LocalStorageMock {
   }
 }
 
-let global;
-
-global.localStorage = new LocalStorageMock();
+window.localStorage = new LocalStorageMock();
 
 const testEmail = "Robert@noroff.no";
 const testPass = "robert123";
@@ -67,7 +65,7 @@ function loginUnsuccessful() {
 
 describe("login", () => {
   it("Returns a valid token if provided with valid credentials", async () => {
-    global.fetch = jest.fn(() => loginSuccessful());
+    window.fetch = jest.fn(() => loginSuccessful());
     const response = await login(testEmail, testPass);
     const profile = JSON.stringify(response);
     expect(testEmail).toMatch("@noroff.no");
@@ -76,7 +74,7 @@ describe("login", () => {
   });
 
   it("Throwing error if credentials are invalid", async () => {
-    global.fetch = jest.fn(() => loginUnsuccessful());
+    window.fetch = jest.fn(() => loginUnsuccessful());
     await expect(login(testEmail, testPass)).rejects.toThrow("Unauthorized");
   });
 });

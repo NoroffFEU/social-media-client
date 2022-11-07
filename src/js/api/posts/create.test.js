@@ -1,7 +1,5 @@
 import { createPost } from "./create.js";
 
-let global;
-
 const postTitleTest = "title";
 const postBodyTest = "body";
 const postMediaTest = "https://picsum.photos.jpg";
@@ -39,7 +37,7 @@ function posteUnsuccessful(
 
 describe("create post", () => {
   it("Creates a new post", async () => {
-    global.fetch = jest.fn(() => postSuccessful());
+    window.fetch = jest.fn(() => postSuccessful());
     const data = await createPost(
       postTitleTest,
       postBodyTest,
@@ -56,7 +54,7 @@ describe("create post", () => {
   });
 
   it("Show's error if post can't be created", async () => {
-    global.fetch = jest.fn(() => posteUnsuccessful());
+    window.fetch = jest.fn(() => posteUnsuccessful());
     await expect(
       createPost(postTitleTest, postBodyTest, postMediaTest, postTagTest)
     ).rejects.toThrow("Post created unsuccessfully");
