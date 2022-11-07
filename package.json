@@ -1,6 +1,6 @@
 {
   "name": "workflow-ca",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "CA workflow",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "format": "prettier -w src",
+    "format": "prettier -w src/**/*.js",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -36,7 +36,10 @@
   },
   "homepage": "https://github.com/marthebull/workflow-CA-07-11-2022#readme",
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
     "*.html": [
       "prettier --write"
     ],
