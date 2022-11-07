@@ -7,14 +7,17 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix", 
-    "format": "prettier -w src"
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "format": "prettier -w src",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Marthe B",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.27.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "live-server": "^1.1.0",
     "prettier": "^2.7.1",
     "sass": "^1.54.8",
@@ -31,5 +34,15 @@
   "bugs": {
     "url": "https://github.com/marthebull/workflow-CA-07-11-2022/issues"
   },
-  "homepage": "https://github.com/marthebull/workflow-CA-07-11-2022#readme"
+  "homepage": "https://github.com/marthebull/workflow-CA-07-11-2022#readme",
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ],
+    "*.src": "prettier --write"
+  }
 }
