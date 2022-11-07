@@ -29,7 +29,7 @@
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix", 
-    "*.js": "npm run test",
+    "sum.test.js": "npm run test",
     "*.{html,js}": [
       "prettier --write"
     ],
