@@ -32,7 +32,7 @@
     "sum.test.js": "npm run test",
     "*.{html,js}": [
       "prettier --write"
-    ],
+    ] ,
     "*.scss": [
       "prettier --write"
     ]
