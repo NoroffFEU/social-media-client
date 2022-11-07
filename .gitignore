@@ -1,2 +1,3 @@
 /node_modules
-/distnode_modules
+/dist
+.eslintcache

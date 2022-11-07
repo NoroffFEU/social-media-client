@@ -5,13 +5,19 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "format": "prettier -w src",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Anna",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.27.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "live-server": "^1.1.0",
     "prettier": "^2.7.1",
     "sass": "^1.54.8",
@@ -28,5 +34,9 @@
   "bugs": {
     "url": "https://github.com/AnnaHelene01/ca-workflow-2/issues"
   },
-  "homepage": "https://github.com/AnnaHelene01/ca-workflow-2#readme"
+  "homepage": "https://github.com/AnnaHelene01/ca-workflow-2#readme",
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.src": "prettier --write"
+  }
 }
