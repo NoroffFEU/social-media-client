@@ -6,19 +6,25 @@ v.1.0.6
 
 Make sure to install Node.js v16.18.0 locally.
 
+
 Install devDependencies:
-npm i
+- npm i
+
 
 Compiling from scss to css in real-time. Use:
-npm run start
+- npm run start
+
 
 Update what files prettier and eslint are targeting to suit your needs (scripts in package.json):
-"format": "prettier -w **/*.js",
-"lint": "eslint **/*.js",
-"lint-fix": "eslint **/*.js --cache --fix",
+- "format": "prettier -w **/*.js",
+- "lint": "eslint **/*.js",
+- "lint-fix": "eslint **/*.js --cache --fix",
+
 
 Configured for hosting with Vite. Use: 
-npm run dev
+- npm run dev
+
 or
-npm run build-vite
-npm run preview-vite
+
+- npm run build-vite
+- npm run preview-vite
