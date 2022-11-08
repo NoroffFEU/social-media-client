@@ -6,7 +6,8 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "node src/js/**/*.js",
-    "format": "prettier -w src/js/**/*.js & prettier -w src/js/*.js"
+    "format": "prettier -w src/js/**/*.js & prettier -w src/js/*.js",
+    "lint": "eslint src/js/**/*.js"
   },
   "keywords": [],
   "author": "",
