@@ -48,9 +48,8 @@ describe("createPost", () => {
 
   it("Returns 400 error when provided with incorrect credentials", async () => {
     global.fetch = jest.fn(() => fetchFailure());
-    const response = await createPost(title, body, failed_media, tags);
-    const post = JSON.stringify(response);
-    expect(typeof failed_media).not.toBe("string");
-    expect(post).toEqual(undefined);
+    await expect(createPost(title, body, tags, failed_media)).rejects.toThrow(
+      " "
+    );
   });
 });
