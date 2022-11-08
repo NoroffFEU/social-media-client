@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "sass src/scss",
-    "start": "sass --watch src/scss/css & live-server",
+    "build": "sass src/scss:dist/css",
+    "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/js/",
     "lint": "eslint src/js/",
     "lint-fix": "eslint src/js/ --cache --fix",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
-    "bootstrap": "^5.2.0",
+    "bootstrap-dark-5": "^1.1.3",
     "cypress": "^10.7.0",
     "eslint": "^8.26.0",
     "eslint-plugin-cypress": "^2.12.1",
