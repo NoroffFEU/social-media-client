@@ -36,6 +36,19 @@
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
   },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShaindalDev/workflowCA_Robin_Johnsen.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/ShaindalDev/workflowCA_Robin_Johnsen/issues"
+  },
+
+  "homepage": "https://github.com/ShaindalDev/workflowCA_Robin_Johnsen#readme",
+  "description": "",
+  
   "lint-staged": {
     "*.js": [
       "eslint --cache --fix",
