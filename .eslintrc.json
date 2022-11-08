@@ -20,7 +20,8 @@
                 "plugin:jest/recommended"
             ],
             "rules": {
-                "jest/prefer-expect-assertions": "off"
+                "jest/prefer-expect-assertions": "off",
+                "no-unused-vars": "off"
             }
         },
         {
