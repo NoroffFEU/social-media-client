@@ -226,17 +226,21 @@ npm install -D vite
 
 Create vite.config.json and add
 ```js
-
+export default {
+  server: {
+    base: 'http://127.0.0.1:5174/'
+  },
+};
 ```
 
 Update package.json scripts
 ```json
-"dev": "vite",
+"vite-dev": "vite",
 "vite-build": "vite-build",
 "vite-preview": "vite preview"
 ```
 
 To open server in browser, run
 ```md
-npm run dev
+npm run vite-dev
 ```
