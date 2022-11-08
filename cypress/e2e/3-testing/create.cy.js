@@ -13,7 +13,7 @@ describe("create post", () => {
     cy.get("input[type='password']:visible").should("exist").type("LeahogUlf");
     cy.get(".btn-success:visible").click();
     cy.wait(2000);
-    cy.visit("/");
+    cy.visit("http://127.0.0.1:5500/?view=post");
   });
 
   it("Can create a post", () => {
