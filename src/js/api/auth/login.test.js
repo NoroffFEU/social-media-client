@@ -1,5 +1,4 @@
 import { login } from "./login";
-import { index } from "../../storage/localstorage.test";
 
 const EMAIL = "test@noroff.no";
 const BAD_EMAIL = "bad@email.no";
@@ -10,6 +9,30 @@ const profile = {
   name: "Marianne",
   email: EMAIL,
 };
+
+class LocalStorageMock {
+  constructor() {
+    this.value = {};
+  }
+
+  clear() {
+    this.value = {};
+  }
+
+  getItem(key) {
+    return this.value[key] || null;
+  }
+
+  setItem(key, value) {
+    this.value[key] = String(value);
+  }
+
+  removeItem(key) {
+    delete this.value[key];
+  }
+}
+
+global.localStorage = new LocalStorageMock();
 
 function fetchSuccess() {
   return Promise.resolve({
