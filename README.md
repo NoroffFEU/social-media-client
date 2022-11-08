@@ -34,5 +34,7 @@ This repository is for the Workflow CA.
 
 - [![Automated Unit Testing](https://github.com/RobertDacian/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/RobertDacian/social-media-client/actions/workflows/unit-test.yml)
 
+- Cypress testing completed successfully. Update to version 1.1.15
+
 
 
