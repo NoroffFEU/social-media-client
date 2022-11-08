@@ -14,7 +14,10 @@
     "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
     "test-e2e": "cypress open",
-    "test-e2e-cli": "cypress run"
+    "test-e2e-cli": "cypress run",
+    "dev": "vite",
+    "build-vite": "vite build",
+    "preview-vite": "vite preview"
   },
   "keywords": [],
   "author": "",
@@ -31,7 +34,8 @@
     "lint-staged": "^13.0.3",
     "live-server": "^1.2.2",
     "prettier": "^2.7.1",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "vite": "^3.2.3"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
