@@ -2,7 +2,7 @@
   "name": "css-frameworks-ca",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "Git commit -m \"whatever\" makes eslint and prettier run tro alle my .js, .html files and fix them up",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
@@ -29,14 +29,22 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --cache --fix", 
+      "eslint --cache --fix",
       "npm run test"
-    ], 
+    ],
     "*.{html,js}": [
       "prettier --write"
-    ] ,
+    ],
     "*.scss": [
       "prettier --write"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sanhamm/social-media-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sanhamm/social-media-client/issues"
+  },
+  "homepage": "https://github.com/Sanhamm/social-media-client#readme"
 }
