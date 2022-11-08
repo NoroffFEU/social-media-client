@@ -1,9 +1,11 @@
 {
-  "name": "css-frameworks-ca",
+  "name": "workflow",
   "version": "1.0.0",
-  "description": "",
+  "description": "example",
+  "type": "module",
   "main": "index.js",
   "scripts": {
+    "format": "prettier -w src/js/**/*.js",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
   },
@@ -12,6 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "live-server": "^1.2.2",
+    "prettier": "^2.7.1",
     "sass": "^1.54.8"
   },
   "dependencies": {
