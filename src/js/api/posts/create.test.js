@@ -21,7 +21,7 @@ function createSuccess() {
   });
 }
 
-function createFail(status = 404, statusText = 'Not Found') {
+function createFail(status = 404, statusText = 'This is supposed to fail') {
   return Promise.resolve({
     ok: false,
     status,
