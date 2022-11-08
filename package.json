@@ -1,6 +1,6 @@
 {
   "name": "Social Media app Noroff",
-  "version": "1.0.1",
+  "version": "1.0.99",
   "description": "A social media app from Noroff",
   "main": "index.js",
   "type": "module",
