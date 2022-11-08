@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss",
-    "start": "sass --watch src/scss:dist/css & live-server",
+    "start": "sass --watch src/scss/css & live-server",
     "format": "prettier -w src/js/",
     "lint": "eslint src/js/",
     "lint-fix": "eslint src/js/ --cache --fix",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
+    "bootstrap": "^5.2.0",
     "cypress": "^10.7.0",
     "eslint": "^8.26.0",
     "eslint-plugin-cypress": "^2.12.1",
@@ -30,8 +31,7 @@
     "lint-staged": "^13.0.3",
     "live-server": "^1.2.2",
     "prettier": "^2.7.1",
-    "sass": "^1.54.8",
-    "bootstrap": "^5.2.2"
+    "sass": "^1.54.8"
   },
   "lint-staged": {
     "*.js": [
