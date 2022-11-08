@@ -31,7 +31,7 @@
     "lint-staged": "^13.0.3",
     "live-server": "^1.2.2",
     "prettier": "^2.7.1",
-    "sass": "^1.54.8"
+    "sass": "^1.56.0"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
