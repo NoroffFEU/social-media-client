@@ -36,6 +36,8 @@ This repository is for the Workflow CA.
 
 - Cypress testing completed successfully. Update to version 1.1.15
 
+- [![Automated E2E Testing](https://github.com/RobertDacian/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/RobertDacian/social-media-client/actions/workflows/e2e-test.yml)
+
 
 
 
