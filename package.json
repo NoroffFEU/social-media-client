@@ -1,10 +1,10 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node src/js/*.js",
+    "test": "node src/js/**/joker.js",
     "format": "prettier -w src/js/**/*.js",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
@@ -14,7 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.27.0",
-    "live-server": "^1.1.0",
+    "live-server": "^1.2.2",
     "prettier": "^2.7.1",
     "sass": "^1.54.8"
   },
