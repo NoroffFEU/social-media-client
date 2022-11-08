@@ -2,7 +2,7 @@
 
 [![Automated Unit Testing](https://github.com/ShaindalDev/workflowCA_Robin_Johnsen/actions/workflows/unit-test.yml/badge.svg)](https://github.com/ShaindalDev/workflowCA_Robin_Johnsen/actions/workflows/unit-test.yml)
 [![Automated E2E Testing](https://github.com/ShaindalDev/workflowCA_Robin_Johnsen/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/ShaindalDev/workflowCA_Robin_Johnsen/actions/workflows/e2e-test.yml)
-
+[![Deploy static content to Pages](https://github.com/ShaindalDev/workflowCA_Robin_Johnsen/actions/workflows/pages.yml/badge.svg)](https://github.com/ShaindalDev/workflowCA_Robin_Johnsen/actions/workflows/pages.yml)
 
 ## Information about the project
 
