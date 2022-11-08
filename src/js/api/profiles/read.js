@@ -1,7 +1,7 @@
 import { apiPath } from "../constants.js";
 import { headers } from "../headers.js";
 
-export async function getProfiles(unusedargumant) {
+export async function getProfiles() {
   const response = await fetch(`${apiPath}/social/profiles`, {
     headers: headers(),
   });
