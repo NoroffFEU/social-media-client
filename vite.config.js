@@ -1,7 +1,5 @@
 export default {
   server: {
-    port: 5174,
-    hot: true,
-    host: "127.0.0.1",
+    base: "http://127.0.0.1:5174/",
   },
 };
