@@ -1,5 +1,8 @@
 # Workflow Course Assignment 
 
+## Status
+[![Automated Unit Testing](https://github.com/adrianBrands/social-media-client/actions/workflows/unit-test.yml/badge.svg?branch=workflow)](https://github.com/adrianBrands/social-media-client/actions/workflows/unit-test.yml)
+
 ## Info 
 Course assignment at Noroff. The purpose of this assignment is to improve an existing working environment, with useful workflows to speed up the development process. 
 
