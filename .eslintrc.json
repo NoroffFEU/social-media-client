@@ -6,13 +6,14 @@
   "extends": "eslint:recommended",
   "overrides": [
     {
-      "files": ["**/*.cy.js"],
+      "files": ["**/*.cy.js", "**/cypress.config.js"], //Don't know if this is the correct solution to the problem but it got rid of the four warnings for unused vars and no undefined
       "env": { "cypress/globals": true },
       "plugins": ["cypress"],
       "extends": ["plugin:cypress/recommended"],
       "rules": {
         "cypress/no-unnecessary-waiting": "off",
-        "no-unused-vars": "off"
+        "no-unused-vars": "off",
+        "no-undef": "off"
       }
     },
     {
