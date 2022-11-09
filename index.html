@@ -53,7 +53,7 @@
         <div class="col">© 2022 Noroff FEU</div>
         <div class="col-auto" data-visible="loggedIn">
           <div class="d-flex align-items-center" id="footerActions">
-            <a href="/?view=post" data-visible="loggedIn" class="btn btn-outline-success">New Post</a>
+            <a href="./?view=post" data-visible="loggedIn" class="btn btn-outline-success">New Post</a>
           </div>
         </div>
       </div>
@@ -86,7 +86,7 @@
           </button>
           <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#registerModal" data-auth="register"
             data-visible="loggedOut">Register</button>
-          <button class="btn btn-success" data-bs-dismiss="modal">
+          <button type="submit" class="btn btn-success" data-bs-dismiss="modal">
             Login
           </button>
         </div>
@@ -130,7 +130,7 @@
           </button>
           <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginModal" data-auth="login"
             data-visible="loggedOut">Login</button>
-          <button class="btn btn-success">Create Profile</button>
+          <button type="submit" class="btn btn-success">Create Profile</button>
         </div>
       </form>
     </div>
@@ -150,13 +150,13 @@
     </template>
 
     <template id="reactionButton">
-      <button class="btn btn-sm btn-outline-success" data-reaction>
+      <button type="button" class="btn btn-sm btn-outline-success" data-reaction>
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
       </button>
     </template>
 
     <template id="reactionOption">
-      <li><button class="dropdown-item"></button></li>
+      <li><button type="button" class="dropdown-item"></button></li>
     </template>
 
     <template id="reactionMenu">
@@ -190,7 +190,7 @@
       <form class="row mt-3" id="postForm">
         <div class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3">
           <h1>Post</h1>
-          <button class="btn btn-success" data-action="submit">
+          <button type="submit" class="btn btn-success" data-action="submit">
             <span data-action="publish">Publish</span><span data-action="update">Update</span> Post
           </button>
         </div>
@@ -231,7 +231,7 @@
     <template id="postActions">
       <div class="post-actions btn-group-sm">
         <a href="" class="btn btn-primary" data-action="view">View</a>
-        <button class="btn btn-danger" data-action="delete">Delete</button>
+        <button type="button" class="btn btn-danger" data-action="delete">Delete</button>
       </div>
     </template>
 
@@ -263,18 +263,18 @@
     <template id="commentForm">
       <form class="comment-form">
         <textarea class="form-control" name="body" id="commentBody" cols="30" rows="10"></textarea>
-        <button class="btn btn-success w-100">Comment</button>
+        <button type="submit" class="btn btn-success w-100">Comment</button>
       </form>
     </template>
 
     <template id="postTabs">
       <nav>
         <div class="nav nav-tabs" role="tablist">
-          <button class="nav-link active" id="nav-tab-default" data-bs-toggle="tab" data-bs-target="#nav-default"
+          <button type="button" class="nav-link active" id="nav-tab-default" data-bs-toggle="tab" data-bs-target="#nav-default"
             type="button" role="tab" aria-controls="nav-default" aria-selected="true">
             View
           </button>
-          <button class="nav-link" id="nav-tab-edit" data-bs-toggle="tab" data-bs-target="#nav-edit" type="button"
+          <button type="button" class="nav-link" id="nav-tab-edit" data-bs-toggle="tab" data-bs-target="#nav-edit" type="button"
             role="tab" aria-controls="nav-edit" aria-selected="false">
             Edit
           </button>
@@ -296,10 +296,10 @@
       <div class="card profile page private mb-3">
         <div class="upper border-bottom d-flex justify-content-between align-items-start p-3">
           <div class="btn-group btn-group-sm">
-            <button class="btn btn-sm btn-success" data-action="follow" data-name="">
+            <button type="button" class="btn btn-sm btn-success" data-action="follow" data-name="">
               Follow
             </button>
-            <button class="btn btn-sm btn-danger" data-action="unfollow" data-name="">
+            <button type="button" class="btn btn-sm btn-danger" data-action="unfollow" data-name="">
               Unfollow
             </button>
           </div>
