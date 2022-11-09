@@ -20,7 +20,7 @@ describe("Create Post", () => {
 
   it("Can create a post", () => {
     cy.wait(500);
-    cy.get('a[href="/?view=post"]').click();
+    cy.get('a[href="./?view=post"]').click();
     cy.wait(2000);
     cy.url().should("include", "post");
     cy.get("#postTitle").should("exist").type("Cypress Testing Posts");
@@ -48,7 +48,7 @@ describe("Create Post", () => {
   it("Can validate inputs, require inputs and return validation messages", () => {
     // used should exist for popup invalid messages as the messages can vary.
     cy.wait(500);
-    cy.get('a[href="/?view=post"]').click();
+    cy.get('a[href="./?view=post"]').click();
     cy.wait(2000);
     cy.url().should("include", "post");
     // empty form
@@ -87,7 +87,7 @@ describe("Create Post", () => {
 
   it("Handles thrown errors", () => {
     cy.wait(500);
-    cy.get('a[href="/?view=post"]').click();
+    cy.get('a[href="./?view=post"]').click();
     cy.wait(2000);
     cy.url().should("include", "post");
     cy.get("#postTitle").should("exist").type("Cypress Testing Posts");
