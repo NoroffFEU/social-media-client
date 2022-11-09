@@ -5,7 +5,11 @@ export async function followListener(event) {
   const name = button.dataset.name;
 
   if (name) {
-    await followProfile(name);
-    location.reload()
+    try {
+      await followProfile(name);
+      location.reload()
+    } catch {
+      return alert("There was a problem following this profile");
+    }
   }
 }
