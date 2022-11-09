@@ -13,10 +13,12 @@ jobs:
         
       - name: Instal dependensies
         run: npm install
+      - name: build scss
+        run: npm run build
 
       - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
         with:
-          start: npm run start
-          wait-on: 127.0.0.1:8080
+          start: npm run dev
+          wait-on: "http://127.0.0.1:8080/"
           browser: electron
