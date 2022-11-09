@@ -8,7 +8,7 @@
     "start": "sass --watch src/scss:dist/css & live-server"
   },
   "keywords": [],
-  "author": "",
+  "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
     "live-server": "^1.2.2",
