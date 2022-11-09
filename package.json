@@ -17,7 +17,9 @@
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
     "eslint": "^8.27.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-jest": "^27.1.4",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^8.0.1",
     "jest": "^29.2.0",
     "lint-staged": "^13.0.3",
@@ -39,9 +41,7 @@
   "description": "",
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "jest --findRelatedTests --passWithNoTests"
+      "prettier --write"
     ],
     "*.html": [
       "prettier --write"
