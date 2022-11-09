@@ -1,6 +1,6 @@
 describe('Social Media App: Create and Delete Posts', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:5500');
+    cy.visit('http://127.0.0.1:5500');
     cy.clearLocalStorage();
     cy.wait(500);
     cy.get('#registerModal button[type=reset]').click();
@@ -31,7 +31,7 @@ describe('Social Media App: Create and Delete Posts', () => {
   });
 
   it('CAN delete an existing post', () => {
-    cy.visit('http://localhost:5500/?view=profile&name=ImBenni');
+    cy.visit('http://127.0.0.1:5500/?view=profile&name=ImBenni');
     cy.wait(1000);
     // cy.get(".profile-posts").should("exist")
     cy.get(".profile-posts a[data-action='view']")
