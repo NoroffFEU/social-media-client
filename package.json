@@ -8,14 +8,17 @@
     "test": "node src/js/**/*.js",
     "format": "prettier -w src/js/**/*.js & prettier -w src/js/*.js",
     "lint": "eslint src/js/**/*.js",
-    "lint-fix": "eslint src/js/**/*.js --cache --fix"
+    "lint-fix": "eslint src/js/**/*.js --cache --fix",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.27.0",
-    "live-server": "^1.2.2",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "live-server": "^1.1.0",
     "prettier": "^2.7.1",
     "sass": "^1.54.8"
   },
@@ -30,5 +33,20 @@
     "url": "https://github.com/bushrakalaji/Workflow-ca/issues"
   },
   "homepage": "https://github.com/bushrakalaji/Workflow-ca#readme",
-  "description": ""
+  "description": "",
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ],
+    "*.css": [
+      "prettier --write"
+    ]
+  }
 }
