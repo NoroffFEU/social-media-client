@@ -13,8 +13,7 @@ jobs:
         
       - name: Install
         run: npm i
-      - name: Watch
-        run: npm run start
+      
       - name: Build SASS
         run: npm run build
 
