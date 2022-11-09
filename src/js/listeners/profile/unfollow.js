@@ -5,7 +5,11 @@ export async function unfollowListener(event) {
   const name = button.dataset.name;
 
   if (name) {
-    await unfollowProfile(name);
-    location.reload()
+    try {
+      await unfollowProfile(name);
+      location.reload()
+    } catch {
+      return alert("There was a problem unfollowing this profile");
+    }
   }
 }
