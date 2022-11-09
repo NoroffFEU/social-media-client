@@ -12,7 +12,8 @@
         "prepare": "husky install",
         "test-unit": "jest --passWithNoTests",
         "test-e2e": "cypress open",
-        "test-e2e-cli": "cypress run"
+        "test-e2e-cli": "cypress run",
+        "test": "npm run test-unit && npmm run test-e2e-cli"
     },
     "keywords": [],
     "author": "",
