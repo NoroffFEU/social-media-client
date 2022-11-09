@@ -20,23 +20,13 @@ export const BLANK_POST = {
       created: "2022-09-05T19:33:29.154Z",
     },
   ],
-<<<<<<< HEAD
   created: "2022-09-05T19:33:29.154Z",
   updated: "2022-09-05T19:33:29.154Z",
   id: 0,
   author: {
     name: "",
     email: "",
-    avatar: "/assets/img/avatar.jpeg",
-=======
-  "created": "2022-09-05T19:33:29.154Z",
-  "updated": "2022-09-05T19:33:29.154Z",
-  "id": 0,
-  "author": {
-    "name": "",
-    "email": "",
-    "avatar": "./assets/img/avatar.jpeg"
->>>>>>> 7c917f213c9f7b35c6bce15c87782a5beb84569c
+    avatar: "./assets/img/avatar.jpeg",
   },
   _count: {
     comments: 0,
