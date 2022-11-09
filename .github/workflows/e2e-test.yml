@@ -21,4 +21,4 @@ jobs:
         with:
           start: npm run dev
           wait-on: "http://127.0.0.1:8080/"
-          browser: electronn
+          browser: electron
