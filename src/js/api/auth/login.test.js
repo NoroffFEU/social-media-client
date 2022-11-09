@@ -1,6 +1,7 @@
 import { login } from "./login";
 
 // Found at https://stackoverflow.com/questions/11485420/how-to-mock-localstorage-in-javascript-unit-tests
+// Used to avoid error due to localStorage not being defined
 class MockStorage {
     constructor () {
       this.storage = new Map()
@@ -60,7 +61,7 @@ describe("login", () => {
     it("throws an error when provided with invalid credentials", async () => {
         global.fetch = jest.fn(()=> fetchFailure());
         global.localStorage = new MockStorage;
-        await expect(login(badUserName, badPassword)).rejects.toThrow()
+        await expect(login(badUserName, badPassword)).rejects.toThrow("Unauthorized");
     }) 
 })
 
