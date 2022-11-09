@@ -178,3 +178,9 @@ To run the test files in command line, use:
 ```
 npm run test-e2e-cli
 ```
+
+## To use vite live server: 
+
+```
+npm run dev
+```
