@@ -1,4 +1,6 @@
-import { login } from './login';
+import { login } from './login.js';
+
+// Adding several variable for using with the unit testing.
 
 const TEST_EMAIL = 'testing@stud.noroff.no';
 const TEST_PASSWORD = 'Password10';
@@ -8,6 +10,8 @@ const TEST_LOGIN = {
   password: TEST_PASSWORD,
   accessToken: TEST_TOKEN,
 };
+
+// Created a fake LocalStorage to be using for unit testing simulation.
 
 class LocalStorageFakeTest {
   constructor() {
@@ -33,6 +37,12 @@ class LocalStorageFakeTest {
 
 global.localStorage = new LocalStorageFakeTest();
 
+/**
+ * Creating a fake login success to the API
+ * @param fetchLoginSuccess
+ * @returns
+ */
+
 function fetchLoginSuccess() {
   return Promise.resolve({
     ok: true,
@@ -43,14 +53,20 @@ function fetchLoginSuccess() {
   });
 }
 
-/* function fetchLoginFail() {
-    return Promise.resolve({
-        ok: true,
-        status: 200,
-        statusText: "OK",
-        token: "myToken",
-    })
-} */
+/**
+ * Creating a fake login error/fail to the API
+ * @param fetchLoginFail
+ * @returns
+ */
+
+function fetchLoginFail() {
+  return Promise.resolve({
+    ok: true,
+    status: 200,
+    statusText: 'OK',
+    token: 'myToken',
+  });
+}
 
 describe('login', () => {
   it('Login is successful and provide an token of string', async () => {
