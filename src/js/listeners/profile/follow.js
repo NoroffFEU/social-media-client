@@ -1,4 +1,4 @@
-import { followProfile } from "../../api/profiles/index.js";
+import { followProfile } from '../../api/profiles/index.js';
 
 export async function followListener(event) {
   const button = event.srcElement;
@@ -6,6 +6,6 @@ export async function followListener(event) {
 
   if (name) {
     await followProfile(name);
-    location.reload()
+    location.reload();
   }
 }

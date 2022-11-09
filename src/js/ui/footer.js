@@ -1,6 +1,6 @@
-import { isLoggedIn } from "../api/index.js";
-import { load } from "../storage/load.js";
-import { profileButton } from "../templates/profile/index.js";
+import { isLoggedIn } from '../api/index.js';
+import { load } from '../storage/load.js';
+import { profileButton } from '../templates/profile/index.js';
 
 export const footer = () => {
   const footer = document.querySelector('footer');
@@ -8,6 +8,6 @@ export const footer = () => {
 
   if (isLoggedIn()) {
     const profile = load('profile');
-    actions.prepend(profileButton(profile))
+    actions.prepend(profileButton(profile));
   }
-}
+};
