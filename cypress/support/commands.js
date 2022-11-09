@@ -23,3 +23,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// import { locatorObj } from '../pageLocators/locatorObj'
+
+// Cypress.Commands.add('login', (email, password ) => {
+//   cy.get(locatorObj.getEmailField).type(email);
+//   cy.get(locatorObj.getPasswordField).type(password);
+//   cy.get(locatorObj.getLoginButtonOnModel).contains('Login').click({ force: true })
+// })

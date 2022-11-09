@@ -4,7 +4,7 @@ export const locatorObj = {
   getPasswordField: '[id="loginPassword"]',
   getLoginButtonOnModel:
     '[class="modal-footer"] button[class="btn btn-success"]',
-  getLogOutButton: 'a[data-visible="loggedIn"]',
+  getCreatepost: 'a[data-visible="loggedIn"]',
   getPostTitle: '[id="postTitle"]',
   getPostTag: '[id="postTags"]',
   getPostMedia: '[id="postMedia"]',
