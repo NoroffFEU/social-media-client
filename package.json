@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "format": "prettier --write \"**/*.{js,css,scss,md}\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.27.0",
     "live-server": "^1.2.2",
+    "prettier": "^2.7.1",
     "sass": "^1.54.8"
   },
   "dependencies": {
