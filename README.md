@@ -22,9 +22,22 @@ Github actions that has been created:
 - Automated Unit Testing
 
 
-## Setting up
+## To run
 
-Elements to install:
+Install
+```md
+npm i
+```
+
+To compile scss to css and run live server
+```md
+npm run start
+```
+
+
+## This is my set up
+
+Elements I've installed:
 - [Prettier](#prettier)
 - [Eslint](#eslint)
 - [Jest](#jest)
