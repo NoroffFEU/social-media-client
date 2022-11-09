@@ -140,9 +140,12 @@ Create `babel.config.json` and add:
 
 ## Unit testing with Jest
 
-Test files: 
+Test files:
+
 login.test.js
+
 logout.test.js
+
 create.test.js
 
 Run this test: 
@@ -156,7 +159,9 @@ npm run test-unit
 Test files: 
 
 createPost.cy.js
+
 login.cy.js
+
 logout.cy.js
 
 Run this test and make sure to have local server ready: 
