@@ -13,8 +13,9 @@ jobs:
         
       - name: Install
         run: npm i
-      - name: Watch
-        run: npm run start
+      
+      - name: Build SASS
+        run: npm run build
 
       - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
