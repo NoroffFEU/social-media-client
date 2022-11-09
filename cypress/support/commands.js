@@ -23,3 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+//email:
+//MarMro46583@stud.noroff.no
+//password:
+//Martinnoroff
