@@ -14,7 +14,10 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/**/*.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev": "vite",
+    "vite-build": "vite build",
+    "vite-preview": "vite-preview"
   },
   "keywords": [],
   "author": "",
@@ -31,7 +34,8 @@
     "lint-staged": "^13.0.3",
     "live-server": "^1.2.2",
     "prettier": "^2.7.1",
-    "sass": "^1.56.0"
+    "sass": "^1.56.0",
+    "vite": "^3.2.3"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
