@@ -1,6 +1,6 @@
 describe('Social Media App: Create and Delete Posts', () => {
   beforeEach(() => {
-    cy.visit('http://127.0.0.1:5500/');
+    cy.visit('http://localhost:5500');
     cy.clearLocalStorage();
     cy.wait(500);
     cy.get('#registerModal button[type=reset]').click();
@@ -17,13 +17,13 @@ describe('Social Media App: Create and Delete Posts', () => {
   });
 
   it('CAN make a new post', () => {
-    cy.visit('http://127.0.0.1:5500/?view=post');
+    cy.get('#footerActions > a.btn').contains('New Post').click();
     cy.get('#postForm')
       .should('exist')
       .within(() => {
         cy.get('#postTitle').should('exist').type(`Cypress Test Title`);
         cy.get('#postTags').should('exist').type(`Cypress Test Tag`);
-        cy.get('#postMedia').should('exist').type(`https://picsum.photos/200`);
+        // cy.get('#postMedia').should('exist').type(`https://picsum.photos/200`);
         cy.get('#postBody').should('exist').type(`Cypress Test Body`);
         cy.wait(500);
         cy.get('button[data-action=submit]').click({ force: true });
@@ -31,7 +31,7 @@ describe('Social Media App: Create and Delete Posts', () => {
   });
 
   it('CAN delete an existing post', () => {
-    cy.visit('http://127.0.0.1:5500/?view=profile&name=ImBenni');
+    cy.visit('http://localhost:5500/?view=profile&name=ImBenni');
     cy.wait(1000);
     // cy.get(".profile-posts").should("exist")
     cy.get(".profile-posts a[data-action='view']")
