@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test-unit",
+    "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
+    "test-e2e": "cypress open",
+    "test-e2e-cli": "cypress run",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/js/**/*.js",
@@ -19,7 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
-    "cypress": "^10.7.0",
+    "cypress": "^10.11.0",
     "eslint": "^8.26.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-jest": "^27.1.4",
@@ -35,8 +37,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "eslint --fix"
     ],
     "*.html": [
       "prettier --write"
