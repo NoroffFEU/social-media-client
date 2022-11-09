@@ -81,9 +81,11 @@ lint-staged": {
 
 #### babel.config.json
 
+```
 {
 "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
 }
+```
 
 ### npm i -D cypress@10.7.0 eslint-plugin-cypress@2.12.1
 
@@ -207,9 +209,7 @@ The following file changes are required
 1.Project readme file is updated to include new configuration information and status badges:
 https://gonlonge.github.io/workflow-ca-social-media/
 
-[![Deploy static content to Pages](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/static.yml/badge.svg)](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/static.yml)
-
-[![Deploy static content to Pages](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/static.yml/badge.svg?branch=master)](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/static.yml)
+[![Deploy static content to Pages](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/pages.yml/badge.svg)](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/pages.yml)
 
 2.Project is configured for hosting (e.g. CDN links or a Bundler): Done
 
