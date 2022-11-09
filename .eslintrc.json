@@ -9,6 +9,7 @@
         "jest": true,
 
         "node": true
+
     },
     "extends": "eslint:recommended",
     "overrides": [
@@ -18,5 +19,9 @@
         "sourceType": "module"
     },
     "rules": {
-    }
+    },
+        "extends": [
+          "plugin:cypress/recommended"
+        ]
+      
 }
