@@ -11,6 +11,9 @@ jobs:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@main
         
+      - name: Instal dependensies
+        run: npm install
+        
       - name: Start local webserver
         run: npm run start
 
