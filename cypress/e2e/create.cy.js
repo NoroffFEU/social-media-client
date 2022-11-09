@@ -1,36 +1,8 @@
-describe('Social Media App: Unauthenticated user', () => {
-  beforeEach(() => {
-    cy.visit('http://127.0.0.1:5500/');
-  });
-
-  it('CANNOT visit the profile page', () => {
-    cy.visit('http://127.0.0.1:5500/?view=profile');
-    cy.url().should(`not.include`, `profile`);
-  });
-
-  it('CANNOT visit the posts page', () => {
-    cy.visit('http://127.0.0.1:5500/?view=posts');
-    cy.url().should(`not.include`, `post`);
-  });
-
-  it('CAN view the register form', () => {
-    cy.get("header [data-auth='register']").click({ force: true });
-    cy.get('form button').contains('Create Profile').should('be.visible');
-  });
-
-  it('CAN view the login form', () => {
-    cy.get('#registerModal button')
-      .contains('Login')
-      .should('be.visible')
-      .click();
-  });
-});
-
-describe('Social Media App: Authenticated user', () => {
+describe('Social Media App: Create and Delete Posts', () => {
   beforeEach(() => {
     cy.visit('http://127.0.0.1:5500/');
     cy.clearLocalStorage();
-    cy.wait(1000);
+    cy.wait(500);
     cy.get('#registerModal button[type=reset]').click();
     cy.get('header button[data-auth=login]').click();
     cy.wait(1000);
@@ -42,22 +14,6 @@ describe('Social Media App: Authenticated user', () => {
       .should('exist')
       .type(`BenniBlanco{enter}`);
     cy.wait(1000);
-  });
-
-  it('CAN login', () => {
-    cy.url().should('include', 'profile');
-    cy.url().should('not.include', 'login');
-    expect(localStorage.getItem('token')).to.not.be.null;
-  });
-
-  it('CAN logout', () => {
-    cy.get('header button[data-auth=logout]')
-      .click({ force: true })
-      .should(() => {
-        expect(localStorage.getItem('token')).to.be.null;
-      });
-    // cy.get("li.dropdown-item").contains(/log[\s]?out/i).click({force: true})
-    // cy.url().should('include', 'login');
   });
 
   it('CAN make a new post', () => {
