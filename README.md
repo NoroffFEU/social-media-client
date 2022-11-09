@@ -16,20 +16,12 @@ Fork: https://github.com/NoroffFEU/social-media-client :heavy_check_mark:
 - Project is configured to run Jest on commit    :heavy_check_mark:
 - Project is configured to deploy to pages on merge to default
 
-###### version history:
-- v0.1.1 prettier installed & merged to workflow branch
-- v0.1.2 eslint installed & merged to workflow branch
-- v0.1.3 on-commit hooks addded & merged to workflow branch
-- v0.1.5 Jest installed & merged to workflow branch
 
 #### The following file changes are required:
 
 - Project readme file is updated to include new configuration information and status badges
 - Project is configured for hosting (e.g. CDN links or a Bundler) :heavy_check_mark:
 
-
-###### version history:
-- v0.1.4 vite installed & merged to workflow branch
 
 #### The following features must be automatically tested with unit tests:
 
@@ -42,3 +34,13 @@ Fork: https://github.com/NoroffFEU/social-media-client :heavy_check_mark:
 - The login form validates user inputs correctly based on API restrictions
 - The create item form validates user inputs correctly based on API restrictions
 - The logout button logs the user out when clicked
+
+##### version history:
+- v0.1.1 prettier installed & merged to workflow branch
+- v0.1.2 eslint installed & merged to workflow branch
+- v0.1.3 on-commit hooks addded & merged to workflow branch
+- v0.1.4 vite installed & merged to workflow branch
+- v0.1.5 Jest installed & merged to workflow branch
+- *v0.1.6 Cypress installed & merged to workflow branch 
+
+*Cypress v10.7.0 would not work on my setup, so am using v10.11.0
