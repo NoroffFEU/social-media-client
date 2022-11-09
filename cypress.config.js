@@ -1,9 +1,11 @@
 import { defineConfig } from "cypress";
 
 export default defineConfig({
+  chromeWebSecurity: false,
+
   e2e: {
     setupNodeEvents(on, config) {
-      chromeWebSecurity: false;
+      // implement node event listeners here
     },
   },
 });
