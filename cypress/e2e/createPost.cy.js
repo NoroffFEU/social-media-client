@@ -21,7 +21,7 @@ describe("create post", () => {
 
   it("CAN create post and return error messages if something is wrong", () => {
     cy.visit("/");
-    cy.get('a[href="/?view=post"]').click();
+    cy.get('a[href="./?view=post"]').click();
     cy.wait(1000);
     cy.get("#postTitle").should("exist").type("post created in cypress");
     cy.get("#postMedia")
@@ -36,7 +36,7 @@ describe("create post", () => {
     cy.get('button[data-action="delete"]:visible').click();
     cy.wait(1000);
     //no provided url for postMedia
-    cy.get('a[href="/?view=post"]').click();
+    cy.get('a[href="./?view=post"]').click();
     cy.wait(1000);
     cy.get("#postTitle").should("exist").type("post created in cypress");
     cy.get("#postMedia").should("exist").type("url....noooot");
