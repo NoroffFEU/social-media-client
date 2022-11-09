@@ -4,7 +4,7 @@ import { profilePageTemplate } from "../templates/index.js"
 
 export const profilePage = async (name) => {
   if (!isLoggedIn()) {
-    location.href = "/"
+    location.href = "./"
   } else {
     return profilePageTemplate(await getProfile(name))
   }

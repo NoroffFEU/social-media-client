@@ -22,7 +22,7 @@ export const postActions = (post) => {
   if (owned) {
     deleteButton.addEventListener("click", async () => {
       await deletePost(post.id)
-      location.href = "/";
+      location.href = "./";
     })
   } else {
     deleteButton.remove()
