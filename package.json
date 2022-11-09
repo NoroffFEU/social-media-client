@@ -7,7 +7,8 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier --write \"**/*.{js,css,scss,md}\"",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --fix"
   },
   "keywords": [],
   "author": "",
