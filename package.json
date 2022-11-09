@@ -1,21 +1,25 @@
 {
-  "name": "css-frameworks-ca",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "dotenv": "^16.0.3",
-    "live-server": "^1.2.2",
-    "sass": "^1.54.8"
-  },
-  "dependencies": {
-    "bootstrap-dark-5": "^1.1.3"
-  }
+    "name": "css-frameworks-ca",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "sass src/scss:dist/css",
+        "start": "sass --watch src/scss:dist/css & live-server",
+        "lint": "eslint src/**/*.js",
+        "lint-fix": "eslint src/**/*.js --cache --fix",
+        "format": "prettier -w src/**/*.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "dotenv": "^16.0.3",
+        "eslint": "^8.27.0",
+        "prettier": "^2.7.1",
+        "sass": "^1.54.8"
+    },
+    "dependencies": {
+        "bootstrap-dark-5": "^1.1.3"
+    }
 }
