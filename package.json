@@ -29,13 +29,13 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix .",
-      "prettier --write"
+      "prettier --write ."
     ],
     "*.html": [
-      "prettier --write"
+      "prettier --write ."
     ],
     "*.scss": [
-      "prettier --write"
+      "prettier --write ."
     ]
   }
 }
