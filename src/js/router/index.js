@@ -13,7 +13,7 @@ function authGuard(callback = () => {}, view = "") {
     return callback()
   } else {
     if (view) {
-      location.href = `/`
+      location.href = `./`
     }
     document.querySelector('[data-auth=register]').click()
     const message = document.createElement("div")
