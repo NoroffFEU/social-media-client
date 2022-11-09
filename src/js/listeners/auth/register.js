@@ -19,6 +19,6 @@ export async function registerListener(event) {
     await auth.login(email, password)
     location.reload()
   } catch {
-    alert("There was a problem logging into your new account")
+    return alert("There was a problem logging into your new account")
   }
 }

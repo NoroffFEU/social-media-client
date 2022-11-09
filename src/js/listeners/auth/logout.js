@@ -7,6 +7,6 @@ export function logoutListener() {
     updateLoginVisibility()
     location.href = "./"
   } catch {
-    alert("There was a problem logging out");
+    return alert("There was a problem logging out");
   }
 }
