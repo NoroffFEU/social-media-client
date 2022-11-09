@@ -1,6 +1,6 @@
-import { logout } from "../src/js/api/auth/logout";
-import { save } from "../src/js/storage/save";
-import { load } from "../src/js/storage/load";
+import { logout } from "../logout";
+import { save } from "../../../storage/save";
+import { load } from "../../../storage/load";
 
 class LocalStorageMock {
   constructor() {
