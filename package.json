@@ -51,7 +51,7 @@
   },
 
   "homepage": "https://github.com/ShaindalDev/workflowCA_Robin_Johnsen#readme",
-  "description": "",
+  
   
   "lint-staged": {
     "*.js": [
