@@ -1,15 +1,15 @@
 # Workflow Course Assignment
 
-# Status badges
+## Status badges
 
 [![Deploy static content to Pages](https://github.com/May-Tove/workflow-ca/actions/workflows/static.yml/badge.svg)](https://github.com/May-Tove/workflow-ca/actions/workflows/static.yml) [![Automated E2E Testing](https://github.com/May-Tove/workflow-ca/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/May-Tove/workflow-ca/actions/workflows/e2e-test.yml) [![Automated Unit Testing](https://github.com/May-Tove/workflow-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/May-Tove/workflow-ca/actions/workflows/unit-test.yml)
 
-# About the project
+## About the project
 
 This assignment is a part of the workflow course on Noroff. The goal is to improve the quality of an existing environment by establishing useful workflows that make the development process more efficient.  
 The source code is provided by Noroff and is a social media client using Noroff's own API.
 
-# How to Install and Run the Project
+## How to Install and Run the Project
 
 Clone this repo and run npm i to install packages and dependencies
 
@@ -19,14 +19,14 @@ Run Sass build script
 
     npm run build
 
-# Setup and Configuration
+## Setup and Configuration
 
-The following workflows/hooks are required:
+**The following workflows/hooks are required:**
 
-    Project is configured to run Prettier on commit
-    Project is configured to run ESLint on commit
-    Project is configured to run Jest on commit
-    Project is configured to deploy to pages on merge to default
+* Project is configured to run Prettier on commit
+* Project is configured to run ESLint on commit
+* Project is configured to run Jest on commit
+*Project is configured to deploy to pages on merge to default
 
 Installing Prettier
 
@@ -42,12 +42,12 @@ Setting up ESLint, This will create a .eslintrc file in your project folder that
 
 Recommended answers for this project
 
-✔ How would you like to use ESLint? · problems
-✔ What type of modules does your project use? · esm
-✔ Which framework does your project use? · none
-✔ Does your project use TypeScript? · No
-✔ Where does your code run? · browser
-✔ What format do you want your config file to be in? · JSON
+    How would you like to use ESLint? · problems
+    What type of modules does your project use? · esm
+    Which framework does your project use? · none
+    Does your project use TypeScript? · No
+    Where does your code run? · browser
+    What format do you want your config file to be in? · JSON
 
 Install pre-commit package
 
@@ -80,15 +80,15 @@ Update lint-staged to run scripts on commit
 }
 ```
 
-# Testing
+## Testing
 
-# Unit testing with Jest
+### Unit testing with Jest
 
-The following features must be automatically tested with unit tests:
+**The following features must be automatically tested with unit tests:**
 
-    The login function returns a valid token when provided with valid credentials
-    The logout function clears the token from browser storage
-    The create item function creates a new item on the API
+* The login function returns a valid token when provided with valid credentials
+* The logout function clears the token from browser storage
+* The create item function creates a new item on the API
 
 Installed jest
 
@@ -109,18 +109,18 @@ Configuring the Environment for Jest
 
     npx eslint --init
 
-✔ How would you like to use ESLint? · problems
-✔ What type of modules does your project use? · esm
-✔ Which framework does your project use? · none
-✔ Does your project use TypeScript? · No / Yes
-✔ Where does your code run? · browser
-✔ What format do you want your config file to be in? · JSON
-Local ESLint installation not found.
-The config that youve selected requires the following dependencies:
+    How would you like to use ESLint? · problems
+    What type of modules does your project use? · esm
+    Which framework does your project use? · none
+    Does your project use TypeScript? · No
+    Where does your code run? · browser
+    What format do you want your config file to be in? · JSON
+    Local ESLint installation not found.
+    The config that youve selected requires the following dependencies:
 
-eslint@latest
-✔ Would you like to install them now? · No / Yes
-✔ Which package manager do you want to use? · npm
+    eslint@latest
+    Would you like to install them now? · Yes
+    Which package manager do you want to use? · npm
 
 The result will be a .eslintrc.json like this:
 
@@ -174,13 +174,13 @@ To run unit test use:
 
     npm run test-unit
 
-# End to end testing with Cypress
+### End to end testing with Cypress
 
-The following features must be automatically tested with end-to-end tests:
+**The following features must be automatically tested with end-to-end tests:**
 
-    The login form validates user inputs correctly based on API restrictions
-    The create item form validates user inputs correctly based on API restrictions
-    The logout button logs the user out when clicked
+* The login form validates user inputs correctly based on API restrictions
+* The create item form validates user inputs correctly based on API restrictions
+* The logout button logs the user out when clicked
 
 Install Cypress
 
