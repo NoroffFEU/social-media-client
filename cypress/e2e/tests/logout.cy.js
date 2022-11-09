@@ -1,6 +1,6 @@
 describe("User can log out", () => {
   it("Logs inn the user", () => {
-    cy.visit("http://127.0.0.1:5500/");
+    cy.visit("/");
     cy.clearLocalStorage();
     cy.wait(500);
     cy.get("#registerForm > div.modal-footer > button")

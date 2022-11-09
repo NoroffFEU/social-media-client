@@ -1,6 +1,6 @@
 describe("User can NOT log in with invalid inputs based on API restrictions", () => {
   it("User can't log in", () => {
-    cy.visit("http://127.0.0.1:5500/");
+    cy.visit("/");
     cy.clearLocalStorage();
     cy.wait(500);
     cy.get("#registerForm > div.modal-footer > button")
@@ -20,7 +20,7 @@ describe("User can NOT log in with invalid inputs based on API restrictions", ()
 
 describe("User can log in with valid inputs based on API restrictions", () => {
   it("User can log in", () => {
-    cy.visit("http://127.0.0.1:5500/");
+    cy.visit("/");
     cy.clearLocalStorage();
     cy.wait(500);
     cy.get("#registerForm > div.modal-footer > button")

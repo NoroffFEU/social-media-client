@@ -1,6 +1,6 @@
 describe("The create item form validates user inputs correctly based on API restrictions", () => {
   it("User can log in", () => {
-    cy.visit("http://127.0.0.1:5500/");
+    cy.visit("/");
     cy.clearLocalStorage();
     cy.wait(500);
     cy.get("#registerForm > div.modal-footer > button")
