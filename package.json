@@ -20,7 +20,7 @@
     "vite-preview": "vite preview"
   },
   "keywords": [],
-  "author": "Alexander Barrett",
+  "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.19.3",
