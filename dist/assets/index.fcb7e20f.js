@@ -3,46 +3,76 @@
   if (t && t.supports && t.supports('modulepreload')) return;
   for (const r of document.querySelectorAll('link[rel="modulepreload"]')) n(r);
   new MutationObserver((r) => {
-    for (const s of r)
-      if (s.type === 'childList')
-        for (const a of s.addedNodes)
-          a.tagName === 'LINK' && a.rel === 'modulepreload' && n(a);
+    for (const a of r)
+      if (a.type === 'childList')
+        for (const s of a.addedNodes)
+          s.tagName === 'LINK' && s.rel === 'modulepreload' && n(s);
   }).observe(document, { childList: !0, subtree: !0 });
   function o(r) {
-    const s = {};
+    const a = {};
     return (
-      r.integrity && (s.integrity = r.integrity),
-      r.referrerpolicy && (s.referrerPolicy = r.referrerpolicy),
+      r.integrity && (a.integrity = r.integrity),
+      r.referrerpolicy && (a.referrerPolicy = r.referrerpolicy),
       r.crossorigin === 'use-credentials'
-        ? (s.credentials = 'include')
+        ? (a.credentials = 'include')
         : r.crossorigin === 'anonymous'
-        ? (s.credentials = 'omit')
-        : (s.credentials = 'same-origin'),
-      s
+        ? (a.credentials = 'omit')
+        : (a.credentials = 'same-origin'),
+      a
     );
   }
   function n(r) {
     if (r.ep) return;
     r.ep = !0;
-    const s = o(r);
-    fetch(r.href, s);
+    const a = o(r);
+    fetch(r.href, a);
   }
 })();
-const A = new URL('https://nf-api.onrender.com/api/v1'),
-  i = A.toString(),
-  u = (e) => {
+(function () {
+  const e = document.createElement('link').relList;
+  if (e && e.supports && e.supports('modulepreload')) return;
+  for (const n of document.querySelectorAll('link[rel="modulepreload"]')) o(n);
+  new MutationObserver((n) => {
+    for (const r of n)
+      if (r.type === 'childList')
+        for (const a of r.addedNodes)
+          a.tagName === 'LINK' && a.rel === 'modulepreload' && o(a);
+  }).observe(document, { childList: !0, subtree: !0 });
+  function t(n) {
+    const r = {};
+    return (
+      n.integrity && (r.integrity = n.integrity),
+      n.referrerpolicy && (r.referrerPolicy = n.referrerpolicy),
+      n.crossorigin === 'use-credentials'
+        ? (r.credentials = 'include')
+        : n.crossorigin === 'anonymous'
+        ? (r.credentials = 'omit')
+        : (r.credentials = 'same-origin'),
+      r
+    );
+  }
+  function o(n) {
+    if (n.ep) return;
+    n.ep = !0;
+    const r = t(n);
+    fetch(n.href, r);
+  }
+})();
+const D = new URL('https://nf-api.onrender.com/api/v1'),
+  i = D.toString(),
+  l = (e) => {
     try {
       return JSON.parse(localStorage.getItem(e));
     } catch {
       return null;
     }
   },
-  P = (e) => localStorage.removeItem(e),
-  S = (e, t) => {
+  $ = (e) => localStorage.removeItem(e),
+  F = (e, t) => {
     localStorage.setItem(e, JSON.stringify(t));
   },
-  l = (e) => {
-    const t = u('token'),
+  u = (e) => {
+    const t = l('token'),
       o = {};
     return (
       e && (o['Content-Type'] = e), t && (o.Authorization = `Bearer ${t}`), o
@@ -52,97 +82,97 @@ async function j(e, t) {
   const o = await fetch(`${i}/social/auth/login`, {
     method: 'post',
     body: JSON.stringify({ email: e, password: t }),
-    headers: l('application/json'),
+    headers: u('application/json'),
   });
   if (o.ok) {
     const n = await o.json();
-    return S('token', n.accessToken), delete n.accessToken, S('profile', n), n;
+    return F('token', n.accessToken), delete n.accessToken, F('profile', n), n;
   }
   throw new Error(o.statusText);
 }
-function D() {
-  P('token'), P('profile');
+function _() {
+  $('token'), $('profile');
 }
-async function J(e, t, o, n) {
+async function B(e, t, o, n) {
   const r = await fetch(`${i}/social/auth/register`, {
     method: 'post',
     body: JSON.stringify({ name: e, email: t, password: o, avatar: n }),
-    headers: l('application/json'),
+    headers: u('application/json'),
   });
   if (r.ok) return await r.json();
   throw new Error(r.statusText);
 }
-const w = () => Boolean(u('token')),
-  y = () => u('profile');
-async function R(e, t, o, n) {
+const y = () => Boolean(l('token')),
+  w = () => l('profile');
+async function C(e, t, o, n) {
   const r = await fetch(`${i}/social/posts/`, {
     method: 'post',
     body: JSON.stringify({ title: e, body: t, media: o, tags: n }),
-    headers: l('application/json'),
+    headers: u('application/json'),
   });
   if (r.ok) return await r.json();
   throw new Error(r.statusText);
 }
-async function C(e = 20, t = 0) {
+async function J(e = 20, t = 0) {
   const o = await fetch(
     `${i}/social/posts?limit=${e}&offset=${t}&_reactions=true&_author=true&_comments=true`,
-    { headers: l() }
+    { headers: u() }
   );
   if (o.ok) return await o.json();
   throw new Error(o.statusText);
 }
-async function U(e) {
+async function R(e) {
   const t = await fetch(
     `${i}/social/posts/${e}?_reactions=true&_author=true&_comments=true`,
-    { headers: l() }
+    { headers: u() }
   );
   if (t.ok) return await t.json();
   throw new Error(t.statusText);
 }
-async function M(e, t, o, n, r) {
-  const { name: s } = y(),
-    a = await fetch(`${i}/social/posts/${e}`, {
+async function U(e, t, o, n, r) {
+  const { name: a } = w(),
+    s = await fetch(`${i}/social/posts/${e}`, {
       method: 'put',
-      body: JSON.stringify({ title: t, body: o, media: n, tags: r, owner: s }),
-      headers: l('application/json'),
+      body: JSON.stringify({ title: t, body: o, media: n, tags: r, owner: a }),
+      headers: u('application/json'),
     });
-  if (a.ok) return await a.json();
-  throw new Error(a.statusText);
+  if (s.ok) return await s.json();
+  throw new Error(s.statusText);
 }
-async function V(e) {
+async function M(e) {
   const t = await fetch(`${i}/social/posts/${e}`, {
     method: 'delete',
-    headers: l(),
+    headers: u(),
   });
   if (t.ok) return await t.json();
   throw new Error(t.statusText);
 }
 async function Z(e, t) {
   const o = await fetch(`${i}/social/posts/${e}/react/${t}`, {
-    headers: l(),
+    headers: u(),
     method: 'put',
   });
   if (o.ok) return await o.json();
   throw new Error(o.statusText);
 }
-async function H(e, t, o) {
+async function K(e, t, o) {
   const n = await fetch(`${i}/social/posts/${e}/comment`, {
     method: 'post',
     body: JSON.stringify({ body: t, replyToId: o }),
-    headers: l('application/json'),
+    headers: u('application/json'),
   });
   if (n.ok) return await n.json();
   throw new Error(n.statusText);
 }
-async function K() {
-  const e = await fetch(`${i}/social/profiles`, { headers: l() });
+async function z() {
+  const e = await fetch(`${i}/social/profiles`, { headers: u() });
   if (e.ok) return await e.json();
   throw new Error(e.statusText);
 }
-async function z(e) {
+async function H(e) {
   const t = await fetch(
     `${i}/social/profiles/${e}?&_followers=true&_posts=true&_following=true`,
-    { headers: l() }
+    { headers: u() }
   );
   if (t.ok) return await t.json();
   throw new Error(t.statusText);
@@ -151,7 +181,7 @@ const h = () => {
     const e = new URL(window.location);
     return Object.fromEntries(e.searchParams);
   },
-  G = (e) => {
+  V = (e) => {
     const t = { ...h(), ...e },
       o = new URLSearchParams(t);
     window.location.search = o.toString();
@@ -161,28 +191,28 @@ const h = () => {
     if (t) return t.content.cloneNode(!0);
     throw new Error(`Template #${e} not found`);
   },
-  Q = (e) => {
-    const t = u('profile'),
+  G = (e) => {
+    const t = l('profile'),
       o = c('postActions'),
       n = e.author && t.name === e.author.name,
       { postId: r } = h(),
-      s = r == e.id,
-      a = o.querySelector('a[data-action=view]'),
-      d = o.querySelector('button[data-action=delete]');
+      a = r == e.id,
+      s = o.querySelector('a[data-action=view]'),
+      m = o.querySelector('button[data-action=delete]');
     return (
-      s ? a.remove() : (a.href = `/?view=post&postId=${e.id}`),
+      a ? s.remove() : (s.href = `/?view=post&postId=${e.id}`),
       n
-        ? d.addEventListener('click', async () => {
-            await V(e.id), (location.href = '/');
+        ? m.addEventListener('click', async () => {
+            await M(e.id), (location.href = '/');
           })
-        : d.remove(),
+        : m.remove(),
       o
     );
   };
-function F(e) {
+function O(e) {
   for (; e.firstChild; ) e.removeChild(e.firstChild);
 }
-const W = (e) => {
+const Q = (e) => {
     if (e && e.length) {
       const t = c('commentsTag');
       return (
@@ -195,7 +225,7 @@ const W = (e) => {
     return `\r
 `;
   },
-  b = (e) => {
+  v = (e) => {
     const t = document.createElement('a');
     t.classList.add('profile', 'thumbnail'),
       (t.href = `/?view=profile&name=${e.name}`);
@@ -211,7 +241,7 @@ const W = (e) => {
       t
     );
   },
-  X = (e) => {
+  W = (e) => {
     if (e.tags) {
       const t = document.createElement('span');
       t.classList.add('post-tags');
@@ -224,23 +254,23 @@ const W = (e) => {
     return `\r
 `;
   },
-  Y = (e) => {
+  X = (e) => {
     const t = c('postHeader');
     (t.querySelector('.card-header').href = `/?view=post&postId=${e.id}`),
       (t.querySelector('b').innerText = e.title),
       e.body
         ? (t.querySelector('span').innerText = e.body)
         : t.querySelector('span').remove();
-    const o = W(e.comments),
-      n = X(e),
+    const o = Q(e.comments),
+      n = W(e),
       r = [o, n];
     return (
-      e.author && r.push(b(e.author)),
+      e.author && r.push(v(e.author)),
       t.querySelector('.card-header').append(...r),
       t
     );
   },
-  ee = (e, t = 'a') => {
+  Y = (e, t = 'a') => {
     if (e.media) {
       const o = document.createElement(t);
       o.classList.add('card-img');
@@ -259,11 +289,11 @@ const W = (e) => {
     return `\r
 `;
   };
-function te() {
+function ee() {
   const e = c('postFooter');
   return e.querySelector('.card-footer').append(...arguments), e;
 }
-const oe = [
+const te = [
     '\u{1F600}',
     '\u{1F601}',
     '\u{1F602}',
@@ -340,22 +370,22 @@ const oe = [
     '\u{1F922}',
     '\u{1F927}',
   ],
-  ne = (e = []) => oe.filter((t) => !e.map((o) => o.symbol).includes(t));
+  oe = (e = []) => te.filter((t) => !e.map((o) => o.symbol).includes(t));
 function q() {
-  const e = u('token');
+  const e = l('token');
   document.body.classList[e ? 'add' : 'remove']('logged-in');
 }
-async function re(e) {
+async function ne(e) {
   e.preventDefault();
   const t = e.target,
     o = new FormData(t),
     n = o.get('email'),
     r = o.get('password'),
-    { name: s } = await j(n, r);
-  q(), (location.href = `/?view=profile&name=${s}`);
+    { name: a } = await j(n, r);
+  q(), (location.href = `/?view=profile&name=${a}`);
 }
-function se() {
-  D(), q(), (window.location.href = '/');
+function re() {
+  _(), q(), (window.location.href = '/');
 }
 async function ae(e) {
   e.preventDefault();
@@ -363,64 +393,64 @@ async function ae(e) {
     o = new FormData(t),
     n = o.get('email'),
     r = o.get('name'),
-    s = o.get('password'),
-    a = o.get('avatar');
-  await J(r, n, s, a), await j(n, s), location.reload();
+    a = o.get('password'),
+    s = o.get('avatar');
+  await B(r, n, a, s), await j(n, a), location.reload();
 }
-async function ce(e) {
+async function se(e) {
   const t = e.srcElement,
     o = t.dataset.symbol,
     n = t.dataset.postId;
   n && o && (await Z(n, o), location.reload());
 }
-async function ie(e) {
+async function ce(e) {
   e.preventDefault();
   const t = e.target,
-    n = new FormData(t).get('body'),
-    r = t.dataset.postId,
-    s = h().replyToId;
-  await H(r, n, s), t.remove(), location.reload();
+    o = new FormData(t).get('body'),
+    n = t.dataset.postId,
+    r = h().replyToId;
+  await K(n, o, r), t.remove(), location.reload();
 }
-async function le(e) {
+async function ie(e) {
   const t = await fetch(`${i}/social/profiles/${e}/follow`, {
-    headers: l(),
-    method: 'put',
-  });
-  if (t.ok) return await t.json();
-  throw new Error(t.statusText);
-}
-async function de(e) {
-  const t = await fetch(`${i}/social/profiles/${e}/unfollow`, {
-    headers: l(),
+    headers: u(),
     method: 'put',
   });
   if (t.ok) return await t.json();
   throw new Error(t.statusText);
 }
 async function ue(e) {
-  const o = e.srcElement.dataset.name;
-  o && (await le(o), location.reload());
+  const t = await fetch(`${i}/social/profiles/${e}/unfollow`, {
+    headers: u(),
+    method: 'put',
+  });
+  if (t.ok) return await t.json();
+  throw new Error(t.statusText);
 }
-async function me(e) {
-  const o = e.srcElement.dataset.name;
-  o && (await de(o), location.reload());
+async function le(e) {
+  const t = e.srcElement.dataset.name;
+  t && (await ie(t), location.reload());
 }
-const pe = (e) => {
+async function de(e) {
+  const t = e.srcElement.dataset.name;
+  t && (await ue(t), location.reload());
+}
+const me = (e) => {
     const t = c('reactionMenu');
     if (e.reactions && e.reactions.length) {
-      const r = e.reactions.sort((s, a) => a.count - s.count).map((s) => fe(s));
-      t.querySelector('.reactions').prepend(...r);
+      const n = e.reactions.sort((r, a) => a.count - r.count).map((r) => pe(r));
+      t.querySelector('.reactions').prepend(...n);
     }
-    const o = ne(e.reactions);
+    const o = oe(e.reactions);
     return (
-      t.querySelector('.dropdown-menu').append(...o.map((r) => we(r, e.id))),
-      t.querySelectorAll('[data-reaction]').forEach((r) => {
-        r.addEventListener('click', ce);
+      t.querySelector('.dropdown-menu').append(...o.map((n) => fe(n, e.id))),
+      t.querySelectorAll('[data-reaction]').forEach((n) => {
+        n.addEventListener('click', se);
       }),
       t
     );
   },
-  fe = ({ symbol: e, count: t, postId: o }) => {
+  pe = ({ symbol: e, count: t, postId: o }) => {
     const n = c('reactionButton');
     return (
       (n.querySelector('.btn').dataset.symbol = e),
@@ -430,7 +460,7 @@ const pe = (e) => {
       n
     );
   },
-  we = (e, t) => {
+  fe = (e, t) => {
     const o = c('reactionOption');
     return (
       (o.querySelector('.dropdown-item').dataset.symbol = e),
@@ -439,14 +469,14 @@ const pe = (e) => {
       o
     );
   },
-  m = (e, t = !1) => {
+  d = (e, t = !1) => {
     const o = c('postThumbnail');
     o.querySelector('.post').id = e.id;
-    const n = Y(e),
-      r = ee(e, t ? 'div' : 'a'),
-      s = te(Q(e), pe(e)),
-      a = [n, r, s];
-    return o.querySelector('.thumbnail').append(...a), o;
+    const n = X(e),
+      r = Y(e, t ? 'div' : 'a'),
+      a = ee(G(e), me(e)),
+      s = [n, r, a];
+    return o.querySelector('.thumbnail').append(...s), o;
   };
 function ye(e, t) {
   (t.title.value = e.title),
@@ -455,8 +485,8 @@ function ye(e, t) {
     (t.tags.value = e.tags.join(', '));
 }
 function k(e, t) {
-  const o = m(e, !1);
-  F(t), t.append(o);
+  const o = d(e, !1);
+  O(t), t.append(o);
 }
 const x = (e) => {
     const t = c('postForm'),
@@ -470,32 +500,32 @@ const x = (e) => {
           (n.querySelector('[data-action=publish]').style.display = 'none'))
         : (n.querySelector('[data-action=update]').style.display = 'none'),
       o.addEventListener('input', () => {
-        const s = {
+        const a = {
           title: o.title.value,
           body: o.body.value,
           media: o.media.value,
           tags: o.tags.value.split(', '),
         };
-        k(s, r);
+        k(a, r);
       }),
-      o.addEventListener('submit', async (s) => {
-        s.preventDefault();
-        const d = new URL(location.href).searchParams.get('postId'),
-          _ = s.target,
-          p = new FormData(_),
-          T = p.get('title'),
-          L = p.get('body'),
-          E = p.get('media'),
-          $ = p.get('tags').split(', ');
+      o.addEventListener('submit', async (a) => {
+        a.preventDefault();
+        const s = new URL(location.href).searchParams.get('postId'),
+          m = a.target,
+          p = new FormData(m),
+          b = p.get('title'),
+          E = p.get('body'),
+          L = p.get('media'),
+          T = p.get('tags').split(', ');
         let g;
-        d ? (g = await M(d, T, L, E, $)) : (g = await R(T, L, E, $)),
+        s ? (g = await U(s, b, E, L, T)) : (g = await C(b, E, L, T)),
           (location.href = `/?view=post&postId=${g.id}`);
       }),
       t
     );
   },
-  he = (e, t = '') => {
-    const { name: o } = y(),
+  we = (e, t = '') => {
+    const { name: o } = w(),
       n = c('comment');
     (n.querySelector('.comment-body').innerText = e.body),
       (n.querySelector('.owner').innerText = e.owner),
@@ -505,7 +535,7 @@ const x = (e) => {
       r.classList.add('btn', 'btn-sm', 'btn-success'),
       (r.innerText = 'Reply'),
       r.addEventListener('click', () => {
-        G({ replyToId: e.id });
+        V({ replyToId: e.id });
       }),
       n.querySelector('.comment-header').prepend(r),
       o === e.owner && n.querySelector('.comment').classList.add('me'),
@@ -513,23 +543,23 @@ const x = (e) => {
       n
     );
   },
-  ge = (e) => {
+  he = (e) => {
     const t = c('commentForm');
     return (
       (t.querySelector('form').dataset.postId = e),
-      t.querySelector('form').addEventListener('submit', ie),
+      t.querySelector('form').addEventListener('submit', ce),
       t
     );
   },
-  O = (e) => {
+  N = (e) => {
     const t = document.createElement('div');
     if ((t.classList.add('post-comments'), e && e.comments)) {
-      const o = e.comments.map((n) => he(n, e.author.name));
+      const o = e.comments.map((n) => we(n, e.author.name));
       t.append(...o);
     }
-    return t.append(ge(e.id)), t;
+    return t.append(he(e.id)), t;
   },
-  Se = {
+  ge = {
     title: 'Loading...',
     body: '',
     tags: ['please', 'wait'],
@@ -552,12 +582,12 @@ const x = (e) => {
     _count: { comments: 0, reactions: 0 },
   },
   I = (e = {}) => {
-    e = { ...Se, ...e };
-    const t = m(e);
+    e = { ...ge, ...e };
+    const t = d(e);
     return t.querySelector('.post').classList.add('loader'), t;
   },
-  ve = () => c('postTabs'),
-  B = (e) => {
+  Fe = () => c('postTabs'),
+  A = (e) => {
     const t = c('profileButton');
     return (
       (t.querySelector('img').src = e.avatar),
@@ -566,18 +596,30 @@ const x = (e) => {
       t
     );
   },
-  N = (e, t = !1) => {
+  P = (e, t = !1) => {
     const o = document.createElement('div');
     return (
-      o.classList.add('post', 'list'), o.append(...e.map((n) => m(n, t))), o
+      o.classList.add('post', 'list'), o.append(...e.map((n) => d(n, t))), o
     );
   },
-  be = (e) => {
+  Se = (e) => {
     if (e && e.followers && e.followers.length) {
       const t = document.createElement('div');
       return (
         t.classList.add('followers'),
-        t.append('Followers', ...e.followers.map(b)),
+        t.append('Followers', ...e.followers.map(v)),
+        t
+      );
+    }
+    return `\r
+`;
+  },
+  ve = (e) => {
+    if (e.following && e.following.length) {
+      const t = document.createElement('div');
+      return (
+        t.classList.add('following'),
+        t.append('Following', ...e.following.map(v)),
         t
       );
     }
@@ -585,34 +627,22 @@ const x = (e) => {
 `;
   },
   qe = (e) => {
-    if (e.following && e.following.length) {
-      const t = document.createElement('div');
-      return (
-        t.classList.add('following'),
-        t.append('Following', ...e.following.map(b)),
-        t
-      );
-    }
-    return `\r
-`;
-  },
-  Te = (e) => {
     const t = document.createElement('div');
     t.classList.add('profile', 'follows');
-    const o = [be(e), qe(e)];
+    const o = [Se(e), ve(e)];
     return t.append(...o), t;
   },
-  Le = (e) => {
+  be = (e) => {
     const t = c('profilePagePrivate'),
-      { name: o } = y();
+      { name: o } = w();
     if (
       ((t.querySelector('img.avatar').src = e.avatar),
       (t.querySelector('.profile-name').innerText = e.name),
       (t.querySelector('.profile-email').innerText = e.email),
-      t.querySelector('.upper').prepend(Te(e)),
+      t.querySelector('.upper').prepend(qe(e)),
       e.posts && e.posts.length)
     ) {
-      const n = N(e.posts);
+      const n = P(e.posts);
       t.querySelector('.profile-posts').append(n);
     } else {
       const n = document.createElement('div');
@@ -627,43 +657,43 @@ const x = (e) => {
             (t.querySelector('[data-action=unfollow]').dataset.name = e.name),
             t
               .querySelector('[data-action=unfollow]')
-              .addEventListener('click', me))
+              .addEventListener('click', de))
           : (t.querySelector('[data-action=unfollow]').remove(),
             (t.querySelector('[data-action=follow]').dataset.name = e.name),
             t
               .querySelector('[data-action=follow]')
-              .addEventListener('click', ue))
+              .addEventListener('click', le))
         : (t.querySelector('[data-action=follow]').remove(),
           t.querySelector('[data-action=unfollow]').remove()),
       t
     );
   };
-function v() {
+function S() {
   const e = document.querySelector('main');
-  F(e), e.append(...arguments);
+  O(e), e.append(...arguments);
 }
 const Ee = async (e) => {
     const t = document.createElement('div');
     t.classList.add('post', 'page', 'mb-3');
-    const o = m(e, !0),
-      n = O(e);
+    const o = d(e, !0),
+      n = N(e);
     return t.append(o, n), t;
   },
-  $e = async (e) => {
-    if (!w()) location.href = '/';
+  Le = async (e) => {
+    if (!y()) location.href = '/';
     else {
-      const t = y();
+      const t = w();
       if (e) {
-        const o = await U(e);
+        const o = await R(e);
         if (o.author.name === t.name) {
-          const r = ve(),
-            s = m(o),
+          const n = Fe(),
+            r = d(o),
             a = x(o),
-            d = O(o);
+            s = N(o);
           return (
-            r.querySelector('#nav-default').append(s, d),
-            r.querySelector('#nav-edit').append(a),
-            r
+            n.querySelector('#nav-default').append(r, s),
+            n.querySelector('#nav-edit').append(a),
+            n
           );
         }
         return Ee(o);
@@ -671,18 +701,18 @@ const Ee = async (e) => {
       return x();
     }
   },
-  Pe = async (e) => {
+  Te = async (e) => {
     const t = document.createElement('div');
     return (
-      t.classList.add('profile', 'list'), t.append(...e.map((o) => B(o))), t
+      t.classList.add('profile', 'list'), t.append(...e.map((o) => A(o))), t
     );
   },
-  ke = async (e) => {
-    if (!w()) location.href = '/';
-    else return Le(await z(e));
+  $e = async (e) => {
+    if (!y()) location.href = '/';
+    else return be(await H(e));
   };
 function f(e = () => {}, t = '') {
-  if (w()) return e();
+  if (y()) return e();
   {
     t && (location.href = '/'),
       document.querySelector('[data-auth=register]').click();
@@ -694,55 +724,55 @@ function f(e = () => {}, t = '') {
     );
   }
 }
-async function xe() {
+async function ke() {
   const { view: e, postId: t, name: o } = h();
   switch (e) {
     case 'post':
       return f(() => {
         const n = I();
-        return v(n), $e(t);
+        return S(n), Le(t);
       }, e);
     case 'profile':
-      return f(() => ke(o), e);
+      return f(() => $e(o), e);
     case 'profiles':
       return f(async () => {
-        const n = await K();
-        return Pe(n);
+        const n = await z();
+        return Te(n);
       }, e);
     case 'posts':
     default:
       return f(async () => {
-        const n = Array.from({ length: u('posts:lastTime') || 3 }, () => I());
-        v(...n);
-        const r = await C();
-        return S('posts:lastTime', r.length), N(r);
+        const n = Array.from({ length: l('posts:lastTime') || 3 }, () => I());
+        S(...n);
+        const r = await J();
+        return F('posts:lastTime', r.length), P(r);
       }, e);
   }
 }
-const Ie = async () => {
-  const e = await xe();
-  v(e);
+const xe = async () => {
+  const e = await ke();
+  S(e);
 };
-function je() {
+function Ie() {
   document
     .querySelectorAll('[data-auth=logout]')
-    .forEach((e) => e.addEventListener('click', se));
+    .forEach((e) => e.addEventListener('click', re));
 }
-const Fe = () => {
-    document.querySelector('form#loginForm').addEventListener('submit', re),
+const je = () => {
+    document.querySelector('form#loginForm').addEventListener('submit', ne),
       document
         .querySelector('form#registerForm')
         .addEventListener('submit', ae);
   },
   Oe = () => {
-    const t = document.querySelector('footer').querySelector('#footerActions');
-    if (w()) {
-      const o = u('profile');
-      t.prepend(B(o));
+    const e = document.querySelector('footer').querySelector('#footerActions');
+    if (y()) {
+      const t = l('profile');
+      e.prepend(A(t));
     }
   },
-  Be = () => {
-    je(), Fe(), Oe(), q();
+  Ne = () => {
+    Ie(), je(), Oe(), q();
   };
-Be();
-Ie();
+Ne();
+xe();
