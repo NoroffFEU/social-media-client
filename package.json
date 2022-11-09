@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "npm run test-unit",
+    "test-unit": "jest",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/js/**/*.js",
@@ -17,6 +19,7 @@
   "devDependencies": {
     "eslint": "^8.26.0",
     "husky": "^8.0.1",
+    "jest": "^29.2.0",
     "lint-staged": "^13.0.3",
     "live-server": "^1.2.2",
     "prettier": "^2.7.1",
