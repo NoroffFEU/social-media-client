@@ -2,6 +2,7 @@
 
 ## Status
 [![Automated Unit Testing](https://github.com/adrianBrands/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/adrianBrands/social-media-client/actions/workflows/unit-test.yml)
+[![Automated E2E Testing](https://github.com/adrianBrands/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/adrianBrands/social-media-client/actions/workflows/e2e-test.yml)
 
 
 ## Info 
@@ -10,6 +11,7 @@ Course assignment at Noroff. The purpose of this assignment is to improve an exi
 ## Project setup 
 
 Install Prettier:
+
 ```
 npm install --save-dev prettier
 ```
