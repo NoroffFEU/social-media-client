@@ -12,6 +12,6 @@ export async function loginListener(event) {
     updateLoginVisibility()
     location.href = `/?view=profile&name=${name}`
   } catch {
-    alert("Either your username was not found or your password is incorrect")
+    return alert("Either your username was not found or your password is incorrect")
   }
 }
