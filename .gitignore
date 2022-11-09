@@ -1,2 +1,9 @@
-/node_modules
-/dist
+# Mac OS System file
+.DS_Store
+
+# npm
+node_modules/
+
+dist
+
+.eslintcache
