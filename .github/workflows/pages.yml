@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Test
+name: Deploy static conent to pages
 
 on:
   # Runs on pushes targeting the default branch
