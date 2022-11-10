@@ -16,7 +16,7 @@ export const postActions = (post) => {
   if (viewing) {
     viewButton.remove()
   } else {
-    viewButton.href = `/?view=post&postId=${post.id}`
+    viewButton.href = `./?view=post&postId=${post.id}`
   }
 
   if (owned) {
