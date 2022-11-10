@@ -33,7 +33,7 @@ Forked from: https://github.com/NoroffFEU/social-media-client
 
 - The login form validates user inputs correctly based on API restrictions  :heavy_check_mark:
 - The create item form validates user inputs correctly based on API restrictions  :heavy_check_mark:
-- The logout button logs the user out when clicked
+- The logout button logs the user out when clicked  :heavy_check_mark:
 
 ##### version history:
 - v0.1.1 prettier installed & merged to workflow branch
@@ -42,7 +42,8 @@ Forked from: https://github.com/NoroffFEU/social-media-client
 - v0.1.4 vite installed & merged to workflow branch
 - v0.1.5 Jest installed & merged to workflow branch
 - *v0.1.6 Cypress installed & merged to workflow branch 
-- v0.1.7 e2e test, completed login form validation 
-- v0.1.8 e2e test, completed create item form validation
+- v0.1.7 e2e test completed, login form validation 
+- v0.1.8 e2e test completed, create item form validation
+- v0.1.9 e2e test completed, logout buttton logs the user out 
 
 *Cypress v10.7.0 would not work on my setup, so am using v10.11.0
