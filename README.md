@@ -1,12 +1,33 @@
 # Workflow CA
 
-## **Test Status Badges**
+## **Table of Contents**
+
+1. [About](#about)
+2. [Test Status Badges](#badges)
+3. [Install](#install)
+4. [Dependencies](#depend)
+5. [Tests](#tests)
+   1. [Unit Tests, Jest](#jest)
+   2. [E2R Tests, Cypress](#cypress)
+6. [Complete Setup & Install Guide](#configuration)
+   1. [Code Formatters](#formatters)
+   2. [Jest Setup](#jest-setup)
+   3. [Cypress Setup](#cypress-setup)
+   4. [Vite Setup](#vite-setup)
+   5. [Dotenv For Cypress Setup](#dotenv-setup)
+7. [Useful Links and Documentation](#links)
+
+## **About** <a id="about"></a>
+
+This project is part of the Workflow course assignment from Noroff. With aims to improve the quality of an existing environment by establishing useful workflows that make the development process more efficient. The test code is forked from a Noroff example of social media platform using Noroff's API. I have created Jest and Cypress tests for the required test cases. The repo environment has been configured to have pre-commit checks using Prettier, ESLint and Jest, to ensure code quality is maintained. I have also established branch protections on the main branch. With GitHub action workflows to automatically deploy the main branch to GitHub Pages on merge, and checks that my unit and end to end tests are passing before being allowed to merge into the main branch.
+
+## **Test Status Badges** <a id="badges"></a>
 
 [![Automated Unit Testing](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml)
 
 [![Automated E2E Testing](https://github.com/Anclagen/workflow-ca/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/e2e-test.yml)
 
-## **Repo Install**
+## **Repo Install** <a id="install"></a>
 
 Download the repo and setup in your chosen destination, open project file in your code editor.
 
@@ -38,13 +59,25 @@ Then proceed to `http://127.0.0.1:8080/` in your browser.
 
 If you wish to run Cypress tests create a `.env` file and match the `.env.example` file layout filling in your own user details
 
-## **About**
+## **Dependencies** <a id="dependencies"></a>
 
-This project is part of the Workflow course assignment from Noroff. With aims to improve the quality of an existing environment by establishing useful workflows that make the development process more efficient. The test code is forked from a Noroff example of social media platform using Noroff's API. I have created Jest and Cypress tests for the required test cases. The repo environment has been configured to have pre-commit checks using Prettier, ESLint and Jest, to ensure code quality is maintained. I have also established branch protections on the main branch. With GitHub action workflows to automatically deploy the main branch to GitHub Pages on merge, and checks that my unit and end to end tests are passing before being allowed to merge into the main branch.
+1. [Bootstrap Dark 5](https://vinorodrigues.github.io/bootstrap-dark-5/) A darker version of Bootstrap.
 
-## **Tests**
+**Development Dependencies**
 
-### **Unit Testing, Jest**
+1. [SASS](https://sass-lang.com/) compiles scss into css.
+2. [Prettier](https://prettier.io/) a code formatter
+3. [ESlint](https://eslint.org/) finds and fixes some problems with your code.
+4. [Mrm](https://www.npmjs.com/package/mrm-task-lint-staged) is a configuration tool for pre-commit Git hooks.
+5. [Babel](https://babeljs.io/)a JavaScript compiler for managing compatibility between older version of JavaScript.
+6. [Jest](https://jestjs.io/) a unit testing framework.
+7. [Cypress](https://www.cypress.io/) an end to end testing package, automating front end testing.
+8. [Vite](https://vitejs.dev/) a bundler for rapid development of front end projects.
+9. [dotenv](https://www.npmjs.com/package/dotenv) loads environment variables from a .env file into process.env.
+
+## **Tests** <a id="tests"></a>
+
+### **Unit Testing, Jest** <a id="jest"></a>
 
 Added the following test files;
 
@@ -64,23 +97,29 @@ To run these tests use;
 npm run test-unit
 ```
 
-### **End To End Testing, Cypress**
+### **End To End Testing, Cypress** <a id="cypress"></a>
 
 Added the following end to end test files for Cypress
 
 - login.cy.js
-  1. Tests login with valid credentials
-  2. Tests login error handling with invalid email
-  3. Tests login error handling with invalid password length
-  4. Tests login error handling with invalid password
+  - Tests login with valid credentials
+  - Tests login error handling with invalid email
+  - Tests login error handling with invalid password length
+  - Tests login error handling with invalid password
 - logout.cy.js
-  1. Tests logout
+  - Tests logout
 - createPost.cy.js
-  1. Tests user can create a post
-  2. Tests form validates inputs on attempted submissions
-  3. Tests the handling for thrown errors
+  - Tests user can create a post
+  - Tests form validates inputs on attempted submissions
+  - Tests the handling for thrown errors
 
-Before running Cypress tests ensure you are running your local server with vite using `npm run dev`.
+Before running Cypress tests ensure you are running your local server with vite using `npm run dev`. As well as having created a `.env` file and matching this example inputting your own email and password for the site.
+
+```
+PASSWORD=PASSWORD
+EMAIL=EXAMPLE@NOROFF.NO
+BASEURL=http://127.0.0.1:8080/
+```
 
 These can be run through the Cypress interface using
 
@@ -94,7 +133,7 @@ Alternatively they can be run in the command line using
 npm run test-e2e-cli
 ```
 
-## **Complete Project Setup and Configuration**
+## **Complete Project Setup and Configuration** <a id="configuration"></a>
 
 Create `.gitignore` and add, to ensure your not uploading large node_modules to your github repo.
 
@@ -103,7 +142,7 @@ Create `.gitignore` and add, to ensure your not uploading large node_modules to 
 /dist
 ```
 
-### **Code Formatters**
+### **Code Formatters** <a id="formatters"></a>
 
 This guide is done using VSC, you will need the `Prettier - Code formatter` and `ESLint` extensions installed to vsc for on save actions to work.
 
@@ -140,7 +179,7 @@ npx mrm@2 lint-staged
 
 Add scripts to `package.json`
 
-```
+```json
 scripts{
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
@@ -167,20 +206,18 @@ Replace default lint-staged scripts this.
 
 Add workspace settings for VSC, `.vscode/settings.json` (may differ for other code editors).
 
-```
+```json
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.validate": [
-    "javascript"
-  ]
+  "eslint.validate": ["javascript"]
 }
 ```
 
-### **Unit Testing Packages**
+### **Unit Testing Packages** <a id="jest-setup"></a>
 
 Install Jest
 
@@ -247,7 +284,7 @@ To add pre-commit hook for Jest, `.husky/pre-commit` add to file.;
 npm run test-unit
 ```
 
-### **End To End Test Packages**
+### **End To End Test Packages** <a id="cypress-setup"></a>
 
 Install Cypress and its eslint plugin;
 
@@ -289,7 +326,7 @@ Add to `.gitignore` to avoid uploads of videos and screenshots from cypress;
 /cypress/videos
 ```
 
-#### **Replaced Live server with Vite**
+#### **Replaced Live server with Vite** <a id="vite-setup"></a>
 
 Due to 3 dependencies with high severity vulnerabilities I replaced live-sever with vite
 
@@ -317,7 +354,7 @@ export default {
 };
 ```
 
-#### **Add dotenv for use in cypress**
+#### **Add dotenv for use in cypress** <a id="dotenv-setup"></a>
 
 Install dotenv
 
@@ -328,26 +365,30 @@ npm install -D dotenv
 Modify the `cypress.config.js` to match this setup to import .env variables which can be called in tests using Cypress.env("key"). If you wish to record your tests you can remove `video: false`.
 
 ```js
+require("dotenv").config();
+const { defineConfig } = require("cypress");
+
 module.exports = defineConfig({
   video: false,
   e2e: {
     setupNodeEvents(on, config) {
-      config.env = {
-        baseUrl: "http://127.0.0.1:8080",
-        ...process.env,
-        ...config.env,
-      };
+      (config.baseUrl = process.env.BASEURL),
+        (config.env = {
+          ...process.env,
+          ...config.env,
+        });
       return config;
     },
   },
 });
 ```
 
-Create `.env` file in root and add, filling it with your own details for Cypress testing
+Create `.env` file in root and add, filling it with your own details for Cypress testing, the show base URL can be used as is with the vite setup to test you current project, or it can be replaced with with a hosted URL. When running this project on actions you will need to define these in github secrets on the repository settings.
 
 ```
 PASSWORD=PASSWORD
 EMAIL=EXAMPLE@NOROFF.NO
+BASEURL=http://127.0.0.1:8080/
 ```
 
 Add `.env` to `.gitignore` file, should now be;
@@ -355,7 +396,10 @@ Add `.env` to `.gitignore` file, should now be;
 ```
 /node_modules
 /dist
+.eslintcache
 /cypress/screenshots
 /cypress/videos
 .env
 ```
+
+## **Useful Links & Documentations** <a id="links"></a>
