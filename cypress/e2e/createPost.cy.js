@@ -32,11 +32,10 @@ describe("Create Post", () => {
       .type(
         "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       );
-    cy.get("#postBody")
-      .should("exist")
-      .type(
-        "This post has been generated using Cypress, automate your user testing today!"
-      );
+    cy.get("#postBody").should("exist").type(
+      //combined validation tests to decrease the chances of a problem with slow server responses.
+      "This post has been generated using Cypress, automate your user testing today!"
+    );
     cy.get('button[data-action="submit"]').click();
     //posting could be very slow to respond in cypress
     cy.wait(5000);
