@@ -1,4 +1,4 @@
-import { createPost } from "./js/api/posts/create.js";
+import { createPost } from "../js/api/posts/create.js";
 
 // Real post for test function
 const title = "TestTitle";

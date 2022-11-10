@@ -1,4 +1,4 @@
-import { login } from "./js/api/auth/login.js";
+import { login } from "../js/api/auth/login.js";
 
 // Real login for test function
 const username = "kptest1@noroff.no";
