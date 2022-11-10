@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { createPost } from './create';
 
 const TEST_TITLE = 'Blue Cornfields Exist';
