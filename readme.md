@@ -54,4 +54,11 @@ npx eslint --init
 "eslint.validate": ["javascript"]
 }
 
-- Now it formats and lints on save automaticly.
+-Install Jest
+npm i -D jest@29.2.0
+
+- Add to package.json;
+  "test": "npm run test-unit",
+  "test-unit": "jest"
+
+-
