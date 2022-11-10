@@ -13,7 +13,7 @@ describe("Validates that the user can login, create a post and then log out", ()
       timeout: 5000,
     }).click({ force: true });
 
-    cy.fixture("UserData.json").then((data) => {
+    cy.fixture("userdata.json").then((data) => {
       let badEmail = data.badEmail;
       cy.get(locatorObj.getEmailField, {
         timeout: 5000,
@@ -21,7 +21,7 @@ describe("Validates that the user can login, create a post and then log out", ()
       cy.wait(2000);
     });
 
-    cy.fixture("UserData.json").then((data) => {
+    cy.fixture("userdata.json").then((data) => {
       cy.get(locatorObj.getPasswordField, {
         timeout: 5000,
       }).type(data.password);
@@ -37,7 +37,7 @@ describe("Validates that the user can login, create a post and then log out", ()
       timeout: 5000,
     }).click({ force: true });
 
-    cy.fixture("UserData.json").then((data) => {
+    cy.fixture("userdata.json").then((data) => {
       let myEmail = data.email;
       cy.get(locatorObj.getEmailField, {
         timeout: 5000,
@@ -45,7 +45,7 @@ describe("Validates that the user can login, create a post and then log out", ()
       cy.wait(2000);
     });
 
-    cy.fixture("UserData.json").then((data) => {
+    cy.fixture("userdata.json").then((data) => {
       cy.get(locatorObj.getPasswordField, {
         timeout: 5000,
       }).type(data.password);
@@ -63,7 +63,7 @@ describe("Validates that the user can login, create a post and then log out", ()
       .should("be.visible")
       .click({ force: true });
 
-    cy.fixture("UserData.json").then((data) => {
+    cy.fixture("userdata.json").then((data) => {
       cy.get(locatorObj.getPostTitle, {
         timeout: 5000,
       })
@@ -71,7 +71,7 @@ describe("Validates that the user can login, create a post and then log out", ()
         .type(data.postTitle);
     });
 
-    cy.fixture("UserData.json").then((data) => {
+    cy.fixture("userdata.json").then((data) => {
       cy.get(locatorObj.getPostTag, {
         timeout: 5000,
       })
@@ -79,7 +79,7 @@ describe("Validates that the user can login, create a post and then log out", ()
         .type(data.postTag);
     });
 
-    cy.fixture("UserData.json").then((data) => {
+    cy.fixture("userdata.json").then((data) => {
       cy.get(locatorObj.getPostMedia, {
         timeout: 5000,
       })
@@ -87,7 +87,7 @@ describe("Validates that the user can login, create a post and then log out", ()
         .type(data.postMedia);
     });
 
-    cy.fixture("UserData.json").then((data) => {
+    cy.fixture("userdata.json").then((data) => {
       cy.get(locatorObj.getPostBody, {
         timeout: 5000,
       })
