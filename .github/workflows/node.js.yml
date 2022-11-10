@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run vite-build --if-present
+    - run: npm run vite-build && npm run build --if-present
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with: 
