@@ -1,7 +1,7 @@
-import { login } from "./login.js";
+import { login } from "./login";
 
 test("Check login", async () => {
-  await login("jowander_@noroff.no", "12345678");
+  await login("audun@stud.noroff.no", "Audun123");
   const token = localStorage.getItem("token");
   expect(token).toBeDefined();
 });
