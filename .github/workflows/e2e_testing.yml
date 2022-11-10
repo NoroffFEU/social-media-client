@@ -18,6 +18,4 @@ jobs:
       - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
         with:
-          start: npm run test-e2e-cli
-          wait-on: "http://127.0.0.1:5500/"
           browser: electron
