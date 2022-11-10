@@ -1,15 +1,12 @@
 import { locatorObj } from "../pageLocators/locatorObj";
 
-Cypress.on(
-  "uncaught:exception",
-  (err, runnable) => {
-    return false;
-  }
-);
+Cypress.on("uncaught:exception", (err, runnable) => {
+  return false;
+});
 
 describe("Validates that the user can login, create a post and then log out", () => {
   it("Checks that the login form do not work with bad inputs based on API restrictions", () => {
-    cy.visit("http://127.0.0.1:5500");
+    cy.visit("/");
     cy.clearLocalStorage();
 
     cy.get(locatorObj.getLoginButton, {
@@ -33,7 +30,7 @@ describe("Validates that the user can login, create a post and then log out", ()
   });
 
   it("Checks that the login form validates user inputs correctly based on API restrictions", () => {
-    cy.visit("http://127.0.0.1:5500");
+    cy.visit("/");
     cy.clearLocalStorage();
 
     cy.get(locatorObj.getLoginButton, {
@@ -121,6 +118,6 @@ describe("Validates that the user can login, create a post and then log out", ()
       timeout: 5000,
     }).should("be.visible");
     cy.clearLocalStorage();
-    cy.visit("http://127.0.0.1:5500");
+    cy.visit("/");
   });
 });
