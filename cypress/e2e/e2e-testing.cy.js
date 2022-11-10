@@ -1,4 +1,4 @@
-describe('user can not log in with valid inputs', () => {
+describe('user can not log in with invalid inputs', () => {
   it('user can not log in', () => {
     cy.visit('/');
     cy.clearLocalStorage();
@@ -20,7 +20,7 @@ describe('user can not log in with valid inputs', () => {
   });
 });
 
-describe('user can log in with invalid inputs', () => {
+describe('user can log in with valid inputs', () => {
   it('user can log in', () => {
     cy.visit('/');
     cy.clearLocalStorage();
@@ -40,5 +40,12 @@ describe('user can log in with invalid inputs', () => {
       .click();
     cy.wait(1000);
     cy.then(() => expect(localStorage.getItem('token')).to.not.be.null);
+  });
+});
+
+describe('user can log out', () => {
+  it('logs the user out when logout button is clicked', () => {
+    cy.wait(1000);
+    cy.get('div.text-end > button').contains('Logout').click();
   });
 });
