@@ -5,7 +5,8 @@
   "description": "Git commit -m \"whatever\" makes eslint and prettier run tro alle my .js, .html files and fix them up",
   "main": "index.js",
   "scripts": {
-    "build": "sass src/scss:dist/css && vite build",
+    "build": "sass src/scss:dist/css",
+    "build-vite": "vite build",
     "start": "sass --watch src/scss:dist/css & live-server && vite",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
