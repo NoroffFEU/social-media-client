@@ -8,13 +8,11 @@ describe('Can login to the page', () => {
     // cy.get("input[type='email']:visible").should("exist").type(Cypress.env("EMAIL"));
     cy.get("input[type='email']:visible")
       .should('exist')
-      .type(Cypress.env('EMAIL'));
+      .type('faketestaccount@stud.noroff.no');
     cy.get("input[type='password']:visible")
       .should('exist')
-      .type(Cypress.env('PASSWORD'));
+      .type('Fakepassword200');
+    cy.wait(200);
+    cy.get("button[data-auth='loginButton']:visible").click();
   });
-
-  /*   it("Login", () => {
-    cy.visit("/");
-  }) */
 });
