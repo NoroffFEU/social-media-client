@@ -2,6 +2,8 @@ name: Automated Unit Testing
 on: 
   - pull_request
   - workflow_dispatch
+   push:
+    branches: ["master", "workflow"] 
 
 jobs:
   run-unit-tests:
