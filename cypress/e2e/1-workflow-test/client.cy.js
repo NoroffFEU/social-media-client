@@ -1,5 +1,6 @@
 describe("Workflow Media App", () => {
   beforeEach("login", () => {
+    cy.visit("http://127.0.0.1:5501");
     cy.get("header [data-auth='register']").click({ force: true });
     cy.get("form button").contains("Create Profile").should("be.visible");
     cy.wait(500);
