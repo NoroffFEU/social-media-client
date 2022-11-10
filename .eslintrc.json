@@ -4,11 +4,12 @@
     "es2021": true,
     "jest": true
   },
-  "extends": "eslint:recommended",
+  "plugins": ["cypress"],
+  "extends": ["plugin:cypress/recommended"],
   "overrides": [{ "files": ["**/*.js"] }],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": { "no-unused-vars": "off" }
 }
