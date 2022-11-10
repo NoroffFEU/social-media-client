@@ -15,7 +15,7 @@ describe('Can login to the page and perform an logout + clearing localStorage', 
     cy.get("button[data-auth='loginButton']:visible").click({ multiple: true });
     cy.wait(3000);
     cy.get("button[data-auth='logout']:visible").click({ multiple: true });
-    cy.wait(2000);
+    cy.wait(3000);
     cy.clearLocalStorage();
   });
 });
