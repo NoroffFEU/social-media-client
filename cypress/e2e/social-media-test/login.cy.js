@@ -1,5 +1,5 @@
 describe('Can login to the page', () => {
-  it('passes', () => {
+  it('Start login', () => {
     cy.visit('/');
     cy.clearLocalStorage();
     cy.wait(1000);
