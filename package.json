@@ -17,7 +17,7 @@
     "test-e2e-cli": "cypress run"
   },
   "keywords": [],
-  "author": "",
+  "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.19.3",
