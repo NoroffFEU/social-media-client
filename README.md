@@ -31,3 +31,18 @@ Its a social media website that with help of api calls allows the user to create
 # Testing files/how to use with Jest
 
 The test files would be:
+
+- create.test.js
+- localstorage.test.js
+- login.test.js
+
+To run the tests, run `npm run test-unit` in the terminal
+
+# Testing files/how to use with Cypress
+
+The test files would be:
+
+- auth.cy.js
+- createPost.cy.js
+
+To run the tests, run `npm run test-e2e` or `npm run test-e2e-cli` in the terminal
