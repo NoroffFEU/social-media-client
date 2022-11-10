@@ -39,7 +39,7 @@
     "*.js": [
       "prettier --write",
       "eslint --fix",
-      "jest --watch"
+      "jest --o"
     ],
     "*.html": [
       "prettier --write"
