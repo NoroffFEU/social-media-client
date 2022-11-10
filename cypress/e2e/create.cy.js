@@ -1,6 +1,6 @@
 describe('User can create an item', () => {
   it('can make a new post', () => {
-    cy.visit('http://127.0.0.1:5500/');
+    cy.visit('http://127.0.0.1:5501/');
     cy.visit('/?view=post');
     cy.get('#postForm')
       .should('exist')
