@@ -17,7 +17,7 @@
     "cypress:open": "cypress open"
   },
   "keywords": [],
-  "author": "Noroff",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^11.0.0",
@@ -28,7 +28,7 @@
     "lint-staged": "^13.0.3",
     "live-server": "^1.1.0",
     "sass": "^1.56.1",
-    "vite": "3.0.9"
+    "vite": "^3.2.3"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
