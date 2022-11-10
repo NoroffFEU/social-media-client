@@ -95,4 +95,12 @@ module.exports = {
 presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
 };
 
+-Install Vite
+npm install -D vite
+
+- Add to package.json file;
+  "dev": "vite",
+  "vite-build": "vite build",
+  "vite-preview": "vite preview"
+
 -

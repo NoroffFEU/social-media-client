@@ -4,6 +4,9 @@
   "description": "- Initialized npm",
   "main": "index.js",
   "scripts": {
+    "dev": "vite",
+    "vite-build": "vite build",
+    "vite-preview": "vite preview",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "prepare": "husky install",
@@ -27,7 +30,8 @@
     "lint-staged": "^13.0.3",
     "live-server": "^1.1.0",
     "prettier": "^2.7.1",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "vite": "^3.2.3"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
