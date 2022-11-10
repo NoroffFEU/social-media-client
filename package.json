@@ -13,10 +13,9 @@
     "test-e2e": "cypress open",
     "test-unit": "jest",
     "prepare": "husky install",
-    "dev": "vite",
+    "vite": "vite",
     "vite-build": "vite build",
-    "serve": "vite preview"
-
+    "vite-serve": "vite preview"
   },
   "keywords": [],
   "author": "",
