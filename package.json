@@ -17,7 +17,7 @@
     "cypress:open": "cypress open"
   },
   "keywords": [],
-  "author": "",
+  "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^11.0.0",
