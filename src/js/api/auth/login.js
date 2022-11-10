@@ -1,7 +1,6 @@
 import { apiPath } from "../constants.js";
 import { headers } from "../headers.js";
 import { save } from '../../storage/index.js'
-
 export async function login(email, password) {
   const response = await fetch(`${apiPath}/social/auth/login`, {
     method: "post",
