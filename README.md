@@ -46,5 +46,7 @@ Forked from: https://github.com/NoroffFEU/social-media-client
 - v0.1.7 e2e test completed, login form validation 
 - v0.1.8 e2e test completed, create item form validation
 - v0.1.9 e2e test completed, logout buttton logs the user out 
+- v0.1.10 Automated Unit Testing workflow run working 
+- v0.1.11 Automated E2E Testing workflow run working
 
-*Cypress v10.7.0 would not work on my setup, so am using v10.11.0
+*Cypress v10.7.0 would not run on my setup. I am using v10.11.0
