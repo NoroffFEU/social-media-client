@@ -64,7 +64,7 @@ npm i -D jest@29.2.0
 - Install eslint plugin
   npm i -D eslint-plugin-jest
 
--Update .eslintrc.json file;
+-Update .eslintrc.json file with;
 {
 "env": {
 "browser": true,
@@ -86,5 +86,13 @@ npm i -D jest@29.2.0
 },
 "rules": {}
 }
+
+- Install babel
+  npm install --save-dev babel-jest @babel/core @babel/preset-env
+
+-Configure Babel to target your current version of Node by creating a babel.config.js file in the root of your project;
+module.exports = {
+presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
+};
 
 -
