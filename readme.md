@@ -1,5 +1,8 @@
 # Social media app CA
 
+[![Automated E2E Testing](https://github.com/Littlaa/social-media-client-ca/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Littlaa/social-media-client-ca/actions/workflows/e2e-test.yml)
+[![Automated Unit Testing](https://github.com/Littlaa/social-media-client-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Littlaa/social-media-client-ca/actions/workflows/unit-test.yml)
+
 ## The following workflows/hooks are required:
 
 - [x] Project is configured to run Prettier on commit
