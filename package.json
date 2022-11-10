@@ -10,9 +10,12 @@
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --fix",
     "test": "npm run test-unit test-e2e",
-    "test-e2e": "cypress run",
+    "test-e2e": "cypress open",
     "test-unit": "jest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "vite": "vite",
+    "vite-build": "vite build",
+    "vite-serve": "vite preview"
   },
   "keywords": [],
   "author": "",
@@ -29,7 +32,8 @@
     "lint-staged": "^13.0.3",
     "live-server": "^1.2.2",
     "prettier": "^2.7.1",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "vite": "^3.2.3"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
