@@ -6,14 +6,15 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "build-vite": "vite build",
-    "start": "sass --watch src/scss:dist/css & live-server && vite",
+    "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
     "prepare": "husky install",
     "test": "jest sum.test.js",
+    "dev": "vite",
     "preview": "vite preview",
+    "build-vite": "vite build",
     "cypress:open": "cypress open"
   },
   "keywords": [],
