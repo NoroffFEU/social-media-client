@@ -38,7 +38,6 @@ Dependencies used is as follows.
 7. [Bootstrap](https://npm.io/package/bootstrap) - Powerful, extensible, and feature-packed frontend toolkit.
 8. [SASS](https://sass-lang.com/) - Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.
 9. [Vite](https://vitejs.dev/) - Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects.
-10. [dotenv](https://github.com/motdotla/dotenv#readme) - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
 
 Github actions that is set up
 ---
@@ -83,7 +82,7 @@ After setting this up you can run
 npm run dev
 ```
 
-Open your browser and go to `http://127.0.0.1:5173`to see your server running
+Open your browser and go to `http://127.0.0.1:5501`to see your server running
 
 #### Bootstrap
 
