@@ -1,5 +1,7 @@
+// variables that mirrors the HTML documents
 export const locatorObj = {
-  getLoginButton: '[data-bs-target="#loginModal"]',
+  getLoginButton:
+    '[data-bs-target="#loginModal"]',
   getEmailField: '[id="loginEmail"]',
   getPasswordField: '[id="loginPassword"]',
   getLoginButtonOnModel:
