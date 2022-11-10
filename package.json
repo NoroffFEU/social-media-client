@@ -1,7 +1,6 @@
 {
   "name": "css-frameworks-ca",
   "version": "1.0.0",
-  "type": "module",
   "description": "Git commit -m \"whatever\" makes eslint and prettier run tro alle my .js, .html files and fix them up",
   "main": "index.js",
   "scripts": {
