@@ -1,7 +1,7 @@
 {
   "name": "css-frameworks-ca",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Initialized npm",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
@@ -11,10 +11,18 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.2",
+    "live-server": "^1.1.0",
     "sass": "^1.54.8"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steffenkjekken/social-media-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/steffenkjekken/social-media-client/issues"
+  },
+  "homepage": "https://github.com/steffenkjekken/social-media-client#readme"
 }
