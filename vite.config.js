@@ -12,8 +12,4 @@ export default {
     port: 8080,
     host: true,
   },
-
-  build: {
-    outDir: './vite',
-  },
 };
