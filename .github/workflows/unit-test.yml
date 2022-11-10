@@ -1,7 +1,8 @@
-name: Automated Unit Testing
-on: 
- push:
-  branches: ["master", "workflow"] 
+name: Deploy static conent to pages
+
+on:
+  push:
+    branches: ["master", "workflow"] 
   - pull_request
   - workflow_dispatch
    
