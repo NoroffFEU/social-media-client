@@ -15,7 +15,6 @@
    3. [Cypress Setup](#cypress-setup)
    4. [Vite Setup](#vite-setup)
    5. [Dotenv For Cypress Setup](#dotenv-setup)
-7. [Useful Links and Documentation](#links)
 
 ## **About** <a id="about"></a>
 
@@ -37,19 +36,19 @@ Initialise git in the project folder to avoid errors related to husky setup.
 git init
 ```
 
-Install dependencies
+Install dependencies.
 
 ```
 npm i
 ```
 
-Build CSS files from SASS
+Build CSS files from SASS.
 
 ```
 npm run build
 ```
 
-To view the site using vite live server
+To view the site using vite live server.
 
 ```
 npm run dev
@@ -57,7 +56,7 @@ npm run dev
 
 Then proceed to `http://127.0.0.1:8080/` in your browser.
 
-If you wish to run Cypress tests create a `.env` file and match the `.env.example` file layout filling in your own user details
+If you wish to run Cypress tests create a `.env` file and match the `.env.example` file layout filling in your own user details.
 
 ## **Dependencies** <a id="dependencies"></a>
 
@@ -99,19 +98,20 @@ npm run test-unit
 
 ### **End To End Testing, Cypress** <a id="cypress"></a>
 
-Added the following end to end test files for Cypress
+Added the following end to end test files for Cypress.
 
 - login.cy.js
-  - Tests login with valid credentials
-  - Tests login error handling with invalid email
-  - Tests login error handling with invalid password length
-  - Tests login error handling with invalid password
+  - Tests login with valid credentials.
+  - Tests login error handling for invalid email.
+  - Tests login error handling with invalid email pattern.
+  - Tests login error handling with invalid password length.
+  - Tests login error handling with invalid password.
 - logout.cy.js
-  - Tests logout
+  - Tests logout.
 - createPost.cy.js
-  - Tests user can create a post
-  - Tests form validates inputs on attempted submissions
-  - Tests the handling for thrown errors
+  - Tests user can create a post.
+  - Tests form validates inputs on attempted submissions.
+  - Tests the handling for thrown errors.
 
 Before running Cypress tests ensure you are running your local server with vite using `npm run dev`. As well as having created a `.env` file and matching this example inputting your own email and password for the site.
 
@@ -121,13 +121,13 @@ EMAIL=EXAMPLE@NOROFF.NO
 BASEURL=http://127.0.0.1:8080/
 ```
 
-These can be run through the Cypress interface using
+These can be run through the Cypress interface using;
 
 ```
 npm run test-e2e
 ```
 
-Alternatively they can be run in the command line using
+Alternatively they can be run in the command line using;
 
 ```
 npm run test-e2e-cli
@@ -152,7 +152,7 @@ Install Prettier.
 npm install -D prettier
 ```
 
-Install eslint
+Install eslint.
 
 ```
 npm install eslint --save-dev
@@ -177,7 +177,7 @@ Install Mrm, to manage pre-commit hooks.
 npx mrm@2 lint-staged
 ```
 
-Add scripts to `package.json`
+Add scripts to `package.json`.
 
 ```json
 scripts{
@@ -219,7 +219,7 @@ Add workspace settings for VSC, `.vscode/settings.json` (may differ for other co
 
 ### **Unit Testing Packages** <a id="jest-setup"></a>
 
-Install Jest
+Install Jest.
 
 ```
 npm i -D jest@29.2.0
@@ -238,7 +238,7 @@ Install eslint plugin for Jest.
 npm i -D eslint-plugin-jest
 ```
 
-Update `.eslintrc.json` settings
+Update `.eslintrc.json` settings.
 
 ```json
 {
@@ -264,13 +264,13 @@ Update `.eslintrc.json` settings
 }
 ```
 
-Install Babel
+Install Babel.
 
 ```
 npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4
 ```
 
-Create `babel.config.json` and add
+Create `babel.config.json` and add.
 
 ```json
 {
@@ -278,7 +278,7 @@ Create `babel.config.json` and add
 }
 ```
 
-To add pre-commit hook for Jest, `.husky/pre-commit` add to file.;
+To add pre-commit hook for Jest, `.husky/pre-commit` add to file;
 
 ```
 npm run test-unit
@@ -402,4 +402,3 @@ Add `.env` to `.gitignore` file, should now be;
 .env
 ```
 
-## **Useful Links & Documentations** <a id="links"></a>
