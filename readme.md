@@ -26,20 +26,23 @@ npx eslint --init
   npx mrm@2 lint-staged
 
 -Edit package.json file with;
-"lint-staged": {
-"_.js": [
-"prettier --write",
-"eslint --fix"
-],
-"_.html": [
-"prettier --write"
-],
-"\*.scss": [
-"prettier --write"
-]
-}
+"format": "prettier -w src/**/\*.js",
+"lint": "eslint src/**/_.js",
+"lint-fix": "eslint src/\*\*/_.js --cache --fix"
 
--Added a file with formatting errors to check that prettier and ESlint were working
+- Replace "lint-staged" in package.json with;
+  "lint-staged": {
+  "_.js": [
+  "prettier --write",
+  "eslint --fix"
+  ],
+  "_.html": [
+  "prettier --write"
+  ],
+  "\*.scss": [
+  "prettier --write"
+  ]
+  }
 
 -Added linting rules to .vscode/settings.json file;
 {

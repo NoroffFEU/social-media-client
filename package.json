@@ -5,13 +5,19 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "prepare": "husky install",
+    "format": "prettier -w src/**/*.js",
+    "lint": "eslint src/**/_.js",
+    "lint-fix": "eslint src/**/_.js --cache --fix"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.27.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
     "live-server": "^1.1.0",
     "prettier": "^2.7.1",
     "sass": "^1.54.8"
@@ -26,5 +32,17 @@
   "bugs": {
     "url": "https://github.com/steffenkjekken/social-media-client/issues"
   },
-  "homepage": "https://github.com/steffenkjekken/social-media-client#readme"
+  "homepage": "https://github.com/steffenkjekken/social-media-client#readme",
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
+  }
 }
