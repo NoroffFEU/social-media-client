@@ -38,7 +38,8 @@
   "lint-staged": {
     "*.js": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --fix",
+      "jest --watchAll"
     ],
     "*.html": [
       "prettier --write"
