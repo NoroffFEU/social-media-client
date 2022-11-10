@@ -1,2 +1,2 @@
-export const apiBase = "https://whatver.com/api/posts";
+export const apiBase = 'https://nf-api.onrender.com/api/v1/';
 export const url = new URL(apiBase);

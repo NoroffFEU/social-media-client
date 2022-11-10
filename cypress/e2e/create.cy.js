@@ -1,5 +1,5 @@
 it('can make a new post', () => {
-  cy.visit('http://127.0.0.1:5500/?view=post');
+  cy.visit('https://nf-api.onrender.com/api/v1/social/posts/');
   cy.visit('/?view=post');
   cy.get('#postForm')
     .should('exist')
