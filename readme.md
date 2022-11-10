@@ -17,14 +17,12 @@
 
 ## The following features must be automatically tested with unit tests:
 
-- [ ] The login function returns a valid token when provided with valid credentials
-- [ ] The logout function clears the token from browser storage
-- [ ] The create item function creates a new item on the API
+- [x] The login function returns a valid token when provided with valid credentials
+- [x] The logout function clears the token from browser storage
+- [x] The create item function creates a new item on the API
 
 ## The following features must be automatically tested with end-to-end tests:
 
 - [ ] The login form validates user inputs correctly based on API restrictions
 - [ ] The create item form validates user inputs correctly based on API restrictions
 - [ ] The logout button logs the user out when clicked
-
-https://unsplash.com/photos/2LowviVHZ-E profile pic
