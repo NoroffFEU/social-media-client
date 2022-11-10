@@ -17,7 +17,9 @@ describe("Authentication", () => {
     cy.get("input[type='password']:visible").should("exist").type("LeahogUlf");
     cy.get(".btn-success:visible").click();
     cy.wait(2000);
-    cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
+    cy.then(
+      () => expect(window.localStorage.getItem("profile")).to.not.be.null
+    );
     cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
     cy.url().should("include", "profile");
   });
