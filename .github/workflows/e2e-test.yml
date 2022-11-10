@@ -14,5 +14,6 @@ jobs:
       - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
         with:
-          start: npm run test-e2e
+          start: npm run start
+          wait-on: "URL"
           browser: electron
