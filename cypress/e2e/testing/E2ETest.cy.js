@@ -4,7 +4,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 describe('validate form input for login', () => {
   it('CANNOT use unvalidated email', (done) => {
-    cy.visit('http://127.0.0.1:5500/');
+    cy.visit('http://127.0.0.1:8080/');
     cy.wait(700);
     cy.clearLocalStorage();
     cy.wait(700);
@@ -40,7 +40,7 @@ describe('validate form input for login', () => {
 
 describe('Social Media App: Authenticated user', () => {
   beforeEach(() => {
-    cy.visit('http://127.0.0.1:5500/');
+    cy.visit('http://127.0.0.1:8080/');
     cy.wait(700);
     cy.clearLocalStorage();
     cy.wait(700);
@@ -70,7 +70,7 @@ describe('Social Media App: Authenticated user', () => {
 });
 describe('Social Media App: Authenticated user post form validate and post', () => {
   beforeEach(() => {
-    cy.visit('http://127.0.0.1:5500/');
+    cy.visit('http://127.0.0.1:8080/');
     cy.wait(700);
     cy.clearLocalStorage();
     cy.wait(700);
@@ -142,7 +142,7 @@ describe('Social Media App: Authenticated user post form validate and post', () 
 });
 describe('Social Media App: Authenticated user logout', () => {
   beforeEach(() => {
-    cy.visit('http://127.0.0.1:5500/');
+    cy.visit('http://127.0.0.1:8080/');
     cy.wait(700);
     cy.clearLocalStorage();
     cy.wait(700);
