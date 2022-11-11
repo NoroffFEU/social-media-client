@@ -3,5 +3,5 @@ import "cypress-localstorage-commands";
 import "./commands";
 
 Cypress.Keyboard.defaults({
-  keystrokeDelay: 500,
+  keystrokeDelay: 100,
 });
