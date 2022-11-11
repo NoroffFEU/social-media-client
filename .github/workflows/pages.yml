@@ -1,13 +1,11 @@
 name: Deploy Master
-
 on:
   push:
-    branches: ["master"]
+    branches: ["workflow"]
   workflow_dispatch:
 
   pages: write
   id-token: write
-
 concurrency:
   group: "pages"
   cancel-in-progress: true
