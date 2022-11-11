@@ -1,2 +1,3 @@
 **/*.config.js
 E2ETest.cy.js
+/workflow-dependencies
