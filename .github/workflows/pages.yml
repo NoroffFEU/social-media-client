@@ -5,7 +5,6 @@ on:
     branches: ["master"]
   workflow_dispatch:
 
-	@@ -15,13 +11,11 @@ permissions:
   pages: write
   id-token: write
 
@@ -17,7 +16,6 @@ jobs:
   deploy:
     environment:
       name: github-pages
-	@@ -30,7 +24,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,7 +23,6 @@ jobs:
         run: npm i
       - name: Build SASS
         run: npm run build
-	@@ -39,8 +33,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
