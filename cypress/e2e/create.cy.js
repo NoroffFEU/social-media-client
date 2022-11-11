@@ -18,6 +18,7 @@ describe('Social Media App: Create post', () => {
   it('can create new post', () => {
     cy.wait(1000);
     cy.get('#footerActions > a.btn').contains('New Post').click();
+    cy.wait(500);
     cy.get('#postTitle').type('Post Title test');
     cy.get('#postTags').type('Post tags test');
     cy.get('#postMedia').type('https://unsplash.com/photos/2LowviVHZ-E');
