@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env APP_ENV=production sass src/scss:dist/css && vite build",
+    "build": "sass src/scss:dist/css",
     "start": "sass src/scss:dist/css && vite --port 8080 --open",
     "watch": "vite build --watch index.html",
     "format": "prettier -w src/**/*.js",
@@ -14,7 +14,8 @@
     "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
     "test-e2e": "cypress open",
-    "test-e2e-cli": "cypress run"
+    "test-e2e-cli": "cypress run",
+    "preview": "cross-env APP_ENV=production sass src/scss:dist/css && vite preview"
   },
   "keywords": [],
   "author": "",
