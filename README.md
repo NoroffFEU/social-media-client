@@ -3,14 +3,22 @@ Course assignment for workflow
 
 - Installed node modules (npm init, npm i)
 
-Configures Prettier and ESlint to run on commit:
+Configures Prettier, ESlint and Jest to run on commit:
+
 - Installing ESlint (npm install eslint --save-dev)
 - Initializing ESlint (npx eslint --init)
 - Adding this ("test": "node src/js/joker.js") under scripts in package.json
+
 - Installing Prettier (npm install --save-dev prettier)
 - Testing Prettier (npx prettier -c src/**/*.js)
 - Running Prettier (npx prettier -w src/**/*.js)
 - Adding this ("format": "prettier -w src/**/*.js") under scripts in package.json
+
+- Installing Jest (npm install --save-dev jest)
+- Installing eslint-plugin-test (npm i -D eslint-plugin-jest)
+- 
+
+
 
 
 The following workflows/hooks are required:
