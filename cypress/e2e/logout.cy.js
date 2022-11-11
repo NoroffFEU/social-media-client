@@ -1,6 +1,8 @@
 export const apiBase = 'https://nf-api.onrender.com/api/v1/';
 export const url = new URL(apiBase);
 
+const baseURL = 'http://127.0.0.1:5500/';
+
 describe('Authentication', () => {
   beforeEach(() => {
     cy.visit('/');
