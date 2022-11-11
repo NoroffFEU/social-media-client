@@ -237,7 +237,7 @@ Install
 npm install -D vite
 ```
 
-Create vite.config.json and add
+Create vite.config.js and add
 ```js
 export default {
   server: {
