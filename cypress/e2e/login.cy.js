@@ -77,7 +77,7 @@ describe("Authentication", () => {
         .type(Cypress.env("EMAIL"));
       cy.get("input[type='password']:visible").should("exist").type(`passwor`);
       cy.get("button[type='submit']").click();
-      cy.get("input[type='password']:invalid")
+      cy.get("input[type='password']:visible")
         .invoke("prop", "validationMessage")
         .should("exist");
       cy.wait(2000);
