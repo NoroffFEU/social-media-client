@@ -18,13 +18,21 @@
 
 ## **About** <a id="about"></a>
 
-This project is part of the Workflow course assignment from Noroff. With aims to improve the quality of an existing environment by establishing useful workflows that make the development process more efficient. The test code is forked from a Noroff example of social media platform using Noroff's API. I have created Jest and Cypress tests for the required test cases. The repo environment has been configured to have pre-commit checks using Prettier, ESLint and Jest, to ensure code quality is maintained. I have also established branch protections on the main branch. With GitHub action workflows to automatically deploy the main branch to GitHub Pages on merge, and checks that my unit and end to end tests are passing before being allowed to merge into the main branch.
+This project is part of the Workflow course assignment from Noroff. With aims to improve the quality of an existing environment by establishing useful workflows that make the development process more efficient. The test code is forked from a Noroff example of a social media platform using Noroff's API. I have created Jest and Cypress tests for the required test cases. The repo environment has been configured to have pre-commit checks using Prettier, ESLint and Jest, to ensure code quality is maintained. I have also established branch protections on the main branch. With GitHub action workflows to automatically deploy the main branch to GitHub Pages on merge, and checks that my unit and end to end tests are passing before being allowed to merge into the main branch.
 
 ## **Test Status Badges** <a id="badges"></a>
 
+**Jest Tests**
+
 [![Automated Unit Testing](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml)
 
+**Cypress Tests**
+
 [![Automated E2E Testing](https://github.com/Anclagen/workflow-ca/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/e2e-test.yml)
+
+**Site Deployed**
+
+[![Deploy Master](https://github.com/Anclagen/workflow-ca/actions/workflows/deploy.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/deploy.yml)
 
 ## **Repo Install** <a id="install"></a>
 
@@ -123,27 +131,39 @@ Added the following end to end test files for Cypress.
   - Checks local storage tokens for "profile" and "token" are null.
   - Checks URL hasn't changed.
   - Checks login form modal is still present.
-- Tests login error handling with invalid email.
+- Tests login form validation with invalid email.
   - Checks for email input validation prompt when not using a valid Noroff email.
   - Checks local storage tokens for "profile" and "token" are null.
   - Checks URL hasn't changed.
   - Checks login form modal is still present.
-- Tests login error handling with invalid password length.
+- Tests login form validation password length.
   - Checks for password validation prompt when using too short password.
   - Checks local storage tokens for "profile" and "token" are null.
   - Checks URL hasn't changed.
   - Checks login form modal is still present.
-- Tests login error handling with invalid password
+- Tests login error handling with invalid password.
+  - Checks for alert message for failed login.
+  - Checks local storage tokens for "profile" and "token" are null.
+  - Checks URL hasn't changed.
+  - Checks login form modal is still present.
 
 **logout.cy.js**
 
-- Tests logout
+- Tests logout.
+  - Checks user is redirected.
+  - Checks local storage tokens for "profile" and "token" are null.
 
 **createPost.cy.js**
 
-- Tests user can create a post
-- Tests form validates inputs on attempted submissions
+- Tests user can create a post.
+  - Checks user is redirected to create post.
+  - Checks post is deleted.
+- Tests form validates inputs on attempted submissions.
+  - Checks empty form can't be submitted.
+  - Checks media input validates for URLs.
+  - Checks a post title is required.
 - Tests the handling for thrown errors
+  - Checks form can handle a thrown error.
 
 Before running Cypress tests ensure you are running your local server with vite using `npm run dev`. As well as having created a `.env` file and matching this example inputting your own email and password for the site.
 
