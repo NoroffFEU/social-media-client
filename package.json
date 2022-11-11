@@ -39,7 +39,8 @@
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "jest --bail --findRelatedTests"
     ],
     "*.html": [
       "prettier --write"
