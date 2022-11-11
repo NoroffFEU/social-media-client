@@ -8,9 +8,8 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "prepare": "husky install",
     "format": "prettier -w src/**/*.js",
-    "test": "npm run test-unit",
-    "test-unit": "jest",
     "test": "npm run test-e2e",
+    "test-unit": "jest",
     "test-e2e": "cypress open"
   },
   "keywords": [],
