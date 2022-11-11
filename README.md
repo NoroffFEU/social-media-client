@@ -1,48 +1,98 @@
 Course Assignment - Workflow 2 - Frontend year 2
 
 The following workflows/hooks are required:
--Iniltialized npm with (npm init)
--Added node_modules with (npm i or npm install
+-Iniltialized npm with:
+```
+-npm init
+```
+
+-Added node_modules with:
+```
+-npm i
+```
+
 
 1.	Project is configured to run Prettier on commit 
--Installed Prettier as a devDependency with (npm install --save-dev prettier)
---Checked if installation was successfull with (npx prettier -c src)
--Runned Prettier with (npx prettier -w src)
+-Installed Prettier as a devDependency with: 
+```
+-npm install --save-dev prettier
+```
+
+--Checked if installation was successfull with 
+```
+npx prettier -c src
+```
+
+-Runned Prettier with 
+```
+-npx prettier -w src
+```
+
 
 2.	Project is configured to run ESLint on commit 
--Installed esLint as a devDepencendy wih (npm install eslint --save-dev)
--Initialixe esLint with (npx eslint --init
-which created the .eslintrc.json file
+-Installed esLint as a devDepencendy wih 
+```
+-npm install eslint --save-dev
+```
+
+-Initialixe esLint with which created the .eslintrc.json file:
+```
+-npx eslint --init
+```
 
 3.	Project is configured to run Jest on commit 
--Install Jest as a devDependency with (npm install --save-dev jest)
--Had to add this for eslint to allow jest function tests: (npm i -D eslint-plugin-jest
-)
+-Install Jest as a devDependency with :
+```
+-npm install --save-dev jest
+```
 
--Creating a pre-commit hook using (npx mrm@2 lint-staged)
-(also added some stuff into package.json under "scripts")..
+-Had to add this for eslint to allow jest function tests: 
+```
+-npm i -D eslint-plugin-jest
+```
+
+-Creating a pre-commit hook using :
+```
+-npx mrm@2 lint-staged
+```
 
 
 The following file changes are required:
 2.	Project is configured for hosting (e.g CDN links or a Bundler)
--Install vite (npm i vite -D)
+-Install vite: 
+```
+-npm i vite -D
+```
 -added vite.config.js and put path to .dist
 Estalished Github Page with GitHub Actions on Github
 
 
-he following features must be automatically tested with unit tests:
+The following features must be automatically tested with unit tests:
 First i set up Cypress manually:
--Installed Cypress with (npm install cypress --save-dev) same as (npm install -D cypress)
--Open cypress with (npx cypress open)
+-Installed Cypress with :
+```
+-npm install cypress --save-dev)
+```
+
+-Open cypress with:
+```
+-npx cypress open 
+```
 Made some folders and files (cypress.config.js, e2e.js, commands.js)
 
 
 1.	Login function returns a valid token when provided with valid credentials
 Made a spec in cypress and added my url to my login-return-token.cy.js file
 Got an error when trying to commit my test so had to install this plugin:
--(npm install eslint-plugin-cypress@latest --save-dev)
+```
+-npm install eslint-plugin-cypress@latest --save-dev
+```
+
 had to add "no-unused-vars": "off" under "rules" in eslintrc.json also
-To access localStorage i run (npm i --save-dev cypress-localstorage-commands)
+To access localStorage i run:
+```
+-npm i --save-dev cypress-localstorage-commands
+```
 -Test passes
 
 
