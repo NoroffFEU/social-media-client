@@ -103,4 +103,25 @@ npm install -D vite
   "vite-build": "vite build",
   "vite-preview": "vite preview"
 
--Add "--passWithNoTests" to end of jest command in package.json so no errors show when running without test files
+- Add "--passWithNoTests" to end of jest command in package.json so no errors show when running without test files
+
+- github workflow yml write
+
+- Installed Cypress
+  npm install -D cypress
+
+-Installed ESlint plugin for cypress
+npm install eslint-plugin-cypress --save-dev
+
+- Updated the overrides in eslintrc.json with;
+  {
+  "files": ["**/*.cy.js", "cypress.config.js"],
+  "env": { "cypress/globals": true },
+  "plugins": ["cypress"],
+  "extends": ["plugin:cypress/recommended"],
+  "rules": {
+  "cypress/no-unnecessary-waiting": "off",
+  "no-unused-vars": "off",
+  "no-undef": "off"
+  }
+  }
