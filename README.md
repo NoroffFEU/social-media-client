@@ -1,10 +1,16 @@
 Course assignment for workflow
 
 
+- Installed node modules (npm init, npm i)
+
+Configures Prettier and ESlint to run on commit:
+- Installing ESlint (npm install eslint --save-dev)
+- Initializing ESlint (npx eslint --init)
+
+
 The following workflows/hooks are required:
 
 Project is configured to run Prettier on commit
-- 
 Project is configured to run ESLint on commit
 Project is configured to run Jest on commit
 Project is configured to deploy to pages on merge to default
