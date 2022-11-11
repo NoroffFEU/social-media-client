@@ -15,5 +15,4 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
         start: npm run start
-          wait-on: "http://localhost:5500/"
           browser: electron
