@@ -80,15 +80,28 @@ If you wish to run Cypress tests create a `.env` file and match the `.env.exampl
 
 Added the following test files;
 
-- login.test.js
-  - Tests successful login
-  - Tests unsuccessful login
-- logout.test.js
-  - Test logout function.
-- create.test.js
-  - Tests successful post creation
-  - Tests bad request unsuccessful post creation
-  - Tests Unauthorized unsuccessful post creation
+**login.test.js**
+
+- Tests successful login.
+  - Checks for correct profile object being returned.
+  - Checks local storage for valid access token.
+- Tests unsuccessful login.
+  - Checks error is thrown from an unauthorized request.
+
+**logout.test.js**
+
+- Test logout function.
+  - Checks local storage key "profile" has been removed.
+  - Checks local storage key "token" has been removed.
+
+**create.test.js**
+
+- Tests successful post creation.
+  - Checks response object it returned correctly
+- Tests bad request unsuccessful post creation.
+  - Checks error is thrown from a bad request.
+- Tests unauthorized unsuccessful post creation.
+  - Checks error is thrown from an unauthorized request.
 
 To run these tests use;
 
@@ -100,18 +113,22 @@ npm run test-unit
 
 Added the following end to end test files for Cypress.
 
-- login.cy.js
-  - Tests login with valid credentials.
-  - Tests login error handling for invalid email.
-  - Tests login error handling with invalid email pattern.
-  - Tests login error handling with invalid password length.
-  - Tests login error handling with invalid password.
-- logout.cy.js
-  - Tests logout.
-- createPost.cy.js
-  - Tests user can create a post.
-  - Tests form validates inputs on attempted submissions.
-  - Tests the handling for thrown errors.
+**login.cy.js**
+
+- Tests login with valid credentials
+- Tests login error handling with invalid email
+- Tests login error handling with invalid password length
+- Tests login error handling with invalid password
+
+**logout.cy.js**
+
+- Tests logout
+
+**createPost.cy.js**
+
+- Tests user can create a post
+- Tests form validates inputs on attempted submissions
+- Tests the handling for thrown errors
 
 Before running Cypress tests ensure you are running your local server with vite using `npm run dev`. As well as having created a `.env` file and matching this example inputting your own email and password for the site.
 
@@ -401,4 +418,3 @@ Add `.env` to `.gitignore` file, should now be;
 /cypress/videos
 .env
 ```
-

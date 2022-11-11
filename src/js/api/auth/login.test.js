@@ -1,4 +1,8 @@
 import { login } from "./login";
+import { LocalStorageMock } from "../../mocks/storage";
+import { fetchSuccess, fetchUnauthorized } from "../../mocks/fetch";
+
+global.localStorage = new LocalStorageMock();
 
 const TEST_EMAIL = "jester@noroff.no";
 const TEST_PASSWORD = "PASSWORD";
@@ -11,65 +15,9 @@ const TEST_SUCCESS_RESPONSE = {
   accessToken: "eyJhbGciOiJIUzI1NiIsInR5c....",
 };
 
-/**
- * Creates mock local storage to simulate local storage in tests
- * https://robertmarshall.dev/blog/how-to-mock-local-storage-in-jest-tests/
- */
-class LocalStorageMock {
-  constructor() {
-    this.store = {};
-  }
-
-  clear() {
-    this.store = {};
-  }
-
-  getItem(key) {
-    return this.store[key] || null;
-  }
-
-  setItem(key, value) {
-    this.store[key] = String(value);
-  }
-
-  removeItem(key) {
-    delete this.store[key];
-  }
-}
-
-global.localStorage = new LocalStorageMock();
-
-/**
- * A mock fetch function that fetches successfully
- * @returns {Promise<object>} A promise that resolves to the test item
- * @example
- * global.fetch = jest.fn(() => fetchSuccess())
- */
-function fetchSuccess() {
-  return Promise.resolve({
-    ok: true,
-    status: 200,
-    statusText: "OK",
-    json: () => Promise.resolve(TEST_SUCCESS_RESPONSE),
-  });
-}
-
-/**
- * A mock fetch function that fetches unsuccessfully
- * @example
- * global.fetch = jest.fn(() => fetchInvalidLogin())
- */
-function fetchInvalidLogin() {
-  return Promise.resolve({
-    ok: false,
-    status: 401,
-    statusText: "Unauthorized",
-  });
-}
-
 describe("login", () => {
   it("Returns a valid access token in local storage and valid response object", async () => {
-    global.fetch = jest.fn(() => fetchSuccess());
+    global.fetch = jest.fn(() => fetchSuccess(TEST_SUCCESS_RESPONSE));
     //login removes the accessToken from test object
     const expectedToken = TEST_SUCCESS_RESPONSE.accessToken;
     const response = await login(TEST_EMAIL, TEST_PASSWORD);
@@ -79,7 +27,7 @@ describe("login", () => {
   });
 
   it("Throws error message on invalid details", async () => {
-    global.fetch = jest.fn(() => fetchInvalidLogin());
+    global.fetch = jest.fn(() => fetchUnauthorized());
     await expect(login(TEST_EMAIL, TEST_PASSWORD)).rejects.toThrow(
       "Unauthorized"
     );
