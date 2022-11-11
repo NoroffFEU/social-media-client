@@ -9,14 +9,15 @@ describe("E2E 1", () => {
       cy.get("input[type='email']:visible").type("rotta@noroff.no");
       cy.get("input[type='password']:visible").type("rotta123");
       cy.get("button[type='submit']").click();
+      cy.getLocalStorage("token").then((token) => {
+        expect(token).to.not.be.null;
+      });
     });
-
-    cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
 
     //Get logout btn and log out
     cy.get("button").contains("Logout").click();
-    //cy.wait(1000);
-    //Checking that the token from localStorage is gone
-    cy.then(() => expect(window.localStorage.getItem("token")).to.be.null);
+    cy.getLocalStorage("token").then((token) => {
+      expect(token).to.be.null;
+    });
   });
 });
