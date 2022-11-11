@@ -93,3 +93,9 @@ module.exports = defineConfig({
   },
 });
 ````
+## babel.config.json
+````
+{
+    "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
+  }
+````
