@@ -23,6 +23,14 @@ class LocalStorageMock {
   }
 }
 
+function notAuthorized() {
+  return Promise.resolve({
+    ok: false,
+    status: 401,
+    statusText: "Unauthorized",
+  });
+}
+
 global.localStorage = new LocalStorageMock();
 
 describe("login", () => {
@@ -40,5 +48,12 @@ describe("login", () => {
     await login("email", "password");
     localStorage.setItem("token", "token");
     expect(localStorage.getItem("token")).toBe("token");
+  });
+  
+  it("should throw an error if the response is not ok", async () => {
+    global.fetch = jest.fn(() => notAuthorized());
+    await expect(login("email", "password")).rejects.toThrow(
+      "Unauthorized"
+    );
   });
 });
