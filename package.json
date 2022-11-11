@@ -11,7 +11,9 @@
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "test": "jest"
+    "test": "jest",
+    "preview": "vite preview",
+    "buildBoth": "npm run build & npm run build-vite"
   },
   "keywords": [],
   "author": "Noroff",

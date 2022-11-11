@@ -9,11 +9,12 @@
     "extends": "eslint:recommended",
     "overrides": [
         {
-          "files": ["**/*.test.js"],
+          "files": ["**/*.cy.js"],
           "env": { "jest": true },
           "plugins": ["jest"],
           "extends": ["plugin:jest/recommended"],
-          "rules": { "jest/prefer-expect-assertions": "off" }
+          "rules": { "jest/prefer-expect-assertions": "off" 
+        }
         }
       ],
     "parserOptions": {
@@ -21,5 +22,7 @@
         "sourceType": "module"
     },
     "rules": {
+        "no-unused-vars": "warn"
+
     }
 }
