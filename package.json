@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "vite build index.html",
-    "start": "vite --port 8080 --open",
+    "start": "sass src/scss:dist/css && vite --port 8080 --open",
     "watch": "vite build --watch index.html",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
