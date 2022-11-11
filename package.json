@@ -2,12 +2,14 @@
   "name": "ca-workflow",
   "version": "0.0.1",
   "description": "Course assignment for workflow",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "lint": "eslint src/**/*.js",
-    "format": "prettier -w src/**/*.js"
+    "format": "prettier -w src/**/*.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "Noroff",

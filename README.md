@@ -2,6 +2,7 @@ Course assignment for workflow
 
 
 - Installed node modules (npm init, npm i)
+- Adding ("type": "module") in package.json.
 
 Configures Prettier, ESlint and Jest to run on commit:
 
@@ -16,7 +17,16 @@ Configures Prettier, ESlint and Jest to run on commit:
 
 - Installing Jest (npm install --save-dev jest)
 - Installing eslint-plugin-test (npm i -D eslint-plugin-jest)
-- 
+- Adding this ({
+        "files": ["**/*.test.js"],
+        "env": { "jest": true },
+        "plugins": ["jest"],
+        "extends": ["plugin:jest/recommended"],
+        "rules": { "jest/prefer-expect-assertions": "off" }
+      }) under overrides in .eslintrc.json
+- Made sum.js and sum.test.js to run a jest test to check if it works.
+- Added this ("test": "jest") under scripts in package.json
+- Runs (npm test) in terminal to run the test
 
 
 
