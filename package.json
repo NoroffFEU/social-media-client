@@ -6,8 +6,10 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "test": "npm run test-unit && npm run test-e2e-cli",
+    "test": "npm run test:unit:watch && npm run test-e2e-cli",
+    "test:unit:watch": "npm run test-unit-watch",
     "test-unit": "jest",
+    "test-unit-watch": "jest --watch",
     "test-e2e": "cypress open",
     "test-e2e-report": "cypress run --reporter mochawesome",
     "test-e2e-cli": "cypress run",
@@ -40,7 +42,7 @@
     "*.js": [
       "eslint --fix",
       "prettier --write",
-      "jest --bail --findRelatedTests"
+      "jest --bail --findRelatedTests --passWithNoTests"
     ],
     "*.html": [
       "prettier --write"
