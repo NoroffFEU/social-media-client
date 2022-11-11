@@ -93,11 +93,6 @@ npm run vite-build
 // builds project for production
 ```
 
-```
-npm run vite-serve
-// locally preview production build
-```
-
 ## Information about the Workflow CA
 
 ### Goal
