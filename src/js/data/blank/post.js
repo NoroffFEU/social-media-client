@@ -26,10 +26,6 @@ export const BLANK_POST = {
   author: {
     name: "",
     email: "",
-    avatar: "/assets/img/avatar.jpeg",
-  },
-  _count: {
-    comments: 0,
-    reactions: 0,
+    avatar: "./assets/img/avatar.jpeg",
   },
 };

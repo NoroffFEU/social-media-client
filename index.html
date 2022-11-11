@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/dist/css/index.css" />
+    <link rel="stylesheet" href="./dist/css/index.css" />
     <script
-      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
-    <script src="/src/js/index.js" defer type="module"></script>
+    <script src="./src/js/index.js" defer type="module"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,6 +19,7 @@
 
     <title>Test Client</title>
   </head>
+
   <body class="min-vh-100 d-flex flex-column">
     <header class="py-3 sticky-top shadow">
       <div class="container-fluid">
@@ -26,7 +27,7 @@
           class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start"
         >
           <a
-            href="/"
+            href="./"
             class="d-flex align-items-center mb-2 me-sm-3 mb-sm-0 text-white text-decoration-none"
           >
             <img
@@ -86,7 +87,7 @@
           <div class="col-auto" data-visible="loggedIn">
             <div class="d-flex align-items-center" id="footerActions">
               <a
-                href="/?view=post"
+                href="./?view=post"
                 data-visible="loggedIn"
                 class="btn btn-outline-success"
                 >New Post</a
@@ -151,7 +152,21 @@
             >
               Close
             </button>
-            <button class="btn btn-success" data-bs-dismiss="modal">
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              data-bs-toggle="modal"
+              data-bs-target="#registerModal"
+              data-auth="register"
+              data-visible="loggedOut"
+            >
+              Register
+            </button>
+            <button
+              type="submit"
+              class="btn btn-success"
+              data-bs-dismiss="modal"
+            >
               Login
             </button>
           </div>
@@ -235,7 +250,19 @@
             >
               Close
             </button>
-            <button class="btn btn-success">Create Profile</button>
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+              data-auth="login"
+              data-visible="loggedOut"
+            >
+              Login
+            </button>
+            <button type="submit" class="btn btn-success">
+              Create Profile
+            </button>
           </div>
         </form>
       </div>
@@ -263,7 +290,11 @@
       </template>
 
       <template id="reactionButton">
-        <button class="btn btn-sm btn-outline-success" data-reaction>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-success"
+          data-reaction
+        >
           <span
             class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
           ></span>
@@ -271,7 +302,7 @@
       </template>
 
       <template id="reactionOption">
-        <li><button class="dropdown-item"></button></li>
+        <li><button type="button" class="dropdown-item"></button></li>
       </template>
 
       <template id="reactionMenu">
@@ -315,7 +346,7 @@
             class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3"
           >
             <h1>Post</h1>
-            <button class="btn btn-success" data-action="submit">
+            <button type="submit" class="btn btn-success" data-action="submit">
               <span data-action="publish">Publish</span
               ><span data-action="update">Update</span> Post
             </button>
@@ -381,7 +412,9 @@
       <template id="postActions">
         <div class="post-actions btn-group-sm">
           <a href="" class="btn btn-primary" data-action="view">View</a>
-          <button class="btn btn-danger" data-action="delete">Delete</button>
+          <button type="button" class="btn btn-danger" data-action="delete">
+            Delete
+          </button>
         </div>
       </template>
 
@@ -419,7 +452,7 @@
             cols="30"
             rows="10"
           ></textarea>
-          <button class="btn btn-success w-100">Comment</button>
+          <button type="submit" class="btn btn-success w-100">Comment</button>
         </form>
       </template>
 
@@ -427,6 +460,7 @@
         <nav>
           <div class="nav nav-tabs" role="tablist">
             <button
+              type="button"
               class="nav-link active"
               id="nav-tab-default"
               data-bs-toggle="tab"
@@ -439,6 +473,7 @@
               View
             </button>
             <button
+              type="button"
               class="nav-link"
               id="nav-tab-edit"
               data-bs-toggle="tab"
@@ -481,6 +516,7 @@
           >
             <div class="btn-group btn-group-sm">
               <button
+                type="button"
                 class="btn btn-sm btn-success"
                 data-action="follow"
                 data-name=""
@@ -488,6 +524,7 @@
                 Follow
               </button>
               <button
+                type="button"
                 class="btn btn-sm btn-danger"
                 data-action="unfollow"
                 data-name=""
