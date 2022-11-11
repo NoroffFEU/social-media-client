@@ -31,7 +31,19 @@ Configures Prettier, ESlint and Jest to run on commit:
 - Runs (npm test) in terminal to run the test.
 
 - Runs (npx mrm@2 lint-staged) in terminal.
-- 
+- Changed to this ("lint-staged": {
+  "*.js": [
+    "eslint --fix",
+    "prettier --write"
+  ],
+  "*.html": [
+    "prettier --write"
+  ],
+  "*.scss": [
+    "prettier --write"
+  ]
+}) in package.json.
+
 
 
 

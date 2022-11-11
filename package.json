@@ -38,9 +38,15 @@
   },
   "homepage": "https://github.com/marthebull/social-media-client#readme",
   "lint-staged": {
-    "*.js": [
-      "eslint --cache --fix",
-      "prettier --write"
-    ]
-  }
+  "*.js": [
+    "eslint --fix",
+    "prettier --write"
+  ],
+  "*.html": [
+    "prettier --write"
+  ],
+  "*.scss": [
+    "prettier --write"
+  ]
+}
 }
