@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668183227587" clover="3.2.0">
-  <project timestamp="1668183227588" name="All files">
-    <metrics statements="31" coveredstatements="30" conditionals="8" coveredconditionals="6" methods="7" coveredmethods="7" elements="46" coveredelements="43" complexity="0" loc="31" ncloc="31" packages="4" files="9" classes="9"/>
+<coverage generated="1668183250854" clover="3.2.0">
+  <project timestamp="1668183250854" name="All files">
+    <metrics statements="27" coveredstatements="26" conditionals="6" coveredconditionals="4" methods="6" coveredmethods="6" elements="39" coveredelements="36" complexity="0" loc="27" ncloc="27" packages="3" files="8" classes="8"/>
     <package name="api">
       <metrics statements="10" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="constants.js" path="C:\Users\johnr\Documents\Github-local\social-media-client-wf-ca-jr\src\js\api\constants.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
       </file>
       <file name="headers.js" path="C:\Users\johnr\Documents\Github-local\social-media-client-wf-ca-jr\src\js\api\headers.js">
         <metrics statements="8" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="5" count="5" type="stmt"/>
-        <line num="7" count="5" type="cond" truecount="1" falsecount="1"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="11" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="7" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="11" count="3" type="cond" truecount="1" falsecount="1"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="15" count="5" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
       </file>
     </package>
     <package name="api.auth">
@@ -40,16 +40,6 @@
         <line num="5" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="api.posts">
-      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <file name="create.js" path="C:\Users\johnr\Documents\Github-local\social-media-client-wf-ca-jr\src\js\api\posts\create.js">
-        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="11" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-      </file>
-    </package>
     <package name="storage">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="index.js" path="C:\Users\johnr\Documents\Github-local\social-media-client-wf-ca-jr\src\js\storage\index.js">
@@ -57,18 +47,18 @@
       </file>
       <file name="load.js" path="C:\Users\johnr\Documents\Github-local\social-media-client-wf-ca-jr\src\js\storage\load.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="2" count="7" type="stmt"/>
-        <line num="3" count="7" type="stmt"/>
-        <line num="5" count="4" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
       </file>
       <file name="remove.js" path="C:\Users\johnr\Documents\Github-local\social-media-client-wf-ca-jr\src\js\storage\remove.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="3" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
       </file>
       <file name="save.js" path="C:\Users\johnr\Documents\Github-local\social-media-client-wf-ca-jr\src\js\storage\save.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="3" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
       </file>
     </package>
