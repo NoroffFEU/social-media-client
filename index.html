@@ -71,11 +71,12 @@
         <div class="modal-body">
           <div class="form-floating mb-3">
             <input required type="email" class="form-control" id="loginEmail" name="email"
+              pattern="[\w\-.]+@(stud.)?noroff.no$" title="Only Noroff student or teacher emails are valid."
               placeholder="name@example.com" />
             <label for="loginEmail">Email address</label>
           </div>
           <div class="form-floating mb-3">
-            <input required type="password" class="form-control" id="loginPassword" name="password"
+            <input required type="password" minlength="8" class="form-control" id="loginPassword" name="password"
               placeholder="Password" />
             <label for="loginPassword">Password</label>
           </div>
@@ -84,9 +85,9 @@
           <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
             Close
           </button>
-          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#registerModal" data-auth="register"
-            data-visible="loggedOut">Register</button>
-          <button type="submit" class="btn btn-success" data-bs-dismiss="modal">
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#registerModal"
+            data-auth="register" data-visible="loggedOut">Register</button>
+          <button type="submit" class="btn btn-success">
             Login
           </button>
         </div>
@@ -110,11 +111,12 @@
           </div>
           <div class="form-floating mb-3">
             <input required type="email" class="form-control" id="registerEmail" name="email"
+              pattern="[\w\-.]+@(stud.)?noroff.no$" title="Only Noroff student or teacher emails are valid."
               placeholder="name@example.com" />
             <label for="registerEmail">Email address</label>
           </div>
           <div class="form-floating mb-3">
-            <input required type="password" class="form-control" id="registerPassword" name="password"
+            <input required type="password" minlength="8" class="form-control" id="registerPassword" name="password"
               placeholder="Password" />
             <label for="registerPassword">Password</label>
           </div>
@@ -128,8 +130,8 @@
           <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
             Close
           </button>
-          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginModal" data-auth="login"
-            data-visible="loggedOut">Login</button>
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginModal"
+            data-auth="login" data-visible="loggedOut">Login</button>
           <button type="submit" class="btn btn-success">Create Profile</button>
         </div>
       </form>
@@ -270,12 +272,12 @@
     <template id="postTabs">
       <nav>
         <div class="nav nav-tabs" role="tablist">
-          <button type="button" class="nav-link active" id="nav-tab-default" data-bs-toggle="tab" data-bs-target="#nav-default"
-            type="button" role="tab" aria-controls="nav-default" aria-selected="true">
+          <button type="button" class="nav-link active" id="nav-tab-default" data-bs-toggle="tab"
+            data-bs-target="#nav-default" type="button" role="tab" aria-controls="nav-default" aria-selected="true">
             View
           </button>
-          <button type="button" class="nav-link" id="nav-tab-edit" data-bs-toggle="tab" data-bs-target="#nav-edit" type="button"
-            role="tab" aria-controls="nav-edit" aria-selected="false">
+          <button type="button" class="nav-link" id="nav-tab-edit" data-bs-toggle="tab" data-bs-target="#nav-edit"
+            type="button" role="tab" aria-controls="nav-edit" aria-selected="false">
             Edit
           </button>
         </div>
