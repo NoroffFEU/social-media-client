@@ -13,7 +13,7 @@ This is my Course Assignment in Workflow
 	1. [x] Project is configured to run Prettier on commit
 	2. [x] Project is configured to run ESLint on commit
 	3. [x] Project is configured to run Jest on commit
-	4. [ ] Project is configured to deploy to pages on merge to default
+	4. [x] Project is configured to deploy to pages on merge to default
 ## The following file changes are required:
 	1. [ ] Project readme file is updated to include new configuration information and status badges
 	2. [ ] Project is configured for hosting (e.g. CDN links or a Bundler)
