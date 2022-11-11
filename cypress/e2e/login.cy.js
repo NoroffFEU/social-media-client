@@ -58,16 +58,16 @@ describe("Social Media Client", () => {
         cy.get("#loginEmail")
           .should("exist")
           .type("maytest25@noroff.no", { delay: 100 });
-        cy.get("#loginPassword")
-          .should("exist")
-          .type("1234{enter}", { delay: 100 });
+        cy.get("#loginPassword").should("exist").type("1234", { delay: 100 });
+
         cy.wait(500);
-        // expect to see validation message for invalid password
-        cy.get("#loginPassword:invalid")
-          .should("exist")
-          .invoke("prop", "validationMessage")
-          .should("exist");
       });
+    cy.get("#loginForm > .modal-footer > .btn-success").click();
+    // expect to see validation message for invalid password
+    cy.get("#loginPassword:invalid")
+      .should("exist")
+      .invoke("prop", "validationMessage")
+      .should("exist");
 
     cy.wait(1000);
     cy.then(() => expect(localStorage.getItem("token")).to.be.null);
