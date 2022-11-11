@@ -19,7 +19,7 @@ describe('Authentication', () => {
     cy.visit('/');
   });
 
-  it(' create item form that validates user inputs correctly based on API restrictions', () => {
+  it(' create item form that validate', () => {
     cy.wait(800);
     cy.visit('/?view=post');
     cy.get('#footerActions > a.btn')

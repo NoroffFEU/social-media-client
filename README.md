@@ -15,6 +15,26 @@ Putting all the effort and heart into this project, sleepless nights and positiv
 
 OUR AIMS: To be able to do automated unit-testing and e2e testing.
 
+How to use the project
+Fork the repository.
+Clone the fork to your computer.
+Open it in your preferred editor.
+Initialize git
+
+$ git init
+Install all dependencies
+
+$ npm install
+Build SASS to see all css changes to project
+
+$ npm run build
+See all scripts in package.json file, including what script to initialize for testing.
+
+Additional info
+Pre-commit hooks have been set up to protect repository for bad errors. These can be found in the package.json file under lint-staged.
+Bootstrap dark 5 is used to build the page.
+Bootstrap CDN link: <https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js>
+
 Workflow_testing
 The following workflows/hooks are required:
 
