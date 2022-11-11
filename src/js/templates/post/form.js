@@ -58,8 +58,8 @@ export const postFormTemplate = (post) => {
       post = await updatePost(id, title, body, media, tags);
     }
 
-    location.href = `/?view=post&postId=${post.id}`;
-  });
+    location.href = `./?view=post&postId=${post.id}`
+  })
 
   return clone;
 };
