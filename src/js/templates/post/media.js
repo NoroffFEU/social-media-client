@@ -8,7 +8,7 @@ export const postMedia = (post, tagName = "a") => {
     img.classList.add("img-fluid", "w-100");
 
     if (tagName.toLowerCase() === "a") {
-      element.href = `/?view=post&postId=${post.id}`;
+      element.href = `./?view=post&postId=${post.id}`;
       element.title = `View ${post.title}`;
     }
 

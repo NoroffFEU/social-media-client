@@ -8,7 +8,7 @@ export const commentTemplate = (comment, postOwner = "") => {
   
   clone.querySelector(".comment-body").innerText = comment.body;
   clone.querySelector(".owner").innerText = comment.owner;
-  clone.querySelector(".owner").href = `/?view=profile&name=${comment.owner}`;
+  clone.querySelector(".owner").href = `./?view=profile&name=${comment.owner}`;
 
   const button = document.createElement("button");
   button.classList.add("btn", "btn-sm", "btn-success");

@@ -8,9 +8,9 @@ export async function loginListener(event) {
   const email = data.get("email");
   const password = data.get("password");
   try {
-    const { name } = await auth.login(email, password);
-    updateLoginVisibility();
-    location.href = `/?view=profile&name=${name}`;
+    const { name } = await auth.login(email, password)
+    updateLoginVisibility()
+    location.href = `./?view=profile&name=${name}`
   } catch {
     return alert(
       "Either your username was not found or your password is incorrect"
