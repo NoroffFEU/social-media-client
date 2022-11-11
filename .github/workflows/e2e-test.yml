@@ -15,3 +15,27 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: electron
+
+
+name: Automated E2E Testing
+on:
+  - pull_request
+  - workflow_dispatch
+
+jobs:
+  run-e2e-tests:
+    name: Run E2E Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout under $GITHUB_WORKSPACE
+        uses: actions/checkout@main
+      - name: install dependencies
+        run: npm i
+      - name: build sass and start live server
+        run: npm run start
+      - name: run cypress tests with electron
+        uses: cypress-io/github-action@v4
+        with:
+          wait-on: "http://127.0.0.1:8080/"
+          browser: electron
