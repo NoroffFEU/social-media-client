@@ -1,3 +1,3 @@
 export default {
-  base: `workflow/dist/`,
+  base: `/workflow/dist/`,
 };
