@@ -1,6 +1,6 @@
 {
   "name": "workflow",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "example",
   "type": "module",
   "main": "index.js",
