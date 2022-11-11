@@ -7,9 +7,4 @@ module.exports = {
       return config;
     },
   },
-
-  env: {
-    EMAIL: process.env.EMAIL,
-    PASSWORD: process.env.PASSWORD,
-  },
 };

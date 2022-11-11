@@ -4,7 +4,7 @@ describe("Unit testing", () => {
 
   it("Returnes valid token when provided with valid credentials ", () => {
     cy.visit("/");
-    cy.loginTest(email, password);
+    cy.login(email, password);
     cy.getLocalStorage("token");
     cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
   });

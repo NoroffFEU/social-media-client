@@ -5,7 +5,7 @@ describe("Unit testing 3", () => {
   it("Unit - 2 : Creates a new item on the API ", () => {
     cy.visit("/");
     //Login
-    cy.loginTest(email, password);
+    cy.login(email, password);
     cy.getLocalStorage("token");
     cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
 

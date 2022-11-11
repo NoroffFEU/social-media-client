@@ -1,6 +1,6 @@
 import { login, logout, createPost, deletePost } from "../../src/js/api/index";
 
-Cypress.Commands.add("loginTest", async (email, password) => {
+Cypress.Commands.add("login", async (email, password) => {
   await login(email, password);
 });
 
