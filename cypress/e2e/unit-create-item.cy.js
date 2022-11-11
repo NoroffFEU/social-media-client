@@ -6,10 +6,8 @@ describe("Unit testing 3", () => {
     cy.visit("/");
     //Login
     cy.loginTest(email, password);
-    // cy.wait(1000);
     cy.getLocalStorage("token");
     cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
-    //cy.wait(1000);
 
     //Creates a new item on the API
     cy.createPost(
