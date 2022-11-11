@@ -3,7 +3,9 @@ describe('Can login to the page and perform an logout + clearing localStorage', 
     cy.visit('/');
     cy.clearLocalStorage();
     cy.wait(1000);
-    cy.get("button[data-auth='login']:visible").click({ multiple: true });
+    cy.get("#registerForm button[data-auth='login']:visible")
+      .contains('Login')
+      .click();
     cy.wait(2000);
     cy.get("input[type='email']:visible")
       .should('exist')
@@ -12,9 +14,11 @@ describe('Can login to the page and perform an logout + clearing localStorage', 
       .should('exist')
       .type('Fakepassword200');
     cy.wait(2000);
-    cy.get("button[data-auth='loginButton']:visible").click({ multiple: true });
+    cy.get("#loginForm button[data-auth='loginButton']:visible").click();
     cy.wait(3000);
-    cy.get("button[data-auth='logout']:visible").click({ multiple: true });
+    cy.get(".text-end button[data-auth='logout']:visible").click({
+      multiple: true,
+    });
     cy.wait(3000);
     cy.clearLocalStorage();
   });
