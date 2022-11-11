@@ -6,6 +6,7 @@ describe("Social media app: Register functionality with VALID information", () =
       return false;
     });
     cy.url().should("include", "/");
+    cy.wait(5200);
     const milisecond = Date.now();
     cy.get("[data-auth='register']").click();
     cy.wait(600);
