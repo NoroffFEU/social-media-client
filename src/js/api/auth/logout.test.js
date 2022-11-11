@@ -1,4 +1,6 @@
 import { logout } from "./logout";
+import { LocalStorageMock } from "../../mocks/storage";
+
 const TEST_ACCESS_TOKEN = "access";
 const TEST_PROFILE = {
   name: "Jester",
@@ -7,32 +9,6 @@ const TEST_PROFILE = {
   avatar:
     "https://cdn.pixabay.com/photo/2016/03/31/20/07/bells-1295520_960_720.png",
 };
-
-/**
- * Creates mock local storage to simulate local storage in tests
- * https://robertmarshall.dev/blog/how-to-mock-local-storage-in-jest-tests/
- */
-class LocalStorageMock {
-  constructor() {
-    this.store = {};
-  }
-
-  clear() {
-    this.store = {};
-  }
-
-  getItem(key) {
-    return this.store[key] || null;
-  }
-
-  setItem(key, value) {
-    this.store[key] = String(value);
-  }
-
-  removeItem(key) {
-    delete this.store[key];
-  }
-}
 
 global.localStorage = new LocalStorageMock();
 
