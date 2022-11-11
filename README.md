@@ -10,13 +10,19 @@ https://github.com/Jorgen-S-Engh/social-media-client.git
 
 ```
 
-2. Install dependencies:
+2. Make sure you have the lastes version of Node installed
 
 ```bash
 npm install
 ```
 
-3. Build the project
+3. Run dependencies
+
+```bash
+npm install
+```
+
+4. Build the project
 
 ```bash
 npm run build
