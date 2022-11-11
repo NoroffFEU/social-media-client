@@ -6,6 +6,9 @@ Course assignment for workflow
 Configures Prettier and ESlint to run on commit:
 - Installing ESlint (npm install eslint --save-dev)
 - Initializing ESlint (npx eslint --init)
+- Installing Prettier (npm install --save-dev prettier)
+- Testing Prettier (npx prettier -c src/**/*.js)
+- Running Prettier (npx prettier -w src/**/*.js   )
 
 
 The following workflows/hooks are required:
