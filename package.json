@@ -14,7 +14,7 @@
     "lint": "eslint src/**/_.js",
     "lint-fix": "eslint src/**/_.js --cache --fix",
     "test": "npm run test-unit",
-    "test-unit": "jest"
+    "test-unit": "jest --passWithNoTests"
   },
   "keywords": [],
   "author": "Noroff",

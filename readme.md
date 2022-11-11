@@ -103,4 +103,4 @@ npm install -D vite
   "vite-build": "vite build",
   "vite-preview": "vite preview"
 
--
+-Add "--passWithNoTests" to end of jest command in package.json so no errors show when running without test files
