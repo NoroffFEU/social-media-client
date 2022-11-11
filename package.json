@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "vite build index.html",
+    "start": "vite --port 8080 --open",
     "watch": "vite build --watch index.html",
-    "start": "vite index.html --open",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
@@ -31,7 +31,8 @@
     "lint-staged": "^13.0.3",
     "live-server": "^1.2.2",
     "prettier": "^2.7.1",
-    "sass": "^1.54.8"
+    "sass": "^1.56.1",
+    "vite": "^3.1.0"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
