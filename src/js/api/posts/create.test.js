@@ -38,7 +38,13 @@ describe('createPost', () => {
 
   it('checks to see if error is sent if function fails to create post', async () => {
     global.fetch = jest.fn(() => createFail());
-    const item = await createPost(TEST_ITEM);
-    expect(item).toEqual(null);
+    let err = null;
+    try {
+      await createPost(TEST_ITEM);
+    } catch (error) {
+      err = error; //--> if async fn fails the line will be executed
+    }
+    let expectedError = new Error('This is supposed to fail');
+    expect(err).toStrictEqual(expectedError);
   });
 });
