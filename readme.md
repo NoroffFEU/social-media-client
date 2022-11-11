@@ -24,6 +24,6 @@
 
 ## The following features must be automatically tested with end-to-end tests:
 
-- [ ] The login form validates user inputs correctly based on API restrictions
-- [ ] The create item form validates user inputs correctly based on API restrictions
-- [ ] The logout button logs the user out when clicked
+- [x] The login form validates user inputs correctly based on API restrictions
+- [x] The create item form validates user inputs correctly based on API restrictions
+- [x] The logout button logs the user out when clicked
