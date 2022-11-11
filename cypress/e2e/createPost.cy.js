@@ -90,7 +90,7 @@ describe("Create Post", () => {
     cy.clearLocalStorage();
     cy.get('button[data-action="submit"]').click();
     cy.wait(2000);
-    //If unathorized should redirect to homepage for login? or display login form
-    // cy.url().should("include", "/");
+    //If unathorized should redirect to homepage for login? or display login form?
+    cy.url().should("not.include", "post");
   });
 });
