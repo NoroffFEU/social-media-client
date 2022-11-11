@@ -1,11 +1,7 @@
 describe('Social Media App: Unauthenticated', () => {
-  beforeEach(() => {
-    cy.visit('/');
-    cy.clearLocalStorage();
-  });
-
   it('can NOT log in', () => {
     cy.visit('/');
+    cy.clearLocalStorage();
     cy.wait(500);
     cy.get('#registerForm > div.modal-footer > button')
       .contains('Login')
@@ -23,13 +19,9 @@ describe('Social Media App: Unauthenticated', () => {
 });
 
 describe('Social Media App: Authenticated', () => {
-  beforeEach(() => {
-    cy.visit('/');
-    cy.clearLocalStorage();
-  });
-
   it('can log in', () => {
     cy.visit('/');
+    cy.clearLocalStorage();
     cy.wait(500);
     cy.get('#registerForm > div.modal-footer > button')
       .contains('Login')
@@ -42,6 +34,7 @@ describe('Social Media App: Authenticated', () => {
       '#loginForm > div.modal-body > div.form-floating > input[type=password]'
     ).type('123456789');
     cy.get('#loginForm > div.modal-footer > button').contains('Login').click();
-    cy.then(() => expect(window.localStorage.getItem('token')).to.be.null);
+    cy.wait(500);
+    cy.then(() => expect(localStorage.getItem('token')).to.not.be.null);
   });
 });

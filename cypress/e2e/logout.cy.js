@@ -1,6 +1,7 @@
 describe('Social Media App: Logout', () => {
   it('can log in', () => {
     cy.visit('/');
+    cy.clearLocalStorage();
     cy.wait(500);
     cy.get('#registerForm > div.modal-footer > button')
       .contains('Login')
