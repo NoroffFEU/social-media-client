@@ -4,6 +4,43 @@
 
 [![Deploy static content to Pages](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/builddeploy.yml/badge.svg)](https://github.com/johannranudd/social-media-client-wf-ca-jr/actions/workflows/builddeploy.yml)
 
+## NPM
+````
+npm install --save-dev prettier
+
+npm install eslint --save-dev
+
+npx eslint --init
+
+✔ How would you like to use ESLint? · problems
+✔ What type of modules does your project use? · esm
+✔ Which framework does your project use? · none
+✔ Does your project use TypeScript? · No
+✔ Where does your code run? · browser
+✔ What format do you want your config file to be in? · JSON
+
+
+npx mrm@2 lint-staged
+
+- Add to package.json: 
+
+"lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "jest --coverage"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
+  }
+
+
+npm i -D eslint-plugin-jest
+````
 ## .eslintrc.json config1
 ````
 {
