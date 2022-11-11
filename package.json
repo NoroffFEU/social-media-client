@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "sass src/scss:dist/css && vite build",
+    "build": "cross-env APP_ENV=production sass src/scss:dist/css && vite build",
     "start": "sass src/scss:dist/css && vite --port 8080 --open",
     "watch": "vite build --watch index.html",
     "format": "prettier -w src/**/*.js",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
+    "cross-env": "^7.0.3",
     "cypress": "^10.7.0",
     "eslint": "^8.26.0",
     "eslint-plugin-cypress": "^2.12.1",
