@@ -12,9 +12,6 @@ https://github.com/Jorgen-S-Engh/social-media-client.git
 
 2. Make sure you have the lastes version of Node installed
 
-```bash
-npm install
-```
 
 3. Run dependencies
 
