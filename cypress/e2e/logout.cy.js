@@ -1,52 +1,32 @@
-export const apiBase = 'https://nf-api.onrender.com/api/v1/';
-export const url = new URL(apiBase);
-
-const baseURL = 'http://127.0.0.1:5500/';
-
-describe('Authentication', () => {
+describe('Logout test', () => {
   beforeEach(() => {
-    cy.visit('/');
+    cy.visit('./');
     cy.clearLocalStorage();
   });
 
-  it('can login', () => {
-    cy.visit('/');
-    cy.wait(1000);
-    cy.get('.btn-close:visible').click();
-    cy.get("button[data-auth='login']:visible").click();
-    cy.wait(1500);
-    cy.get("input[type='email']:visible")
-      .should('exist')
-      .type('cocomarcia@noroff.no');
-    cy.get("input[type='password']:visible")
-      .should('exist')
-      .type('cocomarcia1');
-    cy.get('.btn-success:visible').click();
-    cy.wait(3000);
-    cy.then(
-      () => expect(window.localStorage.getItem('profile')).to.not.be.null
-    );
-    cy.then(() => expect(window.localStorage.getItem('token')).to.not.be.null);
-    cy.url().should('include', 'profile');
-  });
-
   it('can logout', () => {
-    cy.get('.btn-close:visible').click();
-    cy.wait(500);
-    cy.get("button[data-auth='login']:visible").click();
-    cy.wait(500);
-    cy.get("input[type='email']:visible")
-      .should('exist')
-      .type(`testersen@noroff.no`);
-    cy.get("input[type='password']:visible")
-      .should('exist')
-      .type(`Mypassword{enter}`);
-    cy.wait(2000);
-    cy.url().should('include', 'profile');
-    cy.get("button[data-auth='logout']:visible")
-      .click({ force: true })
-      .should(() => {
-        expect(localStorage.getItem('token')).to.be.null;
-      });
+    cy.get('#registerModalLabel')
+      .should('have.text', 'Create Profile')
+      .should('be.visible');
+    cy.wait(1000);
+    cy.get('#registerForm')
+      .find('.btn-outline-success')
+      .should('be.visible')
+      .click();
+    cy.get('#loginModalLabel')
+      .should('have.text', 'Login')
+      .should('be.visible');
+    const email = 'jon@noroff.no';
+    cy.wait(1000);
+    const password = 'Password';
+    cy.get('#loginEmail').type(`${email}`);
+    cy.get('#loginPassword').type(`${password}`);
+    cy.wait(1000);
+    cy.get('#loginForm .btn-success').should('be.visible').click();
+    cy.wait(1000);
+    cy.get("button[data-auth='logout']").should('be.visible').click();
+    cy.then(() => {
+      expect(window.localStorage.getItem('token')).to.be.null;
+    });
   });
 });

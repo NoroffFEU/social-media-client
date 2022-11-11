@@ -13,8 +13,9 @@
       "extends": ["plugin:cypress/recommended"],
       "rules": {
         "cypress/no-unnecessary-waiting": "off",
-        "no-unused-vars": "off",
-        "no-undef": "off"
+        // "no-unused-vars": "off",
+        "no-undef": "off",
+        "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
       }
     }
   ],
