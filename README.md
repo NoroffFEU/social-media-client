@@ -115,9 +115,24 @@ Added the following end to end test files for Cypress.
 
 **login.cy.js**
 
-- Tests login with valid credentials
-- Tests login error handling with invalid email
-- Tests login error handling with invalid password length
+- Tests login with valid credentials.
+  - Checks local storage tokens for "profile" and "token" are set.
+  - Checks user is redirected to the profile page.
+- Tests login validates email input for valid email pattern.
+  - Checks for email input validation prompt when not using a valid Noroff email.
+  - Checks local storage tokens for "profile" and "token" are null.
+  - Checks URL hasn't changed.
+  - Checks login form modal is still present.
+- Tests login error handling with invalid email.
+  - Checks for email input validation prompt when not using a valid Noroff email.
+  - Checks local storage tokens for "profile" and "token" are null.
+  - Checks URL hasn't changed.
+  - Checks login form modal is still present.
+- Tests login error handling with invalid password length.
+  - Checks for password validation prompt when using too short password.
+  - Checks local storage tokens for "profile" and "token" are null.
+  - Checks URL hasn't changed.
+  - Checks login form modal is still present.
 - Tests login error handling with invalid password
 
 **logout.cy.js**

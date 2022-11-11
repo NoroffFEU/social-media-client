@@ -29,7 +29,7 @@ describe("Authentication", () => {
     cy.url().should("include", "profile");
   });
 
-  it("Validates email input for valid emails", () => {
+  it("Validates email input for valid email pattern", () => {
     cy.get("#loginForm").within(() => {
       cy.get("input[type='email']:visible").should("exist").type(`jester`);
       cy.get("input[type='password']:visible").should("exist").type(`password`);
