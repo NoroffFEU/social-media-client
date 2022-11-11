@@ -1,2 +1,7 @@
 /node_modules
 /dist
+.eslintcache
+# unit-testing-yml
+# login.test.js
+# logou.test.js
+# create.test.js

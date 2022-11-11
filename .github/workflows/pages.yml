@@ -34,6 +34,9 @@ jobs:
         run: npm i
       - name: Build SASS
         run: npm run build
+      - name: start
+        run: npm run start
+
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
@@ -43,4 +46,4 @@ jobs:
           path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v
