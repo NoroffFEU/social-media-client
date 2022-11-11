@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "bundler build index.html",
-    "watch": "bundler build --watch index.html",
-    "start": "bundler index.html --open",
+    "build": "vite build index.html",
+    "watch": "vite build --watch index.html",
+    "start": "vite index.html --open",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
