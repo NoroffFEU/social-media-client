@@ -1,6 +1,6 @@
 describe('Create post test', () => {
   beforeEach(() => {
-    cy.visit('./');
+    cy.visit('http://127.0.0.1:5500');
     cy.clearLocalStorage();
     cy.wait(500);
     cy.get('#registerModal button')
