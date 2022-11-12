@@ -51,6 +51,6 @@
     "automock": false,
     "setupFiles": [
       "./src/js/mocks/setupJest.js"
-    ]
+    ]   
   }
 }
