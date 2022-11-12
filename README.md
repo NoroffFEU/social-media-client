@@ -204,6 +204,24 @@ The following workflows/hooks are required
 
 <!--  -->
 
+npm create vite@3.1.0
+
+✔ Project name: … vite-project
+✔ Select a framework: › Vanilla
+✔ Select a variant: › JavaScript
+
+Done. Now run:
+
+  cd vite-project
+  npm install
+  npm run dev
+
+  cd vite-project
+npm install
+npm run dev
+
+<!--  -->
+
 The following file changes are required
 
 1.Project readme file is updated to include new configuration information and status badges:
