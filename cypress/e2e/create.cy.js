@@ -21,11 +21,17 @@ describe('Social Media App: Create and Delete Posts', () => {
     cy.get('#postForm')
       .should('exist')
       .within(() => {
-        cy.get('#postTitle').should('exist').type(`Cypress Test Title`);
-        cy.get('#postTags').should('exist').type(`Cypress Test Tag`);
+        cy.get('input[name="title"]')
+          .should('be.visible')
+          .type(`Cypress Test Title`);
+        cy.get('input[name="tags"]')
+          .should('be.visible')
+          .type(`Cypress Test Tag`);
         // cy.get('#postMedia').should('exist').type(`https://picsum.photos/200`);
-        cy.get('#postBody').should('exist').type(`Cypress Test Body`);
-        cy.wait(500);
+        cy.get('textarea[name="body"]')
+          .should('be.visible')
+          .type(`Cypress Test Body`);
+        cy.wait(1000);
         cy.get('button[data-action=submit]').click({ force: true });
         cy.wait(1000);
       });
