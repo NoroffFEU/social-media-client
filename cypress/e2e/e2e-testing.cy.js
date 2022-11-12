@@ -47,5 +47,6 @@ describe('user can log out', () => {
   it('logs the user out when logout button is clicked', () => {
     cy.wait(1000);
     cy.get('div.text-end > button').contains('Logout').click();
+    cy.then(() => expect(window.localStorage.getItem('token')).to.be.null);
   });
 });
