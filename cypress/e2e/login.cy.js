@@ -7,7 +7,7 @@ describe('Authentication', () => {
   it('will login', () => {
     cy.visit('/');
     cy.wait(1000);
-    cy.get('.btn-close:visible').click();
+    cy.get('.btn-close:visible').click({ multiple: true });
     cy.get("button[data-auth='login']:visible")
       .contains('Login')
       .click({ multiple: true });
@@ -32,7 +32,7 @@ describe('Authentication', () => {
   it('Validates email input', () => {
     cy.visit('/');
     cy.wait(1000);
-    cy.get('.btn-close:visible').click();
+    cy.get('.btn-close:visible').click({ multiple: true });
     cy.get("button[data-auth='login']:visible").click({ multiple: true });
 
     cy.wait(1500);
