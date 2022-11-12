@@ -1,4 +1,4 @@
-describe('Social Media App: Login', () => {
+describe('Social Media App: Logout', () => {
   beforeEach(() => {
     cy.visit('http://127.0.0.1:5500/');
     cy.clearLocalStorage();
@@ -16,9 +16,11 @@ describe('Social Media App: Login', () => {
     cy.wait(3000);
   });
 
-  it('CAN login', () => {
-    cy.url().should('include', 'profile');
-    cy.url().should('not.include', 'login');
-    expect(localStorage.getItem('token')).to.not.be.null;
+  it('CAN logout', () => {
+    cy.get('header button[data-auth=logout]')
+      .click({ force: true })
+      .should(() => {
+        expect(localStorage.getItem('token')).to.be.null;
+      });
   });
 });
