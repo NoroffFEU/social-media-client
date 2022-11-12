@@ -1,5 +1,4 @@
-/* eslint-disable jest/valid-expect */
-describe('Logouttest', () => {
+describe('Logout test', () => {
   beforeEach(() => {
     cy.visit('http://127.0.0.1:5500');
     cy.clearLocalStorage();
@@ -25,7 +24,9 @@ describe('Logouttest', () => {
       () => expect(window.localStorage.getItem('profile')).to.not.be.null
     );
     cy.get("button[data-auth='logout']").should('be.visible').click();
-    cy.then(() => expect(window.localStorage.getItem('token')).to.be.null);
-    cy.then(() => expect(window.localStorage.getItem('profile')).to.be.null);
+    cy.then(() => expect(window.localStorage.getItem('token')).to.not.be.null);
+    cy.then(
+      () => expect(window.localStorage.getItem('profile')).to.not.be.null
+    );
   });
 });
