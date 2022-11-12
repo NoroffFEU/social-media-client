@@ -18,7 +18,7 @@ describe('Logout test', () => {
       .should('be.visible');
     const email = 'cocomarcia@noroff.no';
     cy.wait(1000);
-    const password = 'Password';
+    const password = 'cocomarcia1';
     cy.get('#loginEmail').type(`${email}`);
     cy.get('#loginPassword').type(`${password}`);
     cy.wait(1000);
