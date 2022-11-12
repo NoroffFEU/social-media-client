@@ -1,30 +1,40 @@
 import { createPost } from "./create";
 
+const TITLE = "Unit-test test post";
+const BODY = "Is this showing";
+const TAGS = ["Unit-test, CA"];
+const MEDIA = "https://miro.medium.com/max/640/0*KgLY3q-o0Ll9oJmf";
+
 const TEST_ITEM = {
-  title: "Unit-test test post",
-  body: "Is this showing",
-  tags: ["Unit-test, CA"],
-  media: "https://miro.medium.com/max/640/0*KgLY3q-o0Ll9oJmf",
-  created: "2022-11-12T13:51:05.876Z",
-  updated: "2022-11-12T13:51:05.876Z",
-  id: 2572,
-  _count: {
-    comments: 0,
-    reactions: 0,
-  },
+  title: TITLE,
+  body: BODY,
+  tags: TAGS,
+  media: MEDIA,
 };
 
-function fetch() {
+function mockCreatePost() {
   return Promise.resolve({
     ok: true,
     json: () => Promise.resolve(TEST_ITEM),
   });
 }
 
-describe("Create item", () => {
+function mockFailCreatePost() {
+  return Promise.resolve({
+    ok: false,
+    statusText: "Bad request",
+  });
+}
+
+describe("createPost", () => {
   it("Creates a new item to the API", async () => {
-    global.fetch = jest.fn(() => fetch());
-    const newpost = await createPost();
+    global.fetch = jest.fn(() => mockCreatePost());
+    const newpost = await createPost(TITLE, BODY, TAGS, MEDIA);
     expect(newpost).toEqual(TEST_ITEM);
+  });
+
+  it("Fails to create a new item to the API", async () => {
+    global.fetch = jest.fn(() => mockFailCreatePost());
+    await expect(createPost).rejects.toThrow("Bad request");
   });
 });
