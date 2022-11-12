@@ -1,8 +1,8 @@
 describe('Social Media App: Login and Logout', () => {
   beforeEach(() => {
-    cy.visit('http://127.0.0.1:5501');
+    cy.visit('http://127.0.0.1:5500/');
     cy.clearLocalStorage();
-    cy.wait(500);
+    cy.wait(1000);
     cy.get('#registerModal button[type=reset]').click();
     cy.get('header button[data-auth=login]').click();
     cy.wait(1000);

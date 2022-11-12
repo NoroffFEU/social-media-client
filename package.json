@@ -13,7 +13,8 @@
     "test-e2e-cli": "cypress run",
     "vite": "vite",
     "vite-build": "vite build",
-    "vite-server": "vite preview"
+    "vite-server": "vite preview",
+    "live": "live-server"
   },
   "keywords": [],
   "author": "",
