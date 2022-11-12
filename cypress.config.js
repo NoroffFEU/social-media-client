@@ -5,7 +5,7 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       config.env = {
-        URL: 'http://127.0.0.1:8081/',
+        URL: 'http://127.0.0.1:5173/',
         ...process.env,
         ...config.env,
       };
