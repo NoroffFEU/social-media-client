@@ -58,12 +58,13 @@ describe("login", () => {
     global.fetch = jest.fn(() => fetchSuccess());
     const result = await login(email, password);
     expect(email).toMatch("@noroff.no");
-    expect(password).toMatch("Password1");
-    expect(result.token).toEqual(token);
+    expect(result).toHaveProperty("token");
   });
   // Test that the login function throws an error when provided with invalid credentials
   it("throws an error when provided with invalid credentials", async () => {
     global.fetch = jest.fn(() => fetchFailure());
+    expect(badEmail).not.toMatch("@noroff.no");
+
     await expect(login(badEmail, badPassword)).rejects.toThrow(
       "Invalid email or password"
     );
