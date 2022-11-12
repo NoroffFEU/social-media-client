@@ -8,19 +8,15 @@ describe('Authentication', () => {
     cy.visit('/');
     cy.wait(1000);
     cy.get('.btn-close:visible').click();
-    cy.get("#registerForm button[data-auth='login']:visible")
-      .contains('Login')
-      .click();
+    cy.get("button[data-auth='login']:visible").contains('Login').click();
     cy.wait(1500);
-    cy.get("#registerForm input[type='email']:visible")
-      .contains('Email address')
+    cy.get("#loginModal input[type='email']:visible")
       .should('exist')
       .type('cocomarcia@noroff.no');
-    cy.get("#registerForm input[type='password']:visible")
-      .contains('Password')
+    cy.get("#loginModal input[type='password']#loginPassword:visible")
       .should('exist')
       .type('cocomarcia1');
-    cy.get('#registerForm .btn-success:visible').click();
+    cy.get('button.btn-success:visible').click();
     cy.wait(3000);
     cy.then(
       () => expect(window.localStorage.getItem('profile')).to.not.be.null
