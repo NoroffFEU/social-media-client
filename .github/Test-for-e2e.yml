@@ -19,3 +19,7 @@ jobs:
           start: npm run dev
           wait-on: "http://127.0.0.1:5500/"
           browser: electron
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
