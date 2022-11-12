@@ -22,6 +22,12 @@
       "plugins": ["jest"],
       "extends": ["plugin:jest/recommended"],
       "rules": { "jest/prefer-expect-assertions": "off" }
+    },
+    {
+      "files": ["**/mocks/**.js"],
+      "rules": {
+        "no-undef": "off"
+      }
     }
   ],
   "parserOptions": {
