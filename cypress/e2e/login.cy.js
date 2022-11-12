@@ -14,6 +14,7 @@ describe('Authentication', () => {
     cy.get('#loginForm').within(() => {
       cy.get("input[type='email']").type('cocomarcia@noroff.no');
     });
+    cy.wait(3000);
     cy.get("input[type='password']:visible")
       .should('exist')
       .type('cocomarcia1');

@@ -19,7 +19,6 @@ describe('Authentication', () => {
       .should('exist')
       .type('cocomarcia1');
     cy.get('.btn-success:visible').click({ multiple: true });
-
     cy.wait(3500);
     cy.visit('/');
   });
@@ -30,7 +29,7 @@ describe('Authentication', () => {
     cy.get('#footerActions > a.btn')
       .contains('New Post')
       .should('be.visible')
-      .click({ force: true });
+      .click({ multiple: true });
     cy.get("form#postForm  input[name='title']")
       .should('be.visible')
       .type('Cypress testing')
