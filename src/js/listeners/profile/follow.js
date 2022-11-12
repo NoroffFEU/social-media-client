@@ -5,6 +5,7 @@ export async function followListener(event) {
   const name = button.dataset.name;
 
   if (name) {
+
     try {
       await followProfile(name);
       location.reload()

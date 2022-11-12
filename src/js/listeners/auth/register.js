@@ -1,6 +1,7 @@
 import * as auth from "../../api/auth/index.js";
 
 export async function registerListener(event) {
+
   event.preventDefault()
   const form = event.target
   const data = new FormData(form)
@@ -22,3 +23,4 @@ export async function registerListener(event) {
     return alert("There was a problem logging into your new account")
   }
 }
+

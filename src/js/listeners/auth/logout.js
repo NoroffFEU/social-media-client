@@ -2,6 +2,7 @@ import * as auth from "../../api/auth/index.js";
 import { updateLoginVisibility } from "../../ui/auth.js";
 
 export function logoutListener() {
+
   try {
     auth.logout()
     updateLoginVisibility()
@@ -10,3 +11,4 @@ export function logoutListener() {
     return alert("There was a problem logging out");
   }
 }
+

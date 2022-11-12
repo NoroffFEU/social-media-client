@@ -5,6 +5,7 @@ export async function unfollowListener(event) {
   const name = button.dataset.name;
 
   if (name) {
+
     try {
       await unfollowProfile(name);
       location.reload()

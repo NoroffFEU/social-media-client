@@ -2,6 +2,7 @@ import * as auth from "../../api/auth/index.js";
 import { updateLoginVisibility } from "../../ui/auth.js";
 
 export async function loginListener(event) {
+
   event.preventDefault()
   const form = event.target
   const data = new FormData(form)
@@ -15,3 +16,4 @@ export async function loginListener(event) {
     return alert("Either your username was not found or your password is incorrect")
   }
 }
+
