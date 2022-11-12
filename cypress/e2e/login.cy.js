@@ -35,7 +35,7 @@ describe('Authentication', () => {
     cy.wait(1500);
     cy.get("input[type='email']:visible")
       .should('exist')
-      .type('/https://nf-api.onrender.com');
+      .type('cocomarcia@noroff.no');
     cy.get("input[type='password']:visible")
       .should('exist')
       .type('cocomarcia1');
