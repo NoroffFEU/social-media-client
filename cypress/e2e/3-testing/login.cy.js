@@ -36,7 +36,7 @@ describe("Authentication", () => {
       .type("failed@noroff.no");
     cy.get("input[type='password']:visible").should("exist").type("LeahogUlf");
     cy.get(".btn-success:visible").click();
-    cy.wait(2000);
+    cy.wait(3000);
     cy.then(() => expect(window.localStorage.getItem("profile")).to.be.null);
     cy.then(() => expect(window.localStorage.getItem("token")).to.be.null);
     cy.url().should("not.include", "profile");
@@ -54,7 +54,7 @@ describe("Authentication", () => {
       .type("caTester@noroff.no");
     cy.get("input[type='password']:visible").should("exist").type("123");
     cy.get(".btn-success:visible").click();
-    cy.wait(2000);
+    cy.wait(3000);
     cy.then(() => expect(window.localStorage.getItem("profile")).to.be.null);
     cy.then(() => expect(window.localStorage.getItem("token")).to.be.null);
     cy.url().should("not.include", "profile");
