@@ -27,6 +27,7 @@ describe('Social Media App: Create and Delete Posts', () => {
         cy.get('#postBody').should('exist').type(`Cypress Test Body`);
         cy.wait(500);
         cy.get('button[data-action=submit]').click({ force: true });
+        cy.wait(1000);
       });
   });
 
