@@ -1,3 +1,5 @@
+// Cypress/End-2-end to test if there is possible to login and then logout again.
+
 describe('Can login to the page and perform an logout + clearing localStorage', () => {
   it('Logout of the site', () => {
     cy.visit('/');

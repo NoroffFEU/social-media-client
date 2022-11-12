@@ -1,3 +1,5 @@
+// Cypress/End-2-end to test if there is possible to login
+
 describe('Can login to the page', () => {
   it('Start login', () => {
     cy.visit('/');
@@ -7,7 +9,6 @@ describe('Can login to the page', () => {
       .contains('Login')
       .click();
     cy.wait(1000);
-    // cy.get("input[type='email']:visible").should("exist").type(Cypress.env("EMAIL"));
     cy.get("input[type='email']:visible")
       .should('exist')
       .type('faketestaccount@stud.noroff.no');
