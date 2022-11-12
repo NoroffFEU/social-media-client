@@ -1,13 +1,13 @@
-import { save, load } from "../../storage/index.js";
-import { logout } from "./logout";
-import { LocalStorageMock } from "../../test/LocalStorageMock.js";
+import { save, load } from '../../storage/index.js';
+import { logout } from './logout';
+import { LocalStorageMock } from '../../test/localStorageMock.js';
 
 global.localStorage = new LocalStorageMock();
 
-describe("logout", () => {
-  it("clears the token from browser storage", () => {
-    const key = "token";
-    const value = "valid token";
+describe('logout', () => {
+  it('clears the token from browser storage', () => {
+    const key = 'token';
+    const value = 'valid token';
     save(key, value);
     expect(load(key)).toEqual(value);
     expect(localStorage.getItem(key)).toEqual(JSON.stringify(value));
