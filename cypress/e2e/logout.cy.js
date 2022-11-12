@@ -16,7 +16,7 @@ describe('Logout test', () => {
     cy.get('#loginModalLabel')
       .should('have.text', 'Login')
       .should('be.visible');
-    const email = 'jon@noroff.no';
+    const email = 'cocomarcia@noroff.no';
     cy.wait(1000);
     const password = 'Password';
     cy.get('#loginEmail').type(`${email}`);
