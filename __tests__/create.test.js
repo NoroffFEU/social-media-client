@@ -17,8 +17,8 @@ const data = JSON.stringify(dummy_post);
 function createPostSuccess() {
   return Promise.resolve({
     ok: true,
-    status: 200,
-    statusText: 'fetch is OK',
+    status: 201,
+    statusText: 'Fetch is OK',
     json: () => Promise.resolve(dummy_post),
   });
 }
@@ -40,6 +40,12 @@ describe('Create new post', () => {
     expect(typeof body).toBe('string');
     expect(typeof media).toBe('string');
     expect(post).toEqual(data);
+  });
+
+  it('Returns a 201 status code', async () => {
+    global.fetch = jest.fn(() => createPostSuccess());
+    const response = await createPostSuccess();
+    expect(response.status).toBe(201);
   });
 
   it('Fails to create a new post', async () => {
