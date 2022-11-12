@@ -1,6 +1,6 @@
 # Workflow Course Assignment Thong
 
-[![Automated E2E Testing](https://github.com/norbadboy/workflow-thong/actions/workflows/e2e-test.yml/badge.svg?branch=master)](https://github.com/norbadboy/workflow-thong/actions/workflows/e2e-test.yml) [![Automated Unit Testing](https://github.com/norbadboy/workflow-thong/actions/workflows/unit-test.yml/badge.svg?branch=master)](https://github.com/norbadboy/workflow-thong/actions/workflows/unit-test.yml)
+[![Automated E2E Testing](https://github.com/norbadboy/workflow-thong/actions/workflows/e2e-test.yml/badge.svg?branch=master)](https://github.com/norbadboy/workflow-thong/actions/workflows/e2e-test.yml) [![Automated Unit Testing](https://github.com/norbadboy/workflow-thong/actions/workflows/unit-test.yml/badge.svg?branch=master)](https://github.com/norbadboy/workflow-thong/actions/workflows/unit-test.yml) [![Deploy](https://github.com/norbadboy/workflow-thong/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/norbadboy/workflow-thong/actions/workflows/deploy.yml)
 
 ## The following workflows/hooks are configured:
 
