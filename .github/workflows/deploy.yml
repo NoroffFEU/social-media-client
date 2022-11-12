@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - vite-workflow
+      - main
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        uses: norbadboy/npm-install@v1
+        uses: bahmutov/npm-install@v1
 
       - name: Build project
         run: npm run build
@@ -45,7 +45,7 @@ jobs:
           path: ./dist
 
       - name: Deploy to GitHub Pages
-        uses: norbadboy/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
