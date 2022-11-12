@@ -31,7 +31,7 @@ describe('Authentication', () => {
   it('Validates email input', () => {
     cy.visit('/');
     cy.wait(1000);
-    cy.get('#reg-btn .btn-close:visible').click();
+    cy.get('#reg-btn:visible').click();
     cy.wait(500);
     cy.get("#registerForm button[data-auth='login']:visible").click();
     cy.wait(1500);
@@ -50,7 +50,7 @@ describe('Authentication', () => {
   it('Validates password', () => {
     cy.visit('/');
     cy.wait(1000);
-    cy.get('#login-btn .btn-close:visible').click();
+    cy.get('#login-btn:visible').click();
     cy.wait(500);
     cy.get("button[data-auth='login']:visible").click();
     cy.wait(1500);
