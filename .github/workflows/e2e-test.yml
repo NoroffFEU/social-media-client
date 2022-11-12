@@ -3,10 +3,6 @@ on:
   - pull_request
   - workflow_dispatch
 
-env:
-  EMAIL: ${{secrets.TEST_EMAIL}}
-  PASSWORD: ${{secrets.TEST_PASSWORD}}
-
 jobs:
   run-e2e-tests:
     name: Run E2E Tests
