@@ -10,7 +10,10 @@
     "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
     "test-e2e": "cypress open",
-    "test-e2e-cli": "cypress run"
+    "test-e2e-cli": "cypress run",
+    "vite": "vite",
+    "vite-build": "vite build",
+    "vite-server": "vite preview"
   },
   "keywords": [],
   "author": "",
