@@ -23,3 +23,5 @@ test("Returns a user object with a token", async () => {
   expect(response.name).toEqual("kristoffer");
   expect(response.token).toEqual("asd123qwe456");
 });
+
+test("Throws an error if invalid credentials are passed in", () => {});
