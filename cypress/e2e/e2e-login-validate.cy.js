@@ -1,40 +1,41 @@
 describe("E2E test - test login validates", () => {
-  it("Test with wrong email", () => {
+  it("Test with wrong password", () => {
     cy.visit("/");
-    cy.clearLocalStorage();
-    cy.loginE2E();
-    //Getting email input and on purpose mising a f in noroff
+    cy.get(".btn-close:visible").click().wait(500);
+    cy.get("button[data-auth='login']:visible").click().wait(1000);
     cy.get("#loginEmail").type("rotta@norof.no");
     cy.get("#loginPassword").type("rotta123");
-    cy.get("#loginForm button").contains("Login").click();
-    //cy.wait(1000);
-
-    cy.then(() => expect(window.localStorage.getItem("token")).to.be.null);
+    cy.get("#loginForm button").contains("Login").click().wait(1000);
+    cy.getLocalStorage("token").then((token) => {
+      expect(token).to.be.null;
+    });
   });
 
   it("Test with wrong password", () => {
     cy.visit("/");
-    cy.loginE2E();
+    cy.get(".btn-close:visible").click().wait(500);
+    cy.get("button[data-auth='login']:visible").click().wait(1000);
     cy.get("#loginEmail").type("rotta@noroff.no");
-    cy.get("#loginPassword").type("rotta12");
-    cy.get("#loginForm button").contains("Login").click();
-    //cy.wait(1000);
-
-    cy.then(() => expect(window.localStorage.getItem("token")).to.be.null);
+    cy.get("#loginPassword").type("rotta");
+    cy.get("#loginForm button").contains("Login").click().wait(1000);
+    cy.getLocalStorage("token").then((token) => {
+      expect(token).to.be.null;
+    });
   });
-
   it("Test with wrong email and password", () => {
     cy.visit("/");
-    cy.loginE2E();
+    cy.get(".btn-close:visible").click().wait(500);
+    cy.get("button[data-auth='login']:visible").click().wait(1000);
     cy.get("#loginEmail").type("rotta@norof.no");
-    cy.get("#loginPassword").type("rotta12");
-    cy.get("#loginForm button").contains("Login").click();
-    //cy.wait(1000);
-    cy.on("window:alert", (msg) => {
-      expect(msg).to.equal(
-        "Either your username was not found or your password is incorrect"
-      );
+    cy.get("#loginPassword").type("rotta");
+    cy.get("#loginForm button").contains("Login").click().wait(1000);
+    cy.getLocalStorage("token").then((token) => {
+      expect(token).to.be.null;
     });
-    cy.then(() => expect(window.localStorage.getItem("token")).to.be.null);
+  });
+  cy.on("window:alert", (msg) => {
+    expect(msg).to.equal(
+      "Either your username was not found or your password is incorrect"
+    );
   });
 });

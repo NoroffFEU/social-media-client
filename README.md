@@ -108,13 +108,16 @@ Created a cypress command of createPost function and deletePost function.
 
 
 
-
-
 The following features must be automatically tested with end-to-end tests:
 1.	Login form validates user inputs correctly based on API restrictions
 
 2.	Create item form validates user inputs correctly based on API restrictions
+-Test checkes if you can NOT log in with wrong email - passes
+-Test checks if you can NOT log in with wrong password - passes
+-Test checks if you can NOT log in with wrong email and password - passes
 
 3.	Logout button logs the user out when clicked
-Created a e2e test. Noticed i had to add cy.wait(1000) in order for the test not to run too fast that the preview froze. But with the second wait here and there it worked just fine.
+Created a e2e test. Noticed i had to add cy.wait(1000) in order for the test not to run too fast that the preview froze. 
+And that had to be ignored for esLint to approve commit.
+But with a second wait here and there it worked just fine.
 -Test passes
