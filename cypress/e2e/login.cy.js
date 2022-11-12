@@ -12,13 +12,15 @@ describe('Authentication', () => {
       .contains('Login')
       .click();
     cy.wait(1500);
-    cy.get("input[type='email']:visible")
+    cy.get("#registerForm input[type='email']:visible")
+      .contains('Email address')
       .should('exist')
       .type('cocomarcia@noroff.no');
-    cy.get("input[type='password']:visible")
+    cy.get("#registerForm input[type='password']:visible")
+      .contains('Password')
       .should('exist')
       .type('cocomarcia1');
-    cy.get('.btn-success:visible').click();
+    cy.get('#registerForm .btn-success:visible').click();
     cy.wait(3000);
     cy.then(
       () => expect(window.localStorage.getItem('profile')).to.not.be.null
