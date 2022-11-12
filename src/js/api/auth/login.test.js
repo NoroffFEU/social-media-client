@@ -29,7 +29,7 @@ const TEST_NAME = "akeek";
 const TEST_VALID_EMAIL = "sveek-29353@stud.noroff.no";
 const TEST_TOKEN = "token";
 const TEST_PASSWORD = "passord123";
-const TEST_INVALID_EMAIL = "invalid@google.no";
+const TEST_INVALID_EMAIL = "ola@nordmann.no";
 const JSON_RESPONSE = {
   name: TEST_NAME,
   email: TEST_VALID_EMAIL,
