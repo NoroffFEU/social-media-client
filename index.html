@@ -92,134 +92,63 @@
         </div>
       </div>
     </footer>
-
-    <div
-      class="modal fade"
-      id="loginModal"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="loginModalLabel"
-      aria-hidden="true"
-    >
-      <div
-        class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable"
-      >
-        <form class="modal-content" id="loginForm">
-          <div class="modal-header">
-            <h5 class="modal-title" id="loginModalLabel">Login</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+  <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <form class="modal-content" id="loginForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-floating mb-3">
+            <input required type="email" class="form-control" id="loginEmail" name="email"
+              pattern="[\w\-.]+@(stud.)?noroff.no$" title="Only Noroff student or teacher emails are valid."
+              placeholder="name@example.com" />
+            <label for="loginEmail">Email address</label>
           </div>
-          <div class="modal-body">
-            <div class="form-floating mb-3">
-              <input
-                required
-                type="email"
-                class="form-control"
-                id="loginEmail"
-                name="email"
-                placeholder="name@example.com"
-              />
-              <label for="loginEmail">Email address</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input
-                required
-                type="password"
-                class="form-control"
-                id="loginPassword"
-                name="password"
-                placeholder="Password"
-              />
-              <label for="loginPassword">Password</label>
-            </div>
+          <div class="form-floating mb-3">
+            <input required type="password" minlength="8" class="form-control" id="loginPassword" name="password"
+              placeholder="Password" />
+            <label for="loginPassword">Password</label>
           </div>
         </div>
         <div class="modal-footer">
           <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
             Close
           </button>
-          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#registerModal" data-auth="register"
-            data-visible="loggedOut">Register</button>
-          <button type="submit" class="btn btn-success" data-bs-dismiss="modal">
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#registerModal"
+            data-auth="register" data-visible="loggedOut">Register</button>
+          <button type="submit" class="btn btn-success">
             Login
           </button>
         </div>
       </form>
     </div>
-
-    <div
-      class="modal fade"
-      id="registerModal"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="registerModalLabel"
-      aria-hidden="true"
-    >
-      <div
-        class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable"
-      >
-        <form class="modal-content" id="registerForm">
-          <div class="modal-header">
-            <h5 class="modal-title" id="registerModalLabel">Create Profile</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+  <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <form class="modal-content" id="registerForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Create Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-floating mb-3">
+            <input required type="text" class="form-control" id="registerName" name="name"
+              placeholder="name@example.com" />
+            <label for="registerName">Name</label>
           </div>
-          <div class="modal-body">
-            <div class="form-floating mb-3">
-              <input
-                required
-                type="text"
-                class="form-control"
-                id="registerName"
-                name="name"
-                placeholder="name@example.com"
-              />
-              <label for="registerName">Name</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input
-                required
-                type="email"
-                class="form-control"
-                id="registerEmail"
-                name="email"
-                placeholder="name@example.com"
-              />
-              <label for="registerEmail">Email address</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input
-                required
-                type="password"
-                class="form-control"
-                id="registerPassword"
-                name="password"
-                placeholder="Password"
-              />
-              <label for="registerPassword">Password</label>
-            </div>
-            <div class="form-floating">
-              <input
-                required
-                type="url"
-                class="form-control"
-                id="registerAvatar"
-                name="avatar"
-                placeholder="Avatar URL"
-              />
-              <label for="registerAvatar">Avatar URL</label>
-            </div>
+          <div class="form-floating mb-3">
+            <input required type="email" class="form-control" id="registerEmail" name="email"
+              pattern="[\w\-.]+@(stud.)?noroff.no$" title="Only Noroff student or teacher emails are valid."
+              placeholder="name@example.com" />
+            <label for="registerEmail">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input required type="password" minlength="8" class="form-control" id="registerPassword" name="password"
+              placeholder="Password" />
+            <label for="registerPassword">Password</label>
           </div>
           <div class="modal-footer">
             <button
@@ -246,8 +175,8 @@
           <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">
             Close
           </button>
-          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginModal" data-auth="login"
-            data-visible="loggedOut">Login</button>
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginModal"
+            data-auth="login" data-visible="loggedOut">Login</button>
           <button type="submit" class="btn btn-success">Create Profile</button>
         </div>
       </form>
@@ -416,12 +345,12 @@
     <template id="postTabs">
       <nav>
         <div class="nav nav-tabs" role="tablist">
-          <button type="button" class="nav-link active" id="nav-tab-default" data-bs-toggle="tab" data-bs-target="#nav-default"
-            type="button" role="tab" aria-controls="nav-default" aria-selected="true">
+          <button type="button" class="nav-link active" id="nav-tab-default" data-bs-toggle="tab"
+            data-bs-target="#nav-default" type="button" role="tab" aria-controls="nav-default" aria-selected="true">
             View
           </button>
-          <button type="button" class="nav-link" id="nav-tab-edit" data-bs-toggle="tab" data-bs-target="#nav-edit" type="button"
-            role="tab" aria-controls="nav-edit" aria-selected="false">
+          <button type="button" class="nav-link" id="nav-tab-edit" data-bs-toggle="tab" data-bs-target="#nav-edit"
+            type="button" role="tab" aria-controls="nav-edit" aria-selected="false">
             Edit
           </button>
 
