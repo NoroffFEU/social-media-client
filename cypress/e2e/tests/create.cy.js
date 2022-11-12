@@ -3,18 +3,20 @@ describe("User can create a post", () => {
     cy.visit("./");
     cy.clearLocalStorage();
     cy.wait(1000);
-    cy.get("#registerForm > div.modal-footer > button").contains("Login").click();
+    cy.get("#registerForm > div.modal-footer > button")
+      .contains("Login")
+      .click();
     cy.wait(500);
-    cy.get("#loginForm > div.modal-body > div.form-floating > input[type=email]").type(
-      "thong@noroff.no"
-    );
-    cy.get("#loginForm > div.modal-body > div.form-floating > input[type=password]").type(
-      "12345678"
-    );
+    cy.get(
+      "#loginForm > div.modal-body > div.form-floating > input[type=email]"
+    ).type("thong@noroff.no");
+    cy.get(
+      "#loginForm > div.modal-body > div.form-floating > input[type=password]"
+    ).type("12345678");
     cy.get("#loginForm > div.modal-footer > button").contains("Login").click();
   });
   it("creates a post validates user inputs correctly based on API restrictions", () => {
-    cy.wait(1000);
+    cy.wait(4000);
     cy.get("#footerActions > a.btn").contains("New Post").click();
     cy.wait(500);
     cy.get("#postTitle").type("Cypress testing create");
