@@ -20,6 +20,6 @@ jobs:
       - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
         with:
-          start: npm run dev
-          wait-on: "http://127.0.0.1:8080/"
+          start: npm run vite-start
+          wait-on: "http://127.0.0.1:5173/"
           browser: electron
