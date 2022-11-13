@@ -11,7 +11,6 @@ const BAD_TEST_EMAIL = 'karla@hotmail.com';
 const BAD_TEST_PSW = 'psw';
 
 const data = { email: TEST_EMAIL, password: TEST_PSW, token: TEST_TOKEN };
-const test_data = JSON.stringify(data);
 
 function fetchSuccess() {
   return Promise.resolve({
