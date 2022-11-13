@@ -1,4 +1,4 @@
-describe("empty spec", () => {
+describe("Create post based on api restrictions ", () => {
   beforeEach(() => {
     cy.visit("http://127.0.0.1:8080");
     cy.clearLocalStorage();
@@ -23,8 +23,20 @@ describe("empty spec", () => {
     cy.get('button[data-action="submit"]').click();
     cy.wait(500);
     cy.url().should("include", "postId=");
-    cy.wait(1500);
+    cy.wait(3000);
     cy.get('button[data-action="delete"]:visible').click();
+    cy.wait(1000);
+  });
+
+  it("will not create a post when no title is made", () => {
+    cy.get(".btn-outline-success").contains("New Post").click();
+    cy.get("h1").contains("Post");
+    cy.wait(1000);
+    cy.get("#postTags").type("Cypress");
+    cy.get('button[data-action="submit"]').click();
+    cy.wait(500);
+    cy.url().should("include", "view=post");
+    cy.url().should("not.include", "postId=");
   });
 
   // This is a test that only runs when theres no previous post in the database from this user so i edited the
