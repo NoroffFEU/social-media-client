@@ -12,19 +12,23 @@ describe('Logout test', () => {
     cy.get('#registerForm')
       .find('.btn-outline-success')
       .should('be.visible')
-      .click();
+      .click({ force: true });
     cy.get('#loginModalLabel')
       .should('have.text', 'Login')
       .should('be.visible');
-    const email = 'jon@noroff.no';
+    const email = 'cocomarcia@noroff.no';
     cy.wait(1000);
-    const password = 'Password';
+    const password = 'cocomarcia1';
     cy.get('#loginEmail').type(`${email}`);
     cy.get('#loginPassword').type(`${password}`);
     cy.wait(1000);
-    cy.get('#loginForm .btn-success').should('be.visible').click();
+    cy.get('#loginForm .btn-success')
+      .should('be.visible')
+      .click({ force: true });
     cy.wait(1000);
-    cy.get("button[data-auth='logout']").should('be.visible').click();
+    cy.get("button[data-auth='logout']")
+      .should('be.visible')
+      .click({ force: true });
     cy.then(() => {
       expect(window.localStorage.getItem('token')).to.be.null;
     });

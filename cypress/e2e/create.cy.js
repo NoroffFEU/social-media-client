@@ -1,12 +1,11 @@
 describe('Authentication', () => {
   beforeEach(() => {
-    cy.visit('/');
     cy.clearLocalStorage();
     cy.visit('/');
     cy.wait(1000);
-    cy.get('.btn-close:visible').click();
+    cy.get('.btn-close:visible').click({ force: true });
     cy.wait(500);
-    cy.get("button[data-auth='login']:visible").click();
+    cy.get("button[data-auth='login']:visible").click({ force: true });
     cy.wait(1000);
     cy.get("input[type='email']:visible")
       .should('exist')
@@ -14,7 +13,7 @@ describe('Authentication', () => {
     cy.get("input[type='password']:visible")
       .should('exist')
       .type('cocomarcia1');
-    cy.get('.btn-success:visible').click();
+    cy.get('.btn-success:visible').click({ force: true });
     cy.wait(3500);
     cy.visit('/');
   });
@@ -42,6 +41,6 @@ describe('Authentication', () => {
       .type('Test cypress');
     cy.get('form#postForm > div.col-12 > button.btn-success')
       .should('be.visible')
-      .click();
+      .click({ force: true });
   });
 });
