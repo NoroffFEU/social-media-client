@@ -1,6 +1,6 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "testing with  Jest for unit-testing, and cypress for e2e testing with all linting features",
   "main": "index.js",
   "type": "module",
@@ -8,7 +8,6 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/js/**/*.js"
-  
   },
   "keywords": [],
   "author": "Noroff",
