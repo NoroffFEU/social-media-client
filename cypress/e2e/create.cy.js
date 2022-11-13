@@ -43,6 +43,6 @@ describe('Authentication', () => {
       .type('Test cypress');
     cy.get('form#postForm > div.col-12 > button.btn-success')
       .should('be.visible')
-      .click({ multiple: true });
+      .click({ force: true });
   });
 });

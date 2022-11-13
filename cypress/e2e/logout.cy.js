@@ -1,10 +1,12 @@
 describe('Logout test', () => {
-  beforeEach(() => {
-    cy.visit('/');
-    cy.clearLocalStorage();
-  });
+  // beforeEach(() => {
+  //   cy.visit('/');
+  //   cy.clearLocalStorage();
+  // });
 
   it('can logout', () => {
+    cy.visit('/');
+    cy.clearLocalStorage();
     cy.get('#registerModalLabel')
       .should('have.text', 'Create Profile')
       .should('be.visible');
