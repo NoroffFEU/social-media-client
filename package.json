@@ -16,10 +16,12 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "cypress": "^10.7.0",
     "eslint": "^8.27.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
-    "live-server": "^1.2.2",
+    "live-server": "^1.1.0",
     "prettier": "^2.7.1",
     "sass": "^1.54.8"
   },
