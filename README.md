@@ -129,17 +129,17 @@ Added the following end to end test files for Cypress.
   - Checks local storage tokens for "profile" and "token" are set.
   - Checks user is redirected to the profile page.
 - Tests login validates email input for valid email pattern.
-  - Checks for email input validation prompt when not using a valid Noroff email.
+  - Checks for email invalid input and focus.
   - Checks local storage tokens for "profile" and "token" are null.
   - Checks URL hasn't changed.
   - Checks login form modal is still present.
 - Tests login form validation with invalid email.
-  - Checks for email input validation prompt when not using a valid Noroff email.
+  - Checks for email invalid input and focus.
   - Checks local storage tokens for "profile" and "token" are null.
   - Checks URL hasn't changed.
   - Checks login form modal is still present.
 - Tests login form validation password length.
-  - Checks for password validation prompt when using too short password.
+  - This is incorrectly submitted when testing in cypress, removed this check for password `Checks for password invalid input and focus.`
   - Checks local storage tokens for "profile" and "token" are null.
   - Checks URL hasn't changed.
   - Checks login form modal is still present.
@@ -437,7 +437,7 @@ module.exports = defineConfig({
 });
 ```
 
-Create `.env` file in root and add, filling it with your own details for Cypress testing, the show base URL can be used as is with the vite setup to test you current project, or it can be replaced with with a hosted URL. When running this project on actions you will need to define these in github secrets on the repository settings.
+Create `.env` file in root and fill it with your own details for Cypress testing, the shown base URL can be used as is with the vite setup to test you current project, or it can be replaced with with a hosted URL. When running this project on actions you will need to define these in github secrets on the repository settings.
 
 ```
 PASSWORD=PASSWORD

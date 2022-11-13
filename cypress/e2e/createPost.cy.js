@@ -18,7 +18,8 @@ describe("Create Post", () => {
         .type(Cypress.env("PASSWORD"));
       cy.get("button[type='submit']").click();
     });
-    cy.wait(2000);
+    //added more wait occasional error
+    cy.wait(3000);
     cy.get('a[href="./?view=post"]').click();
     cy.wait(2000);
   });
@@ -51,17 +52,21 @@ describe("Create Post", () => {
     cy.url().should("include", "post");
     // empty form
     cy.get('button[data-action="submit"]').click();
-    cy.get("#postTitle:invalid")
-      .invoke("prop", "validationMessage")
-      .should("exist");
+    cy.wait(1000);
+    cy.url().should("not.include", "postId");
+    //checking for prompt was always true even if the input was invalid or not
+    cy.get("#postTitle").should("have.focus");
+    cy.get("#postTitle:invalid").should("exist");
     cy.wait(200);
     // not a url
     cy.get("#postTitle").should("exist").type("Cypress Testing Posts");
     cy.get("#postMedia").should("exist").type("Not a URL");
     cy.get('button[data-action="submit"]').click();
-    cy.get("#postMedia:invalid")
-      .invoke("prop", "validationMessage")
-      .should("exist");
+    cy.wait(1000);
+    cy.url().should("not.include", "postId");
+    //checking for prompt was always true even if the input was invalid or not
+    cy.get("#postMedia").should("have.focus");
+    cy.get("#postMedia:invalid").should("exist");
     cy.wait(200);
     // post needs a title
     cy.get("#postTitle").should("exist").clear();
@@ -78,9 +83,12 @@ describe("Create Post", () => {
         "This post has been generated using Cypress, automate your user testing today!"
       );
     cy.get('button[data-action="submit"]').click();
-    cy.get("#postTitle:invalid")
-      .invoke("prop", "validationMessage")
-      .should("exist");
+    cy.wait(1000);
+    cy.url().should("not.include", "postId");
+    //checking for prompt was always true even if the input was invalid or not
+    cy.get("#postTitle").should("have.focus");
+    cy.get("#postTitle:invalid").should("exist");
+    cy.wait(500);
   });
 
   it("Handles thrown errors", () => {
