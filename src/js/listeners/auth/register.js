@@ -8,7 +8,17 @@ export async function registerListener(event) {
   const name = data.get("name")
   const password = data.get("password")
   const avatar = data.get("avatar")
-  await auth.register(name, email, password, avatar)
-  await auth.login(email, password)
-  location.reload()
+
+  try {
+    await auth.register(name, email, password, avatar)
+  } catch {
+    return alert("There was a problem creating your account")
+  }
+
+  try {
+    await auth.login(email, password)
+    location.reload()
+  } catch {
+    return alert("There was a problem logging into your new account")
+  }
 }
