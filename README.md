@@ -1,8 +1,8 @@
 # Social Media Client 
 
-![E2E-testing](https://github.com/SaraRFerrer/workflow_SaraFerrer_ca/actions/workflows/e2e_testing.yml)/badge.svg?branch=patch-3
-![Unit-testing](https://github.com/SaraRFerrer/workflow_SaraFerrer_ca/actions/workflows/unit_testing.yml)/badge.svg?branch=patch-5
-![Deploy static content to pages](https://github.com/SaraRFerrer/workflow_SaraFerrer_ca/actions/workflows/main.yml)/badge.svg?branch=patch-1
+[![Automated E2E Testing](https://github.com/SaraRFerrer/workflow_SaraFerrer_ca/actions/workflows/e2e_testing.yml/badge.svg)](https://github.com/SaraRFerrer/workflow_SaraFerrer_ca/actions/workflows/e2e_testing.yml)
+[![Automated Unit Testing](https://github.com/SaraRFerrer/workflow_SaraFerrer_ca/actions/workflows/unit_testing.yml/badge.svg)](https://github.com/SaraRFerrer/workflow_SaraFerrer_ca/actions/workflows/unit_testing.yml)
+[![Deploy static content to Pages](https://github.com/SaraRFerrer/workflow_SaraFerrer_ca/actions/workflows/main.yml/badge.svg)](https://github.com/SaraRFerrer/workflow_SaraFerrer_ca/actions/workflows/main.yml)
 
 Social Media Client is a teachers take on the JS2 Course Assignment. 
 
@@ -54,7 +54,7 @@ Social Media Client is a Social Media application created by Oliver Dipple a tea
 > Tests form validation attempted submissions
 
 
-**Installing **
+**Installing**
 
 1. Clone repo:
 
