@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Start live server
-        uses: npm run start
+        run: npm run start
 
       - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
