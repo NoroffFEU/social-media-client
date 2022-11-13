@@ -10,7 +10,8 @@
     "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest --passWithNoTests",
     "test-e2e": "cypress open",
-    "test-e2e-cli": "cypress run"
+    "test-e2e-cli": "cypress run",
+    "vite-start": "vite"
   },
   "keywords": [],
   "author": "Noroff",
@@ -29,7 +30,8 @@
     "live-server": "^1.2.2",
     "local-storage-mock": "^1.0.2",
     "prettier": "^2.7.1",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "vite": "^3.2.3"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
