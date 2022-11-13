@@ -30,8 +30,30 @@
 
 ## Run the App
 
-Install:
+Install project locally:
 
 `npm i`
 
 `npm run start`
+
+### Prettier:
+
+Install:
+
+`npm install --save-dev prettier`
+
+In package.json:
+
+`"format": "prettier -w src/js/**/*.js"`
+
+Run prettier:
+
+`npm run format`
+
+Configured prettier:
+
+```javascript
+{
+  "singleQuote": true
+}
+```
