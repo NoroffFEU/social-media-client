@@ -5,8 +5,8 @@ export const profileThumbnail = (profile) => {
   const img = new Image()
   img.src = profile.avatar || "https://cdn.discordapp.com/attachments/931268688412299274/1026475050578231376/no-user-image-icon-0.jpg";
   img.alt = profile.name;
-  img.classList.add("rounded-circle", "avatar", "border");
+  img.classList.add('rounded-circle', 'avatar', 'border');
   element.title = `${profile.name}'s Profile`;
   element.append(img);
   return element;
-}
+};
