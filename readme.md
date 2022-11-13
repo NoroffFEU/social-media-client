@@ -9,7 +9,6 @@ The goal is to make a good quality environment by using workflows to a JavaScrip
 
 - API calls to CRUD an item
 - API call to authenticate a user
-- Does not belong to you
 
 The workflow/hooks should run prettier, ESlint and jest on commit.
 It should also deploy to pages on merge to default and configure the project for hosting using a bundler.
