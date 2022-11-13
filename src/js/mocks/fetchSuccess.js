@@ -1,10 +1,4 @@
-export function fetchSuccess() {
-  const testItem = {
-    name: "Test user",
-    email: "test@test.no",
-    accessToken: "asd123qwe456",
-  };
-
+export function fetchSuccess(testItem) {
   return Promise.resolve({
     ok: true,
     status: 200,

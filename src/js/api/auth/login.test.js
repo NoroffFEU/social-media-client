@@ -1,21 +1,24 @@
 import { login } from "./login";
 import { storage } from "../../mocks/lStorage";
 import { fetchSuccess } from "../../mocks/fetchSuccess";
-import { fetchFailure } from "../../mocks/fetchFail";
 
 //Package docs:
 //Local storage: https://www.npmjs.com/package/local-storage-mock
 
 global.localStorage = storage();
 
-Object.defineProperty(global, "localStorage", { value: localStorage });
+const testItem = {
+  name: "Test user",
+  email: "test@test.no",
+  accessToken: "asd123qwe456",
+};
 
 afterAll(() => {
   localStorage.removeItem("token");
 });
 
 test("Returns a user object with a token", async () => {
-  global.fetch = jest.fn(() => fetchSuccess());
+  global.fetch = jest.fn(() => fetchSuccess(testItem));
 
   const response = await login("email@email.com", "password");
   expect(response.name).toEqual("Test user");
