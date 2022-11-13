@@ -1,5 +1,5 @@
 name: Automated E2E Testing
-on: 
+on:
   - pull_request
   - workflow_dispatch
 

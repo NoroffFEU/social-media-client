@@ -5,7 +5,7 @@ describe('Authentication', () => {
   // });
 
   it('will login', () => {
-    cy.visit('http://127.0.0.1:5500/');
+    cy.visit('/');
     cy.clearLocalStorage();
     cy.wait(1000);
     cy.get('.btn-close:visible').click({ force: true });
