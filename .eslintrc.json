@@ -24,9 +24,10 @@
       "rules": { "jest/prefer-expect-assertions": "off" }
     },
     {
-      "files": ["**/mocks/**.js"],
+      "files": ["**/mocks/**.js", "**.test.js"],
       "rules": {
-        "no-undef": "off"
+        "no-undef": "off",
+        "no-unused-vars": "off"
       }
     }
   ],
