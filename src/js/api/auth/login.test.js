@@ -1,6 +1,5 @@
 import { login } from "./login";
 
-global.localStorage = new LocalStorageMock();
 const validLogin = { email: "test123@noroff.no", password: "password" };
 const validToken = { id: "TOKEN", name: "VALID TOKEN" };
 
@@ -34,6 +33,8 @@ function loginSuccess() {
     json: () => Promise.resolve(validToken),
   });
 }
+
+global.localStorage = new LocalStorageMock();
 
 describe("log in function", () => {
   it("returns valid token if given valid login information", async () => {
