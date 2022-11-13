@@ -1,7 +1,7 @@
 export const postMedia = (post, tagName = "a") => {
   if (post.media) {
     const element = document.createElement(tagName);
-    element.classList.add("card-img")
+    element.classList.add("card-img");
     const img = new Image();
     img.src = post.media;
     img.alt = post.title;
@@ -12,10 +12,10 @@ export const postMedia = (post, tagName = "a") => {
       element.title = `View ${post.title}`;
     }
 
-    element.append(img)
+    element.append(img);
 
-    return element
+    return element;
   }
 
-  return "\r\n"
-}
+  return "\r\n";
+};

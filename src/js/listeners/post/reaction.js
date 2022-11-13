@@ -8,7 +8,7 @@ export async function reactionListener(event) {
   if (postId && symbol) {
     try {
       await react(postId, symbol);
-      location.reload()
+      location.reload();
     } catch {
       return alert("There was a problem reacting to this post");
     }
