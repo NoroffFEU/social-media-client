@@ -44,7 +44,7 @@ Install:
 
 `npm install --save-dev prettier`
 
-In package.json:
+In package.json scripts:
 
 `"format": "prettier -w src/js/**/*.js"`
 
@@ -60,6 +60,8 @@ Configured prettier:
 }
 ```
 
+---
+
 ### ESlint
 
 Install:
@@ -72,10 +74,60 @@ Setting up ESlint:
 
 This will ask you a series of questions. Here are the recommended answers:
 
-> - How would you like to use ESLint? · problems
-
+- How would you like to use ESLint? · problems
 - What type of modules does your project use? · esm
 - Which framework does your project use? · none
 - Does your project use TypeScript? · No
 - Where does your code run? · browser
 - What format do you want your config file to be in? · JSON
+
+In package.json scripts:
+
+`"lint": "eslint src/**/*.js"`
+`"lint-fix": "eslint src/**/*.js --cache --fix"`
+
+Run ESlint:
+
+`npm run lint`
+`npm run lint-fix`
+
+---
+
+### Creating pre-commit hooks:
+
+Install mrm:
+
+`npx mrm@2 lint-staged`
+
+In package.json lint-staged:
+
+```js
+"lint-staged": {
+  "*.js": [
+    "eslint --fix",
+    "prettier --write",
+    "jest --o --passWithNoTests"
+  ],
+  "*.html": [
+    "prettier --write"
+  ],
+  "*.scss": [
+    "prettier --write"
+  ]
+}
+```
+
+Format on save in .vscode/settings.json:
+
+```js
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": [
+    "javascript"
+  ]
+}
+```
