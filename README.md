@@ -64,4 +64,4 @@ Github
 
 [![Automated E2E Testing](https://github.com/NeNorvalls/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/NeNorvalls/social-media-client/actions/workflows/e2e-test.yml)
 
-[![Automated E2E Testing](https://github.com/NeNorvalls/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/NeNorvalls/social-media-client/actions/workflows/e2e-test.yml)
+[![Automated Unit Testing](https://github.com/NeNorvalls/social-media-client/actions/workflows/unit_testing.yml/badge.svg)](https://github.com/NeNorvalls/social-media-client/actions/workflows/unit_testing.yml)
