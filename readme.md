@@ -36,6 +36,8 @@ Install project locally:
 
 `npm run start`
 
+---
+
 ### Prettier:
 
 Install:
@@ -57,3 +59,23 @@ Configured prettier:
   "singleQuote": true
 }
 ```
+
+### ESlint
+
+Install:
+
+`npm install eslint --save-dev`
+
+Setting up ESlint:
+
+`npx eslint --init`
+
+This will ask you a series of questions. Here are the recommended answers:
+
+> - How would you like to use ESLint? · problems
+
+- What type of modules does your project use? · esm
+- Which framework does your project use? · none
+- Does your project use TypeScript? · No
+- Where does your code run? · browser
+- What format do you want your config file to be in? · JSON
