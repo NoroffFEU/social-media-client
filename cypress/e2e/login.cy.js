@@ -24,7 +24,7 @@ describe('Authentication', () => {
     cy.get("input[type='password']:visible")
       .should('exist')
       .type('cocomarcia1', { force: true }, { delay: 100 });
-    cy.get('.btn-success:visible').click();
+    cy.get('.btn-success:visible').click({ force: true });
     cy.wait(3000);
     cy.then(
       () => expect(window.localStorage.getItem('profile')).to.not.be.null
@@ -50,7 +50,6 @@ describe('Authentication', () => {
       .should('exist')
       .type('cocomarcia1', { force: true }, { delay: 100 });
     cy.get('.btn-success:visible').click({ force: true });
-
     cy.wait(3000);
     cy.then(() => expect(window.localStorage.getItem('profile')).to.exist);
     cy.then(() => expect(window.localStorage.getItem('token')).to.exist);
