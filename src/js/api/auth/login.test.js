@@ -26,11 +26,11 @@ class LocalStorageMock {
 
 global.localStorage = new LocalStorageMock();
 
+const validUser = "testingtiesto@noroff.no";
+const validPass = "asdf1234";
+
 const badUser = "tisto@noron.no";
 const badPass = "lololol";
-
-const goodUser = "testingtiesto@noroff.no";
-const goodPass = "asdf1234";
 
 const verifiedUser = {
   name: "Tiesto",
@@ -58,8 +58,8 @@ const badFetch = () => {
 describe("login", () => {
   it("gets token and successful fetch", async () => {
     global.fetch = jest.fn(() => goodFetch());
-    const data = await login(goodUser, goodPass);
-    expect(data.accessToken).toEqual(verifiedUser.accessToken);
+    const data = await login(validUser, validPass);
+    expect(data.accessToken).toEqual(goodFetch.accessToken);
   });
 
   it("gets error when credentials are wrong", async () => {
