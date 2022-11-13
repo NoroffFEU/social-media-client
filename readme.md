@@ -84,11 +84,13 @@ This will ask you a series of questions. Here are the recommended answers:
 In package.json scripts:
 
 `"lint": "eslint src/**/*.js"`
+
 `"lint-fix": "eslint src/**/*.js --cache --fix"`
 
 Run ESlint:
 
 `npm run lint`
+
 `npm run lint-fix`
 
 ---
@@ -153,7 +155,9 @@ export default {
 In package.json scripts:
 
 `"vite-dev": "vite"`
+
 `"vite-build": "vite-build"`
+
 `"vite-preview": "vite preview"`
 
 Open vite:
@@ -167,6 +171,7 @@ Open vite:
 Install:
 
 `npm i -D jest@29.2.0`
+
 `npm i -D eslint-plugin-jest`
 
 `npm i -D cypress@10.7.0 eslint-plugin-cypress@2.12.1`
@@ -174,10 +179,13 @@ Install:
 In package.json scripts:
 
 `"test": "npm run test-unit && npm run test-e2e-cli"`
+
 `"test-unit": "jest"`
 
 `"test-e2e": "cypress open"`
+
 `"test-e2e-report": "cypress run --reporter mochawesome"`
+
 `"test-e2e-cli": "cypress run"`
 
 In .eslintrc.json:
