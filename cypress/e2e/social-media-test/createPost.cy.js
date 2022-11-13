@@ -1,6 +1,6 @@
 // Cypress/End-2-end to test if there is possible to login and create an post.
 
-describe('Can login to the page', () => {
+describe('Can login to the page and create a post', () => {
   it('login to the start page and create an post', () => {
     cy.visit('/');
     cy.clearLocalStorage();
