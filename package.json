@@ -1,5 +1,5 @@
 {
-  "name": "css-frameworks-ca",
+  "name": "workflow-ca",
   "version": "1.0.4",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,6 @@
     "test-e2e-report": "cypress run --reporter mochawesome",
     "test-e2e-cli": "cypress run",
     "test": "npm test-e2e-cli  && npm run test-unit",
-    "test-e2e": "cypress open",
     "test-unit": "jest",
     "format": "prettier -w src/js/**/*.js",
     "lint": "eslint src/**/*.js",
@@ -24,7 +23,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
-    "cypress": "^10.7.0",
+    "cypress": "^10.8.0",
     "eslint": "^8.27.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-jest": "^27.1.5",
