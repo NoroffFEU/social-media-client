@@ -24,7 +24,7 @@
       "rules": { "jest/prefer-expect-assertions": "off" }
     },
     {
-      "files": ["**/mocks/**.js", "**.test.js"],
+      "files": ["**/mocks/**.js", "**.test.js", "**/cypress/**/**.js"],
       "rules": {
         "no-undef": "off",
         "no-unused-vars": "off"
