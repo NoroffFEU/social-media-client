@@ -9,6 +9,7 @@ const MOCK_NOT_FOUND = 'Not Found';
 // Mock user
 const MOCK_EMAIL = 'test-email@stud.noroff.no';
 const MOCK_PASSWORD = 'test1234!!';
+
 function fetchSuccess() {
   return Promise.resolve({
     ok: true,
@@ -27,20 +28,22 @@ function fetchFailure(status = 404, statusText = MOCK_NOT_FOUND) {
 }
 
 describe('Test that the login function returns a valid token when provided with valid credentials', () => {
-  it('login is successful', async () => {
+  it('should login successfully', async () => {
     // Creating browser mock
     global.fetch = jest.fn(() => fetchSuccess());
     global.localStorage = {};
     global.localStorage.setItem = jest.fn(() => null);
+
     const result = await login(MOCK_EMAIL, MOCK_PASSWORD);
     expect(result).toEqual(MOCK_PROFILE);
   });
 
-  it('login is unsuccessful', async () => {
+  it('should login unsuccessfully', async () => {
     // Creating browser mock
     global.fetch = jest.fn(() => fetchFailure());
     global.localStorage = {};
     global.localStorage.setItem = jest.fn(() => null);
+
     await expect(login(MOCK_EMAIL, MOCK_PASSWORD)).rejects.toThrow(
       MOCK_NOT_FOUND
     );
