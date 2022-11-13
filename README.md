@@ -1,0 +1,1 @@
+[![Automated E2E Testing](https://github.com/bushrakalaji/Workflow-ca/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/bushrakalaji/Workflow-ca/actions/workflows/e2e-test.yml)
