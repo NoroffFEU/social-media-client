@@ -227,6 +227,11 @@ The following file changes are required
 1.Project readme file is updated to include new configuration information and status badges:
 https://gonlonge.github.io/workflow-ca-social-media/
 
+//new e2e test !
+
+[![Automated E2E Testing](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/e2e-test.yml)
+
+
 [![Automated E2E Testing](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/e2e-test.yml)
 
 [![Automated Unit Testing](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/unit-test.yml)
