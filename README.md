@@ -14,6 +14,7 @@ It's a social media website were the plan is to add several different technology
 - Clone the repository
 - Run `npm install`
 - Run `npm run build`
+- Run `npm install -D live-server`
 
 # Tech stack used in the project
 
