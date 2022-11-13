@@ -52,7 +52,7 @@ Run prettier:
 
 `npm run format`
 
-Configured prettier:
+Configured prettier in .prettierrc.json:
 
 ```javascript
 {
@@ -129,5 +129,108 @@ Format on save in .vscode/settings.json:
   "eslint.validate": [
     "javascript"
   ]
+}
+```
+
+---
+
+### Vite
+
+Install:
+
+`npm install -D vite`
+
+Create vite.config.js:
+
+```js
+export default {
+  server: {
+    base: 'http://127.0.0.1:5173/',
+  },
+};
+```
+
+In package.json scripts:
+
+`"vite-dev": "vite"`
+`"vite-build": "vite-build"`
+`"vite-preview": "vite preview"`
+
+Open vite:
+
+`npm run vite-dev`
+
+---
+
+### Jest and Cypress
+
+Install:
+
+`npm i -D jest@29.2.0`
+`npm i -D eslint-plugin-jest`
+
+`npm i -D cypress@10.7.0 eslint-plugin-cypress@2.12.1`
+
+In package.json scripts:
+
+`"test": "npm run test-unit && npm run test-e2e-cli"`
+`"test-unit": "jest"`
+
+`"test-e2e": "cypress open"`
+`"test-e2e-report": "cypress run --reporter mochawesome"`
+`"test-e2e-cli": "cypress run"`
+
+In .eslintrc.json:
+
+```js
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "overrides": [
+    {
+      "files": ["**/*.cy.js"],
+      "env": { "cypress/globals": true },
+      "plugins": ["cypress"],
+      "extends": ["plugin:cypress/recommended"],
+      "rules": {
+        "cypress/no-unnecessary-waiting": "off",
+        "no-unused-vars": "off"
+      }
+    },
+    {
+      "files": ["**/*.test.js"],
+      "env": { "jest": true },
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": { "jest/prefer-expect-assertions": "off" }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-undef": "off",
+    "no-unused-vars": "off"
+  }
+}
+```
+
+---
+
+### Babel
+
+Install:
+
+`npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4`
+
+In babel.config.json:
+
+```js
+{
+  "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
 }
 ```
