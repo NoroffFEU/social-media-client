@@ -1,6 +1,5 @@
 name: Automated E2E Testing
 on: 
-  - push
   - pull_request
   - workflow_dispatch
 
@@ -10,10 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout under $GITHUB_WORKSPACE
-        uses: actions/checkout@workflow
-
-      - name: Start live server
-        run: npm run start
+        uses: actions/checkout@main
 
       - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
