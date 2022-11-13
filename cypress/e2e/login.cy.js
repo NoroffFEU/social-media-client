@@ -24,7 +24,6 @@ describe('login', () => {
     cy.then(
       () => expect(window.localStorage.getItem('profile')).to.not.be.null
     );
-    cy.wait(1000);
     cy.then(() => expect(window.localStorage.getItem('token')).to.not.be.null);
     cy.wait(1000);
     cy.url().should('include', 'profile');

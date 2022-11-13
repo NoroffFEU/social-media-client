@@ -24,9 +24,9 @@ describe('logout', () => {
       () => expect(window.localStorage.getItem('profile')).to.not.be.null
     );
     cy.then(() => expect(window.localStorage.getItem('token')).to.not.be.null);
-    cy.wait(2000);
+    cy.wait(5000);
     cy.get("button[data-auth='logout']").click();
-    cy.wait(2000);
+    cy.wait(5000);
     cy.then(() => expect(window.localStorage.getItem('profile')).to.be.null);
     cy.then(() => expect(window.localStorage.getItem('token')).to.be.null);
   });
