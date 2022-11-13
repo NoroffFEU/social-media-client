@@ -1,21 +1,19 @@
-import { apiPath } from "./api/constants.js";
-import { headers } from "./api/headers.js";
-import { save } from "./storage/index.js";
+/**
+ *
+ * A simple test describe test
+ */
+import { login } from "./api/auth/login.js";
 
-export async function login(email, password) {
-  const response = await fetch(`${apiPath}/social/auth/login`, {
-    method: "post",
-    body: JSON.stringify({ email, password }),
-    headers: headers("application/json"),
+describe("login the user", () => {
+  it("login the user using correct email", async () => {
+    expect(login.password).toEqual(login.email);
+  });
+  it("login the user using correct password", async () => {
+    expect(login.password).toEqual(login.password);
   });
 
-  if (response.ok) {
-    const profile = await response.json();
-    save("token", profile.accessToken);
-    delete profile.accessToken;
-    save("profile", profile);
-    return profile;
-  }
-
-  throw new Error(response.statusText);
-}
+  it("throw a logging error if wrong credentials", () => {
+    expect(login.email).toBeFalsy();
+    expect(login.password).toBeFalsy();
+  });
+});

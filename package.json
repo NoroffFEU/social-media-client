@@ -11,7 +11,7 @@
     "test-unit": "jest",
     "format": "prettier -w src/js/**/*.js",
     "lint": "eslint src/js/**/*.js & eslint src/js/**/**/*.js & eslint src/js/*.js",
-    "lint-fix": "eslint src/js/**/*.js --cache --fix",
+    "lint-fix": "eslint src/js/*.js --cache --fix & eslint src/js/**/*.js --cache --fix  ",
     "prepare": "husky install"
   },
   "keywords": [],
