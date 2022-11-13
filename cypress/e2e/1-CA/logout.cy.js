@@ -30,7 +30,7 @@ describe("Logout test", () => {
       .should("be.visible")
       .click({ force: true });
     cy.then(() => {
-      expect(window.localStorage.getItem("token")).to.be.null;
+      expect(window.localStorage.getItem("token")).to.be.undefined;
     });
   });
 });
