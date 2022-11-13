@@ -1,5 +1,5 @@
 describe("social media client", () => {
-  it("validates user inputs correctly based on API restriccions", () => {
+  it("login form validates user inputs correctly based on API restriccions", () => {
     cy.visit("http://127.0.0.1:5500/");
     cy.wait(1500);
     cy.get("form#registerForm > div.modal-header > button[type='button']")
@@ -51,6 +51,54 @@ describe("social media client", () => {
     //login
     cy.get("form#loginForm > div.modal-footer > :nth-child(3)")
       .contains("Login")
+      .should("be.visible")
+      .click();
+  });
+
+  it("the create item form validates user inputs correctly based on API restrictions", () => {
+    //field 'title' should be invalid at the beginning
+    cy.wait(5000); //sometimes works on a 3000ms wait
+    cy.get(
+      "footer > div.container-fluid > div.row > :nth-child(2) > div#footerActions > :nth-child(2)"
+    )
+      .contains("New Post")
+      .should("be.visible")
+      .click();
+
+    cy.get("form#postForm").then(
+      ($form) => expect($form[0].checkValidity()).to.be.false
+    );
+
+    cy.get("form#postForm :invalid").should("have.length", 1);
+    cy.get("input#postTitle:invalid")
+      .invoke("prop", "validationMessage")
+      .should("equal", "Completa este campo");
+
+    //form doesn't submit if field 'title' isn't filled out
+    cy.get("form#postForm > :nth-child(1) > button")
+      .should("be.visible")
+      .click();
+
+    cy.get("input#postTitle:invalid")
+      .invoke("prop", "validationMessage")
+      .should("equal", "Completa este campo");
+
+    //form can be submitted if field 'title' is filled out
+    cy.get("input#postTitle")
+      .type("This post was generated using cypress test tool")
+      .should("have.value", "This post was generated using cypress test tool");
+
+    cy.get("form#postForm > :nth-child(1) > button")
+      .should("be.visible")
+      .click();
+
+    //delete post to clean API
+    cy.wait(4000);
+    cy.url().should("include", "view=post&postId=");
+
+    cy.get(
+      "main > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(2) > :nth-child(1) > button.btn-danger"
+    )
       .should("be.visible")
       .click();
   });
