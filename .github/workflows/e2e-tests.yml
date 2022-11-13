@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 name: Automated E2E Testing
 on:
     - pull_request
