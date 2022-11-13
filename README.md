@@ -227,7 +227,11 @@ The following file changes are required
 1.Project readme file is updated to include new configuration information and status badges:
 https://gonlonge.github.io/workflow-ca-social-media/
 
-[![Deploy static content to Pages](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/pages.yml/badge.svg)](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/pages.yml)
+[![Automated E2E Testing](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/e2e-test.yml)
+
+[![Automated Unit Testing](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/unit-test.yml)
+
+[![Deploy static content to Pages](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/static.yml/badge.svg)](https://github.com/Gonlonge/workflow-ca-social-media/actions/workflows/static.yml)
 
 2.Project is configured for hosting (e.g. CDN links or a Bundler): Done
 
