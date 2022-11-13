@@ -1,6 +1,6 @@
 WORKFLOW CA
 
-This aim of this project is to im,prove someone elses work. We do this by setting up unit-tests, end2end tests and helpful configuration.
+This aim of this project is to improve someone elses work. We do this by setting up unit-tests, end2end tests and helpful configuration.
 
 How to use the project:
 
