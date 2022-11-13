@@ -43,6 +43,9 @@ describe("create post", () => {
     cy.get("#postBody").should("exist").type("this is so fun");
     cy.get("#postTags").should("exist").type("yeey, yeey");
     cy.get('button[data-action="submit"]').click();
+    cy.get("#postMedia:invalid")
+      .invoke("prop", "validationMessage")
+      .should("exist");
     cy.wait(6000);
   });
 });
