@@ -3,7 +3,7 @@ describe("Login page", () => {
     cy.visit("index.html");
     cy.clearLocalStorage();
     cy.wait(1000);
-    y.get("#registerModal button[type=reset]").click();
+    cy.get("#registerModal button[type=reset]").click();
 
     cy.wait(1000);
     cy.get("header button[data-auth=login]").click();
