@@ -23,7 +23,7 @@ describe("empty spec", () => {
     cy.get('button[data-action="submit"]').click();
     cy.wait(500);
     cy.url().should("include", "postId=");
-    cy.wait(500);
+    cy.wait(1500);
     cy.get('button[data-action="delete"]:visible').click();
   });
 
