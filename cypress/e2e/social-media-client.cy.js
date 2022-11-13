@@ -27,16 +27,29 @@ describe("social media client", () => {
       .should("be.visible")
       .then(($form) => expect($form[0].checkValidity()).to.be.false);
 
-    //form throws an error message if email is invalid - COMMENT OUT TO PASS THE TEST
-    /* cy.get("input#loginEmail").type("MelZor72659@gmail.com").should("have.value", "MelZor72659@gmail.com").invoke("prop", "validationMessage").should("equal", "Only users with @noroff.no or @stud.noroff.no email can log in") */
+    //form throws an error message if email is invalid
+
+    //COMMENT OUT TO PASS THE TEST
+    cy.get("input#loginEmail")
+      .type("MelZor72659@gmail.com")
+      .should("have.value", "MelZor72659@gmail.com")
+      .invoke("prop", "validationMessage")
+      .should(
+        "equal",
+        "Only users with @noroff.no or @stud.noroff.no email can log in"
+      );
 
     //fill out field with valid email
     cy.get("input#loginEmail")
       .type("MelZor72659@stud.noroff.no")
       .should("have.value", "MelZor72659@stud.noroff.no");
 
-    //form throws an error message if password is invalid -COMMENT OUT TO PASS THE TEST
-    // cy.get("input#loginPassword").invoke("prop", "validationMessage").should("equal", "Password should be min 8 characters long")
+    //form throws an error message if password is invalid
+
+    //COMMENT OUT TO PASS THE TEST
+    cy.get("input#loginPassword")
+      .invoke("prop", "validationMessage")
+      .should("equal", "Password should be min 8 characters long");
 
     //fill out field with valid password
     cy.get("input#loginPassword")
@@ -55,7 +68,7 @@ describe("social media client", () => {
       .click();
   });
 
-  it("the create item form validates user inputs correctly based on API restrictions", () => {
+  it("create item form validates user inputs correctly based on API restrictions", () => {
     //field 'title' should be invalid at the beginning
     cy.wait(5000); //sometimes works on a 3000ms wait
     cy.get(
@@ -93,7 +106,7 @@ describe("social media client", () => {
       .click();
 
     //delete post to clean API
-    cy.wait(4000);
+    cy.wait(5000); //sometimes works on a 4000ms wait
     cy.url().should("include", "view=post&postId=");
 
     cy.get(
@@ -101,5 +114,19 @@ describe("social media client", () => {
     )
       .should("be.visible")
       .click();
+  });
+
+  it("logout button clears the local storage successfully", () => {
+    cy.get(
+      "header > div.container-fluid > div.d-flex > div.text-end > :nth-child(1)"
+    )
+      .should("have.class", "btn-outline-warning")
+      .should("be.visible")
+      .click();
+
+    cy.clearLocalStorage().then((ls) => {
+      expect(ls.getItem("token")).to.be.null;
+      expect(ls.getItem("profile")).to.be.null;
+    });
   });
 });
