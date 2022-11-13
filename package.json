@@ -1,6 +1,6 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "testing with  Jest for unit-testing, and cypress for e2e testing with all linting features",
   "main": "index.js",
   "type": "module",
