@@ -5,7 +5,7 @@ describe(
   { keystrokeDelay: 50 },
   () => {
     it("Opens a login modal when entering the site", () => {
-      cy.visit("http://127.0.0.1:5500" || "http");
+      cy.visit("http://127.0.0.1:5173/");
 
       cy.wait(500);
 
@@ -54,7 +54,7 @@ describe(
     //I know this doesn't actually check if the form validates the input but rather if the api validates the input but i could not find and code that actually validates the input so i'm not sure how i would test it
     it("Opens a login modal when entering the site", () => {
       cy.clearLocalStorage();
-      cy.visit("http://127.0.0.1:5500");
+      cy.visit("http://127.0.0.1:5173/");
 
       cy.wait(500);
 
