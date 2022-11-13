@@ -11,9 +11,11 @@
     "test-unit": "jest",
     "test2": "npm run test-e2e",
     "test-e2e": "cypress open",
+    "test-e2e-report": "cypress run --reporter mochawesome",
+     "test-e2e-cli": "cypress run",
     "format": "prettier -w src/js/**/*.js",
     "lint": "eslint src/js/**/*.js & eslint src/js/**/**/*.js & eslint src/js/*.js",
-    "lint-fix": "eslint src/js/*.js --cache --fix & eslint src/js/**/*.js --cache --fix  ",
+    "lint-fix": "eslint /*.js --cache --fix & eslint src/js/*.js --cache --fix & eslint src/js/**/*.js --cache --fix  ",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -38,8 +40,9 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
+      
       "prettier --write"
+     
     ],
     "*.html": [
       "prettier --write"
