@@ -15,6 +15,7 @@ It's a social media website were the plan is to add several different technology
 - Run `npm install`
 - Run `npm run build`
 - Run `npm install -D live-server`
+- The site is running on Bootstrap CDN link & is als live on ![Here](https://laakerberg.github.io/social-media-client/)
 
 # Tech stack used in the project
 
