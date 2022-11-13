@@ -8,7 +8,7 @@
 4. [Dependencies](#depend)
 5. [Tests](#tests)
    1. [Unit Tests, Jest](#jest)
-   2. [E2R Tests, Cypress](#cypress)
+   2. [E2E Tests, Cypress](#cypress)
 6. [Complete Setup & Install Guide](#configuration)
    1. [Code Formatters](#formatters)
    2. [Jest Setup](#jest-setup)
