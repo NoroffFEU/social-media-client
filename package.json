@@ -13,7 +13,8 @@
         "test-unit": "jest --passWithNoTests",
         "test-e2e": "cypress open",
         "test-e2e-cli": "cypress run",
-        "test": "npm run test-unit && npmm run test-e2e-cli"
+        "test": "npm run test-unit && npm run test-e2e-cli",
+        "live-server": "live-server"
     },
     "keywords": [],
     "author": "",
@@ -29,6 +30,7 @@
         "husky": "^8.0.2",
         "jest": "^29.3.1",
         "lint-staged": "^13.0.3",
+        "live-server": "^1.2.2",
         "prettier": "^2.7.1",
         "sass": "^1.54.8"
     },
