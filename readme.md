@@ -13,7 +13,7 @@
 * In terminal:
 1. npm i
 2. npm run build
-3. npm run dev
+3. npm run dev to run **Vite** for hosting
 
 # The assignment
 
