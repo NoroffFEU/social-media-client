@@ -1,5 +1,4 @@
 name: Automated Unit Testing
-<<<<<<< HEAD
 on:
     - pull_request
     - workflow_dispatch
