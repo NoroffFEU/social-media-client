@@ -29,7 +29,7 @@ export const BLANK_POST = {
   "author": {
     "name": "",
     "email": "",
-    "avatar": "/assets/img/avatar.jpeg"
+    "avatar": "./assets/img/avatar.jpeg"
   },
   "_count": {
     "comments": 0,

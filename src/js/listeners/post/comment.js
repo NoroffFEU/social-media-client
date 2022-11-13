@@ -8,7 +8,12 @@ export async function commentListener(event) {
   const body = data.get('body');
   const postId = form.dataset.postId;
   const replyToId = getSearchParams().replyToId;
-  await comment(postId, body, replyToId);
+  try {
+    await comment(postId, body, replyToId);
+  } catch {
+    return alert('There was a problem posting your comment');
+  }
+  
   form.remove();
   location.reload()
 }

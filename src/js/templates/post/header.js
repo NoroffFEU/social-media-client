@@ -6,7 +6,7 @@ import { postTags } from "./tags.js";
 export const postHeader = (post) => {
   const clone = templateInstance('postHeader')
 
-  clone.querySelector('.card-header').href = `/?view=post&postId=${post.id}`;
+  clone.querySelector('.card-header').href = `./?view=post&postId=${post.id}`;
   clone.querySelector('b').innerText = post.title;
   if (post.body) {
     clone.querySelector('span').innerText = post.body;

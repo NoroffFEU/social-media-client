@@ -2,7 +2,11 @@ import * as auth from "../../api/auth/index.js";
 import { updateLoginVisibility } from "../../ui/auth.js";
 
 export function logoutListener() {
-  auth.logout()
-  updateLoginVisibility()
-  window.location.href = "/"
+  try {
+    auth.logout()
+    updateLoginVisibility()
+    location.href = "./"
+  } catch {
+    return alert("There was a problem logging out");
+  }
 }
