@@ -1,5 +1,7 @@
 import { login } from "./login";
 import { storage } from "../../mocks/lStorage";
+import { fetchSuccess } from "../../mocks/fetchSuccess";
+import { fetchFailure } from "../../mocks/fetchFail";
 
 //Package docs:
 //Local storage: https://www.npmjs.com/package/local-storage-mock
@@ -7,10 +9,6 @@ import { storage } from "../../mocks/lStorage";
 global.localStorage = storage();
 
 Object.defineProperty(global, "localStorage", { value: localStorage });
-
-beforeEach(() => {
-  fetch.resetMocks();
-});
 
 afterAll(() => {
   localStorage.removeItem("token");
@@ -21,5 +19,5 @@ test("Returns a user object with a token", async () => {
 
   const response = await login("email@email.com", "password");
   expect(response.name).toEqual("Test user");
-  expect(response.token).toEqual("asd123qwe456");
+  expect(JSON.parse(localStorage.getItem("token"))).toEqual("asd123qwe456");
 });
