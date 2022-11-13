@@ -1,6 +1,6 @@
 describe('Create post test', () => {
   beforeEach(() => {
-    cy.visit('./');
+    cy.visit('http://127.0.0.1:5173');
     cy.clearLocalStorage();
     cy.wait(500);
     cy.get('#registerModal button')
@@ -19,7 +19,7 @@ describe('Create post test', () => {
 
   it('can create a post', () => {
     cy.wait(1000);
-    cy.visit('http://127.0.0.1:5500/?view=post');
+    cy.visit('http://127.0.0.1:5173/?view=post');
     cy.get('#postTitle').should('exist').type('Good evening!');
     cy.get('#postTags').should('exist').type('Cypress');
     cy.get('#postBody').should('exist').type('Pushing through!');
