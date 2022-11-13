@@ -4,7 +4,7 @@ describe("Authentication", () => {
     cy.clearLocalStorage();
   });
 
-  it("will login", () => {
+  it("can login", () => {
     cy.visit("/");
     cy.wait(1000);
     cy.get(".btn-close:visible").click({ force: true });
