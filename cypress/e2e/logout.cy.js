@@ -22,9 +22,13 @@ describe('Logout test', () => {
     cy.get('#loginEmail').type(`${email}`);
     cy.get('#loginPassword').type(`${password}`);
     cy.wait(1000);
-    cy.get('#loginForm .btn-success').should('be.visible').click();
+    cy.get('#loginForm .btn-success')
+      .should('be.visible')
+      .click({ multiple: true });
     cy.wait(1000);
-    cy.get("button[data-auth='logout']").should('be.visible').click();
+    cy.get("button[data-auth='logout']")
+      .should('be.visible')
+      .click({ multiple: true });
     cy.then(() => {
       expect(window.localStorage.getItem('token')).to.be.null;
     });

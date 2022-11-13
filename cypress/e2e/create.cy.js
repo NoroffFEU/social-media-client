@@ -5,19 +5,17 @@ describe('Authentication', () => {
     cy.visit('/');
     cy.wait(1000);
     cy.get('.btn-close:visible').click({ multiple: true });
-
     cy.wait(1200);
     cy.get("button[data-auth='login']:visible")
       .contains('Login')
       .click({ multiple: true });
-
     cy.wait(2000);
     cy.get("input[type='email']:visible")
       .should('exist')
-      .type('cocomarcia@noroff.no');
+      .type('cocomarcia@noroff.no', { force: true }, { delay: 100 });
     cy.get("input[type='password']:visible")
       .should('exist')
-      .type('cocomarcia1');
+      .type('cocomarcia1', { force: true }, { delay: 100 });
     cy.get('.btn-success:visible').click({ multiple: true });
     cy.wait(3500);
     cy.visit('/');
@@ -40,7 +38,6 @@ describe('Authentication', () => {
     cy.get("form#postForm input[name='media']")
       .should('be.visible')
       .type('https://picsum.photos/id/237/200/300');
-
     cy.get("form#postForm textarea[name ='body']")
       .should('be.visible')
       .type('Test cypress');
