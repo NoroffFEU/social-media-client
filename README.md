@@ -12,7 +12,7 @@ To improve the quality of an existing environment by establishing useful workflo
 
 ## workflows/hooks
 
-- Project is configured to run Prettier on commit.
+### Project is configured to run Prettier on commit.
 1. Install 
 ````
 npm install --save-dev prettier
@@ -33,7 +33,7 @@ npm install --save-dev prettier
 npm run format
 
 ````
-- Project is configured to run ESLint on commit.
+### Project is configured to run ESLint on commit.
 1. Install 
 ````
 npm install  Eslint --save-dev 
@@ -91,7 +91,7 @@ npm run lint-fix
 
 ````
 
-- Project is configured to run Jest on commit.
+### Project is configured to run Jest on commit.
 1. Install 
 ````
 npm i -D jest@29.2.0
@@ -113,6 +113,7 @@ npm i -D eslint-plugin-jest
 
 ````
 4. We will need to enable this plugin within our .eslintrc.json file at the same time as setting various other configurations.
+
 ````
 "overrides": [
       {
@@ -124,11 +125,13 @@ npm i -D eslint-plugin-jest
       }
 
 ````
+
  This indicates that eslint has been configured to allow jest functions to be used in our project.
 
-- Configuring Babel for Jest
+### Configuring Babel for Jest
 
 1. Install babel
+
 ````
 npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4
 
@@ -142,17 +145,17 @@ npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4
 ````
 
 
-- Run unit test after installing jest and babel
+### Run unit test after installing jest and babel
 
 ````
 npm run test-unit
 
 ````
-- Project is configured to deploy to pages on merge to default.
+### Project is configured to deploy to pages on merge to default.
 
 ## File changes 
 
-- Project readme file is updated to include new configuration information and status badges.
+### Project readme file is updated to include new configuration information and status badges.
 - Project is configured for hosting (e.g. CDN links or a Bundler).
 
 ## Tests
@@ -163,16 +166,15 @@ npm run test-unit
 - The logout function clears the token from browser storage.
 - The create item function creates a new item on the API.
 
-### This features will be automatically tested with end-to-end tests:
 
-1. Install Cypress
+### Intalling Cypress 
 
+1. Install 
 ````
 npm i -D cypress@10.7.0 eslint-plugin-cypress@2.12.1
 
 ````
-Now we should update eslintrs.json with configuration data for linting Cypress tests:
-
+2. Update eslint.config.json with configuration data for linting Cypress tests:
 ````
 "overrides": [
     {
@@ -185,21 +187,28 @@ Now we should update eslintrs.json with configuration data for linting Cypress t
         "no-unused-vars": "off"
       }
     }
-    ````
+  ]
 
-    Next, add a new script to your package.json file:
-     ````
-    {
+````
+3. Add a new script to your package.json file:
+````
+{
   "scripts": {
     "test": "npm run test-e2e",
     "test-e2e": "cypress open"
-     ````
+    
+````
 
-2. Run Cypress
+4. Run e2e test
 ````
 npm run test-e2e
 
+This command npm run test-e2e will open Cypress for the first time in a new window 
+    
 ````
+
+### This features will be automatically tested with e2e test:
+
 - The login form validates user inputs correctly based on API restrictions.
 - The create item form validates user inputs correctly based on API restrictions.
 - The logout button logs the user out when clicked.
