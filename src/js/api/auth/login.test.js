@@ -57,7 +57,7 @@ function fetchSuccess() {
  * An unsuccessful mock function fetch
  */
 
-function fetchUnsuccess() {
+function invalidFetch() {
   return Promise.resolve({
     ok: false,
     status: 401,
@@ -76,7 +76,7 @@ describe("login", () => {
   });
 
   it("Throw error on invalid credentials", async () => {
-    global.fetch = jest.fn(() => fetchUnsuccess());
+    global.fetch = jest.fn(() => invalidFetch());
     await expect(login(test_email, test_password)).rejects.toThrow(
       "Unauthorized"
     );
