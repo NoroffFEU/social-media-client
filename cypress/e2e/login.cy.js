@@ -8,7 +8,7 @@ describe("Login page", () => {
       .should("be.visible")
       .find(".modal-footer")
       .find("button[type='reset']")
-      .click();
+      .click({ force: true });
 
     cy.wait(1000);
     cy.get("header button[data-auth=login]").click();
