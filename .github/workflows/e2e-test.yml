@@ -10,7 +10,13 @@ jobs:
     steps:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@master
-
+      
+      - name: Install dependencies 
+        run: npm i
+        
+      - name: Build css
+        run: npm run build
+        
       - name: Start live server
         run: npm run start
 
