@@ -3,7 +3,7 @@ describe("Login page", () => {
     cy.visit("index.html");
     cy.clearLocalStorage();
     cy.wait(1000);
-    cy.get(".btn-close:visible").click();
+    cy.get(".btn-close:visible").contains("New Post").click();
     cy.get("header button[data-auth=login]").click();
     cy.wait(1500);
     cy.get("input[type='email']:visible").type("testingtest@stud.noroff.no");
