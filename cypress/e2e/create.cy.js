@@ -23,7 +23,7 @@ describe('create a post', () => {
   it('create a post', () => {
     cy.wait(1000);
     cy.get('a[href="./?view=post"]').click({ force: true });
-    cy.wait(1000);
+    cy.wait(3000);
     cy.url().should('include', 'post');
     cy.wait(1000);
     cy.get('input[name=title]').should('exist').type('Creating a new post');
@@ -46,7 +46,7 @@ describe('create a post', () => {
   it('validates user inputs correctly to create a post', () => {
     cy.wait(1000);
     cy.get('a[href="./?view=post"]').click({ force: true });
-    cy.wait(1000);
+    cy.wait(3000);
     cy.url().should('include', 'post');
     cy.wait(1000);
     cy.get('input[name=title]').should('exist').clear();
