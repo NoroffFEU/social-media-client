@@ -1,7 +1,5 @@
-
 name: Automated E2E Testing
 
-on: 
   - pull_request
   - workflow_dispatch
 
@@ -20,5 +18,6 @@ jobs:
       - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
         with:
-           wait-on: "http://127.0.0.1:5173/"
-           browser: electron
+          start: npm run dev
+          wait-on: "http://127.0.0.1:5173"
+          browser: electron
