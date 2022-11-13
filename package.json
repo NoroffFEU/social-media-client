@@ -5,6 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "test": "npm run test-unit",
+    "test-unit": "jest",
     "build": "sass src/scss:dist/css",
     "format": "prettier -w src/js/**/*.js",
     "lint": "eslint src/**/*.js",
