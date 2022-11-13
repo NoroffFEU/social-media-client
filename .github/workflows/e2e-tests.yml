@@ -20,8 +20,8 @@ jobs:
             - name: Build SASS
               run: npm run build
             - name: run cypress tests with electron
-              uses: cypress-io/github-action@v4
+              uses: cypress-io/github-action@v2
               with:
-                  start: npm run dev
-                  wait-on: "http://127.0.0.1:8080/"
+                  start: npm run live-server
+                  wait-on: "http://127.0.0.1:5500/"
                   browser: electron
