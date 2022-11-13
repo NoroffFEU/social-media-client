@@ -27,3 +27,11 @@
 - [x] The login form validates user inputs correctly based on API restrictions
 - [x] The create item form validates user inputs correctly based on API restrictions
 - [x] The logout button logs the user out when clicked
+
+## Run the App
+
+Install:
+
+`npm i`
+
+`npm run start`
