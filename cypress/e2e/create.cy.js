@@ -2,7 +2,7 @@
 // ("gonzalo02@stud.noroff.no", "Gonzalo123")
 
 describe('Log in and Create Post', () => {
-  const wait = 1000;
+  const wait = 2000;
   const MOCK_EMAIL = 'gonzalo02@stud.noroff.no';
   const MOCK_PASSWORD = 'Gonzalo123';
   const MOCK_TITLE = 'Retro Game';
@@ -11,7 +11,7 @@ describe('Log in and Create Post', () => {
     'https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/virtual_console_nintendo_3ds_7/SI_3DSVC_SuperMarioBros_image1600w.jpg';
   const MOCK_BODY = 'Retro game!';
 
-  function testCreatePost(title, tags, media, body, id, expectedMessage) {
+  function testCreatePost(title, tags, media, body, id) {
     cy.wait(wait);
     cy.get('#footerActions .btn-outline-success')
       .should('have.text', 'New Post')
@@ -37,10 +37,10 @@ describe('Log in and Create Post', () => {
     cy.get("span[data-action='publish']")
       .should('be.visible')
       .click({ force: true });
-    cy.get(`${id}:invalid`).should('have.length', 1);
-    cy.get(`${id}`).then(($input) => {
-      expect($input[0].validationMessage).to.eq(expectedMessage);
-    });
+    cy.get(`${id}:invalid`)
+      .should('have.length', 1)
+      .invoke('prop', 'validationMessage')
+      .should('exist');
   }
 
   beforeEach(() => {
@@ -64,25 +64,11 @@ describe('Log in and Create Post', () => {
   });
 
   it('should show validation message when title is missing', () => {
-    testCreatePost(
-      null,
-      MOCK_TAGS,
-      MOCK_MEDIA,
-      MOCK_BODY,
-      '#postTitle',
-      'Please fill in this field.'
-    );
+    testCreatePost(null, MOCK_TAGS, MOCK_MEDIA, MOCK_BODY, '#postTitle');
   });
 
   it('should show validation message when URL is missing', () => {
-    testCreatePost(
-      MOCK_TITLE,
-      MOCK_TAGS,
-      'not a url',
-      MOCK_BODY,
-      '#postMedia',
-      'Please enter a URL.'
-    );
+    testCreatePost(MOCK_TITLE, MOCK_TAGS, 'not a url', MOCK_BODY, '#postMedia');
   });
 
   it('should publish when post is created', () => {
