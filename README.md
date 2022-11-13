@@ -17,3 +17,10 @@ npm run build
 ```bash
 use live server extension to host the site locally
 ```
+
+### To run cypress test locally, create .env file with this info
+
+```bash
+EMAIL="email@noroff.no"
+PASSWORD="password"
+```
