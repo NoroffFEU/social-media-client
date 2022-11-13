@@ -24,3 +24,16 @@ use live server extension to host the site locally
 EMAIL="email@noroff.no"
 PASSWORD="password"
 ```
+
+## Tests
+
+** Unit-testing with Jest**
+
+-login.test.js
+-logout.test.js
+-create.test.js
+
+**E2E-testing with Cypress**
+-login.cy.js
+-logout.cy.js
+-create.cy.js
