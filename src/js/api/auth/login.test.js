@@ -1,27 +1,17 @@
 import { login } from "./login";
-import { localStorage } from "../../mocks/lStorage";
+import { lStorage } from "../../mocks/lStorage";
+import { fetchSuccess } from "../../mocks/fetchSuccess";
+import { fetchFailure } from "../../mocks/fetchFail";
 
 //Package docs:
-//Fetch: https://www.npmjs.com/package/jest-fetch-mock
 //Local storage: https://www.npmjs.com/package/local-storage-mock
 
-localStorage();
-
-beforeEach(() => {
-  fetch.resetMocks();
-});
+lStorage();
 
 test("Returns a user object with a token", async () => {
-  const user = {
-    name: "kristoffer",
-    email: "kristoffer@stud.noroff.no",
-    token: "asd123qwe456",
-  };
+  global.fetch = jest.fn(() => fetchSuccess());
 
-  fetch.mockResponseOnce(JSON.stringify(user));
-  const response = await login("kristoffer@stud.noroff.no", "password");
-  expect(response.name).toEqual("kristoffer");
+  const response = await login("email@email.com", "password");
+  expect(response.name).toEqual("Test user");
   expect(response.token).toEqual("asd123qwe456");
 });
-
-test("Throws an error if invalid credentials are passed in", () => {});
