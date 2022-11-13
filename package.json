@@ -1,20 +1,56 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.0.0",
+  "version": "1.3.1",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "npm run test-unit && npm run test-e2e-cli",
+    "test-unit": "jest",
+    "test-e2e": "cypress open",
+    "test-e2e-report": "cypress run --reporter mochawesome",
+    "test-e2e-cli": "cypress run",
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "format": "prettier -w src/js/**/*.js",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "prepare": "husky install",
+    "dev": "live-server"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
+    "cypress": "^10.7.0",
+    "eslint": "^8.27.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-jest": "^27.1.5",
+    "husky": "^8.0.2",
+    "jest": "^29.2.0",
+    "lint-staged": "^13.0.3",
     "live-server": "^1.2.2",
+    "prettier": "^2.7.1",
     "sass": "^1.54.8"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "jest --bail --findRelatedTests --passWithNoTests"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ],
+    "*.css": [
+      "prettier --write"
+    ]
   }
 }
