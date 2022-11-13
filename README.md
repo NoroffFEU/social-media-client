@@ -1,6 +1,6 @@
-[![Automated E2E Testing](https://github.com/AugustWahlberg/social-media-client/actions/workflows/e2e_test.yml)
-[![Automated Unit Testing](https://github.com/AugustWahlberg/social-media-client/actions/workflows/unit_test.yml)
-[![pages-build-deployment](https://github.com/AugustWahlberg/social-media-client/actions/workflows/pages.yml)
+[Automated E2E Testing](https://github.com/AugustWahlberg/social-media-client/actions/workflows/e2e_test.yml)
+[Automated Unit Testing](https://github.com/AugustWahlberg/social-media-client/actions/workflows/unit_test.yml)
+[pages-build-deployment](https://github.com/AugustWahlberg/social-media-client/actions/workflows/pages.yml)
 # Project description
 
 This is a social media application project made by Noroff. The project uses Noroff APIs as a database. As for the workflow the following is added:
