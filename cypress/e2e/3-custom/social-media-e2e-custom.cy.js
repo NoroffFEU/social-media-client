@@ -1,4 +1,4 @@
-describe("Social media app - login user", () => {
+describe("Social media app", () => {
   beforeEach(() => {
     cy.visit("http://127.0.0.1:5500/");
     cy.get("#registerForm .modal-header button.btn-close")
