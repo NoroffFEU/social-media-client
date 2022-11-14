@@ -1,3 +1,5 @@
+[![Deploy static content to Pages](https://github.com/steffenkjekken/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/steffenkjekken/social-media-client/actions/workflows/pages.yml)
+
 - Initialized npm
 
 - Added package.json

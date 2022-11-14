@@ -7,8 +7,11 @@ describe("The create item, create new item on API", () => {
   });
 
   it("Create a post", () => {
-    cy.intercept("post&postId=*").as("matchedUrl");
     cy.contains("New Post").click();
+    cy.intercept(
+      "GET",
+      "posts/****?_reactions=true&_author=true&_comments=true"
+    ).as("postResponse");
     cy.url().should("include", "post");
     cy.get("#postTitle").type("Cypress Title");
     cy.get("#postTags").type("Cypress, tags");
@@ -17,10 +20,8 @@ describe("The create item, create new item on API", () => {
     );
     cy.get("#postBody").type("THIS IS CYPRESS TALKING");
     cy.contains("Publish").click();
-    cy.wait(1000);
-    cy.wait("@matchedUrl").then(({ response }) => {
-      expect(response.statusCode).to.eq(200);
-      expect(response.body.id).to.not.be.undefined;
+    cy.wait("@postResponse").should((response) => {
+      cy.log(response);
     });
   });
 });
