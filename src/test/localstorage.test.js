@@ -1,29 +1,5 @@
 import * as storage from "../js/storage/index";
 
-class LocalStorageMock {
-  constructor() {
-    this.value = {};
-  }
-
-  clear() {
-    this.value = {};
-  }
-
-  getItem(key) {
-    return this.value[key] || null;
-  }
-
-  setItem(key, value) {
-    this.value[key] = String(value);
-  }
-
-  removeItem(key) {
-    delete this.value[key];
-  }
-}
-
-global.localStorage = new LocalStorageMock();
-
 describe("Testing localstorage save, load and remove functions", () => {
   it("Saves data to localStorage", () => {
     const key = "token";
