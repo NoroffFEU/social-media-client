@@ -7,6 +7,7 @@ const TEST_POST = {
   tags: "testTags",
 };
 
+// fetch success mock, with TEST_POST object as the return.
 function fetchOk() {
   return Promise.resolve({
     ok: true,
@@ -19,6 +20,7 @@ function fetchOk() {
 describe("createPost", () => {
   it("Creates a new item on the API", async () => {
     global.fetch = jest.fn(() => fetchOk());
+    // calling createPost with the TEST_POST properties as parameters.
     const post = await createPost(
       TEST_POST.title,
       TEST_POST.body,
