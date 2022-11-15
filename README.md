@@ -1,3 +1,7 @@
+![](https://github.com/Lasse96/social-media-client/blob/First/.github/workflows/pages.yml/badge.svg)
+"Prøvde med status badge, ser ikke ut til å funke..."
+
+
 Kjører eslint, prettier og jest på commit.
 Sjekker:
 The login function returns a valid token when provided with valid credentials
