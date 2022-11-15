@@ -43,7 +43,7 @@
     "*.js": [
       "eslint --fix",
       "prettier --write",
-      "jest jest --findRelatedTests path/to/sum.test.js"
+      "jest npm run test"
     ],
     "*.html": [
       "prettier --write"
