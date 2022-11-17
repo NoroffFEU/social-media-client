@@ -12,9 +12,10 @@
   "license": "ISC",
   "devDependencies": {
     "live-server": "^1.2.2",
-    "sass": "^1.54.8"
+    "sass": "^1.56.1"
   },
   "dependencies": {
+    "bootstrap": "^5.2.0",
     "bootstrap-dark-5": "^1.1.3"
   }
 }
