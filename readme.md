@@ -1,18 +1,28 @@
 Workflow CA
 
-Installing Prettier:
+## To run this project, open terminal and run:
+
+```
+npm i
+```
+
+
+## Dependencies used for this project and how to install them:
+
+
+## Installing Prettier:
 
 ```
 npm install --save-dev prettier
 ```
 
-Installing Eslint:
+## Installing Eslint:
 
 ```
 npm install eslint --save-dev
 ```
 
-Setting up eslint with preferred settings:
+## Setting up eslint with preferred settings:
 
 ```
 npx eslint --init
@@ -27,13 +37,13 @@ npx eslint --init
 ✔ What format do you want your config file to be in? · JSON
 ```
 
-Installing Jest:
+## Installing Jest:
 
 ```
 npm i -D jest@29.2.0
 ```
 
-Add Jest scripts to package.json:
+## Add Jest scripts to package.json:
 
 ```
 "scripts": {
@@ -42,13 +52,13 @@ Add Jest scripts to package.json:
   }
 ```
 
-Installing Mrm to manage pre-commit hooks:
+## Installing Mrm to manage pre-commit hooks:
 
 ```
 npx mrm@2 lint-staged
 ```
 
-Add scripts to package.json
+## Add scripts to package.json
 
 ```
 "scripts": {
@@ -75,7 +85,7 @@ Add scripts to package.json
   }
 ```
 
-Install Babel
+## Install Babel
 
 ```
 npm -D install @babel/core@7.19.3 @babel/preset-env@7.19.4
@@ -88,3 +98,11 @@ Create `babel.config.json` file and add the following:
   "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]]
 }
 ```
+
+## Running unit test:
+
+npm run test-unit
+
+## Running Cypress test:
+
+npm run test-e2e
