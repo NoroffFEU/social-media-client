@@ -110,3 +110,7 @@ npm run test-e2e
 ## Status Badges Unit Test:
 
 [![Automated Unit Testing](https://github.com/Sindre1993/social-media-client/actions/workflows/main.yml/badge.svg)](https://github.com/Sindre1993/social-media-client/actions/workflows/main.yml)
+
+## Status Badges E2E Test:
+
+[![Automated E2E Testing](https://github.com/Sindre1993/social-media-client/actions/workflows/test-e2e.yml/badge.svg)](https://github.com/Sindre1993/social-media-client/actions/workflows/test-e2e.yml)
