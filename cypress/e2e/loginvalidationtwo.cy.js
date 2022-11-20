@@ -18,7 +18,7 @@ describe("Login validation based on API restrictions", () => {
       cy.visit("/?view=profile");
       cy.url().should("include", "profile");
     }),
-    it("Unsuccessfully logs in with invalid email and password", () => {
+    it("Successfully logs in with invalid email and password", () => {
       cy.wait(500);
       cy.contains("div", "Email")
         .find("input")
