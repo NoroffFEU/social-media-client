@@ -37,6 +37,4 @@ describe("Create form validates user input", () =>
             .type("Hopefully this test goes through!")
         cy.wait(2000)
         cy.get("button[data-action=submit").should("be.visible").click()
-        
-        
     }))
