@@ -106,3 +106,7 @@ npm run test-unit
 ## Running Cypress test:
 
 npm run test-e2e
+
+## Status Badges Unit Test:
+
+[![Automated Unit Testing](https://github.com/Sindre1993/social-media-client/actions/workflows/main.yml/badge.svg)](https://github.com/Sindre1993/social-media-client/actions/workflows/main.yml)
