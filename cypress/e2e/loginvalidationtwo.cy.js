@@ -15,7 +15,7 @@ describe("Login validation based on API restrictions", () => {
       cy.wait(500);
       cy.get("#loginModal .btn").contains("Login").click();
       cy.wait(2000);
-      cy.visit("http://127.0.0.1:5500/?view=profile");
+      cy.visit("/?view=profile");
       cy.url().should("include", "profile");
     }),
     it("Unsuccessfully logs in with invalid email and password", () => {
@@ -29,7 +29,7 @@ describe("Login validation based on API restrictions", () => {
       cy.wait(500);
       cy.get("#loginModal .btn").contains("Login").click();
       cy.wait(2000);
-      cy.visit("http://127.0.0.1:5500/?view=profile");
+      cy.visit("/?view=profile");
       cy.url().should("not.include", "profile");
     });
 });
