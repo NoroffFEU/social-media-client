@@ -4,7 +4,6 @@ describe("Create form validates user input", () =>
     it("Logs in to test posts", () => {
         cy.visit("index.html");
 
-
             cy.wait(1000);
         cy.get("#registerModal button[type=reset]").click()
 
@@ -32,7 +31,7 @@ describe("Create form validates user input", () =>
         cy.get("#postTags")
             .type("Phil, test")
         cy.get("#postMedia")
-            .type("https://i.postimg.cc/pVz2WPvk/rlpicturewasintheway.jpg")
+            .type("https://i.postimg.cc/13w6DfLT/boo.jpg")
         cy.get("#postBody")
             .type("Hopefully this test goes through!")
         cy.wait(2000)
