@@ -6,6 +6,6 @@ export async function followListener(event) {
 
   if (name) {
     await followProfile(name);
-    location.reload()
+    location.reload();
   }
 }
