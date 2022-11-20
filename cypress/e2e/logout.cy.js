@@ -1,6 +1,6 @@
 describe("Loads the designated page and logs out successfully", () => {
   it("Successfully opens the website", () => {
-    cy.visit("http://127.0.0.1:5500"); // change URL to match a eligible URL.
+    cy.visit("/"); // change URL to match a eligible URL.
     cy.wait(500);
   }),
     it("Successfully Logs in", () => {
@@ -20,7 +20,7 @@ describe("Loads the designated page and logs out successfully", () => {
     it("Successfully Logs out", () => {
       cy.get("header .btn").contains("Logout").click();
       cy.wait(1000);
-      cy.visit("http://127.0.0.1:5500/?view=profile");
+      cy.visit("/?view=profile");
       cy.url().should("not.include", "profile");
     });
 });

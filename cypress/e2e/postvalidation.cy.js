@@ -1,6 +1,6 @@
 describe("Loads the designated page and logs out successfully", () => {
   it("Successfully opens the website", () => {
-    cy.visit("http://127.0.0.1:5500"); // change URL to match a eligible URL.
+    cy.visit("/"); // change URL to match a eligible URL.
     cy.wait(500);
   }),
     it("Successfully Logs in", () => {
@@ -24,7 +24,7 @@ describe("Loads the designated page and logs out successfully", () => {
   //   }),
   //       it("Successfully opens the post form attempt 2", () => {
   //     cy.wait(2000);
-  //     cy.visit("http://127.0.0.1:5500/?view=post");
+  //     cy.visit("/?view=post");
   //     cy.wait(2000);
   //   }),
   //     it("CAN create a post on the API", () => {

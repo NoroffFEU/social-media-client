@@ -1,6 +1,6 @@
 describe("Login validation based on API restrictions", () => {
   beforeEach(() => {
-    cy.visit("http://127.0.0.1:5500"); // change URL to match a eligible URL.
+    cy.visit("/"); // change URL to match a eligible URL.
     cy.wait(500);
     cy.get('#registerForm button[data-auth="login"]').click();
   }),
