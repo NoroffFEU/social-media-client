@@ -1,6 +1,6 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -8,10 +8,12 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/**/*.js",
+    "format-cy": "prettier -w cypress/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "test": "npm run test-unit",
-    "test-unit": "jest",
+    "test": "npm run test-unit && npm run test-e2e",
+    "test-unit": "jest" ,
+    "test-e2e":"cypress open",
     "prepare": "husky install"
   },
   "keywords": [],
@@ -20,7 +22,9 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
+    "cypress": "^10.7.0",
     "eslint": "^8.27.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-jest": "^27.1.4",
     "husky": "^8.0.1",
     "jest": "^29.2.0",
