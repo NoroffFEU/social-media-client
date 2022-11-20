@@ -18,12 +18,16 @@ describe("Login validation based on API restrictions", () => {
       cy.visit("/?view=profile");
       cy.url().should("include", "profile");
     }),
-    it("Successfully logs in with invalid email and password", () => {
+    it("Unsuccessfully logs in with invalid email and password", () => {
       cy.wait(500);
-      cy.contains("div", "Email")
-        .find("input")
-        .first()
-        .type("randomemail@random.norpoff.lol");
+      Cypress.on("uncaught:exception", () => {
+        return false;
+      }),
+        cy
+          .contains("div", "Email")
+          .find("input")
+          .first()
+          .type("randomemail@random.norpoff.lol");
       cy.wait(500);
       cy.contains("div", "Password").find("input").first().type("12345678");
       cy.wait(500);
