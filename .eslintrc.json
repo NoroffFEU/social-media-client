@@ -27,5 +27,8 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "rules": {}
+    "rules": {
+        "no-undef": "warn",
+        "no-unused-vars": "warn"
+    }
 }
