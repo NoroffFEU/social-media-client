@@ -11,6 +11,7 @@
       "env": { "cypress/globals": true },
       "plugins": ["cypress"],
       "extends": ["plugin:cypress/recommended"],
+      "globals": { "cy": true },
       "rules": {
         "cypress/no-unnecessary-waiting": "off",
         "no-unused-vars": "off"
