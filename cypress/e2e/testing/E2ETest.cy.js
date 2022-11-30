@@ -171,5 +171,6 @@ describe('Social Media App: Authenticated user logout', () => {
       .click();
     cy.wait(700);
     cy.url().should('not.include', 'profile');
+    cy.wait(400);
   });
 });
