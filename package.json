@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prettierCheck": "prettier --write",
+    "eslintCheck": "eslint .",
+    "deploy": "gh-pages -d build",
+    "postmerge": "npm run deploy",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
   },
@@ -11,7 +15,10 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.31.0",
+    "gh-pages": "^4.0.0",
     "live-server": "^1.2.2",
+    "prettier": "^2.8.3",
     "sass": "^1.54.8"
   },
   "dependencies": {
