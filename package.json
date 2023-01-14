@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prettierCheck": "prettier --write",
+    "prettierCheck": "prettier --write \"src/**/*.js\"",
     "eslintCheck": "eslint .",
     "deploy": "gh-pages -d build",
-    "postmerge": "npm run deploy",
+    "postmerge": "npm run prettierCheck && npm run deploy",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
   },
