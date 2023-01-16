@@ -6,12 +6,13 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "format": "prettier -w src/js" 
+    "format": "prettier -w src/js"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.32.0",
     "live-server": "^1.2.2",
     "prettier": "^2.8.3",
     "sass": "^1.54.8"
