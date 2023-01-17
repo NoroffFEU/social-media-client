@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "start:server": "node server.js",
+    "test:e2e": "npm run start:server && npx cypress run",
     "testMatch": [
       "<rootDir>/unit-tests/**/*.test.js"
     ],
