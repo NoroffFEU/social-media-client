@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "format": "prettier -w src/**/*.js"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
     "live-server": "^1.2.2",
-    "prettier": "^2.8.3",
     "sass": "^1.54.8"
   },
   "dependencies": {
