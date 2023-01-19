@@ -7,15 +7,15 @@ const USER_AVATAR =
 describe("Authorization", () => {
   beforeEach(() => {
     cy.wait(500);
-    cy.visit("http://127.0.0.1:5500");
+    cy.visit("https://joranengelund.github.io/ca-workflow/");
   });
 
   it("Cannot view profile page", () => {
-    cy.visit("http://127.0.0.1:5500/?view=profile");
+    cy.visit("https://joranengelund.github.io/ca-workflow/?view=profile");
   });
 
   it("Cannot view post page", () => {
-    cy.visit("http://127.0.0.1:5500/?view=posts");
+    cy.visit("https://joranengelund.github.io/ca-workflow/?view=posts");
   });
 
   it("Can register with valid credentials", () => {
@@ -97,6 +97,7 @@ describe("Authorization", () => {
       .then(($invalidPassword) => {
         expect(`input[type="password"]`);
       });
+
     cy.wait(500);
     cy.get(`button[type="submit"]`).contains("Login").click({ force: true });
   });
