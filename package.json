@@ -1,9 +1,13 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.1.2",
+  "version": "1.1.5",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "npm run test-e2e-cli",
+    "test-e2e": "cypress open",
+    "test-e2e-report": "cypress run --reporter mochawesome",
+    "test-e2e-cli": "cypress run",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/**/*.js",
@@ -14,7 +18,9 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "cypress": "^10.7.0",
     "eslint": "^8.32.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "live-server": "^1.2.2",
