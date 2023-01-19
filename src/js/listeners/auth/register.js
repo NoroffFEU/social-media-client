@@ -1,6 +1,6 @@
 import * as auth from '../../api/auth/index.js'
 
-export async function registerListener (event) {
+export async function registerListener(event) {
   event.preventDefault()
   const form = event.target
   const data = new FormData(form)

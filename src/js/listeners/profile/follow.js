@@ -1,6 +1,6 @@
 import { followProfile } from '../../api/profiles/index.js'
 
-export async function followListener (event) {
+export async function followListener(event) {
   const button = event.srcElement
   const name = button.dataset.name
 

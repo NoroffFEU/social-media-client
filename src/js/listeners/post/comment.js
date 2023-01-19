@@ -1,7 +1,7 @@
 import { comment } from '../../api/index.js'
 import { getSearchParams } from '../../router/searchParams.js'
 
-export async function commentListener (event) {
+export async function commentListener(event) {
   event.preventDefault()
   const form = event.target
   const data = new FormData(form)

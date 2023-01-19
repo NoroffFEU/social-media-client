@@ -6,7 +6,7 @@ export const getSearchParams = () => {
 export const setSearchParams = (params) => {
   const newParams = {
     ...getSearchParams(),
-    ...params
+    ...params,
   }
 
   const searchParams = new URLSearchParams(newParams)

@@ -1,9 +1,9 @@
 import { apiPath } from '../constants.js'
 import { headers } from '../headers.js'
 
-export async function getProfiles () {
+export async function getProfiles() {
   const response = await fetch(`${apiPath}/social/profiles`, {
-    headers: headers()
+    headers: headers(),
   })
   if (response.ok) {
     return await response.json()
@@ -12,7 +12,7 @@ export async function getProfiles () {
   throw new Error(response.statusText)
 }
 
-export async function getProfile (name) {
+export async function getProfile(name) {
   const response = await fetch(
     `${apiPath}/social/profiles/${name}?&_followers=true&_posts=true&_following=true`,
     { headers: headers() }

@@ -1,7 +1,7 @@
 import * as auth from '../../api/auth/index.js'
 import { updateLoginVisibility } from '../../ui/auth.js'
 
-export function logoutListener () {
+export function logoutListener() {
   try {
     auth.logout()
     updateLoginVisibility()

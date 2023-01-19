@@ -7,7 +7,7 @@ import { renderView } from '../ui/renderView.js'
 import * as views from '../views/index.js'
 import { getSearchParams } from './searchParams.js'
 
-function authGuard (callback = () => {}, view = '') {
+function authGuard(callback = () => {}, view = '') {
   if (isLoggedIn()) {
     return callback()
   } else {
@@ -22,7 +22,7 @@ function authGuard (callback = () => {}, view = '') {
   }
 }
 
-async function route () {
+async function route() {
   const { view, postId, name } = getSearchParams()
   switch (view) {
     case 'post':

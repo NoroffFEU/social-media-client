@@ -3,14 +3,14 @@ import { clear } from '../../tools/clear.js'
 import { templateInstance } from '../instance.js'
 import { postThumbnailTemplate } from './thumbnail.js'
 
-function populateForm (post, form) {
+function populateForm(post, form) {
   form.title.value = post.title
   form.body.value = post.body
   form.media.value = post.media
   form.tags.value = post.tags.join(', ')
 }
 
-function populatePreview (post, preview) {
+function populatePreview(post, preview) {
   const page = postThumbnailTemplate(post, false)
   clear(preview)
   preview.append(page)
@@ -35,7 +35,7 @@ export const postFormTemplate = (post) => {
       title: form.title.value,
       body: form.body.value,
       media: form.media.value,
-      tags: form.tags.value.split(', ')
+      tags: form.tags.value.split(', '),
     }
     populatePreview(post, preview)
   })

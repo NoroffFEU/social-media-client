@@ -7,8 +7,8 @@ export const BLANK_POST = {
     {
       symbol: '⌛',
       count: 1,
-      postId: 0
-    }
+      postId: 0,
+    },
   ],
   comments: [
     {
@@ -17,8 +17,8 @@ export const BLANK_POST = {
       id: 0,
       postId: 0,
       owner: '',
-      created: '2022-09-05T19:33:29.154Z'
-    }
+      created: '2022-09-05T19:33:29.154Z',
+    },
   ],
   created: '2022-09-05T19:33:29.154Z',
   updated: '2022-09-05T19:33:29.154Z',
@@ -26,10 +26,10 @@ export const BLANK_POST = {
   author: {
     name: '',
     email: '',
-    avatar: './assets/img/avatar.jpeg'
+    avatar: './assets/img/avatar.jpeg',
   },
   _count: {
     comments: 0,
-    reactions: 0
-  }
+    reactions: 0,
+  },
 }
