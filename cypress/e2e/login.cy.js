@@ -1,4 +1,5 @@
-//testuser Pjatte123@stud.noroff.no
+//testuser marita@stud.noroff.no
+//testpassword Storkebab94
 
 describe("Authentication", () => {
   beforeEach(() => {
