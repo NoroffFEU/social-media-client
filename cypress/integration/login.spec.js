@@ -27,3 +27,4 @@ describe('Login', () => {
     cy.get('.alert-danger').should('contain', 'Invalid email or password');
   });
 });
+
