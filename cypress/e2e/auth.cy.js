@@ -7,15 +7,15 @@ const USER_AVATAR =
 describe("Authorization", () => {
   beforeEach(() => {
     cy.wait(500);
-    cy.visit("https://joranengelund.github.io/ca-workflow/");
+    cy.visit("/");
   });
 
   it("Cannot view profile page", () => {
-    cy.visit("https://joranengelund.github.io/ca-workflow/?view=profile");
+    cy.visit("/?view=profile");
   });
 
   it("Cannot view post page", () => {
-    cy.visit("https://joranengelund.github.io/ca-workflow/?view=posts");
+    cy.visit("/?view=posts");
   });
 
   it("Can register with valid credentials", () => {
