@@ -69,3 +69,19 @@ To run Unit-test or end-to-end test, run the following commands in the terminal:
 - - npm run test-e2e (This will open cypress client and run test in Electron
 - - npm run test-e2e-cli (This will run cypress e2e tests in the CLI)
 ```
+
+### Formatting
+
+To run Prettier for formatting, run the following commands in the terminal:
+
+```bash
+- npm run format
+```
+
+### Linting
+
+To run ESLint, run the following commands in the terminal:
+
+```bash
+- npm run lint
+```
