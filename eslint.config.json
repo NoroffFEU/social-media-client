@@ -17,10 +17,10 @@
       },
       {
         "files": ["**/*.test.js"],
-        "env": { "jest/globals": true },
+        "env": { "jest": true },
         "plugins": ["jest"],
         "extends": ["plugin:jest/recommended"],
-        "rules": { "jest/prefer-expect-assertions": "off", "no-undef": "off" }
+        "rules": { "jest/prefer-expect-assertions": "off" }
       },
       {
         "files": ["**/cypress.config.js"],
@@ -29,8 +29,7 @@
         "extends": ["plugin:cypress/recommended"],
         "rules": {
           "cypress/no-unnecessary-waiting": "off",
-          "no-unused-vars": "off",
-          "no-undef": "off"
+          "no-unused-vars": "off"
         }
       }
     ],
