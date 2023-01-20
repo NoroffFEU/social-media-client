@@ -35,11 +35,11 @@ const TEST_PASSWORD = "12345678";
 const TEST_PROFILE_NAME = "Jester_Tester";
 const TEST_TOKEN =
   "SDA2E2E224329FOSDLKAAASDA23wadwa34wkksdkawkdjgdJ4OT5J34RLFDJ3WPRJØA";
-const TEST_PROFILE = JSON.stringify({
+const TEST_PROFILE = {
   name: TEST_PROFILE_NAME,
   email: TEST_EMAIL,
   accessToken: TEST_TOKEN,
-});
+};
 
 /**
  * A function that mimicks an approved API fetch call
@@ -57,10 +57,9 @@ describe("login", () => {
   it("stores a token when provided with valid credentials", async () => {
     global.fetch = jest.fn(() => fetchMockSuccess());
     const result = await login(TEST_EMAIL, TEST_PASSWORD);
-    global.localStorage.setItem("token", TEST_TOKEN);
-    global.localStorage.setItem("profile", TEST_PROFILE);
     expect(result).toEqual(TEST_PROFILE);
-    expect(TEST_TOKEN).toEqual(global.localStorage.getItem("token"));
-    expect(localStorage.getItem("profile")).toEqual(TEST_PROFILE);
+    expect(JSON.parse(global.localStorage.getItem("token"))).toEqual(
+      TEST_TOKEN
+    );
   });
 });
