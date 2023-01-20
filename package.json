@@ -1,17 +1,23 @@
 {
   "name": "css-frameworks-ca",
   "version": "1.0.0",
-  "description": "",
+  "description": "workflow-ca",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "format": "prettier -w src/**/*.js",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.32.0",
     "live-server": "^1.2.2",
+    "prettier": "^2.8.3",
     "sass": "^1.54.8"
   },
   "dependencies": {
