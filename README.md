@@ -10,7 +10,7 @@
 [![Automated Unit Testing](https://github.com/JoranEngelund/ca-workflow/actions/workflows/unit-test.yml/badge.svg)](https://github.com/JoranEngelund/ca-workflow/actions/workflows/unit-test.yml)
 
 ## Deployed on GitHub Pages:
-[Social-Media-Client]https://joranengelund.github.io/ca-workflow/
+[Social-Media-Client](https://joranengelund.github.io/ca-workflow/)
 
 ## Built With
 - ```HTML```
