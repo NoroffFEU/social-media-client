@@ -53,3 +53,19 @@ To work on SCSS/SASS, run the following commands in the terminal:
 ```bash
 - npm run start
 ```
+
+### Testing
+
+To run Unit-test or end-to-end test, run the following commands in the terminal:
+
+```bash
+- For both Cypress and Jest:
+- - npm run test
+
+- For only Jest:
+- - npm run test-unit
+
+- For only Cypress:
+- - npm run test-e2e (This will open cypress client and run test in Electron
+- - npm run test-e2e-cli (This will run cypress e2e tests in the CLI)
+```
