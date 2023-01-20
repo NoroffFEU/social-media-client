@@ -5,14 +5,18 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "dev": "vite",
+    "vite-build": "vite build",
+    "vite-preview": "vite preview"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
     "live-server": "^1.2.2",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "vite": "^4.0.4"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
