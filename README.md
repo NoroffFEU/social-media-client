@@ -1,10 +1,16 @@
 # CA-WORKFLOW
 
+![Skjermbilde_20230120_121534](https://user-images.githubusercontent.com/56642663/213682756-22f8b9e6-248f-49ff-8f28-3d51cdea4e33.png)
+
+
 [![Deploy static content to the Pages](https://github.com/JoranEngelund/ca-workflow/actions/workflows/pages.yml/badge.svg)](https://github.com/JoranEngelund/ca-workflow/actions/workflows/pages.yml)
 
 [![Automated E2E Testing](https://github.com/JoranEngelund/ca-workflow/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/JoranEngelund/ca-workflow/actions/workflows/e2e-test.yml)
 
 [![Automated Unit Testing](https://github.com/JoranEngelund/ca-workflow/actions/workflows/unit-test.yml/badge.svg)](https://github.com/JoranEngelund/ca-workflow/actions/workflows/unit-test.yml)
+
+## Deployed on GitHub Pages:
+[Social-Media-Client]https://joranengelund.github.io/ca-workflow/
 
 ## Built With
 - ```HTML```
