@@ -1,7 +1,6 @@
 /node_modules
 /dist
-/.eslintcache
-/cypress/e2e/1-getting-started
+/.eslintcaches
 /cypress/e2e/2-advanced-examples
 /cypress/fixtures
 /cypress/screenshots
