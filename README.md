@@ -1,0 +1,1 @@
+[![Deploy static content to Pages](https://github.com/MaritaMalvinsdatter/social-media-client-workflow/actions/workflows/pages.yml/badge.svg)](https://github.com/MaritaMalvinsdatter/social-media-client-workflow/actions/workflows/pages.yml)
