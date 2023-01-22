@@ -7,13 +7,16 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint scr/**/*.js --cache --fix"
+    "lint-fix": "eslint scr/**/*.js --cache --fix",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.32.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "live-server": "^1.2.2",
     "prettier": "^2.8.3",
     "sass": "^1.54.8"
@@ -30,5 +33,17 @@
     "url": "https://github.com/Enirose/social-media-client/issues"
   },
   "homepage": "https://github.com/Enirose/social-media-client#readme",
-  "description": ""
+  "description": "",
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
+  }
 }
