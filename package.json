@@ -7,7 +7,8 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix"
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "prepare": "husky install"
   },
   "type": "module",
   "keywords": [],
@@ -19,6 +20,8 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "live-server": "^1.1.0",
     "prettier": "^2.8.3",
     "sass": "^1.54.8"
@@ -34,5 +37,11 @@
     "url": "https://github.com/oBraenna91/social-media-client-workflow-CA/issues"
   },
   "homepage": "https://github.com/oBraenna91/social-media-client-workflow-CA#readme",
-  "description": ""
+  "description": "",
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  }
 }
