@@ -1,6 +1,6 @@
 import { login } from './login.js';
 
-const MOCK_USER_DATA = {
+const USER_DATA = {
   name: 'testing',
   email: 'testing@noroff.no',
   banner: 'null',
@@ -10,7 +10,7 @@ const MOCK_USER_DATA = {
 
 const mockFetchSuccess = jest.fn().mockResolvedValue({
   ok: true,
-  json: jest.fn().mockResolvedValue(MOCK_USER_DATA),
+  json: jest.fn().mockResolvedValue(USER_DATA),
 });
 
 global.fetch = mockFetchSuccess;
