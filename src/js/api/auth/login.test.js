@@ -1,7 +1,9 @@
-import { login } from ".";
-import storage from "../../storage/storageMock.js";
+import { login } from "./login.js";
+import { load } from "../../storage/load.js";
+import storageMock from "../../storage/storageMock.js";
 
-const email = "DanVie13513@stud.noroff.no";
+// add to env
+const email = "test@stud.noroff.no";
 const password = "password";
 const accessToken = "apiegbapgiba4a3p5o4";
 
@@ -13,7 +15,8 @@ const user = {
   accessToken: accessToken,
 };
 
-global.localStorage = storage;
+global.localStorage = storageMock;
+// this here ?    global.fetch = jest.fn(() => fetchSuccess());
 
 function fetchSuccess() {
   return Promise.resolve({
@@ -29,6 +32,6 @@ describe("login", () => {
     global.fetch = jest.fn(() => fetchSuccess());
     const profile = await login(email, password);
     expect(profile).toEqual(user);
-    expect(localStorage.getItem("token")).toMatch(accessToken);
+    expect(load("token")).toEqual(accessToken);
   });
 });
