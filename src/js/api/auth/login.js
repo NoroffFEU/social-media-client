@@ -11,6 +11,7 @@ export async function login(email, password) {
 
   if (response.ok) {
     const profile = await response.json()
+
     save('token', profile.accessToken)
     delete profile.accessToken
     save('profile', profile)
