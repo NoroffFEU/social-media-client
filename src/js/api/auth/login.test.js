@@ -3,8 +3,6 @@ import { login } from './login.js';
 const USER_DATA = {
   name: 'testing',
   email: 'testing@noroff.no',
-  banner: 'null',
-  avatar: 'null',
   accessToken: 'test workflow',
 };
 
