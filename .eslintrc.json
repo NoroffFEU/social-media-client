@@ -11,8 +11,7 @@
         "plugins": ["cypress"],
         "extends": ["plugin:cypress/recommended"],
         "rules": {
-          "cypress/no-unnecessary-waiting": "off",
-          "no-unused-vars": "off"
+          "cypress/no-unnecessary-waiting": "off"
         }
       },
       {
@@ -31,6 +30,7 @@
     },
     "rules": {
         "no-undef": "off",
-        "no-global-assign": "off"
+        "no-global-assign": "off",
+        "no-unused-vars": "off"
     }
   }
