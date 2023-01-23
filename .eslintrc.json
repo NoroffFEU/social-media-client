@@ -20,12 +20,17 @@
         "env": { "jest": true },
         "plugins": ["jest"],
         "extends": ["plugin:jest/recommended"],
-        "rules": { "jest/prefer-expect-assertions": "off" }
+        "rules": { 
+            "jest/prefer-expect-assertions": "off"
+         }
       }
     ],
     "parserOptions": {
       "ecmaVersion": "latest",
       "sourceType": "module"
     },
-    "rules": {}
+    "rules": {
+        "no-undef": "off",
+        "no-global-assign": "off"
+    }
   }
