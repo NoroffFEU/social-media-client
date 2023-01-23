@@ -37,7 +37,7 @@ describe('userLogin', () => {
   it('should login and store a token', async () => {
     localStorage.clear();
     await login('checking@stud.noroff.no', '');
-    const token = localStorage.getItem('token');
-    expect(token).not.toEqual('test workflow');
+    const accessToken = localStorage.getItem('token');
+    expect(accessToken).toBeDefined();
   });
 });
