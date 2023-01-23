@@ -21,9 +21,7 @@
         "plugins": ["jest"],
         "extends": ["plugin:jest/recommended"],
         "rules": { 
-            "jest/prefer-expect-assertions": "off",
-            "no-undef": "off",
-            "no-global-assign": "off"
+            "jest/prefer-expect-assertions": "off"
          }
       }
     ],
@@ -31,5 +29,8 @@
       "ecmaVersion": "latest",
       "sourceType": "module"
     },
-    "rules": {}
+    "rules": {
+        "no-undef": "off",
+        "no-global-assign": "off"
+    }
   }
