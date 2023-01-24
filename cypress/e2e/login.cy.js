@@ -1,26 +1,27 @@
-Cypress.Commands.add('login', (username, password) => {
-  cy.visit('/login');
+describe('register user', () => {
+  Before(() => {
+    //
+    cy.fixture('user').then(function (data) {
+      this.data = data;
+    });
+  });
 
-  cy.get('input[name=username]').type(username);
+  it('register valid user', () => {
+    cy.visit('https://rohitamdahl.github.io/social-media-client-ca/');
+    wait(500);
+    cy.contains('Create Profile').click();
+    cy.get('input[name="name"]').type(this.data.name);
+    cy.get('input[name="email"]').type(this.data.email);
+    cy.get('input[name="password"]').type(this.data.password);
+    cy.get('input[name="avatar"]').type('');
+    //
+  });
+  it('register valid user', () => {
+    cy.visit('https://rohitamdahl.github.io/social-media-client-ca/');
+    wait(500);
 
-  // {enter} causes the form to submit
-  cy.get('input[name=password]').type(`${password}{enter}`, { log: false });
-
-  // we should be redirected to /dashboard
-  cy.url().should('include', '/dashboard');
-
-  // our auth cookie should be present
-  cy.getCookie('your-session-cookie').should('exist');
-
-  // UI should reflect this user being logged in
-  cy.get('h1').should('contain', username);
-});
-
-// In your spec file
-
-it('does something on a secured page', function () {
-  const { username, password } = this.currentUser;
-  cy.login(username, password);
-
-  // ...rest of test
+    cy.get('input[name="email"]').type(this.data.email);
+    cy.get('input[name="password"]').type(this.data.password);
+    cy.get('.btn btn-success').click();
+  });
 });
