@@ -12,7 +12,7 @@
     "prepare": "husky install"
   },
   "keywords": [],
-  "author": "Noroff",
+  "author": "Peter",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.32.0",
