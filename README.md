@@ -29,9 +29,13 @@ E2E TESTS:
 
 ## Installation:
 
-First clone the repo: git@github.com:MaritaMalvinsdatter/social-media-client-workflow.git
+First clone the repo: 
 
-In the terminal: 
+```bash
+git clone git@github.com:MaritaMalvinsdatter/social-media-client-workflow.git
+```
+
+Then run the following commands in the terminal: 
 
 ```bash
 npm I
