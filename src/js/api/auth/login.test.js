@@ -25,21 +25,22 @@ class LocalStorageMock {
 global.localStorage = new LocalStorageMock();
 
 const Email = 'enirose@noroff.no';
+const BadEmail = 'mail@gmail.no';
 const Password = 'enirose123';
 
-const User = {
+const UserData = {
   name: 'Eni123',
   email: Email,
 };
 
-const UserProfile = JSON.stringify(User);
+const UserProfile = JSON.stringify(UserData);
 
 function loginSuccess() {
   return Promise.resolve({
     ok: true,
     status: 200,
     statusText: 'OK',
-    json: () => Promise.resolve(UserProfile),
+    json: () => Promise.resolve(UserData),
   });
 }
 
@@ -47,7 +48,7 @@ function loginFailed() {
   return Promise.resolve({
     ok: false,
     status: 404,
-    statusText: 'Not Found',
+    statusText: 'Invalid credentials',
   });
 }
 
@@ -56,13 +57,15 @@ describe('login', () => {
     global.fetch = jest.fn(() => loginSuccess());
     const profile = await login(Email, Password);
     const profileData = JSON.stringify(profile);
-    expect(Email).toMatch('[w-.]+@(stud.)?noroff.no$');
-    expect(Password).toHaveLength(8);
+    expect(Email).toMatch(/^[\w\-.]+@(stud.)?noroff.no$/);
+    expect(Password).toHaveLength(10);
     expect(profileData).toMatch(UserProfile);
   });
 
   it('throws an error when provided with invalid credentials', async () => {
     global.fetch = jest.fn(() => loginFailed());
-    await expect(login()).rejects.toThrow('Invalid credentials');
+    await expect(login(BadEmail, Password)).rejects.toThrow(
+      'Invalid credentials'
+    );
   });
 });
