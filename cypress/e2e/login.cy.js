@@ -1,7 +1,6 @@
 describe('auth login', () => {
   beforeEach(() => {
     cy.visit('https://rohitamdahl.github.io/social-media-client-ca/');
-
     cy.get('#registerForm .btn-close').click();
   });
 
@@ -11,7 +10,7 @@ describe('auth login', () => {
       'include',
       'https://rohitamdahl.github.io/social-media-client-ca/?view=profile'
     );
-    cy.get('#loginEmail').type('test_User@stud.noroff.no');
+    cy.get('#loginEmail').type('test_User258@stud.noroff.no');
     cy.get('#loginForm #loginPassword').type('test_User123');
     cy.getAllLocalStorage().then((storage) =>
       expect(storage[`${baseUrl}`].token).to.have.length.greaterThan(1)
