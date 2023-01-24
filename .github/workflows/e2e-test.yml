@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@main
+        
+      - name: Run live server
+        run: npm run start
 
       - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
