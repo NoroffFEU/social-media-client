@@ -29,4 +29,39 @@ E2E TESTS:
 
 ## Installation:
 
+First clone the repo: git@github.com:MaritaMalvinsdatter/social-media-client-workflow.git
+
+In the terminal: 
+
+```bash
+npm I
+npm run build
+```
+
+For SCSS/SASS:
+
+```bash
+npm run start
+```
+
+To run Prettier: 
+
+```bash
+npm run format
+```
+
+To run ESLint:
+
+```bash
+npm run lint
+```
+
+To run tests: 
+
+```bash
+npm run test
+```
+
+## Page:
+
 [Social Media Page](https://maritamalvinsdatter.github.io/social-media-client-workflow/)
