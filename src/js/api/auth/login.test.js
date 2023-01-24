@@ -32,8 +32,8 @@ function fetchSuccess() {
 function fetchFailure(status, statusText) {
   return Promise.resolve({
     ok: false,
-    status: 404,
-    statusText: "Not Found",
+    status,
+    statusText,
   });
 }
 
