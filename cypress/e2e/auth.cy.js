@@ -1,3 +1,7 @@
+process.env.EMAIL = "cypresshill@stud.noroff.no";
+process.env.PASSWORD = "cypresshill123";
+process.env.INVALID_EMAIL = "apeoaghpaeogh@noroff.no";
+
 describe("Authorization", () => {
   it("Logs the user in with valid credentials", () => {
     cy.clearLocalStorage();
