@@ -2,12 +2,6 @@ name: Automated E2E Testing
 on: 
   - pull_request
   - workflow_dispatch
-  
-env:
-
- EMAIL: ${{secrets.EMAIL}}
- PASSWORD: ${{secrets.PASSWORD}}
- INVALID_EMAIL: ${{secrets.INVALID_EMAIL}}
 
 jobs:
   run-e2e-tests:
