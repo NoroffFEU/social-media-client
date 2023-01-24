@@ -52,9 +52,10 @@ function fetchMockSuccess() {
   });
 }
 
+global.fetch = jest.fn(() => fetchMockSuccess());
+
 describe("login", () => {
   it("should store a token when provided valid email id and password", async () => {
-    global.fetch = jest.fn(() => fetchMockSuccess());
     const result = await login(test_user_email, test_user_password);
     expect(result).toEqual(test_profile);
     expect(JSON.parse(global.localStorage.getItem("token"))).toEqual(

@@ -25,9 +25,10 @@ function MockPostSuccess() {
   });
 }
 
+global.fetch = jest.fn(() => MockPostSuccess());
+
 describe("create", () => {
   it("creates a valid item with a valid input", async () => {
-    global.fetch = jest.fn(() => MockPostSuccess());
     const result = await createPost(
       Test_Title,
       Test_Body,
