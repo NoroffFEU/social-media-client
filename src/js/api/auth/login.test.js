@@ -32,8 +32,8 @@ function fetchSuccess() {
 function fetchFailure(status, statusText) {
   return Promise.resolve({
     ok: false,
-    status,
-    statusText,
+    status: 404,
+    statusText: "Not Found",
   });
 }
 
@@ -62,7 +62,7 @@ class LocalStorageMock {
 
 global.localStorage = new LocalStorageMock();
 
-describe("Authorizationr", () => {
+describe("Authorization", () => {
   it("success", async () => {
     global.fetch = jest.fn(() => fetchSuccess());
     const response = await login(mockEmail, mockPassword);
