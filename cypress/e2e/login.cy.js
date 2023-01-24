@@ -1,26 +1,24 @@
-describe('register user', () => {
+describe('auth login', () => {
   beforeEach(() => {
-    cy.fixture('user').then(function (data) {
-      this.data = data;
-    });
+    cy.visit('https://rohitamdahl.github.io/social-media-client-ca/');
+
+    cy.get('#registerForm .btn-close').click();
+    wait(500);
   });
 
   it('register valid user', () => {
-    cy.visit('https://rohitamdahl.github.io/social-media-client-ca/');
-
-    cy.contains('Create Profile').click();
-    cy.get(`input[name="name"]`).type(this.data.name);
-    cy.get(`input[name="email"]`).type(this.data.email);
-    cy.get(`input[name="password"]`).type(this.data.password);
-    cy.get(`input[name="avatar"]`).type('');
     //
   });
-  it('register valid user', () => {
-    cy.visit('https://rohitamdahl.github.io/social-media-client-ca/');
-    wait(500);
-
-    cy.get(`input[name="email"]'`).type(this.data.email);
-    cy.get(`input[name="password"]`).type(this.data.password);
-    cy.get('.btn btn-success').click();
+  it('logging valid user', () => {
+    cy.get(`#loginForm button[type="submit"]`).click();
+    cy.url().should(
+      'include',
+      'https://rohitamdahl.github.io/social-media-client-ca/?view=profile'
+    );
+    cy.get(`input[name="email"]'`).type('testUser@stud.noroff.no');
+    cy.get('#loginForm #loginPassword').type('testUser123');
+    cy.getAllLocalStorage().then((storage) =>
+      expect(storage[`${baseUrl}`].token).to.have.length.greaterThan(1)
+    );
   });
 });
