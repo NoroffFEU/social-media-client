@@ -5,8 +5,8 @@ describe("Authorization", () => {
     cy.wait(500);
     cy.get("#registerForm > .modal-footer > button[data-auth='login']").click();
     cy.wait(500);
-    cy.get("#loginEmail").should("exist").type(email);
-    cy.get("#loginPassword").should("exist").type(password);
+    cy.get("#loginEmail").should("exist").type(process.env.EMAIL);
+    cy.get("#loginPassword").should("exist").type(process.env.PASSWORD);
     cy.get("#loginForm > .modal-footer > button[type='submit']").click();
     cy.wait(1000);
     cy.then(() => expect(localStorage.getItem("token")).to.not.be.null);
@@ -19,8 +19,8 @@ describe("Authorization", () => {
     cy.wait(500);
     cy.get("#registerForm > .modal-footer > button[data-auth='login']").click();
     cy.wait(500);
-    cy.get("#loginEmail").should("exist").type(invalidEmail);
-    cy.get("#loginPassword").should("exist").type(password);
+    cy.get("#loginEmail").should("exist").type(process.env.INVALID_EMAIL);
+    cy.get("#loginPassword").should("exist").type(process.env.PASSWORD);
     cy.get("#loginForm > .modal-footer > button[type='submit']").click();
     cy.wait(1000);
     cy.then(() => expect(localStorage.getItem("token")).to.be.null);
@@ -38,8 +38,8 @@ describe("Authorization", () => {
     cy.wait(500);
     cy.get("#registerForm > .modal-footer > button[data-auth='login']").click();
     cy.wait(500);
-    cy.get("#loginEmail").should("exist").type(email);
-    cy.get("#loginPassword").should("exist").type(password);
+    cy.get("#loginEmail").should("exist").type(process.env.EMAIL);
+    cy.get("#loginPassword").should("exist").type(process.env.PASSWORD);
     cy.get("#loginForm > .modal-footer > button[type='submit']").click();
     cy.wait(1000);
     cy.get("button[data-auth='logout']").click();
