@@ -1,9 +1,9 @@
-describe('Social Media login', () => {
+describe('Social Media logout', () => {
   beforeEach(() => {
     cy.visit('./');
   });
 
-  it('can log in or user Authenticated', () => {
+  it('can logout the user', () => {
     cy.get('#registerModal button')
       .contains('Login')
       .should('be.visible')
@@ -17,5 +17,7 @@ describe('Social Media login', () => {
     cy.get('button[type="submit"]').contains('Login').click({ force: true });
     cy.wait(1000);
     cy.then(() => expect(localStorage.getItem('token')).to.not.be.null);
+    cy.wait(3000);
+    cy.get('button').contains('Logout').click();
   });
 });
