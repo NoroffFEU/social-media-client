@@ -48,13 +48,3 @@ describe('auth login', () => {
     );
   });
 });
-
-//  it('cannot submit the login form with invalid credentials', () => {
-//    cy.get('#loginForm #loginEmail').type('tiger_user@stud.noroff.com');
-//    cy.get('#loginForm #loginPassword').type('rohit123456');
-
-//    cy.on('window:alert', (alert) =>
-//      expect(alert).to.be.equal('username or password is incorrect')
-//    );
-//    cy.get(`#loginForm button[type="submit"]`).click();
-//  });
