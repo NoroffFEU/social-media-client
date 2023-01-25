@@ -48,7 +48,7 @@ describe('auth login', () => {
       .type('rohit123456')
       .should('have.value', 'rohit123456');
     cy.wait(2500);
-    cy.get("button[data-auth='login']:visible").click();
+    cy.get('.btn-success:visible').click();
     cy.wait(2500);
     cy.then(() => expect(window.localStorage.getItem('profile')).to.be.null);
     cy.then(() => expect(window.localStorage.getItem('token')).to.be.null);
