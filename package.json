@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test2": "npm run test-e2e",
+    "test-e2e": "cypress open",
     "test1": "npm run test-unit",
     "test-unit": "jest",
     "test": "node src/js/joker.test.js",
