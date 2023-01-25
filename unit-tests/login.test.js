@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 // login.test.js
 import { login } from './login';
 
