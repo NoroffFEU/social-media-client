@@ -24,7 +24,7 @@ describe("testing login function", () => {
 
   //invalid login
 
-  it("cannot logged in with invalid credentials", () => {
+  it("cannot log in with invalid credentials", () => {
     cy.get("#loginForm #loginEmail").type("anny.robinson@gmail.com");
     cy.get("#loginForm #loginPassword").type("12345679");
     cy.get(`#loginForm button[type="submit"]`).click();
