@@ -1,36 +1,54 @@
+//rohit_kumar@stud.noroff.no
+//rohit123456
+
 describe('auth login', () => {
   beforeEach(() => {
-    it('closing resister form and should click the login in from header', () => {
-      cy.visit('https://rohitamdahl.github.io/social-media-client-ca/', {
-        delay: 500,
-      });
-      cy.get('#registerForm .btn-close').click();
-      cy.get(`header button[data-auth="login"]`).click();
+    cy.visit('https://rohitamdahl.github.io/social-media-client-ca/');
+    cy.clearLocalStorage();
+  });
+  it('login with valid username and password', () => {
+    cy.visit('https://rohitamdahl.github.io/social-media-client-ca/', {
+      delay: 1500,
     });
-  });
-  it('logging valid user', () => {
-    cy.get(`#loginForm button[type="submit"]`).click();
-    cy.url().should(
-      'include',
-      'https://rohitamdahl.github.io/social-media-client-ca/?view=profile',
-      { delay: 1000 }
+    cy.title().should('contain', 'Client');
+    cy.title().should('eq', 'Test Client');
+    cy.get('#registerForm .btn-close:visible').click();
+    cy.wait(2000);
+    cy.get("button[data-auth='login']:visible").click();
+    cy.get('#loginForm #loginEmail').type('rohit_kumar@stud.noroff.no');
+    cy.get('#loginForm #loginPassword').type('rohit123456');
+    cy.then(
+      () => expect(window.localStorage.getItem('profile')).to.not.be.null
     );
-    cy.get('#loginForm #loginEmail').type('tiger_User@stud.noroff.no');
-    cy.get('#loginForm #loginPassword').type('tiger_User223');
-    cy.getAllLocalStorage().then((storage) =>
-      expect(
-        storage[`https://rohitamdahl.github.io/social-media-client-ca/`].token
-      ).to.have.length.greaterThan(10)
-    );
+    cy.then(() => expect(window.localStorage.getItem('token')).to.not.be.null);
+    cy.url().should('include', 'profile');
   });
-
   it('cannot submit the login form with invalid credentials', () => {
-    cy.get('#loginForm #loginEmail').type('tiger_user@stud.noroff.com');
-    cy.get('#loginForm #loginPassword').type('tiger_User223');
-
+    cy.visit('https://rohitamdahl.github.io/social-media-client-ca/', {
+      delay: 1500,
+    });
+    cy.title().should('contain', 'Client');
+    cy.title().should('eq', 'Test Client');
+    cy.get('#registerForm .btn-close:visible').click();
+    cy.wait(2000);
+    cy.get("button[data-auth='login']:visible").click();
+    cy.get("input[type='email']:visible").type('tiger_user@stud.noroff.com');
+    cy.get('#loginForm #loginPassword').type('rohit123456');
+    cy.then(() => expect(window.localStorage.getItem('profile')).to.be.null);
+    cy.then(() => expect(window.localStorage.getItem('token')).to.be.null);
+    cy.url().should('not.include', 'profile');
     cy.on('window:alert', (alert) =>
       expect(alert).to.be.equal('username or password is incorrect')
     );
-    cy.get(`#loginForm button[type="submit"]`).click();
   });
 });
+
+//  it('cannot submit the login form with invalid credentials', () => {
+//    cy.get('#loginForm #loginEmail').type('tiger_user@stud.noroff.com');
+//    cy.get('#loginForm #loginPassword').type('rohit123456');
+
+//    cy.on('window:alert', (alert) =>
+//      expect(alert).to.be.equal('username or password is incorrect')
+//    );
+//    cy.get(`#loginForm button[type="submit"]`).click();
+//  });
