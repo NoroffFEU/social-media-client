@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "build": "sass src/scss:dist/css",
+    "lint": "eslint .",
+    "format": "prettier --write",
     "lint:cypress": "eslint cypress --config .eslintrc.cypress.json",
     "start:server": "node server.js",
+    "test": "jest",
     "test:e2e": "npm run start:server && npx cypress run",
     "testMatch": [
       "<rootDir>/unit-tests/**/*.test.js"
@@ -14,9 +18,7 @@
     "prettierCheck": "prettier --write \"src/**/*.js\"",
     "eslintCheck": "eslint .",
     "deploy": "gh-pages -d build",
-    "postmerge": "npm run prettierCheck && npm run deploy",
-    "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "postmerge": "npm-run-all --parallel prettierCheck eslintCheck deploy"
   },
   "keywords": [],
   "author": "Noroff",
@@ -26,14 +28,15 @@
     "@babel/plugin-transform-modules-commonjs": "^7.20.11",
     "@babel/preset-env": "^7.20.2",
     "babel-jest": "^29.3.1",
-    "cypress": "^12.3.0",
-    "eslint": "^8.31.0",
+    "cypress": "^12.4.0",
+    "eslint": "^8.32.0",
     "eslint-plugin-cypress": "^2.12.1",
     "gh-pages": "^4.0.0",
     "jest": "^29.3.1",
     "live-server": "^1.2.2",
     "prettier": "^2.8.3",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "npm-run-all": "^4.1.5"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3",
