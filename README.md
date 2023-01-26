@@ -1,6 +1,6 @@
 # Workflow-ca
 
-during the course in Noroff we learning the few concept and the assignment is about how to apply on the them on code this repository is giving by the Noroff i only wrote testing and install packages.
+During the course in Noroff I learning the few concept and the assignment is about how to apply on the them on code this repository is giving by the Noroff i only wrote testing and install packages.
 
 - Project is configured to run Prettier on commit
 - Project is configured to run ESLint on commit
