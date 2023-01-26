@@ -24,6 +24,7 @@ module.exports = {
       rules: {
         'cypress/no-unnecessary-waiting': 'off',
         'no-unused-vars': 'off',
+        'no-undef': 'off',
       },
     },
   ],
