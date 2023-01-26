@@ -45,3 +45,9 @@ npm run test-e2e
 ## Page:
 
 [Social Media Page](https://rohitamdahl.github.io/social-media-client-ca/)
+
+## Badges
+
+[![Deploy static content to Pages](https://github.com/RohitAmdahl/social-media-client-ca/actions/workflows/pages.yml/badge.svg)](https://github.com/RohitAmdahl/social-media-client-ca/actions/workflows/pages.yml)
+[![Automated Unit Testing](https://github.com/RohitAmdahl/social-media-client-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/RohitAmdahl/social-media-client-ca/actions/workflows/unit-test.yml)
+[![Automated E2E Testing](https://github.com/RohitAmdahl/social-media-client-ca/actions/workflows/Update%20e2e-test.yml/badge.svg)](https://github.com/RohitAmdahl/social-media-client-ca/actions/workflows/Update%20e2e-test.yml)
