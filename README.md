@@ -33,7 +33,13 @@ npm run lint
 To run tests:
 
 ```bash
-npm run test
+npm run test-unit
+```
+
+To run cypress:
+
+```bash
+npm run test-e2e
 ```
 
 ## Page:
