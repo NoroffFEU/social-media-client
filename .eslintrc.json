@@ -13,7 +13,7 @@
           "rules": { "jest/prefer-expect-assertions": "off",
           "no-undef": "off",
           "no-global-assign": "off" }
-        },
+        }
       ],
       "parserOptions": {
           "ecmaVersion": "latest",
