@@ -4,3 +4,6 @@
 # Node folders to ignore
 /node_modules
 /dist
+
+# Eslint
+.eslintcache
