@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 describe('Login form', () => {
   it('should successfully log in with valid credentials', () => {
     cy.visit('/');

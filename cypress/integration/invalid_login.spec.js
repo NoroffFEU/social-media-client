@@ -1,6 +1,5 @@
-/* eslint-disable no-undef */
 // invalid_login.spec.js
-import "cypress-testing-library/add-commands";
+import 'cypress-testing-library/add-commands';
 describe('Invalid login feature', () => {
   it('prevents the user from logging in with invalid credentials', () => {
     cy.visit('/login');

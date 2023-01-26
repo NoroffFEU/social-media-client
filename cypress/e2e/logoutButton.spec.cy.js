@@ -1,4 +1,3 @@
-// cypress/e2e/logoutButton.spec.cy.js
 describe('Logout Feature', () => {
   beforeEach(() => {
     cy.login();

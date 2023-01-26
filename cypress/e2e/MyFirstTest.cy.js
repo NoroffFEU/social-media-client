@@ -14,5 +14,4 @@ describe('My First Test', () => {
     cy.get('button[type="submit"]').click();
     cy.get('.error-message').should('be.visible');
   });
- 
 });
