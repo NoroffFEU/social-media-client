@@ -1,6 +1,20 @@
-// eslint-disable-next-line no-undef
 module.exports = {
-  preset: 'cypress',
+  moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx', 'js'],
   testEnvironment: 'node',
-  setupFilesAfterEnv: ['jest-localstorage-mock'],
+  testMatch: ['**/*.test.js'],
+  testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
+  testPathIgnorePatterns: ['/node_modules/'],
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+  },
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
+  },
 };
