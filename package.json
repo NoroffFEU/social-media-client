@@ -5,12 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "format": "prettier -w src/js/"
+    "format": "prettier -w src/js/",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix"
+
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.32.0",
     "live-server": "^1.2.2",
     "prettier": "^2.8.3",
     "sass": "^1.54.8"
