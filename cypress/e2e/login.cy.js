@@ -18,5 +18,6 @@ describe('Social Media login', () => {
     cy.get('button[type="submit"]').contains('Login').click({ force: true });
     cy.wait(1000);
     cy.then(() => expect(localStorage.getItem('token')).to.not.be.null);
+    cy.wait(1000);
   });
 });
