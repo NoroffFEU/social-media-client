@@ -18,7 +18,11 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "prepare": "husky install",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix"
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "test4": "npm run test-unit && npm run test-e2e-cli",
+    "test-unit4": "jest",
+    "test-e2e4": "cypress open",
+    "test-e2e-cli4": "cypress run"
   },
   "keywords": [],
   "author": "Noroff",
