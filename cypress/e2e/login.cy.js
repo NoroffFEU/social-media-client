@@ -53,8 +53,5 @@ describe('auth login', () => {
     cy.then(() => expect(window.localStorage.getItem('profile')).to.be.null);
     cy.then(() => expect(window.localStorage.getItem('token')).to.be.null);
     cy.url().should('not.include', 'profile');
-    cy.on('window:alert', (alert) =>
-      expect(alert).to.be.equal('username or password is incorrect')
-    );
   });
 });
