@@ -1,6 +1,6 @@
 # social-media-client
 [![Automated Unit Testing](https://github.com/Enirose/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Enirose/social-media-client/actions/workflows/unit-test.yml)
-[![Automated Unit Testing](https://github.com/Enirose/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Enirose/social-media-client/actions/workflows/unit-test.yml)
+[![Automated E2E Testing](https://github.com/Enirose/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Enirose/social-media-client/actions/workflows/e2e-test.yml)
 [![Deploy static content to Pages](https://github.com/Enirose/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/Enirose/social-media-client/actions/workflows/pages.yml)
 --
 ![image](https://user-images.githubusercontent.com/95321157/214720154-2786f61e-a55a-4f6a-9d1a-ea5412a89536.png)
