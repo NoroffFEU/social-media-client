@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "lint:cypress": "eslint cypress --config .eslintrc.cypress.json",
     "start:server": "node server.js",
     "test:e2e": "npm run start:server && npx cypress run",
     "testMatch": [
@@ -27,6 +28,7 @@
     "babel-jest": "^29.3.1",
     "cypress": "^12.3.0",
     "eslint": "^8.31.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "gh-pages": "^4.0.0",
     "jest": "^29.3.1",
     "live-server": "^1.2.2",
