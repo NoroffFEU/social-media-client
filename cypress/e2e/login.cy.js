@@ -14,7 +14,7 @@ describe('Social Media login', () => {
     cy.get('input#loginEmail[name="email"]').type(`${email}`);
     const password = 'enirose123';
     cy.get('input#loginPassword[name="password"]').type(`${password}`);
-    cy.wait(1000);
+    cy.wait(2000);
     cy.get('button[type="submit"]').contains('Login').click({ force: true });
     cy.wait(1000);
     cy.then(() => expect(localStorage.getItem('token')).to.not.be.null);
