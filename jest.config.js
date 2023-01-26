@@ -1,16 +1,20 @@
 module.exports = {
-  roots: ['<rootDir>/src'],
-  transform: {
-    '^.+\\.tsx?$': 'ts-jest',
-  },
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  testEnvironment: 'jsdom',
+  moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx', 'js'],
+  testEnvironment: 'node',
+  testMatch: ['**/*.test.js'],
+  testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
   testPathIgnorePatterns: ['/node_modules/'],
-  testURL: 'http://localhost',
-  globals: {
-    'ts-jest': {
-      tsConfig: 'tsconfig.jest.json',
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+  },
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80,
     },
   },
 };
