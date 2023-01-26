@@ -30,7 +30,7 @@ To run ESLint:
 npm run lint
 ```
 
-To run tests:
+To run jest:
 
 ```bash
 npm run test-unit
