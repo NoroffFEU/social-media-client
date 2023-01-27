@@ -1,31 +1,64 @@
-import { login } from "./login.js";
+import { login } from "./login";
 
-import storage from "./helpers/storage.js";
+/*
+Import from https://stackoverflow.com/questions/32911630/how-do-i-deal-with-localstorage-in-jest-tests
+*/
 
-const profile = { name: "ole", accessToken: "oleole" };
+export default class LocalStorageMock {
+  constructor() {
+    this.store = {};
+  }
 
-global.localStorage = storage;
+  clear() {
+    this.store = {};
+  }
 
-global.fetch = jest.fn(() =>
-  Promise.resolve({
-    json: () =>
-      Promise.resolve({
-        accessToken,
-        ...profile,
-      }),
+  getItem(key) {
+    return this.store[key] || null;
+  }
+
+  setItem(key, value) {
+    this.store[key] = String(value);
+  }
+
+  removeItem(key) {
+    delete this.store[key];
+  }
+}
+
+global.localStorage = new LocalStorageMock();
+
+// The login function stores a token when provided with valid credentials
+
+const mail = "test@test.test";
+const password = "abcd";
+const username = "test1";
+const token = "lksjadhfkljsdahfjlk";
+const profile = {
+  name: username,
+  email: mail,
+  accessToken: token,
+};
+
+/**
+ * A function that mimicks an approved API fetch call
+ */
+function fetchMockSuccess() {
+  return Promise.resolve({
     status: 200,
-    statusText: "OK",
     ok: true,
-  })
-);
+    statusText: "OK",
+    json: () => Promise.resolve(profile),
+  });
+}
 
 describe("login", () => {
-  it("saves a token in localstorage", async () => {
-    await login("bob", "password");
-    expect(localStorage.setItem).toHaveBeenCalledTimes(2);
-    expect(localStorage.setItem).toHaveBeenCalledWith(
-      "token",
-      profile.accessToken
+  it("stores a token in localStorage", async () => {
+    global.fetch = jest.fn(() => fetchMockSuccess());
+    const result = await login(mail, password);
+    expect(result).toEqual(profile);
+    expect(JSON.parse(global.localStorage.getItem("token"))).toEqual(
+      token
     );
   });
 });
