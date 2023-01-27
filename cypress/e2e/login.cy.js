@@ -1,4 +1,3 @@
-const name = "oBraenna91";
 const mail = "OleBra17268@stud.noroff.no";
 const password = "1234abcd";
 
@@ -17,7 +16,5 @@ describe("LogIn", () => {
     cy.get(`button[type="submit"]`).contains("Login").click();
     cy.wait(2000);
     cy.get(`button[type="button"][data-visible="loggedIn"]`)
-      //.contains("Logout")
-      //.click();
   });
 });
