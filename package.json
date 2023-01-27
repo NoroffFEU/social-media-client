@@ -6,7 +6,7 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "format": "prettier -c src/**/*.{js,scss}"
+    "format": "prettier -w src/**/*.{js,scss}"
   },
   "keywords": [],
   "author": "Noroff",
