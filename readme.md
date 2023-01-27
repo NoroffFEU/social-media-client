@@ -2,7 +2,7 @@ Workflow-CA
 for Social-media-app
 https://github.com/sayeda-chattopadhyay/social-media-client/tree/workflow
 
-Test Status Baddes
+Test Status Badges
 
 [![Automated E2E Testing](https://github.com/sayeda-chattopadhyay/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/sayeda-chattopadhyay/social-media-client/actions/workflows/e2e-test.yml)
 
@@ -38,12 +38,12 @@ Installing
 
 4. Testing
 
-- Test for both Cypress and Jest:
+Test for both Cypress and Jest:
 - npm run test
 
-- Test for Jest:
+Test for Jest(unit testing):
 - npm run test-unit
 
-- Test for Cypress:
+Test for Cypress(end to end testing):
 - npm run test-e2e ( In order to run on cypress electron browser)
 - npm run test-e2e-cli ( In order to run it on the command line)
