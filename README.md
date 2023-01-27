@@ -50,4 +50,4 @@ npm run test-e2e
 
 [![Deploy static content to Pages](https://github.com/RohitAmdahl/social-media-client-ca/actions/workflows/pages.yml/badge.svg)](https://github.com/RohitAmdahl/social-media-client-ca/actions/workflows/pages.yml)
 [![Automated Unit Testing](https://github.com/RohitAmdahl/social-media-client-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/RohitAmdahl/social-media-client-ca/actions/workflows/unit-test.yml)
-[![Automated e2e Testing](https://github.com/RohitAmdahl/social-media-client-ca/actions/workflows/Update%20e2e-test.yml/badge.svg)](https://github.com/RohitAmdahl/social-media-client-ca/blob/workflow/.github/workflows/Update%20e2e-test.yml)
+[![Automated E2E Testing](https://github.com/RohitAmdahl/social-media-client-ca/actions/workflows/Update%20e2e-test.yml/badge.svg)](https://github.com/RohitAmdahl/social-media-client-ca/blob/workflow/.github/workflows/Update%20e2e-test.yml)
