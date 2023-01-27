@@ -1,6 +1,6 @@
 describe("testing logout function", () => {
   beforeEach(() => {
-    cy.visit("https://sayeda-chattopadhyay.github.io/social-media-client/");
+    cy.visit("/");
     cy.clearLocalStorage();
     cy.wait(500);
     cy.get("#registerForm .btn-close").click();
