@@ -7,7 +7,7 @@
   "scripts": {
     "format": "prettier -w src/js/",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix",
+    
     "prepare": "husky install",
     "test": "npm run test-unit",
     "test-unit": "jest"
