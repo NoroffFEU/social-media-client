@@ -7,6 +7,10 @@ During the course in Noroff I learning the few concept and the assignment is abo
 - Project branches are protected,
 - Project readme file is updated to include new configuration information and workflow status
 
+## Page:
+
+[Social Media Page](https://rohitamdahl.github.io/social-media-client-ca/)
+
 ```bash
 npm I
 npm run build
@@ -41,10 +45,6 @@ To run cypress:
 ```bash
 npm run test-e2e
 ```
-
-## Page:
-
-[Social Media Page](https://rohitamdahl.github.io/social-media-client-ca/)
 
 ## Badges
 
