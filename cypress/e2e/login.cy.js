@@ -1,15 +1,15 @@
-/* eslint-disable no-undef */
-
+import cy from 'cypress';
 
 describe('Login Feature', () => {
   beforeEach(() => {
     cy.visit('/');
+    cy.get('[data-auth="login"]').click(); // navigate to the login form
   });
 
-  it('should not log in with invalid credentials and show an error message', () => {
-    cy.get('input[name="email"]').type('invalid@email.com');
-    cy.get('input[name="password"]').type('invalidpassword');
+  it('should allow a user to log in', () => {
+    cy.get('#username').type('Ethmane.Bilal@stud.noroff.no');
+    cy.get('#password').type('qwerldskfjls23');
     cy.get('form').submit();
-    cy.get('.error-message').should('be.visible');
+    cy.get('.welcome-message').should('be.visible');
   });
 });
