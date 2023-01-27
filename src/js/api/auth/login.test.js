@@ -4,20 +4,15 @@ import { login } from "./login";
 
 export default class LocalStorageMock {
     constructor() {
-      this.store = {};
-    }
+      this.store = {};} 
     clear() {
-      this.store = {};
-    }
+      this.store = {};}
     getItem(key) {
-      return this.store[key] || null;
-    }
+      return this.store[key] || null;}
     setItem(key, value) {
-      this.store[key] = String(value);
-    }
+      this.store[key] = String(value);}
     removeItem(key) {
-      delete this.store[key];
-    }
+      delete this.store[key];}
 }
 
 global.localStorage = new LocalStorageMock();
@@ -47,10 +42,10 @@ function fetchMockStorageSuccess() {
 describe("login", () =>{
     it("stores a token when provided with valid credentials", async () => {
         global.fetch = jest.fn(() => fetchMockStorageSuccess()); 
+        
         const result = await login (TEST_EMAIL, TEST_PASSWORD); 
+        
         expect(result).toEqual(TEST_PROFILE);
-        expect(JSON .parse(global.localStorage.getItem("token"))).toEqual(
-            TEST_TOKEN
-        );
+        expect(JSON .parse(global.localStorage.getItem("token"))).toEqual(TEST_TOKEN);
     });
 });
