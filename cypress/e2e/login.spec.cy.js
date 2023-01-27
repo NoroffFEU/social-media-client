@@ -1,16 +1,30 @@
-describe('Login form', () => {
-  it('should successfully log in with valid credentials', () => {
+describe('Login Feature', () => {
+  beforeEach(() => {
     cy.visit('/');
-    cy.get('input[name="email"]').type('valid@email.com');
-    cy.get('input[name="password"]').type('validpassword');
-    cy.get('button[type="submit"]').click();
-    cy.url().should('include', '/dashboard');
+    cy.get('[data-auth="login"]').click(); // navigate to the login form
   });
-  it('should not log in with invalid credentials and show an error message', () => {
-    cy.visit('/');
-    cy.get('input[name="email"]').type('invalid@email.com');
-    cy.get('input[name="password"]').type('invalidpassword');
-    cy.get('button[type="submit"]').click();
+
+  it('should allow a user to log in with valid credentials', () => {
+    cy.get('#username').type('valid_username');
+    cy.get('#password').type('valid_password');
+    cy.get('form').submit();
+    cy.get('.welcome-message').should('be.visible');
+  });
+
+  it('should not allow a user to log in with invalid credentials and show a message', () => {
+    cy.get('#username').type('invalid_username');
+    cy.get('#password').type('invalid_password');
+    cy.get('form').submit();
     cy.get('.error-message').should('be.visible');
+  });
+
+  it('should allow a user to log out with the logout button', () => {
+    // log in first
+    cy.get('#username').type('valid_username');
+    cy.get('#password').type('valid_password');
+    cy.get('form').submit();
+
+    cy.get('[data-auth="logout"]').click();
+    cy.get('.logout-message').should('be.visible');
   });
 });
