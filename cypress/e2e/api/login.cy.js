@@ -10,9 +10,9 @@ describe("Social Media login", () => {
       .wait(1000)
       .click();
     cy.wait(1000);
-    const email = "enirose@noroff.no";
+    const email = "peter@noroff.no";
     cy.get('input#loginEmail[name="email"]').type(`${email}`);
-    const password = "enirose123";
+    const password = "peter123";
     cy.get('input#loginPassword[name="password"]').type(`${password}`);
     cy.wait(2000);
     cy.get('button[type="submit"]').contains("Login").click({ force: true });
