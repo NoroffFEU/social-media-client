@@ -49,7 +49,8 @@ Linting is turned off by default,
 
 
 ![e2e test](https://github.com/VaNomad/social-media-client-ca/actions/workflows/e2e-test.yml/badge.svg)
-![unit-test][(https://github.com/VaNomad/social-media-client-ca/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/VaNomad/social-media-client-ca/actions/workflows/unit-test.yml/badge.svg)
+
+![unit-test](https://github.com/VaNomad/social-media-client-ca/actions/workflows/unit-test.yml/badge.svg)
 
 https://github.com/VaNomad/social-media-client-ca/actions/workflows/e2e-test.yml/badge.svg
 
