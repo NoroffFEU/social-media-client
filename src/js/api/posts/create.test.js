@@ -20,5 +20,6 @@ describe('Create post', () => {
     global.fetch = jest.fn(() => fetchSuccessful());
     const test = await createPost(data);
     expect(test).toBe(data);
+    expect(fetch).toHaveBeenCalledTimes(1);
   });
 });
