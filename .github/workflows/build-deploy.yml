@@ -7,7 +7,7 @@ on:
     types: 
       - closed
     branches:
-      - master
+      - master-test
   # Allows manual triggering of the workflow
   workflow_dispatch:
 
