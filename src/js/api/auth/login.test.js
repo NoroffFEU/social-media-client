@@ -41,4 +41,4 @@ describe("Login Test", () => {
     global.fetch = jest.fn(() => invalidLogin());
     await expect(login(USER_EMAIL, USER_PASSWORD_BAD)).rejects.toThrow("Not valid login");
   });
-})
+});

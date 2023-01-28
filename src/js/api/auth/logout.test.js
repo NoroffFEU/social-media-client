@@ -8,5 +8,5 @@ describe("Logout Test", () => {
     logout();
     expect(localStorage.getItem("token")).toEqual(null);
     expect(localStorage.getItem("profile")).toEqual(null);
-  })
-})
+  });
+});
