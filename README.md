@@ -1,10 +1,3 @@
-## Workflows 
-
-![E2e-testing](https://github.com/cdragvik/social-media-client/blob/workflow/.github/workflows/e2e-test.yml/badge.svg)
-![Unit-testing](https://github.com/cdragvik/social-media-client/blob/workflow/.github/workflows/unit-test.yml/badge.svg)
-
-
-
 ## Built with 
 - ```HTML```
 - ```JavaScript```
