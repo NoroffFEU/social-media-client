@@ -26,6 +26,7 @@
 * Clone repo:
 ```bash
 git clone --branch workflow https://github.com/VaNomad/social-media-client-ca.git
+x-github-client://openRepo/https://github.com/VaNomad/social-media-client-ca
 ```
 ```bash
 * Step-by-step bullets
