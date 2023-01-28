@@ -45,13 +45,10 @@ Linting is turned off by default,
 
 
 ## Badges
-![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=push)
 
+[![Deploy to Pages](https://github.com/VaNomad/social-media-client-ca/actions/workflows/pages.yml/badge.svg)](https://github.com/VaNomad/social-media-client-ca/actions/workflows/pages.yml)
 
 ![e2e test](https://github.com/VaNomad/social-media-client-ca/actions/workflows/e2e-test.yml/badge.svg)
 
 ![unit-test](https://github.com/VaNomad/social-media-client-ca/actions/workflows/unit-test.yml/badge.svg)
 
-https://github.com/VaNomad/social-media-client-ca/actions/workflows/e2e-test.yml/badge.svg
-
-https://github.com/VaNomad/social-media-client-ca/actions/workflows/unit-test.yml/badge.svg
