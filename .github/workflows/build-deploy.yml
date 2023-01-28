@@ -3,7 +3,9 @@ name: Deploy to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
-  push:
+  pull_request:
+    types: 
+      - closed
     branches:
       - master
   # Allows manual triggering of the workflow
