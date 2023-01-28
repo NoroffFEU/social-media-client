@@ -1,7 +1,5 @@
 # Workflow CA - Social Media Client
 
-## Badges
-
 [![Deploy to Pages](https://github.com/VaNomad/social-media-client-ca/actions/workflows/pages.yml/badge.svg)](https://github.com/VaNomad/social-media-client-ca/actions/workflows/pages.yml)
 [![e2e test](https://github.com/VaNomad/social-media-client-ca/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/VaNomad/social-media-client-ca/actions/workflows/e2e-test.yml)
 [![unit-test](https://github.com/VaNomad/social-media-client-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/VaNomad/social-media-client-ca/actions/workflows/unit-test.yml)
