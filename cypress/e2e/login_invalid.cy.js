@@ -1,9 +1,7 @@
+const USER_EMAIL = "unauthorised@noroff.no"
+const USER_PASSWORD = "12341234"
 
-const USER_NAME = "sjur"
-const USER_EMAIL = "sjur@noroff.no"
-const USER_PASSWORD = "12345678"
-
-describe("Login Test", () => {
+describe("Unauthorised User, Can not Login", () => {
   beforeEach(() => {
     cy.visit("https://vanomad.github.io/social-media-client-ca/");
     cy.wait(1000);
@@ -24,7 +22,8 @@ describe("Login Test", () => {
       .type(USER_EMAIL);
     
     cy.get("input#loginPassword[name='password']")
-      .type(USER_PASSWORD);
+      .type(USER_PASSWORD)
+      .wait(2000);
     
     cy.get("button[type='submit']")
       .should("be.visible")
@@ -33,8 +32,12 @@ describe("Login Test", () => {
     
     cy.wait(2000);
 
+    cy.on("window:alert", (Text) => {
+      expect(Text).to.eq("Either your username was not found or your password is incorrect")
+    });
+
     cy.then(() => {
-      expect(localStorage.getItem("token")).to.exist;
+      expect(window.localStorage.getItem("token")).to.be.null;
     });
     
   });
