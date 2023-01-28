@@ -8,8 +8,7 @@ describe("login with invalid credentials", () => {
         cy.clearLocalStorage();
         cy.wait(500);
     
-        cy
-.get("#registerForm button[data-auth='login']")
+        cy.get("#registerForm button[data-auth='login']")
             .contains("Login")
             .should("be.visible")
             .click();

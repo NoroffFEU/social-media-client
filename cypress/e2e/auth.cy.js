@@ -21,7 +21,7 @@ describe("login", () => {
         cy.get(`input#loginEmail[name="email"]`).type(TEST_EMAIL);
         cy.get(`input#loginPassword[name="password"]`).type(TEST_PASSWORD);
         cy.get(`button[type="submit"]`).contains("Login").click();
-        cy.wait(2000);
+        cy.wait(500);
         
         cy.get(`button[type="button"][data-visible="loggedIn"]`)
             .contains("Logout")
