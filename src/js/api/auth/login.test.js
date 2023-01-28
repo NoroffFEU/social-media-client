@@ -1,4 +1,5 @@
 import { login } from "./login";
+import { LocalStorageMock } from "../../storage/mock";
 
 const USER_NAME = "sjur";
 const USER_EMAIL = "sjur@noroff.no";
@@ -7,29 +8,6 @@ const USER_PASSWORD_BAD = "33333333"
 const USER_CRED = { name: USER_NAME, email: USER_EMAIL };
 const TEST_USER = JSON.stringify(USER_EMAIL, USER_PASSWORD);
 const USER_TOKEN = "Invalid Token";
-
-
-class LocalStorageMock {
-  constructor() {
-    this.value = {};
-  }
-   
-  getItem(key) {
-    return this.value[key] || null;
-  }
-
-  setItem(key, value) {
-    this.value[key] = String(value);
-  }
-
-  clear() {
-    this.value = {};
-  }
-
-  removeItem(key) {
-    delete this.value[key];
-  }
-}
 
 global.localStorage = new LocalStorageMock();
 
