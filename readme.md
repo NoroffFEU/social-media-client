@@ -1,5 +1,8 @@
 # Workflow CA - Social Media Client
 
+
+## Intro
+This project is a CA at NOROFF in establishing a workflow environment
 - Readme file is updated to include new configuration information and workflow status
 - Configured to run Prettier on commit
 - Configured to run ESLint on commit
