@@ -1,5 +1,5 @@
-import { login } from "./login";
-import { LocalStorageMock } from "../../storage/mock";
+import { login } from "./login.js";
+import { LocalStorageMock } from "../../storage/mock.js";
 
 const USER_NAME = "sjur";
 const USER_EMAIL = "sjur@noroff.no";

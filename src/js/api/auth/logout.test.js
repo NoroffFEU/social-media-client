@@ -1,4 +1,4 @@
-import { logout } from "./logout";
+import { logout } from "./logout.js";
 import { LocalStorageMock } from "../../storage/mock";
 
 global.localStorage = new LocalStorageMock();

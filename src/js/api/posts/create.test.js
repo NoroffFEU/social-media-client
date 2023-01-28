@@ -1,6 +1,6 @@
-import { createPost } from "./create";
+import { createPost } from "./create.js";
 
-const TITLE = "create test post";
+const TITLE = "test post";
 const TAGS = ["tag1", "tag2", "tag3"];
 const MEDIA = "https://images.pexels.com/photos/381228/pexels-photo-381228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 const BODY = "Here is my new car";
@@ -19,7 +19,7 @@ function postSuccess() {
     statusText: "OK",
     json: () => Promise.resolve(MOCKPOST),
   });
-};
+}
 
 describe("Create Post", () => {
   it("The create item function returns a valid item with a valid input", async () => {
