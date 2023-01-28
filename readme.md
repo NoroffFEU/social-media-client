@@ -25,23 +25,30 @@
 
 * Clone repo:
 ```bash
-git clone --branch workflow https://github.com/VaNomad/social-media-client-ca.git
-x-github-client://openRepo/https://github.com/VaNomad/social-media-client-ca
+git clone => branch is workflow => https://github.com/VaNomad/social-media-client-ca.git
 ```
+* Install Dependencies:
 ```bash
-* Step-by-step bullets
+npm i
 ```
-code blocks for commands
+* Run build:
+```bash
+npm run build
 ```
 
 ## Help
+* Linting:
+```bash
+Linting is turned off by default,
+=> .husky/pre-commit
+```
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
 
 ## Badges
+![example event parameter](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?event=push)
+
+https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg
+[![Deploy static content to Pages](https://github.com/VaNomad/social-media-client-ca/actions/workflows/e2e-test.yml/badge.svg)]
 
 
 https://github.com/VaNomad/social-media-client-ca/actions/workflows/e2e-test.yml/badge.svg
