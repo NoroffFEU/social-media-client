@@ -49,55 +49,46 @@ E2E TESTS:
 ## Getting Started
 
 For installation
-
-````
+```
 npm i
 ```
 
 For building SASS
-
 ```
 npm run build
 ```
 
 For building SASS and starting live server
-
 ```
 npm run start
 ```
 
 For running Prettier
-
 ```
 npm run format
 ```
 
 For running eslint
-
 ```
 npm run lint
 ```
 
 For unit tests
-
 ```
 npm run test-unit
 ```
 
 For E2E tests with Cypress
-
 ```
 npm run test-e2e
 ```
 
 For E2E tests in CLI
-
 ```
 npm run test-e2e-cli
 ```
 
 For all tests
-
 ```
 npm run test
 ```
