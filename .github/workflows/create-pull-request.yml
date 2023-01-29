@@ -2,7 +2,7 @@ on:
   push:
     branches: [main]
     
-- name: Create Pull Request
+  name: Create Pull Request
   uses: actions/create-pull-request@v2
   with:
     title: "Update code"
