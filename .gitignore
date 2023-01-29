@@ -1,2 +1,6 @@
-/node_modules
-/dist
+node_modules
+dist
+.eslintcaches
+cypress.env.json
+cypress/screenshots
+cypress/videos
