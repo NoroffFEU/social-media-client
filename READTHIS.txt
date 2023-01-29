@@ -1,0 +1,56 @@
+Cypress:
+I've had major issues with cypress. I've spent countless hours trying install and
+run it, with no success. I've googled everything I could think of, messaged groups 
+and teachers and made forum posts, and ran every command I came across in the end. 
+I've started the project over multiple times, tried adding it to other projects,
+updated npm and vscode, checked for version mismatches.. I do not know what the
+issue is.
+
+It started with missing Xvfb. After some struggle, I found a command which worked
+for the download. However, it didn't install all of it (or at least that's what it
+seemed like to me). After some research, I found a thread which told which commands 
+run for each error. So for every download of those missing parts, I got a new one, 
+until I had downloaded all of them. If my issues ended here I'd be fine with it, but 
+they didn't.
+
+I now get this error: "ERROR:gpu_memory_buffer_support_x11.cc(44)] dri3 extension 
+not supported". I can only guess what this error even means with my current knowledge.
+I've googled the entire error as well as individual parts of it, but I have to admit
+I was running low on patience after probably fiftheen hours of trying to run a single 
+command. I can't find much about xvfb in the lessons, let alone this weird error.
+
+In other projects I also get this error now: "ERROR:backend_impl.cc(2020)] Invalid 
+file version or magic". I'm not even going to try googling that.
+
+So I went on to download the desktop app. I got the files and unzipped them, which 
+took ages btw so don't do it, but I still can't actually open Cypress. At this point
+I feel like there is nothing more to try, and being stressed out no longer server a 
+purpose. If there is a right time to give up it's about now.
+
+
+Husky pre-commit:
+I've had issues with Husky pre-commit file. I made a forum post about this as well, 
+with no success. Feel free to look at it here: https://discord.com/channels/371937833252028426/1067516198922748046
+At this point I'll commit it through GitHub desktop if I can't find a quick solution 
+(which seems unlikely).
+
+
+info:
+I've spent more time on this CA than any previous CA. Yet I've done less than in all 
+of the other ones. Without Cypress and Husky, half of the assignment is impossible 
+to complete. I wish i could have spent my time focusing on writing tests instead. At 
+least I'm starting to remember commands, after running them this many times.
+
+I don't want to complain, but I do feel I should have gotten a little more teacher 
+response than what I received. Messaging one teacher should be sufficient, let alone 
+two. There's also two forum posts I made which got no teacher response. I don't want
+to send the same question to multiple teachers, as I'm sure you have enough other
+people to help, and I'd take up twice the time.
+
+I'm going to have to get this sorted out before I get my resit task for this course.
+If a teacher is able to help me with that I would really appreciate it. I already need
+to do a resit for JS2, and was really focused on passing this one. I'm quite sad about
+failing two courses in a row, but I don't know how I could have avoided it with my 
+current issues.
+
+I will commit what I have and protect branches, just for the purpose of learning
