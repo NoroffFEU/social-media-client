@@ -15,3 +15,19 @@ npm i
 npm run build
 npm run start
 ```
+
+## Testing with Cypress locally
+
+* Crate a cypress.env.json file (Remember to add it to your gitignore file)
+* Copy the code from the cypress.env.example.json provided
+* Fill in valid email and password
+* Please don't edit the example file
+
+```
+{
+  "user": {
+    "email": "",
+    "password": ""
+  }
+}
+```
