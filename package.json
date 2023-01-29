@@ -14,7 +14,7 @@
     "test:e2e": "npm run start:server && npx cypress run",
     "prettierCheck": "prettier --write \"src/**/*.js\"",
     "eslintCheck": "eslint .",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "postmerge": "npm-run-all --parallel prettierCheck eslintCheck deploy"
   },
   "keywords": [],
