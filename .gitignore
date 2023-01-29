@@ -1,2 +1,9 @@
+# Mac OS System file
+.DS_Store
+
+# Node folders to ignore
 /node_modules
 /dist
+
+# Eslint
+.eslintcache
