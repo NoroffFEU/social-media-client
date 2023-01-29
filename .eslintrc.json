@@ -5,11 +5,27 @@
     },
     "extends": "eslint:recommended",
     "overrides": [
+        {
+            "files": [
+                "src/test/baseline.test.js"
+            ],
+            "env": {
+                "jest": true
+            },
+            "plugins": [
+                "jest"
+            ],
+            "extends": [
+                "plugin:jest/recommended"
+            ],
+            "rules": {
+                "jest/prefer-expect-assertions": "off"
+            }
+        }
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "rules": {
-    }
+    "rules": {}
 }
