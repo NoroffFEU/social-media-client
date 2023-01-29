@@ -1,5 +1,5 @@
 //testuser marita@stud.noroff.no
-//testpassword Storkebab87
+//testpassword Storkebab94
 
 describe("Authentication", () => {
   beforeEach(() => {
@@ -11,15 +11,15 @@ describe("Authentication", () => {
     cy.visit("/");
     cy.wait(1500);
     cy.get(".btn-close:visible").click();
-    cy.wait(1000);
+    cy.wait(1500);
     cy.get("button[data-auth='login']:visible").click();
-    cy.wait(2000);
+    cy.wait(2500);
     cy.get("input[type='email']:visible")
       .should("exist")
       .type("marita@stud.noroff.no");
     cy.get("input[type='password']:visible")
       .should("exist")
-      .type("Storkebab87");
+      .type("Storkebab94");
     cy.get(".btn-success:visible").click();
     cy.wait(2500);
     cy.then(
@@ -41,7 +41,7 @@ describe("Authentication", () => {
       .type("notworking@notworking.com");
     cy.get("input[type='password']:visible")
       .should("exist")
-      .type("Storkebab87");
+      .type("Storkebab94");
     cy.get(".btn-success:visible").click();
     cy.wait(2500);
     cy.then(() => expect(window.localStorage.getItem("profile")).to.be.null);
