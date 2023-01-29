@@ -3,12 +3,6 @@ on:
   - pull_request
   - workflow_dispatch
 
-env:
-  EMAIL: ${{secrets.EMAIL}}  
-  PASSWORD: ${{secrets.PASSWORD}}  
-  INVALID_EMAIL: ${{secrets.INVALID EMAIL}}  
-
-
 jobs:
   run-e2e-tests:
     name: Run E2E Tests
@@ -21,3 +15,8 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: electron
+        env:
+          EMAIL: ${{secrets.EMAIL}}
+          PASSWORD: ${{secrets.PASSWORD}}
+          INVALID_EMAIL: ${{secrets.INVALID EMAIL}}
+
