@@ -3,6 +3,12 @@ on:
   - pull_request
   - workflow_dispatch
 
+env:
+  EMAIL: ${{secrets.EMAIL}}  
+  PASSWORD: ${{secrets.PASSWORD}}  
+  INVALID_EMAIL: ${{secrets.INVALID EMAIL}}  
+
+
 jobs:
   run-e2e-tests:
     name: Run E2E Tests

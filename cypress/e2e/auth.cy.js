@@ -1,7 +1,3 @@
-const EMAIL = "cypresshill@stud.noroff.no";
-const PASSWORD = "cypresshill123";
-const INVALID_EMAIL = "apeoaghpaeogh@noroff.no";
-
 describe("Authorization", () => {
   it("Logs the user in with valid credentials", () => {
     cy.clearLocalStorage();
