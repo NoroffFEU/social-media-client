@@ -15,8 +15,5 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: electron
-        env:
-          EMAIL: ${{secrets.EMAIL}}
-          PASSWORD: ${{secrets.PASSWORD}}
-          INVALID_EMAIL: ${{secrets.INVALID EMAIL}}
+
 
