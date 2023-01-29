@@ -28,7 +28,10 @@ describe("testing login function", () => {
     cy.get("#loginForm #loginEmail").type("anny.robinson@gmail.com");
     cy.get("#loginForm #loginPassword").type("12345679");
     cy.get(`#loginForm button[type="submit"]`).click();
-    cy.wait(500);
+    cy.wait(5000);
+    cy.on("window:alert", (string) => {
+      expect(string).to.equal("Please provide correct username and password");
+    });
     cy.get("#loginForm .btn-close").click();
   });
 });
