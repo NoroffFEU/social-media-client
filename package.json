@@ -11,6 +11,7 @@
     "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
     "test-e2e": "cypress open",
+    "test-e2e-report": "cypress run --reporter mochawesome",
     "test-e2e-cli": "cypress run"
   },
   "keywords": [],
