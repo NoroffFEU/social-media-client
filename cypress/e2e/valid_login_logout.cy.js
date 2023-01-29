@@ -13,5 +13,6 @@ describe('Valid_login', () => {
 describe('Valid_logout', () => {
   it('can log out with the logout button', () => {
     cy.get("button.btn.btn-outline-warning[data-auth='logout']").click();
+    cy.get(".modal-footer button[data-auth='login']").should('be.visible');
   });
 });
