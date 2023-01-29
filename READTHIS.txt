@@ -53,4 +53,4 @@ to do a resit for JS2, and was really focused on passing this one. I'm quite sad
 failing two courses in a row, but I don't know how I could have avoided it with my 
 current issues.
 
-I will commit what I have and protect branches, just for the purpose of learning
+I will commit what I have and protect branches, just for the purpose of learning.
