@@ -11,7 +11,9 @@
     "format": "prettier -w src/**/*.{js,scss}",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test-cypress": "npm run test-e2e",
+    "test-e2e": "cypress open"
   },
   "keywords": [],
   "author": "Noroff",
