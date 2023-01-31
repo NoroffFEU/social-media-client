@@ -16,7 +16,4 @@ jobs:
         with:
           browser: electron
 
-      - name: Cypress.io
-        uses: cypress-io/github-action@v4
-        with:
-          browser: electron
+     
