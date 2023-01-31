@@ -1,4 +1,4 @@
 **/*.test.js
 **/*.config.js
 /workflow-dependencies
-E2ETest.cy.js
+loginTest.cy.js
