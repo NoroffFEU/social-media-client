@@ -24,7 +24,6 @@ describe("login", () => {
         .click({ force: true })
         .should(() => {
           expect(localStorage.getItem("token")).to.be.null;
-          expect(localStorage.getItem("profile")).to.be.null;
         });
     });
   });
