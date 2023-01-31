@@ -16,4 +16,16 @@ describe("login", () => {
         expect(localStorage.getItem("token")).to.exist;
       });
   });
+
+  describe("logout", () => {
+    it("can log out using the logout button", () => {
+      cy.wait(1000);
+      cy.get(`header button[data-auth="logout"]`)
+        .click({ force: true })
+        .should(() => {
+          expect(localStorage.getItem("token")).to.be.null;
+          expect(localStorage.getItem("profile")).to.be.null;
+        });
+    });
+  });
 });

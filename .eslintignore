@@ -1,4 +1,0 @@
-**/*.test.js
-**/*.config.js
-/workflow-dependencies
-loginTest.cy.js
