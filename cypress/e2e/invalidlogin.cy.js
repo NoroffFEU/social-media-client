@@ -6,6 +6,7 @@ describe("Invalid login credentials", () => {
 
 it("cannot submit the login form with invalid credentials and is shown a message", () => {
   cy.visit("/");
+  cy.wait(1000);
   cy.get("#registerForm .btn-close").click();
   cy.get(`header button[data-bs-target="#loginModal"]`).click({ force: true });
   cy.wait(1000);
