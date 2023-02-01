@@ -19,9 +19,9 @@ We learn a lot how we figure out things on our own and the process step by step 
 <strong><pre>npm install</pre></strong>
 
 ### Testing
-[![Unit Testing with Jest](https://github.com/Khintin/social-media-client/actions/workflows/unit-test.yml/badge.svg?branch=workflow&event=push)](https://github.com/Khintin/social-media-client/actions/workflows/unit-test.yml)
+[![Unit Testing with Jest](https://github.com/Khintin/social-media-client/actions/workflows/unit-test.yml/badge.svg?branch=workflow&event=pull_request)](https://github.com/Khintin/social-media-client/actions/workflows/unit-test.yml)
 
-[![End to End Testing with Cypress](https://github.com/Khintin/social-media-client/actions/workflows/end-to-end-testing-with-cypress.yml/badge.svg?branch=workflow&event=push)](https://github.com/Khintin/social-media-client/actions/workflows/end-to-end-testing-with-cypress.yml)
+[![End to End Testing with Cypress](https://github.com/Khintin/social-media-client/actions/workflows/end-to-end-testing-with-cypress.yml/badge.svg?branch=workflow&event=pull_request)](https://github.com/Khintin/social-media-client/actions/workflows/end-to-end-testing-with-cypress.yml)
 
 [![Deploy static content to Pages](https://github.com/Khintin/social-media-client/actions/workflows/pages.yml/badge.svg?branch=workflow&event=push)](https://github.com/Khintin/social-media-client/actions/workflows/pages.yml)
 
