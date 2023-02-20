@@ -1,13 +1,15 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "node": true
     },
     "extends": "eslint:recommended",
     "overrides": [
         {
             "files": [
-                "**/*.cy.js"
+                "**/*.cy.js",
+                "cypress.config.js"
             ],
             "env": {
                 "cypress/globals": true
