@@ -27,26 +27,7 @@ E2E TESTS:
 [![Automated Unit Testing](https://github.com/MaritaMalvinsdatter/social-media-client-workflow/actions/workflows/unit-test.yml/badge.svg)](https://github.com/MaritaMalvinsdatter/social-media-client-workflow/actions/workflows/unit-test.yml)
 [![Automated E2E Testing](https://github.com/MaritaMalvinsdatter/social-media-client-workflow/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/MaritaMalvinsdatter/social-media-client-workflow/actions/workflows/e2e-test.yml)
 
-## Installation:
 
-First clone the repo: 
-
-```bash
-git clone git@github.com:MaritaMalvinsdatter/social-media-client-workflow.git
-```
-
-Then run the following commands in the terminal: 
-
-```bash
-npm I
-npm run build
-```
-
-For SCSS/SASS:
-
-```bash
-npm run start
-```
 
 To run Prettier: 
 
