@@ -9,7 +9,7 @@ const PROFILE = {
     accessToken: ACCESSTOKEN,
 };
 
-globals.localStorage = LocalStorageMock;
+global.localStorage = new LocalStorageMock();
 
 function validCredentials() {
     return Promise.resolve({
@@ -20,13 +20,14 @@ function validCredentials() {
     });
 }
 
+
 describe("login", () => {
     it("logs in user with email and password, and stores a token in localstorage", async () => {
-        globals.localStorage.clear();
-        globals.fetch = jest.fn(() => validCredentials());
+        global.localStorage.clear();
+        global.fetch = jest.fn(() => validCredentials());
         await login(Credentials.email, Credentials.password);
 
-        expect(JSON.parse(globals.localStorage.getItem("token"))).toBe(ACCESSTOKEN);
-        expect(JSON.parse(globals.localStorage.getItem("profile"))).toEqual(PROFILE);
+        expect(JSON.parse(global.localStorage.getItem("token"))).toBe(ACCESSTOKEN);
+        expect(JSON.parse(global.localStorage.getItem("profile"))).toEqual(PROFILE);
     });
 });
