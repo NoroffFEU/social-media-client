@@ -35,5 +35,13 @@
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ingsy/social-media-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ingsy/social-media-client/issues"
+  },
+  "homepage": "https://github.com/Ingsy/social-media-client#readme"
 }
