@@ -30,6 +30,6 @@
     },
     "rules": {
         "cypress/no-unnecessary-waiting": "off",
-        "no-unused-vars": "warn"
+        "no-unused-vars": "error"
     }
 }
