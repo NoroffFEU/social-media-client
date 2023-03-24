@@ -15,30 +15,22 @@ describe("valid login", () => {
         cy.wait(1000);
 
         cy.get("#loginModal", { timeout: 3000 }).should("be.visible");
-        cy.get("input#loginEmail", { timeout: 4000 }).type(Cypress.env("user_name"), { delay: 200 });
-        cy.get("input#loginPassword", { timeout: 4000 }).type(Cypress.env("user_password"), { delay: 200 });
+        cy.get("input#loginEmail.form-control", { timeout: 4000 }).type("ingsy@hotmail.com", { delay: 200 });
+        cy.get("input#loginPassword.form-control", { timeout: 4000 }).type("invalidPassword", { delay: 200 });
 
         cy.get("#loginModal .modal-footer button[type='submit']", { timeout: 4000 })
-            .should("be.visible")
+            .should("not.be.visible")
             .click();
 
         cy.intercept(
-            "https://ingsy.github.io/social-media-client/?view=profile&name=Erik")
-            .as("profileView");
-        cy.wait("@profileView")
+            "POST",
+            "https://nf-api.onrender.com/api/v1/social/auth/login",
+            {
+                statuscode: 401,
+            }
+        ).as("deniedLogin");
 
-        cy.get("header button[data-auth='logout']", { timeout: 4000 })
-            .should("be.visible")
-            .click();
-
-        cy.wait(1000);
-        cy.get("registerModal", { timeout: 4000 }).should("be.visible");
+        cy.wait("@deniedLogin");
 
     })
 })
-
-
-
-
-
-

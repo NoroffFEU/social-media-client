@@ -118,6 +118,7 @@
               class="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
+              data-cy="submit"
             ></button>
           </div>
           <div class="modal-body">
@@ -165,7 +166,13 @@
             >
               Register
             </button>
-            <button type="submit" class="btn btn-success">Login</button>
+            <button
+              data-bs-target="#loginModal"
+              type="submit"
+              class="btn btn-success"
+            >
+              Login
+            </button>
           </div>
         </form>
       </div>
@@ -254,7 +261,6 @@
               type="button"
               class="btn btn-outline-success"
               data-bs-toggle="modal"
-              data-bs-target="#loginModal"
               data-auth="login"
               data-visible="loggedOut"
             >
