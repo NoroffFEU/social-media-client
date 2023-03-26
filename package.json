@@ -11,7 +11,7 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.2",
+    "live-server": "^1.1.0",
     "sass": "^1.54.8"
   },
   "dependencies": {
