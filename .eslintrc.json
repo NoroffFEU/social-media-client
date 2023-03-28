@@ -6,18 +6,12 @@
   "extends": "eslint:recommended",
   "overrides": [
     {
-      "files": [
-        "**/*.test.js"
-      ],
+      "files": ["**/*.test.js"],
       "env": {
         "jest": true
       },
-      "plugins": [
-        "jest"
-      ],
-      "extends": [
-        "plugin:jest/recommended"
-      ],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
       "rules": {
         "jest/prefer-expect-assertions": "off"
       }
