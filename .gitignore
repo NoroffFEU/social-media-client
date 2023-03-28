@@ -1,2 +1,41 @@
-/node_modules
-/dist
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Build files
+dist/
+build/
+
+# Test files
+coverage/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.idea/
+*.iml
+
+# Cypress
+cypress/videos
+cypress/screenshots
+
+# Cache files
+.cache
+
+# Test coverage files
+coverage
+
+# VSCode
+.vscode/*
+
+# System files
+.DS_Store
+Thumbs.db
+node_modules

@@ -1,0 +1,12 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["plugin:cypress/recommended"],
+  "env": {
+    "mocha": true,
+    "browser": true
+  },
+  "plugins": ["cypress"],
+  "rules": {
+    "no-unused-expressions": 0
+  }
+}
