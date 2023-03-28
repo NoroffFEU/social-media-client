@@ -1,7 +1,6 @@
 ## Workflow Course Assignment - Noroff
 
-[![Deployed to Github Pages](https://github.com/mariarolstadmartinez/social-media-client/actions/workflows/pages.yml/badge.svg)]
-(https://github.com/mariarolstadmartinez/social-media-client/actions/workflows/pages.yml)
+[![Deployed to Github Pages](https://github.com/mariarolstadmartinez/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/mariarolstadmartinez/social-media-client/actions/workflows/pages.ymll)
 
 ## Task 
 
