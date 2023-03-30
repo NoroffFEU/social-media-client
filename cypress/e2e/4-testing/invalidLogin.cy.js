@@ -19,7 +19,7 @@ describe("valid login", () => {
         cy.get("input#loginPassword.form-control", { timeout: 4000 }).type("invalidPassword", { delay: 200 });
 
         cy.get("#loginModal .modal-footer button[type='submit']", { timeout: 4000 })
-            .should("not.be.visible")
+            .should("be.visible")
             .click();
 
         cy.intercept(
@@ -31,6 +31,7 @@ describe("valid login", () => {
         ).as("deniedLogin");
 
         cy.wait("@deniedLogin");
+
 
     })
 })
