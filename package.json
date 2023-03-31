@@ -4,14 +4,15 @@
   "description": "Test",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test-e2e",
+    "test": "npm run test-e2e && npm run test-unit",
+    "test-unit": "jest",
     "test-e2e": "cypress open",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/js/",
     "lint": "eslint src/**/*.js",
-    "prepare": "husky install"
-
+    "prepare": "husky install",
+    "test-e2e-cli": "cypress run"
   },
   "keywords": [],
   "author": "Noroff",
