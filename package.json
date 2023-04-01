@@ -8,6 +8,7 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "npm run test-unit",
     "test-unit": "jest",
+    "test-e2e": "cypress open",
     "precommit": "lint-staged"
   },
   "keywords": [],
