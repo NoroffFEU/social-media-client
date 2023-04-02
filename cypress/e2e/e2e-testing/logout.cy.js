@@ -7,13 +7,13 @@ describe("User log out functionality", () => {
     it("successfully logs out the user", () => {
       cy.visit("/");
       cy.wait(1000);
-      cy.get(".btn-close:visible").click();
+      cy.get(".btn-close:visible").click({ multiple: true });
       cy.wait(1000);
       cy.get("button[data-auth='login']:visible").click();
       cy.wait(1000);
       cy.get("input[type='email']:visible")
         .should("exist")
-        .type("");
+        .type("user@example.com");
       cy.get("input[type='password']:visible").should("exist").type("12345678");
       cy.get(".btn-success:visible").click();
       cy.wait(3000);
