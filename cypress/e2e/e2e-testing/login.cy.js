@@ -32,7 +32,7 @@ describe("user authentication", () => {
       cy.wait(1000);
       cy.get("input[type='email']:visible")
         .should("be.visible")
-        .type("m.slagsvold@gmail.com");
+        .type("maria@gnoroff.no");
       cy.get("input[type='password']:visible").should("be.visible").type("1234");
       cy.get(".btn-success:visible").click({ multiple: true });
       cy.wait(3000);
