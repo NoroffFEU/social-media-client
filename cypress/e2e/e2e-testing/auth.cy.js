@@ -10,12 +10,12 @@ describe("authentication process", () => {
     cy.get(".btn-outline-success:visible").contains("Login").click();
     cy.wait(1000);
     cy.get("h5.modal-title").contains("Login");
-    cy.get("input#loginEmail").type("john.doe@noroff.no");
+    cy.get("input#loginEmail").type("maria@example.com");
     cy.get("input#loginPassword").type("SecurePassword123!");
     cy.get(".btn-success").contains("Login").click();
     cy.wait(2000);
     cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
-    cy.get(".profile-name").contains("John");
+    cy.get(".profile-name").contains("Maria");
     cy.url().should("include", "profile");
   });
 
@@ -38,7 +38,7 @@ describe("authentication process", () => {
     cy.get(".btn-outline-success:visible").contains("Login").click();
     cy.wait(1000);
     cy.get("h5.modal-title").contains("Login");
-    cy.get("input#loginEmail").type("john.doe@noroff.no");
+    cy.get("input#loginEmail").type("maria@example.com");
     cy.get("input#loginPassword").type("WrongPassword123!");
     cy.get(".btn-success").contains("Login").click();
     cy.url().should("not.include", "profile");
@@ -51,12 +51,12 @@ describe("authentication process", () => {
     cy.get(".btn-outline-success:visible").contains("Login").click();
     cy.wait(1000);
     cy.get("h5.modal-title").contains("Login");
-    cy.get("input#loginEmail").type("john.doe@noroff.no");
+    cy.get("input#loginEmail").type("maria@example.com");
     cy.get("input#loginPassword").type("SecurePassword123!");
     cy.get(".btn-success").contains("Login").click();
     cy.wait(2000);
     cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
-    cy.get(".profile-name").contains("John");
+    cy.get(".profile-name").contains("Maria");
     cy.url().should("include", "profile");
     cy.get(".btn-outline-warning").contains("Logout").click();
     cy.wait(500);
