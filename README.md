@@ -8,12 +8,12 @@
 # Configure 
 
 1. Clone the repository
-1. Run `npm install` to install all dependencies
-1. Create a new branch called workflow.
-1. Configure the project with eslint, prettier and commit hooks.
-1. Configure the project with GitHub Actions for build/deploy.
-1. Configure the project for Jest and Cypress.
-1. Create tests with Jest and Cypress
-1. Create a Pull Request from workflow into the default branch.
+2. Run `npm install` to install all dependencies
+3. Create a new branch called workflow.
+4. Configure the project with eslint, prettier and commit hooks.
+5. Configure the project with GitHub Actions for build/deploy.
+6. Configure the project for Jest and Cypress.
+7. Create tests with Jest and Cypress
+8. Create a Pull Request from workflow into the default branch.
 
 
