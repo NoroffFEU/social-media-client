@@ -1,22 +1,27 @@
-name: E2E Tests
-
+name: Automated E2E Testing
 on:
-  push:
-    branches:
-      - main
+  - pull_request
+  - workflow_dispatch
+
+env:
+  EMAIL: ${{ secrets.TEST_EMAIL }}
+  PASSWORD: ${{ secrets.TEST_PASSWORD }}
 
 jobs:
-  e2e-tests:
+  run-e2e-tests:
+    name: Run E2E Tests
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
+      - name: Checkout under $GITHUB_WORKSPACE
+        uses: actions/checkout@main
       - name: Install Dependencies
-        run: npm install
-
-      - name: Run E2E Tests
-        run: npm run cy:run
-        env:
-          CYPRESS_BASE_URL: http://localhost:3000
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        run: npm i
+      - name: Build SASS
+        run: npm run build
+      - name: Run Cypress Tests with Electron
+        uses: cypress-io/github-action@v4
+        with:
+          start: npm run dev
+          wait-on: "http://127.0.0.1:8080/"
+          browser: electron
