@@ -1,25 +1,22 @@
 name: Automated E2E Testing
-on:
+on: 
   - pull_request
   - workflow_dispatch
-
-env:
-  EMAIL: ${{ secrets.TEST_EMAIL }}
-  PASSWORD: ${{ secrets.TEST_PASSWORD }}
 
 jobs:
   run-e2e-tests:
     name: Run E2E Tests
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@main
-      - name: Install Dependencies
-        run: npm i
-      - name: Build SASS
+        
+      - name: Instal dependensies
+        run: npm install
+      - name: build scss
         run: npm run build
-      - name: Run Cypress Tests with Electron
+
+      - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
         with:
           start: npm run dev
