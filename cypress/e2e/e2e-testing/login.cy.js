@@ -15,7 +15,7 @@ describe("user authentication", () => {
         .should("be.visible")
         .type("m.slagsvold@gmail.com");
       cy.get("input[type='password']:visible").should("be.visible").type("12345678");
-      cy.get(".btn-success:visible").click();
+      cy.get(".btn-success:visible").click({ multiple: true });
       cy.wait(3000);
       cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
       cy.then(
@@ -34,7 +34,7 @@ describe("user authentication", () => {
         .should("be.visible")
         .type("m.slagsvold@gmail.com");
       cy.get("input[type='password']:visible").should("be.visible").type("1234");
-      cy.get(".btn-success:visible").click();
+      cy.get(".btn-success:visible").click({ multiple: true });
       cy.wait(3000);
       cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
       cy.then(() => expect(window.localStorage.getItem("profile")).to.be.null);
