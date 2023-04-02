@@ -2,6 +2,8 @@
 
 [![Deployed to Github Pages](https://github.com/mariarolstadmartinez/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/mariarolstadmartinez/social-media-client/actions/workflows/pages.ymll)
 
+[![Automated Unit Testing](https://github.com/mariarolstadmartinez/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/mariarolstadmartinez/social-media-client/actions/workflows/unit-test.yml)
+
 ## Task 
 
 1. Create a new branch called workflow.
