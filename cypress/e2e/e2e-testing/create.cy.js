@@ -3,9 +3,11 @@ describe('Authentication', () => {
       cy.clearLocalStorage();
       cy.visit('/');
       cy.wait(1000);
-      cy.get('.btn-close:visible', { multiple: true }).click({ force: true });
+      cy.get('.btn-close:visible', { multiple: true })
+        .click({ force: true });
       cy.wait(500);
-      cy.get("button[data-auth='login']:visible").click({ force: true });
+      cy.get("button[data-auth='login']:visible")
+        .click({ force: true });
       cy.wait(1000);
       cy.get("input[type='email']:visible")
         .should('exist')
@@ -13,7 +15,8 @@ describe('Authentication', () => {
       cy.get("input[type='password']:visible")
         .should('exist')
         .type('SecurePassword123!');
-      cy.get('.btn-success:visible').click({ force: true });
+      cy.get('.btn-success:visible')
+        .click({ force: true });
       cy.wait(3500);
       cy.visit('/');
     });
@@ -35,7 +38,6 @@ describe('Authentication', () => {
       cy.get("form#postForm input[name='media']")
         .should('be.visible')
         .type('https://picsum.photos/id/237/200/300');
-  
       cy.get("form#postForm textarea[name='body']")
         .should('be.visible')
         .type('Test cypress');
