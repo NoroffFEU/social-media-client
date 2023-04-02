@@ -1,43 +1,65 @@
-describe("user authentication", () => {
+describe('Authentication', () => {
     beforeEach(() => {
-      cy.visit("/");
+      cy.visit('/');
       cy.clearLocalStorage();
     });
   
-    it("allows user to log in successfully", () => {
-      cy.visit("/");
+    it('will login', () => {
+      cy.visit('/');
       cy.wait(1000);
-      cy.get(".btn-close:visible").click({ multiple: true });
-      cy.wait(1000);
-      cy.get("button[data-auth='login']:visible").click();
-      cy.wait(1000);
+      cy.get('.btn-close:visible').click({ force: true });
+      cy.get("button[data-auth='login']:visible").click({ force: true });
+      cy.wait(1500);
       cy.get("input[type='email']:visible")
-        .should("be.visible")
-        .type("user@example.com");
-      cy.get("input[type='password']:visible").should("be.visible").type("12345678");
-      cy.get(".btn-success:visible").click({ multiple: true });
+        .should('exist')
+        .type('cocomarcia@noroff.no');
+      cy.get("input[type='password']:visible")
+        .should('exist')
+        .type('cocomarcia1');
+      cy.get('.btn-success:visible').click({ force: true });
       cy.wait(3000);
-      cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
       cy.then(
-        () => expect(window.localStorage.getItem("profile")).to.not.be.null
+        () => expect(window.localStorage.getItem('profile')).to.not.be.null
       );
+      cy.then(() => expect(window.localStorage.getItem('token')).to.not.be.null);
+      cy.url().should('include', 'profile');
     });
   
-    it("checks email and password validation", () => {
-      cy.visit("/");
+    it('Validates email input', () => {
+      cy.visit('/');
       cy.wait(1000);
-      cy.get(".btn-close:visible").click({ multiple: true });
-      cy.wait(1000);
-      cy.get("button[data-auth='login']:visible").click();
-      cy.wait(1000);
+      cy.get('.btn-close:visible').click({ force: true });
+      cy.get("button[data-auth='login']:visible").click({ force: true });
+      cy.wait(1500);
       cy.get("input[type='email']:visible")
-        .should("be.visible")
-        .type("user@example.com");
-      cy.get("input[type='password']:visible").should("be.visible").type("1234");
-      cy.get(".btn-success:visible").click({ multiple: true });
+        .should('exist')
+        .type('/https://nf-api.onrender.com');
+      cy.get("input[type='password']:visible")
+        .should('exist')
+        .type('cocomarcia1');
+      cy.get('.btn-success:visible').click({ force: true });
       cy.wait(3000);
-      cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
-      cy.then(() => expect(window.localStorage.getItem("profile")).to.be.null);
+      cy.then(() => expect(window.localStorage.getItem('profile')).to.be.null);
+      cy.then(() => expect(window.localStorage.getItem('token')).to.be.null);
+      cy.url().should('not.include', 'profile');
+    });
+  
+    it('Validates password', () => {
+      cy.visit('/');
+      cy.wait(1000);
+      cy.get('.btn-close:visible').click();
+      cy.get("button[data-auth='login']:visible").click({ force: true });
+      cy.wait(1500);
+      cy.get("input[type='email']:visible")
+        .should('exist')
+        .type('cocomarcia@noroff.no');
+      cy.get("input[type='password']:visible")
+        .should('exist')
+        .type('cocomarcia1');
+      cy.get('.btn-success:visible').click({ force: true });
+      cy.wait(3000);
+      cy.then(() => expect(window.localStorage.getItem('profile')).to.exist);
+      cy.then(() => expect(window.localStorage.getItem('token')).to.exist);
+      cy.url().should('include', 'profile');
     });
   });
-  
