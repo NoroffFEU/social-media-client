@@ -15,7 +15,7 @@ describe("User log out functionality", () => {
         .should("exist")
         .type("user@example.com");
       cy.get("input[type='password']:visible").should("exist").type("12345678");
-      cy.get(".btn-success:visible").click();
+      cy.get(".btn-success:visible").click({ multiple: true });
       cy.wait(3000);
       cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
       cy.then(
@@ -26,4 +26,3 @@ describe("User log out functionality", () => {
       cy.then(() => expect(window.localStorage.getItem("profile")).to.be.null);
     });
   });
-  
