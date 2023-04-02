@@ -10,12 +10,12 @@ describe("auth functions", () => {
     cy.get(".btn-outline-success:visible").contains("Login").click();
     cy.wait(1000);
     cy.get("h5.modal-title").contains("Login");
-    cy.get("input#loginEmail").type("kptest1@noroff.no");
-    cy.get("input#loginPassword").type("Passord1234*");
+    cy.get("input#loginEmail").type("marmar@noroff.no");
+    cy.get("input#loginPassword").type("Passord12345678*");
     cy.get(".btn-success").contains("Login").click();
     cy.wait(2000);
     cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
-    cy.get(".profile-name").contains("Kp");
+    cy.get(".profile-name").contains("Maya");
     cy.url().should("include", "profile");
   });
 
@@ -25,8 +25,8 @@ describe("auth functions", () => {
     cy.get(".btn-outline-success:visible").contains("Login").click();
     cy.wait(1000);
     cy.get("h5.modal-title").contains("Login");
-    cy.get("input#loginEmail").type("kptest1@hotmail.no");
-    cy.get("input#loginPassword").type("Passord1234*");
+    cy.get("input#loginEmail").type("m.slagsvold@gmail.com");
+    cy.get("input#loginPassword").type("Passord12345678*");
     cy.get(".btn-success").contains("Login").click();
     cy.url().should("not.include", "profile");
     cy.then(() => expect(window.localStorage.getItem("token")).to.be.null);
@@ -38,8 +38,8 @@ describe("auth functions", () => {
     cy.get(".btn-outline-success:visible").contains("Login").click();
     cy.wait(1000);
     cy.get("h5.modal-title").contains("Login");
-    cy.get("input#loginEmail").type("kptest1@noroff.no");
-    cy.get("input#loginPassword").type("Passor");
+    cy.get("input#loginEmail").type("marmar@noroff.no");
+    cy.get("input#loginPassword").type("Passord12345678");
     cy.get(".btn-success").contains("Login").click();
     cy.url().should("not.include", "profile");
     cy.then(() => expect(window.localStorage.getItem("token")).to.be.null);
@@ -51,12 +51,12 @@ describe("auth functions", () => {
     cy.get(".btn-outline-success:visible").contains("Login").click();
     cy.wait(1000);
     cy.get("h5.modal-title").contains("Login");
-    cy.get("input#loginEmail").type("kptest1@noroff.no");
-    cy.get("input#loginPassword").type("Passord1234*");
+    cy.get("input#loginEmail").type("marmar@noroff.no");
+    cy.get("input#loginPassword").type("Passord12345678*");
     cy.get(".btn-success").contains("Login").click();
     cy.wait(2000);
     cy.then(() => expect(window.localStorage.getItem("token")).to.not.be.null);
-    cy.get(".profile-name").contains("Kp");
+    cy.get(".profile-name").contains("Maya");
     cy.url().should("include", "profile");
     cy.get(".btn-outline-warning").contains("Logout").click();
     cy.wait(500);
