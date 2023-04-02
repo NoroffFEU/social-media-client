@@ -13,7 +13,7 @@ describe("user authentication", () => {
       cy.wait(1000);
       cy.get("input[type='email']:visible")
         .should("be.visible")
-        .type("m.slagsvold@gmail.com");
+        .type("user@example.com");
       cy.get("input[type='password']:visible").should("be.visible").type("12345678");
       cy.get(".btn-success:visible").click({ multiple: true });
       cy.wait(3000);
@@ -32,7 +32,7 @@ describe("user authentication", () => {
       cy.wait(1000);
       cy.get("input[type='email']:visible")
         .should("be.visible")
-        .type("maria@gnoroff.no");
+        .type("user@example.com");
       cy.get("input[type='password']:visible").should("be.visible").type("1234");
       cy.get(".btn-success:visible").click({ multiple: true });
       cy.wait(3000);
