@@ -3,7 +3,7 @@ describe('Authentication', () => {
       cy.clearLocalStorage();
       cy.visit('/');
       cy.wait(1000);
-      cy.get('.btn-close:visible').click({ force: true });
+      cy.get('.btn-close:visible', { multiple: true }).click({ force: true });
       cy.wait(500);
       cy.get("button[data-auth='login']:visible").click({ force: true });
       cy.wait(1000);
