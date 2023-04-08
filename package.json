@@ -4,9 +4,9 @@
   "description": "Test",
   "main": "index.js",
   "scripts": {
-    "build": "bundler build index.html",
-    "watch": "bundler build --watch index.html",
-    "start": "bundler index.html --opp & sass --watch src/scss:dist/css"
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "vite preview & sass --watch src/scss:public/css"
   },
   "keywords": [],
   "author": "Noroff",
