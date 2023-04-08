@@ -6,7 +6,7 @@ module.exports = {
     "extends": "eslint:recommended",
     "overrides": [
         {
-            "files": ["**/*test.js"],
+            "files": ["**/*index.js"],
             "env": {"jest": true},
             "plugins": ["jest"],
             "extends": ["plugin:jest/recommenden"],
