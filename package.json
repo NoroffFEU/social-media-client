@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "watch": "vite preview & sass --watch src/scss:public/css"
+    "watch": "vite preview & sass --watch src/scss:public/css",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix" 
   },
   "keywords": [],
   "author": "Noroff",
