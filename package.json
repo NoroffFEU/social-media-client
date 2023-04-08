@@ -8,13 +8,14 @@
     "build": "vite build",
     "watch": "vite preview & sass --watch src/scss:public/css",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix" 
+    "lint-fix": "eslint src/**/*.js --cache --fix"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.38.0",
+    "prettier": "^2.8.7",
     "sass": "^1.54.8",
     "vite": "^4.2.1"
   },
