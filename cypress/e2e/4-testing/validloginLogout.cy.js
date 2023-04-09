@@ -1,11 +1,7 @@
 describe("testing login function", () => {
-
-    beforeEach(() => {
-        cy.visit("https://ingsy.github.io/social-media-client/");
-
-
-        it("user can log in with valid credentials", () => {
-
+    it("user can log in with valid credentials", () => {
+        beforeEach(() => {
+            cy.visit("https://ingsy.github.io/social-media-client/");
             cy.clearLocalStorage();
             cy.wait(1000);
             cy.get("#registerForm .btn-close").click();
