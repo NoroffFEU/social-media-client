@@ -1,0 +1,1 @@
+Local storage mock: https://stackoverflow.com/questions/32911630/how-do-i-deal-with-localstorage-in-jest-tests
