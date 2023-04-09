@@ -1,44 +1,44 @@
-describe("valid login", () => {
-    it("user can log in with valid credentials", () => {
-        cy.visit("https://github.com/Ingsy/social-media-client.git");
+describe("testing login function", () => {
 
-        cy.wait(1000);
-
-        cy.get(".modal-footer button[data-bs-target='#loginModal']", {
-            timeout: 3000,
-        })
-
-            .should("be.visible")
-            .click();
-        cy.get("#registerModal", { timeout: 3000 }).should("not.be.visible");
-
-        cy.wait(1000);
-
-        cy.get("#loginModal", { timeout: 3000 }).should("be.visible");
-        cy.get("input#loginEmail", { timeout: 4000 }).type(Cypress.env("user_name"), { delay: 200 });
-        cy.get("input#loginPassword", { timeout: 4000 }).type(Cypress.env("user_password"), { delay: 200 });
-
-        cy.get("#loginModal .modal-footer button[type='submit']", { timeout: 4000 })
-            .should("be.visible")
-            .click();
-
-        cy.intercept(
-            "https://ingsy.github.io/social-media-client/?view=profile&name=Erik")
-            .as("profileView");
-        cy.wait("@profileView")
-
-        cy.get("header button[data-auth='logout']", { timeout: 4000 })
-            .should("be.visible")
-            .click();
-
-        cy.wait(1000);
-        cy.get("registerModal", { timeout: 4000 }).should("be.visible");
-
-    })
-})
+    beforeEach(() => {
+        cy.visit("https://ingsy.github.io/social-media-client/");
 
 
+        it("user can log in with valid credentials", () => {
 
+            cy.clearLocalStorage();
+            cy.wait(1000);
+            cy.get("#registerForm .btn-close").click();
+            cy.get('header button[data-auth="login"]').click();
+            cy.wait(1000);
 
+        });
 
+        it("can log in with valid credentials", () => {
+            cy.get("#loginForm #loginEmail").type("erik@noroff.no");
+            cy.get("#loginForm #loginPassword").type("erik1234");
+            cy.get('#loginForm button[type="submit"]').click();
+            cy.url()
+                .should("include", "/?view=profile")
+                .then(() => {
+                    expect(localStorage.getItem("token")).to.exist;
+                    expect(localStorage.getItem("profile")).to.exist;
+                });
+            cy.wait(1000);
+            cy.get('header button[data-auth="logout"]').click();
+            cy.get("#registerForm .btn-close").click();
+        });
 
+        //invalid login 
+
+        it("cannot log in with invalid credentials", () => {
+
+            cy.get("#loginForm #loginEmail").type("erik@hotmail.com");
+            cy.get("#loginForm #loginPassword").type("12345678");
+            cy.get('#loginForm button[type="submit"]').click();
+            cy.wait(1000);
+            cy.get("#loginForm .btn-close").click();
+        });
+
+    });
+});
