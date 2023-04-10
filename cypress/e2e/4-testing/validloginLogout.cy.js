@@ -24,17 +24,4 @@ describe("testing login function", () => {
         cy.get("#registerForm .btn-close").click();
     });
 
-    //invalid login 
-
-    it("cannot log in with invalid credentials", () => {
-
-        cy.get("#loginForm #loginEmail").type("erik@hotmail.com");
-        cy.get("#loginForm #loginPassword").type("12345678");
-        cy.get('#loginForm button[type="submit"]').click();
-        cy.wait(1000);
-        cy.get("#loginForm .btn-close").click();
-    });
-
-
-
 });

@@ -1,37 +1,23 @@
-describe("valid login", () => {
-    it("user can log in with valid credentials", () => {
-        cy.visit("https://github.com/Ingsy/social-media-client.git");
-
+describe("testing invalidlogin function", () => {
+    beforeEach(() => {
+        cy.clearLocalStorage();
+        cy.visit("https://ingsy.github.io/social-media-client/");
+        cy.wait(1000);
+        cy.get("#registerForm .btn-close").click();
+        cy.get('header button[data-auth="login"]').click();
         cy.wait(1000);
 
-        cy.get(".modal-footer button[data-bs-target='#loginModal']", {
-            timeout: 3000,
-        })
+    });
 
-            .should("be.visible")
-            .click();
-        cy.get("#registerModal", { timeout: 3000 }).should("not.be.visible");
+    it("cannot log in with invalid credentials", () => {
 
+        cy.get("#loginForm #loginEmail").type("erik@hotmail.com");
+        cy.get("#loginForm #loginPassword").type("12345678");
+        cy.get('#loginForm button[type="submit"]').click();
         cy.wait(1000);
-
-        cy.get("#loginModal", { timeout: 3000 }).should("be.visible");
-        cy.get("input#loginEmail.form-control", { timeout: 4000 }).type("ingsy@hotmail.com", { delay: 200 });
-        cy.get("input#loginPassword.form-control", { timeout: 4000 }).type("invalidPassword", { delay: 200 });
-
-        cy.get("#loginModal .modal-footer button[type='submit']", { timeout: 4000 })
-            .should("be.visible")
-            .click();
-
-        cy.intercept(
-            "POST",
-            "https://nf-api.onrender.com/api/v1/social/auth/login",
-            {
-                statuscode: 401,
-            }
-        ).as("deniedLogin");
-
-        cy.wait("@deniedLogin");
+        cy.get("#loginForm .btn-close").click();
+    });
 
 
-    })
-})
+
+});
