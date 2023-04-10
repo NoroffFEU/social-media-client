@@ -1,3 +1,4 @@
+/* global global */
 import * as storage from "./index.js";
 
 class LocalStorageMock {
@@ -22,7 +23,7 @@ class LocalStorageMock {
   }
 }
 
-window.localStorage = new LocalStorageMock();
+global.localStorage = new LocalStorageMock();
 
 describe("storage", () => {
   it("Save an array to storage", () => {
