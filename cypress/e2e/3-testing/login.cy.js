@@ -1,5 +1,5 @@
 const testEmail = "OleKeiM123456@stud.noroff.no";
-const testProfileName = "OleKei46";
+
 const testPassword = "-Hello123";
 
 describe("Login test", () => {

@@ -1,6 +1,5 @@
-const testEmail = "OleKeiM1233333@stud.noroff.no";
-const testProfileName = "OleKei46";
-const testPassword = "-Hello123333333";
+const testEmail = "OleKeiM123423232326@stud.noroff.no";
+const testPassword = "-Hello123";
 
 describe("Failed login test", () => {
   it("logs user in with invalid credentials", () => {
