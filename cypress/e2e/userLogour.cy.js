@@ -18,5 +18,8 @@ describe("Noroff SoMe application: User logout", () => {
 
   it("can logout", () => {
     cy.get("button").contains("Logout").click();
+    cy.wait(1000).should(() => {
+      expect(localStorage.token).eq(undefined);
+    });
   });
 });
