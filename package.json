@@ -1,12 +1,17 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.0.0",
-  "description": "Test",
+  "version": "1.0.7",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "prepare": "husky install"
+    "build": "sass src/scss:dist/css",
+    "format": "prettier -w src/**/*.js",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "prepare": "husky install",
+    "test-unit": "jest",
+    "test-e2e": "cypress open"
   },
   "keywords": [],
   "author": "Noroff",
@@ -14,11 +19,15 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
-    "eslint": "^8.38.0",
+    "cypress": "^12.9.0",
+    "cypress-dotenv": "^2.0.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.37.0",
+    "eslint-plugin-cypress": "^2.13.2",
     "eslint-plugin-jest": "^27.2.1",
     "husky": "^8.0.3",
     "jest": "^29.2.0",
-    "lint-staged": "^13.2.1",
+    "lint-staged": "^13.2.0",
     "live-server": "^1.2.2",
     "prettier": "^2.8.7",
     "sass": "^1.54.8"
