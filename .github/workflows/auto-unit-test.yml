@@ -2,9 +2,10 @@ name: auto-unit-test
 on:
   - pull_request
   - workflow_dispatch
+
 jobs:
-  run-unit-test:
-    name: Run unit test
+  auto-unit-test:
+    name: Auto unit test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout under $GITHUB_WORKSPACE
