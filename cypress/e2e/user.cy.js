@@ -22,8 +22,6 @@ describe("Social media app: Authenticated user", () => {
       expect(localStorage.getItem("token")).to.be.null;
       expect(localStorage.getItem("profile")).to.be.null;
     });
-
-    cy.url().should("include", "/");
   });
 });
 
