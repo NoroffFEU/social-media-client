@@ -27,5 +27,9 @@
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
+  },
+  "globals": {
+    "Cypress": true,
+    "cy": true
   }
 }

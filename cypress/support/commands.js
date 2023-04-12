@@ -1,25 +1,23 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add("login", (email, password) => {
+  cy.get("#loginForm input[type='email']")
+    .as("emailInput")
+    .click()
+    .wait(200)
+    .type(email)
+    .should("have.value", email);
+
+  cy.get("#loginForm input[type='password']")
+    .as("passwordInput")
+    .should("be.visible");
+  cy.get("@passwordInput").click();
+  cy.get("@passwordInput")
+    .type(password, { delay: 100 })
+    .should("have.value", password)
+    .invoke("val")
+    .should("have.length", 8);
+
+  cy.get("#loginForm > .modal-footer > .btn-success")
+    .as("loginButton")
+    .should("be.visible")
+    .click();
+});
