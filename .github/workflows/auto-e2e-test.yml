@@ -6,11 +6,9 @@ on:
     - workflow_dispatch
 
 jobs:
-  
   run-e2e-test:
     name: Run e2e test
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@workflow
