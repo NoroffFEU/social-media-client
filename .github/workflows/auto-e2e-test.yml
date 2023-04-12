@@ -1,0 +1,21 @@
+
+name: auto-unit-test
+
+on:
+    - pull_request
+    - workflow_dispatch
+
+jobs:
+  
+  run-e2e-test:
+    name: Run e2e test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout under $GITHUB_WORKSPACE
+        uses: actions/checkout@workflow
+
+       - name: run cypress tests with electron
+        uses: cypress-io/github-action@v4
+        with:
+          browser: electron

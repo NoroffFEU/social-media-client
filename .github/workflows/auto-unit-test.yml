@@ -1,0 +1,27 @@
+
+name: auto-unit-test
+
+on:
+    - pull_request
+    - workflow_dispatch
+
+jobs:
+  
+  run-unit-test:
+    name: Run unit test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout under $GITHUB_WORKSPACE
+        uses: actions/checkout@workflow
+
+       - name: setup NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: install all dependencies
+        run: npm i
+
+    - name: run test
+      run: npm run test-unit
