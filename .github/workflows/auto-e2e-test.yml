@@ -1,17 +1,15 @@
-name: auto-e2e-test
-
-on:
+name: Automated E2E Testing
+on: 
   - pull_request
-  - workflow_dispatch:
+  - workflow_dispatch
 
 jobs:
-  auto-e2e-test:
-    name: Auto e2e test
+  run-e2e-tests:
+    name: Run E2E Tests
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout under $GITHUB_WORKSPACE
-        uses: actions/checkout@workflow
+        uses: actions/checkout@main
 
       - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
