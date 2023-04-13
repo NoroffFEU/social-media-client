@@ -10,7 +10,7 @@
 
 ## Description
 
-This project was forked from ...
+This project was forked from https://github.com/NoroffFEU/social-media-client
 esLint, Prettier and commit hooks
 Jest and Cypress
 Unit testing with Jest
