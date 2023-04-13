@@ -2,7 +2,7 @@ name: auto-e2e-test
 
 on:
   - pull_request
-  - workflow_dispatch
+  - workflow_dispatch:
 
 jobs:
   auto-e2e-test:
