@@ -11,7 +11,7 @@ jobs:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@workflow
 
-       - name: setup NodeJS
+      - name: setup NodeJS
         uses: actions/setup-node@v1
         with:
           node-version: 16
@@ -19,5 +19,5 @@ jobs:
       - name: install all dependencies
         run: npm i
 
-    - name: run test
-      run: npm run test-unit
+      - name: run test
+        run: npm run test-unit
