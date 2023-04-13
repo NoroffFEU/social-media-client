@@ -2,12 +2,13 @@ name: auto-unit-test
 on:
   - pull_request
   - workflow_dispatch
-  
+
 jobs:
   auto-e2e-test:
     name: Auto e2e test
     runs-on: ubuntu-latest
     steps:
+    
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@workflow
 
