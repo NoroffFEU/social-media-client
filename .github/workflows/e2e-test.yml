@@ -13,8 +13,7 @@ jobs:
 
       - name: Set environment variables
         run: |
-          echo "${{ secrets.EMAIL }}" > cypress.env.json
-          echo "${{ secrets.PASSWORD }}" >> cypress.env.json
+          echo '{ "EMAIL": "'${{ secrets.EMAIL }}'", "PASSWORD": "'${{ secrets.PASSWORD }}'" }' > cypress.env.json
 
       - name: run cypress tests with electron
         uses: cypress-io/github-action@v4
