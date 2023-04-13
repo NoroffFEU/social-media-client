@@ -11,8 +11,7 @@
 ## Description
 
 This project was forked from https://github.com/NoroffFEU/social-media-client
-esLint, Prettier and commit hooks
-Jest and Cypress
+it is configured with esLint, Prettier and commit hooks
 Unit testing with Jest
 e2e-testing with cypress
 Automated testing with Github Actions
@@ -20,6 +19,5 @@ Automated testing with Github Actions
 ## Built with
 
 - Javascript
-- Sass
-- Bootstrap
+- css
 - HTML
