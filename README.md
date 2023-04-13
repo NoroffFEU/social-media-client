@@ -8,7 +8,8 @@ In this CA you are tasked with improving the quality of an existing application 
 
 [![Automated Unit Testing](https://github.com/Edinanorge/social-media-client/actions/workflows/unit-test.yml/badge.svg?branch=workflow)](https://github.com/Edinanorge/social-media-client/actions/workflows/unit-test.yml)
 
-[![Automated Unit Testing](https://github.com/Edinanorge/social-media-client/actions/workflows/unit-test.yml/badge.svg?branch=workflow)](https://github.com/Edinanorge/social-media-client/actions/workflows/unit-test.yml)
+[![Automated E2E Testing](https://github.com/Edinanorge/social-media-client/actions/workflows/e2e-test.yml/badge.svg?branch=workflow)](https://github.com/Edinanorge/social-media-client/actions/workflows/e2e-test.yml)
+
 
 [![Code Review](https://github.com/Edinanorge/social-media-client/actions/workflows/gpt.yml/badge.svg)](https://github.com/Edinanorge/social-media-client/actions/workflows/gpt.yml)
 
