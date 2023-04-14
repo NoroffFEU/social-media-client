@@ -13,3 +13,4 @@ I need to add ESLint, Cypress, Prettier. Also need to configure ESLint to unit-t
 1. Installed and set up the base by using npm i.
 2. Created a branch called eslint to install and merge eslint into the workflow branch.
 3. Installed and setup Eslint.
+4. Installed and setup Cypress.
