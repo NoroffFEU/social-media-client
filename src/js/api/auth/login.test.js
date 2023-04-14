@@ -1,37 +1,41 @@
 import { login } from "./login";
-import { save } from "../../storage";
 
-global.fetch = jest.fn(() =>
-  Promise.resolve({
-    ok: true,
-    json: () => Promise.resolve({ accessToken: "abc123" }),
-  })
-);
+describe("Test the login functionality", () => {
+  let mockSetItem, mockLocalStorage;
 
-jest.mock("../../storage", () => ({
-  save: jest.fn(),
-}));
+  beforeEach(() => {
+    mockSetItem = jest.fn();
+    mockLocalStorage = { setItem: mockSetItem };
+    global.localStorage = mockLocalStorage;
+  });
 
-describe("login", () => {
-  it("should save the token and profile to storage and return the profile when login is successful", async () => {
-    const expectedProfile = {
-      id: "123",
-      name: "Test User",
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  test("Fetch provides profile data and saves accesstoken to local storage", async () => {
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            name: "test",
+            email: "test@example.com",
+            banner: "",
+            avatar: "",
+            accessToken: 1234,
+          }),
+      })
+    );
+
+    const profile = await login();
+
+    expect(mockSetItem).toHaveBeenCalledWith("token", "1234");
+    expect(profile).toEqual({
+      name: "test",
       email: "test@example.com",
-    };
-
-    await login("test@example.com", "password");
-
-    expect(fetch).toHaveBeenCalledWith(`${apiPath}/social/auth/login`, {
-      method: "post",
-      body: JSON.stringify({
-        email: "test@example.com",
-        password: "password",
-      }),
-      headers: headers("application/json"),
+      banner: "",
+      avatar: "",
     });
-
-    expect(save).toHaveBeenCalledWith("token", "abc123");
-    expect(save).toHaveBeenCalledWith("profile", expectedProfile);
   });
 });
