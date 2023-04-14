@@ -1,13 +1,13 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jest": true
     },
     "extends": "eslint:recommended",
     "overrides": [
         {
         "files": ["**/*.test.js"],
-        "env": { "jest": true },
         "plugins": ["jest"],
         "extends": ["plugin:jest/recommended"],
         "rules": { "jest/prefer-expect-assertions": "off" }
