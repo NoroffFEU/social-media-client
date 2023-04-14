@@ -3,11 +3,11 @@ export const localStorageMock = (function () {
 
   return {
     getItem(key) {
-      return store[key];
+      return store[key] || null;
     },
 
     setItem(key, value) {
-      store[key] = value;
+      store[key] = String(value);
     },
 
     clear() {

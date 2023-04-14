@@ -14,6 +14,9 @@ function fetchSuccess() {
 }
 
 describe("login", () => {
+  beforeEach(() => {
+    localStorage.clear();
+  });
   it("fetches and stores an access token in localStorage", async () => {
     global.fetch = jest.fn(() => fetchSuccess());
     const response = await login("email", "password");
