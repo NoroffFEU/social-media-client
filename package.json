@@ -9,7 +9,9 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "lint": "eslint src/**/*.js",
     "test": "npm run test-unit",
-    "test-unit": "jest"
+    "test-unit": "jest",
+    "test-cypress": "npm run test-e2e",
+    "test-e2e": "cypress open"
   },
   "keywords": [],
   "author": "Noroff",
