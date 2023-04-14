@@ -17,3 +17,8 @@ I need to add ESLint, Cypress, Prettier. Also need to configure ESLint to unit-t
 5. Created and ran two unit-tests:
     - Login function fetches and stores a token in the browser storage.
     - The logout function clears the token from the browser storage.
+6. Created and ran 4 e2e-tests:
+    - login.cy.js: The user can use correct userdredentials to log into the website and view their profile page.
+    - logout.cy.js: The user can first log in correctly and then logout using the logout button.
+    - login_fail_email.cy.js: The user tries to login with an email that is not allowed, then they recieve an error message in the browser that they need to enter an email from noroff.no.
+    - login_fail_password.cy.js: The user tries to login with correct email but wrong password. There isn't currently an error message shown to the user in the browser, but the test recieves an error message saying that either the email or password are incorrect.
