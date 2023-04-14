@@ -14,3 +14,6 @@ I need to add ESLint, Cypress, Prettier. Also need to configure ESLint to unit-t
 2. Created a branch called eslint to install and merge eslint into the workflow branch.
 3. Installed and setup Eslint.
 4. Installed and setup Cypress.
+5. Created and ran two unit-tests:
+    - Login function fetches and stores a token in the browser storage.
+    - The logout function clears the token from the browser storage.
