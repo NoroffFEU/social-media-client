@@ -9,7 +9,6 @@
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/js/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix"
-    "format": "prettier -w src/**/*.js"
   },
   "keywords": [],
   "author": "Noroff",
