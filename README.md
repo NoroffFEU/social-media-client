@@ -8,14 +8,24 @@
 
 ### Table of Contents
 
-1. Prettier Configurations.
-2. ESLint Configurations.
-3. Branch Protection.
-4. Jest Unit Testing.
-5. Cypress E2E Testing.
-6. Github Actions Workflow.
+1. Getting Started.
+2. Prettier Configurations.
+3. ESLint Configurations.
+4. Branch Protection.
+5. Jest Unit Testing.
+6. Cypress E2E Testing.
+7. Github Actions Workflow.
 
-## Prettier
+## 1. Getting Started
+
+1. Clone the repo through github website or CLI command:
+```
+git clone https://github.com/DrRuski/social-media-client.git
+```
+2. Run ```npm install``` to install all dependencies.
+3. Run ```npm start``` to start the development server.
+
+## 2. Prettier
 
 1. Configurations for VSCode workspace settings to format with prettier on save ```.vscode``` > ```settings.json```
 
@@ -46,7 +56,7 @@
   }
   ```
 
-## ESLint
+## 3. ESLint
 
 ```.eslintrc.json``` file configurations include
 
@@ -83,7 +93,7 @@
   }
   ```
 
-## Branch Protection
+## 4. Branch Protection
 
 Repo's default (master) branch is protected with the following rules
 
@@ -92,7 +102,7 @@ Repo's default (master) branch is protected with the following rules
 3. Require branches to be up to date before merging
 4. Do not allow bypassing the above settings 
 
-## Jest Unit Testing
+## 5. Jest Unit Testing
 
 ### Babel
 For the jest unit testing to work with the current coding syntax this project incorporates the use of ```Babel``` dependency:
@@ -129,7 +139,7 @@ clears the access token key and value from storage when called.
 Overall, the test ensures that the logout function behaves correctly and clears the appropriate data from storage.
 ```
 
-## Cypress E2E Testing
+## 6. Cypress E2E Testing
 
 ### Cypress.env.json
 
@@ -182,7 +192,7 @@ It then waits for 1 second and checks if the token has been removed from the loc
 confirming that the user has been logged out.
 ```
 
-## Github Actions Workflow
+## 7. Github Actions Workflow
 
 The repo has three (3) active workflow actions that do the following:
 
