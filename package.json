@@ -1,17 +1,45 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Test",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "lint": "eslint src/**/*.js",
+    "prepare": "husky install",
+    "test": "npm run test-unit && npm run test-e2e-cli",
+    "test-unit": "jest",
+    "test-e2e": "cypress open",
+    "test-e2e-cli": "cypress run"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
+    "cypress": "^12.9.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-cypress": "^2.13.2",
+    "eslint-plugin-jest": "^27.2.1",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "lint-staged": "^13.2.0",
     "live-server": "^1.2.2",
+    "mock-local-storage": "^1.1.23",
+    "prettier": "^2.8.7",
     "sass": "^1.54.8"
   },
   "dependencies": {
