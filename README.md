@@ -26,3 +26,11 @@ Automated testing with Github Actions
 - css
 - HTML
 - Bootstrap
+
+## Install
+
+- npm install
+
+## Run tests
+
+- npm run test
