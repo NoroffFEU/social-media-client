@@ -4,6 +4,8 @@
   "description": "Test",
   "main": "index.js",
   "scripts": {
+    "test": "npm run test-unit",
+    "test-unit": "jest",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
   },
