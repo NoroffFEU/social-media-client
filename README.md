@@ -8,6 +8,10 @@
 
 [![Automated E2E Testing](https://github.com/Ingsy/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Ingsy/social-media-client/actions/workflows/e2e-test.yml)
 
+## Deploy
+
+[![Deploy static content to Pages](https://github.com/Ingsy/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/Ingsy/social-media-client/actions/workflows/pages.yml)
+
 ## Description
 
 This project was forked from https://github.com/NoroffFEU/social-media-client
@@ -21,3 +25,4 @@ Automated testing with Github Actions
 - Javascript
 - css
 - HTML
+- Bootstrap
