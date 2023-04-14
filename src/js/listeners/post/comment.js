@@ -13,7 +13,7 @@ export async function commentListener(event) {
   } catch {
     return alert('There was a problem posting your comment');
   }
-  
+
   form.remove();
   location.reload()
 }
