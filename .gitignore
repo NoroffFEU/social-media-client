@@ -1,3 +1,5 @@
 /node_modules
 /dist
 .eslintcache
+es6.test.js
+es6.js
