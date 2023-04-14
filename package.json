@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
+    "format": "prettier -w src/js/**/*.js",
     "start": "sass --watch src/scss:dist/css & live-server",
     "lint": "eslint src/**/*.js",
     "test": "npm run test-unit",
