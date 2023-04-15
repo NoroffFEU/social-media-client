@@ -22,3 +22,6 @@ I need to add ESLint, Cypress, Prettier. Also need to configure ESLint to unit-t
     - logout.cy.js: The user can first log in correctly and then logout using the logout button.
     - login_fail_email.cy.js: The user tries to login with an email that is not allowed, then they recieve an error message in the browser that they need to enter an email from noroff.no.
     - login_fail_password.cy.js: The user tries to login with correct email but wrong password. There isn't currently an error message shown to the user in the browser, but the test recieves an error message saying that either the email or password are incorrect.
+
+
+    Need Peer Feedback
