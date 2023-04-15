@@ -6,13 +6,17 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "npm run test-e2e",
+    "test-e2e": "cypress open"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "cypress": "^12.9.0",
     "eslint": "^8.38.0",
+    "eslint-plugin-cypress": "^2.13.2",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.1",
     "live-server": "^1.2.2",
