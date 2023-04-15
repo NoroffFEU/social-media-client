@@ -1,6 +1,8 @@
 # Workflows CA
 
 ![Unit Testing](https://github.com/OleMartinKeis/social-media-client-OMK-workflows-CA/actions/workflows/unit-test.yml/badge.svg)
+![E2E Testing](https://github.com/OleMartinKeis/social-media-client-OMK-workflows-CA/actions/workflows/e2e-test.yml/badge.svg)
+![Deploy static content to pages](https://github.com/OleMartinKeis/social-media-client-OMK-workflows-CA/actions/workflows/pages.yml/badge.svg)
 
 ## Getting started
 
