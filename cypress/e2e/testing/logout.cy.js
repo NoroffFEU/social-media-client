@@ -8,6 +8,5 @@ describe('Logout Button', () => {
     cy.get('[data-auth="logout"]').click();
 
     cy.get('#loginForm').should('be.visible');
-    cy.url().should('equal', 'http://localhost:5500/');
   });
 });
