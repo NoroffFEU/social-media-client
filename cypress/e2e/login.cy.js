@@ -7,7 +7,7 @@ describe("The login process", () => {
   beforeEach(() => {
     cy.clearLocalStorage();
     cy.visit("/");
-    cy.wait(500);
+    cy.wait(800);
   });
   it("lets the user log in and access their profile", () => {
     //   move from default modal "Create Profile" to "Log in"
@@ -15,7 +15,7 @@ describe("The login process", () => {
       .contains("Login")
       .should("be.visible")
       .click({ force: true });
-    cy.wait(500);
+    cy.wait(800);
     // input login credentials
     cy.get("input#loginEmail").should("exist").type(testEmail);
     cy.get("input#loginPassword").should("exist").type(testPassword);

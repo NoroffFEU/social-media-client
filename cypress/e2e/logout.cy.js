@@ -14,11 +14,11 @@ describe("The logout process", () => {
       .contains("Login")
       .should("be.visible")
       .click({ force: true });
-    cy.wait(500);
+    cy.wait(800);
     // input login credentials
     cy.get("input#loginEmail").should("exist").type(testEmail);
     cy.get("input#loginPassword").should("exist").type(testPassword);
-    cy.wait(400);
+    cy.wait(800);
   });
   it("lets the user log out of their profile", () => {
     // click the login button
@@ -39,6 +39,7 @@ describe("The logout process", () => {
       .contains("Logout")
       .should("be.visible")
       .click();
+    cy.wait(800);
     //   check that token has been removed from localStorage and that user is back on the register form page
     cy.then(() => cy.expect(localStorage.getItem("token")).to.be.null);
     cy.get("#registerModal").should("be.visible");
