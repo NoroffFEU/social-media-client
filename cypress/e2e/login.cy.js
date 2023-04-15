@@ -23,7 +23,9 @@ describe("The login process", () => {
       .contains("Login")
       .should("be.visible")
       .click();
-    cy.wait(500);
+    // check that user has token in localStorage
+    cy.wait(1000);
+    cy.then(() => cy.expect(localStorage.getItem("token")).to.not.be.null); //sometimes this fails but will work if you run it again
     // check that user is logged in and can see their profile page
     cy.get("header button[type=button]")
       .contains("Logout")
