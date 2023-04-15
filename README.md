@@ -30,3 +30,4 @@ I need to add ESLint, Cypress, Prettier. Also need to configure ESLint to unit-t
     "test": "node src/**/*.js"
     },
    }
+8. Installed and setup lint-staged and Husky. I then removed: "*.{js,css,md}": "prettier --write" from the package.json file so it doesn't run Prettier.
