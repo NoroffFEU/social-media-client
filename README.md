@@ -1,5 +1,7 @@
 # Workflows CA
 
+![Unit Testing](https://github.com/OleMartinKeis/social-media-client-OMK-workflows-CA/actions/workflows/unit-test.yml/badge.svg)
+
 ## Getting started
 
 1. Clone the repo through CLI or github.
