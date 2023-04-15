@@ -1,5 +1,5 @@
 /node_modules
 /dist
+/cypress
+/husky
 .eslintcache
-es6.test.js
-es6.js

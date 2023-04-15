@@ -11,6 +11,7 @@ Tasked with testing a social media plattform
     "eslint-plugin-cypress": "^2.13.2",
     "husky": "^8.0.3",
     "jest": "^29.2.0",
+    "lint-staged": "^13.2.1",
     "live-server": "^1.2.2",
     "prettier": "^2.8.7",
     "pretty-quick": "^3.1.3",
