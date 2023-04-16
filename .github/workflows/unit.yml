@@ -5,8 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-unit-tests:
-    name: Run Unit Tests
+name: Run Automated Unit Tests
     runs-on: ubuntu-latest
 
     steps:
