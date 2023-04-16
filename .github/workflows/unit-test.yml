@@ -1,7 +1,7 @@
 name: Unit Testing
 on: 
   - pull_request
-  - workflow
+  - workflow_dispatch
 
 jobs:
   run-unit-tests:
