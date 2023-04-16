@@ -31,3 +31,5 @@ I need to add ESLint, Cypress, Prettier. Also need to configure ESLint to unit-t
     },
    }
 8. Installed and setup lint-staged and Husky. I then removed: "*.{js,css,md}": "prettier --write" from the package.json file so it doesn't run Prettier.
+9. Added a defauolt formatter file in .vscode/settings.json. This is where the projects default formatting like format on save etc are set. 
+   For this CA perttier: format on    save is set to false.
