@@ -17,31 +17,8 @@ of code before merging and deplyoing, with actions and yaml.files.
  
  
  
- <h2>Contributing</h2>
- 
- 
- If you would like to contribute to the project:
- 
- 1. Clone the repo to your own computer.
- 
- 1. Run npm to install the dependencies.
+<h2>License</h2>
 
- 
- 
- <h2>Contact info</h2>
- 
- 
- https://www.linkedin.com/in/monika-sæle-2a80918a/
- 
- 
- <h2>License</h2>
- 
- https://opensource.org/license/isc-license-txt/
- 
- 
- 
- 
- 
- 
- 
- 
+Please see the LICENSE file for details.
+
+For more information, please contact Monika Sæle at https://www.linkedin.com/in/monika-sæle-2a80918a/.
