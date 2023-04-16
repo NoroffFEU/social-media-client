@@ -33,3 +33,15 @@ I need to add ESLint, Cypress, Prettier. Also need to configure ESLint to unit-t
 8. Installed and setup lint-staged and Husky. I then removed: "*.{js,css,md}": "prettier --write" from the package.json file so it doesn't run Prettier.
 9. Added a defauolt formatter file in .vscode/settings.json. This is where the projects default formatting like format on save etc are set. 
    For this CA perttier: format on    save is set to false.
+10. Created workflows for automatic testing of unit-tests with eslint and e2e-testing with cypress on PR to the master branch.
+    Also added status badges for these two tests in the README.md file.
+
+PS! Note:
+    When I started this CA I struggled to make things work. In this workflow branch I now see that steps 7-10 should really be at the start before I added or ran tests.
+    
+
+# Status Badges
+
+[![Automated Unit Testing](https://github.com/Yggdrass/social-media-client-workflowCA/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Yggdrass/social-media-client-workflowCA/actions/workflows/unit-test.yml)
+
+[![Automated E2E Testing](https://github.com/Yggdrass/social-media-client-workflowCA/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Yggdrass/social-media-client-workflowCA/actions/workflows/e2e-test.yml)
