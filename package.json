@@ -7,8 +7,10 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "prepare": "husky install",
-    "test": "npm run test-e2e",
-    "test-e2e": "cypress open"
+    "test": "npm run test-e2e-cli && npm run test-unit",
+    "test-e2e": "cypress open",
+    "test-unit": "jest",
+    "test-e2e-cli": "cypress run"
   },
   "keywords": [],
   "author": "Noroff",
@@ -17,9 +19,11 @@
     "cypress": "^12.9.0",
     "eslint": "^8.38.0",
     "eslint-plugin-cypress": "^2.13.2",
+    "eslint-plugin-jest": "^27.2.1",
     "husky": "^8.0.0",
+    "jest": "^29.2.0",
     "lint-staged": "^13.2.1",
-    "live-server": "^1.2.2",
+    "live-server": "^1.1.0",
     "sass": "^1.54.8"
   },
   "dependencies": {
