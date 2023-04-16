@@ -6,9 +6,11 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "test": "npm run test-unit",
+    "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
-    "format": "prettier -w src/js/joker.js",
+    "test-e2e": "cypress open",
+    "test-e2e-cli": "cypress run",
+    "format": "prettier -w *.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
     "prepare": "husky install"
@@ -33,14 +35,14 @@
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3",
-    "node-localstorage": "^2.2.1",
-    "one-liner-joke": "^1.2.2"
-  },
+    "node-localstorage": "^2.2.1"
+ },
   "type": "module",
   "lint-staged": {
     "*.js": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --fix",
+      "eslint --cache --fix"
     ],
     "*.html": [
       "prettier --write"
