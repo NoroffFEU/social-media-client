@@ -13,7 +13,10 @@ You can list a the tech stack that you've used over here
 
 - [Sass](https://sass-lang.com/)
 - [Bootstrap](https://getbootstrap.com/)
-- 
+- [Eslint](https://eslint.org/)
+- [Cypress](https://www.cypress.io/)
+- [husky](https://typicode.github.io/husky/#/)
+- [vite](https://vitejs.dev/)
 
 ## Getting Started
 
@@ -30,8 +33,33 @@ git clone git@github.com:nexnic/Snug.git
 
 2. Install the dependencies:
 
+Sass
 ```
-npm install sass --dev
+npm i -D sass 
+```
+
+Eslint 
+```
+npm i -D eslint 
+```
+
+```
+npx eslint --init
+```
+
+Cypress
+```
+npm i -D cypress eslint-plugin-cypress
+```
+
+hysky
+```
+npm i -D husky 
+```
+
+vite
+```
+npm i -D vite
 ```
 
 ### Running
@@ -40,11 +68,23 @@ Here is where you detail how to run the app. It typically involves the commands 
 
 To run the app, run the following commands:
 
-```bash
-npm run watch
+Sass and vite 
 
-npm run build 
 ```
+$ npm run build
+```
+
+Web server 
+
+```
+$ npm run dev
+```
+
+Cypress
+```
+$ npm run test-cy 
+```
+
 
 ## Contributing
 
