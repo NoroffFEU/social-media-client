@@ -8,12 +8,13 @@
     "build": "vite build",
     "watch": "vite preview & sass --watch src/scss:public/css",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "lint-fix": "eslint src/**/*.js --cache --fix --max-warnings=0",
     "test": "npm run test-unti",
     "test-unit": "jest",
     "test-cy": "npm run test-e2e",
     "test-cy-e2e": "cypress open",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "keywords": [],
   "author": "Noroff",
