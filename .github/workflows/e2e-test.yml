@@ -1,0 +1,17 @@
+name: Run E2E Testing
+on:
+  - pull_request
+  - workflow_dispatch
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Write the cypress.env.json file
+        run: echo '${{ secrets.CYPRESS_ENV }}' > cypress.env.json
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
