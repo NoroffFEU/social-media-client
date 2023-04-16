@@ -21,7 +21,3 @@ describe("Login to Noroff SMC", () => {
         cy.get("#loginForm").submit();
     });
 });
-
-// .invoke('val').should('not.be.empty')
-
-//cy.get('#registerModal').contain('Login').click()

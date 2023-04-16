@@ -19,9 +19,7 @@ describe("Login to Noroff SMC", () => {
         // Checking if input is null
         cy.get("input#loginPassword").invoke("val").should("not.be.empty");
         cy.get("#loginForm").submit();
+        cy.wait(500);
+        cy.contains(".btn", "Logout").click();
     });
 });
-
-// .invoke('val').should('not.be.empty')
-
-//cy.get('#registerModal').contain('Login').click()
