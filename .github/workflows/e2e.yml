@@ -1,7 +1,4 @@
-name: Automated E2E Testing
-on: 
-  - pull_request
-  - workflow_dispatch
+name: Automated End-to-End Testing
 
 jobs:
   run-e2e-tests:
