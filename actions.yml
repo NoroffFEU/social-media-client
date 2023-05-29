@@ -1,0 +1,20 @@
+# This is a basic yaml file for performing an action on pushing and merging the workflow branch
+# into the Noroff social media client master branch
+
+name: Workflow Course Assignment
+
+on:
+  # Trigger a workflow Action on pushing and merging workflow branch into the master branch
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+  # Allow for running the action manually in the actions tab on GitHub
+  workflow_dispatch:
+
+# Workflow jobs to be created for the project
+jobs:
+  build:
+    # Type of runner
+    runs-on: ubuntu-latest
