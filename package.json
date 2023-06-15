@@ -12,6 +12,7 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.42.0",
     "live-server": "^1.1.0",
     "prettier": "^2.8.8",
     "sass": "^1.63.4"
