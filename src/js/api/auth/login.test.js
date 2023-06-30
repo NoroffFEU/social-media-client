@@ -1,44 +1,51 @@
 import { login } from './login';
 import { LocalStorageMock } from '../../storage/localStorageMock';
 
-global.localStorage = new LocalStorageMock();
-
-const validEmail = 'email@stud.noroff.no';
-const invalidEmail = 'email@something.no';
-const password = '12345678';
-
-const userProfile = {
-  name: 'Jane Doe',
+const validEmail = 'student@stud.noroff.no';
+const validpassword = 'password123';
+const fakeApiResponse = {
+  name: 'User Name',
   email: validEmail,
-  accessToken: 12345,
+  accessToken: 'sometoken28289jhjh',
 };
+
+global.localStorage = new LocalStorageMock();
 
 function fetchSuccess() {
   return Promise.resolve({
     ok: true,
-    status: 201,
-    statusText: 'Successful login',
-    json: () => Promise.resolve(userProfile),
-  });
-}
-function fetchFailure() {
-  return Promise.resolve({
-    ok: false,
-    status: 404,
-    statusText: 'Invalid credentials',
+    status: 200,
+    statusText: 'Login successful',
+    json: () => Promise.resolve(fakeApiResponse),
   });
 }
 
-describe('login', () => {
-  it('Returns a valid token when provided with valid credentials', async () => {
-    global.fetch = jest.fn(() => fetchSuccess());
-    const data = await login(validEmail, password);
-    expect(data).toEqual(userProfile);
+/**
+ * A mock fetch function that fetches unsuccessfully
+ */
+function fetchInvalidLogin() {
+  return Promise.resolve({
+    ok: false,
+    status: 401,
+    statusText: 'Unauthorized',
   });
-  it('Returns an error when provided with invalid credentials', async () => {
-    global.fetch = jest.fn(() => fetchFailure());
-    await expect(login(invalidEmail, password)).rejects.toThrow(
-      'Invalid credentials'
+}
+
+/**
+ * It either return a valid response object and store token in local storage or it throws error message
+ */
+describe('login', () => {
+  it('Returns a valid access token in local storage and valid response object', async () => {
+    global.fetch = jest.fn(() => fetchSuccess());
+    const expectedToken = fakeApiResponse.accessToken;
+    const response = await login(validEmail, validpassword);
+    expect(JSON.parse(localStorage.getItem('token'))).toEqual(expectedToken);
+    expect(response).toEqual(fakeApiResponse);
+  });
+  it('Throws error message on invalid login', async () => {
+    global.fetch = jest.fn(() => fetchInvalidLogin());
+    await expect(login(validEmail, validpassword)).rejects.toThrow(
+      'Unauthorized'
     );
   });
 });
