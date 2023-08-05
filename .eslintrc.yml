@@ -3,6 +3,14 @@ env:
   commonjs: true
   es2021: true
 extends: eslint:recommended
+overrides:
+  - files: ["**/*.test.js"]
+    env:
+      jest: true
+    plugins: ["jest"]
+    extends: ["plugin:jest/recommended"]
+    rules:
+      jest/prefer-expect-assertions: "off"
 parserOptions:
   ecmaVersion: 2021
   sourceType: module
