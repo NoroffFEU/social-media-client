@@ -7,13 +7,14 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier --write . && eslint --fix .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test-e2e": "cypress open"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.2.0",
+    "cypress": "^12.17.3",
     "eslint": "^8.45.0",
     "eslint-plugin-cypress": "^2.13.3",
     "husky": "^8.0.3",
