@@ -10,11 +10,11 @@
 
 ## Dependencies
 
-Styling: sass, bootstrap-dark-5
-Development: live-server
-Testing: jest, cypress
-Linting & Formatting: eslint, prettier
-Others: husky, lint-staged
+- Styling: sass, bootstrap-dark-5
+- Development: live-server
+- Testing: jest, cypress
+- Linting & Formatting: eslint, prettier
+- Others: husky, lint-staged
 
 ## Testing
 
@@ -24,10 +24,10 @@ npm run test-unit
 Run end-to-end tests:
 npm run test-e2e
 
-## To lint your JavaScript files:
+## To lint JavaScript files:
 
 npm run lint
 
-## To format your code:
+## To format code:
 
 npm run format
