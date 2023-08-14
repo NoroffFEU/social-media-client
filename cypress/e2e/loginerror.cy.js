@@ -8,8 +8,10 @@ describe("Invalid Login Attempt", () => {
 
   it("should not allow login with invalid credentials and show an error", () => {
     cy.visit(loginPageUrl);
+    cy.wait(500);
 
     cy.get('#registerForm [data-auth="login"]').click();
+    cy.wait(500);
 
     cy.get("#loginForm input[name=email]").type(invalidEmail);
     cy.get("#loginForm input[name=password]").type(invalidPassword);

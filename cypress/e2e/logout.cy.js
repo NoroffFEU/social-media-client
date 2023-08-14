@@ -9,7 +9,9 @@ describe("Logout Functionality", () => {
 
   it("should log out the user when the logout button is clicked", () => {
     cy.visit(loginPageUrl);
+    cy.wait(500);
     cy.get('#registerForm [data-auth="login"]').click();
+    cy.wait(500);
 
     cy.get("#loginForm input[name=email]").type(email);
     cy.get("#loginForm input[name=password]").type(password);

@@ -7,8 +7,10 @@ describe("Login and Profile Access", () => {
 
   it("should log in and access profile", () => {
     cy.visit(loginPageUrl);
+    cy.wait(500);
 
     cy.get('#registerForm [data-auth="login"]').click();
+    cy.wait(500);
 
     cy.get("#loginForm input[name=email]").type(email);
     cy.get("#loginForm input[name=password]").type(password);
