@@ -1,5 +1,5 @@
 describe("Login and Profile Access", () => {
-  const email = "testusername1212@noroff.no";
+  const email = "testusername21212@noroff.no";
   const password = "Banner1212";
 
   const loginPageUrl = "http://127.0.0.1:5500/";
