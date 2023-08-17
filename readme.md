@@ -18,6 +18,17 @@ npm run build
 
 ## Tests
 
+New Features:
+
+Added ESLint and Prettier for code formatting.
+Integrated Jest for unit testing.
+Implemented Cypress for end-to-end testing.
+Configured Husky and lint-staged to run ESLint and Prettier on commit.
+Tests:
+
+Added test cases for login and logout functionalities.
+Introduced Cypress end-to-end tests for various features.
+
 ## Unit tests with Jest
 
 The following functionality will be automatically tested with unit tests:
