@@ -4,7 +4,7 @@ import localStorageMock from '../../mocks/localStorage.mock';
 const fakeToken = 'token';
 const fakeProfile = {
   name: 'Student Name',
-  email: 'student@stud.noroff.no',
+  email: 'studentemail@stud.noroff.no',
 };
 
 beforeAll(() => {
