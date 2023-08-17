@@ -1,4 +1,5 @@
-SOCIAL MEDIA WORKFLOW PROJECT
+# Name of project
+## Social Media Client 2
 
 # Project Setup Documentation
 
