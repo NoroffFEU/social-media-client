@@ -4,19 +4,13 @@
 
 Clone this repo and open it with your IDE.
 
-1. Initialize git in the project folder
-
-```
-git init
-```
-
-2. Install dependencies
+1. Install dependencies
 
 ```
 npm i
 ```
 
-3. Build SASS
+2. Build SASS
 
 ```
 npm run build
