@@ -2,6 +2,7 @@
   "name": "css-frameworks-ca",
   "version": "1.0.1",
   "description": "Test",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/js/**/*.js",
