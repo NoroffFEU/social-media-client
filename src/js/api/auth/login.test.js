@@ -3,7 +3,7 @@ import LocalStorageMock from '../../mocks/localStorage.mock';
 
 const USER_DATA = {
   name: 'Student Name',
-  email: 'test@test.com',
+  email: 'notauser@stud.noroff.no',
   token: '1234567890',
 };
 
@@ -11,10 +11,6 @@ const mockFetchSuccess = jest.fn().mockResolvedValue({
   ok: true,
   json: jest.fn().mockResolvedValue(USER_DATA),
 });
-
-// const mockFetchFailure = jest.fn().mockResolvedValue({
-// 	ok: false,
-// });
 
 beforeAll(() => {
   global.localStorage = new LocalStorageMock();
@@ -26,6 +22,4 @@ describe('login function', () => {
     const data = await login({});
     expect(data).toEqual(USER_DATA);
   });
-
-  // Add more test cases if needed
 });
