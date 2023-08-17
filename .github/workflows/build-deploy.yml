@@ -3,26 +3,16 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # Trigger the workflow on push to the main branch
+      - workflow  # Trigger the workflow on push to the workflow branch
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'  # Use Node.js version 14
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build
-      run: npm run build  # Assuming you have a build script in your package.json
-
     - name: Deploy  # This is a placeholder; deployment steps vary based on where you're deploying
       run: ./deploy-script.sh  # Example: run a deploy script. You need to define what this does.
+
