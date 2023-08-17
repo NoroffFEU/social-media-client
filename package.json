@@ -10,7 +10,9 @@
     "test-jest": "npm run test-unit",
     "test-unit": "jest",
     "test": "npm run test-e2e",
-    "test-e2e": "cypress open"
+    "test-e2e": "cypress open",
+    "test-e2e-report": "cypress run --reporter mochawesome",
+    "test-e2e-cli": "cypress run"
   },
   "keywords": [],
   "author": "Noroff",
