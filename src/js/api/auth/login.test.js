@@ -3,7 +3,7 @@ import LocalStorageMock from '../../mocks/localStorage.mock';
 
 const USER_DATA = {
   name: 'Student Name',
-  email: 'notauser@stud.noroff.no',
+  email: 'studentemail@stud.noroff.no',
   token: '1234567890',
 };
 
