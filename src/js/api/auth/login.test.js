@@ -9,7 +9,9 @@ const fakeApiResponse = {
   accessToken: 'sometoken28289jhjh',
 };
 
-global.localStorage = new LocalStorageMock();
+beforeAll(() => {
+  global.localStorage = new LocalStorageMock();
+});
 
 function fetchSuccess() {
   return Promise.resolve({

@@ -7,7 +7,9 @@ const fakeProfile = {
   email: 'student@stud.noroff.no',
 };
 
-global.localStorage = new LocalStorageMock();
+beforeAll(() => {
+  global.localStorage = new LocalStorageMock();
+});
 
 describe('logout', () => {
   it('Returns a valid token and removes from Localstorage', () => {
