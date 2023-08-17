@@ -10,12 +10,18 @@ export async function register(name, email, password, avatar) {
     headers: headers('application/json'),
   });
 
-  console.log('Received response:', response);
-
-  if (response.ok) {
-    return await response.json();
+  let responseBody;
+  try {
+    responseBody = await response.json();
+    console.log('Received response body:', responseBody);
+  } catch (err) {
+    console.error('Error parsing response:', err);
+    throw new Error('Error parsing server response.');
   }
 
-  const responseBody = await response.json();
+  if (response.ok) {
+    return responseBody;
+  }
+
   throw new Error(responseBody.message || response.statusText);
 }
