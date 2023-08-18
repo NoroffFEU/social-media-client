@@ -13,7 +13,7 @@ describe('norrofsocialmedia.no', () => {
     cy.wait(2000);
     cy.url().should('include', 'profile');
     cy.wait(2000);
-    cy.get('[data-auth="logout"]').click();
+    cy.get('[data-auth="logout"]').should('exist').click();
     cy.wait(2000);
     cy.url().should('not.include', 'profile');
   });
