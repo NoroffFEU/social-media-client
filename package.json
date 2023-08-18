@@ -9,7 +9,8 @@
     "dev": "vite",
     "vite-build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix"
   },
   "keywords": [],
   "author": "Noroff",

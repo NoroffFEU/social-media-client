@@ -17,7 +17,7 @@ export default defineConfig ({
         failOnError: false,
       }),
       apply: 'serve',
-      enfoce: 'post'
+      enforce: 'post'
     }
   ],
   build: {

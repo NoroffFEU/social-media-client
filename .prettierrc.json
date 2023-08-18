@@ -4,3 +4,7 @@ coverage
 
 # Ignore all HTML files:
 **/*.html
+
+node_modules/
+dist/
+.prettierrc.js
