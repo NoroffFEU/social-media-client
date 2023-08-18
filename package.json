@@ -7,12 +7,12 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "prepare": "husky install",
-    "test-jest": "npm run test-unit",
+
+    "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
-    "test": "npm run test-e2e",
     "test-e2e": "cypress open",
-    "test-e2e-report": "cypress run --reporter mochawesome",
-    "test-e2e-cli": "cypress run"
+    "test-e2e-cli": "cypress run",
+    "dev": "live-server"
   },
   "keywords": [],
   "author": "Noroff",
