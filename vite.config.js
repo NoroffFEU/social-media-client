@@ -2,6 +2,8 @@ import eslint from 'vite-plugin-eslint'
 import { defineConfig } from "vite";
 import path, {resolve} from 'path'
 export default defineConfig ({
+  root: 'src',
+
   plugin:[
     // default settings on build (i.e. fail on error)
     {
@@ -19,6 +21,7 @@ export default defineConfig ({
     }
   ],
   build: {
+
     rollupOptions: {
 
     }
@@ -30,7 +33,7 @@ export default defineConfig ({
   },
   resolve: {
     alias: {
-      '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
+      '~bootstrap': path.resolve(__dirname, 'src'),
     }
   }
 })

@@ -2,13 +2,14 @@
   "name": "css-frameworks-ca",
   "version": "1.0.0",
   "description": "Social media app ",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "sassbuild": "sass src/scss:dist/css",
     "sassstart": "sass --watch src/scss:dist/css & live-server",
     "dev": "vite",
     "vite-build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src/**/*.js"
   },
   "keywords": [],
   "author": "Noroff",
@@ -23,6 +24,7 @@
     "vite-plugin-eslint": "^1.8.1"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.1",
     "bootstrap-dark-5": "^1.1.3"
   }
