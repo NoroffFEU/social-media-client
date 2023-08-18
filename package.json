@@ -1,13 +1,12 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Test",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "prepare": "husky install",
-
     "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
     "test-e2e": "cypress open",
