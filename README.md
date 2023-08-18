@@ -95,3 +95,16 @@ git clone git@github.com:wexnox/WorkflowCA.git
 ```
 npm install
 ```
+
+### Running
+
+To run the app, run the following commands:
+
+```bash
+npm run dev / vite
+```
+
+## Contact
+
+
+[My LinkedIn page](www.linkedin.com)
