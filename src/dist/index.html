@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <!--  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer type="module"></script>-->
+
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+  <title>Test Client</title>
+  <script crossorigin src="/assets/index-2c65525b.js" type="module"></script>
+</head>
+
+<body class="min-vh-100 d-flex flex-column">
+<header class="py-3 sticky-top shadow">
+  <div class="container-fluid">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start">
+      <a class="d-flex align-items-center mb-2 me-sm-3 mb-sm-0 text-white text-decoration-none" href="..">
+        <img alt="Noroff Logo" src="https://www.noroff.no//images/logo/noroff-logo.png" style="width: 5rem" />
+      </a>
+
+      <form class="col mb-3 mb-sm-0 me-sm-3" role="search">
+        <input aria-label="Search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
+               type="search" />
+      </form>
+
+      <div class="text-end">
+        <button class="btn btn-outline-warning me-2" data-auth="logout" data-visible="loggedIn" type="button">
+          Logout
+        </button>
+        <button class="btn btn-outline-success me-2" data-auth="login" data-bs-target="#loginModal"
+                data-bs-toggle="modal"
+                data-visible="loggedOut" type="button">
+          Login
+        </button>
+        <button class="btn btn-success" data-auth="register" data-bs-target="#registerModal" data-bs-toggle="modal"
+                data-visible="loggedOut" type="button">
+          Create Profile
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="flex-grow-1 container-fluid mt-3"></main>
+<footer class="shadow position-sticky bottom-0 py-3">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col">© 2022 Noroff FEU</div>
+      <div class="col-auto" data-visible="loggedIn">
+        <div class="d-flex align-items-center" id="footerActions">
+          <a class="btn btn-outline-success" data-visible="loggedIn" href="..?view=post">New Post</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div aria-hidden="true" aria-labelledby="loginModalLabel" class="modal fade" data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     id="loginModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <form class="modal-content" id="loginForm">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-floating mb-3">
+          <input class="form-control" id="loginEmail" name="email" pattern="[\w\-.]+@(stud.)?noroff.no$"
+                 placeholder="name@example.com"
+                 required title="Only Noroff student or teacher emails are valid."
+                 type="email" />
+          <label for="loginEmail">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="loginPassword" minlength="8" name="password" placeholder="Password" required
+                 type="password" />
+          <label for="loginPassword">Password</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal" type="reset">
+          Close
+        </button>
+        <button class="btn btn-outline-success" data-auth="register" data-bs-target="#registerModal"
+                data-bs-toggle="modal"
+                data-visible="loggedOut" type="button">Register
+        </button>
+        <button class="btn btn-success" type="submit">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div aria-hidden="true" aria-labelledby="registerModalLabel" class="modal fade" data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     id="registerModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <form class="modal-content" id="registerForm">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registerModalLabel">Create Profile</h5>
+        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-floating mb-3">
+          <input class="form-control" id="registerName" name="name" placeholder="name@example.com" required
+                 type="text" />
+          <label for="registerName">Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="registerEmail" name="email" pattern="[\w\-.]+@(stud.)?noroff.no$"
+                 placeholder="name@example.com"
+                 required title="Only Noroff student or teacher emails are valid."
+                 type="email" />
+          <label for="registerEmail">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="registerPassword" minlength="8" name="password" placeholder="Password"
+                 required
+                 type="password" />
+          <label for="registerPassword">Password</label>
+        </div>
+        <div class="form-floating">
+          <input class="form-control" id="registerAvatar" name="avatar" placeholder="Avatar URL" required
+                 type="url" />
+          <label for="registerAvatar">Avatar URL</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal" type="reset">
+          Close
+        </button>
+        <button class="btn btn-outline-success" data-auth="login" data-bs-target="#loginModal" data-bs-toggle="modal"
+                data-visible="loggedOut" type="button">Login
+        </button>
+        <button class="btn btn-success" type="submit">Create Profile</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="d-none templates">
+  <template id="profileButton">
+    <a class="profile d-flex align-items-center me-2 text-decoration-none" href="">
+      <img alt="" class="img-fluid me-2" src="" style="
+              width: 2.5rem;
+              border-radius: 50%;
+              z-index: 2;
+              transform: translateX(1.5rem);
+            " />
+      <div class="btn btn-success ps-4" style="position: relative"></div>
+    </a>
+  </template>
+
+  <template id="reactionButton">
+    <button class="btn btn-sm btn-outline-success" data-reaction type="button">
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+    </button>
+  </template>
+
+  <template id="reactionOption">
+    <li>
+      <button class="dropdown-item" type="button"></button>
+    </li>
+  </template>
+
+  <template id="reactionMenu">
+    <div class="btn-group btn-group-sm reactions">
+      <div class="dropdown">
+        <button aria-expanded="false" class="btn btn-sm btn-primary dropdown-toggle ms-1" data-bs-toggle="dropdown"
+                type="button">
+          +
+        </button>
+        <ul class="dropdown-menu" data-reaction></ul>
+      </div>
+    </div>
+  </template>
+
+  <template id="profileButton">
+    <a class="d-flex align-items-center text-decoration-none" href="">
+      <img alt="" class="img-fluid me-2" style="width: 2rem; height: 2rem; border-radius: 50%" />
+      <div class="text-truncate name"></div>
+    </a>
+  </template>
+
+  <template id="postTag">
+    <span class="badge rounded-pill bg-success"></span>
+  </template>
+
+  <template id="commentsTag">
+    <span class="badge rounded-pill bg-info"></span>
+  </template>
+
+  <template id="postForm">
+    <form class="row mt-3" id="postForm">
+      <div class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3">
+        <h1>Post</h1>
+        <button class="btn btn-success" data-action="submit" type="submit">
+          <span data-action="publish">Publish</span><span data-action="update">Update</span> Post
+        </button>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-floating mb-3">
+          <input class="form-control" id="postTitle" name="title" placeholder="Post Title" required type="text" />
+          <label for="postTitle">Post Title*</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="postTags" name="tags" placeholder="Post Title" type="text" />
+          <label for="postTags">Post Tags</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" id="postMedia" name="media" placeholder="Post Title" type="url" />
+          <label for="postMedia">Post Media</label>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea class="form-control" id="postBody" name="body" rows="50"></textarea>
+          <label for="postMedia">Post Body</label>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6" id="postPreview"></div>
+    </form>
+  </template>
+
+  <template id="postHeader">
+    <div class="card-header">
+      <b class="m-0"></b>
+      <span class="mb-0 d-inline"></span>
+    </div>
+  </template>
+
+  <template id="postFooter">
+    <div class="card-footer d-flex justify-content-between"></div>
+  </template>
+
+  <template id="postActions">
+    <div class="post-actions btn-group-sm">
+      <a class="btn btn-primary" data-action="view" href="">View</a>
+      <button class="btn btn-danger" data-action="delete" type="button">Delete</button>
+    </div>
+  </template>
+
+  <template id="postThumbnail">
+    <div class="card mb-3 thumbnail post fade-in"></div>
+  </template>
+
+  <template id="comment">
+    <div class="comment">
+      <div class="comment-header">
+        <a class="owner" href="">owner</a>
+        <span class="text-muted time-ago">31 minutes ago</span>
+      </div>
+      <div class="comment-body">
+        It is a long established fact that a reader will be distracted by
+        the readable content of a page when looking at its layout. The point
+        of using Lorem Ipsum is that it has a more-or-less normal
+        distribution of letters, as opposed to using 'Content here, content
+        here', making it look like readable English. Many desktop publishing
+        packages and web page editors now use Lorem Ipsum as their default
+        model text, and a search for 'lorem ipsum' will uncover many web
+        sites still in their infancy. Various versions have evolved over the
+        years, sometimes by accident, sometimes on purpose (injected humour
+        and the like).
+      </div>
+    </div>
+  </template>
+
+  <template id="commentForm">
+    <form class="comment-form">
+      <textarea class="form-control" cols="30" id="commentBody" name="body" rows="10"></textarea>
+      <button class="btn btn-success w-100" type="submit">Comment</button>
+    </form>
+  </template>
+
+  <template id="postTabs">
+    <nav>
+      <div class="nav nav-tabs" role="tablist">
+        <button aria-controls="nav-default" aria-selected="true" class="nav-link active" data-bs-target="#nav-default"
+                data-bs-toggle="tab" id="nav-tab-default" role="tab" type="button" type="button">
+          View
+        </button>
+        <button aria-controls="nav-edit" aria-selected="false" class="nav-link" data-bs-target="#nav-edit"
+                data-bs-toggle="tab"
+                id="nav-tab-edit" role="tab" type="button" type="button">
+          Edit
+        </button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div aria-labelledby="nav-tab-default" class="tab-pane fade show active border-start border-end border-bottom p-3"
+           id="nav-default" role="tabpanel" tabindex="0"></div>
+      <div aria-labelledby="nav-tab-edit" class="tab-pane fade border-start border-end border-bottom p-3" id="nav-edit"
+           role="tabpanel" tabindex="0"></div>
+    </div>
+  </template>
+
+  <template id="postPage">
+    <div class="card mb-3 page post"></div>
+  </template>
+
+  <template id="profilePagePrivate">
+    <div class="card profile page private mb-3">
+      <div class="upper border-bottom d-flex justify-content-between align-items-start p-3">
+        <div class="btn-group btn-group-sm">
+          <button class="btn btn-sm btn-success" data-action="follow" data-name="" type="button">
+            Follow
+          </button>
+          <button class="btn btn-sm btn-danger" data-action="unfollow" data-name="" type="button">
+            Unfollow
+          </button>
+        </div>
+      </div>
+
+      <div class="user text-center">
+        <div class="profile">
+          <img class="rounded-circle avatar border" src="" width="80" />
+        </div>
+      </div>
+
+      <div class="text-center profile-actions">
+        <h4 class="mb-0 profile-name"></h4>
+        <span class="text-muted d-block profile-email"></span>
+      </div>
+
+      <div class="profile-posts px-3"></div>
+    </div>
+  </template>
+
+  <template id="profileFollowers">
+    <div class="followers"></div>
+  </template>
+</div>
+</body>
+
+</html>
