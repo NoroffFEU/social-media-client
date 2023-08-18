@@ -9,6 +9,7 @@ Project forked from https://github.com/NoroffFEU/social-media-client.
 - Confiured with eslint, prettier and commit hooks.
 - Configured  with GitHub Actions for build/deploy.
 - Configured and tested with Jest and Cypress, status:
+  
 [![Automated Unit Testing](https://github.com/Emilyrf/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Emilyrf/social-media-client/actions/workflows/unit-test.yml)
 
 [![Automated E2E Testing](https://github.com/Emilyrf/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Emilyrf/social-media-client/actions/workflows/e2e-test.yml)
