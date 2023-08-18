@@ -25,11 +25,9 @@ jobs:
       - name: Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         uses: actions/checkout@main
 
-      - name: Install node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.8.1
+
 
       - name: Install dependencies
         run: npm install
-        
