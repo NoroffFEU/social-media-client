@@ -1,18 +1,28 @@
 {
   "name": "css-frameworks-ca",
   "version": "1.0.0",
-  "description": "Test",
+  "description": "Social media app ",
   "main": "index.js",
   "scripts": {
-    "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "sassbuild": "sass src/scss:dist/css",
+    "sassstart": "sass --watch src/scss:dist/css & live-server",
+    "dev": "vite",
+    "vite-build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-n": "^16.0.1",
+    "eslint-plugin-promise": "^6.1.1",
     "live-server": "^1.2.2",
-    "sass": "^1.54.8"
+    "prettier": "3.0.2",
+    "sass": "^1.54.8",
+    "vite": "^4.4.5"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
