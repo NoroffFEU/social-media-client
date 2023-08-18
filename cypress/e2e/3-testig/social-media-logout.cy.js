@@ -1,6 +1,6 @@
 describe('norrofsocialmedia.no', () => {
   it('the user can log out with the logout button', () => {
-    cy.visit('http://127.0.0.1:8080');
+    cy.visit('http://localhost:8080');
     cy.wait(3000);
     cy.get('[data-bs-target="#loginModal"]').last().click();
     cy.wait(2000);
