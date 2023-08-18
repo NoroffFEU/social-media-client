@@ -14,13 +14,7 @@
 
 ### Configuration
 
-Jest:
-
-"npm i -D jest@29.2.0"
-
-Cypress:
-
-"npm i -D cypress eslint-plugin-cypress"
+"npm i" to install all dependencies
 
 ### Testing
 

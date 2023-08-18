@@ -1,57 +1,17 @@
 import * as auth from '../js/api/auth';
-
-const TEST_ID = 1;
-const TEST_BAD_ID = 'banana';
-const TEST_STRING = 'Test';
-const TEST_TOKEN = 'Token';
-const TEST_PROFILE = {
-  id: TEST_ID,
-  name: TEST_STRING,
-  accessToken: TEST_TOKEN,
-};
-
-class LocalStorageMock {
-  constructor() {
-    this.store = {};
-  }
-
-  clear() {
-    this.store = {};
-  }
-
-  getItem(key) {
-    return this.store[key] || null;
-  }
-
-  setItem(key, value) {
-    this.store[key] = value.toString();
-  }
-
-  removeItem(key) {
-    delete this.store[key];
-  }
-}
-
-globalThis.localStorage = new LocalStorageMock();
-
-function fetchSuccess() {
-  return Promise.resolve({
-    ok: true,
-    status: 200,
-    statusText: 'Ok',
-    json: () => Promise.resolve(TEST_PROFILE),
-  });
-}
-
-function fetchFailure(status = 404, statusText = 'Not Found') {
-  return Promise.resolve({
-    ok: false,
-    status,
-    statusText,
-  });
-}
+import { LocalStorageMock } from '../mocks/localStorage.mock';
+import {
+  TEST_ID,
+  TEST_STRING,
+  TEST_TOKEN,
+  TEST_PROFILE,
+  TEST_BAD_ID,
+  fetchFailure,
+  fetchSuccess,
+} from '../mocks/fetchMock.mock';
 
 describe('auth', () => {
+  globalThis.localStorage = new LocalStorageMock();
   it('Saves valid token and profile to localStorage when provided with valid credentials', async () => {
     globalThis.fetch = jest.fn(() => fetchSuccess());
     await auth.login(TEST_ID, TEST_STRING);
