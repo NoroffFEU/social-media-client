@@ -1,3 +1,5 @@
+/* eslint-env jest */
+
 // mocks for the local storage
 export function localStorageMock() {
   let store = {};

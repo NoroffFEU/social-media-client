@@ -1,26 +1,19 @@
 import { logout } from "./logout.js";
-
-// Mocking the localStorage method
-
-const mockRemoveItem = jest.fn();
-
-global.localStorage = {
-  removeItem: mockRemoveItem,
-};
+import { localStorageMock } from "../../mocks/localStorage.mock.js";
 
 describe("logout function", () => {
-  afterEach(() => {
-    // Clear mock calls after each test
-    mockRemoveItem.mockClear();
+  beforeEach(() => {
+    localStorageMock();
+    global.localStorage.removeItem.mockClear();
   });
 
   it("clears the token from browser storage", () => {
     logout();
-    expect(mockRemoveItem).toHaveBeenCalledWith("token");
+    expect(global.localStorage.removeItem).toHaveBeenCalledWith("token");
   });
 
   it("clears the profile from browser storage", () => {
     logout();
-    expect(mockRemoveItem).toHaveBeenCalledWith("profile");
+    expect(global.localStorage.removeItem).toHaveBeenCalledWith("profile");
   });
 });
