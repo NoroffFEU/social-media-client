@@ -1,3 +1,8 @@
+## Badges
+
+[![Deploy static content to Pages](https://github.com/alexanderdyb/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/alexanderdyb/social-media-client/actions/workflows/pages.yml)
+[![Deploy static content to Pages](https://github.com/alexanderdyb/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/alexanderdyb/social-media-client/actions/workflows/pages.yml)
+
 ## Configuration
 
 - SASS for styling, along with a build script for compiling SASS to CSS.
