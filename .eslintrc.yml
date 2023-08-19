@@ -4,7 +4,6 @@ env:
   es2021: true
 extends: eslint:recommended
 overrides:
-<<<<<<< HEAD
   - files: ["**/*.test.js"]
     env:
       jest: true
@@ -12,7 +11,6 @@ overrides:
     extends: ["plugin:jest/recommended"]
     rules:
       jest/prefer-expect-assertions: "off"
-=======
   - files:
       - "**/*.cy.js"
     env:
@@ -24,7 +22,6 @@ overrides:
     rules:
       cypress/no-unnecessary-waiting: "off"
       no-unused-vars: "off"
->>>>>>> end-to-end-testing
 parserOptions:
   ecmaVersion: 2021
   sourceType: module
