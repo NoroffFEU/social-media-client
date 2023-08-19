@@ -9,9 +9,15 @@
     "lint": "eslint src/**/*.js",
     "format": "npx prettier -w src/**/*.js",
     "prepare": "husky install",
-    "test": "npm run test-unit && npm run test-e2e",
+    "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
-    "test-e2e": "cypress open"
+    "test-e2e": "cypress open",
+    "test-e2e-cli": "cypress run"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/src/js/api/auth/test/localStorageMock.js"
+    ]
   },
   "keywords": [],
   "author": "Noroff",
