@@ -1,18 +1,13 @@
 import { login } from "./login.js";
 import { apiPath } from "../constants.js";
-
-// mocks for the local storage
-global.fetch = jest.fn();
-global.localStorage = {
-  setItem: jest.fn(),
-  getItem: jest.fn(),
-  removeItem: jest.fn(),
-};
+import { localStorageMock } from "../../mocks/localStorage.mock.js";
 
 describe("login function", () => {
   beforeEach(() => {
+    localStorageMock();
+    global.fetch = jest.fn();
     global.fetch.mockClear();
-    global.localStorage.setItem.mockClear();
+    global.localStorage.clear();
   });
 
   it("should call the correct endpoint with the provided credentials and store the token", async () => {
