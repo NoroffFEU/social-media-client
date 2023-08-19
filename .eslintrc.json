@@ -5,6 +5,10 @@
         "node": true
     },
     "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
     "overrides": [
         {
             "files": [
@@ -42,9 +46,5 @@
             }
         }
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
     "rules": {}
 }
