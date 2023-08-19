@@ -17,13 +17,14 @@ describe("login test", () => {
     cy.wait(1000);
     cy.get("#loginPassword").type("loginpass");
     cy.get("#loginForm").submit();
+    cy.wait(2000);
 
     // check if it enter to che profile page
     cy.url().should("include", "profile");
 
     // check if the ures can logout
     cy.get(".btn").contains("Logout").should("exist").click();
-    cy.wait(1000);
+    cy.wait(2000);
     cy.url().should("not.include", "profile");
   });
 
