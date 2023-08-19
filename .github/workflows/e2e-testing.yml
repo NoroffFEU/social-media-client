@@ -14,4 +14,4 @@ jobs:
       with:
         node-version: '18'
     - run: npm ci
-    - run: npm run test-e2e-ci
+    - run: npx cypress run --spec 'cypress/e2e/tests-social-media-client/*.cy.js'
