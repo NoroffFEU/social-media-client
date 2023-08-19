@@ -20,6 +20,11 @@ describe("login test", () => {
 
     // check if it enter to che profile page
     cy.url().should("include", "profile");
+
+    // check if the ures can logout
+    cy.get(".btn").contains("Logout").should("exist").click();
+    cy.wait(1000);
+    cy.url().should("not.include", "profile");
   });
 
   it("Should fail login with invalid credential and shown a message", () => {
@@ -45,19 +50,7 @@ describe("login test", () => {
     cy.url().should("not.include", "profile");
     cy.wait(2000);
 
+    // check it the alert message exist
     cy.window().get(".alert").should("exist");
-    cy.wait(2000);
-
-    // Find the input field with id "username" and type the incorrect username
-    // cy.get("#username").type("incorrectUsername");
-
-    // Find the input field with id "password" and type the incorrect password
-    // cy.get("#password").type("incorrectPassword");
-
-    // Find the form with id "loginForm" and submit it
-    // cy.get("#loginForm").submit();
-
-    // Error message should be displayed
-    // cy.get("#message .alert.alert-danger").should("contain", "Error: Either the username or password is incorrect");
   });
 });
