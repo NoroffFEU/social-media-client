@@ -8,6 +8,7 @@
 Before you start the project, make sure you have Node.js and npm installed on your machine.
 
 Install the Dependencies:
+
 npm i
 
 ## Configuration
