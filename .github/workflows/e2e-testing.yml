@@ -14,4 +14,7 @@ jobs:
       with:
         node-version: '18'
     - run: npm ci
-    - run: npx cypress run --spec 'cypress/e2e/tests-social-media-client/*.cy.js'
+    - name: Start the app
+      run: npx http-server -p 8080 &
+    - name: Run Cypress test  
+      run: npx cypress run --spec 'cypress/e2e/tests-social-media-client/*.cy.js'
