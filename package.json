@@ -10,7 +10,8 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier --write . && eslint --fix .",
     "prepare": "husky install",
-    "test-e2e": "cypress open"
+    "test-e2e": "cypress open",
+    "test-e2e-ci": "cypress run"
   },
   "keywords": [],
   "author": "Noroff",
