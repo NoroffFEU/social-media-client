@@ -19,3 +19,27 @@ Project forked from https://github.com/NoroffFEU/social-media-client.
 
 [![Deploy static content to Pages](https://github.com/Emilyrf/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/Emilyrf/social-media-client/actions/workflows/pages.yml)
 
+
+## Getting Started :hammer_and_wrench:
+
+### Installing , Running and Testing
+
+1. Clone the repo:
+```bash
+gh repo clone Emilyrf/social-media-client
+```
+
+2. Install the dependencies:
+```bash
+npm i
+```
+
+3. Run the app:
+```bash
+npm run dev
+```
+
+4. Test Jest and Cypress:
+```bash
+npm test
+```
