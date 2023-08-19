@@ -13,6 +13,8 @@
     }
   },
   "lint-staged": {
+    "*.html": "prettier --write",
+    "*.scss": "prettier --write",
     "*.js": [
       "eslint --fix",
       "prettier --write",
