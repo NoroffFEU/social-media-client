@@ -3,6 +3,13 @@
 [![Deploy static content to Pages](https://github.com/alexanderdyb/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/alexanderdyb/social-media-client/actions/workflows/pages.yml)
 [![Deploy static content to Pages](https://github.com/alexanderdyb/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/alexanderdyb/social-media-client/actions/workflows/pages.yml)
 
+## Getting started
+
+Before you start the project, make sure you have Node.js and npm installed on your machine.
+
+Install the Dependencies:
+npm i
+
 ## Configuration
 
 - SASS for styling, along with a build script for compiling SASS to CSS.
