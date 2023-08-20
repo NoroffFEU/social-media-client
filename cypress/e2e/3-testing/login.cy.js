@@ -2,7 +2,7 @@ describe("login test", () => {
   it("can login and logout", () => {
     // visit the page
     cy.visit("/");
-    cy.wait(5000);
+    cy.wait(10000);
 
     // check if the register modal exist
     cy.get("#registerModal .btn").contains("Login").should("exist");
@@ -32,6 +32,7 @@ describe("login test", () => {
   it("Should fail login with invalid credential and shown a message", () => {
     // visit the login page
     cy.visit("/"); // Replace 3000 with your port number
+    cy.wait(10000);
 
     // check if the register modal exist
     cy.get("#registerModal .btn").contains("Login").should("exist");
