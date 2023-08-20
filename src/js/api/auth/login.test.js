@@ -16,14 +16,14 @@ const TEST_PROFILE = {
 const key = "token";
 const token = "123abc";
 
-function fetchSuccess() {
-  return Promise.resolve({
-    ok: true,
-    status: 200,
-    statusText: "OK",
-    json: () => Promise.resolve(TEST_PROFILE),
-  });
-}
+// function fetchSuccess() {
+//   return Promise.resolve({
+//     ok: true,
+//     status: 200,
+//     statusText: "OK",
+//     json: () => Promise.resolve(TEST_PROFILE),
+//   });
+// }
 
 // function fetchFailure(
 //   status = 401,
