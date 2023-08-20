@@ -32,3 +32,9 @@ npm test-e2e-cli
 - The user can log in and access their profile
 - The user cannot submit the login form with invalid credentials and is shown a message
 - The user can log out with the logout button
+
+## Hooks on commit
+
+- To allow a fixing hook on commit you shoud add "eslint --fix".
+  Inside the package.json under "lint-staged" you can chose where to use it,
+  under "_.js", "_.html" and "\*.scss" if you chose to do it make sure is after "prettier --write".
