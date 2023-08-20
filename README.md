@@ -34,7 +34,7 @@ Cypress is a more visual tool, that means you can see the front-end when the tes
 2. Open a second terminal and write: npm run test-e2e (This will open the Cypress ui).
 
 
-###Automated testing on push and PR
+### Automated testing on push and PR
 
 ![Unit Tests](https://github.com/EM-90/social-media-client/workflows/Unit%20Tests/badge.svg)
 ![E2E Tests](https://github.com/EM-90/social-media-client/workflows/E2E%20Tests/badge.svg)
