@@ -1,18 +1,29 @@
 import { login } from './login';
 import LocalStorageMock from '../Mocks/localstorage.mock.js';
 
-const key = 'token';
-const token = '12345';
+global.localStorage = new LocalStorageMock();
 
-beforeAll(() => {
-  global.localStorage = new LocalStorageMock();
-  localStorage.removeItem(token);
-});
+const email = 'marius@stud.noroff.no';
+const password = '12345678';
 
-describe('saveToken', () => {
-  it('saves a token in storage', () => {
-    expect(localStorage.getItem(key)).toBeNull();
-    login(token);
-    expect(JSON.parse(localStorage.getItem(key))).toEqual(token);
+const userProfile = {
+  name: 'Marius',
+  email: 'marius@stud.noroff.no',
+  accessToken: 12345,
+};
+function fetched() {
+  return Promise.resolve({
+    ok: true,
+    status: 201,
+    statusText: 'Successful login',
+    json: () => Promise.resolve(userProfile),
+  });
+}
+
+describe('login', () => {
+  it('Returns token', async () => {
+    global.fetch = jest.fn(() => fetched());
+    const data = await login(email, password);
+    expect(data).toEqual(userProfile);
   });
 });
