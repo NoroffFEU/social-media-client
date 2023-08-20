@@ -2,6 +2,8 @@
 
 ## Description of the project
 
+[Github Pages link](https://wexnox.github.io/WorkflowCA/)
+
 ## Goal
 Using the skills and knowledge from this course, improve the quality of a package by establishing helpful workflows that make the development process more efficient.
 
