@@ -1,7 +1,7 @@
 describe("login test", () => {
   it("can login and logout", () => {
     // visit the page
-    cy.visit("http://127.0.0.1:5500/");
+    cy.visit("/");
     cy.wait(5000);
 
     // check if the register modal exist
