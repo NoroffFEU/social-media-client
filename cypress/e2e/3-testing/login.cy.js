@@ -1,5 +1,5 @@
 describe("login test", () => {
-  it("can search for Social Media Website, swich from register page to login page, log in", () => {
+  it("can login and logout", () => {
     // visit the page
     cy.visit("http://127.0.0.1:5500/");
 
