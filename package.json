@@ -14,7 +14,8 @@
     "format": "prettier -w src/js/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev": "live-server"
   },
   "keywords": [],
   "author": "Noroff",

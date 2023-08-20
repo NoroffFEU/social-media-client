@@ -30,7 +30,7 @@ describe("login test", () => {
 
   it("Should fail login with invalid credential and shown a message", () => {
     // visit the login page
-    cy.visit("http://127.0.0.1:5500/"); // Replace 3000 with your port number
+    cy.visit("http://127.0.0.1:8080/"); // Replace 3000 with your port number
 
     // check if the register modal exist
     cy.get("#registerModal .btn").contains("Login").should("exist");

@@ -11,7 +11,7 @@ jobs:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@main
 
-      - name: run cypress tests with electron
-        uses: cypress-io/github-action@v4
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
         with:
-          browser: electron
+          start: npm run dev
