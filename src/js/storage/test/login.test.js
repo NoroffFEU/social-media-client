@@ -1,15 +1,23 @@
-import { login } from './login';
-import { apiPath } from '../constants.js';
-import { save } from '../../storage/index.js';
+// src/js/storage/tests/login.test.js
+import { login } from '../../api/auth/login';
+import { apiPath } from '../../api/constants.js';
+import { save } from '../index.js';
+import LocalStorageMock from '../../mock/localStorage.mock.js';
 
-// Mocking fetch and the storage functionality
+// Setup mock localStorage
+beforeAll(() => {
+  global.localStorage = new LocalStorageMock();
+});
+
+// Mocking fetch
 global.fetch = jest.fn();
-jest.mock('../../storage/index.js');
+jest.mock('../index.js');
 
 describe('login function', () => {
   beforeEach(() => {
     fetch.mockClear();
     save.mockClear();
+    localStorage.clear(); // Ensure localStorage mock is clear before each test
   });
 
   it('should fetch and store a token in browser storage upon successful login', async () => {

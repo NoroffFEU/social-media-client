@@ -1,6 +1,6 @@
 describe('User Authentication', () => {
   beforeEach(() => {
-    cy.visit('https://app.noroff.dev/login');
+    cy.visit('https://api.noroff.dev/login');
   });
 
   it('can log in and access their profile', () => {
