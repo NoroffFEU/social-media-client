@@ -31,5 +31,10 @@ Cypress is a more visual tool, that means you can see the front-end when the tes
 1. Open terminal to start http-server. In the terminal write: http-server (this will get the server running)
 2. Open a second terminal and write: npm run test-e2e (This will open the Cypress ui).
 
+### Package.json
+
+Remember if you want to know what scripts you can run, or dev-dependencies that are installed in this repo
+click on the package.json file.
+
 ![Unit Tests](https://github.com/EM-90/social-media-client/workflows/Unit%20Tests/badge.svg)
 ![E2E Tests](https://github.com/EM-90/social-media-client/workflows/E2E%20Tests/badge.svg)
