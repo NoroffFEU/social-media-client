@@ -1,4 +1,8 @@
 /node_modules
 /dist/*
 .env
-#**/*.config.js
+
+/cypress/screenshots
+/cypress/support
+/cypress/videos
+/.eslintcache
