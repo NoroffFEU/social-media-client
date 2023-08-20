@@ -15,7 +15,8 @@
     "lint-fix": "eslint src/js/**/*.js --cache --fix",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev": "live-server"
   },
   "keywords": [],
   "author": "Noroff",
