@@ -6,3 +6,4 @@ Installed pre-commit eslint hook and patched version v1.0.3
 Installed jest for unit-testing and patched version v1.0.4
 Installed cypress for e2e-testing and patched version v1.0.5
 Created test files login.test.js and logout.test.js and patched version v1.0.6
+Created test file login.cy.js and action to static pages, patched version v1.0.7
