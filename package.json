@@ -1,19 +1,8 @@
 {
   "name": "workflow",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Test",
   "main": "index.js",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
@@ -21,7 +10,8 @@
     "test-unit": "jest",
     "test-e2e": "cypress open",
     "test-e2e-report": "cypress run --reporter mochawesome",
-    "test-e2e-cli": "cypress run"
+    "test-e2e-cli": "cypress run",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Noroff",
@@ -47,6 +37,23 @@
     "bootstrap": "^5.2.3",
     "bootstrap-dark-5": "^1.1.3",
     "install": "^0.13.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   },
   "repository": {
     "type": "git",
