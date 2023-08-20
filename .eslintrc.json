@@ -4,6 +4,10 @@
         "es2021": true
     },
     "extends": "eslint:recommended",
+    "ignorePatterns": [
+        "src/test/*.js",
+        "cypress.config.js"
+    ],
     "overrides": [
         {
             "files": [
@@ -20,6 +24,24 @@
             ],
             "rules": {
                 "jest/prefer-expect-assertions": "off"
+            }
+        },
+        {
+            "files": [
+                "**/*.cy.js"
+            ],
+            "env": {
+                "cypress/globals": true
+            },
+            "plugins": [
+                "cypress"
+            ],
+            "extends": [
+                "plugin:cypress/recommended"
+            ],
+            "rules": {
+                "cypress/no-unnecessary-waiting": "off",
+                "no-unused-vars": "off"
             }
         }
     ],
