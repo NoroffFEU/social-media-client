@@ -1,119 +1,57 @@
-describe("Login Page", () => {
-  it("Logins with valid inputs", () => {
-    // visit home page
+describe("login test", () => {
+  it("can login and logout", () => {
+    // visit the page
     cy.visit("http://127.0.0.1:5500/index.html");
 
-    //Waits for the Register modal to appear
+    // check if the register modal exist
+    cy.get("#registerModal .btn").contains("Login").should("exist");
     cy.wait(1000);
 
-    // find the Login link in the menu
-    cy.get(`#registerForm [data-auth="login"]`)
-      .contains("Login")
-      .should("exist");
-
-    // Click the Login button
-    cy.get(`#registerForm [data-auth="login"]`).contains("Login").click();
-
-    //Waits for the Login modal to appear
+    // move to the login modal
+    cy.get("#registerModal .btn").contains("Login").click();
+    cy.get("#loginForm .btn").contains("Login").should("exist");
     cy.wait(1000);
 
-    // finds the login button in the login form
-    cy.get(`#loginForm [type="submit"]`).contains("Login").should("exist");
+    // type email and password and submit
+    cy.get("#loginEmail").type("cor@stud.noroff.no");
+    cy.wait(1000);
+    cy.get("#loginPassword").type("loginpass");
+    cy.get("#loginForm").submit();
+    cy.wait(2000);
 
-    // enters valid email into the email input
-    cy.get(`#loginForm #loginEmail`).type("MinBan66364@stud.noroff.no");
-
-    // enters passwrd into the password input
-    cy.get(`#loginForm #loginPassword`).type("Test1234");
-
-    // Click the Login button
-    cy.get(`#loginForm [type="submit"]`).contains("Login").click();
-
-    // checks url
+    // check if it enter to che profile page
     cy.url().should("include", "profile");
 
-    // Looks for div with a class of profile
-    cy.get(".profile").should("exist");
+    // check if the ures can logout
+    cy.get(".btn").contains("Logout").should("exist").click();
+    cy.wait(2000);
+    cy.url().should("not.include", "profile");
   });
 
-  it("Try Login with email that does not follow the pattern, shows error", () => {
-    // visit home page
-    cy.visit("http://127.0.0.1:5500/");
+  it("Should fail login with invalid credential and shown a message", () => {
+    // visit the login page
+    cy.visit("http://127.0.0.1:5500/index.html"); // Replace 3000 with your port number
 
-    //Waits for the Register modal to appear
-    cy.wait(500);
+    // check if the register modal exist
+    cy.get("#registerModal .btn").contains("Login").should("exist");
+    cy.wait(1000);
 
-    // find the Login link in the menu
-    cy.get(`#registerForm [data-auth="login"]`)
-      .contains("Login")
-      .should("exist");
+    // move to the login modal
+    cy.get("#registerModal .btn").contains("Login").click();
+    cy.get("#loginForm .btn").contains("Login").should("exist");
+    cy.wait(1000);
 
-    // Click the Login button
-    cy.get(`#registerForm [data-auth="login"]`).contains("Login").click();
+    // type fake email and fake password and submit
+    cy.get("#loginEmail").type("fakeemail@stud.noroff.no");
+    cy.wait(1000);
+    cy.get("#loginPassword").type("fakepass");
+    cy.get("#loginForm").submit();
+    cy.wait(2000);
+    // check if is stock on the index page
+    cy.url().should("not.include", "profile");
+    cy.wait(2000);
 
-    //Waits for the Login modal to appear
-    cy.wait(500);
-
-    // finds the login button in the login form
-    cy.get(`#loginForm [type="submit"]`).contains("Login").should("exist");
-
-    // enters email that does not follow the pattern into the email input
-    cy.get(`#loginForm #loginEmail`).type("test@test.test");
-
-    // enters passwrd into the password input
-    cy.get(`#loginForm #loginPassword`).type("Test1234");
-
-    // Click the Login button
-    cy.get(`#loginForm [type="submit"]`).contains("Login").click();
-
-    //Waits for the message to appear
-    cy.wait(500);
-  });
-
-  it("Try Login with email that follows the pattern, but is not in the DB, shows error", () => {
-    // visit home page
-    cy.visit("http://127.0.0.1:5500/");
-
-    //Waits for the Register modal to appear
-    cy.wait(500);
-
-    // find the Login link in the menu
-    cy.get(`#registerForm [data-auth="login"]`)
-      .contains("Login")
-      .should("exist");
-
-    // Click the Login button
-    cy.get(`#registerForm [data-auth="login"]`).contains("Login").click();
-
-    //Waits for the Login modal to appear
-    cy.wait(500);
-
-    // finds the login button in the login form
-    cy.get(`#loginForm [type="submit"]`).contains("Login").should("exist");
-
-    // enters email that does follow the pattern, but is not in the DB. into the email input
-    cy.get(`#loginForm #loginEmail`).type("MinBan123123@stud.noroff.no");
-
-    // enters passwrd into the password input
-    cy.get(`#loginForm #loginPassword`).type("Test1234");
-
-    // Click the Login button
-    cy.get(`#loginForm [type="submit"]`).contains("Login").click();
-
-    cy.intercept("https://nf-api.onrender.com/api/v1/social/auth/login").as(
-      "login",
-    );
-
-    cy.wait("@login").then((interception) => {
-      expect(interception.response.statusCode).to.equal(401);
-    });
-
-    // // Intercept the window.alert method
-    // cy.window().then((win) => {
-    //     cy.stub(win, "alert").as("windowAlert");
-    // });
-
-    // // //checks if the message appears
-    // cy.get("@windowAlert").should("be.called");
+    // check it the alert message exist
+    cy.window().get(".alert").should("exist");
   });
 });
