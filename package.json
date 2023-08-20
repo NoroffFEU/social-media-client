@@ -17,6 +17,8 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
     "cypress": "^12.17.4",
     "eslint": "^8.47.0",
     "eslint-plugin-cypress": "^2.14.0",
