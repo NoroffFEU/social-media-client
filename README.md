@@ -20,7 +20,7 @@ Note: you can run both eslint and prettier manualy in terminal if you want to
 To run jest manually open the terminal and write: npm run test (or shorthand this to: npm test).
 This will run Jest in terminal, and show you if the tests pass or fail.
 
-![Unit Tests](https://github.com/EM-90/social-media-client/workflows/Unit%20Tests/badge.svg)
+
 
 #### Cypress
 
@@ -33,7 +33,11 @@ Cypress is a more visual tool, that means you can see the front-end when the tes
 1. Open terminal to start http-server. In the terminal write: http-server (this will get the server running)
 2. Open a second terminal and write: npm run test-e2e (This will open the Cypress ui).
 
+
+###Automated testing on push and PR
+![Unit Tests](https://github.com/EM-90/social-media-client/workflows/Unit%20Tests/badge.svg)
 ![E2E Tests](https://github.com/EM-90/social-media-client/workflows/E2E%20Tests/badge.svg)
+
 
 ### Package.json
 
