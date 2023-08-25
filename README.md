@@ -11,4 +11,6 @@ v.1.0.2
 
 v.1.0.3
 - Installed JEST and set up for testing
+- Added a new files called "localStorage.mock.js" + "save.test.js"
+- Unit testing for storing token on login with valid credentials and for clearing token when logout is clicked
 - Updated content of README.md
