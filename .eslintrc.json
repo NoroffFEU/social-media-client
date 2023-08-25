@@ -19,7 +19,8 @@
         "extends": ["plugin:cypress/recommended"],
         "rules": {
           "cypress/no-unnecessary-waiting": "off",
-          "no-unused-vars": "off"
+          "no-unused-vars": "off",
+          "cypress/unsafe-to-chain-command": "warn"
         }
       }
     ],
