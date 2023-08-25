@@ -18,3 +18,8 @@ Installed JEST and set up for testing
 installed jest@29.2.0
 added jest to package.json
 Updated content of README.md
+
+
+Testing
+installed and configured babel and added es6.js and es6.test.js
+test was successful
