@@ -10,7 +10,9 @@
     "format": "prettier -w src/js/**/*.js",
     "lint": "eslint src/js/**/*.js",
     "lint-fix": "eslint src/js/**/*.js --cache --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "npm run test-unit",
+    "test-unit": "jest"
   },
   "keywords": [],
   "author": "Noroff",

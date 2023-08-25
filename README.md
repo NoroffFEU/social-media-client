@@ -11,3 +11,4 @@ v.1.0.2
 
 v.1.0.3
 - Installed JEST and set up for testing
+- Updated content of README.md
