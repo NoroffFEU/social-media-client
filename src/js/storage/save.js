@@ -1,3 +1,5 @@
 export const save = (key, value) => {
-  localStorage.setItem(key, JSON.stringify(value))
-}
+  if (typeof localStorage !== "undefined") { 
+    localStorage.setItem(key, JSON.stringify(value));
+  }
+};
