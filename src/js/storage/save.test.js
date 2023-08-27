@@ -10,7 +10,7 @@ beforeAll(() => {
   localStorage.removeItem(key);
 });
 
-describe("saveToken", () => {
+describe("save", () => {
   it("should save value to localStorage", () => {
     expect(localStorage.getItem(key)).toBeNull();
     save(key, value);
