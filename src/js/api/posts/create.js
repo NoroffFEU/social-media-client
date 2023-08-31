@@ -5,12 +5,12 @@ export async function createPost(title, body, media, tags) {
   const response = await fetch(`${apiPath}/social/posts/`, {
     method: "post",
     body: JSON.stringify({ title, body, media, tags }),
-    headers: headers("application/json"),
-  });
+    headers: headers("application/json")
+  })
 
   if (response.ok) {
-    return await response.json();
+    return await response.json()
   }
 
-  throw new Error(response.statusText);
+  throw new Error(response.statusText)
 }
