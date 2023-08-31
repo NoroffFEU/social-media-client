@@ -4,12 +4,12 @@ import { headers } from "../headers.js";
 export async function deleteProfile(name) {
   const response = await fetch(`${apiPath}/social/profiles/${name}`, {
     method: "delete",
-    headers: headers(),
-  });
+    headers: headers()
+  })
 
   if (response.ok) {
-    return await response.json();
+    return await response.json()
   }
 
-  throw new Error(response.statusText);
+  throw new Error(response.statusText)
 }

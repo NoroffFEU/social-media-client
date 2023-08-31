@@ -7,7 +7,7 @@ export async function unfollowListener(event) {
   if (name) {
     try {
       await unfollowProfile(name);
-      location.reload();
+      location.reload()
     } catch {
       return alert("There was a problem unfollowing this profile");
     }

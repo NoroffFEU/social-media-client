@@ -1,4 +1,4 @@
-import { load } from "../storage/index.js";
+import { load } from "../storage/index.js"
 
 export function updateLoginVisibility() {
   const token = load("token");

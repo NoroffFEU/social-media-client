@@ -3,9 +3,9 @@ import { updateLoginVisibility } from "../../ui/auth.js";
 
 export function logoutListener() {
   try {
-    auth.logout();
-    updateLoginVisibility();
-    location.href = "./";
+    auth.logout()
+    updateLoginVisibility()
+    location.href = "./"
   } catch {
     return alert("There was a problem logging out");
   }
