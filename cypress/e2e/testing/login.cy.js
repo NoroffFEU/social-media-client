@@ -1,7 +1,12 @@
 describe("user authentication", () => {
-  it("finds register, moves to login, log ins and logs out", () => {
+  beforeEach(() => {
+    //clear local store before each test
+    cy.clearLocalStorage();
     cy.visit("http://127.0.0.1:5500/");
+    cy.wait(1000);
+  });
 
+  it("finds register, moves to login, log ins and logs out", () => {
     // check if login button within #registermodal exists
     cy.get(`#registerModal [data-auth="login"]`)
       .contains("Login")
@@ -16,12 +21,15 @@ describe("user authentication", () => {
     cy.wait(2000);
 
     // proceed with valid credentials
-    cy.get(`#loginForm #loginEmail`).type("victoria@stud.noroff.no");
+    cy.get(`#loginForm #loginEmail`)
+      .should("be.visible")
+      .wait(1000)
+      .type("victoria@stud.noroff.no");
     cy.wait(2000);
-    cy.get(`#loginForm #loginPassword`).type("validpass");
-
+    cy.get(`#loginForm #loginPassword`)
+      .should("be.visible")
+      cy.get(`#loginForm #loginPassword`).type("validpass");
     cy.get(`#loginForm [type="submit"]`).contains("Login").click();
-    cy.wait(2000);
 
     // check if it goes to profile
     cy.url({ timeout: 20000 }).should("include", "profile");
@@ -52,8 +60,7 @@ describe("user authentication", () => {
     cy.wait(1000);
     cy.get("#loginPassword").type("invalid");
     cy.get("#loginForm").submit();
-    cy.wait(2000);
-    // check if is stock on the index page
+
     cy.url().should("not.include", "profile");
     cy.wait(2000);
 
