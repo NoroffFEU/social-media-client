@@ -1,0 +1,1 @@
+When i ran a test on the login i got a failed test in wich said that localstorage was empty. 
