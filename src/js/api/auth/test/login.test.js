@@ -4,7 +4,7 @@ import { localStorageMock } from "../test/mock/localStorage.mock";
 // Mocks and constants
 jest.mock("../test/mock/localStorage.mock");
 const validEmail = "victoria@stud.noroff.no";
-const validPassword = "password";
+const validPassword = "validpass";
 const mockResponse = {
   name: "victoria",
   email: validEmail,

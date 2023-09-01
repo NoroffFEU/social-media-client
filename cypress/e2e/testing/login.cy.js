@@ -1,35 +1,63 @@
-describe("User Authentication", () => {
-  beforeEach(() => {
-    cy.visit("http://127.0.0.1:5500");
-    cy.clearLocalStorage();
+describe("user authentication", () => {
+  it("finds register, moves to login, log ins and logs out", () => {
+    cy.visit("http://127.0.0.1:5500/");
+
+    // check if login button within #registermodal exists
+    cy.get(`#registerModal [data-auth="login"]`)
+      .contains("Login")
+      .should("exist");
+    cy.wait(1000);
+
+    // move to #loginForm and click
+    cy.get(`#registerModal [data-auth="login"]`).contains("Login").click();
+
+    //check if you're on the login page
+    cy.get("#loginForm").contains("Login").should("exist");
+    cy.wait(2000);
+
+    // proceed with valid credentials
+    cy.get(`#loginForm #loginEmail`).type("victoria@stud.noroff.no");
+    cy.wait(2000);
+    cy.get(`#loginForm #loginPassword`).type("validpass");
+
+    cy.get(`#loginForm [type="submit"]`).contains("Login").click();
+    cy.wait(2000);
+
+    // check if it goes to profile
+    cy.url({ timeout: 20000 }).should("include", "profile");
+
+    //checking if there's a div with a class of profile
+    cy.get(".profile").should("exist");
+
+    // check if logout works
+    cy.get('.btn-outline-warning[data-auth="logout"]').click();
+    cy.url().should("not.include", "profile");
   });
 
-  it("allows successful login and access to profile", () => {
-    const validEmail = "victoria@stud.noroff.no";
-    const validPassword = "password";
+  it("displays error message with wrong credentials", () => {
+    // go to index
+    cy.visit("http://127.0.0.1:5500/");
 
-    cy.get(".btn-outline-success").click();
-    cy.get("input[type='email']").type(validEmail);
-    cy.get("input[type='password']").type(validPassword);
-    cy.get(".btn-success").click();
+    // check if the register modal exist
+    cy.get("#registerModal .btn").contains("Login").should("exist");
+    cy.wait(1000);
 
-    cy.url().should("include", "/profile");
-  });
+    // move to the login modal
+    cy.get("#registerModal .btn").contains("Login").click();
+    cy.get("#loginForm .btn").contains("Login").should("exist");
+    cy.wait(1000);
 
-  it("displays an error message on invalid credentials", () => {
-    const invalidEmail = "invalid-email@example.com";
-    const invalidPassword = "invalid-password";
+    // type fake email and fake password and submit
+    cy.get("#loginEmail").type("invalid@email.no");
+    cy.wait(1000);
+    cy.get("#loginPassword").type("invalid");
+    cy.get("#loginForm").submit();
+    cy.wait(2000);
+    // check if is stock on the index page
+    cy.url().should("not.include", "profile");
+    cy.wait(2000);
 
-    cy.get(".btn-outline-success").click();
-    cy.get("input[type='email']").type(invalidEmail);
-    cy.get("input[type='password']").type(invalidPassword);
-    cy.get(".btn-success").click();
-
-    cy.get(".error-message").should("be.visible");
-  });
-
-  it("allows user to log out with the logout button", () => {
-    cy.get(".btn-outline-warning").click();
-    cy.url().should("not.include", "/profile");
+    // check it the alert message exist
+    cy.window().get(".alert").should("exist");
   });
 });
