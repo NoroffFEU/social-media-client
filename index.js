@@ -5,3 +5,4 @@ ui();
     router();
 
 // h
+console.log(dogcat)
