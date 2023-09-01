@@ -12,7 +12,7 @@ const mockFetchSuccess = jest.fn().mockResolvedValue({
   });
   
   const mockFetchFailure = jest.fn().mockResolvedValue({
-    ok: false,
+    ok: false, statusText: "Unable to fetch data" 
   });
 
   
