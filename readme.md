@@ -2,6 +2,12 @@
 
 [![Deploy static content to Pages](https://github.com/corrado1982/social-media-client-CA/actions/workflows/pages.yml/badge.svg)](https://github.com/corrado1982/social-media-client-CA/actions/workflows/pages.yml)
 
+[![Automated E2E Testing](https://github.com/corrado1982/social-media-client-CA/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/corrado1982/social-media-client-CA/actions/workflows/e2e-test.yml)
+
+[![Automated Unit Testing](https://github.com/corrado1982/social-media-client-CA/actions/workflows/unit-test.yml/badge.svg)](https://github.com/corrado1982/social-media-client-CA/actions/workflows/unit-test.yml)
+
+[![Code Review](https://github.com/corrado1982/social-media-client-CA/actions/workflows/gpt.yml/badge.svg)](https://github.com/corrado1982/social-media-client-CA/actions/workflows/gpt.yml)
+
 ## Tests
 
 Running tests from your terminal editor
