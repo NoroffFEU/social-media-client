@@ -1,5 +1,7 @@
 # social-media-client Workflow CA
 
+[![Deploy static content to Pages](https://github.com/corrado1982/social-media-client-CA/actions/workflows/pages.yml/badge.svg)](https://github.com/corrado1982/social-media-client-CA/actions/workflows/pages.yml)
+
 ## Tests
 
 Running tests from your terminal editor
