@@ -1,6 +1,7 @@
 # Workflow CA - NorOff Front-End Development
 
 ## Live demo https://anasommer.github.io/social-media-client/
+[![Deploy static content to Pages](https://github.com/anasommer/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/anasommer/social-media-client/actions/workflows/pages.yml)
 
 ## Installation
 
