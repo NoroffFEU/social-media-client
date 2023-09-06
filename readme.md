@@ -1,5 +1,7 @@
 # Workflow CA - NorOff Front-End Development
 
+## Live demo https://anasommer.github.io/social-media-client/
+
 ## Installation
 
 Clone this repo and open it with your IDE.
