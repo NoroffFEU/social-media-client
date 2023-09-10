@@ -1,7 +1,7 @@
 ## Badges
 
 [![Deploy static content to Pages](https://github.com/alexanderdyb/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/alexanderdyb/social-media-client/actions/workflows/pages.yml)
-[![Deploy static content to Pages](https://github.com/alexanderdyb/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/alexanderdyb/social-media-client/actions/workflows/pages.yml)
+
 [![Code Review](https://github.com/alexanderdyb/social-media-client/actions/workflows/gpt.yml/badge.svg)](https://github.com/alexanderdyb/social-media-client/actions/workflows/gpt.yml)
 
 ## Getting started
