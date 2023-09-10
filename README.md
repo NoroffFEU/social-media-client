@@ -4,6 +4,8 @@
 
 [![Code Review](https://github.com/alexanderdyb/social-media-client/actions/workflows/gpt.yml/badge.svg)](https://github.com/alexanderdyb/social-media-client/actions/workflows/gpt.yml)
 
+[![Automated Unit Testing](https://github.com/alexanderdyb/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/alexanderdyb/social-media-client/actions/workflows/unit-test.yml)
+
 ## Getting started
 
 Before you start the project, make sure you have Node.js and npm installed on your machine.
