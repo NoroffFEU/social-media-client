@@ -33,6 +33,12 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Unit Testing
+        run: npm run test-unit
+
+      - name: End-to-End Testing
+        run: npm run test-e2e-cli
+
       - name: Lint Code
         uses: github/super-linter@v4
         env:
