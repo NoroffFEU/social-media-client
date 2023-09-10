@@ -6,6 +6,8 @@
 
 [![Automated Unit Testing](https://github.com/alexanderdyb/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/alexanderdyb/social-media-client/actions/workflows/unit-test.yml)
 
+[![Automated E2E Testing](https://github.com/alexanderdyb/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/alexanderdyb/social-media-client/actions/workflows/e2e-test.yml)
+
 ## Getting started
 
 Before you start the project, make sure you have Node.js and npm installed on your machine.
