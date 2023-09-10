@@ -5,8 +5,12 @@ permissions:
   pull-requests: write
 
 on:
-  pull_request_target:
+  push:
+    branches:
+      - master
+  pull_request:
     types: [opened, synchronize, reopened]
+  workflow_dispatch:
 
 jobs:
   review:
@@ -16,9 +20,45 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Log environment info
+        run: |
+          echo "OS: $(uname -a)"
+          echo "Shell: $SHELL"
+          echo "GitHub Runner: ${{ runner.os }}"
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+        node-version: "16"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Unit Testing
+        run: npm run test-unit
+
+      - name: End-to-End Testing
+        run: npm run test-e2e-cli
+
+      - name: Lint Code
+        uses: github/super-linter@v4
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JAVASCRIPT_ES: true
+          ESLINT_CONFIG_FILE: .eslintrc.json
+
       - uses: fluxninja/openai-pr-reviewer@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         with:
           debug: false
+
+      - name: Catch errors
+        if: failure()
+        run: echo "An error occurred during the workflow execution."
