@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Noroff",
@@ -14,6 +15,8 @@
   "devDependencies": {
     "eslint": "^8.50.0",
     "eslint-plugin-react": "^7.33.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "live-server": "^1.1.0",
     "prettier": "^3.0.3",
     "sass": "^1.54.8"
@@ -28,5 +31,18 @@
   "bugs": {
     "url": "https://github.com/lindatarod85/social-media-client/issues"
   },
-  "homepage": "https://github.com/lindatarod85/social-media-client#readme"
+  "homepage": "https://github.com/lindatarod85/social-media-client#readme",
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+      ],
+      "*.html": [
+      "prettier --write"
+      ],
+      "*.scss": [
+      "prettier --write"
+      ]
+    
+  }
 }
