@@ -9,7 +9,9 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "prepare": "husky install",
     "test": "npm run test-unit",
-    "test-unit": "jest"
+    "test-unit": "jest",
+    "test": "npm run test-e2e",
+    "test-e2e": "cypress open"
   },
   "keywords": [],
   "author": "Noroff",
@@ -17,7 +19,9 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
+    "cypress": "^13.3.0",
     "eslint": "^8.50.0",
+    "eslint-plugin-cypress": "^2.15.1",
     "eslint-plugin-jest": "^27.4.2",
     "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.3",
