@@ -18,6 +18,7 @@ describe("login function", () => {
   it("should call fetch", async () => {
     const mockFetch = jest.fn(() =>
       Promise.resolve({
+        ok: true,
         json: jest.fn().mockResolvedValue({}),
       }),
     );
