@@ -20,7 +20,7 @@ permissions:
 # Allow one concurrent deployment
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   # Single deploy job since we're just deploying
@@ -46,3 +46,13 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+
+  build:
+    steps:
+        uses: actions/checkout@v3
+      - name: Build SASS
+        run:  npm run build
+      - name: Build to GitHub Pages
+        id: build
+        uses: actions/build-pages@v1  
+            
