@@ -1,0 +1,13 @@
+name: Branch naming
+
+on: create
+
+jobs:
+  check-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Incorrect branch names
+        if: !startsWith( ${{ github.ref }} , 'refs/heads/feature/')
+        run: |
+          echo "Error: Branch names must follow the feature/* contention"
+          exit 1
