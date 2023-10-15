@@ -7,13 +7,15 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix"
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "format": "prettier -w src/**/*.js"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.51.0",
+    "prettier": "^3.0.3",
     "sass": "^1.54.8"
   },
   "dependencies": {
