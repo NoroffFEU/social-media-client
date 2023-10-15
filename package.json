@@ -18,6 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.51.0",
+    "eslint-plugin-jest": "^27.4.2",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.1",
     "prettier": "^3.0.3",
