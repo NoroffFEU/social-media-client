@@ -11,6 +11,7 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.51.0",
     "sass": "^1.54.8"
   },
   "dependencies": {
