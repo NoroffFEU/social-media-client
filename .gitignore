@@ -4,3 +4,4 @@
 
 # Files to ignore
 .eslintrc.json
+.env
