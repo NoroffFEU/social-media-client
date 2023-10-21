@@ -13,3 +13,8 @@ About the Noroff project ...
 [![CI](https://github.com/YlvaLund/social-media-client/actions/workflows/main.yml/badge.svg)](https://github.com/YlvaLund/social-media-client/actions/workflows/main.yml)
 
 [![Prettier](https://github.com/YlvaLund/social-media-client/actions/workflows/prettier.yml/badge.svg)](https://github.com/YlvaLund/social-media-client/actions/workflows/prettier.yml)
+
+## login test
+
+ylva@stud.noroff.no
+passwd: 12345678
