@@ -1,6 +1,6 @@
 {
   "name": "ki-workflow-ca",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "workflow ca for kristoffer iversen",
   "main": "index.js",
   "scripts": {
