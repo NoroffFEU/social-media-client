@@ -25,7 +25,6 @@ npm install
 npm run start
 ```
 
-Create a file called `cypress.config.js`, copy and paste everything from file `cypressinfo.js` and replace "info" with the information you choose when creating a user.
 See `package.json` for the commands that run unit testing and end to end testing.
 
 ## Status badges
