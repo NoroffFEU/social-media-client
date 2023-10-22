@@ -1,25 +1,25 @@
 import { logout } from "../src/js/api/index.js";
 
-jest.mock("../src/js/router/index.js", () => {
+jest.mock("../src/js/api/index.js", () => {
   return {
-    authGuard: jest.fn((callback) => callback())
+    isLoggedIn: jest.fn(() => true)
   };
 });
 
-describe("Logout", () => {
-  it("logs out the user and redirects", () => {
+describe("AuthGuard for Logout", () => {
+  it("call the callback when user is logged in", () => {
     const callback = jest.fn();
-    logout(callback);
+    const result = authGuard(callback);
 
+    expect(result).toEqual(callback);
     expect(callback).toHaveBeenCalled();
   });
 
-  it("does not log out if user is not logged in", () => {
+  it("show a message and redirect when user is not logged in", () => {
     const callback = jest.fn();
-    jest.spyOn(jest.requireActual("../src/js/api/index.js"), "isLoggedIn").mockReturnValue(false);
+    const message = authGuard(callback, "post");
 
-    logout(callback);
-
-    expect(callback).not.toHaveBeenCalled();
+    expect(callback).not toHaveBeenCalled();
+    expect(message).toMatchSnapshot();
   });
 });
