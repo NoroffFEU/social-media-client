@@ -2,8 +2,9 @@
 describe("silje32.github.io"); {
     it ("It has invalid credentials"); 
       cy.visit("https://silje32.github.io/social-media-client/");
-      cy.get("").type();
-      cy.get("").contains("") 
+      cy.get("email").type();
+      cy.get("password").contains(); 
+      cy.get("login").contains();
 
   
   }
