@@ -21,6 +21,13 @@ Clone the repository, open in Visual Studio Code and run
 npm install
 ```
 
+```
+npm run start
+```
+
+Create a file called `cypress.config.js`, copy and paste everything from file `cypressinfo.js` and replace "info" with the information you choose when creating a user.
+See `package.json` for the commands that run unit testing and end to end testing.
+
 ## Status badges
 
 [![Automated E2E Testing](https://github.com/toratapp/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/toratapp/social-media-client/actions/workflows/e2e-test.yml)
