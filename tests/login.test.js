@@ -7,7 +7,7 @@ jest.mock("../src/js/api/index.js", () => {
 });
 
 describe("AuthGuard", () => {
-  it("should call the callback when the user is logged in", () => {
+  it("call t callback when user is logged in", () => {
     const callback = jest.fn();
     const result = authGuard(callback);
 
@@ -15,7 +15,7 @@ describe("AuthGuard", () => {
     expect(callback).toHaveBeenCalled();
   });
 
-  it("should show a message and redirect when the user is not logged in", () => {
+  it("show message and redirect when user is not logged in", () => {
     const callback = jest.fn();
     const message = authGuard(callback, "post");
 
