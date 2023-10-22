@@ -9,11 +9,9 @@ const localStorageMock = {
 global.localStorage = localStorageMock;
 
 describe("Logout Functionality", () => {
-  it("clears the token from browser storage", () => {
-
-    localStorageMock.getItem.mockReturnValue("token);
+  test("clears the token from browser storage", () => {
+    localStorageMock.getItem.mockReturnValue("your-token-value");
     logout();
-    
     expect(localStorageMock.removeItem).toHaveBeenCalledWith("token");
   });
 });
