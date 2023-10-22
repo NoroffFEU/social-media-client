@@ -1,4 +1,4 @@
-import { login } from "../src/js/api/index.js";
+import { login } from "../src/js/api/auth/login.js";
 
 const localStorageMock = {
   getItem: jest.fn(),
