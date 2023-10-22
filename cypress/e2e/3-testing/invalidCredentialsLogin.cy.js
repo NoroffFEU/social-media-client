@@ -1,9 +1,9 @@
 describe("Invalid credentials login", () => {
   it("does not login and is shown a message", () => {
     cy.visit("/");
-    cy.wait(1000);
+    cy.wait(500);
     cy.get(".modal-footer [data-auth=login]").click();
-    cy.wait(1500);
+    cy.wait(500);
     cy.get("#loginEmail").type("invalid@stud.noroff.no");
     cy.get("#loginPassword").type("password");
     cy.get("#loginForm .btn-success").click();

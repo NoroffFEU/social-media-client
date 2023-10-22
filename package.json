@@ -1,6 +1,6 @@
 {
   "name": "workflow-ca",
-  "version": "1.6.0",
+  "version": "1.6.2",
   "description": "Noroff FED Workflow course assignment",
   "main": "index.js",
   "scripts": {
