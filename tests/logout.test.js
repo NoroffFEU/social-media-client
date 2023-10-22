@@ -2,7 +2,7 @@ import { logout } from "../src/js/api/index.js";
 
 jest.mock("../src/js/api/index.js", () => {
   return {
-    isLoggedIn: jest.fn(() => true)
+    isLoggedIn: jest.fn(() => false)
   };
 });
 
