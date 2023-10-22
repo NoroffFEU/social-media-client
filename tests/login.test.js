@@ -1,25 +1,17 @@
-import { authGuard } from "../src/js/router/index.js";
+import { login } from "../src/js/api/index.js";
 
-jest.mock("../src/js/api/index.js", () => {
-  return {
-    isLoggedIn: jest.fn(() => true)
-  };
-});
+const localStorageMock = {
+  getItem: jest.fn(),
+  setItem: jest.fn(),
+};
 
-describe("AuthGuard for Login"", () => {
-  it("call t callback when user is logged in", () => {
-    const callback = jest.fn();
-    const result = authGuard(callback);
+global.localStorage = localStorageMock;
 
-    expect(result).toEqual(callback);
-    expect(callback).toHaveBeenCalled();
-  });
+describe("Login Functionality", () => {
+  it("fetches and stores a token in browser storage", () => {
 
-  it("show message and redirect when user is not logged in", () => {
-    const callback = jest.fn();
-    const message = authGuard(callback, "post");
+    login("username", "password");
 
-    expect(callback).not.toHaveBeenCalled();
-    expect(message).toMatchSnapshot();
+        expect(localStorageMock.setItem).toHaveBeenCalledWith("token", "your-token-value");
   });
 });
