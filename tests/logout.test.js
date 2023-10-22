@@ -1,4 +1,5 @@
-import { logout } from "../src/js/api/index.js";
+import { authGuard } from "../src/js/router/index.js";
+import { logout } from "../src/js/api/index.js"; 
 
 jest.mock("../src/js/api/index.js", () => {
   return {
