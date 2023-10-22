@@ -1,3 +1,7 @@
+[![Automated E2E Testing](https://github.com/NatuRal3/workflow/actions/workflows/e2e-test.yml/badge.svg?branch=workflow)](https://github.com/NatuRal3/workflow/actions/workflows/e2e-test.yml)
+
+[![Automated Unit Testing](https://github.com/NatuRal3/workflow/actions/workflows/unit-test.yml/badge.svg?branch=workflow)](https://github.com/NatuRal3/workflow/actions/workflows/unit-test.yml)
+
 <h1>WORKFLOW</h1>
 
 
