@@ -1,11 +1,11 @@
 describe("social media tests", () => {
   it("Load", () => {
-    cy.visit("http://127.0.0.1:5500/index.html");
+    cy.visit("https://ylvalund.github.io/social-media-client/index.html");
     cy.title().should("contain", "Test Client");
   });
 
   it("Login Success", () => {
-    cy.visit("http://127.0.0.1:5500/index.html");
+    cy.visit("https://ylvalund.github.io/social-media-client/index.html");
     cy.title().should("contain", "Test Client");
     cy.wait(1000);
     cy.get('button[data-testid="selectLogin"]')
@@ -43,7 +43,7 @@ describe("social media tests", () => {
   });
 
   it("Login Fail with Notification", () => {
-    cy.visit("http://127.0.0.1:5500/index.html");
+    cy.visit("https://ylvalund.github.io/social-media-client/index.html");
     cy.title().should("contain", "Test Client");
     cy.wait(1000);
     cy.get('button[data-testid="selectLogin"]')
@@ -78,7 +78,7 @@ describe("social media tests", () => {
   });
 
   it("able to logout", () => {
-    cy.visit("http://127.0.0.1:5500/index.html");
+    cy.visit("https://ylvalund.github.io/social-media-client/index.html");
     cy.title().should("contain", "Test Client");
     cy.wait(1000);
     cy.get('button[data-testid="selectLogin"]')
