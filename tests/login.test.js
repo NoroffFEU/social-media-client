@@ -10,7 +10,7 @@ global.localStorage = localStorageMock;
 describe("Login Functionality", () => {
   test("fetches and stores a token in browser storage", () => {
     login("username", "password");
-    expect(localStorageMock.setItem).toHaveBeenCalledWith("token", "your-token-value");
+    expect(localStorageMock.setItem).toHaveBeenCalledWith("token", "dummy-token");
   });
 });
 
