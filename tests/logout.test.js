@@ -11,7 +11,7 @@ global.localStorage = localStorageMock;
 describe("Logout Functionality", () => {
   it("clears the token from browser storage", () => {
 
-    localStorageMock.getItem.mockReturnValue("some-generic-token-value");
+    localStorageMock.getItem.mockReturnValue("token);
     logout();
     
     expect(localStorageMock.removeItem).toHaveBeenCalledWith("token");
