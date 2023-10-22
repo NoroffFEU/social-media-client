@@ -6,7 +6,7 @@ jest.mock("../src/js/api/index.js", () => {
   };
 });
 
-describe("AuthGuard", () => {
+describe("AuthGuard for Login"", () => {
   it("call t callback when user is logged in", () => {
     const callback = jest.fn();
     const result = authGuard(callback);
