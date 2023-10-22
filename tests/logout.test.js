@@ -1,4 +1,4 @@
-import { logout } from "../src/js/api/index.js";
+import { logout } from "../src/js/api/auth/logout.js;
 
 const localStorageMock = {
   getItem: jest.fn(),
