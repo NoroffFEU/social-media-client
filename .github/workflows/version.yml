@@ -1,0 +1,17 @@
+name: Versions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check commit message
+        uses: gsactions/commit-message-checker@v1
+        with:
+          pattern: '^(feat|fix|chore|docs|style|refactor|ref|test)(\(\w+\))? \w+'
+          flags: "g"
+          error: "Your commit message does not match the commit format."

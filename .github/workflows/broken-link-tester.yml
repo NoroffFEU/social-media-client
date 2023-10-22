@@ -1,0 +1,24 @@
+name: Check for broken links (404)
+
+on:
+  schedule: # reason to do this: if links are outside of the project we need to make sure the links for other pages are still there.
+    - cron: "0 0 * * *" # daily at midnight
+
+jobs:
+  check_links:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: install broken-link-checker
+        run: npm i --local=global broken-link-checker
+
+      - name: check links
+        run: blc https://YlvaLund.github.io/social-media-client -ro
