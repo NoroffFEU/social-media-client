@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "watch-css": "sass --watch src/scss:dist/css",
+    "live": "live-server",
+    "start": "npm-run-all --parallel watch-css live"
   },
   "keywords": [],
   "author": "Noroff",
