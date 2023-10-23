@@ -1,5 +1,5 @@
 # Installing project
-- git clone https://github.com/MariuszRozycki/social-media-client.git;
+- ```git clone https://github.com/MariuszRozycki/social-media-client.git```
 - create branch git checkout -b workflow
 - installing dependencies npm install npm-run-all --save-dev
 - setting up package.json: "scripts": {
