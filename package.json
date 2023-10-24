@@ -7,7 +7,8 @@
     "build": "sass src/scss:dist/css",
     "watch-css": "sass --watch src/scss:dist/css",
     "live": "live-server",
-    "start": "npm-run-all --parallel watch-css live"
+    "start": "npm-run-all --parallel watch-css live",
+    "format": "prettier -w src/js/**/**/*.js"
   },
   "keywords": [],
   "author": "Noroff",
