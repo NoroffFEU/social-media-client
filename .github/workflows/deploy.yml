@@ -35,23 +35,30 @@ jobs:
   deploy:
     # Only run this job on pushes to the workflow branch
     if: github.event_name == 'push' && github.ref == 'refs/heads/workflow'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+        
       - name: Install Dependencies
         run: npm i
+        
       - name: Build SASS
         run: npm run build
+        
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: <correct-action-for-configure-pages>
+        
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: <correct-action-for-upload-artifact>
         with:
           path: '.'
+          
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: <correct-action-for-deploy>
+        
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+  
