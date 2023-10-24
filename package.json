@@ -9,7 +9,8 @@
     "live": "live-server",
     "start": "npm-run-all --parallel watch-css live",
     "format": "prettier -w src/**/*.js",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix"
   },
   "keywords": [],
   "author": "Noroff",
