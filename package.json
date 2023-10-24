@@ -1,20 +1,43 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "description": "Test",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "watch-css": "sass --watch src/scss:dist/css",
+    "live": "live-server",
+    "start": "npm-run-all --parallel watch-css live",
+    "format": "prettier -w src/**/*.js",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.52.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
     "live-server": "^1.2.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.3",
     "sass": "^1.54.8"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   }
 }
