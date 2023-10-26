@@ -9,8 +9,17 @@ test("It resolves with 'abc' value after 1 second", async () => {
 });
 
 import { login } from "./src/js/api/auth/login.js";
+import fetchMock from "jest-fetch-mock";
 
 describe("login function", () => {
+  beforeAll(() => {
+    fetchMock.enableMocks();
+  });
+
+  beforeEach(() => {
+    fetchMock.resetMocks();
+  });
+
   it("fetches and stores a token in local storage", async () => {
     // Mock the global localStorage object
     const localStorageMock = {
@@ -20,6 +29,9 @@ describe("login function", () => {
     // Replace the real localStorage with the mock
     Object.defineProperty(window, "localStorage", { value: localStorageMock });
 
+    // Mock the fetch response
+    fetchMock.mockResponse(JSON.stringify({ accessToken: "your-test-token" }));
+
     const email = "cypressTest@noroff.no";
     const password = "cypresstest";
 
@@ -28,7 +40,7 @@ describe("login function", () => {
     // Verify that the "token" key was set in local storage
     expect(localStorageMock.setItem).toHaveBeenCalledWith(
       "token",
-      expect.any(String)
+      "your-test-token"
     );
   });
 });
