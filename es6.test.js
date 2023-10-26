@@ -8,40 +8,27 @@ test("It resolves with 'abc' value after 1 second", async () => {
   expect(end - start).toBeGreaterThanOrEqual(1000);
 });
 
-import { loginListener } from "./src/js/listeners/auth/login.js"; // Replace with the actual import path
+import { login } from "./src/js/api/auth/login.js"; // Replace with the actual import path
 
-describe("loginListener function", () => {
-  it("checks for 'token' in local storage after a successful login", async () => {
-    // Mock a successful login scenario
-    const event = {
-      preventDefault: jest.fn(),
-      target: document.createElement("form"),
-    };
-
-    // Mock the auth.login function to simulate a successful login
-    const loginResult = { name: "Test User" };
-    const authMock = {
-      login: jest.fn().mockResolvedValue(loginResult),
-    };
-
-    // Mock the localStorage getItem method
+describe("login function", () => {
+  it("fetches and stores a token in local storage", async () => {
+    // Mock the global localStorage object
     const localStorageMock = {
-      getItem: jest.fn(),
+      setItem: jest.fn(),
     };
 
     // Replace the real localStorage with the mock
     Object.defineProperty(window, "localStorage", { value: localStorageMock });
 
-    // Call the loginListener function
-    await loginListener(event);
+    const email = "cypressTest@noroff.no";
+    const password = "cypresstest";
 
-    // Verify that preventDefault was called
-    expect(event.preventDefault).toHaveBeenCalled();
+    await login(email, password);
 
-    // Verify that auth.login was called
-    expect(authMock.login).toHaveBeenCalled();
-
-    // Verify that local storage getItem was called with "token"
-    expect(localStorageMock.getItem).toHaveBeenCalledWith("token");
+    // Verify that the "token" key was set in local storage
+    expect(localStorageMock.setItem).toHaveBeenCalledWith(
+      "token",
+      expect.any(String)
+    );
   });
 });
