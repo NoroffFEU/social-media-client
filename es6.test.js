@@ -8,7 +8,7 @@ test("It resolves with 'abc' value after 1 second", async () => {
   expect(end - start).toBeGreaterThanOrEqual(1000);
 });
 
-import { login } from "./src/js/api/auth/login.js"; // Replace with the actual import path
+import { login } from "./src/js/api/auth/login.js";
 
 describe("login function", () => {
   it("fetches and stores a token in local storage", async () => {
