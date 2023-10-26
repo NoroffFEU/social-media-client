@@ -21,7 +21,7 @@ describe("User Authentication and Button Visibility", () => {
     cy.get('[data-auth="login"]').should("not.be.visible");
 
     // Simulate logging out
-    cy.get('[data-auth="logout"]').click();
+    cy.get("logoutBtn").click();
 
     // Check if the 'Login' button is visible after logging out
     cy.get('[data-auth="login"]').should("be.visible");
