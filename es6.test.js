@@ -8,7 +8,7 @@ test("It resolves with 'abc' value after 1 second", async () => {
   expect(end - start).toBeGreaterThanOrEqual(1000);
 });
 
-import { loginListener } from "/src/js/listeners/auth/login"; // Replace with the actual import path
+import { loginListener } from "./src/js/listeners/auth/login.js"; // Replace with the actual import path
 
 describe("loginListener function", () => {
   it("checks for 'token' in local storage after a successful login", async () => {
