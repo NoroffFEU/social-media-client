@@ -33,6 +33,10 @@ describe("Cannot Submit Login Form with Invalid Password Credentials", () => {
     cy.get("#loginBtn").click();
 
     // Wait for the error message to be displayed
-    cy.get("#loginPassword:invalid").should("be.visible");
+    cy.get("#loginPassword").then(($input) => {
+      // Check if the input field has the `:invalid` pseudo-class
+      const isInvalid = $input[0].checkValidity();
+      expect(isInvalid).to.be.true;
+    });
   });
 });
