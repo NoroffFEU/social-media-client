@@ -7,3 +7,19 @@ test("It resolves with 'abc' value after 1 second", async () => {
   const end = Date.now();
   expect(end - start).toBeGreaterThanOrEqual(1000);
 });
+
+import { remove } from "/src/js/storage/remove.js";
+import { save } from "/src/js/storage/save.js";
+
+test("It removes a value from localStorage", () => {
+  const key = "test-remove";
+  localStorage.setItem(key, "abc");
+  remove(key);
+  expect(localStorage.getItem(key)).toBeNull();
+});
+
+test("It saves a value to localStorage", () => {
+  const key = "test-save";
+  save(key, "abc");
+  expect(localStorage.getItem(key)).toEqual("abc");
+});
