@@ -14,6 +14,7 @@ describe("Cannot Submit Login Form with Invalid Credentials", () => {
     cy.get("#loginBtn").click();
 
     // Wait for the error message to be displayed
-    cy.get(".error-message").should("be.visible");
+    cy.get("#loginEmail:invalid").should("be.visible");
+    cy.get("#loginPassword:invalid").should("be.visible");
   });
 });
