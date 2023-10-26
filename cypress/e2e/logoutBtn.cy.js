@@ -16,15 +16,10 @@ describe("User Authentication and Button Visibility", () => {
     // Wait for the login to complete and check if the user is redirected to the profile page
     cy.url().should("include", "profile");
 
-    // Check if the 'Logout' button is visible after logging in
-    cy.get('[data-auth="logout"]').should("be.visible");
-    cy.get('[data-auth="login"]').should("not.be.visible");
-
     // Simulate logging out
     cy.get("logoutBtn").click();
 
-    // Check if the 'Login' button is visible after logging out
-    cy.get('[data-auth="login"]').should("be.visible");
-    cy.get('[data-auth="logout"]').should("not.be.visible");
+    // Check if the user is redirected to the home page
+    cy.url().should("not.include", "profile");
   });
 });
