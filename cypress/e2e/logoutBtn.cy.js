@@ -17,7 +17,7 @@ describe("User Authentication and Button Visibility", () => {
     cy.url().should("include", "profile");
 
     // Simulate logging out
-    cy.get("logoutBtn").click();
+    cy.get("#logoutBtn").click();
 
     // Check if the user is redirected to the home page
     cy.url().should("not.include", "profile");
