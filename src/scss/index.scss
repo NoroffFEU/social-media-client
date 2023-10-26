@@ -1,21 +1,21 @@
 @import "../../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css";
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 
-  [data-visible=loggedIn] {
+  [data-visible="loggedIn"] {
     display: none;
   }
 
-  [data-visible=loggedOut] {
+  [data-visible="loggedOut"] {
     display: initial;
   }
 
   &.logged-in {
-    [data-visible=loggedIn] {
+    [data-visible="loggedIn"] {
       display: initial;
     }
-    [data-visible=loggedOut] {
+    [data-visible="loggedOut"] {
       display: none;
     }
   }
@@ -49,7 +49,7 @@ body {
   &-form {
     textarea {
       border-top-left-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
+      border-top-right-radius: 1.5rem;
     }
   }
 
@@ -85,7 +85,7 @@ body {
 
   &.op {
     & .comment-body {
-      filter: drop-shadow(0px 1px 1px var(--bs-yellow))
+      filter: drop-shadow(0px 1px 1px var(--bs-yellow));
     }
   }
 
@@ -179,17 +179,26 @@ body {
 }
 
 @keyframes strobe {
-  0% {opacity: 0.1}
-  100% {opacity: 0.6}
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.6;
+  }
 }
 
 @keyframes strobeEnd {
-  0% {opacity: 0.6}
-  100% {opacity: 1}
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .loader {
-  animation: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s infinite alternate strobe;
+  animation: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s infinite alternate
+    strobe;
   margin-bottom: 1rem;
   cursor: wait;
   pointer-events: none;
@@ -199,7 +208,8 @@ body {
   animation: 0.4s ease-in strobeEnd;
 }
 
-header, footer {
+header,
+footer {
   backdrop-filter: blur(5px);
   background: rgba(0, 0, 0, 0.1);
 }

@@ -1,4 +1,4 @@
-describe("Cannot Submit Login Form with Invalid email Credentials", () => {
+describe("Cannot Submit Login Form with Invalid Email Credentials", () => {
   it("displays an error message for invalid email credentials", () => {
     // Load the login page
     cy.visit("../../index.html");
@@ -6,8 +6,8 @@ describe("Cannot Submit Login Form with Invalid email Credentials", () => {
     // Find and click the "Login" button to navigate to the login form
     cy.contains("Login").click();
 
-    // Fill out the login form with invalid credentials
-    cy.get("#loginEmail").type("invalid@email.com");
+    // Fill out the login form with an invalid email
+    cy.get("#loginEmail").type("invalid-email.com"); // Invalid email format
 
     // Submit the form
     cy.get("#loginBtn").click();
@@ -17,7 +17,7 @@ describe("Cannot Submit Login Form with Invalid email Credentials", () => {
   });
 });
 
-describe("Cannot Submit Login Form with Invalid password Credentials", () => {
+describe("Cannot Submit Login Form with Invalid Password Credentials", () => {
   it("displays an error message for invalid password credentials", () => {
     // Load the login page
     cy.visit("../../index.html");
@@ -25,9 +25,9 @@ describe("Cannot Submit Login Form with Invalid password Credentials", () => {
     // Find and click the "Login" button to navigate to the login form
     cy.contains("Login").click();
 
-    // Fill out the login form with invalid credentials
+    // Fill out the login form with a valid email and an invalid password
     cy.get("#loginEmail").type("cypressTest@noroff.no");
-    cy.get("#loginPassword").type("invalid");
+    cy.get("#loginPassword").type("short"); // Invalid password (short length)
 
     // Submit the form
     cy.get("#loginBtn").click();
