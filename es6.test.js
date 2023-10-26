@@ -11,15 +11,15 @@ test("It resolves with 'abc' value after 1 second", async () => {
 import { remove } from "/src/js/storage/remove.js";
 import { save } from "/src/js/storage/save.js";
 
+test("It saves a value to localStorage", () => {
+  const key = "test-save";
+  save(key, "abc");
+  expect(localStorage.getItem(key)).toEqual("abc");
+});
+
 test("It removes a value from localStorage", () => {
   const key = "test-remove";
   localStorage.setItem(key, "abc");
   remove(key);
   expect(localStorage.getItem(key)).toBeNull();
-});
-
-test("It saves a value to localStorage", () => {
-  const key = "test-save";
-  save(key, "abc");
-  expect(localStorage.getItem(key)).toEqual("abc");
 });
