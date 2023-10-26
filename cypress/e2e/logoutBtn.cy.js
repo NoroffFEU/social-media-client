@@ -11,7 +11,7 @@ describe("User Authentication and Button Visibility", () => {
     cy.get("#loginPassword").type("cypresstest");
 
     // Submit the form
-    cy.get("form").submit();
+    cy.get("#loginBtn").click();
 
     // Wait for the login to complete and check if the user is redirected to the profile page
     cy.url().should("include", "profile");
