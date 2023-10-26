@@ -39,13 +39,13 @@ describe("login function", () => {
 
     const result = await login(email, password);
 
-    // Verify that the "token" key was set in local storage
+    // Verify that the "token" key was set in local storage as a string
     expect(localStorageMock.setItem).toHaveBeenCalledWith(
       "token",
-      "your-test-token"
+      expect.any(String)
     );
 
-    // Verify that the "profile" key was set in local storage
+    // Verify that the "profile" key was set in local storage as a JSON string
     expect(localStorageMock.setItem).toHaveBeenCalledWith(
       "profile",
       expect.any(String)

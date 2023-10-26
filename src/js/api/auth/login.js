@@ -11,9 +11,9 @@ export async function login(email, password) {
 
   if (response.ok) {
     const profile = await response.json();
-    save("token", profile.accessToken);
+    save("token", profile.accessToken.toString());
     delete profile.accessToken;
-    save("profile", profile);
+    save("profile", JSON.stringify(profile));
     return profile;
   }
 
