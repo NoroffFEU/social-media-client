@@ -8,6 +8,8 @@ test("It resolves with 'abc' value after 1 second", async () => {
   expect(end - start).toBeGreaterThanOrEqual(1000);
 });
 
+/* SEE IF TOKEN IS SAVED IN LOCAL STORAGE AFTER LOGIN */
+
 import { login } from "./src/js/api/auth/login.js";
 if (process.env.NODE_ENV === "test") {
   require("jest-localstorage-mock");
@@ -52,6 +54,30 @@ describe("login function", () => {
     );
 
     // Check if "token" key doesn't exist in local storage
+    expect(localStorage.getItem("token")).toBeNull();
+  });
+});
+
+/* SEE IF TOKEN IS REMOVED FROM LOCAL STORAGE AFTER LOGOUT */
+
+import { logout } from "./yourLogoutModule"; // Import your logout function
+
+if (process.env.NODE_ENV === "test") {
+  require("jest-localstorage-mock");
+}
+
+describe("logout function", () => {
+  beforeEach(() => {
+    if (process.env.NODE_ENV === "test") {
+      localStorage.setItem("token", "some-token-value"); // Set a value for "token" in local storage before each test
+    }
+  });
+
+  it('should remove the "token" from local storage when logging out', () => {
+    // Call the logout function
+    logout();
+
+    // Check if "token" key no longer exists in local storage
     expect(localStorage.getItem("token")).toBeNull();
   });
 });
