@@ -9,7 +9,7 @@ test("It resolves with 'abc' value after 1 second", async () => {
 });
 
 import { login } from "./src/js/api/auth/login.js";
-import fetchMock from "jest-fetch-mock";
+import fetchMock from "./jest-fetch-mock";
 
 describe("login function", () => {
   beforeAll(() => {
