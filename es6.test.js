@@ -60,7 +60,7 @@ describe("login function", () => {
 
 /* SEE IF TOKEN IS REMOVED FROM LOCAL STORAGE AFTER LOGOUT */
 
-import { logout } from "./yourLogoutModule"; // Import your logout function
+import { logout } from "./src/js/api/auth/logout.js"; // Import your logout function
 
 if (process.env.NODE_ENV === "test") {
   require("jest-localstorage-mock");
