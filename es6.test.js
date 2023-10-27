@@ -9,7 +9,11 @@ test("It resolves with 'abc' value after 1 second", async () => {
 });
 
 import { login } from "./src/js/api/auth/login.js";
-import fetchMock from "./jest-fetch-mock";
+// Import fetchMock only when running Jest tests
+if (process.env.NODE_ENV === "test") {
+  const fetchMock = require("jest-fetch-mock");
+  fetchMock.enableMocks();
+}
 
 describe("login function", () => {
   beforeAll(() => {
