@@ -16,6 +16,8 @@ We follow specific branching conventions to keep our development process organiz
 Continuous Integration and Deployment
 Automatic Building and Deployment: We've set up a Continuous Integration and Continuous Deployment (CI/CD) pipeline to automatically build and deploy the project when changes are merged into the default branch. Our code is automatically tested, and updates are seamlessly deployed to our web hosting platform.
 
+Automated Testing: The code is automatically tested as part of the CI/CD pipeline, helping catch issues early in the development process.
+
 STATUS BADGES
 
 [![Deploy static content to Pages]
