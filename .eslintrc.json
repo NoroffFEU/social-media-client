@@ -28,5 +28,7 @@
       }
     }
   ],
-  "rules": {}
+  "rules": {
+    "no-debugger": "off"
+  }
 }
