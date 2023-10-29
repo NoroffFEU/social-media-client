@@ -27,6 +27,7 @@
       "plugins": ["cypress"],
       "extends": ["plugin:cypress/recommended", "prettier"],
       "rules": {
+        "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
         "cypress/no-unnecessary-waiting": "off",
         "no-unused-vars": "off"
       }
