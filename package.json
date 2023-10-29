@@ -31,6 +31,7 @@
     "@babel/preset-env": "^7.23.2",
     "cypress": "^13.3.3",
     "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-cypress": "^2.15.1",
     "eslint-plugin-jest": "^27.4.3",
     "fetch-mock": "^9.11.0",
