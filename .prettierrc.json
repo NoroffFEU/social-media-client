@@ -1,6 +1,5 @@
 {
   "singleQuote": true,
-
   "overrides": [
     {
       "files": "cypress/e2e/*.cy.js",
