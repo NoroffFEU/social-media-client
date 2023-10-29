@@ -1,14 +1,20 @@
 {
   "singleQuote": true,
-  "htmlWhitespaceSensitivity": "strict",
-  "printWidth": 300,
+
   "overrides": [
     {
-      "files": "*.cy.js",
+      "files": "cypress/e2e/*.cy.js",
       "options": {
         "semi": false,
         "trailingComma": "none",
         "arrowParens": "avoid"
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 300,
+        "htmlWhitespaceSensitivity": "strict"
       }
     }
   ]
