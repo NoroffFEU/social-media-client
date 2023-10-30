@@ -4,7 +4,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["eslint:recommended", "prettier"],
+  "extends": ["eslint:recommended", "prettier", "some-other-config-you-use"],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
@@ -27,7 +27,6 @@
       "plugins": ["cypress"],
       "extends": ["plugin:cypress/recommended", "prettier"],
       "rules": {
-        "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
         "cypress/no-unnecessary-waiting": "off",
         "no-unused-vars": "off"
       }
