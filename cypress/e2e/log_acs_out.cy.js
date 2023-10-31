@@ -44,5 +44,7 @@ describe('Login, access profile and logout', () => {
       expect(token).to.exist;
     });
     cy.get('[data-auth="logout"]').should('be.visible').click();
+    cy.window().its('localStorage.token').should('not.exist');
+    cy.url().should('eq', 'http://127.0.0.1:8080/');
   });
 });
