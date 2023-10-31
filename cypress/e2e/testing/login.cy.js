@@ -1,3 +1,5 @@
+require("dotenv/config");
+
 describe("Login", () => {
   it("should login a user", () => {
     cy.visit("/");
@@ -8,8 +10,8 @@ describe("Login", () => {
     });
     cy.wait(2000);
     cy.get("#loginForm").within(() => {
-      cy.get("input#loginEmail").type("testepost_01@noroff.no");
-      cy.get("input#loginPassword").type("123123123");
+      cy.get("input#loginEmail").type(process.env.LOGIN_TEST_EMAIL);
+      cy.get("input#loginPassword").type(process.env.LOGIN_TEST_PASSWORD);
       cy.contains("button", "Login").click();
     });
   });
