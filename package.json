@@ -1,6 +1,6 @@
 {
-  "name": "css-frameworks-ca",
-  "version": "1.0.0",
+  "name": "worflow-ca",
+  "version": "0.0.1",
   "description": "Test",
   "main": "index.js",
   "scripts": {
@@ -16,5 +16,13 @@
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyolarraklay/social-media-client-CA-workflow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nyolarraklay/social-media-client-CA-workflow/issues"
+  },
+  "homepage": "https://github.com/nyolarraklay/social-media-client-CA-workflow#readme"
 }
