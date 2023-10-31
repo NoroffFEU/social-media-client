@@ -7,7 +7,7 @@
     "extends": "eslint:recommended",
     "overrides": [
         {
-            "files": ["**/*.test.js"],
+            "files": ["**/*.test.js", "tests/mocks/*.js"],
             "env": { "jest": true },
             "plugins": ["jest"],
             "extends": ["plugin:jest/recommended"],
