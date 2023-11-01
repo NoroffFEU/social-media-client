@@ -1,4 +1,5 @@
 import { login } from "./login.js";
+import 'jest-localstorage-mock';
 
 const USER_DATA = {
     id: 1,
