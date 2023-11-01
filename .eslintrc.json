@@ -7,14 +7,22 @@
     "extends": "eslint:recommended",
     "overrides": [
         {
-            "files": ["**/*.test.js", "tests/mocks/*.js","**/*.cy.js"],
-            "env": { "jest": true, "cypress/globals": true },
-            "plugins": ["jest","cypress"],
-            "extends": ["plugin:jest/recommended","plugin:cypress/recommended"],
+            "files": ["**/*.cy.js"],
+            "env": { "cypress/globals": true },
+            "plugins": ["cypress"],
+            "extends": ["plugin:cypress/recommended"],
+            "rules": {
+              "cypress/no-unnecessary-waiting": "off",
+              "no-unused-vars": "off"
+            }
+          },
+        {
+            "files": ["**/*.test.js", "tests/mocks/*.js"],
+            "env": { "jest": true},
+            "plugins": ["jest"],
+            "extends": ["plugin:jest/recommended"],
             "rules": { 
-                "jest/prefer-expect-assertions": "off",
-                "cypress/no-unnecessary-waiting": "off",
-                "no-unused-vars": "off"
+                "jest/prefer-expect-assertions": "off"
             }
         },
         {
