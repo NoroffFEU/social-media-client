@@ -13,7 +13,7 @@ describe("Login", () => {
       cy.get("input#loginPassword").type(Cypress.env("LOGIN_TEST_PASSWORD"));
       cy.contains("button", "Login").click();
     });
-    // assert that the gives user is logged in.
+    // assert that the given user is logged in.
     cy.get("h4").should("contain", Cypress.env("LOGIN_TEST_USER"));
   });
 });
