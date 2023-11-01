@@ -7,10 +7,13 @@ describe("Login", () => {
       cy.contains("button", "Login").click();
     });
     cy.wait(2000);
+    // fill out the form
     cy.get("#loginForm").within(() => {
-      cy.get("input#loginEmail").type(Cypress.env("LOGIN_TEST_EMAIL"));
+      cy.get("input#loginEmail:visible").type(Cypress.env("LOGIN_TEST_EMAIL"));
       cy.get("input#loginPassword").type(Cypress.env("LOGIN_TEST_PASSWORD"));
       cy.contains("button", "Login").click();
     });
+    // assert that the gives user is logged in.
+    cy.get("h4").should("contain", Cypress.env("LOGIN_TEST_USER"));
   });
 });
