@@ -1,0 +1,15 @@
+{
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "explorer.confirmDragAndDrop": false,
+  "editor.largeFileOptimizations": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"]
+}
