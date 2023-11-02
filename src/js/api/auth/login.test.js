@@ -28,7 +28,7 @@ function fetchFailure(status = 404, statusText = "Unsuccessful") {
 }
 
 describe("login", () => {
-  it("returns a valid token when provided with valid credentials", async () => {
+  it("returns a valid token when logging in", async () => {
     global.fetch = jest.fn(() => fetchSuccess());
     const data = await login(GOOD_EMAIL, FAKEPASSWORD);
     expect(GOOD_EMAIL).toMatch("@noroff.no");
@@ -36,7 +36,7 @@ describe("login", () => {
     expect(data.TOKEN).toEqual(FAKETOKEN);
   });
 
-  it("throws an error when provided with invalid credentials", async () => {
+  it("throws an error when provided when login is invalid", async () => {
     global.fetch = jest.fn(() => fetchFailure());
     await expect(login(BAD_EMAIL, FAKEPASSWORD)).rejects.toThrow(
       "Unsuccessful"
