@@ -1,4 +1,5 @@
 import { login } from "./login";
+import "jest-localstorage-mock";
 
 const GOOD_EMAIL = "IAmGod@noroff.no";
 const BAD_EMAIL = "rofl@mao.com";
@@ -28,12 +29,15 @@ function fetchFailure(status = 404, statusText = "Unsuccessful") {
 }
 
 describe("login", () => {
-  it("returns a valid token when logging in", async () => {
+  it("returns a valid token when logging in and stores the token in localstorage", async () => {
     global.fetch = jest.fn(() => fetchSuccess());
     const data = await login(GOOD_EMAIL, FAKEPASSWORD);
     expect(GOOD_EMAIL).toMatch("@noroff.no");
     expect(FAKEPASSWORD.length).toBeGreaterThanOrEqual(8);
     expect(data.TOKEN).toEqual(FAKETOKEN);
+
+    const storedToken = localStorage.getItem("TOKEN");
+    expect(storedToken).toEqual(FAKETOKEN);
   });
 
   it("throws an error when provided when login is invalid", async () => {
