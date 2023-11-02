@@ -1,5 +1,5 @@
-describe("Login", () => {
-  it("should login a user", () => {
+describe("Login validation", () => {
+  it("should validate the email address and show a message if invalid", () => {
     cy.visit("/");
     cy.wait(2000);
     // clicks the login button
