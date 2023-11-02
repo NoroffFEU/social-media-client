@@ -1,9 +1,11 @@
 {
-  "name": "css-frameworks-ca",
+  "name": "workflow-ca",
   "version": "1.0.0",
-  "description": "Test",
+  "description": "Course Assignment in Workflow, second year at Front-End Development at Noroff",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "test": "node test.js",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
   },
@@ -11,6 +13,7 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "dotenv": "^16.3.1",
     "live-server": "^1.2.2",
     "sass": "^1.54.8"
   },
