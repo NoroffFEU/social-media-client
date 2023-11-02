@@ -1,7 +1,7 @@
 import { login } from "./login";
 
 const GOOD_EMAIL = "IAmGod@noroff.no";
-const BAD_EMAIL = "poo@pee.com";
+const BAD_EMAIL = "rofl@mao.com";
 const FAKEPASSWORD = "GoldSilver";
 const FAKETOKEN = "xY7ZpR9qK1wJ2vT3uF8sG6hM4nL5pQ";
 
