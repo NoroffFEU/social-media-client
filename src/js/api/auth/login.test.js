@@ -19,6 +19,7 @@ function fetchSuccess(status = 201, statusText = "Success!") {
     json: () => Promise.resolve({ ...profile, TOKEN: FAKETOKEN }),
   });
 }
+
 function setTokenInLocalStorage(token) {
   localStorage.setItem("TOKEN", token);
 }
