@@ -1,6 +1,6 @@
 {
   "name": "workflow-ca",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Course Assignment in Workflow, second year at Front-End Development at Noroff",
   "main": "index.js",
   "type": "module",
