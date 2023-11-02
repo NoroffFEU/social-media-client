@@ -1,5 +1,5 @@
-describe("Login", () => {
-  it("should login a user", () => {
+describe("Login fail", () => {
+  it("should show a alert if login fails", () => {
     cy.visit("/");
     cy.wait(2000);
     // clicks the login button
