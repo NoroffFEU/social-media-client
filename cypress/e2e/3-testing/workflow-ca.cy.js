@@ -46,7 +46,7 @@ describe("Social Media App: authorized user", () => {
     cy.get("#loginEmail").type("klay@noroff.no", { force: true, delay: 100 });
     cy.get("#loginPassword").type("password", { force: true, delay: 100 });
     cy.get("#loginForm").submit();
-
+    cy.wait(1000);
     cy.visit(
       "https://nyolarraklay.github.io/social-media-client-CA-workflow/?view=profile&name=klay"
     );
