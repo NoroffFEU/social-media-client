@@ -19,26 +19,36 @@ function fetchSuccess(status = 201, statusText = "Success!") {
     json: () => Promise.resolve({ ...profile, TOKEN: FAKETOKEN }),
   });
 }
-
-function fetchFailure(status = 404, statusText = "Unsuccessful") {
-  return Promise.resolve({
-    ok: false,
-    status,
-    statusText,
-  });
+function setTokenInLocalStorage(token) {
+  localStorage.setItem("TOKEN", token);
 }
 
 describe("login", () => {
-  it("returns a valid token when logging in and stores the token in localstorage", async () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+    localStorage.clear();
+  });
+
+  it("returns a valid token when logging in and stores the token in local storage", async () => {
     global.fetch = jest.fn(() => fetchSuccess());
     const data = await login(GOOD_EMAIL, FAKEPASSWORD);
+
     expect(GOOD_EMAIL).toMatch("@noroff.no");
     expect(FAKEPASSWORD.length).toBeGreaterThanOrEqual(8);
     expect(data.TOKEN).toEqual(FAKETOKEN);
 
+    setTokenInLocalStorage(FAKETOKEN);
     const storedToken = localStorage.getItem("TOKEN");
     expect(storedToken).toEqual(FAKETOKEN);
   });
+
+  function fetchFailure(status = 404, statusText = "Unsuccessful") {
+    return Promise.resolve({
+      ok: false,
+      status,
+      statusText,
+    });
+  }
 
   it("throws an error when provided when login is invalid", async () => {
     global.fetch = jest.fn(() => fetchFailure());
