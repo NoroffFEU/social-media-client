@@ -1,4 +1,4 @@
-import { wait } from "./es6";
+import { wait } from "./es6.js";
 
 test("It resolves with 'abc' value after 1 second", async () => {
   const start = Date.now();
