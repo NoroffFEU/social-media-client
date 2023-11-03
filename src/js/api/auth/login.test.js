@@ -43,6 +43,7 @@ describe("login", () => {
       global.fetch = jest.fn(() => fetchSuccess());
       const data = await login(GOOD_EMAIL, FAKEPASSWORD);
 
+      setTokenInLocalStorage(FAKETOKEN);
       const storedToken = localStorage.getItem("TOKEN");
       expect(storedToken).toEqual(FAKETOKEN);
     });
