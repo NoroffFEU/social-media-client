@@ -14,7 +14,7 @@
   },
   "jest": {
     "resetMocks": false,
-    "setupFiles": ["./__setups__/other.js", "jest-localstorage-mock"]
+    "setupFiles": ["jest-localstorage-mock"]
   },
   "keywords": [],
   "author": "Noroff",
@@ -46,7 +46,11 @@
   },
   "homepage": "https://github.com/StineNygren/stine_workflow_ca#readme",
   "lint-staged": {
-    "*.js": [
+    "src/**/*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "index.js": [
       "prettier --write",
       "eslint --fix"
     ],
@@ -57,4 +61,5 @@
       "prettier --write"
     ]
   }
+  
 }
