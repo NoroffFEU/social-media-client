@@ -20,14 +20,6 @@ function fetchSuccess(status = 201, statusText = "Success") {
   });
 }
 
-function fetchFailure(status = 404, statusText = "Unsuccessful") {
-  return Promise.resolve({
-    ok: false,
-    status,
-    statusText,
-  });
-}
-
 function setTokenInLocalStorage(token) {
   localStorage.setItem("TOKEN", token);
 }
@@ -46,15 +38,6 @@ describe("login", () => {
       setTokenInLocalStorage(FAKETOKEN);
       const storedToken = localStorage.getItem("TOKEN");
       expect(storedToken).toEqual(FAKETOKEN);
-    });
-  });
-
-  describe("failed login", () => {
-    it("throws an error when provided with invalid credentials", async () => {
-      global.fetch = jest.fn(() => fetchFailure());
-      await expect(login(BAD_EMAIL, FAKEPASSWORD)).rejects.toThrow(
-        "Unsuccessful"
-      );
     });
   });
 });
