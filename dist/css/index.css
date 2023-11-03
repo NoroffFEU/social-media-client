@@ -1,4 +1,4 @@
-@import "../../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css";
+@import './bootstrap-dark.min.css';
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -169,7 +169,8 @@ body .card-header + .card-footer {
   animation: 0.4s ease-in strobeEnd;
 }
 
-header, footer {
+header,
+footer {
   backdrop-filter: blur(5px);
   background: rgba(0, 0, 0, 0.1);
 }
