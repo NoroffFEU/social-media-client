@@ -77,7 +77,7 @@ describe("login", () => {
       global.fetch = jest.fn(() => fetchSuccess());
       const data = await login(GOOD_EMAIL, FAKEPASSWORD);
 
-      setTokenInLocalStorage("TOKEN", FAKETOKEN); // Set the token with a specific key
+      setTokenInLocalStorage("TOKEN", FAKETOKEN);
       const storedToken = localStorage.getItem("TOKEN");
       expect(storedToken).toEqual(FAKETOKEN);
     });
