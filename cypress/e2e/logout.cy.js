@@ -26,5 +26,9 @@ describe("Logout", () => {
     });
 
     cy.url().should("include", "profile");
+
+    cy.get("button[data-auth='logout']").click();
+    cy.then(() => expect(window.localStorage.getItem("profile")).to.be.null);
+    cy.then(() => expect(window.localStorage.getItem("token")).to.be.null);
   });
 });
