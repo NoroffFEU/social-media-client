@@ -1,3 +1,8 @@
 {
   "singleQuote": true
+
+  "scripts": {
+    "test": "node src/js/joker.test.js",
+    "format": "prettier -w src/**/*.js"
+  }
 }
