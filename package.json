@@ -7,7 +7,8 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "node index.js",
-    "format": "prettier -w index.js"
+    "format": "prettier -w index.js",
+    "lint": "eslint *.js"
   },
   "keywords": [],
   "author": "Noroff",
