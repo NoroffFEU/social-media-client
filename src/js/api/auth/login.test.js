@@ -1,3 +1,4 @@
+import { load } from "../../storage";
 import { login } from "./login";
 import "jest-localstorage-mock";
 
@@ -15,12 +16,8 @@ function fetchSuccess(status = 201, statusText = "Success") {
     ok: true,
     status,
     statusText,
-    json: () => Promise.resolve({ ...profile, TOKEN: FAKETOKEN }),
+    json: () => Promise.resolve({ ...profile, accessToken: FAKETOKEN }),
   });
-}
-
-function setTokenInLocalStorage(key, token) {
-  localStorage.setItem(key, token);
 }
 
 describe("login", () => {
@@ -32,10 +29,9 @@ describe("login", () => {
   describe("successful login", () => {
     it("returns a valid token when logging in and stores the token in local storage", async () => {
       global.fetch = jest.fn(() => fetchSuccess());
-      const data = await login(GOOD_EMAIL, FAKEPASSWORD);
+      await login(GOOD_EMAIL, FAKEPASSWORD);
 
-      setTokenInLocalStorage("TOKEN", FAKETOKEN);
-      const storedToken = localStorage.getItem("TOKEN");
+      const storedToken = load("token");
       expect(storedToken).toEqual(FAKETOKEN);
     });
   });
