@@ -46,6 +46,7 @@ Added the following end to end test files for Cypress
 
 - login.cy.js
   - Tests login with valid credentials
+- invalid-login.cy.js
   - Tests login error handling with invalid email
   - Tests login error handling with invalid password
 - logout.cy.js
