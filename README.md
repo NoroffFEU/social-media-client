@@ -2,10 +2,13 @@
 
 ## Project description
 
-The task is about making a web app better by adding special steps that help people <br>
-work together smoothly and make the app's code neat and error-free.<br>
+Social-media-app where user can registry profile, login. <br>
+After login user can read all posts fetched from API. <br>
+User can create new post, update own posts.<br>
 
-### Project requires:
+### What was to do in this project?
+
+Web developers on this project have to work on requirements:
 
 - is configured to run Prettier on commit
 - Project is configured to run ESLint on commit
@@ -24,15 +27,24 @@ work together smoothly and make the app's code neat and error-free.<br>
 - The user cannot submit the login form with invalid credentials and is shown a message
 - The user can log out with the logout button
 
-## Installing project
+## Installing the project
 
-- `git clone https://github.com/MariuszRozycki/social-media-client.git`
-- create branch `git checkout -b workflow`
-- installing dependencies with command `npm install npm-run-all --save-dev`
+- Clone the repository:
+  `git clone https://github.com/MariuszRozycki/social-media-client.git`
+- Go to the cloned project directory:
+  `cd social-media-client`
+- (Optional) List all branches, remote and local:
+  `git branch -a`
+- (Optional) Switch to a specific branch, if needed:
+  `git checkout workflow`
+- Install all packages from `package.json`:
+  `npm i`
+- Start the project:
+  `npm start`
 
 ## Improving project
 
-Below steps how project was improved by package.json
+Below steps how project was improved.
 If you need more details to package.json use `git log -p -- package.json`
 
 - setting up package.json
