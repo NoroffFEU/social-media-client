@@ -9,9 +9,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout under $GITHUB_WORKSPACE
-        uses: actions/checkout@main
+        uses: actions/checkout@master
 
-      - name: run cypress tests with electron
+      - name: Install Dependencies
+        run: npm ci 
+
+      - name: Start server
+        run: npm start & 
+        env:
+          CI: true
+
+      - name: Wait for server to be ready
+        run: sleep 10 
+
+      - name: Run Cypress tests
         uses: cypress-io/github-action@v4
         with:
           browser: electron
+          wait-on: 'http://localhost:8080' 
+          wait-on-timeout: 60 
