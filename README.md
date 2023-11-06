@@ -8,7 +8,7 @@
 
 ## Installation
 
-Clone the repo and open in your IDE.
+Clone the repo and open.
 Initialize git
 
 ```
