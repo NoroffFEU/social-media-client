@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
+    "format": "prettier -w src/**/*.js",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
   },
@@ -14,7 +15,6 @@
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.53.0",
-    "eslint-config-google": "^0.14.0",
     "live-server": "^1.2.2",
     "prettier": "^3.0.3",
     "sass": "^1.54.8"
