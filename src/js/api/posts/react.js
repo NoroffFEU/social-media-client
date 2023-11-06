@@ -1,10 +1,10 @@
-import { apiPath } from "../constants.js";
-import { headers } from "../headers.js";
+import {apiPath} from '../constants.js';
+import {headers} from '../headers.js';
 
 export async function react(postId, symbol) {
   const response = await fetch(`${apiPath}/social/posts/${postId}/react/${symbol}`, {
     headers: headers(),
-    method: "put"
+    method: 'put',
   });
 
   if (response.ok) {

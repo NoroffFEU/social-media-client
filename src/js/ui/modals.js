@@ -1,4 +1,4 @@
-import { loginListener, registerListener } from "../listeners/index.js";
+import {loginListener, registerListener} from '../listeners/index.js';
 
 export const modals = () => {
   document.querySelector('form#loginForm').addEventListener('submit', loginListener);
