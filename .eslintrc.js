@@ -5,17 +5,13 @@ module.exports = {
     },
     "extends": "eslint:recommended",
     "overrides": [
-        {
-            "env": {
-                "node": true
-            },
-            "files": [
-                ".eslintrc.{js,cjs}"
-            ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
-        }
+      {
+        "files": ["**/*.test.js"],
+        "env": { "jest": true },
+        "plugins": ["jest"],
+        "extends": ["plugin:jest/recommended"],
+        "rules": { "jest/prefer-expect-assertions": "off" }
+      }
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
