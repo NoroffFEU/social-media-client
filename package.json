@@ -6,7 +6,8 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "format": "prettier -w src/**/*.js"
   },
   "keywords": [],
   "author": "Noroff",
@@ -14,6 +15,7 @@
   "devDependencies": {
     "eslint": "^8.53.0",
     "live-server": "^1.2.2",
+    "prettier": "^3.0.3",
     "sass": "^1.54.8"
   },
   "dependencies": {
