@@ -1,6 +1,6 @@
 import { login } from "../../js/api/auth/login";
 
-const localStorageMock = 
+export const localStorageMock = 
 (function () {
  let store = [];
  return {
@@ -21,8 +21,7 @@ const localStorageMock =
 
 global.localStorage = localStorageMock;
 
-
-global.fetch = async function() {
+export const globalFetch = async function() {
     const profile = {
         accessToken: 'mockToken'
     }
@@ -34,6 +33,8 @@ global.fetch = async function() {
     
     return Promise.resolve(response);
 }
+
+global.fetch = globalFetch;
 
 test('Login fetches and stores a token in browser storage', async () => {
     
