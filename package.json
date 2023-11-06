@@ -4,6 +4,7 @@
   "description": "Test",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src/**/*.js",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
   },
