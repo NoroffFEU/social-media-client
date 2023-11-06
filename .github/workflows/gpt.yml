@@ -1,4 +1,4 @@
-name: Code Review
+name: Unit Testing
 
 permissions:
   contents: read
