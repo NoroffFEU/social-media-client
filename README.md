@@ -38,9 +38,9 @@ Added the following test files;
   - test storing token
 - /storage/localstorage.test.js
 
-  - Test Deleting token when logging out
+- Test Deleting token when logging out
 
-  ### End To End testing, Cypress
+### End To End testing, Cypress
 
 Added the following end to end test files for Cypress
 
