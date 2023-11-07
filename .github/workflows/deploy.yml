@@ -30,12 +30,14 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         with:
           debug: false
-
   # Deployment Job
   deploy:
     # Only run this job on pushes to the workflow branch
     if: github.event_name == 'push' && github.ref == 'refs/heads/workflow'
     runs-on: ubuntu-latest
+    env:
+      GH_PAGES_URL: 'https://ramtinmoshtagh.github.io/social-media-client/'
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -46,19 +48,25 @@ jobs:
       - name: Build SASS
         run: npm run build
         
-      - name: Setup Pages
-        uses: <correct-action-for-configure-pages>
+
+      #- name: Setup Pages
+      #  uses: jrandiny/apt-repo-action@v1
+      #  with:
+      #    ... (the appropriate inputs from the action's documentation)
         
       - name: Upload artifact
-        uses: <correct-action-for-upload-artifact>
+        uses: actions/upload-artifact@v3
         with:
-          path: '.'
-          
+          name: my-artifact
+          path: '.'  # This uploads the entire current directory as an artifact
+
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: <correct-action-for-deploy>
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: public
         
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-  
+      url: ${{ env.GH_PAGES_URL }}
