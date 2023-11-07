@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/css/index.css" />
+    <script
+      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="./src/js/index.js" defer type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/stylesheet.css" rel="stylesheet" />
+    <title>Test Client</title>
+  </head>
+
+  <body class="body-wrapper">
+    <header class="sticky-top shadow">
+      <div class="container-fluid">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start"
+        >
+          <a
+            href="./"
+            class="logo d-flex align-items-center mb-2 me-sm-3 mb-sm-0 text-white text-decoration-none"
+          >
+            <img
+              src="https://www.noroff.no//images/logo/noroff-logo.png"
+              alt="Noroff Logo"
+            />
+          </a>
+
+          <form class="search-form col mb-3 mb-sm-0 me-sm-3" role="search">
+            <input
+              type="search"
+              class="form-control form-control-dark text-bg-dark"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </form>
+
+          <div class="text-end">
+            <button
+              type="button"
+              class="btn btn-outline-warning me-2"
+              data-auth="logout"
+              data-visible="loggedIn"
+            >
+              Logout
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success me-2"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+              data-auth="login"
+              data-visible="loggedOut"
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#registerModal"
+              data-auth="register"
+              data-visible="loggedOut"
+            >
+              Create Profile
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container-fluid mt-3"></main>
+
+    <!--     <footer class="sticky-bottom shadow">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col">© 2022 Noroff FEU</div>
+                <div class="col-auto" data-visible="loggedIn">
+                    <div class="d-flex align-items-center" id="footerActions">
+                        <a href="./?view=post" data-visible="loggedIn" class="btn btn-outline-success">New Post</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+    <div
+      class="modal fade"
+      id="loginModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <!-- Login modal content -->
+    </div>
+
+    <div
+      class="modal fade"
+      id="registerModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="registerModalLabel"
+      aria-hidden="true"
+    >
+      <!-- Register modal content -->
+    </div>
+
+    <div class="templates d-none">
+      <!-- Template elements go here -->
+    </div>
+  </body>
+</html>

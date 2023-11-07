@@ -1,0 +1,82 @@
+.body-wrapper {
+  padding: 20px;
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.476),
+      rgba(0, 0, 0, 0.668)
+    ),
+    url(images/backgroundimage.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+footer {
+  padding: 20px;
+  color: #fff;
+  background-color: black;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form {
+  max-width: 90%;
+  min-width: 50%;
+  padding: 50px 60px 70px;
+  text-align: center;
+  border: 3px solid rgba(0, 0, 0, 0.665);
+  background: rgba(255, 255, 255, 0.761);
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.postfeed {
+  background-color: rgba(255, 255, 255, 0.74);
+  border: 3px solid rgba(0, 0, 0, 0.665);
+  border-radius: 3px;
+  padding: 20px 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+#register,
+#login {
+  padding: 10px 15px;
+  margin-top: 20px;
+}
+
+label {
+  padding: 10px;
+}
+
+h1,
+h2,
+h3,
+.button,
+input,
+label,
+a,
+text,
+.btn,
+.btn-dark {
+  font-family: 'Nunito', sans-serif;
+}
+
+.modal-footer {
+  padding: 20px;
+}
