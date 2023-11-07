@@ -1,4 +1,4 @@
-import { followProfile } from '../../api/profiles/index.js';
+import { followProfile } from "../../api/profiles/index.js";
 
 export async function followListener(event) {
   console.log("followListener function is running"); // Added console log
