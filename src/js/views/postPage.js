@@ -1,14 +1,14 @@
-import { getPost, isLoggedIn, profile } from "../api/index.js";
+import { getPost, isLoggedIn, profile } from '../api/index.js';
 import {
   postFormTemplate,
   postTabsTemplate,
   postThumbnailTemplate,
-} from "../templates/index.js";
-import { postCommentsTemplate } from "../templates/post/comments.js";
+} from '../templates/index.js';
+import { postCommentsTemplate } from '../templates/post/comments.js';
 
 export const publicPostPage = async (post) => {
-  const element = document.createElement("div");
-  element.classList.add("post", "page", "mb-3");
+  const element = document.createElement('div');
+  element.classList.add('post', 'page', 'mb-3');
   const thumbnail = postThumbnailTemplate(post, true);
   const comments = postCommentsTemplate(post);
   element.append(thumbnail, comments);
@@ -17,7 +17,7 @@ export const publicPostPage = async (post) => {
 
 export const postPage = async (postId) => {
   if (!isLoggedIn()) {
-    location.href = "./";
+    location.href = './';
   } else {
     const me = profile();
 
@@ -30,8 +30,8 @@ export const postPage = async (postId) => {
         const thumbnail = postThumbnailTemplate(post);
         const postForm = postFormTemplate(post);
         const comments = postCommentsTemplate(post);
-        page.querySelector("#nav-default").append(thumbnail, comments);
-        page.querySelector("#nav-edit").append(postForm);
+        page.querySelector('#nav-default').append(thumbnail, comments);
+        page.querySelector('#nav-edit').append(postForm);
         return page;
       }
 

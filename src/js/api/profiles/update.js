@@ -1,14 +1,14 @@
-import { profile } from "../auth/state.js";
-import { apiPath } from "../constants.js";
-import { headers } from "../headers.js";
+import { profile } from '../auth/state.js';
+import { apiPath } from '../constants.js';
+import { headers } from '../headers.js';
 
 export async function updateProfileImage(avatar) {
   const me = profile();
 
   const response = await fetch(`${apiPath}/social/profiles/${me.name}`, {
-    method: "put",
+    method: 'put',
     body: JSON.stringify({ ...me, avatar }),
-    headers: headers("application/json"),
+    headers: headers('application/json'),
   });
 
   if (response.ok) {
