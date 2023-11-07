@@ -35,38 +35,19 @@ jobs:
     # Only run this job on pushes to the workflow branch
     if: github.event_name == 'push' && github.ref == 'refs/heads/workflow'
     runs-on: ubuntu-latest
-    env:
-      GH_PAGES_URL: 'https://ramtinmoshtagh.github.io/social-media-client/'
     
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         
       - name: Install Dependencies
-        run: npm i
+        run: npm install
         
-      - name: Build SASS
+      - name: Build
         run: npm run build
         
-
-      #- name: Setup Pages
-      #  uses: jrandiny/apt-repo-action@v1
-      #  with:
-      #    ... (the appropriate inputs from the action's documentation)
-        
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-artifact
-          path: '.'  # This uploads the entire current directory as an artifact
-
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public
-        
-    environment:
-      name: github-pages
-      url: ${{ env.GH_PAGES_URL }}
+          publish_dir: ./public
