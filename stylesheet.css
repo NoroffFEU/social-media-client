@@ -3,8 +3,8 @@
   width: 100%;
   min-height: 100vh;
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.476),
-      rgba(0, 0, 0, 0.668)
+      rgba(0, 0, 0, 0.668),
+      rgba(255, 255, 255, 0.476)
     ),
     url(images/backgroundimage.jpg);
   background-position: center;
@@ -54,12 +54,6 @@ footer a {
   margin: 40px auto;
 }
 
-#register,
-#login {
-  padding: 10px 15px;
-  margin-top: 20px;
-}
-
 label {
   padding: 10px;
 }
@@ -86,5 +80,5 @@ text,
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
-  background-color: #752222ae;
+  background-color: #ffffffc2;
 }
