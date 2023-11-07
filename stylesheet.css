@@ -1,6 +1,5 @@
 .body-wrapper {
   padding: 20px;
-  width: 100%;
   min-height: 100vh;
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.668),
@@ -26,10 +25,9 @@ footer a {
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
-  cursor: pointer;
 }
 
-.form {
+/* .form {
   max-width: 90%;
   min-width: 50%;
   padding: 50px 60px 70px;
@@ -41,9 +39,9 @@ footer a {
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-}
+} */
 
-.postfeed {
+/* .postfeed {
   background-color: rgba(255, 255, 255, 0.74);
   border: 3px solid rgba(0, 0, 0, 0.665);
   border-radius: 3px;
@@ -52,11 +50,7 @@ footer a {
   margin-bottom: 40px;
   max-width: 900px;
   margin: 40px auto;
-}
-
-label {
-  padding: 10px;
-}
+} */
 
 h1,
 h2,
@@ -75,10 +69,18 @@ text,
   padding: 20px;
 }
 
+input {
+  max-width: 90%;
+}
+
 .user-action {
   border: 2px solid black;
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
   background-color: #ffffffc2;
+}
+
+.text-end {
+  max-width: 90%;
 }
