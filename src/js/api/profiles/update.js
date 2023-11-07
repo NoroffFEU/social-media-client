@@ -1,7 +1,7 @@
 import { profile } from "../auth/state.js";
 import { apiPath } from "../constants.js";
 import { headers } from "../headers.js";
-import fetch from 'node-fetch';
+
 
 export async function updateProfileImage(avatar) {
   const me = profile()

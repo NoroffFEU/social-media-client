@@ -1,6 +1,6 @@
 import { apiPath } from "../constants.js";
 import { headers } from "../headers.js";
-import fetch from 'node-fetch';
+
 
 export async function react(postId, symbol) {
   const response = await fetch(`${apiPath}/social/posts/${postId}/react/${symbol}`, {

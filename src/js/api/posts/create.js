@@ -1,6 +1,6 @@
 import { apiPath } from "../constants.js";
 import { headers } from "../headers.js";
-import fetch from 'node-fetch';
+
 
 export async function createPost(title, body, media, tags) {
   const response = await fetch(`${apiPath}/social/posts/`, {

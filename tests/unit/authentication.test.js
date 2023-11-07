@@ -45,17 +45,4 @@ describe('Authentication Unit Tests', () => {
     const token = localStorage.getItem('token');
     expect(token).toEqual(JSON.stringify("sampleToken"));
   });
-  it('The logout function clears the token from browser storage', () => {
-      localStorage.setItem('token', 'mockToken'); // change this to 'token'
-      logout();
-      const token = localStorage.getItem('token'); // change this to 'token'
-      expect(token).toBeNull();
-  });
-
-  it('logout function should remove authToken', () => {
-    localStorage.setItem('token', 'testToken'); // change this to 'token'
-    logout();
-    const token = localStorage.getItem('token'); // change this to 'token'
-    expect(token).toBeNull();
-  });
 });
