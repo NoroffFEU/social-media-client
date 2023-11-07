@@ -7,6 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier -w src/js/**/*.js",
+    "lint": "eslint src/js/**/*.js",
+    "lint-fix": "eslint src/js/**/*.js --cache --fix",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
   },
@@ -14,6 +16,7 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.53.0",
     "live-server": "^1.2.2",
     "prettier": "^3.0.3",
     "sass": "^1.54.8"
