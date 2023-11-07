@@ -80,3 +80,11 @@ text,
 .modal-footer {
   padding: 20px;
 }
+
+.user-action {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #752222ae;
+}

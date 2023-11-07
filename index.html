@@ -39,50 +39,53 @@
                 alt="Noroff Logo"
               />
             </a>
-
-            <form class="search-form col mb-3 mb-sm-0 me-sm-3" role="search">
-              <input
-                type="search"
-                class="form-control form-control-dark text-bg-dark"
-                placeholder="Search..."
-                aria-label="Search"
-              />
-            </form>
-
-            <div class="text-end">
-              <button
-                type="button"
-                class="btn btn-outline-warning me-2"
-                data-auth="logout"
-                data-visible="loggedIn"
-              >
-                Logout
-              </button>
-              <button
-                type="button"
-                class="btn btn-outline-success me-2"
-                data-bs-toggle="modal"
-                data-bs-target="#loginModal"
-                data-auth="login"
-                data-visible="loggedOut"
-              >
-                Login
-              </button>
-              <button
-                type="button"
-                class="btn btn-success"
-                data-bs-toggle="modal"
-                data-bs-target="#registerModal"
-                data-auth="register"
-                data-visible="loggedOut"
-              >
-                Create Profile
-              </button>
-            </div>
           </div>
         </div>
       </header>
 
+      <!-- ER I ORDEN MEN MANGLER STYLING  -->
+      <div class="user-action">
+        <form class="search-form col mb-3 mb-sm-0 me-sm-3" role="search">
+          <input
+            type="search"
+            class="form-control form-control-dark text-bg-dark"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+        </form>
+        <div class="text-end">
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#registerModal"
+            data-auth="register"
+            data-visible="loggedOut"
+          >
+            Create Profile
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-success me-2"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+            data-auth="login"
+            data-visible="loggedOut"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-warning me-2"
+            data-auth="logout"
+            data-visible="loggedIn"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+
+      <!-- Usikker på hva denne gjør  -->
       <div
         class="modal fade"
         id="loginModal"
@@ -92,59 +95,63 @@
         aria-labelledby="loginModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-          <form class="modal-content" id="loginForm">
-            <div class="modal-header">
-              <h3 class="modal-title" id="loginModalLabel">Login</h3>
-            </div>
-            <div class="modal-body">
-              <div class="form-floating mb-3">
-                <label for="loginEmail">Email address</label>
-                <input
-                  required
-                  type="email"
-                  class="form-control"
-                  id="loginEmail"
-                  name="email"
-                  pattern="[\w\-.]+@(stud.)?noroff.no$"
-                  title="Only Noroff student or teacher emails are valid."
-                  placeholder="name@example.com"
-                />
+        <div class="user-action">
+          <div
+            class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+          >
+            <form class="modal-content" id="loginForm">
+              <div class="modal-header">
+                <h3 class="modal-title" id="loginModalLabel">Login</h3>
               </div>
-              <div class="form-floating mb-3">
-                <label for="loginPassword">Password</label>
-                <input
-                  required
-                  type="password"
-                  minlength="8"
-                  class="form-control"
-                  id="loginPassword"
-                  name="password"
-                  placeholder="Password"
-                />
+              <div class="modal-body">
+                <div class="form-floating mb-3">
+                  <label for="loginEmail">Email address</label>
+                  <input
+                    required
+                    type="email"
+                    class="form-control"
+                    id="loginEmail"
+                    name="email"
+                    pattern="[\w\-.]+@(stud.)?noroff.no$"
+                    title="Only Noroff student or teacher emails are valid."
+                    placeholder="name@example.com"
+                  />
+                </div>
+                <div class="form-floating mb-3">
+                  <label for="loginPassword">Password</label>
+                  <input
+                    required
+                    type="password"
+                    minlength="8"
+                    class="form-control"
+                    id="loginPassword"
+                    name="password"
+                    placeholder="Password"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="reset"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                type="button"
-                class="btn btn-outline-success"
-                data-bs-toggle="modal"
-                data-bs-target="#registerModal"
-                data-auth="register"
-                data-visible="loggedOut"
-              >
-                Register
-              </button>
-              <button type="submit" class="btn btn-success">Login</button>
-            </div>
-          </form>
+              <div class="modal-footer">
+                <button
+                  type="reset"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-success"
+                  data-bs-toggle="modal"
+                  data-bs-target="#registerModal"
+                  data-auth="register"
+                  data-visible="loggedOut"
+                >
+                  Register
+                </button>
+                <button type="submit" class="btn btn-success">Login</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </body>
