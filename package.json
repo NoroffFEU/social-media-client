@@ -45,6 +45,9 @@
     ],
     "*.scss": [
       "prettier --write"
+    ],
+    "*.{jsx,ts,tsx,json,css,md}": [
+      "prettier --write"
     ]
   }
 }
