@@ -8,7 +8,8 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "npm run test-unit",
     "type": "module",
-    "test-unit": "jest --watch"
+    "test-unit": "jest --watch",
+    "test-e2e": "cypress open"
   },
   "husky": {
     "hooks": {
