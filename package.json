@@ -41,13 +41,16 @@
       "eslint --fix"
     ],
     "*.html": [
-      "prettier --write"
+      "prettier --write",
+      "eslint --fix"
     ],
     "*.scss": [
-      "prettier --write"
+      "prettier --write",
+      "eslint --fix"
     ],
-    "*.{jsx,ts,tsx,json,css,md}": [
-      "prettier --write"
+    "*.{jsx,ts,tsx,css,md}": [
+      "prettier --write",
+      "eslint --fix"
     ]
   }
 }
