@@ -1,6 +1,7 @@
 export default [
   '😀',
   '😁',
+  DOes this Run prettier on commit?
   '😂',
   '🤣',
   '😃',
