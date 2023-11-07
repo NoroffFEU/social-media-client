@@ -81,6 +81,15 @@ input {
   background-color: #ffffffc2;
 }
 
+.alert {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #ffffffc2;
+  color: #ff5d5d;
+}
+
 .text-end {
   max-width: 90%;
 }
