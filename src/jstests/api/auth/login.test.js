@@ -1,8 +1,15 @@
-import { apiPath } from '../constants.js';
-import { headers } from '../headers.js';
-import { save } from '../../storage/index.js';
+// Tests of login.js
+require('dotenv/config');
+import login from '../../../js/api/auth/login.js';
+import { load } from '../../../js/storage/load.js';
 
-export async function login(email, password) {
+describe('Tests of login.js', () => {
+  test('Logs the user in if credentials are valid', () => {});
+  load('token');
+  login();
+});
+
+/* export async function login(email, password) {
   const response = await fetch(`${apiPath}/social/auth/login`, {
     method: 'post',
     body: JSON.stringify({ email, password }),
@@ -19,3 +26,4 @@ export async function login(email, password) {
 
   throw new Error(response.statusText);
 }
+ */
