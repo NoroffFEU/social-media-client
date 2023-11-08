@@ -3,8 +3,8 @@ import "jest-localstorage-mock";
 
 describe("login function", () => {
   it("fetches and stores token in browser", async () => {
-    const email = "eivindalex@noroff.no";
-    const password = "asdf1234";
+    const email = "user@noroff.no";
+    const password = "password2";
 
     await login(email, password);
 
