@@ -1,5 +1,5 @@
 {
-  "name": "css-frameworks-ca",
+  "name": "workflow",
   "version": "1.0.0",
   "description": "Test",
   "main": "index.js",
@@ -22,5 +22,13 @@
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bilal1998a/workflow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bilal1998a/workflow/issues"
+  },
+  "homepage": "https://github.com/Bilal1998a/workflow#readme"
 }
