@@ -9,7 +9,7 @@
 npm i
 ```
 
-3. Build:
+2. Build:
 ```
 npm run build
 ```
