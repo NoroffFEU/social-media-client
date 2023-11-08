@@ -4,8 +4,9 @@
 [![Deploy static content to Pages](https://github.com/StineNygren/stine_workflow_ca/actions/workflows/static.yml/badge.svg?branch=workflow)](https://github.com/StineNygren/stine_workflow_ca/actions/workflows/static.yml)
 [![Deploy static content to Pages](https://github.com/StineNygren/stine_workflow_ca/actions/workflows/e2e-test.yml/badge.svg?branch=workflow)](https://github.com/StineNygren/stine_workflow_ca/actions/workflows/e2e-test.yml)
 
-1. npm i
+1. Installing:
+`npm i`
 
-2. npm run build
+2. Build:
+`npm run build`
 
-3. npm run test
