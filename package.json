@@ -6,7 +6,7 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "lint": "eslint src/js/*.js",
+    "test-lint": "eslint src/js/*.js",
     "test-jest": "jest",
     "test-cypress": "cypress open"
   },
