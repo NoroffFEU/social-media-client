@@ -81,6 +81,18 @@ input {
   padding: 20px;
   margin: 20px;
   background-color: #ffffffc2;
+  max-width: 700px;
+  margin: auto;
+}
+
+.spacetext {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #ffffffc2;
+  max-width: 700px;
+  margin-left: auto;
 }
 
 .alert,
@@ -95,11 +107,11 @@ input {
 a {
   color: #000;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .text-end {
   max-width: 90%;
+  display: flex;
 }
 
 .form-floating {
