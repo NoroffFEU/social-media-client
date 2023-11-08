@@ -2,6 +2,7 @@
   "name": "css-frameworks-ca",
   "version": "1.0.0",
   "description": "Test",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
