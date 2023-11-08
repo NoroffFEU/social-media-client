@@ -10,7 +10,8 @@
     "prepare": "husky install",
     "test-unit": "jest",
     "test": "npm run test-e2e",
-    "test-e2e": "cypress open"
+    "test-e2e": "cypress open",
+    "watch": "sass --watch src/scss:dist/css & live-server"
   },
   "keywords": [],
   "author": "Noroff",

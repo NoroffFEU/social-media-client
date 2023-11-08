@@ -59,14 +59,12 @@ h3,
 input,
 label,
 a,
+p,
 text,
 .btn,
 .btn-dark,
 .btn-action {
   font-family: 'Nunito', sans-serif;
-}
-
-.btn-action {
 }
 
 .modal-footer {
@@ -92,6 +90,12 @@ input {
   padding: 20px;
   margin: 20px;
   background-color: #ffffffc2;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .text-end {
