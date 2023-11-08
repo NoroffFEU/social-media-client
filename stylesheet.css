@@ -108,3 +108,7 @@ a {
 .nav {
   display: flex;
 }
+
+label {
+  margin: 10px;
+}
