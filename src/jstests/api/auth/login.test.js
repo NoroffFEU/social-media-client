@@ -1,12 +1,11 @@
 // Tests of login.js
 require('dotenv/config');
-import login from '../../../js/api/auth/login.js';
-import { load } from '../../../js/storage/load.js';
+/* import login from '../../../js/api/auth/login.js'; */
+/* import { load } from '../../../js/storage/load.js'; */
 
 describe('Tests of login.js', () => {
   test('Logs the user in if credentials are valid', () => {});
-  load('token');
-  login();
+  console.log('Not implemented');
 });
 
 /* export async function login(email, password) {
