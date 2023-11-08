@@ -8,7 +8,8 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "node src/js/joker.test.js",
-    "format": "prettier -w src/**/*.js"
+    "format": "prettier -w src/**/*.js",
+    "lint": "eslint src/**/*.js"
   },
   "keywords": [],
   "author": "Roar Falch Hanssen <RoaHan10771@stud.noroff.no>",
