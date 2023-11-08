@@ -36,8 +36,8 @@ describe("storage", () => {
   });
 });
 
-describe("logIn", () => {
-  it("Fetches and stores a token in browser storage when provided with a valid email and password ", async () => {
+describe("logOut", () => {
+  it("Logout function clears the token from browser storage ", async () => {
     const token = await logout();
     expect(token).toEqual(undefined);
   });
