@@ -8,7 +8,8 @@
     "test": "node src/js/**/*.js",
     "format": "prettier -w src/js/**/*.js",
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "lint": "eslint src/**/*.js"
   },
   "keywords": [],
   "author": "Noroff",
