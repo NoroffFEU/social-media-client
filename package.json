@@ -37,6 +37,15 @@
   },
   "homepage": "https://github.com/Bilal1998a/workflow#readme",
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   }
 }
