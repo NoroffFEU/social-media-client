@@ -6,6 +6,7 @@
 - Project default branch is protected, code is versioned and branching conventions have been followed.
 - Project is configured to build and deploy to pages on merge to default branch
 - Project readme file is updated to include new configuration information and workflow status badges
+- Project readme file is updated to include new configuration information and workflow status badges
 - Deployed project has been checked for 404 errors
 - The login function fetches and stores a token in browser storage
 - The logout function clears the token from browser storage
