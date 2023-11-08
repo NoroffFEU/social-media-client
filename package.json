@@ -9,7 +9,8 @@
     "description": "example",
     "type": "module",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix"
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Noroff",
@@ -34,5 +35,8 @@
   "bugs": {
     "url": "https://github.com/Bilal1998a/workflow/issues"
   },
-  "homepage": "https://github.com/Bilal1998a/workflow#readme"
+  "homepage": "https://github.com/Bilal1998a/workflow#readme",
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
+  }
 }
