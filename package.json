@@ -5,14 +5,17 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "test": "node src/js/**/*.js",
+    "format": "prettier -w src/js/**/*.js",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
   },
   "keywords": [],
-  "author": "Noroff", 
+  "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
     "live-server": "^1.2.2",
+    "prettier": "^3.0.3",
     "sass": "^1.54.8"
   },
   "dependencies": {
