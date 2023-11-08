@@ -61,8 +61,12 @@ label,
 a,
 text,
 .btn,
-.btn-dark {
+.btn-dark,
+.btn-action {
   font-family: 'Nunito', sans-serif;
+}
+
+.btn-action {
 }
 
 .modal-footer {
@@ -81,15 +85,19 @@ input {
   background-color: #ffffffc2;
 }
 
-.alert {
+.alert,
+.spacetext {
   border: 2px solid black;
   border-radius: 10px;
   padding: 20px;
   margin: 20px;
   background-color: #ffffffc2;
-  color: #ff5d5d;
 }
 
 .text-end {
   max-width: 90%;
+}
+
+.form-floating {
+  padding: 10px;
 }
