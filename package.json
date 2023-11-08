@@ -9,7 +9,8 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "node src/js/joker.test.js",
     "format": "prettier -w src/**/*.js",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix"
   },
   "keywords": [],
   "author": "Roar Falch Hanssen <RoaHan10771@stud.noroff.no>",
