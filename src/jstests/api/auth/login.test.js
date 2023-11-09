@@ -1,28 +1,69 @@
-// Tests of login.js
+import { login } from '../../../js/api/auth/login.js';
 require('dotenv/config');
-/* import login from '../../../js/api/auth/login.js'; */
-/* import { load } from '../../../js/storage/load.js'; */
 
-describe('Tests of login.js', () => {
-  test('Logs the user in if credentials are valid', () => {});
-  console.log('Not implemented');
-});
+const name = process.env.LOGIN_NAME;
+const email = process.env.LOGIN_USERNAME;
+const password = process.env.LOGIN_PASSWORD;
+const accessToken = process.env.LOAD_TOKEN;
 
-/* export async function login(email, password) {
-  const response = await fetch(`${apiPath}/social/auth/login`, {
-    method: 'post',
-    body: JSON.stringify({ email, password }),
-    headers: headers('application/json'),
+describe('login function', () => {
+  let mockFetchSuccess;
+  let mockFetchFailure;
+
+  beforeEach(() => {
+    mockFetchSuccess = jest.fn().mockResolvedValue({
+      ok: true,
+      json: jest.fn().mockResolvedValue({
+        name: name,
+        email: email,
+        accessToken: accessToken,
+      }),
+    });
+
+    mockFetchFailure = jest.fn().mockResolvedValue({
+      ok: false,
+      statusText: 'Unauthorized',
+    });
+
+    global.fetch = mockFetchSuccess;
+    global.localStorage = {
+      getItem: jest.fn(),
+      setItem: jest.fn(),
+    };
   });
 
-  if (response.ok) {
-    const profile = await response.json();
-    save('token', profile.accessToken);
-    delete profile.accessToken;
-    save('profile', profile);
-    return profile;
-  }
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
-  throw new Error(response.statusText);
-}
- */
+  it('Throws an error if a login attempt fails (wrong password or username)', async () => {
+    global.fetch = mockFetchFailure;
+    await expect(login('testitest@test.lo', 'test')).rejects.toThrow(
+      'Unauthorized',
+    );
+  });
+
+  it('Logs in and tests if profile is set to localstorage when logging in', async () => {
+    const email = process.env.LOGIN_USERNAME;
+    const password = process.env.LOGIN_PASSWORD;
+    const mockResponse = {
+      ok: true,
+      json: jest.fn().mockResolvedValue({
+        name: name,
+        email: email,
+      }),
+    };
+
+    global.fetch = jest.fn().mockResolvedValue(mockResponse);
+    const profile = await login(email, password);
+    expect(profile).toEqual({
+      name: name,
+      email: email,
+    });
+    expect(global.localStorage.setItem).toHaveBeenCalledWith(
+      'profile',
+      JSON.stringify(profile),
+    );
+    expect(global.localStorage.getItem).toHaveBeenCalledWith('token');
+  });
+});

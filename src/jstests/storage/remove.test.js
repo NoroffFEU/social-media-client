@@ -3,5 +3,4 @@
 
 describe('Tests of remove.js', () => {
   test('Logs the user in if credentials are valid', () => {});
-  console.log('Not implemented');
 });
