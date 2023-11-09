@@ -1,4 +1,5 @@
 # Workflow CA
+This branch has the configured set up for Prettier, ESlint and husky.
 
 ## Eslint
 ESLint is a tool that helps you keep your JavaScript code clean and error-free. It enforces coding rules and best practices, catching issues like typos, syntax errors, and style violations.
