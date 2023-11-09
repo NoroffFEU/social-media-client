@@ -6,7 +6,7 @@ Using the skills and knowledge from workflow module, I try to improve the qualit
 ### Badges
 [![Automated Unit Testing](https://github.com/nyolarraklay/social-media-client-CA-workflow/actions/workflows/unit-test.yml/badge.svg)](https://github.com/nyolarraklay/social-media-client-CA-workflow/actions/workflows/unit-test.yml)
 
-[![Automated E2E Testing](https://github.com/nyolarraklay/social-media-client-CA-workflow/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/nyolarraklay/social-media-client-CA-workflow/actions/workflows/e2e-test.yml)
+[![Automated Unit Testing](https://github.com/nyolarraklay/social-media-client-CA-workflow/actions/workflows/unit-test.yml/badge.svg)](https://github.com/nyolarraklay/social-media-client-CA-workflow/actions/workflows/unit-test.yml)
 
 
 
