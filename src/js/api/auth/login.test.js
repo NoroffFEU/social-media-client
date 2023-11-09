@@ -19,12 +19,7 @@ const mockLocalStorage = {
   ),
 };
 
-beforeAll(() => {
-  globalThis.localStorage = mockLocalStorage;
-  globalThis.fetch = mockLogInSuccess;
-});
-
-// global.localStorage = mockLocalStorage;
+globalThis.localStorage = mockLocalStorage;
 
 const mockLogInSuccess = jest.fn().mockResolvedValue({
   ok: true,
@@ -32,8 +27,8 @@ const mockLogInSuccess = jest.fn().mockResolvedValue({
 });
 
 describe("login", () => {
-  it("returns a user object if the call is successful", async () => {
-    // global.fetch = mockLogInSuccess;
+  it("returns a user profile if log-in is successful", async () => {
+    globalThis.fetch = mockLogInSuccess;
     const data = await login(mockUser);
     expect(data).toEqual(mockUser);
   });
