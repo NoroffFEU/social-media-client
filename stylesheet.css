@@ -1,11 +1,10 @@
-.body-wrapper {
+main {
   padding: 20px;
   min-height: 100vh;
   background-image: linear-gradient(
-      rgba(0, 0, 0, 0.668),
-      rgba(255, 255, 255, 0.476)
-    ),
-    url(images/backgroundimage.jpg);
+    rgba(0, 0, 0, 0.668),
+    rgba(255, 255, 255, 0.476)
+  );
   background-position: center;
   background-size: cover;
   position: relative;
@@ -16,8 +15,6 @@ footer {
   color: #fff;
   background-color: black;
   text-align: center;
-  /*     position: fixed; */
-  /*     bottom: 0; */
   width: 100%;
 }
 
@@ -26,31 +23,6 @@ footer a {
   text-transform: uppercase;
   text-decoration: none;
 }
-
-/* .form {
-  max-width: 90%;
-  min-width: 50%;
-  padding: 50px 60px 70px;
-  text-align: center;
-  border: 3px solid rgba(0, 0, 0, 0.665);
-  background: rgba(255, 255, 255, 0.761);
-  border-radius: 10px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-} */
-
-/* .postfeed {
-  background-color: rgba(255, 255, 255, 0.74);
-  border: 3px solid rgba(0, 0, 0, 0.665);
-  border-radius: 3px;
-  padding: 20px 10px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  max-width: 900px;
-  margin: 40px auto;
-} */
 
 h1,
 h2,
@@ -105,10 +77,11 @@ a {
   padding: 10px;
 }
 
-.nav {
-  display: flex;
-}
-
 label {
   margin: 10px;
+}
+
+.card {
+  max-width: 400px;
+  margin: auto;
 }
