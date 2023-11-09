@@ -13,6 +13,3 @@
 - The user can log in and access their profile
 - The user cannot submit the login form with invalid credentials and is shown a message
 - The user can log out with the logout button
-
-# Install project
-- npm start
