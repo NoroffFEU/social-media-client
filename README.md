@@ -5,7 +5,7 @@
 We have implemented GitHub Actions to automate our development process:
 
 1. **Code Review**: Automatically reviews code in pull requests using OpenAI.
-2. **Deployment**: Automatically deploys our application to GitHub Pages whenever there's a push to the  branch.
+2. **Deployment**: Automatically deploys our application to GitHub Pages whenever there's a push to the master branch.
 
 ### Dependencies
 
