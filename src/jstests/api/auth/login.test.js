@@ -3,7 +3,7 @@ require('dotenv/config');
 
 const name = process.env.LOGIN_NAME;
 const email = process.env.LOGIN_USERNAME;
-const password = process.env.LOGIN_PASSWORD;
+/* const password = process.env.LOGIN_PASSWORD; */
 const accessToken = process.env.LOAD_TOKEN;
 
 describe('login function', () => {
