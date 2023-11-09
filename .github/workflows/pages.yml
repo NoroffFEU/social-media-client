@@ -1,10 +1,11 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy static content to Pages & test all
 
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["master"]
+    branches:
+      - master
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -17,7 +18,7 @@ permissions:
 
 # Allow one concurrent deployment
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -30,10 +31,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install Dependencies  
-        run: npm i
+      - name: Install Dependencies
+        run: npm install
       - name: Build SASS
         run: npm run build
+      - name: Test Build Lint & Format
+        run: npm run test-lint
+      - name: Test Build Unit Tests
+        run: npm run test-unit
+      #  - name: Test Build End-To-End Tests
+      #  run: npm run test-e2e
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
