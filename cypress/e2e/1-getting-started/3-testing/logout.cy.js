@@ -5,8 +5,8 @@ describe("Login Form", () => {
       cy.get("#registerModal").contains("Login").click();
       cy.get("#loginForm").should("be.visible");
       cy.wait(1000);
-      cy.get("#loginEmail").type("vladmi@noroff.no");
-      cy.get("#loginPassword").type("password123");
+      cy.get("#loginEmail").type("towlietest3@noroff.no");
+      cy.get("#loginPassword").type("Towlietest123");
       cy.get("button[type=submit]").contains("Login").click();
   
       cy.wait(2000);
