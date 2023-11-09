@@ -16,16 +16,8 @@ jobs:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@main
 
-      - name: Set up NodeJS
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-
       - name: Install all dependencies
         run: npm install
-
-      - name: Run Tests
-        run: npm run test-unit
 
       - name: Set up NodeJS
         uses: actions/setup-node@v1
