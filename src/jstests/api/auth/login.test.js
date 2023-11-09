@@ -65,5 +65,6 @@ describe('login function', () => {
       JSON.stringify(profile),
     );
     expect(global.localStorage.getItem).toHaveBeenCalledWith('token');
+    console.log('Checks if token is saved to LocalStorage when logging in');
   });
 });

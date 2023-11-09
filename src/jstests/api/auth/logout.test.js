@@ -18,4 +18,5 @@ describe('Tests of logout.js', () => {
     await logout();
     expect(global.localStorage.removeItem).toHaveBeenCalledWith(tokenKey);
   });
+  console.log('Checks if token is removed from LocalStorage when logging out');
 });
