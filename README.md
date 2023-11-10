@@ -9,7 +9,7 @@ The project uses Jest, Eslint, Prettier and Cypress, all of which have been inst
 
 ## Usage
 <br>
-
+ 
 ### testing
 To make sure the tests pass, write: "npm run test"
 
