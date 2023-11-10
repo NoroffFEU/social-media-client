@@ -32,3 +32,6 @@ jobs:
 
       - name: Run Tests
         run: npm run test-unit
+        env:
+          LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
+          LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
