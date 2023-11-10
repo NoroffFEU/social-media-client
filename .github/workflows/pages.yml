@@ -10,10 +10,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-env:
-  LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
-  LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
-
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -43,8 +39,14 @@ jobs:
         run: npm run test-lint
       - name: Test Build Unit Tests
         run: npm run test-unit
+        env:
+          LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
+          LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
       - name: Test Build End-To-End Tests
         run: npm run test-e2e-cli
+        env:
+          CYPRESS_LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
+          CYPRESS_LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
