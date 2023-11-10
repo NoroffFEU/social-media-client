@@ -1,39 +1,48 @@
-// import { apiPath } from "../constants.js";
-// import { headers } from "../headers.js";
-// import { save } from "../../storage/index.js";
-// import { login } from "./login.js"
+/*global global*/
+import { login } from "./login";
 
-// test('login', async () => {
-//   // arrange
-//   localStorage.clear();
-//   // act
-//   const response = await login('bori@example.org', 'hello');
-//   // assert
-//   expect(localStorage.getItem('token')).toBe(undefined);
-//   expect(localStorage.getItem('profile')).toEqual('{"name":"Bori"}');
-//   expect(response).toEqual({name: 'Bori'});
-// })
+const mockData = {
+  name: "testName",
+  email: "test@noroff.no",
+  accessToken: "mockToken",
+};
 
-// test("login", () => {
-// it("can fetch and store the token", async () => {
-//   localStorage.clear();
-//   // const response = await login(email, password);
-//   const token = await login();
-//   expect(localStorage.setItem('token')).toBeDefined(undefined);
-// })
-// })
+const mockTokenFetch = jest.fn().mockResolvedValue({
+  ok: true,
+  json: jest.fn().mockResolvedValue(mockData),
+});
 
-// test("save", async () => {
-//     // localStorage.clear();
-//     // const response = await login(email, password);
-//     const profile = await response.json("token", profile.accessToken);
-//     expect(localStorage.setItem("token")).toBeDefined(undefined);
-//   })
+global.fetch = mockTokenFetch;
 
-//ez mukodott itt lejjebb
+class LocalStorageMock {
+  constructor() {
+    this.store = {};
+  }
 
-// test("can fetch and store the token", () => {
-//     const response = login("test@example.org", "password");
-//     const accessToken = response.accessToken;
-//     expect(save).toBeDefined(undefined);
-//   })
+  clear() {
+    this.store = {};
+  }
+
+  getItem(key) {
+    return this.store[key] || null;
+  }
+
+  setItem(key, value) {
+    this.store[key] = String(value);
+  }
+
+  removeItem(key) {
+    delete this.store[key];
+  }
+}
+
+global.localStorage = new LocalStorageMock();
+
+describe("login", () => {
+  global.localStorage.clear();
+  it("fetches and stores the token in storage by login", async () => {
+    await login("test@noroff.no", "");
+    const accessToken = localStorage.getItem("token");
+    expect(accessToken).toBeDefined();
+  });
+});
