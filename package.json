@@ -8,9 +8,9 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "npm run test-unit && npm run test-e2e",
     "test-unit": "jest",
-    "test-e2e": "cypress open",
     "start-server": "http-server ./ -p 8080",
-    "test-e2e-ci": "npm run start-server & npx cypress run"
+    "test-e2e": "cypress run",
+    "test-e2e-ci": "start-server-and-test start-server http://localhost:8080 test-e2e"
   },
   "keywords": [],
   "author": "Queenen",
@@ -26,7 +26,8 @@
     "jest": "^29.7.0",
     "live-server": "^1.2.2",
     "prettier": "^3.0.3",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "start-server-and-test": "^2.0.2"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"

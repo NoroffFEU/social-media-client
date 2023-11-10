@@ -1,7 +1,7 @@
 describe("Logout Functionality", () => {
   it("the user successfully logs out", () => {
     // Visit the login page
-    cy.visit("http://127.0.0.1:5500/index.html");
+    cy.visit("/");
 
     cy.wait(500);
 
@@ -42,7 +42,7 @@ describe("Logout Functionality", () => {
     // Assert the URL change after successful login
     cy.url().should(
       "eq",
-      "http://127.0.0.1:5500/?view=profile&name=thistestuser"
+      "http://localhost:8080/?view=profile&name=thistestuser"
     );
 
     // Assert the profile information is correctly stored in local storage

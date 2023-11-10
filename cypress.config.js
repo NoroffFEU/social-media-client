@@ -2,8 +2,10 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
+    baseUrl: "http://localhost:8080",
+    setupNodeEvents() {
+      // If you have no specific setup here, you can leave this empty
+      // or remove the setupNodeEvents function entirely if not needed
     },
   },
 });

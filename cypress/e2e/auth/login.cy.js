@@ -2,7 +2,7 @@ describe("Login Functionality", () => {
   /* SUCCESSFUL ATTEMPTS */
   it("successfully logs in and fetches the token", () => {
     // Visit the login page
-    cy.visit("http://127.0.0.1:5500/index.html");
+    cy.visit("/");
 
     cy.wait(500);
 
@@ -44,7 +44,7 @@ describe("Login Functionality", () => {
     // Assert the URL change after successful login
     cy.url().should(
       "eq",
-      "http://127.0.0.1:5500/?view=profile&name=thistestuser"
+      "http://localhost:8080/?view=profile&name=thistestuser"
     );
 
     // Assert the profile information is correctly stored in local storage
@@ -56,7 +56,7 @@ describe("Login Functionality", () => {
   /* FAILED ATTEMPTS */
   it("login fails due to wrong email type and shows an error message", () => {
     // Visit the login page
-    cy.visit("http://127.0.0.1:5500/index.html");
+    cy.visit("/");
 
     cy.wait(500);
 
@@ -75,7 +75,7 @@ describe("Login Functionality", () => {
   //
   it("fails to log in with invalid credentials and shows an error message", () => {
     // Visit the login page
-    cy.visit("http://127.0.0.1:5500/index.html");
+    cy.visit("/");
 
     cy.wait(500);
 
