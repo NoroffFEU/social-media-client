@@ -7,14 +7,20 @@ module.exports = {
   overrides: [
     {
       env: {
-        node: true
+        node: true,
+        browser: true,
+        es2021: true,
+        jest: true
       },
       files: [
-        '.eslintrc.{js,cjs}'
+        '.eslintrc.js', '**/*.test.js'
       ],
       parserOptions: {
-        sourceType: 'script'
-      }
+        sourceType: 'module'
+      },
+      plugins: ['jest'],
+      extends: ['plugin:jest/recommended'],
+      rules: { 'jest/prefer-expect-assertions': 'off' }
     }
   ],
   parserOptions: {
