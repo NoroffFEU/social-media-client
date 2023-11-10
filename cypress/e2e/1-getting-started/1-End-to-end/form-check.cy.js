@@ -1,6 +1,7 @@
 describe('Checking form rules', () => {
   it('Check if unauthorized', () => {
     cy.visit('https://griphaugland.github.io/ca_workflow/');
+    cy.wait(1000);
     cy.get(
       '#registerForm > div.modal-footer > button.btn.btn-outline-success',
     ).click();
@@ -14,6 +15,7 @@ describe('Checking form rules', () => {
   });
   it('Check for validation message', () => {
     cy.visit('https://griphaugland.github.io/ca_workflow/');
+    cy.wait(1000);
     cy.get(
       '#registerForm > div.modal-footer > button.btn.btn-outline-success',
     ).click();
