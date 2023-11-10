@@ -1,17 +1,28 @@
 # Workflow CA
 <br>
-This project is about setting up an ideal project both in vs code and github, as well as testing existing code and make sure the tests pass.
+
+[![Automated Unit Testing](https://github.com/AkselBF/workflow_CA/actions/workflows/unit-testing.yml/badge.svg)](https://github.com/AkselBF/workflow_CA/actions/workflows/unit-testing.yml)
+
+[![Automated E2E Testing](https://github.com/AkselBF/workflow_CA/actions/workflows/e2e-testing.yml/badge.svg)](https://github.com/AkselBF/workflow_CA/actions/workflows/e2e-testing.yml)
 
 <br>
 
 ## Dependencies
-The project uses Jest, Eslint, Prettier and Cypress, all of which have been installed to setup the project.
+The project uses Jest, Eslint, Prettier and Cypress
+<br>
 
 ## Usage
-<br>
- 
-### testing
-To make sure the tests pass, write: "npm run test"
+### Installing:
+```npm i```
 
-### Cypress
-To open Cypress, input the command: npm run test-e2e
+### Build:
+```npm run build```
+
+### Unit testing:
+```npm run test-unit```
+
+### E2E testing:
+```npm run test-e2e-cli```
+
+### All tests:
+```npm run test```
