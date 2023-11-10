@@ -44,7 +44,7 @@ jobs:
       - name: Test Build Unit Tests
         run: npm run test-unit
       - name: Test Build End-To-End Tests
-        run: npm run test-e2e
+        run: npm run test-e2e-cli
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
