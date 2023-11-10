@@ -39,9 +39,6 @@ jobs:
         run: npm run test-lint
       - name: Test Build Unit Tests
         run: npm run test-unit
-        env:
-          LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
-          LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
       - name: Test Build End-To-End Tests
         run: npm run test-e2e-cli
         env:
