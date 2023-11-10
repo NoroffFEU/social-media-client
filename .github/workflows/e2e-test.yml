@@ -15,13 +15,13 @@ jobs:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@main
 
+      - name: Install all dependencies
+        run: npm install
+
       - name: Set up NodeJS
         uses: actions/setup-node@v1
         with:
           node-version: 16
 
-      - name: Install all dependencies
-        run: npm install
-
       - name: Test Build End-To-End Tests
-        run: npm run test-e2e
+        run: npm run test-e2e-cli

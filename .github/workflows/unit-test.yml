@@ -24,8 +24,5 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install all dependencies
-        run: npm install
-
       - name: Run Tests
         run: npm run test-unit
