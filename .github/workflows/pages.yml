@@ -32,6 +32,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Install Dependencies  
         run: npm i
+      - name: Install Dependencies  
+        run: npm install
       - name: Build SASS
         run: npm run build
       - name: Setup Pages
