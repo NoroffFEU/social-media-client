@@ -6,6 +6,7 @@ describe('Login, access profile and logout', () => {
     cy.get('#loginForm').should('be.visible');
     cy.get('#loginEmail').wait(1000).type('guest@noroff.no');
     cy.get('#loginPassword').should('be.visible').type('123456789');
+    cy.wait(6000);
     cy.get('#loginForm .btn.btn-success').should('be.visible').click();
     cy.wait(2000);
   });
