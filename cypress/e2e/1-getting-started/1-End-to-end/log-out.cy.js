@@ -11,11 +11,12 @@ describe('logging in and loggin out', () => {
     ).click();
     cy.wait(1000);
     cy.get('#loginEmail').type(`${email}`);
-    cy.wait(1000);
     cy.get('#loginPassword').type(`${password}{enter}`);
-    cy.wait(1000);
-    cy.get('.btn-outline-warning').click();
-    cy.wait(3000);
+    cy.wait(2000);
+    cy.get(
+      'header > div > div > div > button.btn.btn-outline-warning.me-2',
+    ).click();
+    cy.wait(2000);
     cy.get('#registerModalLabel').should('have.text', 'Create Profile');
   });
 });
