@@ -1,5 +1,5 @@
 {
-  "name": "css-frameworks-ca",
+  "name": "social-media-test",
   "version": "1.0.0",
   "description": "Test",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "start": "sass --watch src/scss:dist/css & live-server"
   },
   "keywords": [],
-  "author": "Noroff",
+  "author": "Queenen",
   "license": "ISC",
   "devDependencies": {
     "live-server": "^1.2.2",
