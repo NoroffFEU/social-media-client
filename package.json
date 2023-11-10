@@ -8,9 +8,9 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "npm run test-unit && npm run test-e2e",
     "test-unit": "jest",
-    "test-e2e": "cypress open",
     "start-server": "http-server ./ -p 8080",
-    "test-e2e-ci": "start-server & cypress run"
+    "test-e2e": "cypress run",
+    "test-e2e-ci": "start-server-and-test start-server http://localhost:8080 test-e2e"
   },
   "keywords": [],
   "author": "Queenen",
