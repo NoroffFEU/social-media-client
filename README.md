@@ -1,5 +1,12 @@
 # Project social-media-client
 
+## Workflow status badges
+
+[![Code Review](https://github.com/MariuszRozycki/social-media-client/actions/workflows/gpt.yml/badge.svg?branch=workflow)](https://github.com/MariuszRozycki/social-media-client/actions/workflows/gpt.yml)<br>
+[![Deploy static content to Pages](https://github.com/MariuszRozycki/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/MariuszRozycki/social-media-client/actions/workflows/pages.yml)<br>
+[![Automated Unit Testing](https://github.com/MariuszRozycki/social-media-client/actions/workflows/unit-test.yml/badge.svg?branch=workflow)](https://github.com/MariuszRozycki/social-media-client/actions/workflows/unit-test.yml)<br>
+[![Automated E2E Testing](https://github.com/MariuszRozycki/social-media-client/actions/workflows/e2e-test.yml/badge.svg?branch=workflow)](https://github.com/MariuszRozycki/social-media-client/actions/workflows/e2e-test.yml)<br>
+
 ## Project description
 
 Social-media-app where user can registry profile, login. <br>
