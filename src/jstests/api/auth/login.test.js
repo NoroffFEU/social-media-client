@@ -1,10 +1,10 @@
 import { login } from '../../../js/api/auth/login.js';
 require('dotenv/config');
 
-const name = process.env.LOGIN_NAME;
-const email = process.env.LOGIN_USERNAME;
+const name = 'eirik';
+const email = 'email@noroff.no';
 /* const password = process.env.LOGIN_PASSWORD; */
-const accessToken = process.env.LOAD_TOKEN;
+const accessToken = 'TOKEN12345678910';
 
 describe('login function', () => {
   let mockFetchSuccess;
@@ -44,8 +44,8 @@ describe('login function', () => {
   });
 
   it('Logs in and tests if profile is set to localstorage when logging in', async () => {
-    const email = process.env.LOGIN_USERNAME;
-    const password = process.env.LOGIN_PASSWORD;
+    const email = 'email@noroff.no';
+    const password = 'thisisarandompassword';
     const mockResponse = {
       ok: true,
       json: jest.fn().mockResolvedValue({

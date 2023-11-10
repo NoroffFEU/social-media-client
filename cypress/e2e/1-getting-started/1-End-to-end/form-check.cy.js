@@ -19,7 +19,12 @@ describe('Checking form rules', () => {
     cy.get(
       '#registerForm > div.modal-footer > button.btn.btn-outline-success',
     ).click();
+    cy.wait(1000);
+    cy.get('#loginEmail').type('invalidemail@email.no');
+    cy.get('#loginPassword').type('invalidpassword{enter}');
+    cy.wait(1000);
+    cy.get('#loginModalLabel').should('have.text', 'Login');
     // Not possible to check for validation message as there is none. Only a browser standard.
-    cy.get('#loginEmail').type('invalidemail');
+    // So testing whether or not the modal is still open.
   });
 });
