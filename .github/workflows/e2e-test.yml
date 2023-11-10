@@ -3,10 +3,6 @@ on:
   pull_request:
   workflow_dispatch:
 
-env:
-  LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
-  LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
-
 jobs:
   run-e2e-tests:
     name: Run E2E Tests
@@ -31,3 +27,6 @@ jobs:
 
       - name: Test Build End-To-End Tests
         run: npm run test-e2e-cli
+        env:
+          CYPRESS_LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
+          CYPRESS_LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
