@@ -4,6 +4,7 @@
     "es2021": true
   },
   "extends": "eslint:recommended",
+  "ignorePatterns": ["src/test/*.js"],
   "overrides": [
     {
       "files": ["**/*.test.js"],
