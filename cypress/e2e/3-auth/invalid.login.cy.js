@@ -1,28 +1,23 @@
 it("should show an error message upon a failed login attempt", () => {
+  cy.visit("http://127.0.0.1:5500");
 
-    cy.visit("http://127.0.0.1:5500");
-
-    cy.wait(1000);
+  cy.wait(1000);
   
-    // Click the login button
-    cy.get(".btn-outline-success.me-2").click();
-  
-    // Add your login logic here
+  // Click the login button
+  cy.get(".btn-outline-success.me-2").click();
 
-    cy.get("#loginEmail").type("mariuskval87@noroff.no");
+  // Fill in the login form
+  cy.get("#loginEmail").type("mariuskval87@noroff.no");
+  cy.get("#loginPassword").type("mariuskvaal87");
 
-    cy.get("#loginPassword").type("mariuskvaal87");
+  const stub = cy.stub();
+  cy.on("window:alert", stub);
 
-    // Verify that the error message is logged in the console
-    cy.window().then((win) => {
-      cy.spy(win.console, "error").as("consoleError");
-    });
+  cy.get("form").eq(2).submit();
 
-    // Wait for any potential asynchronous actions (e.g., validation)
-    cy.wait(1000);
-
-    // Assert that the console error message contains your expected text
-    cy.get("@consoleError").should
-      "be.calledWithMatch",
-      "Either your username was not found or your password is incorrect" // Replace with the expected error message
+  // Wait for the alert to be called
+  cy.wait(1000).then(() => {
+    expect(stub).to.be.calledOnce;
+    expect(stub.getCall(0)).to.be.calledWith("There was a problem creating your account");
   });
+});
