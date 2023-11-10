@@ -10,7 +10,7 @@
     "test-unit": "jest",
     "test-e2e": "cypress open",
     "start-server": "http-server ./ -p 8080",
-    "test-e2e-ci": "start-server & cypress run"
+    "test-e2e-ci": "npm run start-server & npx cypress run"
   },
   "keywords": [],
   "author": "Queenen",
