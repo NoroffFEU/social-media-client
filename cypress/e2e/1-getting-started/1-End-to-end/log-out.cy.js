@@ -18,5 +18,6 @@ describe('logging in and loggin out', () => {
     ).click();
     cy.wait(2000);
     cy.get('#registerModalLabel').should('have.text', 'Create Profile');
+    // Verified that the Create Profile modal is open.
   });
 });

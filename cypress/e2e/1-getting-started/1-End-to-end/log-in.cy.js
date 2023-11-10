@@ -15,5 +15,6 @@ describe('logging in and checking profile name', () => {
     cy.get('#loginPassword').type(`${password}{enter}`);
     cy.wait(3000);
     cy.get('.profile-name').should('have.text', 'eirik');
+    // Verified that the profile name is correct.
   });
 });
