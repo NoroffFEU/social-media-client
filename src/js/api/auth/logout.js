@@ -4,3 +4,5 @@ export function logout() {
   remove("token")
   remove("profile")
 }
+
+export default logout;

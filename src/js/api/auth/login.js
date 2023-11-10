@@ -19,3 +19,5 @@ export async function login(email, password) {
 
   throw new Error(response.statusText)
 }
+
+export default login;
