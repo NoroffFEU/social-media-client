@@ -33,14 +33,14 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write",
-      "eslint --fix"
+      "npx prettier --write",
+      "npx eslint --fix"
     ],
     "*.html": [
-      "prettier --write"
+      "npx prettier --write"
     ],
     "*.scss": [
-      "prettier --write"
+      "npx prettier --write"
     ]
   },
   "husky": {
