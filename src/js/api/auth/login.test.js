@@ -21,10 +21,7 @@ jest.mock('../../storage/index.js', () => ({
 
 describe('login function tests', () => {
   it('should save token to browser storage after successful login', async () => {
-    const data = await login('test@email.com', 'testPassword');
-    const accessToken = data.accessToken;
-    console.log('accessToken:', accessToken);
-    console.log('data:', data);
+    await login('test@email.com', 'testPassword');
     expect(save).toHaveBeenCalledWith('token', 'testToken');
   });
 });
