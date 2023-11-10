@@ -15,7 +15,7 @@ describe('logging in and loggin out', () => {
     cy.get('#loginPassword').type(`${password}{enter}`);
     cy.wait(1000);
     cy.get('.btn-outline-warning').click();
-    cy.wait(1000);
+    cy.wait(3000);
     cy.get('#registerModalLabel').should('have.text', 'Create Profile');
   });
 });

@@ -13,7 +13,7 @@ describe('logging in and checking profile name', () => {
     cy.get('#loginEmail').type(`${email}`);
     cy.wait(1000);
     cy.get('#loginPassword').type(`${password}{enter}`);
-    cy.wait(1000);
+    cy.wait(3000);
     cy.get('.profile-name').should('have.text', 'eirik');
   });
 });
