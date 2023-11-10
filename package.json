@@ -8,7 +8,7 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "format": "prettier -w src/**/*.js",
+    "format": "prettier --write .",
     "prepare": "husky install",
     "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
