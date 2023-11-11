@@ -1,20 +1,6 @@
 # Workflow CA
 
-## **Table of Contents**
 
-1. [About](#about)
-2. [Test Status Badges](#badges)
-3. [Install](#install)
-4. [Dependencies](#depend)
-5. [Tests](#tests)
-   1. [Unit Tests, Jest](#jest)
-   2. [E2E Tests, Cypress](#cypress)
-6. [Complete Setup & Install Guide](#configuration)
-   1. [Code Formatters](#formatters)
-   2. [Jest Setup](#jest-setup)
-   3. [Cypress Setup](#cypress-setup)
-   4. [Vite Setup](#vite-setup)
-   5. [Dotenv For Cypress Setup](#dotenv-setup)
 
 ## **About** <a id="about"></a>
 
