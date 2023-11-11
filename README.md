@@ -3,7 +3,7 @@
 
 # Social-Media-Client
 
-<img src="https://i.ibb.co/tCKY5VL/thistestuser.png" alt="thistestuser" border="0">
+<img src='https://i.postimg.cc/3rmT7fKW/thistestuser.png' border='0' alt='thistestuser'/>
 
 ## Description
 
