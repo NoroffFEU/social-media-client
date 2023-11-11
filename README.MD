@@ -4,6 +4,9 @@
 
 [![Deploy static content to Pages](https://github.com/Sugal99/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/Sugal99/social-media-client/actions/workflows/pages.yml)
 
+[![Automated Unit Testing](https://github.com/Sugal99/social-media-client/actions/workflows/unit-test.yml/badge.svg?branch=workflow)](https://github.com/Sugal99/social-media-client/actions/workflows/unit-test.yml)
+
+
 ### Prettier & ESLint
 
 Prettier is an opinionated code formatter that automatically formats your code, ensuring a consistent style and making it more readable. I've incorporated ESLint and Prettier to maintain uniform coding standards and identify errors proactively.
