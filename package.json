@@ -7,6 +7,7 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "npm run test-e2e",
+    "test2": "npm run test-unit",
     "format": "prettier -w index.js",
     "lint": "eslint *.js",
     "lint-fix": "eslint *.js --cache --fix",

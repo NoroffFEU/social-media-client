@@ -10,3 +10,30 @@ test("It adds 1 and 2 and gets 3 as a result", () => {
 //     window.localStorage;
 //   })
 // });
+
+import login from "./src/js/api/auth/login";
+
+describe("login", () => {
+  it("returns the login fetch api call, with the access token, it the api fetch call is successful", async () => {
+    const data = await login();
+    expect(data.length).toBeLessThanOrEqual(3);
+  });
+});
+
+// export async function login(email, password) {
+//   const response = await fetch(`${apiPath}/social/auth/login`, {
+//     method: "post",
+//     body: JSON.stringify({ email, password }),
+//     headers: headers("application/json")
+//   })
+
+//   if (response.ok) {
+//     const profile = await response.json()
+//     save("token", profile.accessToken)
+//     delete profile.accessToken
+//     save("profile", profile)
+//     return profile
+//   }
+
+//   throw new Error(response.statusText)
+// }
