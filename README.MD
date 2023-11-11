@@ -6,12 +6,8 @@
 
 [![Automated Unit Testing](https://github.com/Sugal99/social-media-client/actions/workflows/unit-test.yml/badge.svg?branch=workflow)](https://github.com/Sugal99/social-media-client/actions/workflows/unit-test.yml)
 
-<<<<<<< HEAD
-=======
-
 [![Automated E2E Testing](https://github.com/Sugal99/social-media-client/actions/workflows/e2e-test.yml/badge.svg?branch=workflow)](https://github.com/Sugal99/social-media-client/actions/workflows/e2e-test.yml)
 
->>>>>>> df6fafb487f37017bcefa7907c3ad4eed8823410
 ### Prettier & ESLint
 
 Prettier is an opinionated code formatter that automatically formats your code, ensuring a consistent style and making it more readable. I've incorporated ESLint and Prettier to maintain uniform coding standards and identify errors proactively.
@@ -101,12 +97,26 @@ The tests that were written here goes as follows:
 
 ### Unit Testing with Jest
 
-Test files:
+Test Files:
+login.cy.js
+The tests written in this file cover the following scenarios:
 
-- login.test.js
+A user can log in and access their profile.
+The user gets denied with invalid information.
+The user gets denied with empty credentials.
+The user gets denied with an empty password field.
+The user gets denied with an empty email field.
+logout.cy.js
+The tests written in this file include:
 
-* The login function fetches and stores a token in browser storage
+A user successfully logs in as an existing user and then logs out.
+Unit Testing with Jest
+Test Files:
+login.test.js
+The tests in this file verify that:
 
-- logout.test.js
+The login function fetches and stores a token in browser storage.
+logout.test.js
+The tests in this file ensure that:
 
-* The logout function clears the token from browser storage
+The logout function clears the token from browser storage.
