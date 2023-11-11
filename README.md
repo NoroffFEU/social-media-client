@@ -41,7 +41,7 @@ npm run build
 
 ## Testing
 
-Unit Testing
+//Unit Testing
 
 Unit tests are written using Jest. To run unit tests:
 
@@ -49,7 +49,7 @@ Unit tests are written using Jest. To run unit tests:
 npm run test-unit
 ```
 
-End-to-End Testing
+//End-to-End Testing
 
 End-to-End tests are conducted using Cypress:
 
