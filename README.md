@@ -24,17 +24,7 @@ This project is part of the Workflow course assignment from Noroff. With aims to
 
 The repository is configure to deploy the main branch to GitHub pages on merge. I have modified the index.html to include the bootstrap & popper JS CDN links for deployment. The main branch is protected from commits and all PR requests into it must pass the unit and end to end test workflows in github actions before they can be merge.
 
-**Jest Tests**
 
-[![Automated Unit Testing](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/unit-test.yml)
-
-**Cypress Tests**
-
-[![Automated E2E Testing](https://github.com/Anclagen/workflow-ca/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/e2e-test.yml)
-
-**Site Deployed**
-
-[![Deploy Master](https://github.com/Anclagen/workflow-ca/actions/workflows/deploy.yml/badge.svg)](https://github.com/Anclagen/workflow-ca/actions/workflows/deploy.yml)
 
 ## **Repo Install** <a id="install"></a>
 
