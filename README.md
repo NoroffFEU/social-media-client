@@ -55,7 +55,7 @@ Web developers on this project have to work on requirements:
 6. The end-to-end (e2e) tests will begin afterwards, but sometimes these tests require more time to start.
 7. To ensure live-server functions correctly, pageLoadTimeout in the file cypress.config.js is set to 100000.
 8. Note that e2e tests generally take more time.
-9. If the tests fail, please re-enter the command: npm test
+9. If the tests fail, please check live-server and re-enter the command: npm test
 
 - Print screen from  terminal start sass --watch && live-server start:<br>
 <img width="748" alt="image" src="https://github.com/MariuszRozycki/social-media-client/assets/55709542/f5864ea3-7a3a-46d1-8379-069eeedc1337"> <br>
