@@ -7,6 +7,6 @@ export default defineConfig({
 
   e2e: {
     setupNodeEvents(on, config) {},
-    specPattern: "tests",
+    specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
   },
 });
