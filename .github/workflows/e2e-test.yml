@@ -1,6 +1,7 @@
+name: e2e-test
 on: 
   pull_request:
-  # workflow_dispatch:
+  workflow_dispatch:
 
 jobs:
   run-e2e-tests:
