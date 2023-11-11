@@ -46,16 +46,17 @@ Web developers on this project have to work on requirements:
   `git checkout workflow`
 - Install all packages from `package.json`:
   `npm i`
-- ### Start the project:
-- Switch off all opend live-servers
-- In terminal type command: `npm start` to start sass --watch && live-server
-- Wait until live-server started to work (look at tab in your browser) 
-- Open new terminal and type command: `npm test`
-- Then unit tests sholud start automatically 
-- Later e2e tests should start, but sometines e2e tests needs more time to be started
-- To let live-server work propertly pageLoadTimeout in file cypress.config.js is set to 100000
-- E2e tests take more time
-- In case if tests were fail, please type again command: `npm test`
+### Starting the Project:
+1. Close all open live-servers.
+2. In the terminal, type the command: npm start to initiate sass --watch & live-server.
+3. Wait until the live-server is fully operational (check the browser tab).
+4. Open a new terminal and enter the command: npm test.
+5. The unit tests should start automatically.
+6. The end-to-end (e2e) tests will begin afterwards, but sometimes these tests require more time to start.
+7. To ensure live-server functions correctly, pageLoadTimeout in the file cypress.config.js is set to 100000.
+8. Note that e2e tests generally take more time.
+9. If the tests fail, please re-enter the command: npm test
+
 - Print screen from  terminal start sass --watch && live-server start:<br>
 <img width="748" alt="image" src="https://github.com/MariuszRozycki/social-media-client/assets/55709542/f5864ea3-7a3a-46d1-8379-069eeedc1337"> <br>
 - Print screen from live-server when started: <br>
