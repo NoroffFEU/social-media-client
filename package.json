@@ -7,18 +7,21 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
+    "test": "npm run test-unit",
     "test-unit": "jest"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.2.5",
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
     "chokidar": "^3.5.3",
     "cypress": "^13.5.0",
     "eslint": "^8.53.0",
     "glob-parent": "^6.0.2",
     "husky": "^8.0.3",
+    "jest": "^27.2.5",
     "live-server": "^1.1.0",
     "prettier": "^3.0.3",
     "sass": "^1.54.8"
