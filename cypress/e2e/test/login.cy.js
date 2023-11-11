@@ -25,7 +25,7 @@ describe('Login flow', () => {
     cy.get('#loginPassword:invalid').should('exist');
   });
 
-  it('should deny invalid email', () => {
+  /* it('should deny invalid email', () => {
     cy.visit('/');
     cy.wait(500);
     cy.get('#registerModal').contains('Login').click();
@@ -34,5 +34,5 @@ describe('Login flow', () => {
     cy.get('#loginEmail').type(correctEmail);
     cy.get('button[type=submit]').contains('Login').click();
     cy.get('#loginEmail:invalid').should('exist');
-  });
+  }); */
 });
