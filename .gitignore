@@ -1,2 +1,4 @@
+# npm folders and files to ignore
 /node_modules
 /dist
+.eslintcache

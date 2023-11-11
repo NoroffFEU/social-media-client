@@ -1,0 +1,16 @@
+{
+  "editor.formatOnSaveMode": "file",
+  "eslint.validate": ["javascript"],
+  "cSpell.words": ["mochawesome", "paren", "Parens", "unfollow"],
+  "[cypress/**/*.cy.js]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": false
+    }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": false
+  }
+}

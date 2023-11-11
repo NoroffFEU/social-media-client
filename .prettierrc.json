@@ -1,0 +1,20 @@
+{
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": "cypress/e2e/*.cy.js",
+      "options": {
+        "printWidth": 320,
+        "trailingComma": "none",
+        "arrowParens": "avoid"
+      }
+    },
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 300,
+        "htmlWhitespaceSensitivity": "strict"
+      }
+    }
+  ]
+}
