@@ -85,8 +85,8 @@ Unit tests are tests that verify the integrity of authentication processes, enco
 
 Test Files:
 
-- login.cy.js
-  The tests that were written here goes as follows:
+login.cy.js
+The tests that were written here goes as follows:
 
 * a user can log in and access their profile
 * The user gets denied with invalid info
