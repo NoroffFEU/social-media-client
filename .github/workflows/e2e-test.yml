@@ -13,9 +13,13 @@ jobs:
 
       - name: Set up NodeJS
         uses: actions/setup-node@v1
+        with:
+          node-version: '20.x'
 
       - name: Install all dependencies
         run: npm install
 
       - name: Cypress run
         run: npm run test-e2e
+
+      
