@@ -1,6 +1,6 @@
 {
   "name": "social-media-client-ca1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
@@ -8,7 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier -w src/js/**/*.js"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/Sayed-Nabil-Habib/social-media-client-ca1/tree/workflow-ca1"
