@@ -34,7 +34,7 @@ Web developers on this project have to work on requirements:
 - The user cannot submit the login form with invalid credentials and is shown a message
 - The user can log out with the logout button
 
-## Installing the project
+## Installing and start the project
 
 - Clone the repository:
   `git clone https://github.com/MariuszRozycki/social-media-client.git`
@@ -46,8 +46,25 @@ Web developers on this project have to work on requirements:
   `git checkout workflow`
 - Install all packages from `package.json`:
   `npm i`
-- Start the project:
-  `npm start`
+- ### Start the project:
+- Switch off all opend live-servers
+- In terminal type command: `npm start` to start sass --watch && live-server
+- Wait until live-server started to work (look at tab in your browser) 
+- Open new terminal and type command: `npm test`
+- Then unit tests sholud start automatically 
+- Later e2e tests should start, but sometines e2e tests needs more time to be started
+- To let live-server work propertly pageLoadTimeout in file cypress.config.js is set to 100000
+- E2e tests take more time
+- In case if tests were fail, please type again command: `npm test`
+- Print screen from  terminal start sass --watch && live-server start:<br>
+<img width="748" alt="image" src="https://github.com/MariuszRozycki/social-media-client/assets/55709542/f5864ea3-7a3a-46d1-8379-069eeedc1337"> <br>
+- Print screen from live-server when started: <br>
+<img width="748" alt="image" src="https://github.com/MariuszRozycki/social-media-client/assets/55709542/8f2b3852-a771-4a18-a17c-0eba66759b43"> <br>
+- Print screen from terminal after typing command `npm test` and when unit tests are done: <br>
+<img width="748" alt="image" src="https://github.com/MariuszRozycki/social-media-client/assets/55709542/c9cfe566-873c-47a5-976d-f1b68093bf5a"> <br>
+- Print screen from terminal when e2e tests are done: <br>
+<img width="748" alt="image" src="https://github.com/MariuszRozycki/social-media-client/assets/55709542/2f648913-b1b8-4fb4-aeb6-a2649e48cb06"> <br>
+
 
 ## Improving project
 
