@@ -6,7 +6,6 @@
 
 [![Automated Unit Testing](https://github.com/Sugal99/social-media-client/actions/workflows/unit-test.yml/badge.svg?branch=workflow)](https://github.com/Sugal99/social-media-client/actions/workflows/unit-test.yml)
 
-
 ### Prettier & ESLint
 
 Prettier is an opinionated code formatter that automatically formats your code, ensuring a consistent style and making it more readable. I've incorporated ESLint and Prettier to maintain uniform coding standards and identify errors proactively.
@@ -73,3 +72,35 @@ Running Cypress:
 ```bash
 npm run test-e2e
 ```
+
+### E2E Testing with Cypress
+
+Unit tests are tests that verify the integrity of authentication processes, encompassing login, registration, and logout functionalities, across diverse scenarios to ensure their correctness.
+
+Test Files:
+
+- login.cy.js
+  The tests that were written here goes as follows:
+
+* a user can log in and access their profile
+* The user gets denied with invalid info
+* The user gets denied with empty credentials
+* The user gets denied with an empty password field
+* The user gets denied with an empty email field
+
+- logout.cy.js
+  The tests that were written here goes as follows:
+
+* a user successfully logs in existing user, to then log out.
+
+### Unit Testing with Jest
+
+Test files:
+
+- login.test.js
+
+* The login function fetches and stores a token in browser storage
+
+- logout.test.js
+
+* The logout function clears the token from browser storage
