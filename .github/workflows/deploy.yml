@@ -35,19 +35,15 @@ jobs:
     # Only run this job on pushes to the workflow branch
     if: github.event_name == 'push' && github.ref == 'refs/heads/workflow'
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
       - name: Install Dependencies
         run: npm install
-        
       - name: Build
         run: npm run build
-        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}
           publish_dir: ./public
