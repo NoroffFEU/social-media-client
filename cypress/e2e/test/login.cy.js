@@ -25,14 +25,30 @@ describe('Login flow', () => {
     cy.get('#loginPassword:invalid').should('exist');
   });
 
-  /* it('should deny invalid email', () => {
+  it('should deny invalid email', () => {
+    cy.visit('/');
+    cy.wait(500);
+    cy.get('#registerModal').contains('Login').click();
+    cy.wait(500);
+    cy.get('#loginForm').should('be.visible');
+    cy.get('#loginEmail').type(wrongEmail);
+    cy.get('button[type=submit]').contains('Login').click();
+    cy.get('#loginEmail:invalid').should('exist');
+  });
+
+  it('should deny wrong password', () => {
     cy.visit('/');
     cy.wait(500);
     cy.get('#registerModal').contains('Login').click();
     cy.wait(500);
     cy.get('#loginForm').should('be.visible');
     cy.get('#loginEmail').type(correctEmail);
+    cy.get('#loginPassword').type(wrongPassword);
+    cy.wait(500);
     cy.get('button[type=submit]').contains('Login').click();
-    cy.get('#loginEmail:invalid').should('exist');
-  }); */
+    cy.get('window:alert', (text) => {
+        expect(text).to.contains("Either your username was not found or your password is incorrect",
+        );
+    };
+  });
 });
