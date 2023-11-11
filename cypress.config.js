@@ -1,12 +1,16 @@
-/* eslint-env node */
-const { defineConfig } = require('cypress')
+require("dotenv").config();
+const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  video: false,
   e2e: {
-    /* eslint-disable no-unused-vars */
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      (config.baseUrl = process.env.BASEURL),
+        (config.env = {
+          ...process.env,
+          ...config.env,
+        });
+      return config;
     },
-    /* eslint-enable no-unused-vars */
   },
-})
+});
