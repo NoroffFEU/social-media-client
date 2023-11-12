@@ -39,4 +39,15 @@ describe('Login flow', () => {
       );
     });
   });
+
+  it('should allow a valid user to log in', () => {
+    cy.visit('/');
+    cy.wait(500);
+    cy.get('#registerModal').contains('Login').click();
+    cy.wait(500);
+    cy.get('#loginForm').should('be.visible');
+    cy.get('#loginEmail').type(Cypress.env('correctEmail'));
+    cy.get('#loginPassword').type(Cypress.env('correctPassword'));
+    cy.get('button[type=submit]').contains('Login').click();
+  });
 });
