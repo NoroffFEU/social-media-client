@@ -1,5 +1,6 @@
 name: AUTO - Unit Testing Jest
-on: 
+on:
+  push: 
   pull_request:
   workflow_dispatch:
 
