@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
@@ -38,19 +38,19 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
 
       - name: Build
-        run: npm run build # Update to your actual build script
+        run: npm run build
 
       # Additional steps for GitHub Pages deployment
       - name: Set up Node.js for Pages
         uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Install Dependencies for Pages
         run: npm i

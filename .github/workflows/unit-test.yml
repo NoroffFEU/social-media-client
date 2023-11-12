@@ -1,25 +1,24 @@
 name: Automated Unit Testing
-
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+  workflow_dispatch:
 
 jobs:
-  unit-test:
+  run-unit-tests:
+    name: Run Unit Tests
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout under $GITHUB_WORKSPACE
+        uses: actions/checkout@main
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run Unit Tests
-        run: npm run jest
+      - name: Run Tests
+        run: npm run test-unit
