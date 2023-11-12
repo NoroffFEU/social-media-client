@@ -1,5 +1,4 @@
-/* eslint-env mocha */
-/* global cy */
+/*Login and access profile test + form validation test*/
 
 describe('Login Tests', () => {
   const validEmail = 'test123@stud.noroff.no';
@@ -14,6 +13,7 @@ describe('Login Tests', () => {
     cy.get('#loginEmail').type(validEmail);
     cy.get('#loginPassword').type(validPassword);
     cy.get('button[type=submit]').contains('Login').click();
+    cy.wait(5000);
   });
 
   it('displays an error for login with incorrect credentials', () => {

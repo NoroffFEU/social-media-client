@@ -1,6 +1,3 @@
-/* eslint-env mocha */
-/* global cy */
-
 describe('Logout Test', () => {
   const validEmail = 'test123@stud.noroff.no';
   const validPassword = 'test1234';
