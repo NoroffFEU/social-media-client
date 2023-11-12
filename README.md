@@ -1,9 +1,4 @@
-# Name of project
 ## Social Media Client 2
-
-# Project Setup Documentation
-
-This document provides a summary of the project's configuration for code quality, formatting, and continuous integration.
 
 ## Project Stack
 
@@ -25,12 +20,7 @@ This project uses [ESLint](https://eslint.org/) for linting JavaScript code and 
 
 The configuration for this can be found in the `package.json` under the `husky` and `lint-staged` sections.
 
-## Continuous Integration with GitHub Actions
-
-### Build and Deploy Workflow
-
-The project uses [GitHub Actions](https://github.com/features/actions) for continuous integration. On every push to the `main` branch, the project is built, and if specified, deployed.
-
-The workflow for this process is defined in `.github/workflows/build-deploy.yml`.
-
-#### Workflow Steps:
+## End to end testing and unit testing
+- Jest is used for unit testing (for running Jest from the terminal type: "npm run test-unit" and then press "a" to run all tests)
+- Cypress is used for end to end testing (for running cypress type: "npm run test-e2e")
+All the tests are passing at the given moment.
