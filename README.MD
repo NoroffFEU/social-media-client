@@ -86,6 +86,11 @@ Cypress tests are a type of end-to-end (E2E) tests that are specifically designe
 The tests written in this file cover the following scenarios:
 
 * A user can log in and access their profile.
+
+### validation.cy.js
+
+The tests written in this file include:
+
 * The user gets denied with invalid information.
 * The user gets denied with empty credentials.
 * The user gets denied with an empty password field.
