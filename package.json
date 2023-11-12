@@ -4,6 +4,7 @@
   "description": "Test",
   "main": "index.js",
   "scripts": {
+    "precommit": "lint-staged",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
   },
@@ -14,6 +15,7 @@
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
     "live-server": "^1.2.2",
     "prettier": "^3.0.3",
     "sass": "^1.54.8"
