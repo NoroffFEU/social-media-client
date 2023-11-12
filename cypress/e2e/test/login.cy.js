@@ -40,7 +40,7 @@ describe('Login flow', () => {
     });
   });
 
-  it('should allow a valid user to log in', () => {
+  it('should allow valid user to log in', () => {
     cy.visit('/');
     cy.wait(500);
     cy.get('#registerModal').contains('Login').click();
