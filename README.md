@@ -3,7 +3,7 @@
 - git clone https://github.com/flanderos/social-media-client/new/workflow?readme=1
 - npm i
 
-### Project runs prettier on commit
+#### Project runs prettier on commit
 ## Prject runs ESLint on commit
 ## The master branch is protected
 ## Found one bug that needs improvement check "Issues"
