@@ -2,6 +2,7 @@ const vaildEmail = "idangu50260@stud.noroff.no";
 const validPassword = "Lollipop1";
 const invalidEmail = "invalid@invalid.no";
 const invalidPassword = "iskrem2";
+const wrongPassword = "Lollipop2"
 
 //https://stackoverflow.com/questions/51795306/how-can-we-test-the-alert-and-the-text-it-is-displaying-using-cypress-io-js-auto
 //answered Nov 18, 2021 at 8:35 BalajiK
@@ -15,6 +16,27 @@ describe("Login", () => {
     cy.get("#loginForm").should("be.visible");
     cy.get("button[type=submit]").contains("Login").click();
     cy.wait(500);
+    cy.get('#loginEmail:invalid').should('exist');
+    cy.on("window:alert", (str) => {
+      expect(str).to.equal(
+        "Either your username was not found or your password is incorrect"
+      );
+    });
+    cy.wait(500);
+    cy.get("body").should("not.have.class", "logged-in");
+  });
+
+  it("Refuse to login a user with no password input", () => {
+    cy.visit("/");
+    cy.wait(500);
+    cy.get("body").should("not.have.class", "logged-in");
+    cy.get("#registerModal").contains("Close").click();
+    cy.wait(500);
+    cy.get("#loginForm").should("be.visible");
+    cy.get("#loginEmail").type(vaildEmail);
+    cy.get("button[type=submit]").contains("Login").click();
+    cy.wait(500);
+    cy.get('#loginPassword:invalid').should('exist');
     cy.on("window:alert", (str) => {
       expect(str).to.equal(
         "Either your username was not found or your password is incorrect"
@@ -35,6 +57,7 @@ describe("Login", () => {
     cy.get("#loginPassword").type(invalidPassword);
     cy.get("button[type=submit]").contains("Login").click();
     cy.wait(500);
+    cy.get('#loginEmail:invalid').should('exist');
     cy.on("window:alert", (str) => {
       expect(str).to.equal(
         "Either your username was not found or your password is incorrect"
@@ -44,7 +67,7 @@ describe("Login", () => {
     cy.get("body").should("not.have.class", "logged-in");
   });
 
-  it("Refuse to login a user with valid email and invalid password", () => {
+  it("Refuse to login a user with valid email and wrong password", () => {
     cy.visit("/");
     cy.wait(500);
     cy.get("body").should("not.have.class", "logged-in");
@@ -52,7 +75,7 @@ describe("Login", () => {
     cy.wait(500);
     cy.get("#loginForm").should("be.visible");
     cy.get("#loginEmail").type(vaildEmail);
-    cy.get("#loginPassword").type(invalidPassword);
+    cy.get("#loginPassword").type(wrongPassword);
     cy.get("button[type=submit]").contains("Login").click();
     cy.wait(500);
     cy.on("window:alert", (str) => {
@@ -75,6 +98,7 @@ describe("Login", () => {
     cy.get("#loginPassword").type(validPassword);
     cy.get("button[type=submit]").contains("Login").click();
     cy.wait(500);
+    cy.get('#loginEmail:invalid').should('exist');
     cy.on("window:alert", (str) => {
       expect(str).to.equal(
         "Either your username was not found or your password is incorrect"
