@@ -1,0 +1,10 @@
+{
+    "baseUrl": "http://localhost:3000", 
+    "viewportWidth": 1280,
+    "viewportHeight": 720,
+    "testFiles": "**/*.spec.js",
+    "video": false,
+    "screenshotsFolder": "cypress/screenshots",
+    "integrationFolder": "cypress/integration",
+  }
+  
