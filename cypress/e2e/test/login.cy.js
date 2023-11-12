@@ -23,7 +23,7 @@ describe('Login flow', () => {
   });
 
   it('should deny invalid email', () => {
-    cy.get('#loginEmail').type(wrongEmail);
+    cy.get('#loginEmail').invoke('val', 'invalidemail').trigger('input');
     cy.get('button[type=submit]').contains('Login').click();
     cy.get('#loginEmail:invalid').should('exist');
   });
