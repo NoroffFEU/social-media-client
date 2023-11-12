@@ -4,33 +4,33 @@
   "description": "Test",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
     "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
     "test-e2e": "cypress open",
     "test-e2e-cli": "cypress run",
-    "format": "prettier -w src/**/*.js",
-    "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix",
-    "prepare": "husky install"
+    "format": "prettier -w src/**/*.js"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.19.3",
-    "@babel/preset-env": "^7.19.4",
+    "live-server": "^1.1.0",
     "cypress": "^13.3.3",
+    "jest": "^29.2.0",
+    "prettier": "^3.0.3",
+    "sass": "^1.69.5",
     "eslint": "^8.52.0",
     "eslint-plugin-cypress": "^2.15.1",
     "eslint-plugin-jest": "^27.4.3",
-    "husky": "^8.0.3",
-    "jest": "^29.2.0",
     "lint-staged": "^15.0.2",
-    "live-server": "^1.1.0",
-    "prettier": "^3.0.3",
-    "sass": "^1.69.5"
+    "husky": "^8.0.3",
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4"
   },
   "dependencies": {
     "bootstrap": "^5.3.2",
@@ -38,9 +38,9 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier --write",
       "eslint --fix",
-      "eslint --cache --fix"
+      "eslint --cache --fix",
+      "prettier --write"
     ]
   },
   "husky": {
