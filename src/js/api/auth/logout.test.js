@@ -4,12 +4,12 @@ global.localStorage = {
   removeItem: jest.fn(),
 };
 
-describe('logout funtion', () => {
+describe('Logout Functionality Tests', () => {
   beforeEach(() => {
     global.localStorage.removeItem.mockClear();
   });
 
-  it('should remove the token from the local storage', () => {
+  it('should remove the token from the localStorage', () => {
     logout();
     expect(localStorage.removeItem).toHaveBeenCalledWith('token');
   });
