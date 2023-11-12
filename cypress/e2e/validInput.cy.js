@@ -1,6 +1,3 @@
-// const invalidEmail = "testing@anotheremail.com";
-// const invalidPassword = "notapassword";
-
 describe('Logging in without authentication', () => {
   it('denys access with invalid login information', () => {
     cy.visit('./index.html');
