@@ -4,7 +4,7 @@
   "description": "Test",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test-unit && npm run test-e2e-cli",
+    "test": "npm run test-unit && npm run test-e2e",
     "test-unit": "jest",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
