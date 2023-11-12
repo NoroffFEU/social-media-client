@@ -5,15 +5,15 @@
 
 ### Introduction
 
-This is a forked project from Noroff to my Workflow course assignment where we are setting up a workflow for a social media client.
+This is a forked project from Noroff for my Workflow Course Assignment where we are setting up a workflow for a social media client.
 
 #### Workflow
 
 The following has been done to incorporate a workflow environment:
 
-* Incorporate pre-commit hooks
 * Setup ESLint for code analysis
 * Prettier for code formatting
+* Incorporate pre-commit hooks
 * Jest for unit testing
 * Cypress for E2E testing
 
