@@ -1,0 +1,72 @@
+# Install dependencies, run Prettier and ESLint + build & deploy on merge main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # Job to install dependencies and run Prettier and ESLint
+  install-and-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Prettier and ESLint
+        run: |
+          npm run prettier-check
+          npm run eslint-check
+
+  # Job to build and deploy to GitHub Pages
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build # Update to your actual build script
+
+      # Additional steps for GitHub Pages deployment
+      - name: Set up Node.js for Pages
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies for Pages
+        run: npm i
+
+      - name: Build SASS for Pages
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+
+      - name: Upload artifact for Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
