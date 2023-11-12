@@ -15,8 +15,8 @@ We have implemented GitHub Actions to automate our development process:
 
 ## Workflow Status
 
-![Code Review](https://github.com/RamtinMoshtagh/social-media-client/workflows/Code%20Review/badge.svg?branch=workflow)
-![Deploy to GitHub Pages](https://github.com/RamtinMoshtagh/social-media-client/workflows/Deploy%20to%20GitHub%20Pages/badge.svg?branch=workflow)
+[![Automated E2E Testing](https://github.com/RamtinMoshtagh/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/RamtinMoshtagh/social-media-client/actions/workflows/e2e-test.yml)
+[![Automated Unit Testing](https://github.com/RamtinMoshtagh/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/RamtinMoshtagh/social-media-client/actions/workflows/unit-test.yml)
 
 # Testing Documentation
 
