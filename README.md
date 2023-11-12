@@ -1,5 +1,4 @@
-[![Automated Unit Testing](https://github.com/idanguyen/social-media-client/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/idanguyen/social-media-client/actions/workflows/unit-tests.yml) [![Code Review](https://github.com/idanguyen/social-media-client/actions/workflows/gpt.yml/badge.svg)](https://github.com/idanguyen/social-media-client/actions/workflows/gpt.yml) [![Deploy static content to Pages](https://github.com/idanguyen/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/idanguyen/social-media-client/actions/workflows/pages.yml) [![Code Review](https://github.com/idanguyen/social-media-client/actions/workflows/gpt.yml/badge.svg)](https://github.com/idanguyen/social-media-client/actions/workflows/gpt.yml)
-
+[![Automated Unit Testing](https://github.com/idanguyen/social-media-client/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/idanguyen/social-media-client/actions/workflows/unit-tests.yml) [![Code Review](https://github.com/idanguyen/social-media-client/actions/workflows/gpt.yml/badge.svg)](https://github.com/idanguyen/social-media-client/actions/workflows/gpt.yml) [![Deploy static content to Pages](https://github.com/idanguyen/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/idanguyen/social-media-client/actions/workflows/pages.yml) [![Code Review](https://github.com/idanguyen/social-media-client/actions/workflows/e2e-tests.yml/badge.svg)](https://github.com/idanguyen/social-media-client/actions/workflows/e2e-tests.yml)
 
 # Workflow CA: social-media-client
 This is a school project aimed at learning how to quality check and automize routines to spend more effective time on coding. The focus will be through automating testing and deployments.
@@ -15,7 +14,6 @@ npm install
 ```
 npm run build
 ```
-
 
 ## Quality Assurance
 
@@ -51,6 +49,8 @@ You can run just the end to end tests with Cypress through the terminal using:
 npm run test-e2e
 ```
 
-
 ## Contributing
 Feel free to contribute. The workflow and master branches are protected, and only pull requests are allowed.
+
+## Issues and Discussions
+Please use these for any input and posting of issues.
