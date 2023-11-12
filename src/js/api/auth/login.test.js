@@ -9,7 +9,7 @@ const mockResponse = jest.fn().mockResolvedValue({
 
 global.fetch = mockResponse;
 
-describe('login', () => {
+describe('User Authentication Tests', () => {
   beforeEach(() => {
     global.localStorage = {
       setItem: jest.fn(),
@@ -20,7 +20,7 @@ describe('login', () => {
   });
 
   describe('successful login', () => {
-    it('stores valid token in localStorage', async () => {
+    it('stores a valid token in the localStorage', async () => {
       global.localStorage.getItem.mockReturnValueOnce(null);
       await login('email', 'password');
     });
