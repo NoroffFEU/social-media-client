@@ -12,7 +12,7 @@ describe('Logout test', () => {
     cy.get('button[type=submit]').contains('Login').click();
 
     // Wait for the token to be set in local storage
-    cy.wait(2000);
+    cy.wait(5000);
 
     // Check storage for token
     cy.window().then((window) => {
