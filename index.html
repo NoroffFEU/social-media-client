@@ -99,7 +99,7 @@
     </footer>
 
     <div
-      class="modal fade"
+      class="modal"
       id="loginModal"
       data-bs-backdrop="static"
       data-bs-keyboard="false"
@@ -165,16 +165,14 @@
             >
               Register
             </button>
-            <button type="submit" class="btn btn-success" id="login-button">
-              Login
-            </button>
+            <button type="submit" class="btn btn-success">Login</button>
           </div>
         </form>
       </div>
     </div>
 
     <div
-      class="modal fade"
+      class="modal"
       id="registerModal"
       data-bs-backdrop="static"
       data-bs-keyboard="false"
@@ -259,6 +257,7 @@
               data-bs-target="#loginModal"
               data-auth="login"
               data-visible="loggedOut"
+              id="login-button"
             >
               Login
             </button>
