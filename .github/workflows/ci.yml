@@ -1,4 +1,3 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
 on:
@@ -26,6 +25,11 @@ jobs:
       - name: Build SASS
         run: npm run build
 
+      - name: Debug Information
+        run: |
+          echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
+          printenv
+
       - name: Setup Pages
         uses: actions/configure-pages@v2
 
@@ -40,3 +44,4 @@ jobs:
         uses: actions/deploy-pages@v2
         with:
           artifacts-dir: dist
+          token: ${{ secrets.GITHUB_TOKEN }}
