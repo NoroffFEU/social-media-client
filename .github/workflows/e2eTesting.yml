@@ -7,7 +7,6 @@ jobs:
   run-e2e-tests:
     name: Run E2E Tests
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout under $GITHUB_WORKSPACE
         uses: actions/checkout@main
@@ -16,4 +15,3 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: electron
-          config-file: cypress.config.js
