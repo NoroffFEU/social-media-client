@@ -48,6 +48,7 @@ describe('Login flow', () => {
     cy.get('#loginForm').should('be.visible');
     cy.get('#loginEmail').type(Cypress.env('correctEmail'));
     cy.get('#loginPassword').type(Cypress.env('correctPassword'));
+
     cy.get('button[type=submit]').contains('Login').click();
   });
 });
