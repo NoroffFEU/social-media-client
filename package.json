@@ -9,7 +9,7 @@
     "lint": "eslint src/**/*.js",
     "prepare": "husky install",
     "test-unit": "jest",
-    "test": "npm run test-e2e",
+    "test": "npm run test-unit && npm run test-e2e",
     "test-e2e": "cypress open",
     "watch": "sass --watch src/scss:dist/css & live-server"
   },
