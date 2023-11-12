@@ -1,0 +1,23 @@
+name: Automated E2E Testing
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+env:
+  API_USERNAME: ${{secrets.API_USERNAME}}
+  API_PASSWORD: ${{secrets.API_PASSWORD}}
+  API_TOKEN: ${{secrets.API_TOKEN}}
+
+jobs:
+  run-e2e-tests:
+    name: Run E2E Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout under $GITHUB_WORKSPACE
+        uses: actions/checkout@main
+
+      - name: run cypress tests with electron
+        uses: cypress-io/github-action@v4
+        with:
+          browser: electron
