@@ -5,7 +5,6 @@ describe('Logging out', () => {
   });
 
   it('logs in and then logs out again', () => {
-    // Logs the user in with email and password
     cy.visit('./index.html');
     cy.wait(800);
     cy.get('#registerModal button[type=button]').contains('Login').click();
