@@ -18,6 +18,10 @@ describe('Logout test', () => {
     cy.get('button[data-auth=logout]').contains('Logout').click();
 
     // Check storage for token deletion
-    cy.getCookie('token', { timeout: 10000 }).should('not.exist');
+    cy.getCookie('token', { timeout: 10000 }).should(
+      'have.property',
+      'value',
+      null,
+    );
   });
 });
