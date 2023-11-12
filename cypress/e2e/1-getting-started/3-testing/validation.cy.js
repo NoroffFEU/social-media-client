@@ -14,7 +14,8 @@ describe("Login Form", () => {
     cy.get("#loginPassword").type(wrongPassword);
     cy.get("button[type=submit]").contains("Login").click();
 
-    const expectedAlertText = "Either your username was not found or your password is incorrect";
+    const expectedAlertText =
+      "Either your username was not found or your password is incorrect";
     cy.on("window:alert", (text) => {
       expect(text).to.contains(expectedAlertText);
     });
