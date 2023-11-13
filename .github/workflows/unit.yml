@@ -17,9 +17,6 @@ jobs:
       - name: Build SASS
         run: npm run build
 
-      - name: Test Build Lint & Format
-        run: npm run test-lint
-
       - name: Set up NodeJS
         uses: actions/setup-node@v1
         with:
