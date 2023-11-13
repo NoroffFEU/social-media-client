@@ -22,4 +22,4 @@
 
 
 ![example workflow](https://github.com/caplix/social-media-client/actions/workflows/gpt.yml/badge.svg)
-![pages workflow](https://github.com/caplix/social-media-client/actions/workflows/pages.yml/badge.svg)
+![pages workflow](https://github.com/caplix/social-media-client/actions/workflows/static.yml/badge.svg)
