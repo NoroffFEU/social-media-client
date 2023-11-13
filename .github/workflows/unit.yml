@@ -1,4 +1,4 @@
-name: Automated E2E Testing
+name: Automated Unit Testing
 on:
   pull_request:
   workflow_dispatch:
