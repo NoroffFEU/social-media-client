@@ -6,13 +6,14 @@
   "scripts": {
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
-    "format": "prettier -w src/**/*.js",
-    "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix",
-    "prepare": "husky install",
-    "test": "jest",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "format": "prettier -w src//*.js",
+    "test": "npm run test-unit && npm run test-e2e",
+    "test-e2e": "cypress open",
+    "test-e2e-cli": "cypress run",
+    "test-unit": "jest",
+    "lint": "eslint src//.js",
+    "lint-fix": "eslint src/**/.js --cache --fix",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Noroff",
