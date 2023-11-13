@@ -1,2 +1,4 @@
 cypress.config.js
 test.cy.js
+login.test.js
+logOut.test.js
