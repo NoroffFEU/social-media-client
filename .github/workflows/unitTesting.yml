@@ -18,11 +18,10 @@ jobs:
       - name: Build SASS
         run: npm run build
 
-
       - name: Set up NodeJS
         uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Run Tests
         run: npm run test-unit
