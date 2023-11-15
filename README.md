@@ -4,11 +4,19 @@
 - npm i
 
 #### Project runs prettier on commit
+
 #### Prject runs ESLint on commit
+
 #### The master branch is protected
+
 #### Found one bug that needs improvement check "Issues"
+
 #### The login function fetches and stores a token in browser storage
+
 #### The logout function clears the token from browser storage
+
 #### Checked that users can log in and access their profile
+
 #### tested form validation
 
+#### configured with babel
