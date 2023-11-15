@@ -19,8 +19,8 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.23.2",
-    "@babel/preset-env": "^7.23.2",
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
     "babel-jest": "^29.7.0",
     "cypress": "^13.4.0",
     "eslint": "^8.53.0",
