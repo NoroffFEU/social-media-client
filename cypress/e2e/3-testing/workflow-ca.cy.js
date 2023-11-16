@@ -1,6 +1,6 @@
 describe("Social Media App: Unauthorized user", () => {
   beforeEach(() => {
-    cy.visit("http://127.0.0.1:5501/index.html");
+    cy.visit("index.html");
   });
 
   it("CANNOT submit the log in form", () => {
@@ -23,7 +23,7 @@ describe("Social Media App: Unauthorized user", () => {
 
   describe("Social Media App: authorized user", () => {
     beforeEach(() => {
-      cy.visit("http://127.0.0.1:5501/index.html");
+      cy.visit("index.html");
     });
     it("CAN submit the log in form and access profile page", () => {
       cy.get("#registerModal");
@@ -33,7 +33,7 @@ describe("Social Media App: Unauthorized user", () => {
       cy.get("#loginPassword").type("password", { force: true, delay: 100 });
 
       cy.get("#loginForm").submit();
-      cy.visit("http://127.0.0.1:5501/index.html");
+      cy.visit("index.html");
     });
 
     it("CAN logout the website", () => {
@@ -44,9 +44,17 @@ describe("Social Media App: Unauthorized user", () => {
       cy.get("#loginPassword").type("password", { force: true, delay: 100 });
       cy.get("#loginForm").submit();
       cy.wait(1000);
-      cy.visit("http://127.0.0.1:5501/index.html");
+      cy.visit("index.html");
       cy.wait(1000);
       cy.get(".btn-outline-warning").dblclick();
+    });
+
+    it("CAN clear the Local Storage", () => {
+      cy.visit("index.html", {
+        onBeforeLoad(win) {
+          win.localStorage.clear();
+        },
+      });
     });
   });
 });
