@@ -23,9 +23,7 @@ describe("Social Media App: Unauthorized user", () => {
 
   describe("Social Media App: authorized user", () => {
     beforeEach(() => {
-      cy.visit(
-        "http://127.0.0.1:5501/index.html"
-      );
+      cy.visit("http://127.0.0.1:5501/index.html");
     });
     it("CAN submit the log in form and access profile page", () => {
       cy.get("#registerModal");
@@ -35,9 +33,7 @@ describe("Social Media App: Unauthorized user", () => {
       cy.get("#loginPassword").type("password", { force: true, delay: 100 });
 
       cy.get("#loginForm").submit();
-      cy.visit(
-        "http://127.0.0.1:5501/index.html"
-      );
+      cy.visit("http://127.0.0.1:5501/index.html");
     });
 
     it("CAN logout the website", () => {
@@ -48,9 +44,7 @@ describe("Social Media App: Unauthorized user", () => {
       cy.get("#loginPassword").type("password", { force: true, delay: 100 });
       cy.get("#loginForm").submit();
       cy.wait(1000);
-      cy.visit(
-        "https://nyolarraklay.github.io/social-media-client-CA-workflow/?view=profile&name=klay"
-      );
+      cy.visit("http://127.0.0.1:5501/index.html");
       cy.wait(1000);
       cy.get(".btn-outline-warning").dblclick();
     });
