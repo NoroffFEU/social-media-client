@@ -1,6 +1,6 @@
 describe("Social Media App: Unauthorized user", () => {
   beforeEach(() => {
-    cy.visit("https://nyolarraklay.github.io/social-media-client-CA-workflow");
+    cy.visit("http://127.0.0.1:5501/index.html");
   });
 
   it("CANNOT submit the log in form", () => {
@@ -24,7 +24,7 @@ describe("Social Media App: Unauthorized user", () => {
   describe("Social Media App: authorized user", () => {
     beforeEach(() => {
       cy.visit(
-        "https://nyolarraklay.github.io/social-media-client-CA-workflow"
+        "http://127.0.0.1:5501/index.html"
       );
     });
     it("CAN submit the log in form and access profile page", () => {
@@ -36,7 +36,7 @@ describe("Social Media App: Unauthorized user", () => {
 
       cy.get("#loginForm").submit();
       cy.visit(
-        "https://nyolarraklay.github.io/social-media-client-CA-workflow/?view=profile&name=klay"
+        "http://127.0.0.1:5501/index.html"
       );
     });
 
