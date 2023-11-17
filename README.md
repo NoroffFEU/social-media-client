@@ -1,7 +1,7 @@
 <h1>WORKFLOW</h1>
 
 ![Workflow](https://github.com/DarioDeLaFuente/social-media-client/actions/workflows/pages.yml/badge.svg)
-- **Linting:** (https://github.com/DarioDeLaFuente/social-media-client/actions/workflows/pages.yml)
+- [Deploy static content to Pages] (https://github.com/DarioDeLaFuente/social-media-client/actions/workflows/pages.yml)
 
 
 # Description
