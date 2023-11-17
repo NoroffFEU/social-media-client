@@ -1,6 +1,8 @@
 <h1>WORKFLOW</h1>
-![Deploy badge](https://github.com/DarioDeLaFuente/social-media-client/actions/workflows/pages.yml/badge.svg)
+
+![Workflow](https://github.com/DarioDeLaFuente/social-media-client/actions/workflows/pages.yml/badge.svg)
 (https://github.com/DarioDeLaFuente/social-media-client/actions/workflows/pages.yml)
+
 
 # Description
 
