@@ -10,8 +10,13 @@
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "test": "npm run test-unit",
-    "test-unit": "jest"
+    "run-test": "npm run test-unit",
+    "test-unit": "jest",
+    "cypress-open": "npx cypress open",
+    "test": "npm run test-e2e-cli",
+    "test-e2e": "cypress open",
+    "test-e2e-report": "cypress run --reporter mochawesome",
+    "test-e2e-cli": "cypress run"
   },
   "keywords": [],
   "author": "Noroff",
@@ -19,6 +24,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
+    "cypress": "^13.5.0",
     "eslint": "^8.53.0",
     "eslint-plugin-jest": "^27.6.0",
     "husky": "^8.0.3",
