@@ -5,8 +5,6 @@ import "jest-localstorage-mock";
 const token = "abc";
 
 describe("login function", () => {
-  // global.fetch = jest.fn();
-
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -24,15 +22,8 @@ describe("login function", () => {
 
     await login(mockEmail, mockPassword);
 
-    // expect(storage.save).toHaveBeenCalledTimes(2);
-
     const savedToken = storage.load("token");
 
     expect(savedToken).toEqual(token);
-
-    // expect(storage.save).toHaveBeenCalledWith(
-    //   "token",
-    //   JSON.stringify(token),
-    // );
   });
 });
