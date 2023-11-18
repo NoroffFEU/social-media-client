@@ -11,9 +11,9 @@
 
 #### Found one bug that needs improvement check "Issues"
 
-#### The login function fetches and stores a token in browser storage
+#### The login function fetches and stores a token in browser storage (added unit test)
 
-#### The logout function clears the token from browser storage
+#### The logout function clears the token from browser storage (added unit test)
 
 #### Checked that users can log in and access their profile
 
