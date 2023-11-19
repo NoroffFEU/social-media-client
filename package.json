@@ -1,20 +1,23 @@
 {
-  "name": "css-frameworks-ca",
+  "name": "workflow-ca-dev",
+  "private": true,
   "version": "0.0.2",
-  "description": "Test",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "vite": "^3.1.0",
     "eslint": "^8.53.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.1.0",
