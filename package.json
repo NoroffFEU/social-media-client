@@ -4,6 +4,8 @@
   "version": "0.0.3",
   "type": "module",
   "scripts": {
+    "test": "npm run test-unit",
+    "test-unit": "jest",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier -w src/**/*.js",
     "lint": "eslint src/**/*.js",
@@ -17,13 +19,14 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
-    "vite": "^3.1.0",
     "eslint": "^8.53.0",
     "husky": "^8.0.3",
+    "jest": "^29.2.0",
     "lint-staged": "^15.1.0",
     "live-server": "^1.2.2",
     "prettier": "^3.1.0",
-    "sass": "^1.54.8"
+    "sass": "^1.54.8",
+    "vite": "^3.1.0"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
