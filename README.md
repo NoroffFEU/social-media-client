@@ -3,6 +3,12 @@
 ![Workflow](https://github.com/DarioDeLaFuente/social-media-client/actions/workflows/pages.yml/badge.svg)
 - [Deploy static content to Pages](https://github.com/DarioDeLaFuente/social-media-client/actions/workflows/pages.yml)
 
+![Workflow](https://github.com/NoroffFEU/social-media-client/actions/workflows/deploy_unit_tests.yml/badge.svg)
+- [Deploy unit test](https://github.com/NoroffFEU/social-media-client/actions/workflows/deploy_unit_tests.yml)
+
+![Workflow](https://github.com/NoroffFEU/social-media-client/actions/workflows/deploy_e2e_tests.yml/badge.svg)
+- [Deploy e2e tests](https://github.com/NoroffFEU/social-media-client/actions/workflows/deploy_e2e_tests.yml)
+
 
 # Description
 
