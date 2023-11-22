@@ -1,4 +1,8 @@
+# Runs on pushes targeting the default branch
+name: AUTO - Unit Testing Jest
+
 on:
+  push:
   pull_request:
   workflow_dispatch:
 
