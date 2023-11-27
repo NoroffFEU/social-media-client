@@ -8,7 +8,10 @@
     "start": "sass --watch src/scss:dist/css & live-server",
     "test": "jest",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "e2e": "cypress run",
+    "e2e:open": "cypress open",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Noroff",
@@ -21,7 +24,7 @@
     "husky": "^8.0.3",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "lint-staged": "^15.1.0",
+    "lint-staged": "^15.0.2",
     "live-server": "^1.2.2",
     "prettier": "^3.0.3",
     "sass": "^1.54.8"
@@ -38,13 +41,9 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
-      "prettier --write"
+      "prettier --write",
+      "jest --bail --findRelatedTests"
     ],
-    "*.{json,css,scss,md}": [
-      "prettier --write"
-    ],
-    "jest": {
-      "testEnvironment": "jsdom"
-    }
+    "*.{json,css,scss,md}": "prettier --write"
   }
 }

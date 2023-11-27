@@ -21,6 +21,8 @@ describe('Login functionality', () => {
 
     // Check if the logout button is visible as an indication of successful login
     cy.get('button[data-auth="logout"]').should('be.visible');
+    // Check if token is set in localStorage
+    cy.window().its('localStorage.token').should('exist');
   });
 
   it('should show an error message when login fails', () => {
@@ -60,5 +62,8 @@ describe('Login functionality', () => {
 
     // Check if the login button is visible as an indication of successful logout
     cy.get('button[data-auth="login"]').should('be.visible');
+
+    // Check if token is cleared from localStorage
+    cy.window().its('localStorage.token').should('not.exist');
   });
 });
