@@ -1,6 +1,7 @@
 import { apiPath } from "../constants.js";
 import { headers } from "../headers.js";
 
+
 export async function followProfile(name) {
   const response = await fetch(`${apiPath}/social/profiles/${name}/follow`, {
     headers: headers(),
