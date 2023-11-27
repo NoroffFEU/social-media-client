@@ -1,6 +1,7 @@
 import { apiPath } from "../constants.js";
 import { headers } from "../headers.js";
 
+
 export async function deleteProfile(name) {
   const response = await fetch(`${apiPath}/social/profiles/${name}`, {
     method: "delete",
