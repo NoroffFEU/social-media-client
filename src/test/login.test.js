@@ -9,16 +9,25 @@ const mockFetchSuccess = jest.fn().mockResolvedValue({
 global.fetch = mockFetchSuccess;
 
 describe('login user', () => {
-  it('returns the token', async () => {
+  it('logs the user in', async () => {
     const data = await testLogin();
     expect(data.length).toEqual(MOCK_TOKEN);
   });
+});
 
-  let store = {};
-  global.localStorage = {
-    setItem: jest.fn().mockImplementation((key, MOCK_TOKEN) => {
-      JSON.stringify((store[key] = MOCK_TOKEN));
-    }),
-    getItem: jest.fn().mockImplementation((key) => store[key]),
-  };
+let store = {};
+const mockLocalStorage = {
+  setItem: jest.fn().mockImplementation((key, MOCK_TOKEN) => {
+    JSON.stringify((store[key] = MOCK_TOKEN));
+  }),
+  getItem: jest.fn().mockImplementation((key) => store[key]),
+};
+
+global.localStorage = mockLocalStorage;
+
+describe('set token', () => {
+  it('saves the access token', () => {
+    mockLocalStorage.setItem(MOCK_TOKEN);
+    expect(mockLocalStorage.setItem).toHaveBeenCalledWith(MOCK_TOKEN);
+  });
 });
