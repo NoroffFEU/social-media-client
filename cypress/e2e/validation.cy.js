@@ -18,6 +18,12 @@ describe("Login validation", () => {
     });
     cy.get("button[type=submit]").contains("Login").click();
     cy.wait(1000);
+
+    // Check if the token is not present in localStorage
+    cy.window()
+      .its("localStorage")
+      .invoke("getItem", "token")
+      .should("not.exist");
   });
 });
 
