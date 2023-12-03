@@ -11,12 +11,20 @@
             "plugins": ["jest"],
             "extends": ["plugin:jest/recommended"],
             "rules": { "jest/prefer-expect-assertions": "off" }
-          }
+        },
+        {
+            "files": ["**/*.spec.js", "**/*.e2e.js"], // Add Cypress test file patterns
+            "env": { "cypress/globals": true }, 
+            "extends": ["plugin:cypress/recommended"]
+        }
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "rules": {
-    }
+    "rules": {},
+    "plugins": [
+        "cypress" 
+    ]
 }
+
