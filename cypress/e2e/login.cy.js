@@ -13,7 +13,7 @@ describe('Login Tests', () => {
     cy.get('#loginEmail').type(validEmail);
     cy.get('#loginPassword').type(validPassword);
     cy.get('button[type=submit]').contains('Login').click();
-    cy.wait(5000);
+    cy.wait(2000);
 
     cy.url().should('include', '/?view=profile&name=testit');
     cy.get('h4').should('contain', 'testit');
@@ -29,8 +29,6 @@ describe('Login Tests', () => {
     cy.get('button[type=submit]').contains('Login').click();
     cy.wait(500);
 
-    cy.on('window:alert', (txt) => {
-      expect(txt).to.contains('Incorrect pasword or username.');
-    });
+    cy.get('#loginEmail').invoke('attr', 'title').should('equal', 'Only Noroff student or teacher emails are valid.');
   });
 });
