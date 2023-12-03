@@ -14,14 +14,23 @@ describe('Login Tests', () => {
     cy.get('#loginPassword').type(validPassword);
     cy.get('button[type=submit]').contains('Login').click();
     cy.wait(5000);
+
+    cy.url().should('include', '/?view=profile&name=testit');
+    cy.get('h4').should('contain', 'testit');
   });
 
   it('displays an error for login with incorrect credentials', () => {
     cy.visit('/');
+    cy.wait(500);
     cy.get('#registerModal').contains('Login').click();
-    cy.get('#loginForm').should('be.visible');
+    cy.wait(500);
     cy.get('#loginEmail').type(invalidEmail);
     cy.get('#loginPassword').type(invalidPassword);
     cy.get('button[type=submit]').contains('Login').click();
+    cy.wait(500);
+
+    cy.on('window:alert', (txt) => {
+      expect(txt).to.contains('Incorrect pasword or username.');
+    });
   });
 });
