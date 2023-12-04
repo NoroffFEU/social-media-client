@@ -15,10 +15,14 @@ describe('login user', () => {
     cy.get('form#loginForm.modal-content button.btn.btn-success').click();
     cy.intercept(
       `${Cypress.env('baseUrl')}/?view=profile&name=${Cypress.env('userName')}`,
-    ).as('profilePage');
-    cy.visit(
-      `${Cypress.env('baseUrl')}/?view=profile&name=${Cypress.env('userName')}`,
-    );
-    cy.wait('@profilePage');
+    )
+      .as('profilePage')
+      .then(() => {
+        cy.visit(
+          `${Cypress.env('baseUrl')}/?view=profile&name=${Cypress.env(
+            'userName',
+          )}`,
+        );
+      });
   });
 });
