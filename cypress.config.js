@@ -1,4 +1,6 @@
 import { defineConfig } from 'cypress';
+import dotenv from 'dotenv';
+dotenv.config();
 
 export default defineConfig({
   e2e: {
@@ -8,10 +10,10 @@ export default defineConfig({
     //setupNodeEvents will be implemented in the future
   },
   env: {
-    baseUrl: 'http://localhost:5501',
-    userName: 'ThoJen84480',
-    userEmail: 'ThoJen84480@stud.noroff.no',
-    userPassword: '!Yzems224',
-    userWrongPassword: '!Yzems225',
+    baseUrl: process.env.BASE_URL,
+    userName: process.env.USER_NAME,
+    userEmail: process.env.USER_EMAIL,
+    userPassword: process.env.USER_PASSWORD,
+    userWrongPassword: process.env.USER_WRONG_PASSWORD,
   },
 });
