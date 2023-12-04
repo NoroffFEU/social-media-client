@@ -5,7 +5,7 @@ let store = {};
 
 const mockFetchSuccess = jest.fn().mockResolvedValue({
   ok: true,
-  json: jest.fn().mockResolvedValue([{ MOCK_TOKEN }]),
+  json: jest.fn().mockResolvedValue([MOCK_TOKEN]),
 });
 
 global.fetch = mockFetchSuccess;
