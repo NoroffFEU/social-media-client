@@ -20,12 +20,13 @@ global.localStorage = mockLocalStorage;
 
 describe('login user', () => {
   it('logs the user in and saves the token', async () => {
-    const response = await login();
-    expect(response.length).toEqual(MOCK_TOKEN);
-    save('token', response[0]);
-    expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
-      'token',
-      JSON.stringify(response[0]),
-    );
+    await login(() => {
+      const response = MOCK_TOKEN;
+      save('token', response);
+      expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
+        'token',
+        JSON.stringify(response),
+      );
+    });
   });
 });
