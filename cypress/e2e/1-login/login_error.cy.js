@@ -20,9 +20,6 @@ describe('login user', () => {
       `${Cypress.env('baseUrl')}/?view=profile&name=${Cypress.env('userName')}`,
     );
     cy.wait('@profilePage');
-    cy.get('input#loginPassword').should(
-      'equal',
-      `${Cypress.env('userPassword')}`,
-    );
+    cy.contains('Logout').should('be.visible');
   });
 });
