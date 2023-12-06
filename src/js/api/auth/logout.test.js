@@ -1,17 +1,42 @@
-let store = {};
-const localStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  removeItem: jest.fn((key) => {
-    delete store[key];
-  }),
-};
+import { logout } from './logout.js';
 
-global.localStorage = localStorageMock;
+const mockLocalStorage = (() => {
+  let store = {};
+  return {
+    getItem(key) {
+      return store[key] || null;
+    },
+    setItem(key, value) {
+      store[key] = value;
+    },
+    removeItem(key) {
+      delete store[key];
+    },
+    clear() {
+      store = {};
+    },
+  };
+})();
 
-describe('logout', () => {
-  it('removes token from local storage', () => {
-    localStorageMock.removeItem('name');
-    expect(localStorageMock.removeItem).toHaveBeenCalledWith('name');
+beforeAll(() => {
+  // Setup the global localStorage mock before all tests
+  global.localStorage = mockLocalStorage;
+});
+
+beforeEach(() => {
+  // Clear the mock localStorage before each test
+  localStorage.clear();
+});
+
+describe('logout function', () => {
+  it('removes the token from localStorage', () => {
+    // Mock setting a token in localStorage
+    localStorage.setItem('token', '12345');
+
+    // Call the logout function
+    logout();
+
+    // Check if the token has been removed
+    expect(localStorage.getItem('token')).toBeNull();
   });
 });
