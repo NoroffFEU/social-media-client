@@ -17,5 +17,5 @@ export async function login(email, password) {
     return profile
   }
 
-  throw new Error("either the username or password is incorrect")
+  throw new Error(response.statusText)
 } 

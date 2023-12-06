@@ -1,5 +1,5 @@
 it("should show an error message upon a failed login attempt", () => {
-  cy.visit("http://127.0.0.1:5500");
+  cy.visit("/");
 
   cy.wait(1000);
   

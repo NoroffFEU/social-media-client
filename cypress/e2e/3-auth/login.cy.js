@@ -1,6 +1,6 @@
 describe("login page", () => {
     it("should contain login and register links, and after a successful login, redirect, not show these links", () => {
-        cy.visit("http://127.0.0.1:5500");
+        cy.visit("/");
 
         cy.wait(1000)
 
