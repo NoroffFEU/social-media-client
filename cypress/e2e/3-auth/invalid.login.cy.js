@@ -18,6 +18,6 @@ it("should show an error message upon a failed login attempt", () => {
   // Wait for the alert to be called
   cy.wait(1000).then(() => {
     expect(stub).to.be.calledOnce;
-    expect(stub.getCall(0)).to.be.calledWith("There was a problem creating your account");
+    expect(stub.getCall(0)).to.be.calledWith("<correct error message>");
   });
 });
