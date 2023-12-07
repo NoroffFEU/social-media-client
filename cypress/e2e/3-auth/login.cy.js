@@ -15,6 +15,9 @@ describe("login page", () => {
         // Submit the form
         cy.get(".btn.btn-success").eq(1).click();
 
+        // check if the token is there when login in
+        cy.window().its('localStorage').invoke('getItem', 'token').should('exist');
+
         
         cy.wait(1000)
 
@@ -40,6 +43,6 @@ describe("login page", () => {
 
         //click the log OUT button
 
-        cy.get(".btn-outline-warning.me-2").click();  
+        cy.window().its('localStorage').invoke('getItem', 'token').should('exist');
     });
 });
