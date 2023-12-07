@@ -8,6 +8,8 @@ describe("login page", () => {
 
         cy.get(".btn-outline-success.me-2").click();
 
+
+
         // Find the input field with Id "loginEmail" and type the email
         cy.get("#loginEmail").type("mariuskvaal15@noroff.no");
         cy.get("#loginPassword").type("mariuskvaal15");
@@ -39,10 +41,14 @@ describe("login page", () => {
 
 
 
-        cy.wait(1000)
 
+        cy.wait(1000)
         //click the log OUT button
 
-        cy.window().its('localStorage').invoke('getItem', 'token').should('exist');
+        cy.get(".btn-outline-warning.me-2").click();
+
+
+
+        cy.window().its('localStorage').invoke('getItem', 'token').should('not.exist');
     });
 });
