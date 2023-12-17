@@ -26,3 +26,4 @@ describe('User Authentication Tests', () => {
     });
   });
 });
+/* By running npm run test-unit in the terminal the tests for login.test.js and logout.test.js are running, and passing */
