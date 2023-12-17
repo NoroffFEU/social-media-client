@@ -14,5 +14,6 @@ describe('Logging in', () => {
     cy.get("input[type='password']:visible").type('12345678', { delay: 300 });
     cy.get('button[type=submit]').contains('Login').click();
     cy.wait(400);
+    cy.window().its('localStorage').invoke('getItem', 'token').should('exist');
   });
 });
