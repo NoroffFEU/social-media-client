@@ -11,6 +11,9 @@
     "rules": {
         "no-unused-vars": "error",
         "no-undef": "error",
-    "no-console": "warn"
+    "no-console": "warn",
+    "no-var": "error",
+    "eqeqeq": "error",
+    "camelcase": "error"
     }
 }

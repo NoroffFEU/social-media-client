@@ -8,7 +8,7 @@ export const postActions = (post) => {
   const clone = templateInstance('postActions');
   const owned = post.author && profile.name === post.author.name;
   const { postId } = getSearchParams();
-  const viewing = postId == post.id;
+  const viewing = postId === post.id;
 
   const viewButton = clone.querySelector('a[data-action=view]');
   const deleteButton = clone.querySelector('button[data-action=delete]');
