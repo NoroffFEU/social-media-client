@@ -3,7 +3,7 @@ name: Automated Unit Testing
 on:
   push:
     branches:
-      - 'master' 
+      - 'master'
   pull_request:
     branches:
       - 'master'
@@ -14,8 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
+    - name: Checkout $My-workflow-noroff
       uses: actions/checkout@v2
+      with:
+        repository: ${{ My-workflow-noroff }}
+        ref: 'master'
 
     - name: Set up Node.js
       uses: actions/setup-node@v4
@@ -27,6 +30,3 @@ jobs:
 
     - name: Run Tests
       run: npm run test-unit
-
-
-
