@@ -2,12 +2,10 @@
 
 # How to Install
 
-  1. Clone repository
-  2. bash `npm install`
-
+1. Clone repository
+2. bash `npm install`
 
 # How to Run
-
 
 Build: `npm run build`
 

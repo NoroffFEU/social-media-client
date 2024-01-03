@@ -3,6 +3,11 @@
     "browser": true,
     "es2021": true
   },
+  "globals": {
+    "global": true,
+    "require": true,
+    "module": true
+  },
   "extends": "eslint:recommended",
   "overrides": [
     {
@@ -27,5 +32,5 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": { "no-unused-vars": "off" }
 }
