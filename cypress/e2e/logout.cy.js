@@ -1,4 +1,4 @@
-describe('Access profile client', () => {
+describe('Access profile client logout', () => {
   it('log out', () => {
     const testEmail = Cypress.env('EMAIL');
     const testPassword = Cypress.env('PASSWORD');
