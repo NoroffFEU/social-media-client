@@ -9,7 +9,10 @@
     "lint": "eslint . && prettier --check .",
     "prettier": "prettier --write .",
     "eslint": "eslint --fix .",
+    "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
+    "test-e2e": "cypress open",
+    "test-e2e-cli": "cypress run",
     "cypress:open": "cypress open"
   },
   "keywords": [],
