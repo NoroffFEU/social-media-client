@@ -20,6 +20,3 @@ Test E2E test : `npm run test-e2e-cli`
 Test: `npm run test`
 
 Test E2E in browser: `npm run cypress:open`
-
- 
-
