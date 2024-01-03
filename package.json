@@ -9,7 +9,7 @@
     "lint": "eslint . && prettier --check .",
     "prettier": "prettier --write .",
     "eslint": "eslint --fix .",
-    "test": "jest",
+    "test-unit": "jest",
     "cypress:open": "cypress open"
   },
   "keywords": [],
