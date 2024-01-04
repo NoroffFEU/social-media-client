@@ -1,4 +1,4 @@
-name: Deploy and Test
+name: Deploy
 
 on:
   push:
@@ -30,3 +30,5 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
