@@ -1,5 +1,4 @@
 <h1>WORKFLOW</h1>
-![Workflow](https://github.com/github/docs/actions/workflows/pages.yml/badge.svg)
 
 # Description
 
@@ -41,6 +40,11 @@ Available scripts to lint, build, start, or test the project:
 
    - Or use E2E test in browser giu `npm run cypress-open`
 
-# License
 
-This project is licensed under the ISC license.
+STATUS BADGES
+
+[![Deploy content to Pages]
+(https://github.com/Baporek/My-workflow-noroff/blob/master/.github/workflows/pages.yml/badge.svg)](https://github.com/Baporek/My-workflow-noroff/blob/master/.github/workflows/pages.yml)
+
+[![Workflow Testing]
+(https://github.com/Baporek/My-workflow-noroff/blob/master/.github/workflows/workflow-test.yml/badge.svg)](https://github.com/Baporek/My-workflow-noroff/blob/master/.github/workflows/workflow-test.yml)
