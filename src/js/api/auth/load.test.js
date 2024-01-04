@@ -1,35 +1,21 @@
 import { load } from "../../storage/load.js";
+import "jest-localstorage-mock";
 
-describe('load function', () => {
+describe("load function", () => {
   beforeEach(() => {
     // Clear localStorage before each test
     localStorage.clear();
   });
 
-  it('loads data from storage', () => {
-    const testKey = 'testKey';
-    const testData = { key: 'value' };
-
-    // Set an item in localStorage for the test
-    localStorage.setItem(testKey, JSON.stringify(testData));
-
-    // Call the load function
-    const result = load(testKey);
-
-    // Expect the result to be the expected data
-    expect(result).toEqual(testData);
+  it("loads data from storage", () => {
+    localStorage.setItem("testKey", JSON.stringify({ key: "value" }));
+    const result = load("testKey");
+    expect(result).toEqual({ key: "value" });
   });
 
-  it('handles invalid JSON data', () => {
-    const invalidJsonKey = 'invalidJsonKey';
-
-    // Set an item in localStorage with invalid JSON data
-    localStorage.setItem(invalidJsonKey, 'invalidJSON');
-
-    // Call the load function
-    const result = load(invalidJsonKey);
-
-    // Expect the result to be null since JSON parsing failed
+  it("handles invalid JSON data", () => {
+    localStorage.setItem("invalidJsonKey", "invalidJSON");
+    const result = load("invalidJsonKey");
     expect(result).toBeNull();
   });
 });
