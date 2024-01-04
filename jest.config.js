@@ -193,8 +193,10 @@ const config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
-
+}; 
+/*
 module.exports = {
   testEnvironment: 'jest-environment-jsdom',
-};
+};*/
+
+module.exports = config;

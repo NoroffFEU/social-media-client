@@ -1,4 +1,3 @@
-
 describe('Login Failure Test', () => {
     it('should display an error message for failed login', () => {
       // Visit the local test page using the specified port and localhost
@@ -17,11 +16,10 @@ describe('Login Failure Test', () => {
   
         // Click the login button inside the modal
         cy.get('button[data-auth="login"]').click();
-  
-        // Check if the error message is displayed
-        cy.get('.error-message').should('be.visible').contains('Login failure. Please check your login or password.');
       });
   
+      // Check if the error message is displayed outside the modal
+      cy.get('.error-message').should('be.visible').contains('Login failure. Please check your login or password.');
     });
   });
   
