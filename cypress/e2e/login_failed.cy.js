@@ -1,4 +1,6 @@
 describe('Login failed', () => {
+  const Email = Cypress.env('FAILEDEMAIL');
+  const Password = Cypress.env('FAILEDPASSWORD');
   it('shows an error message for invalid login credentials', () => {
     cy.visit('/');
 
@@ -8,8 +10,8 @@ describe('Login failed', () => {
       .contains('Login')
       .click();
 
-    cy.get('input#loginEmail').type('hotmale@hotmail.com', { force: true });
-    cy.get('input#loginPassword').type('123456789', { force: true });
+    cy.get('input#loginEmail').type(Email, { force: true });
+    cy.get('input#loginPassword').type(Password, { force: true });
 
     cy.get('#loginForm button').contains('Login').should('be.visible').click();
   });

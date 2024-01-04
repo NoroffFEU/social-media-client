@@ -6,9 +6,7 @@ describe('Access profile client', () => {
     cy.visit('/');
     cy.wait(2000);
 
-    cy.get('#registerForm button.btn.btn-outline-success')
-      .contains('Login')
-      .click();
+    cy.get('#registerForm button.btn.btn-outline-success').click();
 
     cy.get('form#loginForm input#loginEmail')
       .should('be.visible')
@@ -17,7 +15,9 @@ describe('Access profile client', () => {
       .should('be.visible')
       .type(testPassword, { force: true });
 
-    cy.get('#loginForm button').contains('Login').should('be.visible').click();
+    cy.get('#loginForm button').should('be.visible');
+
+    cy.get('#loginForm button').contains('Login').click();
 
     cy.get('.profile').should('be.visible');
   });

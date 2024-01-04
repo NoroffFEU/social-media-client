@@ -8,5 +8,7 @@ module.exports = defineConfig({
   env: {
     EMAIL: 'dangfart@noroff.no',
     PASSWORD: 'test123456!',
+    FAILEDEMAIL: 'hotmale@hotmail.com',
+    FAILEDPASSWORD: 'passord1234',
   },
 });

@@ -1,10 +1,7 @@
-describe('Access profile client logout', () => {
+describe('Profile logout', () => {
   it('log out', () => {
     const testEmail = Cypress.env('EMAIL');
     const testPassword = Cypress.env('PASSWORD');
-
-    cy.log(`Test Email: ${testEmail}`);
-    cy.log(`Test Password: ${testPassword}`);
 
     cy.visit('/');
     cy.wait(2000);
@@ -24,8 +21,14 @@ describe('Access profile client logout', () => {
 
     cy.wait(2000);
 
-    cy.get('button').contains('Logout').should('be.visible').click();
+    cy.get(
+      'button.btn.btn-outline-warning[data-auth="logout"][data-visible="loggedIn"]'
+    )
+      .should('be.visible')
+      .click();
 
-    cy.get('#registerModalLabel').should('be.visible');
+    cy.get('#registerModalLabel')
+      .should('be.visible')
+      .contains('Create Profile');
   });
 });
