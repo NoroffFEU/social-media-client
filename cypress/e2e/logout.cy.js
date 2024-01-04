@@ -3,9 +3,6 @@ describe('Access profile client logout', () => {
     const testEmail = Cypress.env('EMAIL');
     const testPassword = Cypress.env('PASSWORD');
 
-    cy.log(`Test Email: ${testEmail}`);
-    cy.log(`Test Password: ${testPassword}`);
-
     cy.visit('/');
     cy.wait(2000);
 
@@ -22,7 +19,7 @@ describe('Access profile client logout', () => {
 
     cy.get('#loginForm button').contains('Login').should('be.visible').click();
 
-    cy.wait(2000);
+
 
     cy.get('button').contains('Logout').should('be.visible').click();
 

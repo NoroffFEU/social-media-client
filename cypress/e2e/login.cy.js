@@ -3,9 +3,6 @@ describe('Access profile client', () => {
     const testEmail = Cypress.env('EMAIL');
     const testPassword = Cypress.env('PASSWORD');
 
-    cy.log(`Test Email: ${testEmail}`);
-    cy.log(`Test Password: ${testPassword}`);
-
     cy.visit('/');
     cy.wait(2000);
 
