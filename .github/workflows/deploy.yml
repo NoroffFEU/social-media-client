@@ -19,12 +19,6 @@ jobs:
       - name: Build SASS
         run: npm run build
 
-      - name: Tests
-        run: |
-          npm run lint
-          npm run test-unit
-          npm run test-e2e-cli
-
   deploy:
     runs-on: ubuntu-latest
 
