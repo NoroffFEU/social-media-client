@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "concurrently \"sass --watch src/scss:dist/css\" \"live-server\"",
+    "start": "concurrently \"sass --watch src/scss:dist/css\" \"live-server --port=5500\"",
     "lint": "eslint . && prettier --check .",
     "prettier": "prettier --write .",
     "eslint": "eslint --fix .",
@@ -46,7 +46,7 @@
     "*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "eslint --fix",
       "prettier --write",
-      "git add"
+      "git add --all"
     ]
   }
 }
