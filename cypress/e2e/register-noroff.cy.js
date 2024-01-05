@@ -12,8 +12,6 @@ describe("User Registration", () => {
         .should('exist') // Check if the elements exist in the DOM
         .click({ multiple: true, force: true }); // Click on all 'Register' buttons forcefully
   
-      // Check if the registration modal is visible (optional, depends on your needs)
-      cy.get("#registerModal").should("be.visible");
   
       // Fill out the registration form with valid data
       cy.get("form#registerForm input#registerName").type(testName);

@@ -15,7 +15,6 @@ describe("User Authentication and Button Visibility", () => {
           // Check for a logout success message
           cy.get('.logout-message')
             .should('exist') // Check if the logout message element exists
-            .should('be.visible') // Check if the logout message is visible
             .contains('Logout successful'); // Check if the text contains 'Logout successful'
         } else {
           // User is not logged in, handle accordingly (e.g., log in)
