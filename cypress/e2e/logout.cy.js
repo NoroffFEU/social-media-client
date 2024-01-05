@@ -10,8 +10,8 @@ describe("User Authentication and Button Visibility", () => {
         if (logoutButton.is(':visible')) {
           // User is logged in, proceed with logout
           logoutButton.click({ force: true }); // Click on the 'Logout' button forcefully
-          cy.get("#registerModal").should("not.be.visible"); // Check if the modal is not visible after logout
-
+          // Check if the modal is not visible after logout
+          cy.get("#registerModal").should("not.be.visible");
           // Check for a logout success message
           cy.get('.logout-message')
             .should('exist') // Check if the logout message element exists
@@ -22,6 +22,8 @@ describe("User Authentication and Button Visibility", () => {
           cy.get('button[data-auth="login"]').should('exist').first().click({ force: true }); // Click the first 'Login' button forcefully
           // Add further steps to log in if needed
         }
+          // Pause execution to inspect the state
+          cy.debug();
       });
   });
 });

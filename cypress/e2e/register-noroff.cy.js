@@ -32,9 +32,10 @@ describe("User Registration", () => {
         // Log the response body
         cy.log("Registration Response: ", interception.response.body);
       });
-  
+      cy.debug();
       // Check if the user is now logged in after successful registration. Adjust the selector accordingly.
       cy.get('button[data-auth="logout"]').should('exist');
     });
+    
   });
   
