@@ -12,9 +12,9 @@ describe("User Registration", () => {
       cy.get("#registerModal").should("be.visible");
   
       // Fill out the registration form
-      cy.get("#registerName").type("BB");
-      cy.get("#registerEmail").type("BB@stud.noroff.no");
-      cy.get("#registerPassword").type("myPass");
+      cy.get("#registerName").type("Bart12345");
+      cy.get("#registerEmail").type("Bartgaj65913@stud.noroff.no");
+      cy.get("#registerPassword").type("Test12345");
       cy.get("#registerAvatar").type("https://example.com/avatar.jpg");
   
       // Submit the registration form
