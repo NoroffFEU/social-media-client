@@ -1,4 +1,4 @@
-import { templateInstance } from "../instance.js"
+import { templateInstance } from "../instance.js";
 
 export const commentsBadgeTemplate = (comments) => {
   if (comments && comments.length) {
@@ -7,5 +7,5 @@ export const commentsBadgeTemplate = (comments) => {
     return clone;
   }
 
-  return "\r\n"
-}
+  return "\r\n";
+};

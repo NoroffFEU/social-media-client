@@ -2,12 +2,12 @@ import { unfollowProfile } from "../../api/profiles/index.js";
 
 export async function unfollowListener(event) {
   const button = event.srcElement;
-  const name = button.dataset.name;
+  const { name } = button.dataset;
 
   if (name) {
     try {
       await unfollowProfile(name);
-      location.reload()
+      location.reload();
     } catch {
       return alert("There was a problem unfollowing this profile");
     }
