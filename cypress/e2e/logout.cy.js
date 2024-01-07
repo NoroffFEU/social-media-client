@@ -10,11 +10,6 @@ describe("User logout", () => {
         if (logoutButton.is(':visible')) {
           // User is logged in, proceed with logout
           logoutButton.click({ force: true });
-
-          // Optionally wait for a brief moment (e.g., 1000 milliseconds) if needed
-          // cy.wait(1000);
-
-          // You can add further steps if needed, like checking the user is logged out
         } else {
           // User is not logged in, handle accordingly (e.g., log in)
           cy.get('button[data-auth="login"]').should('exist').first().click({ force: true });
