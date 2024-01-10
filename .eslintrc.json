@@ -25,6 +25,12 @@
       }
     },
     {
+      "files": ["cypress.config.js"],
+      "env": {
+        "node": true
+      }
+    },
+    {
       "files": ["**/*.cy.js"],
       "env": {
         "cypress/globals": true
