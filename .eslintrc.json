@@ -8,5 +8,21 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {},
+  "overrides": [
+    {
+      "files": ["*.test.js", "*.spec.js"],
+      "env": {
+        "jest": true
+      },
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"]
+    },
+    {
+      "files": ["babel.config.js"],
+      "env": {
+        "node": true
+      }
+    }
+  ]
 }
