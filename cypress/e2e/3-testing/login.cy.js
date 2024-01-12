@@ -1,6 +1,6 @@
 describe('Login Test', () => {
   beforeEach(() => {
-    cy.visit('http://127.0.0.1:53890/');
+    cy.visit('http://127.0.0.1:6949/');
     cy.wait(500); // waiting for the modal to fully initialize
     cy.get('#modalLoginBtn').click();
   });
