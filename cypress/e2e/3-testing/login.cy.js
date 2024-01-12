@@ -1,6 +1,7 @@
 describe('Login Test', () => {
   beforeEach(() => {
-    cy.visit('http://127.0.0.1:6949/');
+    const currentURL = Cypress.env('CURRENT_URL');
+    cy.visit(currentURL);
     cy.wait(500); // waiting for the modal to fully initialize
     cy.get('#modalLoginBtn').click();
   });
@@ -16,8 +17,9 @@ describe('Login Test', () => {
 
     //  valid email
     cy.get('#loginEmail').clear();
-    cy.get('#loginEmail').type('arnetestkonto1@noroff.no{enter}');
-
+    const loginEmail = Cypress.env('TEST_EMAIL');
+    cy.get('#loginEmail').type(`${loginEmail}{enter}`);
+    cy.log('Email input ok!');
     // invalid password
     cy.get('#loginPassword').should('be.visible').clear();
     cy.get('#loginPassword').type('errortest{enter}');
@@ -25,8 +27,9 @@ describe('Login Test', () => {
 
     //valid password
     cy.get('#loginPassword').clear();
-    cy.get('#loginPassword').type('<zxcvbnm{enter}');
-
+    const loginPsw = Cypress.env('TEST_PASSWORD');
+    cy.get('#loginPassword').type(`${loginPsw}{enter}`);
+    cy.log('Password input ok!');
     // Checking that local storage has a profile- and token value
     cy.wait(500);
     cy.window().then(window => {
@@ -35,8 +38,10 @@ describe('Login Test', () => {
       expect(profile).to.not.be.null;
       expect(token).to.not.be.null;
     });
-
+    cy.log('Token and profile data ok!');
     // Clicking the logout button
     cy.get('button[data-auth="logout"]').click();
+    cy.log('Logout ok!');
+    cy.log('FINISHED');
   });
 });
