@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
   "parserOptions": {
@@ -12,6 +13,9 @@
   "overrides": [
     {
       "files": ["*.test.js", "*.spec.js"],
+      "globals": {
+        "global": "writable"
+      },
       "env": {
         "jest": true
       },
