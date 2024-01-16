@@ -9,7 +9,8 @@
     "lint": "eslint **/*.js",
     "format": "prettier --write src/**/*.js",
     "prepare": "husky install",
-    "test": "npm run test-unit",
+    "test": "npm run test-unit test-e2e", 
+    "test-e2e": "cypress open",
     "test-unit": "jest"
   },
   "keywords": [],
