@@ -27,4 +27,6 @@ jobs:
       - name: Start server
         run: npm start & sleep 15
       - name: Run tests
+        env:
+          CYPRESS_BASE_URL: http://localhost:3000
         run: npm test
