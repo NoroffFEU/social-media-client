@@ -1,7 +1,6 @@
 describe('Register Test', () => {
   beforeEach(() => {
-    const currentURL = Cypress.env('CURRENT_URL');
-    cy.visit(currentURL);
+    cy.visit('/');
     cy.wait(500); // waiting for the modal to fully initialize
   });
 

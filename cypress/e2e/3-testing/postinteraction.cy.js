@@ -1,7 +1,6 @@
 describe('Post Interaction Test', () => {
   before(() => {
-    const currentURL = Cypress.env('CURRENT_URL');
-    cy.visit(currentURL);
+    cy.visit('/');
     cy.wait(500);
 
     // Log in with valid credentials
