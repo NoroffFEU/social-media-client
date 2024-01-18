@@ -3,16 +3,17 @@ import { apiPath } from "../constants.js";
 import { headers } from "../headers.js";
 
 export async function updatePost(id, title, body, media, tags) {
-  const { name: owner } = profile()
-  const response = await fetch(`${apiPath}/social/posts/${id}`, {
-    method: "put",
-    body: JSON.stringify({ title, body, media, tags, owner }),
-    headers: headers("application/json")
-  })
+	const { name: owner } = profile();
 
-  if (response.ok) {
-    return await response.json()
-  }
+	const response = await fetch(`${apiPath}/social/posts/${id}`, {
+		method: "put",
+		body: JSON.stringify({ title, body, media, tags, owner }),
+		headers: headers("application/json"),
+	});
 
-  throw new Error(response.statusText)
+	if (response.ok) {
+		return await response.json();
+	}
+
+	throw new Error(response.statusText);
 }
