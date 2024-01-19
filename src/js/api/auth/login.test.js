@@ -12,16 +12,38 @@ const mockFetchSuccess = jest.fn().mockResolvedValue({
   }),
 });
 
-// Assign this to the global fetch function
-global.fetch = mockFetchSuccess;
+// Create a mock function that simulates a failed fetch call
+const mockFetchFailure = jest.fn().mockResolvedValue({
+  ok: false,
+  statusText: 'Unauthorized',
+});
 
 describe('login', () => {
+  beforeEach(() => {
+    // Clear all mock function call histories before each test
+    mockFetchSuccess.mockClear();
+    mockFetchFailure.mockClear();
+    storage.save.mockClear();
+  });
+
   it('saves the token and profile when login is successful', async () => {
+    // Assign this to the global fetch function
+    global.fetch = mockFetchSuccess;
+
     const profile = await login('test@example.com', 'password123');
 
     expect(mockFetchSuccess).toHaveBeenCalled();
     expect(storage.save).toHaveBeenCalledWith('token', 'fakeToken');
     expect(storage.save).toHaveBeenCalledWith('profile', { name: 'Test User' });
     expect(profile).toEqual({ name: 'Test User' });
+  });
+
+  it('throws an error when login is unsuccessful', async () => {
+    // Override the global fetch with the failure mock
+    global.fetch = mockFetchFailure;
+
+    await expect(login('test@example.com', 'wrongpassword')).rejects.toThrow(
+      'Unauthorized',
+    );
   });
 });

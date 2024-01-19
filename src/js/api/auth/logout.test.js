@@ -4,6 +4,10 @@ import * as storage from '../../storage/index';
 jest.mock('../../storage/index.js');
 
 describe('logout', () => {
+  beforeEach(() => {
+    storage.remove.mockClear();
+  });
+
   it('removes the token and profile from storage', () => {
     // Call the logout function which should invoke `remove` twice
     logout();
