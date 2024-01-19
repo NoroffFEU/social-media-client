@@ -1,29 +1,7 @@
 import { login } from "./login";
+import localStorageMock from "./localStorage.mock";
 
-// LocalStorageMock is from Olivers youtube-video "https://www.youtube.com/watch?v=7gF_0WqeQW8&t=5015s"
-class LocalStorageMock {
-  constructor() {
-    this.store = {};
-  }
-
-  clear() {
-    this.store = {};
-  }
-
-  getItem(key) {
-    return this.store[key] || null;
-  }
-
-  setItem(key, value) {
-    this.store[key] = String(value);
-  }
-
-  removeItem(key) {
-    delete this.store[key];
-  }
-}
-
-global.localStorage = new LocalStorageMock();
+global.localStorage = localStorageMock;
 
 const token = "qwertyqwerty1234";
 const valid_email = "user@noroff.no";
