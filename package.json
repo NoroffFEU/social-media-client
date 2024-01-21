@@ -12,9 +12,14 @@
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
       "prettier --write",
-      "git add"
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
     ]
   },
   "keywords": [],
