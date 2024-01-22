@@ -28,5 +28,6 @@
         "sourceType": "module"
     },
     "rules": {
+      "no-undef": "off"
     }
 }
