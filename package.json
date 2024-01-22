@@ -11,7 +11,8 @@
     "prepare": "husky install",
     "test": "npm run test-unit && npm run test-e2e",
     "test-unit": "jest",
-    "test-e2e": "cypress open"
+    "test-e2e": "cypress open",
+    "test-e2e-cli": "cypress run"
   },
   "keywords": [],
   "author": "Noroff",
