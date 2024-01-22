@@ -30,7 +30,7 @@ describe('login', () => {
     // Assign this to the global fetch function
     global.fetch = mockFetchSuccess;
 
-    const profile = await login('test@example.com', 'password123');
+    const profile = await login('test@test.com', 'password');
 
     expect(mockFetchSuccess).toHaveBeenCalled();
     expect(storage.save).toHaveBeenCalledWith('token', 'fakeToken');
@@ -42,7 +42,7 @@ describe('login', () => {
     // Override the global fetch with the failure mock
     global.fetch = mockFetchFailure;
 
-    await expect(login('test@example.com', 'wrongpassword')).rejects.toThrow(
+    await expect(login('test@test.com', 'wrongpassword')).rejects.toThrow(
       'Unauthorized',
     );
   });
