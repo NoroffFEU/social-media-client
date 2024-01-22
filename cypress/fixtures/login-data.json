@@ -1,0 +1,14 @@
+{
+    "users":[
+       {
+          "username":"standard_user",
+          "email": "ulvounth_test@stud.noroff.no",
+          "password":"Ulvounth_test123"
+       },
+       {
+         "username":"invalid_user",
+         "email": "ulvounth@stud.noroff.no",
+         "password":"Ulvounth"
+      }
+    ]
+ }
