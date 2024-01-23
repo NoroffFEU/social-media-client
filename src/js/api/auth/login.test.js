@@ -42,8 +42,8 @@ describe('login', () => {
     // Override the global fetch with the failure mock
     global.fetch = mockFetchFailure;
 
-    await expect(login('test@test.com', 'wrongpassword')).rejects.toThrow(
-      'Unauthorized',
-    );
+    await expect(async () => {
+      await login('test@test.com', 'wrongpassword');
+    }).rejects.toThrow('Unauthorized');
   });
 });
