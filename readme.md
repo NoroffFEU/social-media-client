@@ -15,6 +15,9 @@ This project aimed at improving the quality of an existing application by establ
 - Husky: A tool for running scripts before Git commits or pushes, enabling code quality checks before committing.
 - Command Line Interface (CLI): Used for running various development and testing commands.
 
+## Status
+[![Deploy static content to Pages](https://github.com/Ulvounth/workflow/actions/workflows/pages.yml/badge.svg?branch=workflow)](https://github.com/Ulvounth/workflow/actions/workflows/pages.yml)
+
 ## Running instructions
 
 ### Installing
