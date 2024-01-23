@@ -17,7 +17,7 @@
     "eslint": "^8.56.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
-    "live-server": "^1.2.2",
+    "live-server": "^1.1.0",
     "prettier": "^3.2.4",
     "sass": "^1.54.8"
   },
