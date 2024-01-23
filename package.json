@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "test": "jest"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^29.7.0",
     "live-server": "^1.2.2",
     "sass": "^1.54.8"
   },
