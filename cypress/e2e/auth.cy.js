@@ -67,6 +67,11 @@ describe('Login', () => {
       cy.get('[data-auth="logout"]').should('be.visible');
     });
 
+    // Mock logged in state
+    cy.window().then((win) => {
+      win.localStorage.setItem('auth', 'mock_token');
+    });
+
     // Now test the logout functionality
     cy.get('[data-auth="logout"]').click();
     cy.get('[data-auth="login"]').should('be.visible'); // Verify the login button is visible again
