@@ -10,8 +10,8 @@ register("register function", () => {
     const mockResponse = { userId: 12345 };
     fetchMock.mockResponseOnce(JSON.stringify(mockResponse));
 
-    const name = "John Doe";
-    const email = "john@example.com";
+    const name = "Olga G";
+    const email = "olga.g@example.com";
     const password = "password123";
     const avatar = "avatar-url";
 
@@ -31,8 +31,8 @@ register("register function", () => {
       status: 400,
     });
 
-    const name = "John Doe";
-    const email = "john@example.com";
+    const name = "Olga G";
+    const email = "olga.g@example.com";
     const password = "password123";
     const avatar = "avatar-url";
 
