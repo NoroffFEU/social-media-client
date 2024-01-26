@@ -40,7 +40,7 @@ describe('Post Interaction Test', () => {
         cy.get(`button[data-symbol="😀"][data-post-id="${postId}"]`).click();
         cy.wait(2000);
         cy.log('Reaction test successful');
-        cy.get(`a[href="./?view=post&postId=${postId}"]`).click();
+        cy.get(`a[href="./?view=post&postId=${postId}"]`).first().click();
 
         cy.wait(2000);
 
