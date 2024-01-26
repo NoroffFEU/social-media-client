@@ -7,8 +7,25 @@
         "eslint:recommended",
         "plugin:prettier/recommended"
     ],
-    "plugins": [
-        "prettier"
+    "overrides": [
+        {
+            "files": [
+                "**/*.test.js"
+            ],
+            "env": {
+                "jest": true
+            },
+            "plugins": [
+                "prettier",
+                "jest"
+            ],
+            "extends": [
+                "plugin:jest/recommended"
+            ],
+            "rules": {
+                "jest/prefer-expect-assertions": "off"
+            }
+        }
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
