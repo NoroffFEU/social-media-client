@@ -11,14 +11,16 @@ describe("login function", () => {
     storage.save.mockClear();
   });
 
+  const token = "test-token";
+
   it("should save token in storage when login is successful", async () => {
     fetch.mockResolvedValueOnce({
       ok: true,
-      json: async () => ({ accessToken: "test-token", user: "test-user" }),
+      json: async () => ({ accessToken: token }),
     });
     // Act
     await login("test@example.com", "password123");
     // Assert
-    expect(storage.save).toHaveBeenCalledWith("token", "test-token");
+    expect(storage.save).toHaveBeenCalledWith("token", token);
   });
 });
