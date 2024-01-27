@@ -14,6 +14,6 @@ describe("logout function", () => {
     // Assert
     expect(storage.remove).toHaveBeenCalledWith("token");
     expect(storage.remove).toHaveBeenCalledWith("profile");
-    expect(storage.remove).toHaveBeenCalled();
+    // expect(storage.remove).toHaveBeenCalled();
   });
 });
