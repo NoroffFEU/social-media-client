@@ -20,4 +20,4 @@ export async function login(email, password) {
   throw new Error(response.statusText);
 }
 
-module.exports = login;
+export async function login(email, password) {}

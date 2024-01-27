@@ -15,4 +15,4 @@ export async function register(name, email, password, avatar) {
   throw new Error(response.statusText);
 }
 
-module.exports = register;
+export async function register(name, email, password, avatar) {}
