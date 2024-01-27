@@ -16,7 +16,7 @@
             ],
             "env": {
                 "jest": true,
-                "cypress/globals": true,
+                "cypress/globals": true
             },
             "plugins": [
                 "prettier",
