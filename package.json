@@ -10,6 +10,7 @@
     "test-unit": "jest",
     "test-e2e": "cypress open",
     "lint": "eslint **/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
     "format": "prettier --write **/*.js",
     "prepare": "husky install"
   },

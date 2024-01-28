@@ -10,7 +10,7 @@ describe('Successful login with valid email and password', () => {
     cy.wait(2000);
   });
 
-  it('passes', () => {
+  it('The user can log in with the login form with valid credentials', () => {
     cy.login('testemail12345@noroff.no', '12345678');
 
     cy.get(window.localStorage.getItem('profile')).should('not.be.empty');
