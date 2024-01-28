@@ -17,14 +17,14 @@ describe('Successful login with valid email and password', () => {
     cy.get(window.localStorage.getItem('token')).should('not.be.empty');
   });
 
-  it('Cannot login with invalid email and a message is shown', () => {
+  it('Cannot login with invalid email', () => {
     cy.login('testemail12345@unknown.no', '12345678');
 
     cy.get(window.localStorage.getItem('profile')).should('not.exist');
     cy.get(window.localStorage.getItem('token')).should('not.exist');
   });
 
-  it('Cannot login with invalid email and a message is shown', () => {
+  it('Cannot login with invalid password', () => {
     cy.login('testemail12345@noroff.no', 'wrong');
 
     cy.get(window.localStorage.getItem('profile')).should('not.exist');
