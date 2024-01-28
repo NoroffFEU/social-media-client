@@ -9,8 +9,8 @@ describe("Login spec", () => {
   });
 
   it("The user can login with the login form with valid credentials", () => {
-    cy.get("#loginEmail").type("morram45808@stud.noroff.no");
-    cy.get("#loginPassword").type("Moreminerals88");
+    cy.get("#loginEmail").type("Ramsnes@noroff.no");
+    cy.get("#loginPassword").type("Marmea88");
     cy.get("button[type='submit']:visible").click();
     cy.get(window.localStorage.getItem("token")).should("not.be.empty");
     cy.get(window.localStorage.getItem("profile")).should("not.be.empty");
