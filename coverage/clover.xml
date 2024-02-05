@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1707171300148" clover="3.2.0">
+  <project timestamp="1707171300148" name="All files">
+    <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="3" elements="7" coveredelements="5" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
+    <file name="es6.js" path="/Users/peroverelv/Desktop/Noroff/repos/social-media-client/es6.js">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
