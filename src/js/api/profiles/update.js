@@ -3,17 +3,17 @@ import { apiPath } from "../constants.js";
 import { headers } from "../headers.js";
 
 export async function updateProfileImage(avatar) {
-	const me = profile();
+  const me = profile();
 
-	const response = await fetch(`${apiPath}/social/profiles/${me.name}`, {
-		method: "put",
-		body: JSON.stringify({ ...me, avatar }),
-		headers: headers("application/json"),
-	});
+  const response = await fetch(`${apiPath}/social/profiles/${me.name}`, {
+    method: "put",
+    body: JSON.stringify({ ...me, avatar }),
+    headers: headers("application/json"),
+  });
 
-	if (response.ok) {
-		return await response.json();
-	}
+  if (response.ok) {
+    return await response.json();
+  }
 
-	throw new Error(response.statusText);
+  throw new Error(response.statusText);
 }
