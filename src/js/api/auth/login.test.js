@@ -81,8 +81,6 @@ describe("login function isolation test", () => {
     expect(mockSave).toHaveBeenCalledWith("token", "some-token"); // Replace with expected token
     expect(mockSave).toHaveBeenCalledWith("profile", {
       /* profile data */
-    }); // Replace with expected profile data
-
-    // ...other assertions based on your expected behavior...
+    });
   });
 });

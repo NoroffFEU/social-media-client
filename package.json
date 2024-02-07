@@ -1,7 +1,7 @@
 {
   "name": "workflow-ca",
   "version": "0.0.4",
-  "description": "Test",
+  "description": "Test social media app",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
