@@ -1,68 +1,43 @@
-import { login } from "./login";
-// import { apiPath, headers } from '../constants';
-// import { save } from '../../storage';
+import { login } from "./login.js";
+import { headers } from "../headers.js";
 
-// jest.mock('../../storage'); // Mock the storage module for controlled testing
+class StorageMock {
+  constructor() {
+    this.store = {};
 
-// describe('login function', () => {
-//   const mockResponse = {
-//     ok: true,
-//     json: async () => ({
-//       accessToken: 'test-token',
-//       // Other profile details
-//     }),
-//   };
+    this.setItem = jest.fn((key, value) => {
+      this.store[key] = value.toString();
+    });
 
-//   beforeEach(() => {
-//     jest.clearAllMocks(); // Clear mocks before each test
-//   });
+    this.getItem = jest.fn((key) => {
+      return this.store[key] || null;
+    });
 
-//   it('stores the token and profile when given valid credentials', async () => {
-//     const mockFetch = jest.fn().mockResolvedValueOnce(mockResponse);
-//     global.fetch = mockFetch; // Override global fetch with mock
+    this.removeItem = jest.fn((key) => {
+      delete this.store[key];
+    });
 
-//     const email = 'test@example.com';
-//     const password = 'password';
+    this.clear = jest.fn(() => {
+      this.store = {};
+    });
 
-//     await login(email, password);
+    this.key = jest.fn((index) => {
+      return Object.keys(this.store)[index] || null;
+    });
+  }
 
-//     expect(mockFetch).toHaveBeenCalledTimes(1);
-//     expect(mockFetch).toHaveBeenCalledWith(`${apiPath}/social/auth/login`, {
-//       method: 'post',
-//       body: JSON.stringify({ email, password }),
-//       headers: headers('application/json'),
-//     });
+  get length() {
+    return Object.keys(this.store).length;
+  }
+}
 
-//     expect(save).toHaveBeenCalledTimes(2);
-//     expect(save).toHaveBeenCalledWith('token', 'test-token');
-//     expect(save).toHaveBeenCalledWith('profile', {
-//       // Other profile details (excluding accessToken)
-//     });
-//   });
-
-//   it('throws an error when login is unsuccessful', async () => {
-//     const mockErrorResponse = {
-//       ok: false,
-//       statusText: 'Unauthorized',
-//     };
-//     global.fetch = jest.fn().mockResolvedValueOnce(mockErrorResponse);
-
-//     await expect(login('invalid@email', 'wrong-password')).rejects.toThrow(
-//       'Unauthorized'
-//     );
-//   });
-// });
-
-jest.mock("path/to/headers"); // Replace with actual path
-jest.mock("path/to/save"); // Replace with actual path
+global.localStorage = new StorageMock();
 
 // Mocked versions of the imported functions
 const mockHeaders = jest.fn();
 const mockSave = jest.fn();
 
 describe("login function isolation test", () => {
-  // ...your test logic here...
-
   // Example test case (modify based on your requirements)
   it("should store token and profile on successful login", async () => {
     // Set up mock return values for mocked functions
@@ -70,8 +45,8 @@ describe("login function isolation test", () => {
     mockSave.mockResolvedValue(); // Simulate successful storing
 
     // Call the login function with mocked dependencies
-    const email = "test@example.com";
-    const password = "password";
+    const email = "steinnes@stud.noroff.no";
+    const password = "12345678";
     const fakeApiPath = "https://api.example.com"; // Replace with your actual API path
 
     await login(email, password, fakeApiPath);
