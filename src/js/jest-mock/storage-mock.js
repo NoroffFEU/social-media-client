@@ -1,4 +1,4 @@
-export class StorageMock {
+export default class StorageMock {
   constructor() {
     this.store = {};
 
