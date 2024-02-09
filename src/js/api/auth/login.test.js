@@ -33,16 +33,16 @@ describe("Login function", () => {
     expect(localStorage.getItem).toBeDefined();
   });
 
-  //   it("deletes the token value", async () => {
-  //     global.fetch = jest.fn(() => mockSuccessfulResponse());
-  //     const data = await login("steinnes@gmail.com", "bhs123");
-  //     expect(localStorage.getItem).toEqual(null);
-  //   });
+  // it("deletes the token value", async () => {
+  //   global.fetch = jest.fn(() => mockSuccessfulResponse());
+  //   const data = await login("steinnes@gmail.com", "bhs123");
+  //   expect(localStorage.getItem).toEqual(null);
+  // });
 
-  //   it("throws error on invalid credentials", async () => {
-  //     global.fetch = jest.fn(() => mockUnsuccessfulResponse());
-  //     await expect(login("steinnes@gmail.com", "bhs123")).rejects.toThrow(
-  //       "Invalid credentials",
-  //     );
-  //   });
+  it("throws error on invalid credentials", async () => {
+    global.fetch = jest.fn(() => mockUnsuccessfulResponse());
+    await expect(login("steinnes@gmail.com", "bhs123")).rejects.toThrow(
+      "Invalid credentials",
+    );
+  });
 });
