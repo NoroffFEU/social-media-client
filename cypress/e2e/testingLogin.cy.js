@@ -1,7 +1,7 @@
 describe("login testing", () => {
   beforeEach(() => {
     cy.visit("./index.html");
-    cy.get('data-auth="login"').click();
+    cy.get("#loginModal").click();
   });
 
   const login = (username, password) => {
