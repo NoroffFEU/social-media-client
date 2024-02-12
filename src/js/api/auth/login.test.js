@@ -29,7 +29,7 @@ const mockUnsuccessfulResponse = jest.fn(() => {
 describe("Login function", () => {
   it("fetches and saves token key", async () => {
     global.fetch = jest.fn(() => mockSuccessfulResponse());
-    const data = await login("steinnes@gmail.com", "bhs123");
+    const data = await login("steinnes@mail", "bhs123");
     expect(localStorage.getItem).toBeDefined();
   });
 
@@ -41,8 +41,6 @@ describe("Login function", () => {
 
   it("throws error on invalid credentials", async () => {
     global.fetch = jest.fn(() => mockUnsuccessfulResponse());
-    await expect(login("steinnes@gmail.com", "bhs123")).rejects.toThrow(
-      "Invalid credentials",
-    );
+    await expect(login("s", "bhs")).rejects.toThrow("Invalid credentials");
   });
 });

@@ -2,6 +2,7 @@
     "env": {
         "browser": true,
         "es2021": true
+       
     },
     "extends": "eslint:recommended",
     "overrides": [
@@ -10,10 +11,14 @@
           "env": { "jest": true },
           "plugins": ["jest"],
           "extends": ["plugin:jest/recommended"],
-          "rules": { "jest/prefer-expect-assertions": "off" }
+          "rules": { "jest/no-commented-out-tests": "warn",
+          "no-undef": "off",
+          "no-unused-vars": "off",
+          "jest/prefer-expect-assertions": "off" }
+          
         },
         {
-            "files": ["**/*.cy.js"],
+            "files": ["**/*.cy.js", "cypress.config.js"],
             "env": { "cypress/globals": true },
             "plugins": ["cypress"],
             "extends": ["plugin:cypress/recommended"],
