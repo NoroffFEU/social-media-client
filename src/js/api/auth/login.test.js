@@ -11,7 +11,7 @@ const mockSuccessfulResponse = () => {
     json: () =>
       Promise.resolve({
         email: "steinnes@gmail.com",
-        password: "bhs123",
+        password: "bhs12",
         accessToken: "accessToken",
         value: "accessTokenMockValueScript",
       }),
