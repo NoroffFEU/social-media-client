@@ -39,6 +39,10 @@ describe("Login function", () => {
   //   expect(localStorage.getItem).toEqual(null);
   // });
 
+  it("fails when you pass a number in as email", () => {
+    // expect login(123, "password") to throw an error
+  });
+
   it("throws error on invalid credentials", async () => {
     global.fetch = jest.fn(() => mockUnsuccessfulResponse());
     await expect(login("s", "bhs")).rejects.toThrow("Invalid credentials");

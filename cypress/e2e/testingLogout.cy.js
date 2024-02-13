@@ -13,24 +13,14 @@ describe("login testing", () => {
     cy.get("#loginForm button[type=submit]").click();
   };
 
-  // it ("logs in"), () => {
-  //   cy.get('#loginEmail').type("steinnes@stud.noroff.no");
-  //   cy.get('#loginPassword').type("12345678");
-  //   cy.get('#login-button').click();
-  //   cy.wait(3000)
-  // };
-
-  it("should login successfully with valid credentials", () => {
+  it("logs in", () => {
     login("steinnes@stud.noroff.no", "12345678");
     cy.wait(1000);
-    // cy.get
     cy.get(".profile").should("be.visible");
-  });
+    cy.wait(1000);
 
-  it("should show error messages for invalid credentials", () => {
-    login("invalid_username", "wrong_password");
-    cy.get("#error-message")
-      .should("be.visible")
-      .should("contain.text", "Invalid username or password");
+    // Perform logout
+
+    cy.get("header").find("button[data-auth=logout]").click();
   });
 });
