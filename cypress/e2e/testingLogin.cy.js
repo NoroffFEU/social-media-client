@@ -1,13 +1,15 @@
 describe("login testing", () => {
   beforeEach(() => {
     cy.visit("./index.html");
-    cy.get("#loginModal").click();
+    cy.get("#registerForm").find("button[data-auth=login]").click();
+    cy.wait(1000);
+    cy.get("#loginForm").should("be.visible");
   });
 
   const login = (username, password) => {
-    cy.get("#loginEmail").type(username);
+    cy.get(".modal-content #loginEmail").type(username);
     cy.get("#loginPassword").type(password);
-    cy.get("#login-button").click();
+    cy.get("#loginForm #login-button").click();
   };
 
   // it ("logs in"), () => {
