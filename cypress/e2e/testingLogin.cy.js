@@ -13,17 +13,9 @@ describe("login testing", () => {
     cy.get("#loginForm button[type=submit]").click();
   };
 
-  // it ("logs in"), () => {
-  //   cy.get('#loginEmail').type("steinnes@stud.noroff.no");
-  //   cy.get('#loginPassword').type("12345678");
-  //   cy.get('#login-button').click();
-  //   cy.wait(3000)
-  // };
-
   it("should login successfully with valid credentials", () => {
     login("steinnes@stud.noroff.no", "12345678");
     cy.wait(1000);
-    // cy.get
     cy.get(".profile").should("be.visible");
   });
 
