@@ -13,13 +13,24 @@ describe("login testing", () => {
     cy.get("#loginForm button[type=submit]").click();
   };
 
-  it("should login successfully with valid credentials", () => {
+  it("logs in", () => {
     login("steinnes@stud.noroff.no", "12345678");
     cy.wait(1000);
     cy.get(".profile").should("be.visible");
-  });
+    cy.wait(1000);
 
-  it("should show error messages for invalid credentials", () => {
-    login("wrong@username.no", "wrong_password");
+    cy.get(".profile-actions .profile-name").should(
+      "contain",
+      "steinnesbjornhaavard",
+    );
+
+    // Access localStorage and check for user information
+
+    cy.window().then((win) => {
+      const user = win.localStorage.getItem("profile");
+      expect(user).to.exist;
+      const parsedUser = JSON.parse(user);
+      expect(parsedUser.username).to.equal(user.name);
+    });
   });
 });
