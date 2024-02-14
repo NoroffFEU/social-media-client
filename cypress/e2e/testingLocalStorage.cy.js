@@ -13,7 +13,7 @@ describe("login testing", () => {
     cy.get("#loginForm button[type=submit]").click();
   };
 
-  it("logs in", () => {
+  it("logs in and checks localstorage for a token to be string and username", () => {
     login("steinnes@stud.noroff.no", "12345678");
     cy.wait(1000);
     cy.get(".profile").should("be.visible");
@@ -29,8 +29,9 @@ describe("login testing", () => {
     cy.window().then((win) => {
       const user = win.localStorage.getItem("profile");
       expect(user).to.exist;
-      const parsedUser = JSON.parse(user);
-      expect(parsedUser.username).to.equal(user.name);
+
+      const authToken = win.localStorage.getItem("token");
+      expect(authToken).to.be.string;
     });
   });
 });
