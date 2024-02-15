@@ -27,7 +27,7 @@ const mockUnsuccessfulResponse = jest.fn(() => {
 });
 
 describe("Login function test", () => {
-  it("fetches and saves token key and ", async () => {
+  it("fetches and saves token key and checkes if the token is correct and email is correct", async () => {
     global.fetch = jest.fn(() => mockSuccessfulResponse());
     const data = await login("steinnes@gmail", "bhs12");
     expect(localStorage.getItem("token")).toEqual('"accessToken"');
