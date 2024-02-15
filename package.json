@@ -9,7 +9,9 @@
     "prepare": "husky install",
     "test": "npm run test-unit && npm run test-e2e",
     "test-e2e": "cypress open",
-    "test-unit": "jest"
+    "test-unit": "jest",
+    "format": "prettier -w src/**/*.js",
+    "lint": "eslint src/**/*.js"
   },
   "keywords": [],
   "author": "Noroff",

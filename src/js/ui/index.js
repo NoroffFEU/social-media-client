@@ -4,8 +4,8 @@ import { modals } from "./modals.js";
 import { footer } from "./footer.js";
 
 export default () => {
-	header();
-	modals();
-	footer();
-	updateLoginVisibility();
+  header();
+  modals();
+  footer();
+  updateLoginVisibility();
 };
