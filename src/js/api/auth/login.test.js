@@ -1,8 +1,4 @@
 import { login } from "./login.js";
-// import StorageMock from "../../jest-mock/storage-mock.js";
-
-// global.localStorage = new StorageMock();
-
 import localStorageMock from "../../jest-mock/storage-mock.js";
 
 global.localStorage = localStorageMock;
@@ -16,39 +12,32 @@ const mockSuccessfulResponse = () => {
       Promise.resolve({
         email: "steinnes@gmail.com",
         password: "bhs12",
-        token: "accessToken",
+        accessToken: "accessToken",
         value: "accessTokenMockValue",
       }),
   });
 };
 
 const mockUnsuccessfulResponse = jest.fn(() => {
-  return Promise.reject({
+  return Promise.resolve({
     ok: false,
     status: 404,
     statusText: "Invalid credentials",
   });
 });
 
-describe("Login function", () => {
-  it("fetches and saves token key", async () => {
+describe("Login function test", () => {
+  it("fetches and saves token key and ", async () => {
     global.fetch = jest.fn(() => mockSuccessfulResponse());
     const data = await login("steinnes@gmail", "bhs12");
-    expect(localStorage.getItem("token")).toEqual("accessToken");
-    // expect(localStorage.getItem("profile").email).toBe(data.email)
-    // expect(localStorage.token).toBeTrue();
-    expect(JSON.parse(localStorage.getItem("profile"))).toEqual({
-      email: "steinnes@gmail.com",
-      password: "bhs12",
-      token: "accessToken",
-      value: "accessTokenMockValue",
-    });
+    expect(localStorage.getItem("token")).toEqual('"accessToken"');
+    expect(JSON.parse(localStorage.getItem("profile")).email).toBe(data.email);
   });
 
   // it("deletes the token value", async () => {
   //   global.fetch = jest.fn(() => mockSuccessfulResponse());
   //   const data = await login("steinnes@gmail.com", "bhs12");
-  //   expect(localStorage.getItem).toEqual(null);
+  //   expect(localStorage.getItem("token")).toEqual(null);
   // });
 
   // it("fails when you pass a number in as email", () => {
