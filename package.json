@@ -11,7 +11,8 @@
     "test-e2e": "cypress open",
     "test-unit": "jest",
     "format": "prettier -w src/**/*.js",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "cypress": "npx cypress run"
   },
   "keywords": [],
   "author": "Noroff",

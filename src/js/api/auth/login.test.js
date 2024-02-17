@@ -34,15 +34,19 @@ describe("Login function test", () => {
     expect(JSON.parse(localStorage.getItem("profile")).email).toBe(data.email);
   });
 
-  // it("deletes the token value", async () => {
-  //   global.fetch = jest.fn(() => mockSuccessfulResponse());
-  //   const data = await login("steinnes@gmail.com", "bhs12");
-  //   expect(localStorage.getItem("token")).toEqual(null);
-  // });
+  const load = (key) => {
+    try {
+      return JSON.parse(localStorage.getItem(key));
+    } catch {
+      return null;
+    }
+  };
 
-  // it("fails when you pass a number in as email", () => {
-  //   // expect login(123, "password") to throw an error
-  // });
+  it("deletes the token value", async () => {
+    global.fetch = jest.fn(() => mockSuccessfulResponse());
+    const data = await login("steinnes@gmail.com", "bhs12");
+    expect(load(data.token)).toEqual(null);
+  });
 
   it("throws error on invalid credentials", async () => {
     global.fetch = jest.fn(() => mockUnsuccessfulResponse());
