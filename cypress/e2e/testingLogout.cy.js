@@ -1,4 +1,4 @@
-describe("login for logging out", () => {
+describe("testing logging out", () => {
   beforeEach(() => {
     cy.visit("./index.html");
     cy.wait(1000);
