@@ -20,7 +20,19 @@ describe("login testing", () => {
   });
 
   it("should show error messages for invalid credentials", () => {
-    // Perform login
-    login("wrong@username.com", "failes");
+    // Perform login with different credentials
+
+    login("steinnes@email.com", "1234");
+
+    cy.wait(1000);
+
+    // check that a alert is shown
+    cy.on("window:alert", (str) => {
+      expect(str).equal("Only Noroff student or teacher emails are valid.");
+    });
+
+    cy.get("input:invalid#loginEmail")
+      .invoke("prop", "validationMessage")
+      .should("exist");
   });
 });
