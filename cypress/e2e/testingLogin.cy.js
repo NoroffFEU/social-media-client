@@ -20,6 +20,7 @@ describe("login testing", () => {
   });
 
   it("should show error messages for invalid credentials", () => {
-    login("wrong@username.no", "wrong_password");
+    // Perform login
+    login("wrong@username.com", "failes");
   });
 });

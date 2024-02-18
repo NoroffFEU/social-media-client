@@ -1,4 +1,4 @@
-describe("login testing", () => {
+describe("login for logging out", () => {
   beforeEach(() => {
     cy.visit("./index.html");
     cy.wait(1000);
@@ -22,5 +22,16 @@ describe("login testing", () => {
     // Perform logout
 
     cy.get("header").find("button[data-auth=logout]").click();
+
+    // Check that the user is logged out
+
+    cy.wait(1000);
+    cy.window().then((win) => {
+      const user = win.localStorage.getItem("profile");
+      expect(user).to.not.exist;
+
+      const authToken = win.localStorage.getItem("token");
+      expect(authToken).to.be.null;
+    });
   });
 });
