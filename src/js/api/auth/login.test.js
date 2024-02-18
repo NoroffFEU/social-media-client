@@ -55,5 +55,3 @@ describe("Login function test", () => {
     );
   });
 });
-
-// Path: src/js/api/auth/logout.test.js
