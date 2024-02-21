@@ -42,3 +42,7 @@ Tests that checks the following:
 - [] The user is able to log out with the log out button.  
 - [] The login function stores a token in browser storage when a user is logged in with valid credentials. 
 - [] The logout function clear the token from browser storage. 
+
+##### Badges
+
+[![Deploy static content to Pages](https://github.com/tonjetj/workflow-resit/actions/workflows/pages.yml/badge.svg?branch=master)](https://github.com/tonjetj/workflow-resit/actions/workflows/pages.yml)
