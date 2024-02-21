@@ -20,7 +20,7 @@ The existing application package must feature:
 - [x] Fork the project repository to your GitHub account.
 - [x] Create a new branch called "workflow".
 - [] Configure the project to run ESlint on commit.
-- [] Configure the project to run Prettier on commit.
+- [x] Configure the project to run Prettier on commit.
 - [] Configure the project with Commit Hooks.
 - [] Configure the project with GitHub Actions for build/deploy if required.
 - [] Record bugs found during this process (steps above) in the Issues Tab.
