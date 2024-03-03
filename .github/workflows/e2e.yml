@@ -1,0 +1,17 @@
+name: Automated End-to-End Testing
+
+jobs:
+jobs:
+  run-e2e-tests:
+    name: Run E2E Tests
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the code under $GITHUB_WORKSPACE
+      - name: Checkout code
+        uses: actions/checkout@main
+      
+      # Install dependencies and run Cypress tests with Electron
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v4
+        with:
+          browser: electron
