@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css & live-server",
+    "check-prettier": "npx prettier ./src/**.* --check",
+    "run-prettier": "npx prettier ./src/**.* --write",
+    "check-lint": "npx eslint ./src/**/*.*",
+    "run-lint": "npx eslint ./src/**/*.*"
   },
   "keywords": [],
   "author": "Noroff",
