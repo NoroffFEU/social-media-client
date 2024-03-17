@@ -1,6 +1,6 @@
 {
   "name": "workflow_ca",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "adding workflow to an existing project",
   "main": "index.js",
   "type": "module",
