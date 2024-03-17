@@ -1,6 +1,6 @@
 {
   "name": "workflow_ca",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "adding workflow to an existing project",
   "main": "index.js",
   "type": "module",
@@ -14,7 +14,13 @@
     "test": "npm run test-unit",
     "test-unit": "jest"
   },
-  "keywords": ["workflow", "testing", "formatting", "linting", "social media"],
+  "keywords": [
+    "workflow",
+    "testing",
+    "formatting",
+    "linting",
+    "social media"
+  ],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
