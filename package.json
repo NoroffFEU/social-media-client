@@ -10,7 +10,9 @@
     "format": "prettier . --write",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "npm run test-unit",
+    "test-unit": "jest"
   },
   "keywords": "workflow, testing, formatting, linting, social media",
   "author": "Noroff",
