@@ -14,7 +14,7 @@
     "test": "npm run test-unit",
     "test-unit": "jest"
   },
-  "keywords": "workflow, testing, formatting, linting, social media",
+  "keywords": ["workflow", "testing", "formatting", "linting", "social media"],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
