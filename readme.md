@@ -1,3 +1,7 @@
+[![Automated E2E Testing](https://github.com/jonnebonde/social-media-client/actions/workflows/e2e-test.yml/badge.svg)](https://github.com/jonnebonde/social-media-client/actions/workflows/e2e-test.yml)
+
+[![Automated Unit Testing](https://github.com/jonnebonde/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/jonnebonde/social-media-client/actions/workflows/unit-test.yml)
+
 ```
 # Workflow CA 
 
@@ -5,7 +9,8 @@ Setting up a workflow with tests inside an existing project
 
 ## Getting Started
 
-These instructions will help you set up and run this project on your local machine for development and testing purposes.
+These instructions will help you set up and run this project on your locally
+ for development and testing purposes.
 
 ### Prerequisites
 
