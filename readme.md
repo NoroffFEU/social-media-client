@@ -2,7 +2,7 @@
 
 [![Automated Unit Testing](https://github.com/jonnebonde/social-media-client/actions/workflows/unit-test.yml/badge.svg)](https://github.com/jonnebonde/social-media-client/actions/workflows/unit-test.yml)
 
-```
+
 # Workflow CA 
 
 Setting up a workflow with tests inside an existing project
