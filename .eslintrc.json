@@ -17,7 +17,7 @@
         }
       },
         {
-          "files": ["**/*.test.js"],
+          "files": ["**/*.test.js", "localStorageMock.js"],
           "env": { "jest": true },
           "plugins": ["jest"],
           "extends": ["plugin:jest/recommended"],

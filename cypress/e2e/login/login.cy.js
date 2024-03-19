@@ -2,7 +2,7 @@ describe("Login to app with valid credentials", () => {
   const mail = "ustest_432@stud.noroff.no";
   const password = "12345678";
 
-  it("Loads", () => {
+  it("Logs in and new page loads", () => {
     cy.visit("/");
     cy.clearLocalStorage();
     cy.get("#registerModal").find("button.btn-close").wait(500).click();
@@ -35,7 +35,7 @@ describe("Login to app with invalid credentials", () => {
       "have.been.calledOnceWith",
       "Either your username was not found or your password is incorrect",
     );
-    cy.url().should("include", "profile");
+    cy.url().should("not.contain", "profile");
   });
 });
 
@@ -53,6 +53,6 @@ describe("Login to app with other than noroff mail", () => {
     cy.get("#loginPassword").type(password);
     cy.get("button[type=submit]").contains("Login").wait(200).click();
     cy.wait(500);
-    cy.url().should("include", "profile");
+    cy.url().should("not.contain", "profile");
   });
 });

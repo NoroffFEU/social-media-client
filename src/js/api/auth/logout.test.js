@@ -1,27 +1,5 @@
 import { logout } from "./logout";
-import * as storage from "../../storage/index.js";
-
-class LocalStorageMock {
-  constructor() {
-    this.store = {};
-  }
-
-  clear() {
-    this.store = {};
-  }
-
-  getItem(key) {
-    return this.store[key] || null;
-  }
-
-  setItem(key, value) {
-    this.store[key] = value;
-  }
-
-  removeItem(key) {
-    delete this.store[key];
-  }
-}
+import { LocalStorageMock } from "../../mocks/localStorageMock";
 
 global.localStorage = new LocalStorageMock();
 
