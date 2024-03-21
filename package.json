@@ -1,9 +1,13 @@
 {
-  "name": "css-frameworks-ca",
+  "name": "workflow-test",
   "version": "1.0.0",
-  "description": "Test",
+  "description": "Trying to learn how to test with and make the dev process easier and faster",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "test": "node src/js/index.js",
+    "format": "prettier -w src/**/*.js",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server"
   },
@@ -11,7 +15,9 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.57.0",
     "live-server": "^1.2.2",
+    "prettier": "^3.2.5",
     "sass": "^1.54.8"
   },
   "dependencies": {
