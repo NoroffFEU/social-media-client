@@ -14,7 +14,7 @@
       "rules": { "jest/prefer-expect-assertions": "off" }
     },
     {
-      "files": ["**/*.cy.js"],
+      "files": ["**/*.cy.js", "cypress.config.js"],
       "env": { "cypress/globals": true },
       "plugins": ["cypress"],
       "extends": ["plugin:cypress/recommended"],
