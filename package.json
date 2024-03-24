@@ -10,7 +10,8 @@
     "check-prettier": "prettier --check .",
     "prettier": "prettier --write .",
     "lint": "eslint .",
-    "lint-fix": "eslint --cache --fix ."
+    "lint-fix": "eslint --cache --fix .",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Noroff",
@@ -18,11 +19,17 @@
   "devDependencies": {
     "@eslint/js": "^8.57.0",
     "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "live-server": "^1.2.2",
     "prettier": "3.2.5",
     "sass": "^1.54.8"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md,scss}": "prettier --write"
   }
 }
