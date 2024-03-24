@@ -1,7 +1,7 @@
 {
-  "name": "css-frameworks-ca",
+  "name": "workflow-ca",
   "version": "1.1.0",
-  "description": "Test",
+  "description": "adding, creating and configuring workfolws on a project",
   "main": "index.js",
   "scripts": {
     "build": "sass src/scss:dist/css",
