@@ -11,8 +11,4 @@ export default [
       'no-undef': 'off',
     },
   },
-  {
-    files: ['**/*.test.js'],
-    extends: ['plugin:jest/recommended'],
-  },
 ];
