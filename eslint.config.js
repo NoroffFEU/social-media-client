@@ -9,6 +9,7 @@ export default [
       'dot-notation': 'error',
       'prefer-const': 'warn',
       'no-undef': 'off',
+      'no-unused-vars': 'warn',
     },
   },
 ];
