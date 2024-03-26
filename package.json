@@ -19,10 +19,7 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.24.3",
-    "@babel/preset-env": "^7.24.3",
     "@eslint/js": "^8.57.0",
-    "babel-jest": "^29.7.0",
     "eslint": "^8.57.0",
     "eslint-plugin-jest": "^27.9.0",
     "husky": "^9.0.11",
