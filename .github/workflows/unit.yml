@@ -1,0 +1,26 @@
+name: Automated Unit Testing
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  run-e2e-tests:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout under $GITHUB_WORKSPACE
+        uses: actions/checkout@main
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build SASS
+        run: npm run build
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: Test Build Unit Tests
+        run: npm run test-unit
