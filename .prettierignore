@@ -1,0 +1,11 @@
+# Prettier ignore file
+# Use ignores from .gitignore file
+/node_modules
+/dist
+/.eslintcache
+# Ignore html and css/scss
+**/*.html
+**/*.css
+**/*.scss
+# Ignore .github
+/.github
