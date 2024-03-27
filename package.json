@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "npm run e2e-cli",
+    "test": "npm run unit-testing && npm run e2e-cli",
     "unit-testing": "jest",
     "e2e-testing": "cypress open",
     "e2e-report": "cypress run --reporter mochawesome",
