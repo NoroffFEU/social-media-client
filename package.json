@@ -22,7 +22,10 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.24.3",
+    "@babel/preset-env": "^7.24.3",
     "@eslint/js": "^8.57.0",
+    "babel-jest": "^29.7.0",
     "cypress": "^13.7.1",
     "eslint": "^8.57.0",
     "eslint-plugin-cypress": "^2.15.1",
