@@ -12,4 +12,19 @@ export default [
       'no-unused-vars': 'warn',
     },
   },
+  {
+    plugins: ['cypress'],
+    files: ['./cypress/**/*.js'],
+    rules: {
+      'cypress/no-unnesessary-waiting': 'off',
+      'no-unused-vars': 'off',
+    },
+  },
+  {
+    plugins: ['jest'],
+    files: ['./src/unit-tests/**/*.test.js'],
+    rules: {
+      'jest/prefer-expect-assertions': 'off',
+    },
+  },
 ];
