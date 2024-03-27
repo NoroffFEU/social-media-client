@@ -1,4 +1,4 @@
-name: Automated Unit and E2E Testing
+name: Automated Unit Testing
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   run-unit-tests:
-    name: Run Tests
+    name: Run Unit Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -17,5 +17,5 @@ jobs:
         run: npm install
 
       - name: Run Tests
-        run: npm run test
+        run: npm run unit-testing
 
