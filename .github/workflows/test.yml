@@ -1,0 +1,21 @@
+name: Automated Unit and E2E Testing
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  run-unit-tests:
+    name: Run Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout under $GITHUB_WORKSPACE
+        uses: actions/checkout@main
+
+      - name: Install all dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm run test
+
