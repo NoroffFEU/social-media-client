@@ -1,402 +1,557 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./dist/css/index.css" />
-		<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
-		<script src="./src/js/index.js" defer type="module"></script>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-			rel="stylesheet"
-		/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/css/index.css" />
+    <script
+      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="./src/js/index.js" defer type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-		<title>Test Client</title>
-	</head>
+    <title>Test Client</title>
+  </head>
 
-	<body class="min-vh-100 d-flex flex-column">
-		<header class="py-3 sticky-top shadow">
-			<div class="container-fluid">
-				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start">
-					<a href="./" class="d-flex align-items-center mb-2 me-sm-3 mb-sm-0 text-white text-decoration-none">
-						<img style="width: 5rem" src="https://www.noroff.no//images/logo/noroff-logo.png" alt="Noroff Logo" />
-					</a>
+  <body class="min-vh-100 d-flex flex-column">
+    <header class="py-3 sticky-top shadow">
+      <div class="container-fluid">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start"
+        >
+          <a
+            href="./"
+            class="d-flex align-items-center mb-2 me-sm-3 mb-sm-0 text-white text-decoration-none"
+          >
+            <img
+              style="width: 5rem"
+              src="https://www.noroff.no//images/logo/noroff-logo.png"
+              alt="Noroff Logo"
+            />
+          </a>
 
-					<form class="col mb-3 mb-sm-0 me-sm-3" role="search">
-						<input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search" />
-					</form>
+          <form class="col mb-3 mb-sm-0 me-sm-3" role="search">
+            <input
+              type="search"
+              class="form-control form-control-dark text-bg-dark"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </form>
 
-					<div class="text-end">
-						<button type="button" class="btn btn-outline-warning me-2" data-auth="logout" data-visible="loggedIn">Logout</button>
-						<button
-							type="button"
-							class="btn btn-outline-success me-2"
-							data-bs-toggle="modal"
-							data-bs-target="#loginModal"
-							data-auth="login"
-							data-visible="loggedOut"
-						>
-							Login
-						</button>
-						<button
-							type="button"
-							class="btn btn-success"
-							data-bs-toggle="modal"
-							data-bs-target="#registerModal"
-							data-auth="register"
-							data-visible="loggedOut"
-						>
-							Create Profile
-						</button>
-					</div>
-				</div>
-			</div>
-		</header>
-		<main class="flex-grow-1 container-fluid mt-3"></main>
-		<footer class="shadow position-sticky bottom-0 py-3">
-			<div class="container-fluid">
-				<div class="row align-items-center">
-					<div class="col">© 2022 Noroff FEU</div>
-					<div class="col-auto" data-visible="loggedIn">
-						<div class="d-flex align-items-center" id="footerActions">
-							<a href="./?view=post" data-visible="loggedIn" class="btn btn-outline-success">New Post</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+          <div class="text-end">
+            <button
+              type="button"
+              class="btn btn-outline-warning me-2"
+              data-auth="logout"
+              data-visible="loggedIn"
+            >
+              Logout
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success me-2"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+              data-auth="login"
+              data-visible="loggedOut"
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#registerModal"
+              data-auth="register"
+              data-visible="loggedOut"
+            >
+              Create Profile
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="flex-grow-1 container-fluid mt-3"></main>
+    <footer class="shadow position-sticky bottom-0 py-3">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col">© 2022 Noroff FEU</div>
+          <div class="col-auto" data-visible="loggedIn">
+            <div class="d-flex align-items-center" id="footerActions">
+              <a
+                href="./?view=post"
+                data-visible="loggedIn"
+                class="btn btn-outline-success"
+                >New Post</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-		<div
-			class="modal fade"
-			id="loginModal"
-			data-bs-backdrop="static"
-			data-bs-keyboard="false"
-			tabindex="-1"
-			aria-labelledby="loginModalLabel"
-			aria-hidden="true"
-		>
-			<div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
-				<form class="modal-content" id="loginForm">
-					<div class="modal-header">
-						<h5 class="modal-title" id="loginModalLabel">Login</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<div class="form-floating mb-3">
-							<input
-								required
-								type="email"
-								class="form-control"
-								id="loginEmail"
-								name="email"
-								pattern="[\w\-.]+@(stud.)?noroff.no$"
-								title="Only Noroff student or teacher emails are valid."
-								placeholder="name@example.com"
-							/>
-							<label for="loginEmail">Email address</label>
-						</div>
-						<div class="form-floating mb-3">
-							<input
-								required
-								type="password"
-								minlength="8"
-								class="form-control"
-								id="loginPassword"
-								name="password"
-								placeholder="Password"
-							/>
-							<label for="loginPassword">Password</label>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<button
-							type="button"
-							class="btn btn-outline-success"
-							data-bs-toggle="modal"
-							data-bs-target="#registerModal"
-							data-auth="register"
-							data-visible="loggedOut"
-						>
-							Register
-						</button>
-						<button type="submit" class="btn btn-success">Login</button>
-					</div>
-				</form>
-			</div>
-		</div>
+    <div
+      class="modal fade"
+      id="loginModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <form class="modal-content" id="loginForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Login</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-floating mb-3">
+              <input
+                required
+                type="email"
+                class="form-control"
+                id="loginEmail"
+                name="email"
+                pattern="[\w\-.]+@(stud.)?noroff.no$"
+                title="Only Noroff student or teacher emails are valid."
+                placeholder="name@example.com"
+              />
+              <label for="loginEmail">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                required
+                type="password"
+                minlength="8"
+                class="form-control"
+                id="loginPassword"
+                name="password"
+                placeholder="Password"
+              />
+              <label for="loginPassword">Password</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="reset"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              data-bs-toggle="modal"
+              data-bs-target="#registerModal"
+              data-auth="register"
+              data-visible="loggedOut"
+            >
+              Register
+            </button>
+            <button type="submit" class="btn btn-success">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
-		<div
-			class="modal fade"
-			id="registerModal"
-			data-bs-backdrop="static"
-			data-bs-keyboard="false"
-			tabindex="-1"
-			aria-labelledby="registerModalLabel"
-			aria-hidden="true"
-		>
-			<div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
-				<form class="modal-content" id="registerForm">
-					<div class="modal-header">
-						<h5 class="modal-title" id="registerModalLabel">Create Profile</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<div class="form-floating mb-3">
-							<input required type="text" class="form-control" id="registerName" name="name" placeholder="name@example.com" />
-							<label for="registerName">Name</label>
-						</div>
-						<div class="form-floating mb-3">
-							<input
-								required
-								type="email"
-								class="form-control"
-								id="registerEmail"
-								name="email"
-								pattern="[\w\-.]+@(stud.)?noroff.no$"
-								title="Only Noroff student or teacher emails are valid."
-								placeholder="name@example.com"
-							/>
-							<label for="registerEmail">Email address</label>
-						</div>
-						<div class="form-floating mb-3">
-							<input
-								required
-								type="password"
-								minlength="8"
-								class="form-control"
-								id="registerPassword"
-								name="password"
-								placeholder="Password"
-							/>
-							<label for="registerPassword">Password</label>
-						</div>
-						<div class="form-floating">
-							<input required type="url" class="form-control" id="registerAvatar" name="avatar" placeholder="Avatar URL" />
-							<label for="registerAvatar">Avatar URL</label>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<button
-							type="button"
-							class="btn btn-outline-success"
-							data-bs-toggle="modal"
-							data-bs-target="#loginModal"
-							data-auth="login"
-							data-visible="loggedOut"
-						>
-							Login
-						</button>
-						<button type="submit" class="btn btn-success">Create Profile</button>
-					</div>
-				</form>
-			</div>
-		</div>
+    <div
+      class="modal fade"
+      id="registerModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="registerModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable"
+      >
+        <form class="modal-content" id="registerForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">Create Profile</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-floating mb-3">
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="registerName"
+                name="name"
+                placeholder="name@example.com"
+              />
+              <label for="registerName">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                required
+                type="email"
+                class="form-control"
+                id="registerEmail"
+                name="email"
+                pattern="[\w\-.]+@(stud.)?noroff.no$"
+                title="Only Noroff student or teacher emails are valid."
+                placeholder="name@example.com"
+              />
+              <label for="registerEmail">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                required
+                type="password"
+                minlength="8"
+                class="form-control"
+                id="registerPassword"
+                name="password"
+                placeholder="Password"
+              />
+              <label for="registerPassword">Password</label>
+            </div>
+            <div class="form-floating">
+              <input
+                required
+                type="url"
+                class="form-control"
+                id="registerAvatar"
+                name="avatar"
+                placeholder="Avatar URL"
+              />
+              <label for="registerAvatar">Avatar URL</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="reset"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+              data-auth="login"
+              data-visible="loggedOut"
+            >
+              Login
+            </button>
+            <button type="submit" class="btn btn-success">
+              Create Profile
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
 
-		<div class="d-none templates">
-			<template id="profileButton">
-				<a href="" class="profile d-flex align-items-center me-2 text-decoration-none">
-					<img src="" style="width: 2.5rem; border-radius: 50%; z-index: 2; transform: translateX(1.5rem)" class="img-fluid me-2" alt="" />
-					<div style="position: relative" class="btn btn-success ps-4"></div>
-				</a>
-			</template>
+    <div class="d-none templates">
+      <template id="profileButton">
+        <a
+          href=""
+          class="profile d-flex align-items-center me-2 text-decoration-none"
+        >
+          <img
+            src=""
+            style="
+              width: 2.5rem;
+              border-radius: 50%;
+              z-index: 2;
+              transform: translateX(1.5rem);
+            "
+            class="img-fluid me-2"
+            alt=""
+          />
+          <div style="position: relative" class="btn btn-success ps-4"></div>
+        </a>
+      </template>
 
-			<template id="reactionButton">
-				<button type="button" class="btn btn-sm btn-outline-success" data-reaction>
-					<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
-				</button>
-			</template>
+      <template id="reactionButton">
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-success"
+          data-reaction
+        >
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          ></span>
+        </button>
+      </template>
 
-			<template id="reactionOption">
-				<li><button type="button" class="dropdown-item"></button></li>
-			</template>
+      <template id="reactionOption">
+        <li><button type="button" class="dropdown-item"></button></li>
+      </template>
 
-			<template id="reactionMenu">
-				<div class="btn-group btn-group-sm reactions">
-					<div class="dropdown">
-						<button class="btn btn-sm btn-primary dropdown-toggle ms-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-							+
-						</button>
-						<ul class="dropdown-menu" data-reaction></ul>
-					</div>
-				</div>
-			</template>
+      <template id="reactionMenu">
+        <div class="btn-group btn-group-sm reactions">
+          <div class="dropdown">
+            <button
+              class="btn btn-sm btn-primary dropdown-toggle ms-1"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              +
+            </button>
+            <ul class="dropdown-menu" data-reaction></ul>
+          </div>
+        </div>
+      </template>
 
-			<template id="profileButton">
-				<a href="" class="d-flex align-items-center text-decoration-none">
-					<img style="width: 2rem; height: 2rem; border-radius: 50%" class="img-fluid me-2" alt="" />
-					<div class="text-truncate name"></div>
-				</a>
-			</template>
+      <template id="profileButton">
+        <a href="" class="d-flex align-items-center text-decoration-none">
+          <img
+            style="width: 2rem; height: 2rem; border-radius: 50%"
+            class="img-fluid me-2"
+            alt=""
+          />
+          <div class="text-truncate name"></div>
+        </a>
+      </template>
 
-			<template id="postTag">
-				<span class="badge rounded-pill bg-success"></span>
-			</template>
+      <template id="postTag">
+        <span class="badge rounded-pill bg-success"></span>
+      </template>
 
-			<template id="commentsTag">
-				<span class="badge rounded-pill bg-info"></span>
-			</template>
+      <template id="commentsTag">
+        <span class="badge rounded-pill bg-info"></span>
+      </template>
 
-			<template id="postForm">
-				<form class="row mt-3" id="postForm">
-					<div class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3">
-						<h1>Post</h1>
-						<button type="submit" class="btn btn-success" data-action="submit">
-							<span data-action="publish">Publish</span><span data-action="update">Update</span> Post
-						</button>
-					</div>
-					<div class="col-12 col-md-6">
-						<div class="form-floating mb-3">
-							<input required type="text" class="form-control" id="postTitle" name="title" placeholder="Post Title" />
-							<label for="postTitle">Post Title*</label>
-						</div>
-						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="postTags" name="tags" placeholder="Post Title" />
-							<label for="postTags">Post Tags</label>
-						</div>
-						<div class="form-floating mb-3">
-							<input type="url" class="form-control" id="postMedia" name="media" placeholder="Post Title" />
-							<label for="postMedia">Post Media</label>
-						</div>
-						<div class="form-floating mb-3">
-							<textarea class="form-control" name="body" id="postBody" rows="50"></textarea>
-							<label for="postMedia">Post Body</label>
-						</div>
-					</div>
+      <template id="postForm">
+        <form class="row mt-3" id="postForm">
+          <div
+            class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3"
+          >
+            <h1>Post</h1>
+            <button type="submit" class="btn btn-success" data-action="submit">
+              <span data-action="publish">Publish</span
+              ><span data-action="update">Update</span> Post
+            </button>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="form-floating mb-3">
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="postTitle"
+                name="title"
+                placeholder="Post Title"
+              />
+              <label for="postTitle">Post Title*</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="postTags"
+                name="tags"
+                placeholder="Post Title"
+              />
+              <label for="postTags">Post Tags</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="url"
+                class="form-control"
+                id="postMedia"
+                name="media"
+                placeholder="Post Title"
+              />
+              <label for="postMedia">Post Media</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea
+                class="form-control"
+                name="body"
+                id="postBody"
+                rows="50"
+              ></textarea>
+              <label for="postMedia">Post Body</label>
+            </div>
+          </div>
 
-					<div class="col-12 col-md-6" id="postPreview"></div>
-				</form>
-			</template>
+          <div class="col-12 col-md-6" id="postPreview"></div>
+        </form>
+      </template>
 
-			<template id="postHeader">
-				<div class="card-header">
-					<b class="m-0"></b>
-					<span class="mb-0 d-inline"></span>
-				</div>
-			</template>
+      <template id="postHeader">
+        <div class="card-header">
+          <b class="m-0"></b>
+          <span class="mb-0 d-inline"></span>
+        </div>
+      </template>
 
-			<template id="postFooter">
-				<div class="card-footer d-flex justify-content-between"></div>
-			</template>
+      <template id="postFooter">
+        <div class="card-footer d-flex justify-content-between"></div>
+      </template>
 
-			<template id="postActions">
-				<div class="post-actions btn-group-sm">
-					<a href="" class="btn btn-primary" data-action="view">View</a>
-					<button type="button" class="btn btn-danger" data-action="delete">Delete</button>
-				</div>
-			</template>
+      <template id="postActions">
+        <div class="post-actions btn-group-sm">
+          <a href="" class="btn btn-primary" data-action="view">View</a>
+          <button type="button" class="btn btn-danger" data-action="delete">
+            Delete
+          </button>
+        </div>
+      </template>
 
-			<template id="postThumbnail">
-				<div class="card mb-3 thumbnail post fade-in"></div>
-			</template>
+      <template id="postThumbnail">
+        <div class="card mb-3 thumbnail post fade-in"></div>
+      </template>
 
-			<template id="comment">
-				<div class="comment">
-					<div class="comment-header">
-						<a href="" class="owner">owner</a>
-						<span class="text-muted time-ago">31 minutes ago</span>
-					</div>
-					<div class="comment-body">
-						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The
-						point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-						content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum
-						as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions
-						have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-					</div>
-				</div>
-			</template>
+      <template id="comment">
+        <div class="comment">
+          <div class="comment-header">
+            <a href="" class="owner">owner</a>
+            <span class="text-muted time-ago">31 minutes ago</span>
+          </div>
+          <div class="comment-body">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as opposed to using 'Content here, content
+            here', making it look like readable English. Many desktop publishing
+            packages and web page editors now use Lorem Ipsum as their default
+            model text, and a search for 'lorem ipsum' will uncover many web
+            sites still in their infancy. Various versions have evolved over the
+            years, sometimes by accident, sometimes on purpose (injected humour
+            and the like).
+          </div>
+        </div>
+      </template>
 
-			<template id="commentForm">
-				<form class="comment-form">
-					<textarea class="form-control" name="body" id="commentBody" cols="30" rows="10"></textarea>
-					<button type="submit" class="btn btn-success w-100">Comment</button>
-				</form>
-			</template>
+      <template id="commentForm">
+        <form class="comment-form">
+          <textarea
+            class="form-control"
+            name="body"
+            id="commentBody"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <button type="submit" class="btn btn-success w-100">Comment</button>
+        </form>
+      </template>
 
-			<template id="postTabs">
-				<nav>
-					<div class="nav nav-tabs" role="tablist">
-						<button
-							type="button"
-							class="nav-link active"
-							id="nav-tab-default"
-							data-bs-toggle="tab"
-							data-bs-target="#nav-default"
-							type="button"
-							role="tab"
-							aria-controls="nav-default"
-							aria-selected="true"
-						>
-							View
-						</button>
-						<button
-							type="button"
-							class="nav-link"
-							id="nav-tab-edit"
-							data-bs-toggle="tab"
-							data-bs-target="#nav-edit"
-							type="button"
-							role="tab"
-							aria-controls="nav-edit"
-							aria-selected="false"
-						>
-							Edit
-						</button>
-					</div>
-				</nav>
-				<div class="tab-content" id="nav-tabContent">
-					<div
-						class="tab-pane fade show active border-start border-end border-bottom p-3"
-						id="nav-default"
-						role="tabpanel"
-						aria-labelledby="nav-tab-default"
-						tabindex="0"
-					></div>
-					<div
-						class="tab-pane fade border-start border-end border-bottom p-3"
-						id="nav-edit"
-						role="tabpanel"
-						aria-labelledby="nav-tab-edit"
-						tabindex="0"
-					></div>
-				</div>
-			</template>
+      <template id="postTabs">
+        <nav>
+          <div class="nav nav-tabs" role="tablist">
+            <button
+              type="button"
+              class="nav-link active"
+              id="nav-tab-default"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-default"
+              type="button"
+              role="tab"
+              aria-controls="nav-default"
+              aria-selected="true"
+            >
+              View
+            </button>
+            <button
+              type="button"
+              class="nav-link"
+              id="nav-tab-edit"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-edit"
+              type="button"
+              role="tab"
+              aria-controls="nav-edit"
+              aria-selected="false"
+            >
+              Edit
+            </button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active border-start border-end border-bottom p-3"
+            id="nav-default"
+            role="tabpanel"
+            aria-labelledby="nav-tab-default"
+            tabindex="0"
+          ></div>
+          <div
+            class="tab-pane fade border-start border-end border-bottom p-3"
+            id="nav-edit"
+            role="tabpanel"
+            aria-labelledby="nav-tab-edit"
+            tabindex="0"
+          ></div>
+        </div>
+      </template>
 
-			<template id="postPage">
-				<div class="card mb-3 page post"></div>
-			</template>
+      <template id="postPage">
+        <div class="card mb-3 page post"></div>
+      </template>
 
-			<template id="profilePagePrivate">
-				<div class="card profile page private mb-3">
-					<div class="upper border-bottom d-flex justify-content-between align-items-start p-3">
-						<div class="btn-group btn-group-sm">
-							<button type="button" class="btn btn-sm btn-success" data-action="follow" data-name="">Follow</button>
-							<button type="button" class="btn btn-sm btn-danger" data-action="unfollow" data-name="">Unfollow</button>
-						</div>
-					</div>
+      <template id="profilePagePrivate">
+        <div class="card profile page private mb-3">
+          <div
+            class="upper border-bottom d-flex justify-content-between align-items-start p-3"
+          >
+            <div class="btn-group btn-group-sm">
+              <button
+                type="button"
+                class="btn btn-sm btn-success"
+                data-action="follow"
+                data-name=""
+              >
+                Follow
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-danger"
+                data-action="unfollow"
+                data-name=""
+              >
+                Unfollow
+              </button>
+            </div>
+          </div>
 
-					<div class="user text-center">
-						<div class="profile">
-							<img src="" class="rounded-circle avatar border" width="80" />
-						</div>
-					</div>
+          <div class="user text-center">
+            <div class="profile">
+              <img src="" class="rounded-circle avatar border" width="80" />
+            </div>
+          </div>
 
-					<div class="text-center profile-actions">
-						<h4 class="mb-0 profile-name"></h4>
-						<span class="text-muted d-block profile-email"></span>
-					</div>
+          <div class="text-center profile-actions">
+            <h4 class="mb-0 profile-name"></h4>
+            <span class="text-muted d-block profile-email"></span>
+          </div>
 
-					<div class="profile-posts px-3"></div>
-				</div>
-			</template>
+          <div class="profile-posts px-3"></div>
+        </div>
+      </template>
 
-			<template id="profileFollowers">
-				<div class="followers"></div>
-			</template>
-		</div>
-	</body>
+      <template id="profileFollowers">
+        <div class="followers"></div>
+      </template>
+    </div>
+  </body>
 </html>
