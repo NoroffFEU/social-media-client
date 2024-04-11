@@ -1,6 +1,6 @@
 {
-  "name": "workflow-test",
-  "version": "1.0.0",
+  "name": "workflow-ca",
+  "version": "1.2.0",
   "description": "Trying to learn how to test with and make the dev process easier and faster",
   "main": "index.js",
   "type": "module",
