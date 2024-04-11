@@ -8,9 +8,10 @@ jest.mock("../../storage/index.js", () => {
 });
 
 describe("logout", () => {
-  it("Removes the token from localStorage", () => {
+  it("Removes the token and profile from localStorage", () => {
     logout();
     expect(storage.remove).toHaveBeenCalledTimes(2);
     expect(storage.remove).toHaveBeenCalledWith("token");
+    expect(storage.remove).toHaveBeenCalledWith("profile");
   });
 });
