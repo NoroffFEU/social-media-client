@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
-    "test": "npm run test-unit && npm run test-e2e",
+    "test": "npm run test-unit && npm run test-e2e-cli",
     "test-unit": "jest",
     "test-e2e": "cypress open",
     "test-e2e-report": "cypress run --reporter mochawesome",
