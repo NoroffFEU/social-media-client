@@ -30,7 +30,7 @@
 					</form>
 
 					<div class="text-end">
-						<button type="button" class="btn btn-outline-warning me-2" data-auth="logout" data-visible="loggedIn">Logout</button>
+						<button type="button" class="btn btn-outline-warning me-2" data-auth="logout" data-visible="loggedIn" data-cy="logOutButton">Logout</button>
 						<button
 							type="button"
 							class="btn btn-outline-success me-2"
@@ -95,6 +95,7 @@
 								pattern="[\w\-.]+@(stud.)?noroff.no$"
 								title="Only Noroff student or teacher emails are valid."
 								placeholder="name@example.com"
+								data-cy="loginEmail"
 							/>
 							<label for="loginEmail">Email address</label>
 						</div>
@@ -107,6 +108,7 @@
 								id="loginPassword"
 								name="password"
 								placeholder="Password"
+								data-cy="loginPassword"
 							/>
 							<label for="loginPassword">Password</label>
 						</div>
@@ -123,7 +125,13 @@
 						>
 							Register
 						</button>
-						<button type="submit" class="btn btn-success">Login</button>
+						<button
+							type="submit" 
+							class="btn btn-success"
+							data-cy="loginFormSubmit"
+						>
+								Login
+						</button>
 					</div>
 				</form>
 			</div>
@@ -188,6 +196,8 @@
 							data-bs-target="#loginModal"
 							data-auth="login"
 							data-visible="loggedOut"
+							data-cy="loginFormButton"
+
 						>
 							Login
 						</button>
