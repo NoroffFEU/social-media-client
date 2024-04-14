@@ -1,0 +1,29 @@
+name: Automated E2E Testing
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+env:
+  USER_EMAIL: ${{ secrets.USER_EMAIL }}
+  USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+  USER_NAME: ${{ secrets.USER_NAME }}
+
+jobs:
+  run-e2e-tests:
+    name: Run E2E Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout under $GITHUB_WORKSPACE
+        uses: actions/checkout@master
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests
+        run: npm run e2e
