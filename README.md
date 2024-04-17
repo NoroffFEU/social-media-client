@@ -1,15 +1,54 @@
-## Tasks in this CA
+# Workflow Course Assignment
 
-Find a partner to work with or select the example repository.
-Fork the project repository to your GitHub account.
-Create a new branch called workflow.
-Configure the project with eslint, prettier and commit hooks.
-Configure the project with GitHub Actions for build/deploy if required.
+## Description
 
-- Record any bugs found during this process in the Issues tab.
-- Configure the project for Jest and Cypress.
-- Create tests to cover the required test cases.
-- Create a Pull Request from workflow into the default branch.
-- Request a review from your peers to help improve your submission.
-- Make any final changes based on this feedback.
-- Submit a link to the Open Pull Request on Moodle.
+This CA is focused on how to use the skills and knowledge from this course to improve the quality of a package by establishing helpful workflows that make the development process more efficient.
+
+## Built with:
+
+- HTML
+- CSS
+- SASS
+- Bootstrap
+- JavaScript
+
+## Getting started
+
+### Installing
+
+1. Clone the repo
+
+```
+git clone --branch workflow https://github.com/KariannNor/workflow-ca
+```
+
+2. Install dependencies
+
+```
+npm i
+```
+
+3. Build production files
+
+```
+npm run build
+```
+
+4. Other useful commands and formatting:
+
+```
+// sass and live server:
+npm run start
+
+// testing with Cypress:
+npm run test-e2e
+
+// unit tests with jest:
+npm run test-unit
+
+// prettier:
+npm run format
+
+// eslint:
+npm run lint-fix
+```
