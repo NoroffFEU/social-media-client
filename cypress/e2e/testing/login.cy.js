@@ -3,6 +3,23 @@ describe("login", () => {
     cy.visit("/");
   });
 
+  it("Should deny an invalid user to log in and show error message", () => {
+    cy.wait(500);
+    cy.get("#registerForm .btn-close").click();
+    cy.get(`header button[data-bs-target="#loginModal"]`).click();
+    cy.wait(500);
+    cy.get("#loginForm").should("be.visible");
+    cy.get("#loginForm #loginEmail").type(Cypress.env("wrongEmail"));
+    cy.get("#loginForm #loginPassword").type("wrongPassword");
+    cy.get("button[type=submit]").contains("Login").click();
+
+    cy.on("window:alert", (text) => {
+      expect(text).to.contains(
+        "Either your username was not found or your password is incorrect",
+      );
+    });
+  });
+
   it("should allow a valid user to log in", () => {
     cy.wait(500);
     cy.get("#registerForm .btn-close").click();

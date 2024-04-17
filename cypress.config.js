@@ -4,6 +4,8 @@ export default defineConfig({
   env: {
     validEmail: "benny123@noroff.no",
     validPassword: "11111111",
+    wrongEmail: "wrong@email.com",
+    wrongPassword: "wrongPassword",
   },
 
   e2e: {
