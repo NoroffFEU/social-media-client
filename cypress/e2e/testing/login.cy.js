@@ -12,7 +12,6 @@ describe("login", () => {
     cy.get("#loginForm #loginEmail").type(Cypress.env("wrongEmail"));
     cy.get("#loginForm #loginPassword").type("wrongPassword");
     cy.get("button[type=submit]").contains("Login").click();
-
     cy.on("window:alert", (text) => {
       expect(text).to.contains(
         "Either your username was not found or your password is incorrect",
@@ -29,5 +28,6 @@ describe("login", () => {
     cy.get("#loginForm #loginEmail").type(Cypress.env("validEmail"));
     cy.get("#loginForm #loginPassword").type(Cypress.env("validPassword"));
     cy.get("button[type=submit]").contains("Login").click();
+    cy.get(`header button[data-auth="logout"]`).should("be.visible");
   });
 });
