@@ -1,7 +1,5 @@
 # Workflow Course Assignment
 
-Add automatet e2e and int testing badges
-
 ## Description
 
 This CA is focused on how to use the skills and knowledge from this course to improve the quality of a package by establishing helpful workflows that make the development process more efficient.
