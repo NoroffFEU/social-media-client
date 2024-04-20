@@ -1,0 +1,33 @@
+name: Automated testing with unit-test and end-to-end tests
+on:
+  # Runs on pushes targeting the default branch
+  pull_request:
+    branches: ['master']
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  run-unit-tests:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout under
+        uses: actions/checkout@main
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: Install all dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm run unit-test
+
+      - name: run cypress tests with electron
+        uses: cypress-io/github-action@v4
+        with:
+          browser: electron

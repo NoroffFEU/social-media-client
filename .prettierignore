@@ -1,0 +1,4 @@
+# Ignore
+/node_modules
+/dist
+/.eslintcache
