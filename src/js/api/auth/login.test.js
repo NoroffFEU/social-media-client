@@ -1,4 +1,5 @@
 import { login } from "../auth/login.js";
+import localStorage from "../mock/localStorageMock.js";
 
 function FetchMock() {
   return jest.fn(() =>
@@ -10,24 +11,9 @@ function FetchMock() {
   );
 }
 
-function LocalStorageMock() {
-  let store = {};
-  return {
-    getItem(key) {
-      return store[key];
-    },
-    setItem(key, value) {
-      store[key] = value.toString();
-    },
-    clear() {
-      store = {};
-    },
-  };
-}
-
 beforeEach(() => {
   global.fetch = FetchMock();
-  global.localStorage = LocalStorageMock();
+  global.localStorage = localStorage;
 });
 
 afterEach(() => {

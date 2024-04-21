@@ -10,12 +10,16 @@ describe("login", () => {
     cy.wait(500);
     cy.get("#loginForm").should("be.visible");
     cy.get("#loginForm #loginEmail").type(Cypress.env("wrongEmail"));
-    cy.get("#loginForm #loginPassword").type("wrongPassword");
+    cy.get("#loginForm #loginPassword").type(Cypress.env("wrongPassword"));
     cy.get("button[type=submit]").contains("Login").click();
-    cy.on("window:alert", (text) => {
-      expect(text).to.contains(
-        "Either your username was not found or your password is incorrect",
-      );
+    cy.wait(500);
+    cy.get("#loginForm").submit(() => {
+      expect(localStorage.getItem("token")).to.be.null;
+      cy.on("window:alert", (text) => {
+        expect(text).to.equal(
+          "Either your username was not found or your password is incorrect",
+        );
+      });
     });
   });
 

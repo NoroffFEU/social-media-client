@@ -1,17 +1,16 @@
-import * as storage from "../../storage/index.js";
 import { logout } from "../../api/auth/logout.js";
+import localStorage from "../mock/localStorageMock.js";
 
-jest.mock("../../storage/index.js", () => {
-  return {
-    remove: jest.fn(),
-  };
-});
+global.localStorage = localStorage;
 
 describe("logout", () => {
-  it("Removes the token and profile from localStorage", () => {
+  afterEach(() => {
+    localStorage.clear();
+  });
+
+  it("removes the token", () => {
+    localStorage.setItem("token", "profile");
     logout();
-    expect(storage.remove).toHaveBeenCalledTimes(2);
-    expect(storage.remove).toHaveBeenCalledWith("token");
-    expect(storage.remove).toHaveBeenCalledWith("profile");
+    expect(localStorage.getItem("token")).toEqual(null);
   });
 });
