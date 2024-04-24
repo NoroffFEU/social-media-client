@@ -13,14 +13,15 @@ describe("login", () => {
     cy.get("#loginForm #loginPassword").type(Cypress.env("wrongPassword"));
     cy.get("button[type=submit]").contains("Login").click();
     cy.wait(500);
-    cy.get("#loginForm").submit(() => {
-      expect(localStorage.getItem("token")).to.be.null;
-      cy.on("window:alert", (text) => {
-        expect(text).to.equal(
-          "Either your username was not found or your password is incorrect",
-        );
-      });
+    cy.on("window:alert", (text) => {
+      expect(text).to.include(
+        "Either your username was not found or your password is incorrect",
+      );
     });
+    cy.window()
+      .its("localStorage")
+      .invoke("getItem", "token")
+      .should("be.null");
   });
 
   it("should allow a valid user to log in", () => {
