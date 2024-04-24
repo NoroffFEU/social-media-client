@@ -12,6 +12,16 @@ This CA is focused on how to use the skills and knowledge from this course to im
 - Bootstrap
 - JavaScript
 
+## Packages used
+
+- NPM package manager
+- Prettier
+- ESLint
+- Husky
+- Jest
+- Babel
+- Cypress
+
 ## Getting started
 
 ### Installing
@@ -19,7 +29,7 @@ This CA is focused on how to use the skills and knowledge from this course to im
 1. Clone the repo
 
 ```
-git clone --branch workflow https://github.com/KariannNor/workflow-ca
+git clone https://github.com/KariannNor/workflow-ca
 ```
 
 2. Install dependencies
