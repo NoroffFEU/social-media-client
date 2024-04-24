@@ -1,6 +1,6 @@
 # Workflow Course Assignment
 
-[![Deploy static content to Pages](https://github.com/KariannNor/workflow-ca/actions/workflows/pages.yml/badge.svg?branch=master)](https://github.com/KariannNor/workflow-ca/actions/workflows/pages.yml)
+[![Deploy static content to Pages](https://github.com/KariannNor/workflow-ca/actions/workflows/pages.yml/badge.svg)](https://github.com/KariannNor/workflow-ca/actions/workflows/pages.yml)
 
 ## Description
 
