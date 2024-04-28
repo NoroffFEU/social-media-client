@@ -1,2 +1,2 @@
-export const apiUrl = new URL("https://nf-api.onrender.com/api/v1");
+export const apiUrl = new URL("https://v2.api.noroff.dev");
 export const apiPath = apiUrl.toString();
