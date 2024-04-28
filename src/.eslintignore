@@ -1,0 +1,3 @@
+# Ignore test files
+src/**/*.test.js
+**/__tests__/**/*.test.js
