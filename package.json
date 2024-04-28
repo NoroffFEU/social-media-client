@@ -10,8 +10,10 @@
     "lint-fix": "eslint src/**/*.js --cache --fix",
     "format": "prettier -w src/**/*.js ",
     "prepare": "husky install",
-    "test": "npm run test-unit",
-    "test-unit": "jest"
+    "test": "npm run test-unit && npm run test-e2e-cli",
+    "test-unit": "jest",
+    "test-e2e": "cypress open",
+    "test-e2e-cli": "cypress run"
   },
   "keywords": [],
   "author": "Noroff",
@@ -20,7 +22,9 @@
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
     "@eslint/js": "^9.1.1",
-    "eslint": "^9.1.1",
+    "cypress": "^13.8.1",
+    "eslint": "^9.1.0",
+    "eslint-plugin-cypress": "^3.0.0",
     "eslint-plugin-jest": "^28.2.0",
     "globals": "^15.0.0",
     "husky": "^9.0.11",

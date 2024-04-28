@@ -3,6 +3,7 @@ import pluginJs from "@eslint/js";
 
 
 export default [
-  {languageOptions: { globals: globals.browser }},
-  pluginJs.configs.recommended,
+    { ignores: ["cypress.config.js"] },
+    { languageOptions: { globals: globals.browser } },
+    pluginJs.configs.recommended,
 ];
