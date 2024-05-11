@@ -1,0 +1,39 @@
+name: Automated Unit Testing
+on:
+  push:
+    branches:
+      - master
+      - workflow
+      - npm-fix
+      - cypress-test
+  pull_request:
+    branches:
+        - master
+        - workflow
+  workflow_dispatch:
+
+jobs:
+  run-unit-tests:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout under $GITHUB_WORKSPACE
+        uses: actions/checkout@v2
+
+      - name: List directory contents
+        run: |
+          pwd
+          ls -la
+        
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Install all dependencies
+        run: npm install
+
+      - name: Run Unit Tests
+        run: npm run test:jest
