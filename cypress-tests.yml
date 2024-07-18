@@ -1,0 +1,28 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches:
+      - master  # Replace with your main branch name
+  pull_request:
+    branches:
+      - master  # Replace with your main branch name
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests
+        run: npm run cypress:run  # Replace with your actual npm script to run Cypress tests
