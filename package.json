@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "Test",
   "main": "index.js",
-  "scripts": {
-    "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
-  },
+"scripts": {
+  "build": "sass src/scss:dist/css",
+  "start": "sass --watch src/scss:dist/css & live-server",
+  "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+  "test": "jest",
+  "cypress:open": "cypress open",
+  "cypress:run": "cypress run"
+}
+,
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
@@ -24,4 +29,5 @@
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
   }
+  
 }
