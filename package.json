@@ -1,6 +1,6 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Test",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,12 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "eslint": "^9.8.0",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.9.0",
     "live-server": "^1.2.2",
+    "prettier": "^3.3.3",
     "sass": "^1.54.8"
   },
   "dependencies": {
