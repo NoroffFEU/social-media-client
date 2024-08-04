@@ -11,7 +11,11 @@
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^9.8.0",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.8",
     "live-server": "^1.2.2",
+    "prettier": "^3.3.3",
     "sass": "^1.54.8"
   },
   "dependencies": {
