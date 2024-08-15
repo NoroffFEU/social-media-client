@@ -17,4 +17,9 @@
     "globals": "^15.9.0",
     "live-server": "^1.2.2",
     "prettier": "^3.3.3",
-    "sass": "^1.
+    "sass": "^1.54.8"
+  },
+  "dependencies": {
+    "bootstrap-dark-5": "^1.1.3"
+  }
+}
