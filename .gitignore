@@ -1,2 +1,5 @@
 /node_modules
 /dist
+/cypress/fixtures/screenshots
+.env
+.eslintcache
