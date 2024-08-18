@@ -1,0 +1,26 @@
+name: Unit Test Run
+on:
+    pull_request:
+    workflow_dispatch:
+    push:
+        branches: ['**']
+
+jobs:
+    run-unit-tests:
+        name: Run Unit Tests
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout under $GITHUB_WORKSPACE
+              uses: actions/checkout@main
+
+            - name: Set up NodeJS
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 16
+
+            - name: Install all dependencies
+              run: npm install
+
+            - name: Run Tests
+              run: npm run test-unit
