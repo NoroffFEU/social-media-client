@@ -1,2 +1,7 @@
+# Npm folders to ignore
 /node_modules
 /dist
+
+# Files to ignore
+.eslintrc.json
+.env
