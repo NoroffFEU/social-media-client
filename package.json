@@ -1,18 +1,23 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Test",
   "main": "index.js",
   "scripts": {
-    "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "dev": "vite",
+    "build": "vite build",
+    "watch": "vite preview & sass --watch src/scss:public/css",
+    "lint": "eslint src/**/*.js",
+    "lint-fix": "eslint src/**/*.js --cache --fix"
   },
   "keywords": [],
   "author": "Noroff",
   "license": "ISC",
   "devDependencies": {
-    "live-server": "^1.2.2",
-    "sass": "^1.54.8"
+    "eslint": "^8.38.0",
+    "prettier": "^2.8.7",
+    "sass": "^1.54.8",
+    "vite": "^4.2.1"
   },
   "dependencies": {
     "bootstrap-dark-5": "^1.1.3"
