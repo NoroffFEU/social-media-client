@@ -9,7 +9,8 @@
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --cache --fix",
     "format": "prettier -w src/**/*.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "precommit": "lint-staged"
   },
   "keywords": [],
   "author": "Noroff",
@@ -20,7 +21,7 @@
     "chokidar": "^3.6.0",
     "eslint": "^9.12.0",
     "globals": "^15.11.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "lint-staged": "^15.2.10",
     "live-server": "^1.2.0",
     "micromatch": "^4.0.8",
