@@ -1,6 +1,6 @@
 import {login} from "../src/js/api/auth/login";
-import {save} from "../src/js/storage/index";
-
+import {logout} from "../src/js/api/auth/logout";
+import {save, remove} from "../src/js/storage/index";
 
 // mock the save, load and remove function from storage/index.js (mock local storage)
 jest.mock('../src/js/storage/index.js', () => ({
@@ -56,5 +56,20 @@ describe('At login', () => {
 
         // expect login to throw an error when the credentials are invalid
         await expect(login(email, password)).rejects.toThrow('Unauthorized');
+    });
+});
+
+describe('At logout', () => {
+    beforeEach(() => {
+        jest.clearAllMocks(); // clear all mocks before each test
+    });
+
+    it('should remove the token and profile from storage', () => {
+        // call logout function
+        logout();
+
+        // ensure that the token and profile are removed from storage
+        expect(remove).toHaveBeenCalledWith('token');
+        expect(remove).toHaveBeenCalledWith('profile');
     });
 });
