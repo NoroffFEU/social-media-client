@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended", // If you're using React
+    "plugin:prettier/recommended" // This should be last in the extends array
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": ["error", "always"], // Require semicolons
+    "quotes": ["error", "single"], // Prefer single quotes
+    "indent": ["error", 2], // 2 spaces for indentation
+    "no-unused-vars": "warn", // Warn on unused variables
+    "react/react-in-jsx-scope": "off", // Only needed in React 16 and below
+    "prettier/prettier": "error" // Prettier rules as ESLint errors
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Automatically detect the React version
+    }
+  }
+}
