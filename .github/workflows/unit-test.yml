@@ -1,0 +1,55 @@
+name: CI
+
+# Controls when the workflow will run
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # Job for running Jest Unit Tests
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Jest Unit Tests
+        run: npm run test-unit
+
+  # Job for running Cypress E2E Tests
+  e2e-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: npm install
+
+      # Use Cypress GitHub action for running E2E tests
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v4
+        with:
+          browser: electron
