@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link type="text/css" rel="stylesheet" href="../src/css/get-all-post.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="ConnectHub Feed" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AKB">
+    <title>ConnectHub Feed</title>
+</head>
+
+<body>
+
+  <!-- Header with Logo and Navigation Links -->
+  <header>
+    <a href="#" class="logo">ConnectHub</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="./get-all-posts.html"><i class="fas fa-home"></i> Home</a>
+      <a href="../post/create/create-post.html"><i class="fas fa-pen-alt"></i>Create Post</a>
+      <a href="../post/your_posts.html"><i class="fas fa-user"></i> Your Post</a>
+      <a href="../post/edit/edit-post.html"><i class="fas fa-user"></i> Edit Posts</a>
+
+      <button id="logoutButton" onclick="logout()">
+        <i class="fas fa-compass"></i> Logout
+      </button>
+
+    </nav>
+
+    <div class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </header>
+
+  <!-- Main Feed Container -->
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search posts... (by title or body)">
+    <button id="searchButton">Search</button>
+  </div>
+
+  <div class="container">
+    <main class="feed" id="postsContainer">
+      <!-- FYI Posts will Come here-->
+    </main>
+  </div>
+
+</body>
+
+<script src="../src/js/get-all-posts.js"></script>
+</html>

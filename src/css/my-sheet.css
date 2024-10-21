@@ -1,0 +1,238 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2c3e50;
+    --background-color: #f0f4f8;
+    --text-color: #333;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+  }
+
+  body,
+  html {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(
+        circle at 10% 20%,
+        rgba(74, 144, 226, 0.1) 0%,
+        transparent 20%
+      ),
+      radial-gradient(
+        circle at 90% 80%,
+        rgba(44, 62, 80, 0.1) 0%,
+        transparent 20%
+      );
+    background-attachment: fixed;
+  }
+
+  .container {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      rgba(74, 144, 226, 0.1),
+      rgba(44, 62, 80, 0.1)
+    );
+    transform: rotate(45deg);
+    z-index: -1;
+  }
+
+  .logo {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .logo svg {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+
+  h1 {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    font-weight: 400;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+  }
+
+  input {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f7f9fc;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  }
+
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  button:hover {
+    background-color: #3a7bc1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+  }
+
+  #statusMessage {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .error {
+    color: var(--error-color);
+  }
+  .success {
+    color: var(--success-color);
+  }
+
+  .loading {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 3px solid #ffffff;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  button.loading-active .loading {
+    display: block;
+  }
+  button.loading-active span {
+    visibility: hidden;
+  }
+
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /*Menu Code */
+  #mymenu {
+    width: 0;
+  }
+  
+  .menubar {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+  }
+  
+  .menubar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .menubar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .menubar {
+    font-size: 20px;
+    line-height: 22px;
+  }
+  
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .menu-location-thing {
+    margin-left: 120px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }

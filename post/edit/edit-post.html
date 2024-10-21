@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link type="text/css" rel="stylesheet" href="../../src/css/create-a-post.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="Edit Post" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AKB">
+    <title>Edit Post</title>
+</head>
+
+<body>
+
+   <!-- Header with Logo and Navigation Links -->
+   <header>
+    <a href="#" class="logo">ConnectHub</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="../get-all-posts.html"><i class="fas fa-home"></i> Home</a>
+      <a href="../create/create-post.html"><i class="fas fa-pen-alt"></i>Create Post</a>
+      <a href="../your_posts.html"><i class="fas fa-user"></i> Your Post</a>
+      <a href="../../auth/register/register.html"><i class="fas fa-compass"></i> Logout</a>
+    </nav>
+    <div class="nav-toggle" id="navToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- MAIN BOdy -->
+  <div class="container">
+    <h1>Edit Post</h1>
+    <div id="editPostContainer">
+      <p>Loading post data...</p>
+    </div>
+    <button id="saveButton">Save Changes</button>
+    <p id="errorMessage" class="error"></p>
+  </div>
+
+</body>
+
+<script src="../../src/js/api/post/update.js"></script>
+</html>

@@ -1,0 +1,7 @@
+{
+  "eslint.enable": true,
+  "eslint.run": "onSave",
+  "prettier.embeddedLanguageFormatting": "auto",
+  "prettier.enable": true,
+  "eslint.debug": false
+}

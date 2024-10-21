@@ -1,61 +1,33 @@
-import { getPosts } from "../api/index.js";
-import { getProfiles } from "../api/profiles/read.js";
-import { load } from "../storage/load.js";
-import { save } from "../storage/save.js";
-import { postLoaderTemplate } from "../templates/index.js";
-import { renderView } from "../ui/renderView.js";
-import * as views from "../views/index.js";
-import { getSearchParams } from "./searchParams.js";
-import { isLoggedIn } from "../api/index.js";
-
-function authGuard(callback = () => {}, view = "") {
-	if (isLoggedIn()) {
-		return callback();
-	} else {
-		if (view) {
-			location.href = `./`;
-		}
-		document.querySelector("[data-auth=register]").click();
-		const message = document.createElement("div");
-		message.classList.add("alert", "alert-warning");
-		message.innerText = "Please register or login to view this page.";
-		return message;
-	}
+// This function controls which JavaScript file is loaded on which page
+// In order to add additional pages, you will need to implement them below
+// You may change the behaviour or approach of this file if you choose
+export default async function router(pathname = window.location.pathname) {
+  switch (pathname) {
+    case "/":
+      await import("./views/home.js");
+      break;
+    case "/auth/":
+      await import("./views/auth.js");
+      break;
+    case "/auth/login/":
+      await import("./views/login.js");
+      break;
+    case "/auth/register/":
+      await import("./views/register.js");
+      break;
+    case "/post/":
+      await import("./views/post.js");
+      break;
+    case "/post/edit/":
+      await import("./views/postEdit.js");
+      break;
+    case "/post/create/":
+      await import("./views/postCreate.js");
+      break;
+    case "/profile/":
+      await import("./views/profile.js");
+      break;
+    default:
+      await import("./views/notFound.js");
+  }
 }
-
-async function route() {
-	const { view, postId, name } = getSearchParams();
-
-	switch (view) {
-		case "post":
-			return authGuard(() => {
-				const loader = postLoaderTemplate();
-				renderView(loader);
-				return views.postPage(postId);
-			}, view);
-
-		case "profile":
-			return authGuard(() => views.profilePage(name), view);
-
-		case "profiles":
-			return authGuard(async () => {
-				const profiles = await getProfiles();
-				return views.profileList(profiles);
-			}, view);
-
-		case "posts":
-		default:
-			return authGuard(async () => {
-				const loaders = Array.from({ length: load("posts:lastTime") || 3 }, () => postLoaderTemplate());
-				renderView(...loaders);
-				const posts = await getPosts();
-				save("posts:lastTime", posts.length);
-				return views.postList(posts);
-			}, view);
-	}
-}
-
-export default async () => {
-	const view = await route();
-	renderView(view);
-};

@@ -1,0 +1,201 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2c3e50;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+  }
+
+  body,
+  html {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+  }
+
+  .logo {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .logo svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  h1 {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+  }
+
+  h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  h3 a:hover {
+    color: #2980b9;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+  }
+
+  input,
+  textarea {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: "Poppins", sans-serif;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  button:hover {
+    background-color: #3a7cbd;
+  }
+
+  #statusMessage {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .error {
+    color: var(--error-color);
+  }
+  .success {
+    color: var(--success-color);
+  }
+
+  .loading {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 3px solid #ffffff;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  .file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  .file-input-wrapper input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .file-input-wrapper .btn {
+    background-color: #f0f0f0;
+    border: 2px solid #e0e0e0;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+
+  .file-input-wrapper:hover .btn {
+    background-color: #e0e0e0;
+  }
+
+  @media screen and (max-width: 480px) {
+    .container {
+      margin: 1rem;
+      padding: 2rem;
+    }
+  }
+
+  button.loading-active .loading {
+    display: block;
+  }
+  button.loading-active span {
+    visibility: hidden;
+  }

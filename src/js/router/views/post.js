@@ -1,0 +1,1 @@
+alert("Single Post Page");

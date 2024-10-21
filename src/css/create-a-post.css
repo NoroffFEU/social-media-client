@@ -1,0 +1,196 @@
+:root {
+    --primary-color: #2563eb; 
+    --secondary-color: #f3f4f6;
+    --text-color: #333;
+    --error-color: #e74c3c;
+    --success-color: #27ae60;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+
+  /* Header Styles */
+  header {
+    background-color: var(--card-background);
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary-color);
+  }
+
+  /* Navbar Toggle Button for Mobile */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+  }
+
+  h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: bold;
+  }
+
+  input,
+  textarea {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #3a7bd5;
+  }
+
+  #postStatus {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+
+  .error {
+    background-color: var(--error-color);
+    color: white;
+  }
+
+  .success {
+    background-color: var(--success-color);
+    color: white;
+  }
+
+  .loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top: 2px solid var(--primary-color);
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+  }
+
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: var(--card-background);
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    /* Single column for mobile */
+    .feed {
+      grid-template-columns: 1fr;
+    }
+
+    .nav-toggle {
+      display: flex;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
