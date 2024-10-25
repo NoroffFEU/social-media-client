@@ -8,10 +8,11 @@
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
     "format": "prettier --loglevel warn --write \"**/*.{js,css,md}\"",
-    "lint": "eslint \"src/**/*.js\"",
+    "lint": "eslint \"src/**/*.js\" --fix",
     "posttest": "npm run format",
     "pretest": "npm run lint",
-    "prepare": "husky"
+    "prepare": "husky install",
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest"
   },
   "keywords": [],
   "author": "Noroff",
@@ -23,6 +24,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.11.0",
     "husky": "^9.1.6",
+    "jest": "^29.7.0",
     "lint-staged": "^15.2.10",
     "live-server": "^1.2.2",
     "mrm": "^4.1.22",
@@ -41,9 +43,18 @@
     }
   },
   "lint-staged": {
-  "*.js": ["eslint --fix", "prettier --write"],
-  "*.css": ["prettier --write"],
-  "*.scss": ["prettier --write"],
-  "*.html": ["prettier --write"]
-}
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.css": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ],
+    "*.html": [
+      "prettier --write"
+    ]
+  }
 }

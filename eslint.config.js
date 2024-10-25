@@ -1,6 +1,9 @@
+// eslint.config.js
+
 import js from "@eslint/js";
 import prettierPlugin from "eslint-plugin-prettier";
 import prettierConfig from "eslint-config-prettier";
+import jestPlugin from "eslint-plugin-jest";
 
 export default [
 	{
@@ -23,6 +26,16 @@ export default [
 				Image: "readonly",
 				fetch: "readonly",
 				alert: "readonly",
+
+				describe: "readonly",
+				it: "readonly",
+				expect: "readonly",
+				beforeEach: "readonly",
+				afterAll: "readonly",
+				beforeAll: "readonly",
+				test: "readonly",
+				jest: "readonly",
+				global: "readonly",
 			},
 		},
 		rules: {
@@ -31,6 +44,12 @@ export default [
 		},
 		plugins: {
 			prettier: prettierPlugin,
+			jest: jestPlugin,
+		},
+		settings: {
+			jest: {
+				version: 29,
+			},
 		},
 	},
 	js.configs.recommended,
