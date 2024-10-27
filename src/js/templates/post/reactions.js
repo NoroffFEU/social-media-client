@@ -15,7 +15,9 @@ export const postReactionMenu = (post) => {
 	}
 
 	const emojis = emojiSubset(post.reactions);
-	clone.querySelector(".dropdown-menu").append(...emojis.map((emoji) => reactionOptionTemplate(emoji, post.id)));
+	clone
+		.querySelector(".dropdown-menu")
+		.append(...emojis.map((emoji) => reactionOptionTemplate(emoji, post.id)));
 
 	const reactions = clone.querySelectorAll("[data-reaction]");
 	reactions.forEach((reaction) => {

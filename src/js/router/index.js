@@ -46,7 +46,10 @@ async function route() {
 		case "posts":
 		default:
 			return authGuard(async () => {
-				const loaders = Array.from({ length: load("posts:lastTime") || 3 }, () => postLoaderTemplate());
+				const loaders = Array.from(
+					{ length: load("posts:lastTime") || 3 },
+					() => postLoaderTemplate(),
+				);
 				renderView(...loaders);
 				const posts = await getPosts();
 				save("posts:lastTime", posts.length);

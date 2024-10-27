@@ -26,11 +26,15 @@ export const profilePageTemplate = (data) => {
 		if (data.followers.find((follower) => follower.name === name)) {
 			clone.querySelector("[data-action=follow]").remove();
 			clone.querySelector("[data-action=unfollow]").dataset.name = data.name;
-			clone.querySelector("[data-action=unfollow]").addEventListener("click", unfollowListener);
+			clone
+				.querySelector("[data-action=unfollow]")
+				.addEventListener("click", unfollowListener);
 		} else {
 			clone.querySelector("[data-action=unfollow]").remove();
 			clone.querySelector("[data-action=follow]").dataset.name = data.name;
-			clone.querySelector("[data-action=follow]").addEventListener("click", followListener);
+			clone
+				.querySelector("[data-action=follow]")
+				.addEventListener("click", followListener);
 		}
 	} else {
 		clone.querySelector("[data-action=follow]").remove();

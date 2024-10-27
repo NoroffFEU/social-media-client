@@ -5,7 +5,9 @@ export const postCommentsTemplate = (post) => {
 	element.classList.add("post-comments");
 
 	if (post && post.comments) {
-		const comments = post.comments.map((comment) => commentTemplate(comment, post.author.name));
+		const comments = post.comments.map((comment) =>
+			commentTemplate(comment, post.author.name),
+		);
 		element.append(...comments);
 	}
 

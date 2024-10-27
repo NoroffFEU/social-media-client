@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./dist/css/index.css" />
-		<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+		<script
+			src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+			defer
+		></script>
 		<script src="./src/js/index.js" defer type="module"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,17 +23,38 @@
 	<body class="min-vh-100 d-flex flex-column">
 		<header class="py-3 sticky-top shadow">
 			<div class="container-fluid">
-				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start">
-					<a href="./" class="d-flex align-items-center mb-2 me-sm-3 mb-sm-0 text-white text-decoration-none">
-						<img style="width: 5rem" src="https://www.noroff.no//images/logo/noroff-logo.png" alt="Noroff Logo" />
+				<div
+					class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start"
+				>
+					<a
+						href="./"
+						class="d-flex align-items-center mb-2 me-sm-3 mb-sm-0 text-white text-decoration-none"
+					>
+						<img
+							style="width: 5rem"
+							src="https://www.noroff.no//images/logo/noroff-logo.png"
+							alt="Noroff Logo"
+						/>
 					</a>
 
 					<form class="col mb-3 mb-sm-0 me-sm-3" role="search">
-						<input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search" />
+						<input
+							type="search"
+							class="form-control form-control-dark text-bg-dark"
+							placeholder="Search..."
+							aria-label="Search"
+						/>
 					</form>
 
 					<div class="text-end">
-						<button type="button" class="btn btn-outline-warning me-2" data-auth="logout" data-visible="loggedIn">Logout</button>
+						<button
+							type="button"
+							class="btn btn-outline-warning me-2"
+							data-auth="logout"
+							data-visible="loggedIn"
+						>
+							Logout
+						</button>
 						<button
 							type="button"
 							class="btn btn-outline-success me-2"
@@ -62,7 +86,12 @@
 					<div class="col">© 2022 Noroff FEU</div>
 					<div class="col-auto" data-visible="loggedIn">
 						<div class="d-flex align-items-center" id="footerActions">
-							<a href="./?view=post" data-visible="loggedIn" class="btn btn-outline-success">New Post</a>
+							<a
+								href="./?view=post"
+								data-visible="loggedIn"
+								class="btn btn-outline-success"
+								>New Post</a
+							>
 						</div>
 					</div>
 				</div>
@@ -78,11 +107,18 @@
 			aria-labelledby="loginModalLabel"
 			aria-hidden="true"
 		>
-			<div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div
+				class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable"
+			>
 				<form class="modal-content" id="loginForm">
 					<div class="modal-header">
 						<h5 class="modal-title" id="loginModalLabel">Login</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
 					</div>
 					<div class="modal-body">
 						<div class="form-floating mb-3">
@@ -112,7 +148,13 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button
+							type="reset"
+							class="btn btn-secondary"
+							data-bs-dismiss="modal"
+						>
+							Close
+						</button>
 						<button
 							type="button"
 							class="btn btn-outline-success"
@@ -138,15 +180,29 @@
 			aria-labelledby="registerModalLabel"
 			aria-hidden="true"
 		>
-			<div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div
+				class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable"
+			>
 				<form class="modal-content" id="registerForm">
 					<div class="modal-header">
 						<h5 class="modal-title" id="registerModalLabel">Create Profile</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
 					</div>
 					<div class="modal-body">
 						<div class="form-floating mb-3">
-							<input required type="text" class="form-control" id="registerName" name="name" placeholder="name@example.com" />
+							<input
+								required
+								type="text"
+								class="form-control"
+								id="registerName"
+								name="name"
+								placeholder="name@example.com"
+							/>
 							<label for="registerName">Name</label>
 						</div>
 						<div class="form-floating mb-3">
@@ -175,12 +231,25 @@
 							<label for="registerPassword">Password</label>
 						</div>
 						<div class="form-floating">
-							<input required type="url" class="form-control" id="registerAvatar" name="avatar" placeholder="Avatar URL" />
+							<input
+								required
+								type="url"
+								class="form-control"
+								id="registerAvatar"
+								name="avatar"
+								placeholder="Avatar URL"
+							/>
 							<label for="registerAvatar">Avatar URL</label>
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button
+							type="reset"
+							class="btn btn-secondary"
+							data-bs-dismiss="modal"
+						>
+							Close
+						</button>
 						<button
 							type="button"
 							class="btn btn-outline-success"
@@ -191,7 +260,9 @@
 						>
 							Login
 						</button>
-						<button type="submit" class="btn btn-success">Create Profile</button>
+						<button type="submit" class="btn btn-success">
+							Create Profile
+						</button>
 					</div>
 				</form>
 			</div>
@@ -199,15 +270,34 @@
 
 		<div class="d-none templates">
 			<template id="profileButton">
-				<a href="" class="profile d-flex align-items-center me-2 text-decoration-none">
-					<img src="" style="width: 2.5rem; border-radius: 50%; z-index: 2; transform: translateX(1.5rem)" class="img-fluid me-2" alt="" />
+				<a
+					href=""
+					class="profile d-flex align-items-center me-2 text-decoration-none"
+				>
+					<img
+						src=""
+						style="
+							width: 2.5rem;
+							border-radius: 50%;
+							z-index: 2;
+							transform: translateX(1.5rem);
+						"
+						class="img-fluid me-2"
+						alt=""
+					/>
 					<div style="position: relative" class="btn btn-success ps-4"></div>
 				</a>
 			</template>
 
 			<template id="reactionButton">
-				<button type="button" class="btn btn-sm btn-outline-success" data-reaction>
-					<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"></span>
+				<button
+					type="button"
+					class="btn btn-sm btn-outline-success"
+					data-reaction
+				>
+					<span
+						class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+					></span>
 				</button>
 			</template>
 
@@ -218,7 +308,12 @@
 			<template id="reactionMenu">
 				<div class="btn-group btn-group-sm reactions">
 					<div class="dropdown">
-						<button class="btn btn-sm btn-primary dropdown-toggle ms-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<button
+							class="btn btn-sm btn-primary dropdown-toggle ms-1"
+							type="button"
+							data-bs-toggle="dropdown"
+							aria-expanded="false"
+						>
 							+
 						</button>
 						<ul class="dropdown-menu" data-reaction></ul>
@@ -228,7 +323,11 @@
 
 			<template id="profileButton">
 				<a href="" class="d-flex align-items-center text-decoration-none">
-					<img style="width: 2rem; height: 2rem; border-radius: 50%" class="img-fluid me-2" alt="" />
+					<img
+						style="width: 2rem; height: 2rem; border-radius: 50%"
+						class="img-fluid me-2"
+						alt=""
+					/>
 					<div class="text-truncate name"></div>
 				</a>
 			</template>
@@ -243,27 +342,54 @@
 
 			<template id="postForm">
 				<form class="row mt-3" id="postForm">
-					<div class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3">
+					<div
+						class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3"
+					>
 						<h1>Post</h1>
 						<button type="submit" class="btn btn-success" data-action="submit">
-							<span data-action="publish">Publish</span><span data-action="update">Update</span> Post
+							<span data-action="publish">Publish</span
+							><span data-action="update">Update</span> Post
 						</button>
 					</div>
 					<div class="col-12 col-md-6">
 						<div class="form-floating mb-3">
-							<input required type="text" class="form-control" id="postTitle" name="title" placeholder="Post Title" />
+							<input
+								required
+								type="text"
+								class="form-control"
+								id="postTitle"
+								name="title"
+								placeholder="Post Title"
+							/>
 							<label for="postTitle">Post Title*</label>
 						</div>
 						<div class="form-floating mb-3">
-							<input type="text" class="form-control" id="postTags" name="tags" placeholder="Post Title" />
+							<input
+								type="text"
+								class="form-control"
+								id="postTags"
+								name="tags"
+								placeholder="Post Title"
+							/>
 							<label for="postTags">Post Tags</label>
 						</div>
 						<div class="form-floating mb-3">
-							<input type="url" class="form-control" id="postMedia" name="media" placeholder="Post Title" />
+							<input
+								type="url"
+								class="form-control"
+								id="postMedia"
+								name="media"
+								placeholder="Post Title"
+							/>
 							<label for="postMedia">Post Media</label>
 						</div>
 						<div class="form-floating mb-3">
-							<textarea class="form-control" name="body" id="postBody" rows="50"></textarea>
+							<textarea
+								class="form-control"
+								name="body"
+								id="postBody"
+								rows="50"
+							></textarea>
 							<label for="postMedia">Post Body</label>
 						</div>
 					</div>
@@ -286,7 +412,9 @@
 			<template id="postActions">
 				<div class="post-actions btn-group-sm">
 					<a href="" class="btn btn-primary" data-action="view">View</a>
-					<button type="button" class="btn btn-danger" data-action="delete">Delete</button>
+					<button type="button" class="btn btn-danger" data-action="delete">
+						Delete
+					</button>
 				</div>
 			</template>
 
@@ -301,18 +429,29 @@
 						<span class="text-muted time-ago">31 minutes ago</span>
 					</div>
 					<div class="comment-body">
-						It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The
-						point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-						content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum
-						as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions
-						have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+						It is a long established fact that a reader will be distracted by
+						the readable content of a page when looking at its layout. The point
+						of using Lorem Ipsum is that it has a more-or-less normal
+						distribution of letters, as opposed to using 'Content here, content
+						here', making it look like readable English. Many desktop publishing
+						packages and web page editors now use Lorem Ipsum as their default
+						model text, and a search for 'lorem ipsum' will uncover many web
+						sites still in their infancy. Various versions have evolved over the
+						years, sometimes by accident, sometimes on purpose (injected humour
+						and the like).
 					</div>
 				</div>
 			</template>
 
 			<template id="commentForm">
 				<form class="comment-form">
-					<textarea class="form-control" name="body" id="commentBody" cols="30" rows="10"></textarea>
+					<textarea
+						class="form-control"
+						name="body"
+						id="commentBody"
+						cols="30"
+						rows="10"
+					></textarea>
 					<button type="submit" class="btn btn-success w-100">Comment</button>
 				</form>
 			</template>
@@ -372,10 +511,26 @@
 
 			<template id="profilePagePrivate">
 				<div class="card profile page private mb-3">
-					<div class="upper border-bottom d-flex justify-content-between align-items-start p-3">
+					<div
+						class="upper border-bottom d-flex justify-content-between align-items-start p-3"
+					>
 						<div class="btn-group btn-group-sm">
-							<button type="button" class="btn btn-sm btn-success" data-action="follow" data-name="">Follow</button>
-							<button type="button" class="btn btn-sm btn-danger" data-action="unfollow" data-name="">Unfollow</button>
+							<button
+								type="button"
+								class="btn btn-sm btn-success"
+								data-action="follow"
+								data-name=""
+							>
+								Follow
+							</button>
+							<button
+								type="button"
+								class="btn btn-sm btn-danger"
+								data-action="unfollow"
+								data-name=""
+							>
+								Unfollow
+							</button>
 						</div>
 					</div>
 

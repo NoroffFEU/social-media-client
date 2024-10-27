@@ -1,5 +1,9 @@
 import { getPost, isLoggedIn, profile } from "../api/index.js";
-import { postFormTemplate, postTabsTemplate, postThumbnailTemplate } from "../templates/index.js";
+import {
+	postFormTemplate,
+	postTabsTemplate,
+	postThumbnailTemplate,
+} from "../templates/index.js";
 import { postCommentsTemplate } from "../templates/post/comments.js";
 
 export const publicPostPage = async (post) => {

@@ -1,0 +1,2 @@
+echo "husky pre-commit is running"
+npx lint-staged
