@@ -1,9 +1,8 @@
-// eslint.config.js
-
 import js from "@eslint/js";
 import prettierPlugin from "eslint-plugin-prettier";
 import prettierConfig from "eslint-config-prettier";
 import jestPlugin from "eslint-plugin-jest";
+import cypressPlugin from "eslint-plugin-cypress";
 
 export default [
 	{
@@ -27,6 +26,7 @@ export default [
 				fetch: "readonly",
 				alert: "readonly",
 
+				// Test-spesifikke globals
 				describe: "readonly",
 				it: "readonly",
 				expect: "readonly",
@@ -36,6 +36,10 @@ export default [
 				test: "readonly",
 				jest: "readonly",
 				global: "readonly",
+
+				// Cypress-spesifikke globals
+				cy: "readonly",
+				Cypress: "readonly",
 			},
 		},
 		rules: {
@@ -45,6 +49,7 @@ export default [
 		plugins: {
 			prettier: prettierPlugin,
 			jest: jestPlugin,
+			cypress: cypressPlugin,
 		},
 		settings: {
 			jest: {
