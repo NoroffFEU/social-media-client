@@ -1,0 +1,12 @@
+{
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": ["**/*.test.js", "**/*.cy.js"],
+      "env": { "jest": true, "cypress": true },
+      "plugins": ["jest", "cypress"],
+      "extends": ["plugin:jest/recommended", "plygin:cypress/recommended"],
+      "rules": { "jest/prefer-expect-assertions": "off" }
+    }
+  ]
+}
