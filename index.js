@@ -1,5 +1,6 @@
-import router from "./router/index.js";
-import ui from "./ui/index.js";
+//index.js (in the root directory of my project)
+require('dotenv').config(); // Load environment variables from .env file
 
-ui();
-router();
+// Access and print the environment variable
+console.log(process.env.LOGIN_EMAIL);
+console.log(process.env.LOGIN_PASSWORD);

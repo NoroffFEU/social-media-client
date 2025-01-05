@@ -1,0 +1,24 @@
+name: Test Application
+
+on:
+  push:
+    branches:
+      - workflow
+  pull_request:
+    branches:
+      - workflow
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
